@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EC87ADB7E7F0DD5E7261F04 /* Pods_Gud_Tay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C04EA3A9A26D3F4C10D4133 /* Pods_Gud_Tay.framework */; };
+		B4164F6990CDADEE81496E52 /* Pods_Gud_TayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370FEC8906996918721175C9 /* Pods_Gud_TayUITests.framework */; };
 		CD1279C71D45B37B00DC7BB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */; };
 		CD1279C91D45B37B00DC7BB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279C81D45B37B00DC7BB8 /* ViewController.swift */; };
 		CD1279CC1D45B37B00DC7BB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CA1D45B37B00DC7BB8 /* Main.storyboard */; };
@@ -14,6 +16,7 @@
 		CD1279D11D45B37B00DC7BB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */; };
 		CD1279DC1D45B37B00DC7BB8 /* GudTayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279DB1D45B37B00DC7BB8 /* GudTayTests.swift */; };
 		CD1279E71D45B37B00DC7BB8 /* Gud_TayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279E61D45B37B00DC7BB8 /* Gud_TayUITests.swift */; };
+		D66C501077EE59C9A92E58ED /* Pods_Gud_TayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC222D206FF1E0B1633B3D3A /* Pods_Gud_TayTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C04EA3A9A26D3F4C10D4133 /* Pods_Gud_Tay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gud_Tay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C313718F7075C011A2F739D /* Pods-Gud TayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud TayUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gud TayUITests/Pods-Gud TayUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3699ED083B111605113BD927 /* Pods-Gud TayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud TayUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gud TayUITests/Pods-Gud TayUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		370FEC8906996918721175C9 /* Pods_Gud_TayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gud_TayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43503C8DE54F3EA4F36E22A3 /* Pods-Gud TayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud TayTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gud TayTests/Pods-Gud TayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BD519AB98CE48C9434FA9B47 /* Pods-Gud Tay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud Tay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gud Tay/Pods-Gud Tay.debug.xcconfig"; sourceTree = "<group>"; };
 		CD1279C31D45B37B00DC7BB8 /* Gud Tay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gud Tay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD1279C81D45B37B00DC7BB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +56,9 @@
 		CD1279E21D45B37B00DC7BB8 /* Gud TayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gud TayUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1279E61D45B37B00DC7BB8 /* Gud_TayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gud_TayUITests.swift; sourceTree = "<group>"; };
 		CD1279E81D45B37B00DC7BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC222D206FF1E0B1633B3D3A /* Pods_Gud_TayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gud_TayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E93EF258A0F38875794AB7E8 /* Pods-Gud TayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud TayTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gud TayTests/Pods-Gud TayTests.release.xcconfig"; sourceTree = "<group>"; };
+		FC0A7D79092335E5C4078089 /* Pods-Gud Tay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud Tay.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gud Tay/Pods-Gud Tay.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EC87ADB7E7F0DD5E7261F04 /* Pods_Gud_Tay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D66C501077EE59C9A92E58ED /* Pods_Gud_TayTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4164F6990CDADEE81496E52 /* Pods_Gud_TayUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25C6FC41E3030A91DD1F4F28 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD519AB98CE48C9434FA9B47 /* Pods-Gud Tay.debug.xcconfig */,
+				FC0A7D79092335E5C4078089 /* Pods-Gud Tay.release.xcconfig */,
+				43503C8DE54F3EA4F36E22A3 /* Pods-Gud TayTests.debug.xcconfig */,
+				E93EF258A0F38875794AB7E8 /* Pods-Gud TayTests.release.xcconfig */,
+				3699ED083B111605113BD927 /* Pods-Gud TayUITests.debug.xcconfig */,
+				1C313718F7075C011A2F739D /* Pods-Gud TayUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AC80E7268D6F2FA1E99F8C13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C04EA3A9A26D3F4C10D4133 /* Pods_Gud_Tay.framework */,
+				DC222D206FF1E0B1633B3D3A /* Pods_Gud_TayTests.framework */,
+				370FEC8906996918721175C9 /* Pods_Gud_TayUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CD1279BA1D45B37B00DC7BB8 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +119,8 @@
 				CD1279DA1D45B37B00DC7BB8 /* Gud TayTests */,
 				CD1279E51D45B37B00DC7BB8 /* Gud TayUITests */,
 				CD1279C41D45B37B00DC7BB8 /* Products */,
+				25C6FC41E3030A91DD1F4F28 /* Pods */,
+				AC80E7268D6F2FA1E99F8C13 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,10 +172,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD1279EB1D45B37B00DC7BB8 /* Build configuration list for PBXNativeTarget "Gud Tay" */;
 			buildPhases = (
+				1C080E12C2743C2CAB6EEF0E /* [CP] Check Pods Manifest.lock */,
 				CD1279BF1D45B37B00DC7BB8 /* Sources */,
 				CD1279F41D45B40600DC7BB8 /* SwiftLint */,
 				CD1279C01D45B37B00DC7BB8 /* Frameworks */,
 				CD1279C11D45B37B00DC7BB8 /* Resources */,
+				FFF51A6AE93B0C9C916BD0E7 /* [CP] Embed Pods Frameworks */,
+				89AAB7AF6C963DD81798E751 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -150,9 +193,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD1279EE1D45B37B00DC7BB8 /* Build configuration list for PBXNativeTarget "Gud TayTests" */;
 			buildPhases = (
+				DB2B5511529CFC1BD2453A49 /* [CP] Check Pods Manifest.lock */,
 				CD1279D31D45B37B00DC7BB8 /* Sources */,
 				CD1279D41D45B37B00DC7BB8 /* Frameworks */,
 				CD1279D51D45B37B00DC7BB8 /* Resources */,
+				6FE5F09C1111C4333D1FB70E /* [CP] Embed Pods Frameworks */,
+				5B4439E0C3F52AECD1F0C640 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,9 +214,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD1279F11D45B37B00DC7BB8 /* Build configuration list for PBXNativeTarget "Gud TayUITests" */;
 			buildPhases = (
+				AECFF1B93C12FFA00B83577B /* [CP] Check Pods Manifest.lock */,
 				CD1279DE1D45B37B00DC7BB8 /* Sources */,
 				CD1279DF1D45B37B00DC7BB8 /* Frameworks */,
 				CD1279E01D45B37B00DC7BB8 /* Resources */,
+				4324FC485DECC6F42735A9A7 /* [CP] Embed Pods Frameworks */,
+				43CB0718BA720054B8720B63 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,6 +311,111 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1C080E12C2743C2CAB6EEF0E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4324FC485DECC6F42735A9A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gud TayUITests/Pods-Gud TayUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43CB0718BA720054B8720B63 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gud TayUITests/Pods-Gud TayUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B4439E0C3F52AECD1F0C640 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gud TayTests/Pods-Gud TayTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FE5F09C1111C4333D1FB70E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gud TayTests/Pods-Gud TayTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89AAB7AF6C963DD81798E751 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gud Tay/Pods-Gud Tay-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AECFF1B93C12FFA00B83577B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		CD1279F41D45B40600DC7BB8 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -275,6 +429,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint Is not installed. Download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		DB2B5511529CFC1BD2453A49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FFF51A6AE93B0C9C916BD0E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gud Tay/Pods-Gud Tay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -430,6 +614,7 @@
 		};
 		CD1279EC1D45B37B00DC7BB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD519AB98CE48C9434FA9B47 /* Pods-Gud Tay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Gud Tay/Info.plist";
@@ -442,6 +627,7 @@
 		};
 		CD1279ED1D45B37B00DC7BB8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC0A7D79092335E5C4078089 /* Pods-Gud Tay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Gud Tay/Info.plist";
@@ -454,6 +640,7 @@
 		};
 		CD1279EF1D45B37B00DC7BB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43503C8DE54F3EA4F36E22A3 /* Pods-Gud TayTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Gud TayTests/Info.plist";
@@ -467,6 +654,7 @@
 		};
 		CD1279F01D45B37B00DC7BB8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E93EF258A0F38875794AB7E8 /* Pods-Gud TayTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Gud TayTests/Info.plist";
@@ -480,6 +668,7 @@
 		};
 		CD1279F21D45B37B00DC7BB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3699ED083B111605113BD927 /* Pods-Gud TayUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Gud TayUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -492,6 +681,7 @@
 		};
 		CD1279F31D45B37B00DC7BB8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C313718F7075C011A2F739D /* Pods-Gud TayUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Gud TayUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -521,6 +711,7 @@
 				CD1279ED1D45B37B00DC7BB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CD1279EE1D45B37B00DC7BB8 /* Build configuration list for PBXNativeTarget "Gud TayTests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +720,7 @@
 				CD1279F01D45B37B00DC7BB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CD1279F11D45B37B00DC7BB8 /* Build configuration list for PBXNativeTarget "Gud TayUITests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +729,7 @@
 				CD1279F31D45B37B00DC7BB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

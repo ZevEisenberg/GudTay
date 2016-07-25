@@ -1,0 +1,18 @@
+platform :ios, '10.0'
+
+target 'Gud Tay' do
+  use_frameworks!
+
+  # Pods for Gud Tay
+
+  target 'Gud TayTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Gud TayUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
