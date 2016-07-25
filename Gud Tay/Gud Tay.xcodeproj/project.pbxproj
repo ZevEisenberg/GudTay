@@ -12,7 +12,7 @@
 		CD1279CC1D45B37B00DC7BB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CA1D45B37B00DC7BB8 /* Main.storyboard */; };
 		CD1279CE1D45B37B00DC7BB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */; };
 		CD1279D11D45B37B00DC7BB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */; };
-		CD1279DC1D45B37B00DC7BB8 /* Gud_TayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279DB1D45B37B00DC7BB8 /* Gud_TayTests.swift */; };
+		CD1279DC1D45B37B00DC7BB8 /* GudTayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279DB1D45B37B00DC7BB8 /* GudTayTests.swift */; };
 		CD1279E71D45B37B00DC7BB8 /* Gud_TayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279E61D45B37B00DC7BB8 /* Gud_TayUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +42,7 @@
 		CD1279D01D45B37B00DC7BB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD1279D21D45B37B00DC7BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD1279D71D45B37B00DC7BB8 /* Gud TayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gud TayTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD1279DB1D45B37B00DC7BB8 /* Gud_TayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gud_TayTests.swift; sourceTree = "<group>"; };
+		CD1279DB1D45B37B00DC7BB8 /* GudTayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GudTayTests.swift; sourceTree = "<group>"; };
 		CD1279DD1D45B37B00DC7BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD1279E21D45B37B00DC7BB8 /* Gud TayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gud TayUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1279E61D45B37B00DC7BB8 /* Gud_TayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gud_TayUITests.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		CD1279DA1D45B37B00DC7BB8 /* Gud TayTests */ = {
 			isa = PBXGroup;
 			children = (
-				CD1279DB1D45B37B00DC7BB8 /* Gud_TayTests.swift */,
+				CD1279DB1D45B37B00DC7BB8 /* GudTayTests.swift */,
 				CD1279DD1D45B37B00DC7BB8 /* Info.plist */,
 			);
 			path = "Gud TayTests";
@@ -133,6 +133,7 @@
 			buildConfigurationList = CD1279EB1D45B37B00DC7BB8 /* Build configuration list for PBXNativeTarget "Gud Tay" */;
 			buildPhases = (
 				CD1279BF1D45B37B00DC7BB8 /* Sources */,
+				CD1279F41D45B40600DC7BB8 /* SwiftLint */,
 				CD1279C01D45B37B00DC7BB8 /* Frameworks */,
 				CD1279C11D45B37B00DC7BB8 /* Resources */,
 			);
@@ -260,6 +261,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CD1279F41D45B40600DC7BB8 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint Is not installed. Download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CD1279BF1D45B37B00DC7BB8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -274,7 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD1279DC1D45B37B00DC7BB8 /* Gud_TayTests.swift in Sources */,
+				CD1279DC1D45B37B00DC7BB8 /* GudTayTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
