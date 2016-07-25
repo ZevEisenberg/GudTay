@@ -73,13 +73,17 @@ private extension APIClient {
             if let data = data {
                 let json = try? JSONSerialization.jsonObject(with: data, options: [])
                 if let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode {
-                    completion(.success(json as? JSONObject))
+                    DispatchQueue.main.async {
+                        completion(.success(json as? JSONObject))
+                    }
                 } else {
                     var error = error ?? NSError.my_genericError()
                     if let response = response as? HTTPURLResponse {
                         error = NSError.my_httpError(code: response.statusCode)
                     }
-                    completion(.failure(error))
+                    DispatchQueue.main.async {
+                        completion(.failure(error))
+                    }
                 }
             }
             }.resume()
