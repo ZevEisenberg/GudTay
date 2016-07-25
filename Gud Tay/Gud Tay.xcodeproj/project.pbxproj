@@ -1,0 +1,526 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD1279C71D45B37B00DC7BB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */; };
+		CD1279C91D45B37B00DC7BB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279C81D45B37B00DC7BB8 /* ViewController.swift */; };
+		CD1279CC1D45B37B00DC7BB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CA1D45B37B00DC7BB8 /* Main.storyboard */; };
+		CD1279CE1D45B37B00DC7BB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */; };
+		CD1279D11D45B37B00DC7BB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */; };
+		CD1279DC1D45B37B00DC7BB8 /* Gud_TayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279DB1D45B37B00DC7BB8 /* Gud_TayTests.swift */; };
+		CD1279E71D45B37B00DC7BB8 /* Gud_TayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279E61D45B37B00DC7BB8 /* Gud_TayUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD1279D81D45B37B00DC7BB8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD1279BB1D45B37B00DC7BB8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD1279C21D45B37B00DC7BB8;
+			remoteInfo = "Gud Tay";
+		};
+		CD1279E31D45B37B00DC7BB8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD1279BB1D45B37B00DC7BB8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD1279C21D45B37B00DC7BB8;
+			remoteInfo = "Gud Tay";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CD1279C31D45B37B00DC7BB8 /* Gud Tay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gud Tay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CD1279C81D45B37B00DC7BB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD1279CB1D45B37B00DC7BB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD1279D01D45B37B00DC7BB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CD1279D21D45B37B00DC7BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD1279D71D45B37B00DC7BB8 /* Gud TayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gud TayTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD1279DB1D45B37B00DC7BB8 /* Gud_TayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gud_TayTests.swift; sourceTree = "<group>"; };
+		CD1279DD1D45B37B00DC7BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD1279E21D45B37B00DC7BB8 /* Gud TayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gud TayUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD1279E61D45B37B00DC7BB8 /* Gud_TayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gud_TayUITests.swift; sourceTree = "<group>"; };
+		CD1279E81D45B37B00DC7BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD1279C01D45B37B00DC7BB8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD1279D41D45B37B00DC7BB8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD1279DF1D45B37B00DC7BB8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD1279BA1D45B37B00DC7BB8 = {
+			isa = PBXGroup;
+			children = (
+				CD1279C51D45B37B00DC7BB8 /* Gud Tay */,
+				CD1279DA1D45B37B00DC7BB8 /* Gud TayTests */,
+				CD1279E51D45B37B00DC7BB8 /* Gud TayUITests */,
+				CD1279C41D45B37B00DC7BB8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD1279C41D45B37B00DC7BB8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD1279C31D45B37B00DC7BB8 /* Gud Tay.app */,
+				CD1279D71D45B37B00DC7BB8 /* Gud TayTests.xctest */,
+				CD1279E21D45B37B00DC7BB8 /* Gud TayUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD1279C51D45B37B00DC7BB8 /* Gud Tay */ = {
+			isa = PBXGroup;
+			children = (
+				CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */,
+				CD1279C81D45B37B00DC7BB8 /* ViewController.swift */,
+				CD1279CA1D45B37B00DC7BB8 /* Main.storyboard */,
+				CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */,
+				CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */,
+				CD1279D21D45B37B00DC7BB8 /* Info.plist */,
+			);
+			path = "Gud Tay";
+			sourceTree = "<group>";
+		};
+		CD1279DA1D45B37B00DC7BB8 /* Gud TayTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD1279DB1D45B37B00DC7BB8 /* Gud_TayTests.swift */,
+				CD1279DD1D45B37B00DC7BB8 /* Info.plist */,
+			);
+			path = "Gud TayTests";
+			sourceTree = "<group>";
+		};
+		CD1279E51D45B37B00DC7BB8 /* Gud TayUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CD1279E61D45B37B00DC7BB8 /* Gud_TayUITests.swift */,
+				CD1279E81D45B37B00DC7BB8 /* Info.plist */,
+			);
+			path = "Gud TayUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD1279C21D45B37B00DC7BB8 /* Gud Tay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD1279EB1D45B37B00DC7BB8 /* Build configuration list for PBXNativeTarget "Gud Tay" */;
+			buildPhases = (
+				CD1279BF1D45B37B00DC7BB8 /* Sources */,
+				CD1279C01D45B37B00DC7BB8 /* Frameworks */,
+				CD1279C11D45B37B00DC7BB8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Gud Tay";
+			productName = "Gud Tay";
+			productReference = CD1279C31D45B37B00DC7BB8 /* Gud Tay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CD1279D61D45B37B00DC7BB8 /* Gud TayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD1279EE1D45B37B00DC7BB8 /* Build configuration list for PBXNativeTarget "Gud TayTests" */;
+			buildPhases = (
+				CD1279D31D45B37B00DC7BB8 /* Sources */,
+				CD1279D41D45B37B00DC7BB8 /* Frameworks */,
+				CD1279D51D45B37B00DC7BB8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD1279D91D45B37B00DC7BB8 /* PBXTargetDependency */,
+			);
+			name = "Gud TayTests";
+			productName = "Gud TayTests";
+			productReference = CD1279D71D45B37B00DC7BB8 /* Gud TayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CD1279E11D45B37B00DC7BB8 /* Gud TayUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD1279F11D45B37B00DC7BB8 /* Build configuration list for PBXNativeTarget "Gud TayUITests" */;
+			buildPhases = (
+				CD1279DE1D45B37B00DC7BB8 /* Sources */,
+				CD1279DF1D45B37B00DC7BB8 /* Frameworks */,
+				CD1279E01D45B37B00DC7BB8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD1279E41D45B37B00DC7BB8 /* PBXTargetDependency */,
+			);
+			name = "Gud TayUITests";
+			productName = "Gud TayUITests";
+			productReference = CD1279E21D45B37B00DC7BB8 /* Gud TayUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD1279BB1D45B37B00DC7BB8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Zev Eisenberg";
+				TargetAttributes = {
+					CD1279C21D45B37B00DC7BB8 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = RR6BY8422P;
+						DevelopmentTeamName = "Zev Eisenberg (Personal Team)";
+						ProvisioningStyle = Automatic;
+					};
+					CD1279D61D45B37B00DC7BB8 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = RR6BY8422P;
+						DevelopmentTeamName = "Zev Eisenberg (Personal Team)";
+						ProvisioningStyle = Automatic;
+						TestTargetID = CD1279C21D45B37B00DC7BB8;
+					};
+					CD1279E11D45B37B00DC7BB8 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = RR6BY8422P;
+						DevelopmentTeamName = "Zev Eisenberg (Personal Team)";
+						ProvisioningStyle = Automatic;
+						TestTargetID = CD1279C21D45B37B00DC7BB8;
+					};
+				};
+			};
+			buildConfigurationList = CD1279BE1D45B37B00DC7BB8 /* Build configuration list for PBXProject "Gud Tay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD1279BA1D45B37B00DC7BB8;
+			productRefGroup = CD1279C41D45B37B00DC7BB8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD1279C21D45B37B00DC7BB8 /* Gud Tay */,
+				CD1279D61D45B37B00DC7BB8 /* Gud TayTests */,
+				CD1279E11D45B37B00DC7BB8 /* Gud TayUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD1279C11D45B37B00DC7BB8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD1279D11D45B37B00DC7BB8 /* LaunchScreen.storyboard in Resources */,
+				CD1279CE1D45B37B00DC7BB8 /* Assets.xcassets in Resources */,
+				CD1279CC1D45B37B00DC7BB8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD1279D51D45B37B00DC7BB8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD1279E01D45B37B00DC7BB8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD1279BF1D45B37B00DC7BB8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD1279C91D45B37B00DC7BB8 /* ViewController.swift in Sources */,
+				CD1279C71D45B37B00DC7BB8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD1279D31D45B37B00DC7BB8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD1279DC1D45B37B00DC7BB8 /* Gud_TayTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD1279DE1D45B37B00DC7BB8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD1279E71D45B37B00DC7BB8 /* Gud_TayUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD1279D91D45B37B00DC7BB8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD1279C21D45B37B00DC7BB8 /* Gud Tay */;
+			targetProxy = CD1279D81D45B37B00DC7BB8 /* PBXContainerItemProxy */;
+		};
+		CD1279E41D45B37B00DC7BB8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD1279C21D45B37B00DC7BB8 /* Gud Tay */;
+			targetProxy = CD1279E31D45B37B00DC7BB8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CD1279CA1D45B37B00DC7BB8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD1279CB1D45B37B00DC7BB8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD1279D01D45B37B00DC7BB8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD1279E91D45B37B00DC7BB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		CD1279EA1D45B37B00DC7BB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD1279EC1D45B37B00DC7BB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Gud Tay/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zeveisenberg.Gud-Tay";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		CD1279ED1D45B37B00DC7BB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Gud Tay/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zeveisenberg.Gud-Tay";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		CD1279EF1D45B37B00DC7BB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Gud TayTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zeveisenberg.Gud-TayTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gud Tay.app/Gud Tay";
+			};
+			name = Debug;
+		};
+		CD1279F01D45B37B00DC7BB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Gud TayTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zeveisenberg.Gud-TayTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gud Tay.app/Gud Tay";
+			};
+			name = Release;
+		};
+		CD1279F21D45B37B00DC7BB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Gud TayUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zeveisenberg.Gud-TayUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Gud Tay";
+			};
+			name = Debug;
+		};
+		CD1279F31D45B37B00DC7BB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Gud TayUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zeveisenberg.Gud-TayUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Gud Tay";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD1279BE1D45B37B00DC7BB8 /* Build configuration list for PBXProject "Gud Tay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD1279E91D45B37B00DC7BB8 /* Debug */,
+				CD1279EA1D45B37B00DC7BB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD1279EB1D45B37B00DC7BB8 /* Build configuration list for PBXNativeTarget "Gud Tay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD1279EC1D45B37B00DC7BB8 /* Debug */,
+				CD1279ED1D45B37B00DC7BB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CD1279EE1D45B37B00DC7BB8 /* Build configuration list for PBXNativeTarget "Gud TayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD1279EF1D45B37B00DC7BB8 /* Debug */,
+				CD1279F01D45B37B00DC7BB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CD1279F11D45B37B00DC7BB8 /* Build configuration list for PBXNativeTarget "Gud TayUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD1279F21D45B37B00DC7BB8 /* Debug */,
+				CD1279F31D45B37B00DC7BB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD1279BB1D45B37B00DC7BB8 /* Project object */;
+}
