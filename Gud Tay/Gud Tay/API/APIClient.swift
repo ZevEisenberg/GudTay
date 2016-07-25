@@ -19,13 +19,13 @@ final class APIClient {
 
     }
 
-    func stopsNearHome(_ completion: (Result) -> ()) {
+    func stopsNearHome(completion: (Result) -> ()) {
         let params = ["lat": Constants.lat, "lon": Constants.lon]
 
         get(clientURLRequest(Endpoints.stopsByLocation, params: params), completion: completion)
     }
 
-    func predictionsByStop(stopId: String, _ completion: (Result) -> ()) {
+    func predictionsByStop(stopId: String, completion: (Result) -> ()) {
         let params = ["stop": stopId]
 
         get(clientURLRequest(Endpoints.predictionsByStop, params: params), completion: completion)
