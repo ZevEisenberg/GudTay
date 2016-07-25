@@ -10,7 +10,7 @@
 		3EC87ADB7E7F0DD5E7261F04 /* Pods_Gud_Tay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C04EA3A9A26D3F4C10D4133 /* Pods_Gud_Tay.framework */; };
 		B4164F6990CDADEE81496E52 /* Pods_Gud_TayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370FEC8906996918721175C9 /* Pods_Gud_TayUITests.framework */; };
 		CD1279C71D45B37B00DC7BB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */; };
-		CD1279C91D45B37B00DC7BB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279C81D45B37B00DC7BB8 /* ViewController.swift */; };
+		CD1279C91D45B37B00DC7BB8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279C81D45B37B00DC7BB8 /* RootViewController.swift */; };
 		CD1279CC1D45B37B00DC7BB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CA1D45B37B00DC7BB8 /* Main.storyboard */; };
 		CD1279CE1D45B37B00DC7BB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */; };
 		CD1279D11D45B37B00DC7BB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */; };
@@ -63,7 +63,7 @@
 		BD519AB98CE48C9434FA9B47 /* Pods-Gud Tay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud Tay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gud Tay/Pods-Gud Tay.debug.xcconfig"; sourceTree = "<group>"; };
 		CD1279C31D45B37B00DC7BB8 /* Gud Tay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gud Tay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CD1279C81D45B37B00DC7BB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD1279C81D45B37B00DC7BB8 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		CD1279CB1D45B37B00DC7BB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD1279D01D45B37B00DC7BB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */,
-				CD1279C81D45B37B00DC7BB8 /* ViewController.swift */,
+				CD1279C81D45B37B00DC7BB8 /* RootViewController.swift */,
 				CDECBA9C1D46D94A007A82D5 /* Model */,
 				CDECBAB21D46D97F007A82D5 /* API */,
 				CD1279CA1D45B37B00DC7BB8 /* Main.storyboard */,
@@ -521,7 +521,7 @@
 			files = (
 				CDECBAB01D46D94A007A82D5 /* Vehicle.swift in Sources */,
 				CDECBAAC1D46D94A007A82D5 /* Stop.swift in Sources */,
-				CD1279C91D45B37B00DC7BB8 /* ViewController.swift in Sources */,
+				CD1279C91D45B37B00DC7BB8 /* RootViewController.swift in Sources */,
 				CDECBAB61D46D97F007A82D5 /* APIClient.swift in Sources */,
 				CDECBAA81D46D94A007A82D5 /* Mode.swift in Sources */,
 				CDECBAB81D46D97F007A82D5 /* JSONRepresentable.swift in Sources */,
