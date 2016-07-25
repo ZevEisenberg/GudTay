@@ -4,6 +4,7 @@ target 'Gud Tay' do
   use_frameworks!
 
   # Pods for Gud Tay
+  pod 'Anchorage', :git => 'git@github.com:Raizlabs/Anchorage.git', :commit => 'da947d7c8c554de48fb9404a91ea4b26cfb1e7f9'
 
   target 'Gud TayTests' do
     inherit! :search_paths

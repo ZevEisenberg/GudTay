@@ -1,3 +1,22 @@
-PODFILE CHECKSUM: 0bda735d46d3b0ee27f9b737eb735e99996c4cfd
+PODS:
+  - Anchorage (2.0.0)
+
+DEPENDENCIES:
+  - Anchorage (from `git@github.com:Raizlabs/Anchorage.git`, commit `da947d7c8c554de48fb9404a91ea4b26cfb1e7f9`)
+
+EXTERNAL SOURCES:
+  Anchorage:
+    :commit: da947d7c8c554de48fb9404a91ea4b26cfb1e7f9
+    :git: git@github.com:Raizlabs/Anchorage.git
+
+CHECKOUT OPTIONS:
+  Anchorage:
+    :commit: da947d7c8c554de48fb9404a91ea4b26cfb1e7f9
+    :git: git@github.com:Raizlabs/Anchorage.git
+
+SPEC CHECKSUMS:
+  Anchorage: 3fb9d1ca397ac68b7ce9857792660a0d683f2e11
+
+PODFILE CHECKSUM: b0b9a2f509d75ce3ae0442c071dc88213d6ca723
 
 COCOAPODS: 1.1.0.beta.1
