@@ -17,7 +17,7 @@
 
 ### Route IDs
 
-> http://realtime.mbta.com/developer/api/v2/routesbystop?api_key=wX9NwuHnZU2ToO7GmGR9uw&stop=place-sull&format=json
+> https://realtime.mbta.com/developer/api/v2/routesbystop?api_key=wX9NwuHnZU2ToO7GmGR9uw&stop=place-sull&format=json
 
 ```json
 {
