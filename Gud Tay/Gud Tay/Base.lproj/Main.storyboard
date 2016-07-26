@@ -22,39 +22,19 @@
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="t4b-VO-eRL">
                                         <subviews>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NDT-0X-cyW">
-                                                <connections>
-                                                    <segue destination="P5u-9T-XKD" kind="embed" id="Pjy-63-b8l"/>
-                                                </connections>
-                                            </containerView>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fd5-BR-auz">
-                                                <connections>
-                                                    <segue destination="P5u-9T-XKD" kind="embed" id="yzM-WP-egW"/>
-                                                </connections>
-                                            </containerView>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NDT-0X-cyW"/>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fd5-BR-auz"/>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0QF-Sr-EeM">
                                         <subviews>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oz9-hC-42Y">
-                                                <connections>
-                                                    <segue destination="P5u-9T-XKD" kind="embed" id="cnK-BD-6tV"/>
-                                                </connections>
-                                            </containerView>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSc-1R-Z6P">
-                                                <connections>
-                                                    <segue destination="P5u-9T-XKD" kind="embed" id="rJV-ek-fEk"/>
-                                                </connections>
-                                            </containerView>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oz9-hC-42Y"/>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSc-1R-Z6P"/>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Gmp-Do-zrm">
                                         <subviews>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2G6-h8-95A">
-                                                <connections>
-                                                    <segue destination="P5u-9T-XKD" kind="embed" id="K2U-gC-ZL6"/>
-                                                </connections>
-                                            </containerView>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2G6-h8-95A"/>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3EB-Im-s6R"/>
                                         </subviews>
                                     </stackView>
@@ -66,7 +46,7 @@
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ve6-r0-Wey">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="1ZE-Zs-av5"/>
+                                    <constraint firstAttribute="height" constant="205" id="1ZE-Zs-av5"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="JKh-pe-0Nr" kind="embed" id="Eol-Tq-Qq6"/>
@@ -84,6 +64,13 @@
                             <constraint firstItem="rXx-ap-fPO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="cX6-O0-5Vr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bus86" destination="oz9-hC-42Y" id="WDB-tg-J6J"/>
+                        <outlet property="bus90" destination="pSc-1R-Z6P" id="aad-eM-SzM"/>
+                        <outlet property="bus91" destination="2G6-h8-95A" id="HeP-4b-OlL"/>
+                        <outlet property="busCT2" destination="Fd5-BR-auz" id="9yf-cP-f6L"/>
+                        <outlet property="subwayOrangeLine" destination="NDT-0X-cyW" id="KEC-ez-fD7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,8 +80,12 @@
         <scene sceneID="KEr-6K-uak">
             <objects>
                 <viewController id="JKh-pe-0Nr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hSC-7c-Rb7"/>
+                        <viewControllerLayoutGuide type="bottom" id="I95-LA-ec1"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xo8-HR-ldh">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="205"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -103,33 +94,5 @@
             </objects>
             <point key="canvasLocation" x="138" y="633"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="7h7-yK-Sfd">
-            <objects>
-                <viewController id="P5u-9T-XKD" customClass="MBTAViewController" customModule="Gud_Tay" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xeG-Pd-2Kx">
-                        <rect key="frame" x="0.0" y="0.0" width="384" height="234.5"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stuff" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFK-Tv-rOd">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="jFK-Tv-rOd" firstAttribute="centerX" secondItem="xeG-Pd-2Kx" secondAttribute="centerX" id="H01-cO-5ab"/>
-                            <constraint firstItem="jFK-Tv-rOd" firstAttribute="centerY" secondItem="xeG-Pd-2Kx" secondAttribute="centerY" id="aal-A0-wk4"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x3N-gx-j4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="761" y="128"/>
-        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="K2U-gC-ZL6"/>
-    </inferredMetricsTieBreakers>
 </document>
