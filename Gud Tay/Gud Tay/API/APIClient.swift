@@ -10,7 +10,7 @@ import Foundation
 
 // APIClient design inspired by https://thatthinginswift.com/write-your-own-api-clients-swift/
 
-final class APIClient {
+struct APIClient {
 
     enum Result {
 
@@ -19,13 +19,13 @@ final class APIClient {
 
     }
 
-    func stopsNearHome(completion: (Result) -> ()) {
+    static func stopsNearHome(completion: (Result) -> ()) {
         let params = ["lat": Constants.lat, "lon": Constants.lon]
 
         get(clientURLRequest(Endpoints.stopsByLocation, params: params), completion: completion)
     }
 
-    func predictionsByStop(stopId: String, completion: (Result) -> ()) {
+    static func predictionsByStop(stopId: String, completion: (Result) -> ()) {
         let params = ["stop": stopId]
 
         get(clientURLRequest(Endpoints.predictionsByStop, params: params), completion: completion)
@@ -40,7 +40,7 @@ private extension APIClient {
         static let apiKey = "40jKQwmnXk-4slxceBfcEA"
         static let username = "ZevEisenberg"
         static let appName = "status-board-mbta"
-        static let host = "http://realtime.mbta.com"
+        static let host = "https://realtime.mbta.com"
         static let commonPath = "developer/api/v2"
         static let lat = "42.385081"
         static let lon = "-71.077848"
@@ -63,7 +63,7 @@ private extension APIClient {
         return commonUrl
     }
 
-    func dataTask(_ request: NSMutableURLRequest, method: String, completion: (Result) -> ()) {
+    static func dataTask(_ request: NSMutableURLRequest, method: String, completion: (Result) -> ()) {
         request.httpMethod = method
 
         let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -89,19 +89,11 @@ private extension APIClient {
             }.resume()
     }
 
-    func post(_ request: NSMutableURLRequest, completion: (Result) -> ()) {
-        dataTask(request, method: "POST", completion: completion)
-    }
-
-    func put(_ request: NSMutableURLRequest, completion: (Result) -> ()) {
-        dataTask(request, method: "PUT", completion: completion)
-    }
-
-    func get(_ request: NSMutableURLRequest, completion: (Result) -> ()) {
+    static func get(_ request: NSMutableURLRequest, completion: (Result) -> ()) {
         dataTask(request, method: "GET", completion: completion)
     }
 
-    func clientURLRequest(_ path: String, params: Dictionary<String, AnyObject>? = nil) -> NSMutableURLRequest {
+    static func clientURLRequest(_ path: String, params: Dictionary<String, AnyObject>? = nil) -> NSMutableURLRequest {
         let baseUrl = APIClient.baseUrl()
         guard let urlWithPath = try? baseUrl.appendingPathComponent(path) else {
             preconditionFailure()
