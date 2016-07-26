@@ -10,7 +10,7 @@ import Foundation
 
 // APIClient design inspired by https://thatthinginswift.com/write-your-own-api-clients-swift/
 
-struct APIClient {
+enum APIClient {
 
     enum Result {
 
