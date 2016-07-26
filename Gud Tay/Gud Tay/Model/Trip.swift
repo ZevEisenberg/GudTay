@@ -18,6 +18,7 @@ struct Trip {
     let predictedDeparture: Date // ???: is this departure or arrival?
     let predictedSecondsAway: TimeInterval
     let vehicle: Vehicle?
+
 }
 
 extension Trip: JSONRepresentable {
