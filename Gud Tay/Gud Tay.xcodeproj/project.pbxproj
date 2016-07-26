@@ -172,10 +172,10 @@
 			children = (
 				CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */,
 				CD1279C81D45B37B00DC7BB8 /* RootViewController.swift */,
+				CDECBAB21D46D97F007A82D5 /* API */,
 				CDECBA9C1D46D94A007A82D5 /* Model */,
 				CDECBABD1D46DF48007A82D5 /* View */,
 				CDECBAC11D46DF6C007A82D5 /* View Model */,
-				CDECBAB21D46D97F007A82D5 /* API */,
 				CD1279CA1D45B37B00DC7BB8 /* Main.storyboard */,
 				CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */,
 				CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */,
