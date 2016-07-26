@@ -1,6 +1,6 @@
 {
-  "stop_id": "70031",
-  "stop_name": "Sullivan Square - Outbound",
+  "stop_id": "place-sull",
+  "stop_name": "Sullivan Square",
   "mode": [
     {
       "route_type": "1",
@@ -11,6 +11,71 @@
           "route_name": "Orange Line",
           "direction": [
             {
+              "direction_id": "0",
+              "direction_name": "Southbound",
+              "trip": [
+                {
+                  "trip_id": "30838432",
+                  "trip_name": "11:06 pm from Oak Grove to Forest Hills Orange Line",
+                  "trip_headsign": "Forest Hills",
+                  "sch_arr_dt": "1469502960",
+                  "sch_dep_dt": "1469502960",
+                  "pre_dt": "1469502982",
+                  "pre_away": "243",
+                  "vehicle": {
+                    "vehicle_id": "5447531D",
+                    "vehicle_lat": "42.40162",
+                    "vehicle_lon": "-71.07727",
+                    "vehicle_bearing": "177",
+                    "vehicle_timestamp": "1469502726"
+                  }
+                },
+                {
+                  "trip_id": "30838431",
+                  "trip_name": "11:16 pm from Oak Grove to Forest Hills Orange Line",
+                  "trip_headsign": "Forest Hills",
+                  "sch_arr_dt": "1469503560",
+                  "sch_dep_dt": "1469503560",
+                  "pre_dt": "1469503510",
+                  "pre_away": "771",
+                  "vehicle": {
+                    "vehicle_id": "544761EF",
+                    "vehicle_lat": "42.43773",
+                    "vehicle_lon": "-71.07093",
+                    "vehicle_bearing": "5",
+                    "vehicle_timestamp": "1469502006"
+                  }
+                },
+                {
+                  "trip_id": "30838430",
+                  "trip_name": "11:26 pm from Oak Grove to Forest Hills Orange Line",
+                  "trip_headsign": "Forest Hills",
+                  "sch_arr_dt": "1469504160",
+                  "sch_dep_dt": "1469504160",
+                  "pre_dt": "1469504110",
+                  "pre_away": "1371"
+                },
+                {
+                  "trip_id": "30838429",
+                  "trip_name": "11:36 pm from Oak Grove to Forest Hills Orange Line",
+                  "trip_headsign": "Forest Hills",
+                  "sch_arr_dt": "1469504760",
+                  "sch_dep_dt": "1469504760",
+                  "pre_dt": "1469504710",
+                  "pre_away": "1971"
+                },
+                {
+                  "trip_id": "30838336",
+                  "trip_name": "11:45 pm from Oak Grove to Forest Hills Orange Line",
+                  "trip_headsign": "Forest Hills",
+                  "sch_arr_dt": "1469505300",
+                  "sch_dep_dt": "1469505300",
+                  "pre_dt": "1469505250",
+                  "pre_away": "2511"
+                }
+              ]
+            },
+            {
               "direction_id": "1",
               "direction_name": "Northbound",
               "trip": [
@@ -18,49 +83,339 @@
                   "trip_id": "30838424",
                   "trip_name": "10:44 pm from Forest Hills Orange Line to Oak Grove",
                   "trip_headsign": "Oak Grove",
-                  "sch_arr_dt": "1469070660",
-                  "sch_dep_dt": "1469070660",
-                  "pre_dt": "1469070835",
-                  "pre_away": "435",
+                  "sch_arr_dt": "1469502660",
+                  "sch_dep_dt": "1469502660",
+                  "pre_dt": "1469502941",
+                  "pre_away": "202",
                   "vehicle": {
-                    "vehicle_id": "5447469D",
-                    "vehicle_lat": "42.35809",
-                    "vehicle_lon": "-71.05771",
-                    "vehicle_bearing": "355",
-                    "vehicle_timestamp": "1469070386"
+                    "vehicle_id": "544766BC",
+                    "vehicle_lat": "42.36809",
+                    "vehicle_lon": "-71.06264",
+                    "vehicle_bearing": "330",
+                    "vehicle_timestamp": "1469502724"
                   }
                 },
                 {
                   "trip_id": "30838425",
                   "trip_name": "10:54 pm from Forest Hills Orange Line to Oak Grove",
                   "trip_headsign": "Oak Grove",
-                  "sch_arr_dt": "1469071260",
-                  "sch_dep_dt": "1469071260",
-                  "pre_dt": "1469071317",
-                  "pre_away": "917",
+                  "sch_arr_dt": "1469503260",
+                  "sch_dep_dt": "1469503260",
+                  "pre_dt": "1469503243",
+                  "pre_away": "504",
                   "vehicle": {
-                    "vehicle_id": "54473A75",
-                    "vehicle_lat": "42.34571",
-                    "vehicle_lon": "-71.07814",
-                    "vehicle_bearing": "40",
-                    "vehicle_timestamp": "1469070357"
+                    "vehicle_id": "54475B5A",
+                    "vehicle_lat": "42.35533",
+                    "vehicle_lon": "-71.06059",
+                    "vehicle_bearing": "25",
+                    "vehicle_timestamp": "1469502728"
                   }
                 },
                 {
                   "trip_id": "30838426",
                   "trip_name": "11:04 pm from Forest Hills Orange Line to Oak Grove",
                   "trip_headsign": "Oak Grove",
-                  "sch_arr_dt": "1469071860",
-                  "sch_dep_dt": "1469071860",
-                  "pre_dt": "1469071916",
-                  "pre_away": "1516",
+                  "sch_arr_dt": "1469503860",
+                  "sch_dep_dt": "1469503860",
+                  "pre_dt": "1469503840",
+                  "pre_away": "1101",
                   "vehicle": {
-                    "vehicle_id": "544746A3",
-                    "vehicle_lat": "42.31001",
-                    "vehicle_lon": "-71.10782",
-                    "vehicle_bearing": "30",
-                    "vehicle_timestamp": "1469070362"
+                    "vehicle_id": "54475F63",
+                    "vehicle_lat": "42.33371",
+                    "vehicle_lon": "-71.09274",
+                    "vehicle_bearing": "40",
+                    "vehicle_timestamp": "1469502726"
                   }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route_type": "3",
+      "mode_name": "Bus",
+      "route": [
+        {
+          "route_id": "101",
+          "route_name": "101",
+          "direction": [
+            {
+              "direction_id": "0",
+              "direction_name": "Outbound",
+              "trip": [
+                {
+                  "trip_id": "31199004",
+                  "trip_name": "11:30 pm from Sullivan Station - Upper Busway to Malden Ctr Station - West Busway",
+                  "trip_headsign": "Malden",
+                  "sch_arr_dt": "1469503800",
+                  "sch_dep_dt": "1469503800",
+                  "pre_dt": "1469503800",
+                  "pre_away": "1061"
+                }
+              ]
+            },
+            {
+              "direction_id": "1",
+              "direction_name": "Inbound",
+              "trip": [
+                {
+                  "trip_id": "31199003",
+                  "trip_name": "11:00 pm from Malden Ctr Station - West Busway to Sullivan Station - Upper Busway",
+                  "trip_headsign": "Sullivan Square",
+                  "sch_arr_dt": "1469503080",
+                  "sch_dep_dt": "1469503080",
+                  "pre_dt": "1469503416",
+                  "pre_away": "677",
+                  "vehicle": {
+                    "vehicle_id": "y1448",
+                    "vehicle_lat": "42.4109497070313",
+                    "vehicle_lon": "-71.1102905273438",
+                    "vehicle_bearing": "167",
+                    "vehicle_speed": "0",
+                    "vehicle_timestamp": "1469502694"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_id": "104",
+          "route_name": "104",
+          "direction": [
+            {
+              "direction_id": "0",
+              "direction_name": "Outbound",
+              "trip": [
+                {
+                  "trip_id": "31199121",
+                  "trip_name": "11:15 pm from Sullivan Station - Upper Busway to Malden Ctr Sta East Busway Bay",
+                  "trip_headsign": "Malden",
+                  "sch_arr_dt": "1469502900",
+                  "sch_dep_dt": "1469502900",
+                  "pre_dt": "1469502900",
+                  "pre_away": "161",
+                  "vehicle": {
+                    "vehicle_id": "y0442",
+                    "vehicle_lat": "42.3844261169434",
+                    "vehicle_lon": "-71.0765533447266",
+                    "vehicle_bearing": "216",
+                    "vehicle_speed": "0",
+                    "vehicle_timestamp": "1469502696"
+                  }
+                }
+              ]
+            },
+            {
+              "direction_id": "1",
+              "direction_name": "Inbound",
+              "trip": [
+                {
+                  "trip_id": "31199129",
+                  "trip_name": "11:40 pm from Malden Ctr Sta East Busway Bay to Sullivan Station - Upper Busway",
+                  "trip_headsign": "Sullivan",
+                  "sch_arr_dt": "1469505540",
+                  "sch_dep_dt": "1469505540",
+                  "pre_dt": "1469505696",
+                  "pre_away": "2957"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_id": "109",
+          "route_name": "109",
+          "direction": [
+            {
+              "direction_id": "0",
+              "direction_name": "Outbound",
+              "trip": [
+                {
+                  "trip_id": "31199936",
+                  "trip_name": "11:30 pm from Sullivan Station - Upper Busway to Broadway @ Ferry St",
+                  "trip_headsign": "Glendale Square",
+                  "sch_arr_dt": "1469503800",
+                  "sch_dep_dt": "1469503800",
+                  "pre_dt": "1469504005",
+                  "pre_away": "1266"
+                }
+              ]
+            },
+            {
+              "direction_id": "1",
+              "direction_name": "Inbound",
+              "trip": [
+                {
+                  "trip_id": "31199355",
+                  "trip_name": "11:05 pm from Lynn St @ Beach St to Sullivan Station - Upper Busway",
+                  "trip_headsign": "Sullivan Square",
+                  "sch_arr_dt": "1469503200",
+                  "sch_dep_dt": "1469503200",
+                  "pre_dt": "1469504004",
+                  "pre_away": "1265"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_id": "86",
+          "route_name": "86",
+          "direction": [
+            {
+              "direction_id": "0",
+              "direction_name": "Outbound",
+              "trip": [
+                {
+                  "trip_id": "31233942",
+                  "trip_name": "10:48 pm from Chestnut Hill Ave @ Reservoir Busway to Sullivan Station - Upper Busway",
+                  "trip_headsign": "Sullivan",
+                  "sch_arr_dt": "1469503080",
+                  "sch_dep_dt": "1469503080",
+                  "pre_dt": "1469503738",
+                  "pre_away": "999",
+                  "vehicle": {
+                    "vehicle_id": "y0625",
+                    "vehicle_lat": "42.371150970459",
+                    "vehicle_lon": "-71.1212997436523",
+                    "vehicle_bearing": "30",
+                    "vehicle_speed": "0",
+                    "vehicle_timestamp": "1469502619"
+                  }
+                },
+                {
+                  "trip_id": "31233945",
+                  "trip_name": "11:25 pm from Chestnut Hill Ave @ Reservoir Busway to Sullivan Station - Upper Busway",
+                  "trip_headsign": "Sullivan",
+                  "sch_arr_dt": "1469505300",
+                  "sch_dep_dt": "1469505300",
+                  "pre_dt": "1469505509",
+                  "pre_away": "2770"
+                }
+              ]
+            },
+            {
+              "direction_id": "1",
+              "direction_name": "Inbound",
+              "trip": [
+                {
+                  "trip_id": "31233944",
+                  "trip_name": "11:25 pm from Sullivan Station - Upper Busway to Chestnut Hill Ave @ Reservoir Busway",
+                  "trip_headsign": "Reservoir",
+                  "sch_arr_dt": "1469503500",
+                  "sch_dep_dt": "1469503500",
+                  "pre_dt": "1469503739",
+                  "pre_away": "1000"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_id": "89",
+          "route_name": "89",
+          "direction": [
+            {
+              "direction_id": "1",
+              "direction_name": "Inbound",
+              "trip": [
+                {
+                  "trip_id": "31198542",
+                  "trip_name": "11:30 pm from Davis Square Busway to Sullivan Station - Upper Busway",
+                  "trip_headsign": "Sullivan",
+                  "sch_arr_dt": "1469504580",
+                  "sch_dep_dt": "1469504580",
+                  "pre_dt": "1469504655",
+                  "pre_away": "1916"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_id": "91",
+          "route_name": "91",
+          "direction": [
+            {
+              "direction_id": "0",
+              "direction_name": "Outbound",
+              "trip": [
+                {
+                  "trip_id": "31198812",
+                  "trip_name": "11:05 pm from Magazine St @ Green St to Sullivan Station - Upper Busway",
+                  "trip_headsign": "Sullivan",
+                  "sch_arr_dt": "1469503200",
+                  "sch_dep_dt": "1469503200",
+                  "pre_dt": "1469503322",
+                  "pre_away": "583",
+                  "vehicle": {
+                    "vehicle_id": "y0658",
+                    "vehicle_lat": "42.3739624023438",
+                    "vehicle_lon": "-71.1004257202148",
+                    "vehicle_bearing": "10",
+                    "vehicle_speed": "0",
+                    "vehicle_timestamp": "1469502725"
+                  }
+                }
+              ]
+            },
+            {
+              "direction_id": "1",
+              "direction_name": "Inbound",
+              "trip": [
+                {
+                  "trip_id": "31198831",
+                  "trip_name": "11:40 pm from Sullivan Station - Upper Busway to Magazine St @ Green St",
+                  "trip_headsign": "Central",
+                  "sch_arr_dt": "1469504400",
+                  "sch_dep_dt": "1469504400",
+                  "pre_dt": "1469504400",
+                  "pre_away": "1661"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_id": "93",
+          "route_name": "93",
+          "direction": [
+            {
+              "direction_id": "0",
+              "direction_name": "Outbound",
+              "trip": [
+                {
+                  "trip_id": "31198825",
+                  "trip_name": "11:25 pm from Congress St @ Haymarket Sta to Sullivan Station - Upper Busway",
+                  "trip_headsign": "Sullivan",
+                  "sch_arr_dt": "1469504160",
+                  "sch_dep_dt": "1469504160",
+                  "pre_dt": "1469504291",
+                  "pre_away": "1552"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_id": "95",
+          "route_name": "95",
+          "direction": [
+            {
+              "direction_id": "0",
+              "direction_name": "Outbound",
+              "trip": [
+                {
+                  "trip_id": "31198899",
+                  "trip_name": "11:30 pm from Sullivan Station - Upper Busway to Playstead Rd @ Winthrop St - W Medford Sq",
+                  "trip_headsign": "West Medford",
+                  "sch_arr_dt": "1469503800",
+                  "sch_dep_dt": "1469503800",
+                  "pre_dt": "1469503800",
+                  "pre_away": "1061"
                 }
               ]
             }
