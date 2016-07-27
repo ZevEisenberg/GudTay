@@ -59,39 +59,32 @@ class MBTAViewController: UIViewController {
         super.viewDidLoad()
 
         mainStackView.edgeAnchors == view.edgeAnchors
-
-//        let mappings = [
-//            (containerView: subwayOrangeLine, routeType: ModeType.subway, routeId: "Orange", directionId: "0"),
-//            (containerView: busCT2, routeType: ModeType.bus, routeId: "747", directionId: "0"),
-//            (containerView: bus86, routeType: ModeType.bus, routeId: "86", directionId: "1"),
-//            (containerView: bus90, routeType: ModeType.bus, routeId: "90", directionId: "1"),
-//            (containerView: bus91, routeType: ModeType.bus, routeId: "91", directionId: "1"),
-//            ]
-
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        APIClient.predictionsByStop(stopId: "place-sull") { result in
-            switch result {
-            case .success(let jsonObject):
-                guard let jsons = jsonObject else {
-                    self.errorAlert(message: "nil json object")
-                    return
-                }
+        Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true, block: { _ in
+            APIClient.predictionsByStop(stopId: "place-sull") { result in
+                switch result {
+                case .success(let jsonObject):
+                    guard let jsons = jsonObject else {
+                        self.errorAlert(message: "nil json object")
+                        return
+                    }
 
-                do {
-                    let sullivan = try Stop(json: jsons)
-                    self.processStop(sullivan)
-                } catch let e {
-                    self.errorAlert(message: String(e))
-                }
+                    do {
+                        let sullivan = try Stop(json: jsons)
+                        self.processStop(sullivan)
+                    } catch let e {
+                        self.errorAlert(message: String(e))
+                    }
 
-            case .failure(let error):
-                self.errorAlert(message: error.localizedDescription)
+                case .failure(let error):
+                    self.errorAlert(message: error.localizedDescription)
+                }
             }
-        }
+        }).fire() // fire once initially
     }
 
 }
@@ -103,17 +96,26 @@ private extension MBTAViewController {
     }
 
     func processStop(_ stop: Stop) {
-        for mode in stop.modes {
-            for route in mode.routes {
-                print(route.name)
-                for direction in route.directions {
-                    print(direction.name)
-                    for trip in direction.trips {
-                        print(trip.name)
-                    }
-                }
-            }
+
+        let mappings = [
+            (containerView: subwayOrangeLine, routeType: ModeType.subway, routeId: "Orange", directionId: "0"),
+            (containerView: busCT2, routeType: ModeType.bus, routeId: "747", directionId: "0"),
+            (containerView: bus86, routeType: ModeType.bus, routeId: "86", directionId: "1"),
+            (containerView: bus90, routeType: ModeType.bus, routeId: "90", directionId: "1"),
+            (containerView: bus91, routeType: ModeType.bus, routeId: "91", directionId: "1"),
+            ]
+
+        for (containerView, routeType, routeId, directionId) in mappings {
+            let trips = stop.modes
+                .filter { mode in mode.type == routeType }
+                .flatMap { mode in mode.routes }
+                .filter { route in route.identifier == routeId }
+                .flatMap { route in route.directions }
+                .filter { direction in direction.identifier == directionId }
+                .flatMap { direction in direction.trips }
+            containerView.trips = trips
         }
+
     }
 
 }

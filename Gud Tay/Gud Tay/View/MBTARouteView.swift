@@ -7,19 +7,54 @@
 //
 
 import UIKit
+import Anchorage
 
 final class MBTARouteView: UIView {
 
+    // Public Properties
+
+    var trips: [Trip] = [] {
+        didSet {
+            trips.sort { trip1, trip2 in
+                return trip1.predictedDeparture < trip2.predictedDeparture
+            }
+            updateUI()
+        }
+    }
+
+    // Private Properties
+
+    private var label = UILabel(axId: "label")
+
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .white()
+        layer.borderColor = UIColor.black().cgColor
+        layer.borderWidth = 1
 
-        backgroundColor = UIColor(red: CGFloat(arc4random_uniform(100)) / 100.0,
-                                  green: CGFloat(arc4random_uniform(100)) / 100.0,
-                                  blue: CGFloat(arc4random_uniform(100)) / 100.0,
-                                  alpha: 1)
+        addSubview(label)
+
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
+        label.font = UIFont.boldSystemFont(ofSize: 44)
+        label.edgeAnchors == edgeAnchors + 10
     }
 
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+private extension MBTARouteView {
+
+    func updateUI() {
+
+        guard let firstTrip = trips.first else {
+            label.text = "no upcoming trips"
+            return
+        }
+
+        label.text = "\(firstTrip.name) leaving in \(Int(firstTrip.predictedSecondsAway / 60)) minutes"
+    }
+
 }
