@@ -33,7 +33,7 @@ final class MBTARouteView: GridView {
 
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont.boldSystemFont(ofSize: 44)
+        label.font = UIFont.boldSystemFont(ofSize: 30)
         label.edgeAnchors == edgeAnchors + 10
     }
 
