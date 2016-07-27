@@ -10,8 +10,6 @@
 		3EC87ADB7E7F0DD5E7261F04 /* Pods_Gud_Tay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C04EA3A9A26D3F4C10D4133 /* Pods_Gud_Tay.framework */; };
 		B4164F6990CDADEE81496E52 /* Pods_Gud_TayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370FEC8906996918721175C9 /* Pods_Gud_TayUITests.framework */; };
 		CD1279C71D45B37B00DC7BB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */; };
-		CD1279C91D45B37B00DC7BB8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279C81D45B37B00DC7BB8 /* RootViewController.swift */; };
-		CD1279CC1D45B37B00DC7BB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CA1D45B37B00DC7BB8 /* Main.storyboard */; };
 		CD1279CE1D45B37B00DC7BB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */; };
 		CD1279D11D45B37B00DC7BB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */; };
 		CD1279DC1D45B37B00DC7BB8 /* GudTayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279DB1D45B37B00DC7BB8 /* GudTayTests.swift */; };
@@ -34,10 +32,16 @@
 		CDECBAB81D46D97F007A82D5 /* JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB41D46D97F007A82D5 /* JSONRepresentable.swift */; };
 		CDECBAB91D46D97F007A82D5 /* JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB41D46D97F007A82D5 /* JSONRepresentable.swift */; };
 		CDECBABC1D46D9AE007A82D5 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB31D46D97F007A82D5 /* APIClient.swift */; };
-		CDECBABF1D46DF58007A82D5 /* MBTAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBABE1D46DF58007A82D5 /* MBTAViewController.swift */; };
-		CDECBAC01D46DF58007A82D5 /* MBTAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBABE1D46DF58007A82D5 /* MBTAViewController.swift */; };
 		CDECBAC31D46DF7A007A82D5 /* MBTAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAC21D46DF7A007A82D5 /* MBTAViewModel.swift */; };
 		CDECBAC41D46DF7A007A82D5 /* MBTAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAC21D46DF7A007A82D5 /* MBTAViewModel.swift */; };
+		CDF60DEE1D482D37003E2AFB /* MBTARouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF60DED1D482D37003E2AFB /* MBTARouteView.swift */; };
+		CDF60DF01D482D6A003E2AFB /* BusHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF60DEF1D482D6A003E2AFB /* BusHeaderView.swift */; };
+		CDF60DF21D482D75003E2AFB /* SubwayHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF60DF11D482D75003E2AFB /* SubwayHeaderView.swift */; };
+		CDF60DF41D482D85003E2AFB /* MBTAHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF60DF31D482D85003E2AFB /* MBTAHeaderView.swift */; };
+		CDF60DF71D482F9A003E2AFB /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF60DF61D482F9A003E2AFB /* UIView+Extensions.swift */; };
+		CDF60DF81D482F9A003E2AFB /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF60DF61D482F9A003E2AFB /* UIView+Extensions.swift */; };
+		CDF60DF91D48302B003E2AFB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279C81D45B37B00DC7BB8 /* RootViewController.swift */; };
+		CDF60DFF1D483190003E2AFB /* MBTAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBABE1D46DF58007A82D5 /* MBTAViewController.swift */; };
 		D66C501077EE59C9A92E58ED /* Pods_Gud_TayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC222D206FF1E0B1633B3D3A /* Pods_Gud_TayTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,7 +72,6 @@
 		CD1279C31D45B37B00DC7BB8 /* Gud Tay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gud Tay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD1279C81D45B37B00DC7BB8 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		CD1279CB1D45B37B00DC7BB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD1279D01D45B37B00DC7BB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD1279D21D45B37B00DC7BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,6 +92,11 @@
 		CDECBAB41D46D97F007A82D5 /* JSONRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRepresentable.swift; sourceTree = "<group>"; };
 		CDECBABE1D46DF58007A82D5 /* MBTAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTAViewController.swift; sourceTree = "<group>"; };
 		CDECBAC21D46DF7A007A82D5 /* MBTAViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTAViewModel.swift; sourceTree = "<group>"; };
+		CDF60DED1D482D37003E2AFB /* MBTARouteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTARouteView.swift; sourceTree = "<group>"; };
+		CDF60DEF1D482D6A003E2AFB /* BusHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusHeaderView.swift; sourceTree = "<group>"; };
+		CDF60DF11D482D75003E2AFB /* SubwayHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubwayHeaderView.swift; sourceTree = "<group>"; };
+		CDF60DF31D482D85003E2AFB /* MBTAHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTAHeaderView.swift; sourceTree = "<group>"; };
+		CDF60DF61D482F9A003E2AFB /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		DC222D206FF1E0B1633B3D3A /* Pods_Gud_TayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gud_TayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93EF258A0F38875794AB7E8 /* Pods-Gud TayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud TayTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gud TayTests/Pods-Gud TayTests.release.xcconfig"; sourceTree = "<group>"; };
 		FC0A7D79092335E5C4078089 /* Pods-Gud Tay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud Tay.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gud Tay/Pods-Gud Tay.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,12 +179,11 @@
 			isa = PBXGroup;
 			children = (
 				CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */,
-				CD1279C81D45B37B00DC7BB8 /* RootViewController.swift */,
 				CDECBAB21D46D97F007A82D5 /* API */,
 				CDECBA9C1D46D94A007A82D5 /* Model */,
 				CDECBABD1D46DF48007A82D5 /* View */,
 				CDECBAC11D46DF6C007A82D5 /* View Model */,
-				CD1279CA1D45B37B00DC7BB8 /* Main.storyboard */,
+				CDF60DF51D482F8C003E2AFB /* Utilities */,
 				CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */,
 				CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */,
 				CD1279D21D45B37B00DC7BB8 /* Info.plist */,
@@ -228,7 +235,12 @@
 		CDECBABD1D46DF48007A82D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CD1279C81D45B37B00DC7BB8 /* RootViewController.swift */,
 				CDECBABE1D46DF58007A82D5 /* MBTAViewController.swift */,
+				CDF60DED1D482D37003E2AFB /* MBTARouteView.swift */,
+				CDF60DF31D482D85003E2AFB /* MBTAHeaderView.swift */,
+				CDF60DEF1D482D6A003E2AFB /* BusHeaderView.swift */,
+				CDF60DF11D482D75003E2AFB /* SubwayHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -239,6 +251,14 @@
 				CDECBAC21D46DF7A007A82D5 /* MBTAViewModel.swift */,
 			);
 			path = "View Model";
+			sourceTree = "<group>";
+		};
+		CDF60DF51D482F8C003E2AFB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CDF60DF61D482F9A003E2AFB /* UIView+Extensions.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,7 +386,6 @@
 			files = (
 				CD1279D11D45B37B00DC7BB8 /* LaunchScreen.storyboard in Resources */,
 				CD1279CE1D45B37B00DC7BB8 /* Assets.xcassets in Resources */,
-				CD1279CC1D45B37B00DC7BB8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,18 +562,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDF60DF21D482D75003E2AFB /* SubwayHeaderView.swift in Sources */,
 				CDECBAB01D46D94A007A82D5 /* Vehicle.swift in Sources */,
+				CDF60DF91D48302B003E2AFB /* RootViewController.swift in Sources */,
 				CDECBAAC1D46D94A007A82D5 /* Stop.swift in Sources */,
-				CD1279C91D45B37B00DC7BB8 /* RootViewController.swift in Sources */,
 				CDECBAB61D46D97F007A82D5 /* APIClient.swift in Sources */,
 				CDECBAA81D46D94A007A82D5 /* Mode.swift in Sources */,
 				CDECBAB81D46D97F007A82D5 /* JSONRepresentable.swift in Sources */,
 				CDECBAC31D46DF7A007A82D5 /* MBTAViewModel.swift in Sources */,
+				CDF60DF01D482D6A003E2AFB /* BusHeaderView.swift in Sources */,
 				CD1279C71D45B37B00DC7BB8 /* AppDelegate.swift in Sources */,
+				CDF60DEE1D482D37003E2AFB /* MBTARouteView.swift in Sources */,
 				CDECBAAE1D46D94A007A82D5 /* Trip.swift in Sources */,
+				CDF60DF71D482F9A003E2AFB /* UIView+Extensions.swift in Sources */,
+				CDF60DF41D482D85003E2AFB /* MBTAHeaderView.swift in Sources */,
 				CDECBAAA1D46D94A007A82D5 /* Route.swift in Sources */,
 				CDECBAA41D46D94A007A82D5 /* Coordinate.swift in Sources */,
-				CDECBABF1D46DF58007A82D5 /* MBTAViewController.swift in Sources */,
+				CDF60DFF1D483190003E2AFB /* MBTAViewController.swift in Sources */,
 				CDECBAA61D46D94A007A82D5 /* Direction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,6 +593,7 @@
 				CDECBABC1D46D9AE007A82D5 /* APIClient.swift in Sources */,
 				CDECBAA51D46D94A007A82D5 /* Coordinate.swift in Sources */,
 				CDECBAA91D46D94A007A82D5 /* Mode.swift in Sources */,
+				CDF60DF81D482F9A003E2AFB /* UIView+Extensions.swift in Sources */,
 				CDECBAAB1D46D94A007A82D5 /* Route.swift in Sources */,
 				CDECBAA71D46D94A007A82D5 /* Direction.swift in Sources */,
 				CDECBAC41D46DF7A007A82D5 /* MBTAViewModel.swift in Sources */,
@@ -581,7 +606,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDECBAC01D46DF58007A82D5 /* MBTAViewController.swift in Sources */,
 				CD1279E71D45B37B00DC7BB8 /* Gud_TayUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,14 +626,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CD1279CA1D45B37B00DC7BB8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CD1279CB1D45B37B00DC7BB8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
