@@ -339,8 +339,8 @@
 				TargetAttributes = {
 					CD1279C21D45B37B00DC7BB8 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = RR6BY8422P;
-						DevelopmentTeamName = "Zev Eisenberg (Personal Team)";
+						DevelopmentTeam = 2KJHM26Y46;
+						DevelopmentTeamName = "Zev Eisenberg";
 						ProvisioningStyle = Automatic;
 					};
 					CD1279D61D45B37B00DC7BB8 = {
