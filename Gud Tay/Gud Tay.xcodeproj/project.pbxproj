@@ -84,6 +84,7 @@
 		CD1279E21D45B37B00DC7BB8 /* Gud TayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gud TayUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1279E61D45B37B00DC7BB8 /* Gud_TayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gud_TayUITests.swift; sourceTree = "<group>"; };
 		CD1279E81D45B37B00DC7BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDC371C21D4911E30054F343 /* Gud Tay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gud Tay-Bridging-Header.h"; sourceTree = "<group>"; };
 		CDCFC3A81D48610B001807B0 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		CDCFC3AC1D4863F8001807B0 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		CDCFC3AE1D486422001807B0 /* GudTayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GudTayView.swift; sourceTree = "<group>"; };
@@ -194,6 +195,7 @@
 				CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */,
 				CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */,
 				CD1279D21D45B37B00DC7BB8 /* Info.plist */,
+				CDC371C21D4911E30054F343 /* Gud Tay-Bridging-Header.h */,
 			);
 			path = "Gud Tay";
 			sourceTree = "<group>";
@@ -359,6 +361,7 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 2KJHM26Y46;
 						DevelopmentTeamName = "Zev Eisenberg";
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					CD1279D61D45B37B00DC7BB8 = {
@@ -766,10 +769,13 @@
 			baseConfigurationReference = BD519AB98CE48C9434FA9B47 /* Pods-Gud Tay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Gud Tay/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gud Tay/Gud Tay-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -779,10 +785,12 @@
 			baseConfigurationReference = FC0A7D79092335E5C4078089 /* Pods-Gud Tay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Gud Tay/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gud Tay/Gud Tay-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
