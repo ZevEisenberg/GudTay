@@ -39,20 +39,12 @@ class MBTAViewController: UIViewController {
             mainStackView.addArrangedSubview($0)
         }
 
-        let monsterView = GridView(axId: "monsterView")
-        let monsterLabel = UILabel(axId: "monsterLabel")
-        monsterLabel.text = "👹"
-        monsterLabel.font = UIFont.systemFont(ofSize: 200)
-        monsterView.addSubview(monsterLabel)
-        monsterLabel.centerXAnchor == monsterView.centerXAnchor
-        monsterLabel.centerYAnchor == monsterView.centerYAnchor
-
         rowStackViews[0].addArrangedSubview(subwayOrangeLine)
         rowStackViews[0].addArrangedSubview(busCT2)
         rowStackViews[1].addArrangedSubview(bus86)
         rowStackViews[1].addArrangedSubview(bus90)
         rowStackViews[2].addArrangedSubview(bus91)
-        rowStackViews[2].addArrangedSubview(monsterView)
+        rowStackViews[2].addArrangedSubview(GudTayView(axId: "gudTayView"))
     }
 
     override func viewDidLoad() {
