@@ -36,6 +36,13 @@ final class RootViewController: UIViewController {
         view.addSubview(mainStackView)
         mainStackView.addArrangedSubview(mbtaViewController.view)
         mainStackView.addArrangedSubview(weatherPlaceholderView)
+
+        let weatherLabel = UILabel(axId: "weatherLabel")
+        weatherLabel.text = "[ Today’s weather will go here ]"
+        weatherLabel.font = UIFont.systemFont(ofSize: 25)
+        weatherPlaceholderView.addSubview(weatherLabel)
+        weatherLabel.centerXAnchor == weatherPlaceholderView.centerXAnchor
+        weatherLabel.centerYAnchor == weatherPlaceholderView.centerYAnchor
     }
 
     override func viewDidLoad() {
@@ -45,7 +52,7 @@ final class RootViewController: UIViewController {
         mainStackView.topAnchor == topLayoutGuide.bottomAnchor
         mainStackView.bottomAnchor == bottomLayoutGuide.topAnchor
         weatherPlaceholderView.heightAnchor == view.heightAnchor * 0.2
-        weatherPlaceholderView.backgroundColor = #colorLiteral(red: 0.4120420814, green: 0.8022739887, blue: 0.9693969488, alpha: 1)
+        weatherPlaceholderView.backgroundColor = #colorLiteral(red: 0.8152596933, green: 0.9053656769, blue: 0.9693969488, alpha: 1)
     }
 
     override func viewDidAppear(_ animated: Bool) {
