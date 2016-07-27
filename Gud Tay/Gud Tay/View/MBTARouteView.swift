@@ -9,7 +9,7 @@
 import UIKit
 import Anchorage
 
-final class MBTARouteView: UIView {
+final class MBTARouteView: GridView {
 
     // Public Properties
 
@@ -28,9 +28,6 @@ final class MBTARouteView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white()
-        layer.borderColor = UIColor.black().cgColor
-        layer.borderWidth = 1
 
         addSubview(label)
 
@@ -40,9 +37,6 @@ final class MBTARouteView: UIView {
         label.edgeAnchors == edgeAnchors + 10
     }
 
-    @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
 
 private extension MBTARouteView {

@@ -14,6 +14,7 @@
 		CD1279D11D45B37B00DC7BB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */; };
 		CD1279DC1D45B37B00DC7BB8 /* GudTayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279DB1D45B37B00DC7BB8 /* GudTayTests.swift */; };
 		CD1279E71D45B37B00DC7BB8 /* Gud_TayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279E61D45B37B00DC7BB8 /* Gud_TayUITests.swift */; };
+		CDCFC3A91D48610B001807B0 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFC3A81D48610B001807B0 /* GridView.swift */; };
 		CDECBAA41D46D94A007A82D5 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBA9D1D46D94A007A82D5 /* Coordinate.swift */; };
 		CDECBAA51D46D94A007A82D5 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBA9D1D46D94A007A82D5 /* Coordinate.swift */; };
 		CDECBAA61D46D94A007A82D5 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBA9E1D46D94A007A82D5 /* Direction.swift */; };
@@ -81,6 +82,7 @@
 		CD1279E21D45B37B00DC7BB8 /* Gud TayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gud TayUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1279E61D45B37B00DC7BB8 /* Gud_TayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gud_TayUITests.swift; sourceTree = "<group>"; };
 		CD1279E81D45B37B00DC7BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDCFC3A81D48610B001807B0 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		CDECBA9D1D46D94A007A82D5 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		CDECBA9E1D46D94A007A82D5 /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		CDECBA9F1D46D94A007A82D5 /* Mode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				CD1279C81D45B37B00DC7BB8 /* RootViewController.swift */,
+				CDCFC3A81D48610B001807B0 /* GridView.swift */,
 				CDECBABE1D46DF58007A82D5 /* MBTAViewController.swift */,
 				CDF60DED1D482D37003E2AFB /* MBTARouteView.swift */,
 				CDF60DF31D482D85003E2AFB /* MBTAHeaderView.swift */,
@@ -562,6 +565,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDCFC3A91D48610B001807B0 /* GridView.swift in Sources */,
 				CDF60DF21D482D75003E2AFB /* SubwayHeaderView.swift in Sources */,
 				CDECBAB01D46D94A007A82D5 /* Vehicle.swift in Sources */,
 				CDF60DF91D48302B003E2AFB /* RootViewController.swift in Sources */,

@@ -39,7 +39,7 @@ class MBTAViewController: UIViewController {
             mainStackView.addArrangedSubview($0)
         }
 
-        let monsterView = UIView(axId: "monsterView")
+        let monsterView = GridView(axId: "monsterView")
         let monsterLabel = UILabel(axId: "monsterLabel")
         monsterLabel.text = "👹"
         monsterLabel.font = UIFont.systemFont(ofSize: 200)
