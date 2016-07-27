@@ -15,6 +15,7 @@
 		CD1279DC1D45B37B00DC7BB8 /* GudTayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279DB1D45B37B00DC7BB8 /* GudTayTests.swift */; };
 		CD1279E71D45B37B00DC7BB8 /* Gud_TayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279E61D45B37B00DC7BB8 /* Gud_TayUITests.swift */; };
 		CDCFC3A91D48610B001807B0 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFC3A81D48610B001807B0 /* GridView.swift */; };
+		CDCFC3AD1D4863F8001807B0 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFC3AC1D4863F8001807B0 /* Images.swift */; };
 		CDECBAA41D46D94A007A82D5 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBA9D1D46D94A007A82D5 /* Coordinate.swift */; };
 		CDECBAA51D46D94A007A82D5 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBA9D1D46D94A007A82D5 /* Coordinate.swift */; };
 		CDECBAA61D46D94A007A82D5 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBA9E1D46D94A007A82D5 /* Direction.swift */; };
@@ -83,6 +84,7 @@
 		CD1279E61D45B37B00DC7BB8 /* Gud_TayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gud_TayUITests.swift; sourceTree = "<group>"; };
 		CD1279E81D45B37B00DC7BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDCFC3A81D48610B001807B0 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		CDCFC3AC1D4863F8001807B0 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		CDECBA9D1D46D94A007A82D5 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		CDECBA9E1D46D94A007A82D5 /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		CDECBA9F1D46D94A007A82D5 /* Mode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				CDECBA9C1D46D94A007A82D5 /* Model */,
 				CDECBABD1D46DF48007A82D5 /* View */,
 				CDECBAC11D46DF6C007A82D5 /* View Model */,
+				CDCFC3AB1D4863F8001807B0 /* Generated */,
 				CDF60DF51D482F8C003E2AFB /* Utilities */,
 				CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */,
 				CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */,
@@ -209,6 +212,14 @@
 				CD1279E81D45B37B00DC7BB8 /* Info.plist */,
 			);
 			path = "Gud TayUITests";
+			sourceTree = "<group>";
+		};
+		CDCFC3AB1D4863F8001807B0 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				CDCFC3AC1D4863F8001807B0 /* Images.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		CDECBA9C1D46D94A007A82D5 /* Model */ = {
@@ -272,6 +283,7 @@
 			buildConfigurationList = CD1279EB1D45B37B00DC7BB8 /* Build configuration list for PBXNativeTarget "Gud Tay" */;
 			buildPhases = (
 				1C080E12C2743C2CAB6EEF0E /* [CP] Check Pods Manifest.lock */,
+				CDCFC3AA1D486368001807B0 /* SwiftGen */,
 				CD1279BF1D45B37B00DC7BB8 /* Sources */,
 				CD1279F41D45B40600DC7BB8 /* SwiftLint */,
 				CD1279C01D45B37B00DC7BB8 /* Frameworks */,
@@ -528,6 +540,20 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint Is not installed. Download from https://github.com/realm/SwiftLint\"\nfi";
 		};
+		CDCFC3AA1D486368001807B0 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SWIFTGEN_BINARY=\"$PODS_ROOT/SwiftGen/bin/swiftgen\"\n\nif which \"${SWIFTGEN_BINARY}\" >/dev/null; then\n    if [[ ${CONFIGURATION} = \"Debug\" ]]; then\n        \"${SWIFTGEN_BINARY}\" images \"$PROJECT_DIR\" --output \"$PROJECT_DIR/Gud Tay/Generated/Images.swift\"\n    fi\nelse\n    echo \"SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi";
+		};
 		DB2B5511529CFC1BD2453A49 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -582,6 +608,7 @@
 				CDF60DF41D482D85003E2AFB /* MBTAHeaderView.swift in Sources */,
 				CDECBAAA1D46D94A007A82D5 /* Route.swift in Sources */,
 				CDECBAA41D46D94A007A82D5 /* Coordinate.swift in Sources */,
+				CDCFC3AD1D4863F8001807B0 /* Images.swift in Sources */,
 				CDF60DFF1D483190003E2AFB /* MBTAViewController.swift in Sources */,
 				CDECBAA61D46D94A007A82D5 /* Direction.swift in Sources */,
 			);
