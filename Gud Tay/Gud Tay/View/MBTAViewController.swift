@@ -97,7 +97,9 @@ class MBTAViewController: UIViewController {
 private extension MBTAViewController {
 
     func errorAlert(message: String) {
-        show(UIAlertController(title: "Error", message: message, preferredStyle: .alert), sender: self)
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        show(alert, sender: self)
     }
 
     func processStop(_ stop: Stop) {
