@@ -84,7 +84,6 @@ class MBTAViewController: UIViewController {
                         BuddyBuildSDK.setCrashMetadataObject("Other error: \(e)", forKey: "deserializationError")
                         self.errorAlert(message: String(e))
                     }
-
                 case .failure(let error):
                     self.errorAlert(message: error.localizedDescription)
                 }
