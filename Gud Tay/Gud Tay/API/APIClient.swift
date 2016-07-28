@@ -71,6 +71,11 @@ private extension APIClient {
         session.dataTask(with: request as URLRequest) { (data, response, error) -> Void in
 
             if let data = data {
+                if let string = String(data: data, encoding: .utf8) {
+                    BuddyBuildSDK.setCrashMetadataObject(string, forKey: "originalResponse")
+                } else {
+                    BuddyBuildSDK.setCrashMetadataObject(data, forKey: "originalResponseThatCouldNotBeConvertedToAString")
+                }
                 let json = try? JSONSerialization.jsonObject(with: data, options: [])
                 if let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode {
                     DispatchQueue.main.async {
