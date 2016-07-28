@@ -87,6 +87,7 @@ private extension APIClient {
                         error = NSError.my_httpError(response: response)
                     }
                     DispatchQueue.main.async {
+                        BuddyBuildSDK.setCrashMetadataObject(error, forKey: "httpResponseError")
                         completion(.failure(error))
                     }
                 }
