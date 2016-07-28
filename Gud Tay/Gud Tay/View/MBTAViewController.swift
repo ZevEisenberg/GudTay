@@ -85,8 +85,8 @@ class MBTAViewController: UIViewController {
                         self.errorAlert(message: String(e))
                     }
                 case .failure(let error):
-                    fatalError("URL error: \(error)")
                     self.errorAlert(message: error.localizedDescription)
+                    fatalError("URL error: \(error)")
                 }
             }
         }).fire() // fire once initially
