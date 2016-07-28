@@ -84,7 +84,7 @@ private extension APIClient {
                 } else {
                     var error = error ?? NSError.my_genericError()
                     if let response = response as? HTTPURLResponse {
-                        error = NSError.my_httpError(code: response.statusCode)
+                        error = NSError.my_httpError(response: response)
                     }
                     DispatchQueue.main.async {
                         completion(.failure(error))
@@ -136,9 +136,9 @@ extension NSError {
             ])
     }
 
-    class func my_httpError(code: Int) -> NSError {
-        return NSError(domain: NSError.myDomain, code: code, userInfo: [
-            NSLocalizedDescriptionKey: "Got back HTTP error code \(code)."
+    class func my_httpError(response: HTTPURLResponse) -> NSError {
+        return NSError(domain: NSError.myDomain, code: response.statusCode, userInfo: [
+            NSLocalizedDescriptionKey: "Got back HTTP code \(response.statusCode) from request to URL \(response.url)."
             ])
     }
 
