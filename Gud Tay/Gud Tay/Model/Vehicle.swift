@@ -23,7 +23,8 @@ extension Vehicle: JSONRepresentable {
             identifier = try json.value(key: "vehicle_id")
             timestamp = try json.date(key: "vehicle_timestamp")
             location = try Coordinate(json: json)
-        } catch let error {
+        }
+        catch let error {
             throw error
         }
     }

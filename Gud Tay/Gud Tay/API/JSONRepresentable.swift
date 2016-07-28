@@ -25,7 +25,8 @@ extension Dictionary {
         guard let value = self[key] as? ReturnType else {
             if let key = key as? String {
                 throw JSONError.malformedOrMissingKey(key)
-            } else {
+            }
+            else {
                 throw JSONError.generic
             }
         }
@@ -40,7 +41,8 @@ extension Dictionary {
         guard let typedValue = value as? ReturnType else {
             if let key = key as? String {
                 throw JSONError.malformedOrMissingKey(key)
-            } else {
+            }
+            else {
                 throw JSONError.generic
             }
         }
@@ -51,7 +53,8 @@ extension Dictionary {
         guard let dateString = self[key] as? String else {
             if let key = key as? String {
                 throw JSONError.malformedOrMissingKey(key)
-            } else {
+            }
+            else {
                 throw JSONError.generic
             }
         }
@@ -59,7 +62,8 @@ extension Dictionary {
         guard let secondsSinceEpoch = TimeInterval(dateString) else {
             if let key = key as? String {
                 throw JSONError.malformedValue(key: key, value: dateString)
-            } else {
+            }
+            else {
                 throw JSONError.generic
             }
         }
@@ -71,7 +75,8 @@ extension Dictionary {
         guard let intervalString = self[key] as? String else {
             if let key = key as? String {
                 throw JSONError.malformedOrMissingKey(key)
-            } else {
+            }
+            else {
                 throw JSONError.generic
             }
         }
@@ -79,7 +84,8 @@ extension Dictionary {
         guard let interval = TimeInterval(intervalString) else {
             if let key = key as? String {
                 throw JSONError.malformedValue(key: key, value: intervalString)
-            } else {
+            }
+            else {
                 throw JSONError.generic
             }
         }
@@ -106,7 +112,8 @@ extension JSONListable {
     static func objects(from: [JSONObject]) throws -> [Self] {
         do {
             return try from.map(Self.init(json:))
-        } catch let e {
+        }
+        catch let e {
             throw e
         }
     }

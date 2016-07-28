@@ -73,7 +73,8 @@ private extension APIClient {
             if let data = data {
                 if let string = String(data: data, encoding: .utf8) {
                     BuddyBuildSDK.setCrashMetadataObject(string, forKey: "originalResponse")
-                } else {
+                }
+                else {
                     BuddyBuildSDK.setCrashMetadataObject(data, forKey: "originalResponseThatCouldNotBeConvertedToAString")
                 }
                 let json = try? JSONSerialization.jsonObject(with: data, options: [])
@@ -81,7 +82,8 @@ private extension APIClient {
                     DispatchQueue.main.async {
                         completion(.success(json as? JSONObject))
                     }
-                } else {
+                }
+                else {
                     var error = error ?? NSError.my_genericError()
                     if let response = response as? HTTPURLResponse {
                         error = NSError.my_httpError(response: response)
@@ -111,7 +113,8 @@ private extension APIClient {
             if let escapedKey = key.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed),
                 let escapedValue = value.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
                 paramPairs.append("\(escapedKey)=\(escapedValue)")
-            } else {
+            }
+            else {
                 preconditionFailure("unable to escape either key: '\(key)' or value: \(value)")
             }
         }

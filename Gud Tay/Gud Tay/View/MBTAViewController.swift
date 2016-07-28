@@ -68,19 +68,24 @@ class MBTAViewController: UIViewController {
                     do {
                         let sullivan = try Stop(json: jsons)
                         self.processStop(sullivan)
-                    } catch JSONError.generic {
+                    }
+                    catch JSONError.generic {
                         BuddyBuildSDK.setCrashMetadataObject("Generic JSON Error", forKey: "deserializationError")
                         fatalError("Generic JSON Error")
-                    } catch JSONError.malformedOrMissingKey(let key) {
+                    }
+                    catch JSONError.malformedOrMissingKey(let key) {
                         BuddyBuildSDK.setCrashMetadataObject("malformed or missing key: \(key)", forKey: "deserializationError")
                         fatalError("malformed or missing key: \(key)")
-                    } catch JSONError.malformedValue(let key, let value) {
+                    }
+                    catch JSONError.malformedValue(let key, let value) {
                         BuddyBuildSDK.setCrashMetadataObject("malformed value '\(value)' for key '\(key)'", forKey: "deserializationError")
                         fatalError("malformed value '\(value)' for key '\(key)'")
-                    } catch JSONError.malformedDescendent(let descendent) {
+                    }
+                    catch JSONError.malformedDescendent(let descendent) {
                         BuddyBuildSDK.setCrashMetadataObject("malformed descendent: \(descendent)", forKey: "deserializationError")
                         fatalError("malformed descendent: \(descendent)")
-                    } catch let e {
+                    }
+                    catch let e {
                         BuddyBuildSDK.setCrashMetadataObject("Other error: \(e)", forKey: "deserializationError")
                         self.errorAlert(message: String(e))
                     }

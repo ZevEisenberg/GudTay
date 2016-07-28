@@ -15,3 +15,5 @@ excluded: # paths to ignore during linting. overridden by `included`.
   - Carthage
   - Pods
   - Constants
+statement_position:
+  statement_mode: uncuddled_else

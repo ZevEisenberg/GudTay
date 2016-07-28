@@ -23,10 +23,12 @@ extension Stop: JSONRepresentable {
 
             if let modesValue: [JSONObject] = try json.optionalValue(key: "mode") {
                 modes = try Mode.objects(from: modesValue)
-            } else {
+            }
+            else {
                 modes = []
             }
-        } catch let error {
+        }
+        catch let error {
             throw error
         }
     }

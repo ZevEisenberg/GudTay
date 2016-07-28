@@ -36,10 +36,12 @@ extension Trip: JSONRepresentable {
 
             if let vehicleJson: JSONObject = try json.optionalValue(key: "vehicle") {
                 vehicle = try Vehicle(json: vehicleJson)
-            } else {
+            }
+            else {
                 vehicle = nil
             }
-        } catch let error {
+        }
+        catch let error {
             throw error
         }
     }

@@ -59,10 +59,12 @@ extension Mode: JSONRepresentable {
 
             if let routesValue: [JSONObject] = try json.optionalValue(key: "route") {
                 routes = try Route.objects(from: routesValue)
-            } else {
+            }
+            else {
                 routes = []
             }
-        } catch let error {
+        }
+        catch let error {
             throw error
         }
     }

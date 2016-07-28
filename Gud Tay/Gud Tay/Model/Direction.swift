@@ -23,7 +23,8 @@ extension Direction: JSONRepresentable {
 
             let tripValue: [JSONObject] = try json.value(key: "trip")
             trips = try Trip.objects(from: tripValue)
-        } catch let error {
+        }
+        catch let error {
             throw error
         }
     }

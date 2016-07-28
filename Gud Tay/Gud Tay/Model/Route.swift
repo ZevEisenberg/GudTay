@@ -23,7 +23,8 @@ extension Route: JSONRepresentable {
 
             let directionsValue: [JSONObject] = try json.value(key: "direction")
             directions = try Direction.objects(from: directionsValue)
-        } catch let error {
+        }
+        catch let error {
             throw error
         }
     }
