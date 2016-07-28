@@ -18,31 +18,20 @@
 		CDCFC3AD1D4863F8001807B0 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFC3AC1D4863F8001807B0 /* Images.swift */; };
 		CDCFC3AF1D486422001807B0 /* GudTayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFC3AE1D486422001807B0 /* GudTayView.swift */; };
 		CDECBAA41D46D94A007A82D5 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBA9D1D46D94A007A82D5 /* Coordinate.swift */; };
-		CDECBAA51D46D94A007A82D5 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBA9D1D46D94A007A82D5 /* Coordinate.swift */; };
 		CDECBAA61D46D94A007A82D5 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBA9E1D46D94A007A82D5 /* Direction.swift */; };
-		CDECBAA71D46D94A007A82D5 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBA9E1D46D94A007A82D5 /* Direction.swift */; };
 		CDECBAA81D46D94A007A82D5 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBA9F1D46D94A007A82D5 /* Mode.swift */; };
-		CDECBAA91D46D94A007A82D5 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBA9F1D46D94A007A82D5 /* Mode.swift */; };
 		CDECBAAA1D46D94A007A82D5 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAA01D46D94A007A82D5 /* Route.swift */; };
-		CDECBAAB1D46D94A007A82D5 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAA01D46D94A007A82D5 /* Route.swift */; };
 		CDECBAAC1D46D94A007A82D5 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAA11D46D94A007A82D5 /* Stop.swift */; };
-		CDECBAAD1D46D94A007A82D5 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAA11D46D94A007A82D5 /* Stop.swift */; };
 		CDECBAAE1D46D94A007A82D5 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAA21D46D94A007A82D5 /* Trip.swift */; };
-		CDECBAAF1D46D94A007A82D5 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAA21D46D94A007A82D5 /* Trip.swift */; };
 		CDECBAB01D46D94A007A82D5 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAA31D46D94A007A82D5 /* Vehicle.swift */; };
-		CDECBAB11D46D94A007A82D5 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAA31D46D94A007A82D5 /* Vehicle.swift */; };
 		CDECBAB61D46D97F007A82D5 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB31D46D97F007A82D5 /* APIClient.swift */; };
 		CDECBAB81D46D97F007A82D5 /* JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB41D46D97F007A82D5 /* JSONRepresentable.swift */; };
-		CDECBAB91D46D97F007A82D5 /* JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB41D46D97F007A82D5 /* JSONRepresentable.swift */; };
-		CDECBABC1D46D9AE007A82D5 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB31D46D97F007A82D5 /* APIClient.swift */; };
 		CDECBAC31D46DF7A007A82D5 /* MBTAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAC21D46DF7A007A82D5 /* MBTAViewModel.swift */; };
-		CDECBAC41D46DF7A007A82D5 /* MBTAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAC21D46DF7A007A82D5 /* MBTAViewModel.swift */; };
 		CDF60DEE1D482D37003E2AFB /* MBTARouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF60DED1D482D37003E2AFB /* MBTARouteView.swift */; };
 		CDF60DF01D482D6A003E2AFB /* BusHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF60DEF1D482D6A003E2AFB /* BusHeaderView.swift */; };
 		CDF60DF21D482D75003E2AFB /* SubwayHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF60DF11D482D75003E2AFB /* SubwayHeaderView.swift */; };
 		CDF60DF41D482D85003E2AFB /* MBTAHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF60DF31D482D85003E2AFB /* MBTAHeaderView.swift */; };
 		CDF60DF71D482F9A003E2AFB /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF60DF61D482F9A003E2AFB /* UIView+Extensions.swift */; };
-		CDF60DF81D482F9A003E2AFB /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF60DF61D482F9A003E2AFB /* UIView+Extensions.swift */; };
 		CDF60DF91D48302B003E2AFB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279C81D45B37B00DC7BB8 /* RootViewController.swift */; };
 		CDF60DFF1D483190003E2AFB /* MBTAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBABE1D46DF58007A82D5 /* MBTAViewController.swift */; };
 		D66C501077EE59C9A92E58ED /* Pods_Gud_TayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC222D206FF1E0B1633B3D3A /* Pods_Gud_TayTests.framework */; };
@@ -625,18 +614,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDECBAB11D46D94A007A82D5 /* Vehicle.swift in Sources */,
 				CD1279DC1D45B37B00DC7BB8 /* GudTayTests.swift in Sources */,
-				CDECBAB91D46D97F007A82D5 /* JSONRepresentable.swift in Sources */,
-				CDECBABC1D46D9AE007A82D5 /* APIClient.swift in Sources */,
-				CDECBAA51D46D94A007A82D5 /* Coordinate.swift in Sources */,
-				CDECBAA91D46D94A007A82D5 /* Mode.swift in Sources */,
-				CDF60DF81D482F9A003E2AFB /* UIView+Extensions.swift in Sources */,
-				CDECBAAB1D46D94A007A82D5 /* Route.swift in Sources */,
-				CDECBAA71D46D94A007A82D5 /* Direction.swift in Sources */,
-				CDECBAC41D46DF7A007A82D5 /* MBTAViewModel.swift in Sources */,
-				CDECBAAF1D46D94A007A82D5 /* Trip.swift in Sources */,
-				CDECBAAD1D46D94A007A82D5 /* Stop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
