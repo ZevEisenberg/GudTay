@@ -6,13 +6,13 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
-enum MBTAService {
+protocol MBTAServiceType {
 
-    static func stopsNearHome(completion: (APIClient.Result) -> ()) {
-        let params = ["lat": Constants.lat, "lon": Constants.lon]
+    static func predictionsByStop(stopId: String, completion: (APIClient.Result) -> ())
 
-        getRequest(path: Endpoints.stopsByLocation, params: params, completion: completion)
-    }
+}
+
+enum MBTAService: MBTAServiceType {
 
     static func predictionsByStop(stopId: String, completion: (APIClient.Result) -> ()) {
         let params = ["stop": stopId]
@@ -30,14 +30,11 @@ private extension MBTAService {
         static let appName = "status-board-mbta"
         static let host = "https://realtime.mbta.com"
         static let commonPath = "developer/api/v2"
-        static let lat = "42.385081"
-        static let lon = "-71.077848"
 
     }
 
     struct Endpoints {
 
-        static let stopsByLocation = "stopsbylocation"
         static let predictionsByStop = "predictionsbystop"
 
     }
