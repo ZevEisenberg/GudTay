@@ -130,7 +130,7 @@ private extension APIClient {
 
 }
 
-extension NSError {
+private extension NSError {
 
     @nonobjc static let myDomain = "com.zeveisenberg.gudtay"
 
