@@ -19,49 +19,15 @@ enum APIClient {
 
     }
 
-    static func stopsNearHome(completion: (Result) -> ()) {
-        let params = ["lat": Constants.lat, "lon": Constants.lon]
-
-        get(clientURLRequest(Endpoints.stopsByLocation, params: params), completion: completion)
-    }
-
-    static func predictionsByStop(stopId: String, completion: (Result) -> ()) {
-        let params = ["stop": stopId]
-
-        get(clientURLRequest(Endpoints.predictionsByStop, params: params), completion: completion)
+    static func get(baseUrl: URL, path: String, params: Dictionary<String, AnyObject>? = nil, completion: (Result) -> ()) {
+        let params = params ?? [:]
+        let request = clientURLRequest(baseUrl: baseUrl, path: path, params: params)
+        dataTask(request, method: "GET", completion: completion)
     }
 
 }
 
 private extension APIClient {
-
-    struct Constants {
-
-        static let apiKey = "40jKQwmnXk-4slxceBfcEA"
-        static let username = "ZevEisenberg"
-        static let appName = "status-board-mbta"
-        static let host = "https://realtime.mbta.com"
-        static let commonPath = "developer/api/v2"
-        static let lat = "42.385081"
-        static let lon = "-71.077848"
-
-    }
-
-    struct Endpoints {
-
-        static let stopsByLocation = "stopsbylocation"
-        static let predictionsByStop = "predictionsbystop"
-
-    }
-
-    static func baseUrl() -> URL {
-        let hostUrl = URL(string: Constants.host)!
-        guard let commonUrl = try? hostUrl.appendingPathComponent(Constants.commonPath) else {
-            preconditionFailure()
-        }
-
-        return commonUrl
-    }
 
     static func dataTask(_ request: NSMutableURLRequest, method: String, completion: (Result) -> ()) {
         request.httpMethod = method
@@ -97,19 +63,12 @@ private extension APIClient {
             }.resume()
     }
 
-    static func get(_ request: NSMutableURLRequest, completion: (Result) -> ()) {
-        dataTask(request, method: "GET", completion: completion)
-    }
-
-    static func clientURLRequest(_ path: String, params: Dictionary<String, AnyObject>? = nil) -> NSMutableURLRequest {
-        let baseUrl = APIClient.baseUrl()
+    static func clientURLRequest(baseUrl: URL, path: String, params: Dictionary<String, AnyObject>) -> NSMutableURLRequest {
         guard let urlWithPath = try? baseUrl.appendingPathComponent(path) else {
             preconditionFailure()
         }
-        var mutableParams = params ?? [:]
-        mutableParams["api_key"] = Constants.apiKey
         var paramPairs = [String]()
-        for (key, value) in mutableParams {
+        for (key, value) in params {
             if let escapedKey = key.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed),
                 let escapedValue = value.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
                 paramPairs.append("\(escapedKey)=\(escapedValue)")

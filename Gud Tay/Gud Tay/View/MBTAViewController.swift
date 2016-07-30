@@ -57,7 +57,7 @@ class MBTAViewController: UIViewController {
         super.viewDidAppear(animated)
 
         Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true, block: { _ in
-            APIClient.predictionsByStop(stopId: "place-sull") { result in
+            MBTAService.predictionsByStop(stopId: "place-sull") { result in
                 switch result {
                 case .success(let jsonObject):
                     guard let jsons = jsonObject else {
