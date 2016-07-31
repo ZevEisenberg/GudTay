@@ -90,6 +90,7 @@ private extension APIClient {
         let fullUrl = urlComponents?.url!
 
         let request = NSMutableURLRequest(url: fullUrl!)
+        request.timeoutInterval = 10.0
 
         return request
     }
