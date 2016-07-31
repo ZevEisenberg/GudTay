@@ -60,6 +60,13 @@ private extension APIClient {
                     }
                 }
             }
+            else {
+                DispatchQueue.main.async {
+                    let error = error ?? NSError.my_genericError()
+                    BuddyBuildSDK.setCrashMetadataObject(error, forKey: "httpResponseError")
+                    completion(.failure(error))
+                }
+            }
             }.resume()
     }
 

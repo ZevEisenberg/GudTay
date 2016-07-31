@@ -11,6 +11,8 @@ import Anchorage
 
 class MBTAViewController: UIViewController {
 
+    let viewModel: MBTAViewModel
+
     let subwayOrangeLine = MBTARouteView(axId: "subwayOrangeLine")
     let busCT2 = MBTARouteView(axId: "busCT2")
     let bus86 = MBTARouteView(axId: "bus86")
@@ -29,6 +31,15 @@ class MBTAViewController: UIViewController {
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         return stackView
+    }
+
+    init(viewModel: MBTAViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func loadView() {
@@ -57,41 +68,12 @@ class MBTAViewController: UIViewController {
         super.viewDidAppear(animated)
 
         Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true, block: { _ in
-            MBTAService.predictionsByStop(stopId: "place-sull") { result in
+            self.viewModel.refresh { result in
                 switch result {
-                case .success(let jsonObject):
-                    guard let jsons = jsonObject else {
-                        self.errorAlert(message: "nil json object")
-                        return
-                    }
-
-                    do {
-                        let sullivan = try Stop(json: jsons)
-                        self.processStop(sullivan)
-                    }
-                    catch JSONError.generic {
-                        BuddyBuildSDK.setCrashMetadataObject("Generic JSON Error", forKey: "deserializationError")
-                        fatalError("Generic JSON Error")
-                    }
-                    catch JSONError.malformedOrMissingKey(let key) {
-                        BuddyBuildSDK.setCrashMetadataObject("malformed or missing key: \(key)", forKey: "deserializationError")
-                        fatalError("malformed or missing key: \(key)")
-                    }
-                    catch JSONError.malformedValue(let key, let value) {
-                        BuddyBuildSDK.setCrashMetadataObject("malformed value '\(value)' for key '\(key)'", forKey: "deserializationError")
-                        fatalError("malformed value '\(value)' for key '\(key)'")
-                    }
-                    catch JSONError.malformedDescendent(let descendent) {
-                        BuddyBuildSDK.setCrashMetadataObject("malformed descendent: \(descendent)", forKey: "deserializationError")
-                        fatalError("malformed descendent: \(descendent)")
-                    }
-                    catch let e {
-                        BuddyBuildSDK.setCrashMetadataObject("Other error: \(e)", forKey: "deserializationError")
-                        self.errorAlert(message: String(e))
-                    }
+                case .success(let stop):
+                    self.processStop(stop)
                 case .failure(let error):
-                    self.errorAlert(message: error.localizedDescription)
-                    fatalError("URL error: \(error)")
+                    self.processError(error)
                 }
             }
         }).fire() // fire once initially
@@ -127,7 +109,19 @@ private extension MBTAViewController {
                 .flatMap { direction in direction.trips }
             containerView.trips = trips
         }
+    }
 
+    func processError(_ error: MBTAViewModel.Error) {
+        switch error {
+        case .jsonWasNil:
+            errorAlert(message: "Error: JSON from server was nil")
+        case .networkError(let nsError):
+            errorAlert(message: "Network error: \(nsError.localizedDescription)")
+        case .jsonError(let jsonError):
+            errorAlert(message: "JSON Error: \(jsonError)")
+        case .genericError(let genericError):
+            errorAlert(message: "Generic error: \(genericError)")
+        }
     }
 
 }

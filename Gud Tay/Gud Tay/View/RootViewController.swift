@@ -11,7 +11,7 @@ import Anchorage
 
 final class RootViewController: UIViewController {
 
-    private let mbtaViewController = MBTAViewController()
+    private let mbtaViewController = MBTAViewController(viewModel: MBTAViewModel(serviceType: MBTAService.self))
     private let mainStackView: UIStackView = {
         let stackView = UIStackView(axId: "mainStackView")
         stackView.axis = .vertical
