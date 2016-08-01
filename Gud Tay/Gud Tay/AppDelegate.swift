@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         BuddyBuildSDK.setup()
 
-        window = UIWindow(frame: UIScreen.main().bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
         let rootVC = RootViewController()
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()

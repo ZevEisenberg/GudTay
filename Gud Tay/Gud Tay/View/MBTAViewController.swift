@@ -73,7 +73,7 @@ class MBTAViewController: UIViewController {
                 case .success(let stop):
                     self.processStop(stop)
                 case .failure(let error):
-                    self.processError(error)
+                    self.processRefreshError(error)
                 }
             }
         }).fire() // fire once initially
@@ -111,7 +111,7 @@ private extension MBTAViewController {
         }
     }
 
-    func processError(_ error: MBTAViewModel.Error) {
+    func processRefreshError(_ error: MBTAViewModel.RefreshError) {
         switch error {
         case .jsonWasNil:
             errorAlert(message: "Error: JSON from server was nil")

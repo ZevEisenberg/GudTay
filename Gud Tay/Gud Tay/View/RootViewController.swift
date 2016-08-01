@@ -31,7 +31,7 @@ final class RootViewController: UIViewController {
 
     override func loadView() {
         view = UIView(axId: "rootViewController.view")
-        view.backgroundColor = .white()
+        view.backgroundColor = .white
 
         view.addSubview(mainStackView)
         mainStackView.addArrangedSubview(mbtaViewController.view)

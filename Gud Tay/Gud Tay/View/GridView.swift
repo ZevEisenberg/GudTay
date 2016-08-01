@@ -12,8 +12,8 @@ class GridView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white()
-        layer.borderColor = UIColor.black().cgColor
+        backgroundColor = UIColor.white
+        layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 1
     }
 

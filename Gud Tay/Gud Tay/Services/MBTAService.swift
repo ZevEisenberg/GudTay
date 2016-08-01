@@ -41,11 +41,8 @@ private extension MBTAService {
 
     static func baseUrl() -> URL {
         let hostUrl = URL(string: Constants.host)!
-        guard let commonUrl = try? hostUrl.appendingPathComponent(Constants.commonPath) else {
-            preconditionFailure()
-        }
 
-        return commonUrl
+        return hostUrl.appendingPathComponent(Constants.commonPath)
     }
 
     static func getRequest(path: String, params: Dictionary<String, AnyObject>? = nil, completion: (APIClient.Result) -> ()) {

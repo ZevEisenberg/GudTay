@@ -71,9 +71,6 @@ private extension APIClient {
     }
 
     static func clientURLRequest(baseUrl: URL, path: String, params: Dictionary<String, AnyObject>) -> NSMutableURLRequest {
-        guard let urlWithPath = try? baseUrl.appendingPathComponent(path) else {
-            preconditionFailure()
-        }
         var paramPairs = [String]()
         for (key, value) in params {
             if let escapedKey = key.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed),
@@ -85,7 +82,7 @@ private extension APIClient {
             }
         }
 
-        var urlComponents = URLComponents(url: urlWithPath, resolvingAgainstBaseURL: false)
+        var urlComponents = URLComponents(url: baseUrl.appendingPathComponent(path), resolvingAgainstBaseURL: false)
         urlComponents?.percentEncodedQuery = paramPairs.joined(separator: "&")
         let fullUrl = urlComponents?.url!
 

@@ -11,16 +11,16 @@ final class MBTAViewModel {
     enum Result {
 
         case success(Stop)
-        case failure(MBTAViewModel.Error)
+        case failure(MBTAViewModel.RefreshError)
 
     }
 
-    enum Error: ErrorProtocol {
+    enum RefreshError: Error {
 
         case jsonWasNil
         case networkError(NSError)
         case jsonError(JSONError)
-        case genericError(ErrorProtocol)
+        case genericError(Error)
 
     }
 

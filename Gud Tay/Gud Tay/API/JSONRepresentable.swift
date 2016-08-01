@@ -10,7 +10,7 @@ import Foundation.NSDate
 
 typealias JSONObject = [String: AnyObject]
 
-enum JSONError: ErrorProtocol {
+enum JSONError: Error {
 
     case generic
     case malformedOrMissingKey(String)
