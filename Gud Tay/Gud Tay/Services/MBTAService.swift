@@ -6,6 +6,8 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
+import Foundation
+
 protocol MBTAServiceType {
 
     static func predictionsByStop(stopId: String, completion: (APIClient.Result) -> ())
@@ -16,7 +18,7 @@ enum MBTAService: MBTAServiceType {
 
     static func predictionsByStop(stopId: String, completion: (APIClient.Result) -> ()) {
         let params = ["stop": stopId]
-        getRequest(path: Endpoints.predictionsByStop, params: params, completion: completion)
+        MBTAService.getRequest(path: Endpoints.predictionsByStop, params: params, completion: completion)
     }
 
 }

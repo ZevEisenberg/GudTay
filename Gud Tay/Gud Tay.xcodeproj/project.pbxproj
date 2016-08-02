@@ -12,8 +12,22 @@
 		CD1279C71D45B37B00DC7BB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */; };
 		CD1279CE1D45B37B00DC7BB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */; };
 		CD1279D11D45B37B00DC7BB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */; };
-		CD1279DC1D45B37B00DC7BB8 /* GudTayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279DB1D45B37B00DC7BB8 /* GudTayTests.swift */; };
 		CD1279E71D45B37B00DC7BB8 /* Gud_TayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279E61D45B37B00DC7BB8 /* Gud_TayUITests.swift */; };
+		CD12DE3C1D4FE82E00956B74 /* Sample MBTA API Response.json in Resources */ = {isa = PBXBuildFile; fileRef = CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */; };
+		CD555FCF1D50396700D9413F /* MBTAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAC21D46DF7A007A82D5 /* MBTAViewModel.swift */; };
+		CD555FD01D50397D00D9413F /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAA11D46D94A007A82D5 /* Stop.swift */; };
+		CD555FD11D50398100D9413F /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBA9F1D46D94A007A82D5 /* Mode.swift */; };
+		CD555FD21D50398600D9413F /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAA01D46D94A007A82D5 /* Route.swift */; };
+		CD555FD31D50398A00D9413F /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBA9E1D46D94A007A82D5 /* Direction.swift */; };
+		CD555FD41D50398F00D9413F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAA21D46D94A007A82D5 /* Trip.swift */; };
+		CD555FD51D50399300D9413F /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAA31D46D94A007A82D5 /* Vehicle.swift */; };
+		CD555FD61D50399800D9413F /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBA9D1D46D94A007A82D5 /* Coordinate.swift */; };
+		CD60D15C1D4FE87C000B74CF /* MBTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8357511D4C4DA5009E76A7 /* MBTAService.swift */; };
+		CD60D15D1D4FE884000B74CF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB31D46D97F007A82D5 /* APIClient.swift */; };
+		CD60D15E1D4FE891000B74CF /* JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB41D46D97F007A82D5 /* JSONRepresentable.swift */; };
+		CD6A633C1D514ACB009571DE /* CrashReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A633B1D514ACB009571DE /* CrashReporter.swift */; };
+		CD6A633E1D514CA2009571DE /* CrashReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A633B1D514ACB009571DE /* CrashReporter.swift */; };
+		CD6A63401D515C3E009571DE /* MBTATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12DE3B1D4FE82E00956B74 /* MBTATests.swift */; };
 		CD8357521D4C4DA5009E76A7 /* MBTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8357511D4C4DA5009E76A7 /* MBTAService.swift */; };
 		CDCFC3A91D48610B001807B0 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFC3A81D48610B001807B0 /* GridView.swift */; };
 		CDCFC3AD1D4863F8001807B0 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFC3AC1D4863F8001807B0 /* Images.swift */; };
@@ -69,11 +83,13 @@
 		CD1279D01D45B37B00DC7BB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD1279D21D45B37B00DC7BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD1279D71D45B37B00DC7BB8 /* Gud TayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gud TayTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD1279DB1D45B37B00DC7BB8 /* GudTayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GudTayTests.swift; sourceTree = "<group>"; };
 		CD1279DD1D45B37B00DC7BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD1279E21D45B37B00DC7BB8 /* Gud TayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gud TayUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1279E61D45B37B00DC7BB8 /* Gud_TayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gud_TayUITests.swift; sourceTree = "<group>"; };
 		CD1279E81D45B37B00DC7BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Sample MBTA API Response.json"; sourceTree = "<group>"; };
+		CD12DE3B1D4FE82E00956B74 /* MBTATests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTATests.swift; sourceTree = "<group>"; };
+		CD6A633B1D514ACB009571DE /* CrashReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashReporter.swift; sourceTree = "<group>"; };
 		CD8357511D4C4DA5009E76A7 /* MBTAService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTAService.swift; sourceTree = "<group>"; };
 		CDC371C21D4911E30054F343 /* Gud Tay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gud Tay-Bridging-Header.h"; sourceTree = "<group>"; };
 		CDCFC3A81D48610B001807B0 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
@@ -195,7 +211,8 @@
 		CD1279DA1D45B37B00DC7BB8 /* Gud TayTests */ = {
 			isa = PBXGroup;
 			children = (
-				CD1279DB1D45B37B00DC7BB8 /* GudTayTests.swift */,
+				CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */,
+				CD12DE3B1D4FE82E00956B74 /* MBTATests.swift */,
 				CD1279DD1D45B37B00DC7BB8 /* Info.plist */,
 			);
 			path = "Gud TayTests";
@@ -276,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				CDF60DF61D482F9A003E2AFB /* UIView+Extensions.swift */,
+				CD6A633B1D514ACB009571DE /* CrashReporter.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -369,7 +387,6 @@
 						DevelopmentTeam = RR6BY8422P;
 						DevelopmentTeamName = "Zev Eisenberg (Personal Team)";
 						ProvisioningStyle = Automatic;
-						TestTargetID = CD1279C21D45B37B00DC7BB8;
 					};
 					CD1279E11D45B37B00DC7BB8 = {
 						CreatedOnToolsVersion = 8.0;
@@ -414,6 +431,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD12DE3C1D4FE82E00956B74 /* Sample MBTA API Response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +633,7 @@
 				CDF60DF71D482F9A003E2AFB /* UIView+Extensions.swift in Sources */,
 				CDF60DF41D482D85003E2AFB /* MBTAHeaderView.swift in Sources */,
 				CDECBAAA1D46D94A007A82D5 /* Route.swift in Sources */,
+				CD6A633C1D514ACB009571DE /* CrashReporter.swift in Sources */,
 				CDECBAA41D46D94A007A82D5 /* Coordinate.swift in Sources */,
 				CDCFC3AD1D4863F8001807B0 /* Images.swift in Sources */,
 				CDF60DFF1D483190003E2AFB /* MBTAViewController.swift in Sources */,
@@ -626,7 +645,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD1279DC1D45B37B00DC7BB8 /* GudTayTests.swift in Sources */,
+				CD555FD41D50398F00D9413F /* Trip.swift in Sources */,
+				CD60D15E1D4FE891000B74CF /* JSONRepresentable.swift in Sources */,
+				CD555FCF1D50396700D9413F /* MBTAViewModel.swift in Sources */,
+				CD60D15C1D4FE87C000B74CF /* MBTAService.swift in Sources */,
+				CD60D15D1D4FE884000B74CF /* APIClient.swift in Sources */,
+				CD555FD21D50398600D9413F /* Route.swift in Sources */,
+				CD555FD01D50397D00D9413F /* Stop.swift in Sources */,
+				CD6A63401D515C3E009571DE /* MBTATests.swift in Sources */,
+				CD555FD51D50399300D9413F /* Vehicle.swift in Sources */,
+				CD6A633E1D514CA2009571DE /* CrashReporter.swift in Sources */,
+				CD555FD11D50398100D9413F /* Mode.swift in Sources */,
+				CD555FD31D50398A00D9413F /* Direction.swift in Sources */,
+				CD555FD61D50399800D9413F /* Coordinate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,8 +711,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -728,8 +761,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -758,6 +793,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BD519AB98CE48C9434FA9B47 /* Pods-Gud Tay.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Gud Tay/Info.plist";
@@ -774,6 +810,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC0A7D79092335E5C4078089 /* Pods-Gud Tay.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Gud Tay/Info.plist";
@@ -789,13 +826,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 43503C8DE54F3EA4F36E22A3 /* Pods-Gud TayTests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Gud TayTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DTESTING";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zeveisenberg.Gud-TayTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gud Tay.app/Gud Tay";
 			};
 			name = Debug;
 		};
@@ -803,13 +839,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E93EF258A0F38875794AB7E8 /* Pods-Gud TayTests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Gud TayTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DTESTING";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zeveisenberg.Gud-TayTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gud Tay.app/Gud Tay";
 			};
 			name = Release;
 		};

@@ -38,10 +38,10 @@ private extension APIClient {
 
             if let data = data {
                 if let string = String(data: data, encoding: .utf8) {
-                    BuddyBuildSDK.setCrashMetadataObject(string, forKey: "originalResponse")
+                    CrashReporter.set(metadataObject: string, forKey: "originalResponse")
                 }
                 else {
-                    BuddyBuildSDK.setCrashMetadataObject(data, forKey: "originalResponseThatCouldNotBeConvertedToAString")
+                    CrashReporter.set(metadataObject: data, forKey: "originalResponseThatCouldNotBeConvertedToAString")
                 }
                 let json = try? JSONSerialization.jsonObject(with: data, options: [])
                 if let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode {
@@ -55,7 +55,7 @@ private extension APIClient {
                         error = NSError.my_httpError(response: response)
                     }
                     DispatchQueue.main.async {
-                        BuddyBuildSDK.setCrashMetadataObject(error, forKey: "httpResponseError")
+                        CrashReporter.set(metadataObject: error, forKey: "httpResponseError")
                         completion(.failure(error))
                     }
                 }
@@ -63,7 +63,7 @@ private extension APIClient {
             else {
                 DispatchQueue.main.async {
                     let error = error ?? NSError.my_genericError()
-                    BuddyBuildSDK.setCrashMetadataObject(error, forKey: "httpResponseError")
+                    CrashReporter.set(metadataObject: error, forKey: "httpResponseError")
                     completion(.failure(error))
                 }
             }

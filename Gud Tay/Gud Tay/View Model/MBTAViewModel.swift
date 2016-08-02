@@ -6,6 +6,8 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
+import Foundation
+
 final class MBTAViewModel {
 
     enum Result {
@@ -24,9 +26,9 @@ final class MBTAViewModel {
 
     }
 
-    let serviceType: MBTAServiceType.Type
+    private let serviceType: MBTAServiceType.Type
 
-    init(serviceType: MBTAService.Type) {
+    init(serviceType: MBTAServiceType.Type) {
         self.serviceType = serviceType
     }
 
