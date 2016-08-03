@@ -391,13 +391,13 @@
 					};
 					CD1279D61D45B37B00DC7BB8 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = RR6BY8422P;
+						DevelopmentTeam = 2KJHM26Y46;
 						DevelopmentTeamName = "Zev Eisenberg (Personal Team)";
 						ProvisioningStyle = Automatic;
 					};
 					CD1279E11D45B37B00DC7BB8 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = RR6BY8422P;
+						DevelopmentTeam = 2KJHM26Y46;
 						DevelopmentTeamName = "Zev Eisenberg (Personal Team)";
 						ProvisioningStyle = Automatic;
 						TestTargetID = CD1279C21D45B37B00DC7BB8;
@@ -836,6 +836,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 43503C8DE54F3EA4F36E22A3 /* Pods-Gud TayTests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 2KJHM26Y46;
 				INFOPLIST_FILE = "Gud TayTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-DTESTING";
@@ -849,6 +850,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E93EF258A0F38875794AB7E8 /* Pods-Gud TayTests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 2KJHM26Y46;
 				INFOPLIST_FILE = "Gud TayTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-DTESTING";
@@ -862,6 +864,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3699ED083B111605113BD927 /* Pods-Gud TayUITests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 2KJHM26Y46;
 				INFOPLIST_FILE = "Gud TayUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zeveisenberg.Gud-TayUITests";
@@ -875,6 +878,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1C313718F7075C011A2F739D /* Pods-Gud TayUITests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 2KJHM26Y46;
 				INFOPLIST_FILE = "Gud TayUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zeveisenberg.Gud-TayUITests";
