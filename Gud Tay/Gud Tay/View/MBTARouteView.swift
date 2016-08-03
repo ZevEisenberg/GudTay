@@ -13,11 +13,14 @@ final class MBTARouteView: GridView {
 
     // Public Properties
 
-    var trips: [Trip] = [] {
+    var upcomingTrips: MBTAViewModel.UpcomingTrips = .none {
         didSet {
-            trips.sort { trip1, trip2 in
-                return trip1.predictedDeparture < trip2.predictedDeparture
-            }
+            updateUI()
+        }
+    }
+
+    var header: MBTAViewModel.Header? {
+        didSet {
             updateUI()
         }
     }
@@ -25,6 +28,18 @@ final class MBTARouteView: GridView {
     // Private Properties
 
     private var label = UILabel(axId: "label")
+
+    private var headerView: MBTAHeaderView? {
+        willSet {
+            headerView?.removeFromSuperview()
+        }
+        didSet {
+            guard let headerView = headerView else { return }
+            addSubview(headerView)
+            headerView.topAnchor == topAnchor
+            headerView.horizontalAnchors == horizontalAnchors
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,13 +57,35 @@ final class MBTARouteView: GridView {
 private extension MBTARouteView {
 
     func updateUI() {
-
-        guard let firstTrip = trips.first else {
+        switch upcomingTrips {
+        case .none:
             label.text = "no upcoming trips"
+        case .one(let next):
+            label.text = "next mins: \(next.formattedAsMinutes)"
+        case .two(let next, let later):
+            label.text = "next mins: \(next.formattedAsMinutes)\nlater mins: \(later.formattedAsMinutes)"
+        }
+
+        guard let header = header else {
             return
         }
 
-        label.text = "\(firstTrip.name) leaving in \(Int(firstTrip.predictedSecondsAway / 60)) minutes"
+        switch header {
+        case .bus(let route, let destination):
+            print("setting up bus header view with route \(route), destination \(destination)")
+            headerView = BusHeaderView()
+        case .subway(let route, let direction, let destination):
+            print("setting up subway header view with route \(route), direction \(direction), destination \(destination)")
+            headerView = SubwayHeaderView()
+        }
+    }
+
+}
+
+private extension TimeInterval {
+
+    var formattedAsMinutes: String {
+        return String(Int(floor(self / 60.0)))
     }
 
 }

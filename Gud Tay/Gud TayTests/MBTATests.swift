@@ -56,87 +56,32 @@ class GudTayTests: XCTestCase {
         let viewModel = MBTAViewModel(serviceType: MockMBTAService.self)
         viewModel.refresh { result in
             switch result {
-            case .success(let stop):
-                XCTAssertEqual(stop.identifier, "place-sull")
-                XCTAssertEqual(stop.name, "Sullivan Square")
+            case .success(let tripsAndHeaders):
 
-                for mode in stop.modes {
-                    for route in mode.routes {
-                        for direction in route.directions {
-                            for trip in direction.trips {
-                                XCTAssertTrue(trip.headsign.characters.count > 0)
-                            }
-                        }
-                    }
-                }
+                let subwayOrangeTrips = tripsAndHeaders[0].trips
+                let subwayOrangeHeader = tripsAndHeaders[0].header
+                XCTAssertEqual(subwayOrangeTrips, MBTAViewModel.UpcomingTrips.two(next: 243.0, later: 771.0))
+                XCTAssertEqual(subwayOrangeHeader, MBTAViewModel.Header.subway(route: "SomeSubway", direction: "SomeDirection", destination: "SomePlace"))
 
-                let modes = stop.modes
-                XCTAssertEqual(modes.count, 2)
+                let busCT2Trips = tripsAndHeaders[1].trips
+                let busCT2Header = tripsAndHeaders[1].header
+                XCTAssertEqual(busCT2Trips, MBTAViewModel.UpcomingTrips.none)
+                XCTAssertEqual(busCT2Header, MBTAViewModel.Header.bus(route: "SomeBus", destination: "SomePlace"))
 
-                let subway = modes[0]
-                XCTAssertEqual(subway.name, "Subway")
-                XCTAssertEqual(subway.type, .subway)
+                let bus86Trips = tripsAndHeaders[2].trips
+                let bus86Header = tripsAndHeaders[2].header
+                XCTAssertEqual(bus86Trips, MBTAViewModel.UpcomingTrips.one(next: 1000.0))
+                XCTAssertEqual(bus86Header, MBTAViewModel.Header.bus(route: "SomeBus", destination: "SomePlace"))
 
-                let bus = modes[1]
-                XCTAssertEqual(bus.name, "Bus")
-                XCTAssertEqual(bus.type, .bus)
+                let bus90Trips = tripsAndHeaders[3].trips
+                let bus90Header = tripsAndHeaders[3].header
+                XCTAssertEqual(bus90Trips, MBTAViewModel.UpcomingTrips.none)
+                XCTAssertEqual(bus90Header, MBTAViewModel.Header.bus(route: "SomeBus", destination: "SomePlace"))
 
-                let subwayRoutes = subway.routes
-                XCTAssertEqual(subwayRoutes.count, 1)
-
-                let orangeLine = subwayRoutes[0]
-                XCTAssertEqual(orangeLine.name, "Orange Line")
-
-                let orangeLineDirections = orangeLine.directions
-                XCTAssertEqual(orangeLineDirections.count, 2)
-
-                let orangeSouthbound = orangeLineDirections[0]
-                XCTAssertEqual(orangeSouthbound.name, "Southbound")
-
-                let orangeTrips = orangeSouthbound.trips
-                XCTAssertEqual(orangeTrips.count, 5)
-
-                let orangeTrip = orangeTrips[0]
-                XCTAssertEqual(orangeTrip.identifier, "30838432")
-                XCTAssertEqual(orangeTrip.name, "11:06 pm from Oak Grove to Forest Hills Orange Line")
-                XCTAssertEqual(orangeTrip.headsign, "Forest Hills")
-
-                let busRoutes = bus.routes
-                XCTAssertEqual(busRoutes.count, 8)
-
-                let eightySix = busRoutes[3]
-                XCTAssertEqual(eightySix.name, "86")
-
-                let eightySixDirections = eightySix.directions
-                XCTAssertEqual(eightySixDirections.count, 2)
-
-                let eightySixInbound = eightySixDirections[1]
-                XCTAssertEqual(eightySixInbound.name, "Inbound")
-
-                let eightySixTrips = eightySixInbound.trips
-                XCTAssertEqual(eightySixTrips.count, 1)
-
-                let eightySixTrip = eightySixTrips[0]
-                XCTAssertEqual(eightySixTrip.identifier, "31233944")
-                XCTAssertEqual(eightySixTrip.name, "11:25 pm from Sullivan Station - Upper Busway to Chestnut Hill Ave @ Reservoir Busway")
-                XCTAssertEqual(eightySixTrip.headsign, "Reservoir")
-
-                let ninetyOne = busRoutes[5]
-                XCTAssertEqual(ninetyOne.name, "91")
-
-                let ninetyOneDirections = ninetyOne.directions
-                XCTAssertEqual(ninetyOneDirections.count, 2)
-
-                let ninetyOneInbound = ninetyOneDirections[1]
-                XCTAssertEqual(ninetyOneInbound.name, "Inbound")
-
-                let ninetyOneTrips = ninetyOneInbound.trips
-                XCTAssertEqual(ninetyOneTrips.count, 1)
-
-                let ninetyOneTrip = ninetyOneTrips[0]
-                XCTAssertEqual(ninetyOneTrip.identifier, "31198831")
-                XCTAssertEqual(ninetyOneTrip.name, "11:40 pm from Sullivan Station - Upper Busway to Magazine St @ Green St")
-                XCTAssertEqual(ninetyOneTrip.headsign, "Central")
+                let bus91Trips = tripsAndHeaders[4].trips
+                let bus91Header = tripsAndHeaders[4].header
+                XCTAssertEqual(bus91Trips, MBTAViewModel.UpcomingTrips.one(next: 1661.0))
+                XCTAssertEqual(bus91Header, MBTAViewModel.Header.bus(route: "SomeBus", destination: "SomePlace"))
             case .failure(let error):
                 XCTFail("got unexpected error: \(error)")
             }
