@@ -842,7 +842,7 @@
 				INFOPLIST_FILE = "Gud TayTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-DTESTING";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.zeveisenberg.Gud-TayTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -856,7 +856,7 @@
 				INFOPLIST_FILE = "Gud TayTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-DTESTING";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.zeveisenberg.Gud-TayTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -869,7 +869,7 @@
 				DEVELOPMENT_TEAM = 2KJHM26Y46;
 				INFOPLIST_FILE = "Gud TayUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.zeveisenberg.Gud-TayUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Gud Tay";
@@ -883,7 +883,7 @@
 				DEVELOPMENT_TEAM = 2KJHM26Y46;
 				INFOPLIST_FILE = "Gud TayUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.zeveisenberg.Gud-TayUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Gud Tay";
