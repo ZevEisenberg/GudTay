@@ -138,6 +138,58 @@
       "mode_name": "Bus",
       "route": [
         {
+          "route_id": "90",
+          "route_name": "90",
+          "direction": [
+            {
+              "direction_id": "0",
+              "direction_name": "Outbound",
+              "trip": [
+                {
+                  "trip_id": "31199906",
+                  "trip_name": "6:05 pm from Wellington Station Busway to Davis Square Busway",
+                  "trip_headsign": "Davis",
+                  "sch_arr_dt": "1469744460",
+                  "sch_dep_dt": "1469744460",
+                  "pre_dt": "1469744416",
+                  "pre_away": "242",
+                  "vehicle": {
+                    "vehicle_id": "y0700",
+                    "vehicle_lat": "42.3939628601074",
+                    "vehicle_lon": "-71.0818786621094",
+                    "vehicle_bearing": "151",
+                    "vehicle_speed": "0",
+                    "vehicle_timestamp": "1469744116"
+                  }
+                }
+              ]
+            },
+            {
+              "direction_id": "1",
+              "direction_name": "Inbound",
+              "trip": [
+                {
+                  "trip_id": "31199904",
+                  "trip_name": "6:05 pm from Davis Square Busway to Wellington Station Busway",
+                  "trip_headsign": "Wellington",
+                  "sch_arr_dt": "1469745000",
+                  "sch_dep_dt": "1469745000",
+                  "pre_dt": "1469744833",
+                  "pre_away": "659",
+                  "vehicle": {
+                    "vehicle_id": "y0684",
+                    "vehicle_lat": "42.3902397155762",
+                    "vehicle_lon": "-71.1081237792969",
+                    "vehicle_bearing": "120",
+                    "vehicle_speed": "0",
+                    "vehicle_timestamp": "1469744108"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
           "route_id": "101",
           "route_name": "101",
           "direction": [
@@ -420,8 +472,79 @@
               ]
             }
           ]
+        },
+        {
+          "route_id": "747",
+          "route_name": "CT2",
+          "direction": [
+            {
+              "direction_id": "0",
+              "direction_name": "Outbound",
+              "trip": [
+                {
+                  "trip_id": "31105283",
+                  "trip_name": "5:25 pm from Ruggles Station - Lane 2 to Sullivan Station - Upper Busway",
+                  "trip_headsign": "Sullivan (Limited Stops)",
+                  "sch_arr_dt": "1469744220",
+                  "sch_dep_dt": "1469744220",
+                  "pre_dt": "1469744829",
+                  "pre_away": "655",
+                  "vehicle": {
+                    "vehicle_id": "y0473",
+                    "vehicle_lat": "42.3684577941895",
+                    "vehicle_lon": "-71.0943603515625",
+                    "vehicle_bearing": "318",
+                    "vehicle_speed": "0",
+                    "vehicle_timestamp": "1469744108"
+                  }
+                },
+                {
+                  "trip_id": "31105284",
+                  "trip_name": "5:55 pm from Ruggles Station - Lane 2 to Sullivan Station - Upper Busway",
+                  "trip_headsign": "Sullivan (Limited Stops)",
+                  "sch_arr_dt": "1469745600",
+                  "sch_dep_dt": "1469745600",
+                  "pre_dt": "1469747028",
+                  "pre_away": "2854"
+                },
+                {
+                  "trip_id": "31105285",
+                  "trip_name": "6:20 pm from Ruggles Station - Lane 2 to Sullivan Station - Upper Busway",
+                  "trip_headsign": "Sullivan (Limited Stops)",
+                  "sch_arr_dt": "1469746860",
+                  "sch_dep_dt": "1469746860",
+                  "pre_dt": "1469747774",
+                  "pre_away": "3600"
+                },
+                {
+                  "trip_id": "31105286",
+                  "trip_name": "6:45 pm from Ruggles Station - Lane 2 to Sullivan Station - Upper Busway",
+                  "trip_headsign": "Sullivan (Limited Stops)",
+                  "sch_arr_dt": "1469748360",
+                  "sch_dep_dt": "1469748360",
+                  "pre_dt": "1469748817",
+                  "pre_away": "4643"
+                }
+              ]
+            },
+            {
+              "direction_id": "1",
+              "direction_name": "Inbound",
+              "trip": [
+                {
+                  "trip_id": "31105314",
+                  "trip_name": "6:30 pm from Sullivan Station - Lower Busway to Ruggles Sta - Upper Level",
+                  "trip_headsign": "Ruggles (Limited Stops)",
+                  "sch_arr_dt": "1469745000",
+                  "sch_dep_dt": "1469745000",
+                  "pre_dt": "1469745000",
+                  "pre_away": "826"
+                }
+              ]
+            }
+          ]
         }
-      ]
+      ],
     }
   ],
   "alert_headers": [

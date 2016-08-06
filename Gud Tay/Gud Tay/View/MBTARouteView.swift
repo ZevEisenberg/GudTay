@@ -74,8 +74,8 @@ private extension MBTARouteView {
         case .bus(let route, let destination):
             print("setting up bus header view with route \(route), destination \(destination)")
             headerView = BusHeaderView()
-        case .subway(let route, let direction, let destination):
-            print("setting up subway header view with route \(route), direction \(direction), destination \(destination)")
+        case .subway(let route, let destination):
+            print("setting up subway header view with route \(route), destination \(destination)")
             headerView = SubwayHeaderView()
         }
     }

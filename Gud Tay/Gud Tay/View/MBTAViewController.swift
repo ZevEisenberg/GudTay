@@ -98,7 +98,7 @@ private extension MBTAViewController {
         show(alert, sender: self)
     }
 
-    func processTrips(_ trips: [(trips: MBTAViewModel.UpcomingTrips, header: MBTAViewModel.Header)], routeViews: [MBTARouteView]) {
+    func processTrips(_ trips: [(trips: MBTAViewModel.UpcomingTrips, header: MBTAViewModel.Header?)], routeViews: [MBTARouteView]) {
         zip(routeViews, trips).forEach { routeView, tripsAndHeader in
             routeView.upcomingTrips = tripsAndHeader.trips
             routeView.header = tripsAndHeader.header

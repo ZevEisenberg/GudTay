@@ -54,3 +54,42 @@ private extension MBTAService {
     }
 
 }
+
+final class DummyClass { }
+
+enum MockMBTAService: MBTAServiceType {
+
+    static func predictionsByStop(stopId: String, completion: (APIClient.Result) -> ()) {
+        assert(stopId == "place-sull")
+        let filename = "Sample MBTA API Response"
+        let ext = "json"
+        guard let url = Bundle(for: DummyClass.self).url(forResource: filename, withExtension: ext) else {
+            assertionFailure("Could not find URL of \(filename).\(ext)")
+            return
+        }
+
+        var jsonData: Data! = nil
+        do {
+            jsonData = try Data(contentsOf: url)
+        }
+        catch let e {
+            assertionFailure("Error getting contents of \(filename)\(ext): \(e)")
+        }
+
+        var deserialized: AnyObject! = nil
+        do {
+            deserialized = try JSONSerialization.jsonObject(with: jsonData, options: [])
+        }
+        catch let e {
+            assertionFailure("Error deserializing JSON data: \(e)")
+        }
+
+        guard let jsonObject = deserialized as? JSONObject else {
+            assertionFailure("Could not convert deserialized JSON to a JSONObject: \(deserialized)")
+            return
+        }
+
+        completion(.success(jsonObject))
+    }
+
+}

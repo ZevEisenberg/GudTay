@@ -12,7 +12,7 @@ final class MBTAViewModel {
 
     enum Header {
 
-        case subway(route: String, direction: String, destination: String)
+        case subway(route: String, destination: String)
         case bus(route: String, destination: String)
 
     }
@@ -29,7 +29,7 @@ final class MBTAViewModel {
 
     enum Result {
 
-        case success([(trips: UpcomingTrips, header: Header)])
+        case success([(trips: UpcomingTrips, header: Header?)])
         case failure(MBTAViewModel.RefreshError)
 
     }
@@ -79,11 +79,11 @@ final class MBTAViewModel {
 
 private extension MBTAViewModel {
 
-    static func upcomingTripsViewModelsAndHeaders(from stop: Stop) -> [(trips: UpcomingTrips, header: Header)] {
+    static func upcomingTripsViewModelsAndHeaders(from stop: Stop) -> [(trips: UpcomingTrips, header: Header?)] {
 
         let routeDescriptions = [
             (routeType: ModeType.subway, routeId: "Orange", directionId: "0"),
-            (routeType: ModeType.bus, routeId: "747", directionId: "0"),
+            (routeType: ModeType.bus, routeId: "747", directionId: "1"),
             (routeType: ModeType.bus, routeId: "86", directionId: "1"),
             (routeType: ModeType.bus, routeId: "90", directionId: "1"),
             (routeType: ModeType.bus, routeId: "91", directionId: "1"),
@@ -95,29 +95,41 @@ private extension MBTAViewModel {
 
     }
 
-    static func upcomingTripsAndHeader(fromStop stop: Stop, routeDescription: RouteDescription) -> (trips: UpcomingTrips, header: Header) {
+    static func upcomingTripsAndHeader(fromStop stop: Stop, routeDescription: RouteDescription) -> (trips: UpcomingTrips, header: Header?) {
 
         let (routeType, routeId, directionId) = routeDescription
-        let trips = stop.modes
-            .filter { mode in mode.type == routeType }
-            .flatMap { mode in mode.routes }
-            .filter { route in route.identifier == routeId }
-            .flatMap { route in route.directions }
-            .filter { direction in direction.identifier == directionId }
-            .flatMap { direction in direction.trips }
+
+        let routesAndTrips = stop.modes
+            .filter { stopMode in stopMode.type == routeType }
+            .flatMap { stopMode in
+                stopMode.routes
+                    .filter { route in route.identifier == routeId }
+                    .flatMap { route in
+                        route.directions
+                            .filter { direction in direction.identifier == directionId }
+                            .flatMap { direction in direction.trips }
+                            .map { trip in (route: route, trip: trip) }
+                }
+        }
+
+        guard !routesAndTrips.isEmpty else {
+            return (trips: .none, header: nil)
+        }
+
+        let routeAndTrips = (route: routesAndTrips[0].route, trips: routesAndTrips.flatMap { tuple in tuple.trip })
 
         let header: Header
         switch routeType {
         case .bus:
-            header = .bus(route: "SomeBus", destination: "SomePlace")
+            header = .bus(route: routeAndTrips.route.name, destination: routeAndTrips.trips.first?.headsign ?? "TODO: capture headsign if there are no trips")
         case .subway:
-            header = .subway(route: "SomeSubway", direction: "SomeDirection", destination: "SomePlace")
+            header = .subway(route: routeAndTrips.route.name, destination: routeAndTrips.trips.first?.headsign ?? "TODO: capture headsign if there are no trips")
         default:
             fatalError("Unexpected route type: \(routeType)")
         }
 
-        let first = trips[safe: 0]
-        let second = trips[safe: 1]
+        let first = routeAndTrips.trips[safe: 0]
+        let second = routeAndTrips.trips[safe: 1]
 
         let upcomingTrips: UpcomingTrips
 
@@ -157,8 +169,8 @@ extension MBTAViewModel.Header: Equatable {
 
     static func == (lhs: MBTAViewModel.Header, rhs: MBTAViewModel.Header) -> Bool {
         switch (lhs, rhs) {
-        case (.subway(let aRoute, let aDirection, let aDestination), .subway(let bRoute, let bDirection, let bDestination)):
-            return aRoute == bRoute && aDirection == bDirection && aDestination == bDestination
+        case (.subway(let aRoute, let aDestination), .subway(let bRoute, let bDestination)):
+            return aRoute == bRoute && aDestination == bDestination
         case (.bus(let aRoute, let aDestination), .bus(let bRoute, let bDestination)):
             return aRoute == bRoute && aDestination == bDestination
         default:

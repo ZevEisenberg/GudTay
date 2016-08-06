@@ -13,7 +13,6 @@
 		CD1279CE1D45B37B00DC7BB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */; };
 		CD1279D11D45B37B00DC7BB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */; };
 		CD1279E71D45B37B00DC7BB8 /* Gud_TayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279E61D45B37B00DC7BB8 /* Gud_TayUITests.swift */; };
-		CD12DE3C1D4FE82E00956B74 /* Sample MBTA API Response.json in Resources */ = {isa = PBXBuildFile; fileRef = CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */; };
 		CD555FCF1D50396700D9413F /* MBTAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAC21D46DF7A007A82D5 /* MBTAViewModel.swift */; };
 		CD555FD01D50397D00D9413F /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAA11D46D94A007A82D5 /* Stop.swift */; };
 		CD555FD11D50398100D9413F /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBA9F1D46D94A007A82D5 /* Mode.swift */; };
@@ -31,6 +30,8 @@
 		CD6A63451D51758C009571DE /* SafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63441D51758C009571DE /* SafeArray.swift */; };
 		CD6A63461D51758C009571DE /* SafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63441D51758C009571DE /* SafeArray.swift */; };
 		CD6A63491D517899009571DE /* UtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63471D517898009571DE /* UtilityTests.swift */; };
+		CD7DAE711D55B5F400ED6AD3 /* Sample MBTA API Response.json in Resources */ = {isa = PBXBuildFile; fileRef = CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */; };
+		CD7DAE721D55B62C00ED6AD3 /* Sample MBTA API Response.json in Resources */ = {isa = PBXBuildFile; fileRef = CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */; };
 		CD8357521D4C4DA5009E76A7 /* MBTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8357511D4C4DA5009E76A7 /* MBTAService.swift */; };
 		CDCFC3A91D48610B001807B0 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFC3A81D48610B001807B0 /* GridView.swift */; };
 		CDCFC3AD1D4863F8001807B0 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFC3AC1D4863F8001807B0 /* Images.swift */; };
@@ -429,6 +430,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD7DAE721D55B62C00ED6AD3 /* Sample MBTA API Response.json in Resources */,
 				CD1279D11D45B37B00DC7BB8 /* LaunchScreen.storyboard in Resources */,
 				CD1279CE1D45B37B00DC7BB8 /* Assets.xcassets in Resources */,
 			);
@@ -438,7 +440,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD12DE3C1D4FE82E00956B74 /* Sample MBTA API Response.json in Resources */,
+				CD7DAE711D55B5F400ED6AD3 /* Sample MBTA API Response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
