@@ -27,9 +27,9 @@ final class SubwayHeaderView: MBTAHeaderView {
         let directionChain = Fonts.lineChain.string(direction.localizedUppercase).color(Colors.black)
 
         let destinationTagName = "destination"
-        let destinationTemplate = "to <\(destinationTagName)>\(destination.localizedUppercase)</\(destinationTagName)>"
+        let destinationTemplate = "TO <\(destinationTagName)>\(destination.localizedUppercase)</\(destinationTagName)>"
         let destinationChain = Fonts.destinationPrefixChain
-            .color(Colors.white)
+            .color(Colors.black)
             .string(destinationTemplate)
             .tagStyles([
                 destinationTagName: Fonts.destinationChain.color(Colors.black),
