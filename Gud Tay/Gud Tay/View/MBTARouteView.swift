@@ -8,57 +8,84 @@
 
 import UIKit
 import Anchorage
+import BonMot
 
 final class MBTARouteView: GridView {
 
-    // Public Properties
-
-    var upcomingTrips: MBTAViewModel.UpcomingTrips = .none {
-        didSet {
-            updateUI()
-        }
-    }
-
     // Private Properties
 
-    private var label = UILabel(axId: "label")
+    private let nextTripView = TripView(color: Colors.black, subtitle: "Mins Next", minutesChain: Fonts.nextMinutesChain)
+    private let laterTripView = TripView(color: Colors.darkGray, subtitle: "Mins Later", minutesChain: Fonts.laterMinutesChain)
 
     init(headerView: MBTAHeaderView) {
         super.init(frame: .zero)
 
-        addSubview(label)
-
-        label.numberOfLines = 0
-        label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont.boldSystemFont(ofSize: 30)
-        label.edgeAnchors == edgeAnchors + 10
-
         addSubview(headerView)
         headerView.topAnchor == topAnchor
         headerView.horizontalAnchors == horizontalAnchors
+
+        let stackView = UIStackView(arrangedSubviews: [nextTripView, laterTripView])
+        stackView.axis = .horizontal
+        stackView.spacing = 58.0
+
+        addSubview(stackView)
+        stackView.centerXAnchor == centerXAnchor
+        stackView.bottomAnchor == bottomAnchor - 19.0
+    }
+
+    func setUpcomingTrips(upcomingTrips: MBTAViewModel.UpcomingTrips) {
+        updateUI(upcomingTrips: upcomingTrips)
     }
 
 }
 
 private extension MBTARouteView {
 
-    func updateUI() {
-        switch upcomingTrips {
-        case .none:
-            label.text = "no upcoming trips"
-        case .one(let next):
-            label.text = "next mins: \(next.formattedAsMinutes)"
-        case .two(let next, let later):
-            label.text = "next mins: \(next.formattedAsMinutes)\nlater mins: \(later.formattedAsMinutes)"
+    private final class TripView: UIView {
+
+        // Public Properties
+
+        func updateMinutesString(_ string: String) {
+            minutesLabel.setBonString(string)
         }
+
+        // Private Properties
+
+        private let minutesLabel = UILabel()
+
+        init(color: UIColor, subtitle: String, minutesChain: BONChain) {
+            super.init(frame: .zero)
+            minutesLabel.accessibilityIdentifier = "minutesLabel - \(subtitle)"
+            minutesLabel.bonTextable = minutesChain
+                .color(color)
+
+            let subtitleLabel = UILabel(axId: "subtitleLabel - \(subtitle)")
+            subtitleLabel.attributedText = Fonts.minutesSubtitleChain
+                .color(color)
+                .string(subtitle)
+                .attributedString
+
+            let stackView = UIStackView(arrangedSubviews: [minutesLabel, subtitleLabel])
+            stackView.axis = .vertical
+            stackView.alignment = .center
+            stackView.spacing = -18.0
+
+            addSubview(stackView)
+            stackView.edgeAnchors == edgeAnchors
+        }
+
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+
     }
 
-}
+    func updateUI(upcomingTrips: MBTAViewModel.UpcomingTrips) {
+        let (next, later) = upcomingTrips.strings
 
-private extension TimeInterval {
-
-    var formattedAsMinutes: String {
-        return String(Int(floor(self / 60.0)))
+        nextTripView.updateMinutesString(next)
+        laterTripView.updateMinutesString(later)
     }
+
 
 }

@@ -104,7 +104,7 @@ private extension MBTAViewController {
 
     func processTrips(_ trips: [MBTAViewModel.UpcomingTrips], routeViews: [MBTARouteView]) {
         zip(routeViews, trips).forEach { routeView, trips in
-            routeView.upcomingTrips = trips
+            routeView.setUpcomingTrips(upcomingTrips: trips)
         }
     }
 

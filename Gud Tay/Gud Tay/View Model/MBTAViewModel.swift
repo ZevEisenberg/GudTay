@@ -140,3 +140,27 @@ extension MBTAViewModel.UpcomingTrips: Equatable {
     }
 
 }
+
+private extension TimeInterval {
+
+    var formattedAsMinutes: String {
+        return String(Int(floor(self / 60.0)))
+    }
+
+}
+
+extension MBTAViewModel.UpcomingTrips {
+
+    var strings: (next: String, later: String) {
+        switch self {
+        case .none:
+            return (next: "--", later: "--")
+        case .one(next: let nextSeconds):
+            return (next: nextSeconds.formattedAsMinutes, later: "--")
+        case .two(next: let nextSeconds, later: let laterSeconds):
+            let secondsAfterNextSeconds = laterSeconds - nextSeconds
+            return (next: nextSeconds.formattedAsMinutes, later: secondsAfterNextSeconds.formattedAsMinutes)
+        }
+    }
+
+}
