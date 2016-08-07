@@ -1,5 +1,5 @@
 //
-//  GudTayTests.swift
+//  MBTATests.swift
 //  GudTayTests
 //
 //  Created by Zev Eisenberg on 7/24/16.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import Gud_Tay
 
-class GudTayTests: XCTestCase {
+class MBTATests: XCTestCase {
 
     func testPredictionsByStop() {
         let exp = expectation(description: "mbtaService")
