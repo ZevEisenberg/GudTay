@@ -10,13 +10,6 @@ import Foundation
 
 final class MBTAViewModel {
 
-    enum Header {
-
-        case subway(route: String, destination: String)
-        case bus(route: String, destination: String)
-
-    }
-
     enum UpcomingTrips {
 
         case two(next: TimeInterval, later: TimeInterval)
@@ -29,7 +22,7 @@ final class MBTAViewModel {
 
     enum Result {
 
-        case success([(trips: UpcomingTrips, header: Header?)])
+        case success([UpcomingTrips])
         case failure(MBTAViewModel.RefreshError)
 
     }
@@ -60,8 +53,8 @@ final class MBTAViewModel {
 
                 do {
                     let sullivan = try Stop(json: jsons)
-                    let upcomingTripsViewModelsAndHeaders = MBTAViewModel.upcomingTripsViewModelsAndHeaders(from: sullivan)
-                    completion(.success(upcomingTripsViewModelsAndHeaders))
+                    let upcomingTrips = MBTAViewModel.upcomingTrips(from: sullivan)
+                    completion(.success(upcomingTrips))
                 }
                 catch let jsonError as JSONError {
                     completion(.failure(.jsonError(jsonError)))
@@ -79,7 +72,7 @@ final class MBTAViewModel {
 
 private extension MBTAViewModel {
 
-    static func upcomingTripsViewModelsAndHeaders(from stop: Stop) -> [(trips: UpcomingTrips, header: Header?)] {
+    static func upcomingTrips(from stop: Stop) -> [UpcomingTrips] {
 
         let routeDescriptions = [
             (routeType: ModeType.subway, routeId: "Orange", directionId: "0"),
@@ -90,46 +83,29 @@ private extension MBTAViewModel {
             ]
 
         return routeDescriptions.map { description in
-            return upcomingTripsAndHeader(fromStop: stop, routeDescription: description)
+            return upcomingTrips(fromStop: stop, routeDescription: description)
         }
 
     }
 
-    static func upcomingTripsAndHeader(fromStop stop: Stop, routeDescription: RouteDescription) -> (trips: UpcomingTrips, header: Header?) {
+    static func upcomingTrips(fromStop stop: Stop, routeDescription: RouteDescription) -> UpcomingTrips {
 
         let (routeType, routeId, directionId) = routeDescription
 
-        let routesAndTrips = stop.modes
-            .filter { stopMode in stopMode.type == routeType }
-            .flatMap { stopMode in
-                stopMode.routes
-                    .filter { route in route.identifier == routeId }
-                    .flatMap { route in
-                        route.directions
-                            .filter { direction in direction.identifier == directionId }
-                            .flatMap { direction in direction.trips }
-                            .map { trip in (route: route, trip: trip) }
-                }
+        let trips = stop.modes
+            .filter { mode in mode.type == routeType }
+            .flatMap { mode in mode.routes }
+            .filter { route in route.identifier == routeId }
+            .flatMap { route in route.directions }
+            .filter { direction in direction.identifier == directionId }
+            .flatMap { direction in direction.trips }
+
+        guard !trips.isEmpty else {
+            return .none
         }
 
-        guard !routesAndTrips.isEmpty else {
-            return (trips: .none, header: nil)
-        }
-
-        let routeAndTrips = (route: routesAndTrips[0].route, trips: routesAndTrips.flatMap { tuple in tuple.trip })
-
-        let header: Header
-        switch routeType {
-        case .bus:
-            header = .bus(route: routeAndTrips.route.name, destination: routeAndTrips.trips.first?.headsign ?? "TODO: capture headsign if there are no trips")
-        case .subway:
-            header = .subway(route: routeAndTrips.route.name, destination: routeAndTrips.trips.first?.headsign ?? "TODO: capture headsign if there are no trips")
-        default:
-            fatalError("Unexpected route type: \(routeType)")
-        }
-
-        let first = routeAndTrips.trips[safe: 0]
-        let second = routeAndTrips.trips[safe: 1]
+        let first = trips[safe: 0]
+        let second = trips[safe: 1]
 
         let upcomingTrips: UpcomingTrips
 
@@ -144,7 +120,7 @@ private extension MBTAViewModel {
             upcomingTrips = .none
         }
 
-        return (trips: upcomingTrips, header: header)
+        return upcomingTrips
     }
 }
 
@@ -158,21 +134,6 @@ extension MBTAViewModel.UpcomingTrips: Equatable {
             return aNext == bNext
         case (.none, .none):
             return true
-        default:
-            return false
-        }
-    }
-
-}
-
-extension MBTAViewModel.Header: Equatable {
-
-    static func == (lhs: MBTAViewModel.Header, rhs: MBTAViewModel.Header) -> Bool {
-        switch (lhs, rhs) {
-        case (.subway(let aRoute, let aDestination), .subway(let bRoute, let bDestination)):
-            return aRoute == bRoute && aDestination == bDestination
-        case (.bus(let aRoute, let aDestination), .bus(let bRoute, let bDestination)):
-            return aRoute == bRoute && aDestination == bDestination
         default:
             return false
         }

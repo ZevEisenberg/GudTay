@@ -13,11 +13,16 @@ class MBTAViewController: UIViewController {
 
     let viewModel: MBTAViewModel
 
-    let subwayOrangeLine = MBTARouteView(axId: "subwayOrangeLine")
-    let busCT2 = MBTARouteView(axId: "busCT2")
-    let bus86 = MBTARouteView(axId: "bus86")
-    let bus90 = MBTARouteView(axId: "bus90")
-    let bus91 = MBTARouteView(axId: "bus91")
+    let subwayOrangeLine = MBTARouteView(headerView:
+        SubwayHeaderView(route: "Orange Line", direction: "Inbound", destination: "Forest Hills"))
+    let busCT2 = MBTARouteView(headerView:
+        BusHeaderView(route: "CT2", destination: "Ruggles"))
+    let bus86 = MBTARouteView(headerView:
+        BusHeaderView(route: "86", destination: "Reservoir"))
+    let bus90 = MBTARouteView(headerView:
+        BusHeaderView(route: "90", destination: "Davis"))
+    let bus91 = MBTARouteView(headerView:
+        BusHeaderView(route: "91", destination: "Central"))
 
     let mainStackView: UIStackView = {
         let stackView = UIStackView(axId: "mainStackView")
@@ -78,9 +83,8 @@ class MBTAViewController: UIViewController {
         Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true, block: { _ in
             self.viewModel.refresh() { result in
                 switch result {
-                case .success(let tripsAndHeader):
-                    self.processTrips(tripsAndHeader,
-                                      routeViews: routeViews)
+                case .success(let trips):
+                    self.processTrips(trips, routeViews: routeViews)
                 case .failure(let error):
                     self.processRefreshError(error)
                 }
@@ -98,10 +102,9 @@ private extension MBTAViewController {
         show(alert, sender: self)
     }
 
-    func processTrips(_ trips: [(trips: MBTAViewModel.UpcomingTrips, header: MBTAViewModel.Header?)], routeViews: [MBTARouteView]) {
-        zip(routeViews, trips).forEach { routeView, tripsAndHeader in
-            routeView.upcomingTrips = tripsAndHeader.trips
-            routeView.header = tripsAndHeader.header
+    func processTrips(_ trips: [MBTAViewModel.UpcomingTrips], routeViews: [MBTARouteView]) {
+        zip(routeViews, trips).forEach { routeView, trips in
+            routeView.upcomingTrips = trips
         }
     }
 

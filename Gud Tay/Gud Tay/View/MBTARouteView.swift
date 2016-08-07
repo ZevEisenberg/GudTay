@@ -19,30 +19,12 @@ final class MBTARouteView: GridView {
         }
     }
 
-    var header: MBTAViewModel.Header? {
-        didSet {
-            updateUI()
-        }
-    }
-
     // Private Properties
 
     private var label = UILabel(axId: "label")
 
-    private var headerView: MBTAHeaderView? {
-        willSet {
-            headerView?.removeFromSuperview()
-        }
-        didSet {
-            guard let headerView = headerView else { return }
-            addSubview(headerView)
-            headerView.topAnchor == topAnchor
-            headerView.horizontalAnchors == horizontalAnchors
-        }
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(headerView: MBTAHeaderView) {
+        super.init(frame: .zero)
 
         addSubview(label)
 
@@ -50,6 +32,10 @@ final class MBTARouteView: GridView {
         label.adjustsFontSizeToFitWidth = true
         label.font = UIFont.boldSystemFont(ofSize: 30)
         label.edgeAnchors == edgeAnchors + 10
+
+        addSubview(headerView)
+        headerView.topAnchor == topAnchor
+        headerView.horizontalAnchors == horizontalAnchors
     }
 
 }
@@ -64,19 +50,6 @@ private extension MBTARouteView {
             label.text = "next mins: \(next.formattedAsMinutes)"
         case .two(let next, let later):
             label.text = "next mins: \(next.formattedAsMinutes)\nlater mins: \(later.formattedAsMinutes)"
-        }
-
-        guard let header = header else {
-            return
-        }
-
-        switch header {
-        case .bus(let route, let destination):
-            print("setting up bus header view with route \(route), destination \(destination)")
-            headerView = BusHeaderView()
-        case .subway(let route, let destination):
-            print("setting up subway header view with route \(route), destination \(destination)")
-            headerView = SubwayHeaderView()
         }
     }
 
