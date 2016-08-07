@@ -55,7 +55,7 @@ private extension MBTAService {
 
 }
 
-final class DummyClass { }
+private final class DummyClass { }
 
 enum MockMBTAService: MBTAServiceType {
 
