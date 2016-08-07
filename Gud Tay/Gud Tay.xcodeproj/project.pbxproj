@@ -34,6 +34,8 @@
 		CD7DAE721D55B62C00ED6AD3 /* Sample MBTA API Response.json in Resources */ = {isa = PBXBuildFile; fileRef = CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */; };
 		CD7DAE741D56F1E600ED6AD3 /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7DAE731D56F1E600ED6AD3 /* HairlineView.swift */; };
 		CD8357521D4C4DA5009E76A7 /* MBTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8357511D4C4DA5009E76A7 /* MBTAService.swift */; };
+		CDBF96881D56F39F008AC493 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF96871D56F39F008AC493 /* Colors.swift */; };
+		CDBF968A1D56F8CA008AC493 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF96891D56F8CA008AC493 /* Fonts.swift */; };
 		CDCFC3A91D48610B001807B0 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFC3A81D48610B001807B0 /* GridView.swift */; };
 		CDCFC3AD1D4863F8001807B0 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFC3AC1D4863F8001807B0 /* Images.swift */; };
 		CDCFC3AF1D486422001807B0 /* GudTayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFC3AE1D486422001807B0 /* GudTayView.swift */; };
@@ -99,6 +101,8 @@
 		CD6A63471D517898009571DE /* UtilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityTests.swift; sourceTree = "<group>"; };
 		CD7DAE731D56F1E600ED6AD3 /* HairlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HairlineView.swift; sourceTree = "<group>"; };
 		CD8357511D4C4DA5009E76A7 /* MBTAService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTAService.swift; sourceTree = "<group>"; };
+		CDBF96871D56F39F008AC493 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		CDBF96891D56F8CA008AC493 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		CDC371C21D4911E30054F343 /* Gud Tay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gud Tay-Bridging-Header.h"; sourceTree = "<group>"; };
 		CDCFC3A81D48610B001807B0 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		CDCFC3AC1D4863F8001807B0 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -303,6 +307,8 @@
 			isa = PBXGroup;
 			children = (
 				CDF60DF61D482F9A003E2AFB /* UIView+Extensions.swift */,
+				CDBF96871D56F39F008AC493 /* Colors.swift */,
+				CDBF96891D56F8CA008AC493 /* Fonts.swift */,
 				CD6A633B1D514ACB009571DE /* CrashReporter.swift */,
 				CD6A63441D51758C009571DE /* SafeArray.swift */,
 			);
@@ -648,9 +654,11 @@
 				CDF60DF41D482D85003E2AFB /* MBTAHeaderView.swift in Sources */,
 				CDECBAAA1D46D94A007A82D5 /* Route.swift in Sources */,
 				CD6A633C1D514ACB009571DE /* CrashReporter.swift in Sources */,
+				CDBF96881D56F39F008AC493 /* Colors.swift in Sources */,
 				CDECBAA41D46D94A007A82D5 /* Coordinate.swift in Sources */,
 				CDCFC3AD1D4863F8001807B0 /* Images.swift in Sources */,
 				CDF60DFF1D483190003E2AFB /* MBTAViewController.swift in Sources */,
+				CDBF968A1D56F8CA008AC493 /* Fonts.swift in Sources */,
 				CDECBAA61D46D94A007A82D5 /* Direction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
