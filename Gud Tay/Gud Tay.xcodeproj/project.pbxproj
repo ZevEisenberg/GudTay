@@ -32,6 +32,7 @@
 		CD6A63491D517899009571DE /* UtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63471D517898009571DE /* UtilityTests.swift */; };
 		CD7DAE711D55B5F400ED6AD3 /* Sample MBTA API Response.json in Resources */ = {isa = PBXBuildFile; fileRef = CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */; };
 		CD7DAE721D55B62C00ED6AD3 /* Sample MBTA API Response.json in Resources */ = {isa = PBXBuildFile; fileRef = CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */; };
+		CD7DAE741D56F1E600ED6AD3 /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7DAE731D56F1E600ED6AD3 /* HairlineView.swift */; };
 		CD8357521D4C4DA5009E76A7 /* MBTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8357511D4C4DA5009E76A7 /* MBTAService.swift */; };
 		CDCFC3A91D48610B001807B0 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFC3A81D48610B001807B0 /* GridView.swift */; };
 		CDCFC3AD1D4863F8001807B0 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFC3AC1D4863F8001807B0 /* Images.swift */; };
@@ -96,6 +97,7 @@
 		CD6A633B1D514ACB009571DE /* CrashReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashReporter.swift; sourceTree = "<group>"; };
 		CD6A63441D51758C009571DE /* SafeArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeArray.swift; sourceTree = "<group>"; };
 		CD6A63471D517898009571DE /* UtilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityTests.swift; sourceTree = "<group>"; };
+		CD7DAE731D56F1E600ED6AD3 /* HairlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HairlineView.swift; sourceTree = "<group>"; };
 		CD8357511D4C4DA5009E76A7 /* MBTAService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTAService.swift; sourceTree = "<group>"; };
 		CDC371C21D4911E30054F343 /* Gud Tay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gud Tay-Bridging-Header.h"; sourceTree = "<group>"; };
 		CDCFC3A81D48610B001807B0 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				CDF60DF31D482D85003E2AFB /* MBTAHeaderView.swift */,
 				CDF60DEF1D482D6A003E2AFB /* BusHeaderView.swift */,
 				CDF60DF11D482D75003E2AFB /* SubwayHeaderView.swift */,
+				CD7DAE731D56F1E600ED6AD3 /* HairlineView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				CDF60DF21D482D75003E2AFB /* SubwayHeaderView.swift in Sources */,
 				CDECBAB01D46D94A007A82D5 /* Vehicle.swift in Sources */,
 				CDF60DF91D48302B003E2AFB /* RootViewController.swift in Sources */,
+				CD7DAE741D56F1E600ED6AD3 /* HairlineView.swift in Sources */,
 				CDCFC3AF1D486422001807B0 /* GudTayView.swift in Sources */,
 				CDECBAAC1D46D94A007A82D5 /* Stop.swift in Sources */,
 				CD8357521D4C4DA5009E76A7 /* MBTAService.swift in Sources */,
