@@ -15,22 +15,22 @@ struct Fonts {
         .figureSpacing(.proportional)
 
     static let nextMinutesChain = baseMinutesChain
-        .font(UIFont(name: "HelveticaNeue-Medium", size: 120.0)!)
+        .font(UIFont.init(name: "HelveticaNeue-Medium", size: 120.0)!)
 
     static let laterMinutesChain = baseMinutesChain
-        .font(UIFont(name: "HelveticaNeue", size: 120.0)!)
+        .font(UIFont.init(name: "HelveticaNeue", size: 120.0)!)
 
     static let minutesSubtitleChain = BONChain()
-        .font(UIFont(name: "HelveticaNeue-Medium", size: 28.0)!)
+        .font(UIFont.init(name: "HelveticaNeue-Medium", size: 28.0)!)
 
     static let lineChain = BONChain()
-        .font(UIFont(name: "HelveticaNeue-Medium", size: 44.0))
+        .font(UIFont.init(name: "HelveticaNeue-Medium", size: 44.0))
         .pointTracking(-0.9)
 
     static let destinationPrefixChain = BONChain()
-        .font(UIFont(name: "HelveticaNeue-Medium", size: 13.5)!)
+        .font(UIFont.init(name: "HelveticaNeue-Medium", size: 13.5)!)
 
     static let destinationChain = BONChain()
-        .font(UIFont(name: "HelveticaNeue-Bold", size: 13.5)!)
+        .font(UIFont.init(name: "HelveticaNeue-Bold", size: 13.5)!)
 
 }
