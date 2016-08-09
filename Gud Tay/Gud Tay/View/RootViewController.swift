@@ -80,7 +80,7 @@ final class RootViewController: UIViewController {
         clearButton.setTitle("Clear", for: .normal)
         clearButton.addTarget(self, action: #selector(RootViewController.clearButtonTapped(sender:)), for: .touchUpInside)
         view.addSubview(clearButton)
-        clearButton.trailingAnchor == shareButton.leadingAnchor - 10
+        clearButton.trailingAnchor == shareButton.leadingAnchor - 40
         clearButton.firstBaselineAnchor == shareButton.firstBaselineAnchor
         clearButton.backgroundColor = .white
     }
