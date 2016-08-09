@@ -75,6 +75,14 @@ final class RootViewController: UIViewController {
         shareButton.trailingAnchor == view.trailingAnchor - 10
         shareButton.bottomAnchor == view.bottomAnchor - 10
         shareButton.backgroundColor = .white
+
+        let clearButton = UIButton(type: .system)
+        clearButton.setTitle("Clear", for: .normal)
+        clearButton.addTarget(self, action: #selector(RootViewController.clearButtonTapped(sender:)), for: .touchUpInside)
+        view.addSubview(clearButton)
+        clearButton.trailingAnchor == shareButton.leadingAnchor - 10
+        clearButton.firstBaselineAnchor == shareButton.firstBaselineAnchor
+        clearButton.backgroundColor = .white
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -91,6 +99,11 @@ private extension RootViewController {
         shareSheet.modalPresentationStyle = .popover
         shareSheet.popoverPresentationController?.sourceView = sender
         shareSheet.popoverPresentationController?.sourceRect = sender.bounds
+    }
+
+    @objc func clearButtonTapped(sender: UIButton) {
+        errorMessages = ["Starting up at \(Date())"]
+        updateErrorDisplay()
     }
 
     func updateErrorDisplay() {
