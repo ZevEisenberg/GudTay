@@ -13,9 +13,8 @@ typealias JSONObject = [String: AnyObject]
 enum JSONError: Error {
 
     case generic
-    case malformedOrMissingKey(String)
-    case malformedValue(key: String, value: Any?)
-    case malformedDescendent(Any)
+    case malformedOrMissingKey(key: String, parent: Any)
+    case malformedValue(key: String, value: Any?, parent: Any)
 
 }
 
@@ -24,7 +23,7 @@ extension Dictionary {
     func value<ReturnType>(key: Key) throws -> ReturnType {
         guard let value = self[key] as? ReturnType else {
             if let key = key as? String {
-                throw JSONError.malformedOrMissingKey(key)
+                throw JSONError.malformedOrMissingKey(key: key, parent: self)
             }
             else {
                 throw JSONError.generic
@@ -40,7 +39,7 @@ extension Dictionary {
 
         guard let typedValue = value as? ReturnType else {
             if let key = key as? String {
-                throw JSONError.malformedOrMissingKey(key)
+                throw JSONError.malformedOrMissingKey(key: key, parent: self)
             }
             else {
                 throw JSONError.generic
@@ -52,7 +51,7 @@ extension Dictionary {
     func date(key: Key) throws -> Date {
         guard let dateString = self[key] as? String else {
             if let key = key as? String {
-                throw JSONError.malformedOrMissingKey(key)
+                throw JSONError.malformedOrMissingKey(key: key, parent: self)
             }
             else {
                 throw JSONError.generic
@@ -61,7 +60,7 @@ extension Dictionary {
 
         guard let secondsSinceEpoch = TimeInterval(dateString) else {
             if let key = key as? String {
-                throw JSONError.malformedValue(key: key, value: dateString)
+                throw JSONError.malformedValue(key: key, value: dateString, parent: self)
             }
             else {
                 throw JSONError.generic
@@ -74,7 +73,7 @@ extension Dictionary {
     func timeInterval(key: Key) throws -> TimeInterval {
         guard let intervalString = self[key] as? String else {
             if let key = key as? String {
-                throw JSONError.malformedOrMissingKey(key)
+                throw JSONError.malformedOrMissingKey(key: key, parent: self)
             }
             else {
                 throw JSONError.generic
@@ -83,7 +82,7 @@ extension Dictionary {
 
         guard let interval = TimeInterval(intervalString) else {
             if let key = key as? String {
-                throw JSONError.malformedValue(key: key, value: intervalString)
+                throw JSONError.malformedValue(key: key, value: intervalString, parent: self)
             }
             else {
                 throw JSONError.generic

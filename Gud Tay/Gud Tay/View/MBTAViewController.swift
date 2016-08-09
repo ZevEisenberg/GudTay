@@ -11,27 +11,33 @@ import Anchorage
 
 class MBTAViewController: UIViewController {
 
-    let viewModel: MBTAViewModel
+    // Public Properties
 
-    let subwayOrangeLine = MBTARouteView(headerView:
+    var errorHandler: ((String) -> Void)?
+
+    // Private Properties
+
+    private let viewModel: MBTAViewModel
+
+    private let subwayOrangeLine = MBTARouteView(headerView:
         SubwayHeaderView(route: "Orange Line", direction: "Inbound", destination: "Forest Hills"))
-    let busCT2 = MBTARouteView(headerView:
+    private let busCT2 = MBTARouteView(headerView:
         BusHeaderView(route: "CT2", destination: "Ruggles"))
-    let bus86 = MBTARouteView(headerView:
+    private let bus86 = MBTARouteView(headerView:
         BusHeaderView(route: "86", destination: "Reservoir"))
-    let bus90 = MBTARouteView(headerView:
+    private let bus90 = MBTARouteView(headerView:
         BusHeaderView(route: "90", destination: "Davis"))
-    let bus91 = MBTARouteView(headerView:
+    private let bus91 = MBTARouteView(headerView:
         BusHeaderView(route: "91", destination: "Central"))
 
-    let mainStackView: UIStackView = {
+    private let mainStackView: UIStackView = {
         let stackView = UIStackView(axId: "mainStackView")
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         return stackView
     }()
 
-    let rowStackViews: [UIStackView] = (0..<3).map { row in
+    private let rowStackViews: [UIStackView] = (0..<3).map { row in
         let stackView = UIStackView(axId: "stack view \(row)")
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
@@ -96,12 +102,6 @@ class MBTAViewController: UIViewController {
 
 private extension MBTAViewController {
 
-    func errorAlert(message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        show(alert, sender: self)
-    }
-
     func processTrips(_ trips: [MBTAViewModel.UpcomingTrips], routeViews: [MBTARouteView]) {
         zip(routeViews, trips).forEach { routeView, trips in
             routeView.setUpcomingTrips(upcomingTrips: trips)
@@ -111,13 +111,13 @@ private extension MBTAViewController {
     func processRefreshError(_ error: MBTAViewModel.RefreshError) {
         switch error {
         case .jsonWasNil:
-            errorAlert(message: "Error: JSON from server was nil")
+            errorHandler?("Error: JSON from server was nil")
         case .networkError(let nsError):
-            errorAlert(message: "Network error: \(nsError.localizedDescription)")
+            errorHandler?("Network error: \(nsError.localizedDescription)")
         case .jsonError(let jsonError):
-            errorAlert(message: "JSON Error: \(jsonError)")
+            errorHandler?("JSON Error: \(jsonError)")
         case .genericError(let genericError):
-            errorAlert(message: "Generic error: \(genericError)")
+            errorHandler?("Generic error: \(genericError)")
         }
     }
 

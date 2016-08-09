@@ -19,10 +19,28 @@ final class RootViewController: UIViewController {
         return stackView
     }()
 
+    private let errorTextView: UITextView = {
+        let textView = UITextView(axId: "errorTextView")
+        textView.font = UIFont(name: "Menlo", size: 12)
+        textView.isEditable = false
+        textView.alwaysBounceVertical = true
+        return textView
+    }()
+
+    private var errorMessages = ["Starting up at \(Date())"]
+
     private let weatherPlaceholderView = UIView(axId: "weatherPlaceholderView")
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        mbtaViewController.errorHandler = { [weak self] message in
+            self?.errorMessages.append("\(Date()) - \(message)")
+            if self?.errorMessages.count > 200 {
+                self?.errorMessages.removeFirst()
+            }
+            self?.updateErrorDisplay()
+        }
+        updateErrorDisplay()
     }
 
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
@@ -37,12 +55,8 @@ final class RootViewController: UIViewController {
         mainStackView.addArrangedSubview(mbtaViewController.view)
         mainStackView.addArrangedSubview(weatherPlaceholderView)
 
-        let weatherLabel = UILabel(axId: "weatherLabel")
-        weatherLabel.text = "[ Today’s weather will go here ]"
-        weatherLabel.font = UIFont.systemFont(ofSize: 25)
-        weatherPlaceholderView.addSubview(weatherLabel)
-        weatherLabel.centerXAnchor == weatherPlaceholderView.centerXAnchor
-        weatherLabel.centerYAnchor == weatherPlaceholderView.centerYAnchor
+        weatherPlaceholderView.addSubview(errorTextView)
+        errorTextView.edgeAnchors == weatherPlaceholderView.edgeAnchors
     }
 
     override func viewDidLoad() {
@@ -53,10 +67,36 @@ final class RootViewController: UIViewController {
         mainStackView.bottomAnchor == bottomLayoutGuide.topAnchor
         weatherPlaceholderView.heightAnchor == view.heightAnchor * 0.2
         weatherPlaceholderView.backgroundColor = #colorLiteral(red: 0.8152596933, green: 0.9053656769, blue: 0.9693969488, alpha: 1)
+
+        let shareButton = UIButton(type: .system)
+        shareButton.setTitle("Send Logs", for: .normal)
+        shareButton.addTarget(self, action: #selector(RootViewController.shareButtonTapped(sender:)), for: .touchUpInside)
+        view.addSubview(shareButton)
+        shareButton.trailingAnchor == view.trailingAnchor - 10
+        shareButton.bottomAnchor == view.bottomAnchor - 10
+        shareButton.backgroundColor = .white
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+
+}
+
+private extension RootViewController {
+
+    @objc func shareButtonTapped(sender: UIButton) {
+        let shareSheet = UIActivityViewController(activityItems: [errorTextView.text], applicationActivities: nil)
+        show(shareSheet, sender: self)
+        shareSheet.modalPresentationStyle = .popover
+        shareSheet.popoverPresentationController?.sourceView = sender
+        shareSheet.popoverPresentationController?.sourceRect = sender.bounds
+    }
+
+    func updateErrorDisplay() {
+        errorTextView.text = errorMessages.joined(separator: "\n\n")
+        let range = NSRange(location: errorTextView.text.characters.count - 2, length: 1)
+        errorTextView.scrollRangeToVisible(range)
     }
 
 }

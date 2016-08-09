@@ -52,7 +52,7 @@ extension Mode: JSONRepresentable {
             let typeString: String = try json.value(key: "route_type")
             guard let typeInt = Int(typeString),
                 let type = ModeType(rawValue: typeInt) else {
-                throw JSONError.malformedValue(key: "route_type", value: typeString)
+                    throw JSONError.malformedValue(key: "route_type", value: typeString, parent: json)
             }
 
             self.type = type
