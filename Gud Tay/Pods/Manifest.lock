@@ -3,7 +3,7 @@ PODS:
   - BonMot/Core (3.2)
   - BonMot/UIKit (3.2):
     - BonMot/Core
-  - BuddyBuildSDK (1.0.9)
+  - BuddyBuildSDK (1.0.11)
   - SwiftGen (2.0.0)
 
 DEPENDENCIES:
@@ -25,7 +25,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Anchorage: 3fb9d1ca397ac68b7ce9857792660a0d683f2e11
   BonMot: 039d91a9f7e408ed21e8627bb093a926e34553e0
-  BuddyBuildSDK: 8bf4d6241f64942311a0e12a3b9591bc2cbdab15
+  BuddyBuildSDK: d5398183a8b50432d5cefeb1080f02b8c9b3928a
   SwiftGen: 67c900e9f1db8168612f2df843ec20a66783a8e5
 
 PODFILE CHECKSUM: 6cbc8d91c0a835bcd64d3a0c34e55da59172374c

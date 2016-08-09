@@ -110,13 +110,21 @@ typedef void (^BBCallback)();
 + (NSString*)buildConfiguration;
 
 
+/* Manually invoke the screenshot tutorial
+ * If you don't want it to appear on app launch, disable it in the
+ * dashboard by going to settings -> buddybuildSDK -> Feature Settings and turning off the screenshot tutorial
+ * You will be able to show it at any time from anywhere in your app
+ */
++ (void) showScreenshotTutorial;
+
 @end
 
 @interface UIView (BuddyBuildSDK)
 
+// Certain features of buddybuild involve capturing the screen (either through a static screenshot, or as a video for instant replays in crash reporting or video feedback.
+// Your app may contain certain sensitive customer information that you do not want to be included in the video.
+// If you set this property to be true, this view will be redacted from the screen capture and blacked out
 
-// Conceal views that may contain sensitive data so that the content will not be visible to you in instant replay
-
-@property (nonatomic, assign) BOOL buddybuildPrivateView;
+@property (nonatomic, assign) BOOL buddybuildViewContainsSensitiveInformation;
 
 @end
