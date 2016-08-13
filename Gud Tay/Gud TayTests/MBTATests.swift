@@ -20,19 +20,19 @@ class MBTATests: XCTestCase {
             case .success(let trips):
 
                 let subwayOrangeTrips = trips[0]
-                XCTAssertEqual(subwayOrangeTrips, MBTAViewModel.UpcomingTrips.two(next: 243.0, later: 771.0))
+                XCTAssertEqual(subwayOrangeTrips, MBTAViewModel.UpcomingTrips.two(next: 474.0, later: 771.0))
 
                 let busCT2Trips = trips[1]
-                XCTAssertEqual(busCT2Trips, MBTAViewModel.UpcomingTrips.one(next: 826.0))
+                XCTAssertEqual(busCT2Trips, MBTAViewModel.UpcomingTrips.none)
 
                 let bus86Trips = trips[2]
-                XCTAssertEqual(bus86Trips, MBTAViewModel.UpcomingTrips.one(next: 1000.0))
+                XCTAssertEqual(bus86Trips, MBTAViewModel.UpcomingTrips.none)
 
                 let bus90Trips = trips[3]
-                XCTAssertEqual(bus90Trips, MBTAViewModel.UpcomingTrips.one(next: 659.0))
+                XCTAssertEqual(bus90Trips, MBTAViewModel.UpcomingTrips.none)
 
                 let bus91Trips = trips[4]
-                XCTAssertEqual(bus91Trips, MBTAViewModel.UpcomingTrips.one(next: 1661.0))
+                XCTAssertEqual(bus91Trips, MBTAViewModel.UpcomingTrips.one(next: 704.0))
             case .failure(let error):
                 XCTFail("got unexpected error: \(error)")
             }

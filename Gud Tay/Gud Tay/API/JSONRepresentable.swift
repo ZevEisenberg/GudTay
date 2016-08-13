@@ -70,6 +70,16 @@ extension Dictionary {
         return Date(timeIntervalSince1970: secondsSinceEpoch)
     }
 
+    func optionalDate(key: Key) -> Date? {
+        do {
+            let date = try self.date(key: key)
+            return date
+        }
+        catch {
+            return nil
+        }
+    }
+
     func timeInterval(key: Key) throws -> TimeInterval {
         guard let intervalString = self[key] as? String else {
             if let key = key as? String {
