@@ -33,19 +33,13 @@ extension Dictionary {
     }
 
     func optionalValue<ReturnType>(key: Key) throws -> ReturnType? {
-        guard let value = self[key] else {
+        do {
+            let value: ReturnType = try self.value(key: key)
+            return value
+        }
+        catch {
             return nil
         }
-
-        guard let typedValue = value as? ReturnType else {
-            if let key = key as? String {
-                throw JSONError.malformedOrMissingKey(key: key, parent: self)
-            }
-            else {
-                throw JSONError.generic
-            }
-        }
-        return typedValue
     }
 
     func date(key: Key) throws -> Date {
