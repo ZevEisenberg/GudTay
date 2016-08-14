@@ -43,18 +43,28 @@ extension Dictionary {
     }
 
     func date(key: Key) throws -> Date {
-        guard let dateString = self[key] as? String else {
-            if let key = key as? String {
-                throw JSONError.malformedOrMissingKey(key: key, parent: self)
-            }
-            else {
-                throw JSONError.generic
-            }
-        }
 
-        guard let secondsSinceEpoch = TimeInterval(dateString) else {
+        var secondsSinceEpoch: TimeInterval
+
+        let value = self[key]
+
+        if let dateString = value as? String {
+            guard let seconds = TimeInterval(dateString) else {
+                if let key = key as? String {
+                    throw JSONError.malformedValue(key: key, value: dateString, parent: self)
+                }
+                else {
+                    throw JSONError.generic
+                }
+            }
+            secondsSinceEpoch = seconds
+        }
+        else if let dateNumber = value as? TimeInterval {
+            secondsSinceEpoch = dateNumber
+        }
+        else {
             if let key = key as? String {
-                throw JSONError.malformedValue(key: key, value: dateString, parent: self)
+                throw JSONError.malformedValue(key: key, value: value, parent: self)
             }
             else {
                 throw JSONError.generic

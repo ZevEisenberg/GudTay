@@ -23,7 +23,7 @@ final class MBTAViewModel {
     enum Result {
 
         case success([UpcomingTrips])
-        case failure(MBTAViewModel.RefreshError)
+        case failure(ViewModel.RefreshError)
 
     }
 

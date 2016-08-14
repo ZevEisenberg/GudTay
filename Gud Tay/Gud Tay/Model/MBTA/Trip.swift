@@ -34,7 +34,6 @@ extension Trip: JSONRepresentable {
             predictedDeparture = try json.date(key: "pre_dt")
             predictedSecondsAway = try json.timeInterval(key: "pre_away")
 
-
             if let vehicleJson: JSONObject = json.optionalValue(key: "vehicle") {
                 vehicle = try Vehicle(json: vehicleJson)
             }

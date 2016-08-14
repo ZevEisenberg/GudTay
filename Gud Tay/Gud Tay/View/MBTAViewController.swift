@@ -108,7 +108,7 @@ private extension MBTAViewController {
         }
     }
 
-    func processRefreshError(_ error: MBTAViewModel.RefreshError) {
+    func processRefreshError(_ error: ViewModel.RefreshError) {
         switch error {
         case .jsonWasNil:
             errorHandler?("Error: JSON from server was nil")
