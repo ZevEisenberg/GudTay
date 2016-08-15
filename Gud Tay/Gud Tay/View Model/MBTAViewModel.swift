@@ -30,7 +30,7 @@ final class MBTAViewModel {
     enum RefreshError: Error {
 
         case jsonWasNil
-        case networkError(NSError)
+        case networkError(Error)
         case jsonError(JSONError)
         case genericError(Error)
 
@@ -42,7 +42,7 @@ final class MBTAViewModel {
         self.serviceType = serviceType
     }
 
-    func refresh(completion: (Result) -> ()) {
+    func refresh(completion: @escaping (Result) -> ()) {
         self.serviceType.predictionsByStop(stopId: "place-sull") { apiResult in
             switch apiResult {
             case .success(let jsonObject):

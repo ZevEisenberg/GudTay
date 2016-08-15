@@ -19,7 +19,7 @@ final class RootViewController: UIViewController {
         return stackView
     }()
 
-    private let errorTextView: UITextView = {
+    fileprivate let errorTextView: UITextView = {
         let textView = UITextView(axId: "errorTextView")
         textView.font = UIFont(name: "Menlo", size: 12)
         textView.isEditable = false
@@ -27,7 +27,7 @@ final class RootViewController: UIViewController {
         return textView
     }()
 
-    private var errorMessages = ["Starting up at \(Date())"]
+    fileprivate var errorMessages = ["Starting up at \(Date())"]
 
     private let weatherPlaceholderView = UIView(axId: "weatherPlaceholderView")
 
@@ -35,7 +35,7 @@ final class RootViewController: UIViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         mbtaViewController.errorHandler = { [weak self] message in
             self?.errorMessages.append("\(Date()) - \(message)")
-            if self?.errorMessages.count > 200 {
+            if let count = self?.errorMessages.count, count > 200 {
                 self?.errorMessages.removeFirst()
             }
             self?.updateErrorDisplay()

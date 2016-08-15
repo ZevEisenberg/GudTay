@@ -15,11 +15,11 @@ enum APIClient {
     enum Result {
 
         case success(JSONObject?)
-        case failure(NSError)
+        case failure(Error)
 
     }
 
-    static func get(baseUrl: URL, path: String, params: Dictionary<String, AnyObject>? = nil, completion: (Result) -> ()) {
+    static func get(baseUrl: URL, path: String, params: Dictionary<String, Any>? = nil, completion: @escaping (Result) -> ()) {
         let params = params ?? [:]
         let request = clientURLRequest(baseUrl: baseUrl, path: path, params: params)
         dataTask(request, method: "GET", completion: completion)
@@ -29,7 +29,7 @@ enum APIClient {
 
 private extension APIClient {
 
-    static func dataTask(_ request: NSMutableURLRequest, method: String, completion: (Result) -> ()) {
+    static func dataTask(_ request: NSMutableURLRequest, method: String, completion: @escaping (Result) -> ()) {
         request.httpMethod = method
 
         let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -70,11 +70,11 @@ private extension APIClient {
             }.resume()
     }
 
-    static func clientURLRequest(baseUrl: URL, path: String, params: Dictionary<String, AnyObject>) -> NSMutableURLRequest {
+    static func clientURLRequest(baseUrl: URL, path: String, params: Dictionary<String, Any>) -> NSMutableURLRequest {
         var paramPairs = [String]()
         for (key, value) in params {
             if let escapedKey = key.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed),
-                let escapedValue = value.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
+                let escapedValue = (value as? String)?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
                 paramPairs.append("\(escapedKey)=\(escapedValue)")
             }
             else {

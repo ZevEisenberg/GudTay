@@ -8,7 +8,7 @@
 
 enum CrashReporter {
 
-    static func set(metadataObject: AnyObject, forKey key: String) {
+    static func set(metadataObject: Any, forKey key: String) {
         #if !TESTING
             BuddyBuildSDK.setCrashMetadataObject(metadataObject, forKey: key)
         #endif

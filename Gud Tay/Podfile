@@ -4,7 +4,7 @@ target 'Gud Tay' do
   use_frameworks!
 
   # Pods for Gud Tay
-  pod 'Anchorage', :git => 'git@github.com:Raizlabs/Anchorage.git', :commit => 'da947d7c8c554de48fb9404a91ea4b26cfb1e7f9'
+  pod 'Anchorage', :git => 'git@github.com:Raizlabs/Anchorage.git', :commit => 'c0626ea77907a76a1d0b70e2639a6c78eafcf5d7'
   pod 'SwiftGen'
   pod 'BuddyBuildSDK'
   pod 'BonMot/UIKit'
