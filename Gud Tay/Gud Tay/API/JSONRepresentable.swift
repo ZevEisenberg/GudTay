@@ -32,7 +32,7 @@ extension Dictionary {
         return value
     }
 
-    func optionalValue<ReturnType>(key: Key) throws -> ReturnType? {
+    func optionalValue<ReturnType>(key: Key) -> ReturnType? {
         do {
             let value: ReturnType = try self.value(key: key)
             return value

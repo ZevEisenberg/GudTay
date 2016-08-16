@@ -21,7 +21,7 @@ extension Stop: JSONRepresentable {
             identifier = try json.value(key: "stop_id")
             name = try json.value(key: "stop_name")
 
-            if let modesValue: [JSONObject] = try json.optionalValue(key: "mode") {
+            if let modesValue: [JSONObject] = json.optionalValue(key: "mode") {
                 modes = try Mode.objects(from: modesValue)
             }
             else {

@@ -82,7 +82,6 @@
                 {
                   "trip_id": "98669636",
                   "trip_name": "Back Bay to Oak Grove",
-                  "trip_headsign": "Oak Grove",
                   "pre_dt": "1471093629",
                   "pre_away": "233",
                   "vehicle": {

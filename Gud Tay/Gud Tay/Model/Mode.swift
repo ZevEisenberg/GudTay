@@ -57,7 +57,7 @@ extension Mode: JSONRepresentable {
 
             self.type = type
 
-            if let routesValue: [JSONObject] = try json.optionalValue(key: "route") {
+            if let routesValue: [JSONObject] = json.optionalValue(key: "route") {
                 routes = try Route.objects(from: routesValue)
             }
             else {
