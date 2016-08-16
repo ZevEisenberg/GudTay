@@ -10,13 +10,13 @@ import Foundation
 
 protocol WeatherServiceType {
 
-    static func predictions(latitude: Double, longitude: Double, completion: (APIClient.Result) -> ())
+    static func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> ())
 
 }
 
 enum WeatherService: WeatherServiceType {
 
-    static func predictions(latitude: Double, longitude: Double, completion: (APIClient.Result) -> ()) {
+    static func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> ()) {
         let url = baseUrl().appendingPathComponent(Endpoints.forecast).appendingPathComponent("\(latitude),\(longitude)")
         APIClient.get(baseUrl: url, path: "", completion: completion)
     }
@@ -42,7 +42,7 @@ private extension WeatherService {
         return URL(string: Constants.host)!
     }
 
-    static func getRequest(path: String, params: Dictionary<String, AnyObject>? = nil, completion: (APIClient.Result) -> ()) {
+    static func getRequest(path: String, params: Dictionary<String, Any>? = nil, completion: @escaping (APIClient.Result) -> ()) {
         var params = params ?? [:]
         params["api_key"] = Constants.apiKey
         APIClient.get(baseUrl: baseUrl(), path: path, params: params, completion: completion)
@@ -54,7 +54,7 @@ private final class DummyClass { }
 
 enum MockWeatherService: WeatherServiceType {
 
-    static func predictions(latitude: Double, longitude: Double, completion: (APIClient.Result) -> ()) {
+    static func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> ()) {
         let filename = "Sample Weather API Response"
         let ext = "json"
         guard let url = Bundle(for: DummyClass.self).url(forResource: filename, withExtension: ext) else {
@@ -70,7 +70,7 @@ enum MockWeatherService: WeatherServiceType {
             assertionFailure("Error getting contents of \(filename)\(ext): \(e)")
         }
 
-        var deserialized: AnyObject! = nil
+        var deserialized: Any! = nil
         do {
             deserialized = try JSONSerialization.jsonObject(with: jsonData, options: [])
         }

@@ -23,7 +23,7 @@ final class WeatherViewModel {
         self.serviceType = serviceType
     }
 
-    func refresh(completion: (Result) -> ()) {
+    func refresh(completion: @escaping (Result) -> ()) {
         // n.b. lat/long have been rebased to be the center of Boston instead of my real old address for privacy reasons.
         self.serviceType.predictions(latitude: 42.3601, longitude: -71.0589) { apiResult in
             switch apiResult {

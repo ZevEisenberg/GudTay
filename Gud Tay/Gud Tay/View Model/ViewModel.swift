@@ -13,7 +13,7 @@ class ViewModel {
     enum RefreshError: Error {
 
         case jsonWasNil
-        case networkError(NSError)
+        case networkError(Error)
         case jsonError(JSONError)
         case genericError(Error)
 
