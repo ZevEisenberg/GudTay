@@ -12,14 +12,14 @@ import Anchorage
 final class RootViewController: UIViewController {
 
     private let mbtaViewController = MBTAViewController(viewModel: MBTAViewModel(serviceType: MBTAService.self))
+    private let weatherViewController = WeatherViewController(viewModel: WeatherViewModel(serviceType: WeatherService.self))
+
     private let mainStackView: UIStackView = {
         let stackView = UIStackView(axId: "mainStackView")
         stackView.axis = .vertical
         stackView.alignment = .fill
         return stackView
     }()
-
-    private let weatherPlaceholderView = UIView(axId: "weatherPlaceholderView")
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -38,7 +38,7 @@ final class RootViewController: UIViewController {
 
         view.addSubview(mainStackView)
         mainStackView.addArrangedSubview(mbtaViewController.view)
-        mainStackView.addArrangedSubview(weatherPlaceholderView)
+        mainStackView.addArrangedSubview(weatherViewController.view)
     }
 
     override func viewDidLoad() {
@@ -47,8 +47,7 @@ final class RootViewController: UIViewController {
         mainStackView.horizontalAnchors == view.horizontalAnchors
         mainStackView.topAnchor == topLayoutGuide.bottomAnchor
         mainStackView.bottomAnchor == bottomLayoutGuide.topAnchor
-        weatherPlaceholderView.heightAnchor == view.heightAnchor * 0.2
-        weatherPlaceholderView.backgroundColor = #colorLiteral(red: 0.8152596933, green: 0.9053656769, blue: 0.9693969488, alpha: 1)
+        weatherViewController.view.heightAnchor == view.heightAnchor * 0.2
     }
 
     override func viewDidAppear(_ animated: Bool) {
