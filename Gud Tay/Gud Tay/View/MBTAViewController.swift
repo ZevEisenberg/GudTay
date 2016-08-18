@@ -9,11 +9,7 @@
 import UIKit
 import Anchorage
 
-class MBTAViewController: UIViewController {
-
-    // Public Properties
-
-    var errorHandler: ((String) -> Void)?
+final class MBTAViewController: RefreshableViewController {
 
     // Private Properties
 
@@ -47,10 +43,6 @@ class MBTAViewController: UIViewController {
     init(viewModel: MBTAViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-    }
-
-    @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     override func loadView() {
@@ -110,19 +102,6 @@ private extension MBTAViewController {
     func processTrips(_ trips: [MBTAViewModel.UpcomingTrips], routeViews: [MBTARouteView]) {
         zip(routeViews, trips).forEach { routeView, trips in
             routeView.setUpcomingTrips(upcomingTrips: trips)
-        }
-    }
-
-    func processRefreshError(_ error: ViewModel.RefreshError) {
-        switch error {
-        case .jsonWasNil:
-            errorHandler?("Error: JSON from server was nil")
-        case .networkError(let nsError):
-            errorHandler?("Network error: \(nsError.localizedDescription)")
-        case .jsonError(let jsonError):
-            errorHandler?("JSON Error: \(jsonError)")
-        case .genericError(let genericError):
-            errorHandler?("Generic error: \(genericError)")
         }
     }
 
