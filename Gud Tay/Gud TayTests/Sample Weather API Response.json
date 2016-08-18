@@ -28,8 +28,8 @@
     "data": [
       {
         "time": 1470587040,
-        "precipIntensity": 0,
-        "precipProbability": 0
+        "precipIntensity": 0.017,
+        "precipProbability": 0.3
       },
       {
         "time": 1470587100,
