@@ -66,7 +66,12 @@ class MBTAViewController: UIViewController {
         rowStackViews[1].addArrangedSubview(bus86)
         rowStackViews[1].addArrangedSubview(bus90)
         rowStackViews[2].addArrangedSubview(bus91)
-        rowStackViews[2].addArrangedSubview(GudTayView(axId: "gudTayView"))
+        rowStackViews[2].addArrangedSubview(GudTayView(tapHandler: { [weak self] in
+            let logVC = LogViewController()
+            let navCon = UINavigationController(rootViewController: logVC)
+            navCon.modalPresentationStyle = .formSheet
+            self?.show(navCon, sender: self)
+        }))
     }
 
     override func viewDidLoad() {

@@ -52,6 +52,8 @@
 		CD7DAE721D55B62C00ED6AD3 /* Sample MBTA API Response.json in Resources */ = {isa = PBXBuildFile; fileRef = CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */; };
 		CD7DAE741D56F1E600ED6AD3 /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7DAE731D56F1E600ED6AD3 /* HairlineView.swift */; };
 		CD8357521D4C4DA5009E76A7 /* MBTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8357511D4C4DA5009E76A7 /* MBTAService.swift */; };
+		CDADC9931D655315005B60AD /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADC9921D655315005B60AD /* LogService.swift */; };
+		CDADC9951D65566C005B60AD /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADC9941D65566C005B60AD /* LogViewController.swift */; };
 		CDBF96881D56F39F008AC493 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF96871D56F39F008AC493 /* Colors.swift */; };
 		CDBF968A1D56F8CA008AC493 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF96891D56F8CA008AC493 /* Fonts.swift */; };
 		CDCFC3A91D48610B001807B0 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFC3A81D48610B001807B0 /* GridView.swift */; };
@@ -153,6 +155,8 @@
 		CD6A63471D517898009571DE /* UtilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityTests.swift; sourceTree = "<group>"; };
 		CD7DAE731D56F1E600ED6AD3 /* HairlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HairlineView.swift; sourceTree = "<group>"; };
 		CD8357511D4C4DA5009E76A7 /* MBTAService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTAService.swift; sourceTree = "<group>"; };
+		CDADC9921D655315005B60AD /* LogService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
+		CDADC9941D65566C005B60AD /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		CDBF96871D56F39F008AC493 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CDBF96891D56F8CA008AC493 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		CDC371C21D4911E30054F343 /* Gud Tay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gud Tay-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -341,6 +345,7 @@
 			children = (
 				CD8357511D4C4DA5009E76A7 /* MBTAService.swift */,
 				7AAE0AAC1D578E6100A209BF /* WeatherService.swift */,
+				CDADC9921D655315005B60AD /* LogService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 				CD1279C81D45B37B00DC7BB8 /* RootViewController.swift */,
 				CDCFC3A81D48610B001807B0 /* GridView.swift */,
 				CDECBABE1D46DF58007A82D5 /* MBTAViewController.swift */,
+				CDADC9941D65566C005B60AD /* LogViewController.swift */,
 				CDCFC3AE1D486422001807B0 /* GudTayView.swift */,
 				CDF60DED1D482D37003E2AFB /* MBTARouteView.swift */,
 				CDF60DF31D482D85003E2AFB /* MBTAHeaderView.swift */,
@@ -746,6 +752,7 @@
 				CDED23561D60B0C00023CC4B /* Precipitation.swift in Sources */,
 				CDED23591D60B0DA0023CC4B /* Icon.swift in Sources */,
 				CDED233E1D60AF730023CC4B /* Meteorology.swift in Sources */,
+				CDADC9951D65566C005B60AD /* LogViewController.swift in Sources */,
 				7AC59EE81D579CCE003863AE /* WeatherViewModel.swift in Sources */,
 				7AE9DA6B1D57A4A50087B401 /* Route.swift in Sources */,
 				7AE9DA6F1D57A4A50087B401 /* Trip.swift in Sources */,
@@ -759,6 +766,7 @@
 				7AC59EEB1D57A1C1003863AE /* ViewModel.swift in Sources */,
 				CDECBAB61D46D97F007A82D5 /* APIClient.swift in Sources */,
 				CDED23471D60AFCF0023CC4B /* Almanac.swift in Sources */,
+				CDADC9931D655315005B60AD /* LogService.swift in Sources */,
 				CD6A63451D51758C009571DE /* SafeArray.swift in Sources */,
 				CDECBAB81D46D97F007A82D5 /* JSONRepresentable.swift in Sources */,
 				CDECBAC31D46DF7A007A82D5 /* MBTAViewModel.swift in Sources */,

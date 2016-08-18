@@ -11,13 +11,29 @@ import Anchorage
 
 final class GudTayView: GridView {
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    typealias TapHandler = () -> ()
+
+    fileprivate let tapHandler: TapHandler
+
+    init(tapHandler: TapHandler) {
+        self.tapHandler = tapHandler
+        super.init(frame: .zero)
 
         let imageView = UIImageView(image: Asset.Gud_Tay.image)
         addSubview(imageView)
         imageView.edgeAnchors == edgeAnchors
         imageView.contentMode = .scaleAspectFit
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(GudTayView.tapped(sender:)))
+        addGestureRecognizer(tap)
+    }
+
+}
+
+private extension GudTayView {
+
+    @objc func tapped(sender: UITapGestureRecognizer) {
+        tapHandler()
     }
 
 }
