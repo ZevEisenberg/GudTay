@@ -47,29 +47,6 @@ final class WeatherViewModel {
                 completion(.failure(.networkError(networkError)))
             }
         }
-        // self.serviceType.predictionsByStop(stopId: "place-sull") { apiResult in
-        //     switch apiResult {
-        //     case .success(let jsonObject):
-        //         guard let jsons = jsonObject else {
-        //             completion(.failure(.jsonWasNil))
-        //             return
-        //         }
-        //
-        //         do {
-        //             let sullivan = try Stop(json: jsons)
-        //             let upcomingTrips = MBTAViewModel.upcomingTrips(from: sullivan)
-        //             completion(.success(upcomingTrips))
-        //         }
-        //         catch let jsonError as JSONError {
-        //             completion(.failure(.jsonError(jsonError)))
-        //         }
-        //         catch let genericError {
-        //             completion(.failure(.genericError(genericError)))
-        //         }
-        //     case .failure(let networkError):
-        //         completion(.failure(.networkError(networkError)))
-        //     }
-        // }
     }
 
 }
