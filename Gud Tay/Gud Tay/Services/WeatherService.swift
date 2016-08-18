@@ -17,7 +17,7 @@ protocol WeatherServiceType {
 enum WeatherService: WeatherServiceType {
 
     static func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> ()) {
-        let url = baseUrl().appendingPathComponent(Endpoints.forecast).appendingPathComponent("\(latitude),\(longitude)")
+        let url = baseUrl().appendingPathComponent(Endpoints.forecast).appendingPathComponent(Constants.apiKey).appendingPathComponent("\(latitude),\(longitude)")
         APIClient.get(baseUrl: url, path: "", completion: completion)
     }
 
