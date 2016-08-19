@@ -21,12 +21,14 @@ class GudTayTests: XCTestCase {
 
                 let tempField = fields[0]
 
-                guard case WeatherViewModel.WeatherField.currentTemp(let temp) = tempField else {
+                guard case WeatherViewModel.WeatherField.temperatures(let current, let high, let low) = tempField else {
                     XCTFail("unexpected thingy: \(tempField)")
                     break
                 }
 
-                XCTAssertEqualWithAccuracy(temp, 83.65, accuracy: 0.001)
+                XCTAssertEqualWithAccuracy(current, 83.65, accuracy: 0.001)
+                XCTAssertEqualWithAccuracy(high, 84.73, accuracy: 0.001)
+                XCTAssertEqualWithAccuracy(low, 68.3, accuracy: 0.001)
 
                 let iconField = fields[1]
 

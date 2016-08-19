@@ -40,7 +40,12 @@ struct Fonts {
     struct Weather {
 
         static let currentTempChain = BONChain()
+            .figureSpacing(.proportional)
             .font(UIFont(name: "HelveticaNeue-Bold", size: 120.0)!)
+
+        static let tempRangeChain = BONChain()
+            .figureSpacing(.proportional)
+            .font(UIFont(name: "HelveticaNeue-Bold", size: 48.0)!)
 
     }
 

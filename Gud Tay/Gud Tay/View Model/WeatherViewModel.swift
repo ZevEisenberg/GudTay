@@ -19,7 +19,7 @@ final class WeatherViewModel {
 
     enum WeatherField {
 
-        case currentTemp(Double)
+        case temperatures(current: Double, high: Double, low: Double)
         case currentIcon(Icon)
         case needUmbrella
         case hour(time: Date, icon: Icon?, temp: Double, precipProbability: Double?)
@@ -70,9 +70,14 @@ private extension WeatherViewModel {
 
         let current = forecast.currently
 
-        // Current Temp
+        // Temperatures
 
-        fields.append(.currentTemp(current.temperature.current))
+        if let today = forecast.daily.almanac.data.first {
+            fields.append(.temperatures(
+                current: current.temperature.current,
+                high: today.temperatureRange.max,
+                low: today.temperatureRange.min))
+        }
 
         // Current Icon
 

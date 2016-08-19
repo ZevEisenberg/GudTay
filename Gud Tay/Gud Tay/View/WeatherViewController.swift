@@ -23,6 +23,7 @@ final class WeatherViewController: RefreshableViewController {
         collectionView.register(TemperatureCell.self, forCellWithReuseIdentifier: TemperatureCell.gudReuseID)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.gudReuseID)
         collectionView.alwaysBounceHorizontal = true
+        collectionView.contentInset = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 0.0)
         return collectionView
     }()
 
@@ -73,9 +74,9 @@ extension WeatherViewController: UICollectionViewDataSource {
         let field = viewModel.fields[indexPath.item]
 
         switch field {
-        case .currentTemp(let temp):
+        case .temperatures(let current, let high, let low):
             let cell = forceCast(collectionView.dequeueReusableCell(withReuseIdentifier: TemperatureCell.gudReuseID, for: indexPath), as: TemperatureCell.self)
-            cell.currentTemp = temp
+            cell.temps = (current: current, high: high, low: low)
             cell.pinnedHeight = view.frame.height
             return cell
         default:
