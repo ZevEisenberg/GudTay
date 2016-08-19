@@ -34,6 +34,7 @@
 		7AE9DA751D57A54F0087B401 /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE9DA741D57A54F0087B401 /* WeatherForecast.swift */; };
 		7AE9DA761D57A54F0087B401 /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE9DA741D57A54F0087B401 /* WeatherForecast.swift */; };
 		B4164F6990CDADEE81496E52 /* Pods_Gud_TayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370FEC8906996918721175C9 /* Pods_Gud_TayUITests.framework */; };
+		CD1204771D67B0B10000F707 /* AspectImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1204761D67B0B10000F707 /* AspectImageCell.swift */; };
 		CD1279C71D45B37B00DC7BB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */; };
 		CD1279CE1D45B37B00DC7BB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */; };
 		CD1279D11D45B37B00DC7BB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */; };
@@ -144,6 +145,7 @@
 		7AE9DA641D57A4A50087B401 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		7AE9DA741D57A54F0087B401 /* WeatherForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherForecast.swift; sourceTree = "<group>"; };
 		BD519AB98CE48C9434FA9B47 /* Pods-Gud Tay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud Tay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gud Tay/Pods-Gud Tay.debug.xcconfig"; sourceTree = "<group>"; };
+		CD1204761D67B0B10000F707 /* AspectImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AspectImageCell.swift; sourceTree = "<group>"; };
 		CD1279C31D45B37B00DC7BB8 /* Gud Tay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gud Tay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD1279C81D45B37B00DC7BB8 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				CD2575BF1D6668140017DEE6 /* WeatherCell.swift */,
+				CD1204761D67B0B10000F707 /* AspectImageCell.swift */,
 				CD2575BD1D6668050017DEE6 /* TemperatureCell.swift */,
 			);
 			path = "Weather Cells";
@@ -772,6 +775,7 @@
 				CD2575BE1D6668050017DEE6 /* TemperatureCell.swift in Sources */,
 				CDF60DF91D48302B003E2AFB /* RootViewController.swift in Sources */,
 				CD7DAE741D56F1E600ED6AD3 /* HairlineView.swift in Sources */,
+				CD1204771D67B0B10000F707 /* AspectImageCell.swift in Sources */,
 				CDCFC3AF1D486422001807B0 /* GudTayView.swift in Sources */,
 				CDED23441D60AFBD0023CC4B /* NearestStorm.swift in Sources */,
 				CD2575C41D666C7E0017DEE6 /* Utility.swift in Sources */,

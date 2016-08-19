@@ -21,6 +21,7 @@ final class WeatherViewController: RefreshableViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = Colors.white
         collectionView.register(TemperatureCell.self, forCellWithReuseIdentifier: TemperatureCell.gudReuseID)
+        collectionView.register(AspectImageCell.self, forCellWithReuseIdentifier: AspectImageCell.gudReuseID)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.gudReuseID)
         collectionView.alwaysBounceHorizontal = true
         collectionView.contentInset = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 0.0)
@@ -77,6 +78,16 @@ extension WeatherViewController: UICollectionViewDataSource {
         case .temperatures(let current, let high, let low):
             let cell = forceCast(collectionView.dequeueReusableCell(withReuseIdentifier: TemperatureCell.gudReuseID, for: indexPath), as: TemperatureCell.self)
             cell.temps = (current: current, high: high, low: low)
+            cell.pinnedHeight = view.frame.height
+            return cell
+        case .currentIcon(let icon):
+            let cell = forceCast(collectionView.dequeueReusableCell(withReuseIdentifier: AspectImageCell.gudReuseID, for: indexPath), as: AspectImageCell.self)
+            cell.image = icon.image
+            cell.pinnedHeight = view.frame.height
+            return cell
+        case .needUmbrella:
+            let cell = forceCast(collectionView.dequeueReusableCell(withReuseIdentifier: AspectImageCell.gudReuseID, for: indexPath), as: AspectImageCell.self)
+            cell.image = #imageLiteral(resourceName: "calvin-umbrella")
             cell.pinnedHeight = view.frame.height
             return cell
         default:

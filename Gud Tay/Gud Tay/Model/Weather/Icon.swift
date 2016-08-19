@@ -6,6 +6,8 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
+import UIKit.UIImage
+
 enum Icon: String {
 
     case clearDay = "clear-day"
@@ -18,5 +20,9 @@ enum Icon: String {
     case cloudy = "cloudy"
     case partlyCloudyDay = "partly-cloudy-day"
     case partlyCloudyNight = "partly-cloudy-night"
+
+    var image: UIImage {
+        return UIImage(named: rawValue)!
+    }
 
 }
