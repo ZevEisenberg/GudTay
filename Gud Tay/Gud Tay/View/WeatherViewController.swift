@@ -16,10 +16,12 @@ final class WeatherViewController: RefreshableViewController {
     fileprivate let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 30, height: 200)
+        layout.itemSize = UICollectionViewFlowLayoutAutomaticSize
+        layout.estimatedItemSize = CGSize(width: 50.0, height: 205.0)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = Colors.white
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "\(UICollectionViewCell.self)")
+        collectionView.register(TemperatureCell.self, forCellWithReuseIdentifier: TemperatureCell.gudReuseID)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.gudReuseID)
         collectionView.alwaysBounceHorizontal = true
         return collectionView
     }()
@@ -67,9 +69,22 @@ extension WeatherViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(UICollectionViewCell.self)", for: indexPath)
-        cell.contentView.backgroundColor = Colors.random
-        return cell
+
+        let field = viewModel.fields[indexPath.item]
+
+        switch field {
+        case .currentTemp(let temp):
+            let cell = forceCast(collectionView.dequeueReusableCell(withReuseIdentifier: TemperatureCell.gudReuseID, for: indexPath), as: TemperatureCell.self)
+            cell.currentTemp = temp
+            cell.pinnedHeight = view.frame.height
+            return cell
+        default:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionViewCell.gudReuseID, for: indexPath)
+            cell.contentView.backgroundColor = Colors.random
+            cell.contentView.heightAnchor == view.frame.height
+            cell.contentView.widthAnchor == 50.0
+            return cell
+        }
     }
 
 }

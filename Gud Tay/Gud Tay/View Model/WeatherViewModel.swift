@@ -12,7 +12,7 @@ final class WeatherViewModel {
 
     enum Result {
 
-        case success
+        case success([WeatherField])
         case failure(ViewModel.RefreshError)
 
     }
@@ -47,7 +47,7 @@ final class WeatherViewModel {
                 do {
                     let forecast = try WeatherForecast(json: jsonObject)
                     self.fields = WeatherViewModel.processForecast(forecast: forecast)
-                    completion(.success)
+                    completion(.success(self.fields))
                 }
                 catch let jsonError as JSONError {
                     completion(.failure(.jsonError(jsonError)))

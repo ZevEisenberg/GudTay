@@ -10,27 +10,38 @@ import BonMot
 
 struct Fonts {
 
-    private static let baseMinutesChain = BONChain()
-        .pointTracking(-2.68)
-        .figureSpacing(.proportional)
+    struct MBTA {
 
-    static let nextMinutesChain = baseMinutesChain
-        .font(UIFont.init(name: "HelveticaNeue-Medium", size: 120.0)!)
+        private static let baseMinutesChain = BONChain()
+            .pointTracking(-2.68)
+            .figureSpacing(.proportional)
 
-    static let laterMinutesChain = baseMinutesChain
-        .font(UIFont.init(name: "HelveticaNeue", size: 120.0)!)
+        static let nextMinutesChain = baseMinutesChain
+            .font(UIFont(name: "HelveticaNeue-Medium", size: 120.0)!)
 
-    static let minutesSubtitleChain = BONChain()
-        .font(UIFont.init(name: "HelveticaNeue-Medium", size: 28.0)!)
+        static let laterMinutesChain = baseMinutesChain
+            .font(UIFont(name: "HelveticaNeue", size: 120.0)!)
 
-    static let lineChain = BONChain()
-        .font(UIFont.init(name: "HelveticaNeue-Medium", size: 44.0))
-        .pointTracking(-0.9)
+        static let minutesSubtitleChain = BONChain()
+            .font(UIFont(name: "HelveticaNeue-Medium", size: 28.0)!)
 
-    static let destinationPrefixChain = BONChain()
-        .font(UIFont.init(name: "HelveticaNeue-Medium", size: 13.5)!)
+        static let lineChain = BONChain()
+            .font(UIFont(name: "HelveticaNeue-Medium", size: 44.0))
+            .pointTracking(-0.9)
 
-    static let destinationChain = BONChain()
-        .font(UIFont.init(name: "HelveticaNeue-Bold", size: 13.5)!)
+        static let destinationPrefixChain = BONChain()
+            .font(UIFont(name: "HelveticaNeue-Medium", size: 13.5)!)
+
+        static let destinationChain = BONChain()
+            .font(UIFont(name: "HelveticaNeue-Bold", size: 13.5)!)
+
+    }
+
+    struct Weather {
+
+        static let currentTempChain = BONChain()
+            .font(UIFont(name: "HelveticaNeue-Bold", size: 120.0)!)
+
+    }
 
 }

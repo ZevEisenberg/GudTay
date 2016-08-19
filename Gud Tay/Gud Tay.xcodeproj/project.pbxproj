@@ -40,6 +40,11 @@
 		CD1279E71D45B37B00DC7BB8 /* Gud_TayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279E61D45B37B00DC7BB8 /* Gud_TayUITests.swift */; };
 		CD2575B91D664FB50017DEE6 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2575B81D664FB50017DEE6 /* WeatherViewController.swift */; };
 		CD2575BB1D66607F0017DEE6 /* RefreshableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2575BA1D66607F0017DEE6 /* RefreshableViewController.swift */; };
+		CD2575BE1D6668050017DEE6 /* TemperatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2575BD1D6668050017DEE6 /* TemperatureCell.swift */; };
+		CD2575C01D6668140017DEE6 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2575BF1D6668140017DEE6 /* WeatherCell.swift */; };
+		CD2575C21D6669020017DEE6 /* UICollectionReusableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2575C11D6669020017DEE6 /* UICollectionReusableView+Extensions.swift */; };
+		CD2575C41D666C7E0017DEE6 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2575C31D666C7E0017DEE6 /* Utility.swift */; };
+		CD2575C51D666C820017DEE6 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2575C31D666C7E0017DEE6 /* Utility.swift */; };
 		CD555FCF1D50396700D9413F /* MBTAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAC21D46DF7A007A82D5 /* MBTAViewModel.swift */; };
 		CD60D15C1D4FE87C000B74CF /* MBTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8357511D4C4DA5009E76A7 /* MBTAService.swift */; };
 		CD60D15D1D4FE884000B74CF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB31D46D97F007A82D5 /* APIClient.swift */; };
@@ -154,6 +159,10 @@
 		CD12DE3B1D4FE82E00956B74 /* MBTATests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTATests.swift; sourceTree = "<group>"; };
 		CD2575B81D664FB50017DEE6 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		CD2575BA1D66607F0017DEE6 /* RefreshableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshableViewController.swift; sourceTree = "<group>"; };
+		CD2575BD1D6668050017DEE6 /* TemperatureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureCell.swift; sourceTree = "<group>"; };
+		CD2575BF1D6668140017DEE6 /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		CD2575C11D6669020017DEE6 /* UICollectionReusableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extensions.swift"; sourceTree = "<group>"; };
+		CD2575C31D666C7E0017DEE6 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		CD6A633B1D514ACB009571DE /* CrashReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashReporter.swift; sourceTree = "<group>"; };
 		CD6A63441D51758C009571DE /* SafeArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeArray.swift; sourceTree = "<group>"; };
 		CD6A63471D517898009571DE /* UtilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityTests.swift; sourceTree = "<group>"; };
@@ -344,6 +353,15 @@
 			path = "Gud TayUITests";
 			sourceTree = "<group>";
 		};
+		CD2575BC1D6667F60017DEE6 /* Weather Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CD2575BF1D6668140017DEE6 /* WeatherCell.swift */,
+				CD2575BD1D6668050017DEE6 /* TemperatureCell.swift */,
+			);
+			path = "Weather Cells";
+			sourceTree = "<group>";
+		};
 		CD8357501D4C4DA5009E76A7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +413,7 @@
 				CDF60DEF1D482D6A003E2AFB /* BusHeaderView.swift */,
 				CDF60DF11D482D75003E2AFB /* SubwayHeaderView.swift */,
 				CD7DAE731D56F1E600ED6AD3 /* HairlineView.swift */,
+				CD2575BC1D6667F60017DEE6 /* Weather Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -412,12 +431,14 @@
 		CDF60DF51D482F8C003E2AFB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CD2575C11D6669020017DEE6 /* UICollectionReusableView+Extensions.swift */,
 				CDF60DF61D482F9A003E2AFB /* UIView+Extensions.swift */,
 				CDBF96871D56F39F008AC493 /* Colors.swift */,
 				CDBF96891D56F8CA008AC493 /* Fonts.swift */,
 				CD6A633B1D514ACB009571DE /* CrashReporter.swift */,
 				CD6A63441D51758C009571DE /* SafeArray.swift */,
 				CDED235E1D60B3980023CC4B /* CloseEnough.swift */,
+				CD2575C31D666C7E0017DEE6 /* Utility.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -748,10 +769,12 @@
 				CDED234D1D60B0210023CC4B /* Minutely.swift in Sources */,
 				7AE9DA651D57A4A50087B401 /* Coordinate.swift in Sources */,
 				CDED23501D60B02D0023CC4B /* Hourly.swift in Sources */,
+				CD2575BE1D6668050017DEE6 /* TemperatureCell.swift in Sources */,
 				CDF60DF91D48302B003E2AFB /* RootViewController.swift in Sources */,
 				CD7DAE741D56F1E600ED6AD3 /* HairlineView.swift in Sources */,
 				CDCFC3AF1D486422001807B0 /* GudTayView.swift in Sources */,
 				CDED23441D60AFBD0023CC4B /* NearestStorm.swift in Sources */,
+				CD2575C41D666C7E0017DEE6 /* Utility.swift in Sources */,
 				7AE9DA6D1D57A4A50087B401 /* Stop.swift in Sources */,
 				CDED23531D60B0440023CC4B /* Daily.swift in Sources */,
 				7AAE0AAD1D578E6100A209BF /* WeatherService.swift in Sources */,
@@ -788,6 +811,8 @@
 				CD6A633C1D514ACB009571DE /* CrashReporter.swift in Sources */,
 				CDBF96881D56F39F008AC493 /* Colors.swift in Sources */,
 				7AE9DA711D57A4A50087B401 /* Vehicle.swift in Sources */,
+				CD2575C21D6669020017DEE6 /* UICollectionReusableView+Extensions.swift in Sources */,
+				CD2575C01D6668140017DEE6 /* WeatherCell.swift in Sources */,
 				CDCFC3AD1D4863F8001807B0 /* Images.swift in Sources */,
 				CDF60DFF1D483190003E2AFB /* MBTAViewController.swift in Sources */,
 				CDBF968A1D56F8CA008AC493 /* Fonts.swift in Sources */,
@@ -798,6 +823,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD2575C51D666C820017DEE6 /* Utility.swift in Sources */,
 				7AE9DA721D57A4A50087B401 /* Vehicle.swift in Sources */,
 				7A5BA37B1D57988B006AD6FC /* WeatherTests.swift in Sources */,
 				CDED23361D60AE5F0023CC4B /* WeatherCoordinate.swift in Sources */,

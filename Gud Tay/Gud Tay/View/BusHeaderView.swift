@@ -24,11 +24,11 @@ final class BusHeaderView: MBTAHeaderView {
 
         let destinationTagName = "destination"
         let templateString = "\(route.localizedUppercase) <\(destinationTagName)>to \(destination.localizedUppercase)</\(destinationTagName)>"
-        let chain = Fonts.lineChain
+        let chain = Fonts.MBTA.lineChain
             .color(Colors.white)
             .string(templateString)
             .tagStyles([
-                destinationTagName: Fonts.lineChain.color(Colors.translucentWhite),
+                destinationTagName: Fonts.MBTA.lineChain.color(Colors.translucentWhite),
                 ])
 
         let label = UILabel()

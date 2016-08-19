@@ -14,8 +14,8 @@ final class MBTARouteView: GridView {
 
     // Private Properties
 
-    fileprivate let nextTripView = TripView(color: Colors.black, subtitle: "Mins Next", minutesChain: Fonts.nextMinutesChain)
-    fileprivate let laterTripView = TripView(color: Colors.darkGray, subtitle: "Mins Later", minutesChain: Fonts.laterMinutesChain)
+    fileprivate let nextTripView = TripView(color: Colors.black, subtitle: "Mins Next", minutesChain: Fonts.MBTA.nextMinutesChain)
+    fileprivate let laterTripView = TripView(color: Colors.darkGray, subtitle: "Mins Later", minutesChain: Fonts.MBTA.laterMinutesChain)
 
     init(headerView: MBTAHeaderView) {
         super.init(frame: .zero)
@@ -60,7 +60,7 @@ private extension MBTARouteView {
                 .color(color)
 
             let subtitleLabel = UILabel(axId: "subtitleLabel - \(subtitle)")
-            subtitleLabel.attributedText = Fonts.minutesSubtitleChain
+            subtitleLabel.attributedText = Fonts.MBTA.minutesSubtitleChain
                 .color(color)
                 .string(subtitle)
                 .attributedString

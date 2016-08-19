@@ -23,16 +23,16 @@ final class SubwayHeaderView: MBTAHeaderView {
         orangeBar.heightAnchor == 50.0
         whiteBar.heightAnchor == 50.0
 
-        let routeChain = Fonts.lineChain.string(route.localizedUppercase).color(Colors.white)
-        let directionChain = Fonts.lineChain.string(direction.localizedUppercase).color(Colors.black)
+        let routeChain = Fonts.MBTA.lineChain.string(route.localizedUppercase).color(Colors.white)
+        let directionChain = Fonts.MBTA.lineChain.string(direction.localizedUppercase).color(Colors.black)
 
         let destinationTagName = "destination"
         let destinationTemplate = "TO <\(destinationTagName)>\(destination.localizedUppercase)</\(destinationTagName)>"
-        let destinationChain = Fonts.destinationPrefixChain
+        let destinationChain = Fonts.MBTA.destinationPrefixChain
             .color(Colors.black)
             .string(destinationTemplate)
             .tagStyles([
-                destinationTagName: Fonts.destinationChain.color(Colors.black),
+                destinationTagName: Fonts.MBTA.destinationChain.color(Colors.black),
                 ])
 
         let routeLabel = UILabel(axId: "routeLabel")
