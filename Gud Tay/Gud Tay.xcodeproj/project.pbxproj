@@ -359,8 +359,8 @@
 			isa = PBXGroup;
 			children = (
 				CD2575BF1D6668140017DEE6 /* WeatherCell.swift */,
-				CD1204761D67B0B10000F707 /* AspectImageCell.swift */,
 				CD2575BD1D6668050017DEE6 /* TemperatureCell.swift */,
+				CD1204761D67B0B10000F707 /* AspectImageCell.swift */,
 			);
 			path = "Weather Cells";
 			sourceTree = "<group>";
