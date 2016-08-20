@@ -48,6 +48,8 @@ final class ForecastCell: WeatherCell {
         }
     }
 
+    static let preferredWidth: CGFloat = 67.0
+
     // Private Properties
 
     let timeLabel: UILabel = {
@@ -81,6 +83,7 @@ final class ForecastCell: WeatherCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        contentView.backgroundColor = .clear
 
         contentView.layoutMargins = UIEdgeInsets(top: 10.0, left: 0.0, bottom: 20.0, right: 0.0)
 
@@ -97,9 +100,7 @@ final class ForecastCell: WeatherCell {
         contentView.addSubview(stackView)
         stackView.edgeAnchors == contentView.edgeAnchors
 
-        contentView.widthAnchor == 67.0
-
-        contentView.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        contentView.widthAnchor == ForecastCell.preferredWidth
     }
 
 }

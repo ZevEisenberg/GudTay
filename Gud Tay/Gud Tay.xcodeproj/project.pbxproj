@@ -61,6 +61,7 @@
 		CD7DAE741D56F1E600ED6AD3 /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7DAE731D56F1E600ED6AD3 /* HairlineView.swift */; };
 		CD8357521D4C4DA5009E76A7 /* MBTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8357511D4C4DA5009E76A7 /* MBTAService.swift */; };
 		CD9717661D67BEE100238EA5 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9717651D67BEE100238EA5 /* ForecastCell.swift */; };
+		CD97176C1D67F1F100238EA5 /* ForecastBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD97176B1D67F1F100238EA5 /* ForecastBackgroundView.swift */; };
 		CDADC9931D655315005B60AD /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADC9921D655315005B60AD /* LogService.swift */; };
 		CDADC9951D65566C005B60AD /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADC9941D65566C005B60AD /* LogViewController.swift */; };
 		CDBF96881D56F39F008AC493 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF96871D56F39F008AC493 /* Colors.swift */; };
@@ -172,6 +173,7 @@
 		CD7DAE731D56F1E600ED6AD3 /* HairlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HairlineView.swift; sourceTree = "<group>"; };
 		CD8357511D4C4DA5009E76A7 /* MBTAService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTAService.swift; sourceTree = "<group>"; };
 		CD9717651D67BEE100238EA5 /* ForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
+		CD97176B1D67F1F100238EA5 /* ForecastBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastBackgroundView.swift; sourceTree = "<group>"; };
 		CDADC9921D655315005B60AD /* LogService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 		CDADC9941D65566C005B60AD /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		CDBF96871D56F39F008AC493 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				CD2575BD1D6668050017DEE6 /* TemperatureCell.swift */,
 				CD1204761D67B0B10000F707 /* AspectImageCell.swift */,
 				CD9717651D67BEE100238EA5 /* ForecastCell.swift */,
+				CD97176B1D67F1F100238EA5 /* ForecastBackgroundView.swift */,
 			);
 			path = "Weather Cells";
 			sourceTree = "<group>";
@@ -770,6 +773,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDCFC3A91D48610B001807B0 /* GridView.swift in Sources */,
+				CD97176C1D67F1F100238EA5 /* ForecastBackgroundView.swift in Sources */,
 				CDED234A1D60B00E0023CC4B /* Currently.swift in Sources */,
 				CDF60DF21D482D75003E2AFB /* SubwayHeaderView.swift in Sources */,
 				CDED234D1D60B0210023CC4B /* Minutely.swift in Sources */,

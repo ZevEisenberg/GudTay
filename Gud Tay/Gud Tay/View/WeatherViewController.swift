@@ -28,8 +28,12 @@ final class WeatherViewController: RefreshableViewController {
         collectionView.register(ForecastCell.self, forCellWithReuseIdentifier: ForecastCell.gudReuseID)
         collectionView.alwaysBounceHorizontal = true
         collectionView.contentInset = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 0.0)
+        collectionView.backgroundColor = .clear
         return collectionView
     }()
+
+    fileprivate let forecastBackground = ForecastBackgroundView()
+    fileprivate var forecastBackgroundLeadingConstraint: NSLayoutConstraint? = nil
 
     init(viewModel: WeatherViewModel) {
         self.viewModel = viewModel
@@ -39,25 +43,35 @@ final class WeatherViewController: RefreshableViewController {
     override func loadView() {
         view = UIView(axId: "WeatherViewController.view")
 
+        view.addSubview(forecastBackground)
         view.addSubview(collectionView)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        forecastBackground.verticalAnchors == view.verticalAnchors
+        forecastBackground.widthAnchor == CGFloat(ForecastCell.preferredWidth * 24)
+        forecastBackgroundLeadingConstraint = (forecastBackground.leadingAnchor == view.leadingAnchor)
+
         collectionView.edgeAnchors == view.edgeAnchors
 
         collectionView.dataSource = self
+        collectionView.delegate = self
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         Timer.scheduledTimer(withTimeInterval: 10.0 * 60.0, repeats: true, block: { _ in
+            self.updateBackgroundForScrollPosition()
             self.viewModel.refresh() { result in
                 switch result {
                 case .success:
                     self.collectionView.reloadData()
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0 / 60.0) {
+                        self.updateBackgroundForScrollPosition()
+                    }
                 case .failure(let error):
                     self.processRefreshError(error)
                 }
@@ -99,6 +113,37 @@ extension WeatherViewController: UICollectionViewDataSource {
             cell.pinnedHeight = view.frame.height
             return cell
         }
+    }
+
+}
+
+extension WeatherViewController: UICollectionViewDelegate {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        updateBackgroundForScrollPosition()
+    }
+
+}
+
+private extension WeatherViewController {
+
+    func updateBackgroundForScrollPosition() {
+        guard let indexOfFirstForecastCell = viewModel.fields.index(where: {
+            if case WeatherViewModel.WeatherField.hour(_, _, _, _) = $0 {
+                return true
+            }
+            else {
+                return false
+            }
+        }) else {
+            return
+        }
+
+        guard let frame = collectionView.layoutAttributesForItem(at: IndexPath(item: indexOfFirstForecastCell, section: 0))?.frame else {
+            return
+        }
+
+        forecastBackgroundLeadingConstraint?.constant = -collectionView.contentOffset.x + frame.minX
     }
 
 }
