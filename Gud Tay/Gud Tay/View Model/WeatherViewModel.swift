@@ -95,18 +95,19 @@ private extension WeatherViewModel {
 
         // Hourly Forecast
 
-        let hourlyPrecipitation = forecast.hourly.precipitation
-        let hourlyMeteorology = forecast.hourly.meteorology
-        let hourlyTemperature = forecast.hourly.temperature
+        let hourlyPrecipitations = forecast.hourly.precipitation
+        let hourlyMeteorologies = forecast.hourly.meteorology
+        let hourlyTemperatures = forecast.hourly.temperature
 
         for index in 0..<24 {
             guard
-                let precipitation = hourlyPrecipitation.data[safe: index],
-                let temperature = hourlyTemperature.data[safe: index] else {
+                let precipitation = hourlyPrecipitations.data[safe: index],
+                let temperature = hourlyTemperatures.data[safe: index],
+                let meteorology = hourlyMeteorologies.data[safe: index] else {
                     break
             }
 
-            fields.append(.hour(time: precipitation.timestamp, icon: hourlyMeteorology.icon, temp: temperature.current, precipProbability: precipitation.probability))
+            fields.append(.hour(time: precipitation.timestamp, icon: meteorology.icon, temp: temperature.current, precipProbability: precipitation.probability))
         }
 
         return fields

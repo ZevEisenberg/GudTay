@@ -66,9 +66,21 @@ class GudTayTests: XCTestCase {
                 }
 
                 XCTAssertEqual(time0, Date(timeIntervalSince1970: 1470585600))
-                XCTAssertEqual(icon0, .partlyCloudyDay)
+                XCTAssertEqual(icon0, .clearDay)
                 XCTAssertEqualWithAccuracy(temp0, 83.46, accuracy: 0.001)
                 XCTAssertEqualWithAccuracy(precipProbability0!, 0.0, accuracy: 0.001)
+
+                let hour2 = hourlyFields[2]
+
+                guard case WeatherViewModel.WeatherField.hour(let time2, let icon2, let temp2, let precipProbability2) = hour2 else {
+                    XCTFail()
+                    return
+                }
+
+                XCTAssertEqual(time2, Date(timeIntervalSince1970: 1470592800))
+                XCTAssertEqual(icon2, .rain)
+                XCTAssertEqualWithAccuracy(temp2, -12.34, accuracy: 0.001)
+                XCTAssertEqualWithAccuracy(precipProbability2!, 0.9, accuracy: 0.001)
 
             case .failure(let error):
                 XCTFail("got unexpected error: \(error)")
