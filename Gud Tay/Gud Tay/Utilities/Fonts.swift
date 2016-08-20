@@ -47,6 +47,20 @@ struct Fonts {
             .figureSpacing(.proportional)
             .font(UIFont(name: "HelveticaNeue-Bold", size: 48.0)!)
 
+        private static let baseForecastChain = BONChain()
+            .figureSpacing(.proportional)
+            .alignment(.center)
+            .color(Colors.white)
+
+        static let timeChain = baseForecastChain
+            .font(UIFont(name: "HelveticaNeue-Medium", size: 20.0)!)
+
+        static let precipProbabilityChain = baseForecastChain
+            .font(UIFont(name: "HelveticaNeue-Medium", size: 16.0)!)
+
+        static let tempForecastChain = baseForecastChain
+            .font(UIFont(name: "HelveticaNeue-Medium", size: 32.0)!)
+
     }
 
 }

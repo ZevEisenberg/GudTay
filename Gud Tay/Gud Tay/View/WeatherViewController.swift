@@ -18,11 +18,14 @@ final class WeatherViewController: RefreshableViewController {
         layout.scrollDirection = .horizontal
         layout.itemSize = UICollectionViewFlowLayoutAutomaticSize
         layout.estimatedItemSize = CGSize(width: 50.0, height: 205.0)
+        layout.minimumInteritemSpacing = 0.0
+        layout.minimumLineSpacing = 0.0
+
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = Colors.white
         collectionView.register(TemperatureCell.self, forCellWithReuseIdentifier: TemperatureCell.gudReuseID)
         collectionView.register(AspectImageCell.self, forCellWithReuseIdentifier: AspectImageCell.gudReuseID)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.gudReuseID)
+        collectionView.register(ForecastCell.self, forCellWithReuseIdentifier: ForecastCell.gudReuseID)
         collectionView.alwaysBounceHorizontal = true
         collectionView.contentInset = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 0.0)
         return collectionView
@@ -90,11 +93,10 @@ extension WeatherViewController: UICollectionViewDataSource {
             cell.image = #imageLiteral(resourceName: "calvin-umbrella")
             cell.pinnedHeight = view.frame.height
             return cell
-        default:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionViewCell.gudReuseID, for: indexPath)
-            cell.contentView.backgroundColor = Colors.random
-            cell.contentView.heightAnchor == view.frame.height
-            cell.contentView.widthAnchor == 50.0
+        case .hour(let time, let icon, let temp, let precipProbability):
+            let cell = forceCast(collectionView.dequeueReusableCell(withReuseIdentifier: ForecastCell.gudReuseID, for: indexPath), as: ForecastCell.self)
+            cell.model = (time: time, icon: icon, temp: temp, precipProbability: precipProbability)
+            cell.pinnedHeight = view.frame.height
             return cell
         }
     }

@@ -60,6 +60,7 @@
 		CD7DAE721D55B62C00ED6AD3 /* Sample MBTA API Response.json in Resources */ = {isa = PBXBuildFile; fileRef = CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */; };
 		CD7DAE741D56F1E600ED6AD3 /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7DAE731D56F1E600ED6AD3 /* HairlineView.swift */; };
 		CD8357521D4C4DA5009E76A7 /* MBTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8357511D4C4DA5009E76A7 /* MBTAService.swift */; };
+		CD9717661D67BEE100238EA5 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9717651D67BEE100238EA5 /* ForecastCell.swift */; };
 		CDADC9931D655315005B60AD /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADC9921D655315005B60AD /* LogService.swift */; };
 		CDADC9951D65566C005B60AD /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADC9941D65566C005B60AD /* LogViewController.swift */; };
 		CDBF96881D56F39F008AC493 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF96871D56F39F008AC493 /* Colors.swift */; };
@@ -170,6 +171,7 @@
 		CD6A63471D517898009571DE /* UtilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityTests.swift; sourceTree = "<group>"; };
 		CD7DAE731D56F1E600ED6AD3 /* HairlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HairlineView.swift; sourceTree = "<group>"; };
 		CD8357511D4C4DA5009E76A7 /* MBTAService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTAService.swift; sourceTree = "<group>"; };
+		CD9717651D67BEE100238EA5 /* ForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
 		CDADC9921D655315005B60AD /* LogService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 		CDADC9941D65566C005B60AD /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		CDBF96871D56F39F008AC493 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 				CD2575BF1D6668140017DEE6 /* WeatherCell.swift */,
 				CD2575BD1D6668050017DEE6 /* TemperatureCell.swift */,
 				CD1204761D67B0B10000F707 /* AspectImageCell.swift */,
+				CD9717651D67BEE100238EA5 /* ForecastCell.swift */,
 			);
 			path = "Weather Cells";
 			sourceTree = "<group>";
@@ -801,6 +804,7 @@
 				CDED23471D60AFCF0023CC4B /* Almanac.swift in Sources */,
 				CDADC9931D655315005B60AD /* LogService.swift in Sources */,
 				CD6A63451D51758C009571DE /* SafeArray.swift in Sources */,
+				CD9717661D67BEE100238EA5 /* ForecastCell.swift in Sources */,
 				CDECBAB81D46D97F007A82D5 /* JSONRepresentable.swift in Sources */,
 				CDECBAC31D46DF7A007A82D5 /* MBTAViewModel.swift in Sources */,
 				CDF60DF01D482D6A003E2AFB /* BusHeaderView.swift in Sources */,
