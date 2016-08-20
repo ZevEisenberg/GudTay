@@ -129,11 +129,9 @@ private extension WeatherViewController {
 
     func updateBackgroundForScrollPosition() {
         guard let indexOfFirstForecastCell = viewModel.fields.index(where: {
-            if case WeatherViewModel.WeatherField.hour(_, _, _, _) = $0 {
-                return true
-            }
-            else {
-                return false
+            switch $0 {
+            case .hour: return true
+            default: return false
             }
         }) else {
             return
