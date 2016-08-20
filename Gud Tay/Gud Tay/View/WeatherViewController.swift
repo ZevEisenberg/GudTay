@@ -53,7 +53,7 @@ final class WeatherViewController: RefreshableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        Timer.scheduledTimer(withTimeInterval: 30.0 * 60.0, repeats: true, block: { _ in
+        Timer.scheduledTimer(withTimeInterval: 10.0 * 60.0, repeats: true, block: { _ in
             self.viewModel.refresh() { result in
                 switch result {
                 case .success:
