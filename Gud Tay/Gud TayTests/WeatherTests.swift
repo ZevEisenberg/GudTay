@@ -99,7 +99,7 @@ class GudTayTests: XCTestCase {
         formatter.calendar = calendar
         let today = formatter.date(from: "2016-08-22 08:24:57 -0400")!
 
-        let interval = WeatherViewModel.desiredDryInterval(for: today)
+        let interval = WeatherViewModel.desiredDryInterval(for: today, calendar: calendar)
 
         let controlStartDate = formatter.date(from: "2016-08-22 07:00:00 -0400")!
         let controlEndDate = formatter.date(from: "2016-08-22 23:00:00 -0400")!

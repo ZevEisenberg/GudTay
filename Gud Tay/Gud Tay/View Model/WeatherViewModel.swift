@@ -88,7 +88,7 @@ private extension WeatherViewModel {
         // Need an umbrella?
 
         let hourlyPrecipitations = forecast.hourly.precipitation
-        let hoursWeCareAbout = WeatherViewModel.desiredDryInterval()
+        let hoursWeCareAbout = WeatherViewModel.desiredDryInterval(for: current.precipitation.timestamp)
         let precipitationsWeCareAbout = hourlyPrecipitations.data.filter { precipitation in
             hoursWeCareAbout.contains(precipitation.timestamp)
         }
@@ -122,8 +122,7 @@ private extension WeatherViewModel {
 
 extension WeatherViewModel {
 
-    static func desiredDryInterval(for date: Date = Date()) -> DateInterval {
-        let calendar = Calendar.current
+    static func desiredDryInterval(for date: Date, calendar: Calendar = Calendar.current) -> DateInterval {
         let components: Set<Calendar.Component> = [
             .year,
             .month,
