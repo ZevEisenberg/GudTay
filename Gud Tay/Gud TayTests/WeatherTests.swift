@@ -91,4 +91,22 @@ class GudTayTests: XCTestCase {
         waitForExpectations(timeout: 0.1, handler: nil)
     }
 
+    func testDryDateInterval() {
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(abbreviation: "EDT")!
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+        formatter.calendar = calendar
+        let today = formatter.date(from: "2016-08-22 08:24:57 -0400")!
+
+        let interval = WeatherViewModel.desiredDryInterval(for: today)
+
+        let controlStartDate = formatter.date(from: "2016-08-22 07:00:00 -0400")!
+        let controlEndDate = formatter.date(from: "2016-08-22 23:00:00 -0400")!
+
+        let controlInterval = DateInterval(start: controlStartDate, end: controlEndDate)
+
+        XCTAssertEqual(interval, controlInterval)
+    }
+
 }

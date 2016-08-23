@@ -87,15 +87,20 @@ private extension WeatherViewModel {
 
         // Need an umbrella?
 
-        if let today = forecast.daily.almanac.data.first {
-            if today.precipitation.probability > 0.15 || today.precipitation.intensity >= 0.1 {
-                fields.append(.needUmbrella)
-            }
+        let hourlyPrecipitations = forecast.hourly.precipitation
+        let hoursWeCareAbout = WeatherViewModel.desiredDryInterval()
+        let precipitationsWeCareAbout = hourlyPrecipitations.data.filter { precipitation in
+            hoursWeCareAbout.contains(precipitation.timestamp)
+        }
+
+        if precipitationsWeCareAbout.contains(where: { precipitation in
+            return precipitation.probability > 0.15 || precipitation.intensity >= 0.1
+        }) {
+            fields.append(.needUmbrella)
         }
 
         // Hourly Forecast
 
-        let hourlyPrecipitations = forecast.hourly.precipitation
         let hourlyMeteorologies = forecast.hourly.meteorology
         let hourlyTemperatures = forecast.hourly.temperature
 
@@ -111,6 +116,35 @@ private extension WeatherViewModel {
         }
 
         return fields
+    }
+
+}
+
+extension WeatherViewModel {
+
+    static func desiredDryInterval(for date: Date = Date()) -> DateInterval {
+        let calendar = Calendar.current
+        let components: Set<Calendar.Component> = [
+            .year,
+            .month,
+            .day,
+            ]
+        let currentComponents = calendar.dateComponents(components, from: date)
+        let startComponents: DateComponents = {
+            var comps = currentComponents
+            comps.hour = 7
+            return comps
+        }()
+
+        let endComponents: DateComponents = {
+            var comps = currentComponents
+            comps.hour = 23
+            return comps
+        }()
+
+        let startDate = calendar.date(from: startComponents)!
+        let endDate = calendar.date(from: endComponents)!
+        return DateInterval(start: startDate, end: endDate)
     }
 
 }
