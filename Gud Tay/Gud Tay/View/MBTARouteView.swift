@@ -87,5 +87,4 @@ private extension MBTARouteView {
         laterTripView.updateMinutesString(later)
     }
 
-
 }
