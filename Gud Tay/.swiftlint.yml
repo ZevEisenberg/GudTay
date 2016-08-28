@@ -9,11 +9,17 @@ disabled_rules: # rule identifiers to exclude from running
   # - type_name
   # - variable_name
   - conditional_binding_cascade
+
+enabled_rules:
+  - vertical_whitespace
+
 included: # paths to include during linting. `--path` is ignored if present. takes precendence over `excluded`.
   # - Source
+
 excluded: # paths to ignore during linting. overridden by `included`.
   - Carthage
   - Pods
   - Constants
+
 statement_position:
   statement_mode: uncuddled_else
