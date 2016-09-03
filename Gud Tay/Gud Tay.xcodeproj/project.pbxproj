@@ -69,7 +69,6 @@
 		CD9021B11D6E96D800375FE7 /* MBTAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9021AA1D6E96D800375FE7 /* MBTAViewController.swift */; };
 		CD9021B21D6E96D800375FE7 /* SubwayHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9021AB1D6E96D800375FE7 /* SubwayHeaderView.swift */; };
 		CD9021B51D6E96DD00375FE7 /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9021B41D6E96DD00375FE7 /* HairlineView.swift */; };
-		CD9021C91D6E981900375FE7 /* WeatherLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9021C81D6E981900375FE7 /* WeatherLayout.swift */; };
 		CDADC9931D655315005B60AD /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADC9921D655315005B60AD /* LogService.swift */; };
 		CDADC9951D65566C005B60AD /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADC9941D65566C005B60AD /* LogViewController.swift */; };
 		CDBF96881D56F39F008AC493 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF96871D56F39F008AC493 /* Colors.swift */; };
@@ -182,7 +181,6 @@
 		CD9021AA1D6E96D800375FE7 /* MBTAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTAViewController.swift; sourceTree = "<group>"; };
 		CD9021AB1D6E96D800375FE7 /* SubwayHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubwayHeaderView.swift; sourceTree = "<group>"; };
 		CD9021B41D6E96DD00375FE7 /* HairlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HairlineView.swift; sourceTree = "<group>"; };
-		CD9021C81D6E981900375FE7 /* WeatherLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherLayout.swift; sourceTree = "<group>"; };
 		CDADC9921D655315005B60AD /* LogService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 		CDADC9941D65566C005B60AD /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		CDBF96871D56F39F008AC493 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -375,7 +373,6 @@
 			isa = PBXGroup;
 			children = (
 				CD90219D1D6E96D200375FE7 /* WeatherViewController.swift */,
-				CD9021C81D6E981900375FE7 /* WeatherLayout.swift */,
 				CD9021971D6E96D200375FE7 /* Weather Cells */,
 			);
 			path = Weather;
@@ -845,7 +842,6 @@
 				CD9021B01D6E96D800375FE7 /* MBTARouteView.swift in Sources */,
 				7AE9DA691D57A4A50087B401 /* Mode.swift in Sources */,
 				CDED233B1D60AF4B0023CC4B /* WeatherProtocols.swift in Sources */,
-				CD9021C91D6E981900375FE7 /* WeatherLayout.swift in Sources */,
 				CD2575BB1D66607F0017DEE6 /* RefreshableViewController.swift in Sources */,
 				CD90219F1D6E96D200375FE7 /* ForecastBackgroundView.swift in Sources */,
 				CDF60DF71D482F9A003E2AFB /* UIView+Extensions.swift in Sources */,
