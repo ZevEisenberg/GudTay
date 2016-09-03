@@ -63,7 +63,12 @@ final class WeatherViewController: RefreshableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        Timer.scheduledTimer(withTimeInterval: 10.0 * 60.0, repeats: true, block: { _ in
+        var refreshInterval = 10.0 * 60.0
+        if let intervalString = ProcessInfo.processInfo.environment[ProcessInfo.EnvironmentKey.weatherRefreshInterval.rawValue], let interval = TimeInterval(intervalString) {
+            refreshInterval = interval
+        }
+
+        Timer.scheduledTimer(withTimeInterval: refreshInterval, repeats: true, block: { _ in
             self.updateBackgroundForScrollPosition()
             self.viewModel.refresh() { result in
                 switch result {

@@ -11,8 +11,8 @@ import Anchorage
 
 final class RootViewController: UIViewController {
 
-    private let mbtaViewController = MBTAViewController(viewModel: MBTAViewModel(serviceType: MBTAService.self))
-    private let weatherViewController = WeatherViewController(viewModel: WeatherViewModel(serviceType: WeatherService.self))
+    private let mbtaViewController: MBTAViewController
+    private let weatherViewController: WeatherViewController
 
     private let mainStackView: UIStackView = {
         let stackView = UIStackView(axId: "mainStackView")
@@ -22,6 +22,31 @@ final class RootViewController: UIViewController {
     }()
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+
+        // Weather
+
+        let weatherServiceType: WeatherServiceType.Type
+        if let serviceTypeString = ProcessInfo.processInfo.environment[ProcessInfo.EnvironmentKey.weatherAPIClient.rawValue], let serviceKind = WeatherServiceKind(rawValue: serviceTypeString) {
+            weatherServiceType = serviceKind.serviceType
+        }
+        else {
+            weatherServiceType = WeatherService.self
+        }
+
+        weatherViewController = WeatherViewController(viewModel: WeatherViewModel(serviceType: weatherServiceType))
+
+        // MBTA
+
+        let mbtaServiceType: MBTAServiceType.Type
+        if let serviceTypeString = ProcessInfo.processInfo.environment[ProcessInfo.EnvironmentKey.mbtaAPIClient.rawValue], let serviceKind = MBTAServiceKind(rawValue: serviceTypeString) {
+            mbtaServiceType = serviceKind.serviceType
+        }
+        else {
+            mbtaServiceType = MBTAService.self
+        }
+
+        mbtaViewController = MBTAViewController(viewModel: MBTAViewModel(serviceType: mbtaServiceType))
+
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         mbtaViewController.errorHandler = { message in
             LogService.add(message: message)

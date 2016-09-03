@@ -14,6 +14,22 @@ protocol MBTAServiceType {
 
 }
 
+enum MBTAServiceKind: String {
+
+    case normal
+    case mock
+
+    var serviceType: MBTAServiceType.Type {
+        switch self {
+        case .normal:
+            return MBTAService.self
+        case .mock:
+            return MockMBTAService.self
+        }
+    }
+
+}
+
 enum MBTAService: MBTAServiceType {
 
     static func predictionsByStop(stopId: String, completion: @escaping (APIClient.Result) -> ()) {

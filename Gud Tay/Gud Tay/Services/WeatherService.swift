@@ -14,6 +14,22 @@ protocol WeatherServiceType {
 
 }
 
+enum WeatherServiceKind: String {
+
+    case normal
+    case mock
+
+    var serviceType: WeatherServiceType.Type {
+        switch self {
+        case .normal:
+            return WeatherService.self
+        case .mock:
+            return MockWeatherService.self
+        }
+    }
+
+}
+
 enum WeatherService: WeatherServiceType {
 
     static func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> ()) {
@@ -52,10 +68,12 @@ private extension WeatherService {
 
 private final class DummyClass { }
 
-enum MockWeatherService: WeatherServiceType {
+struct MockWeatherService: WeatherServiceType {
+
+    private static var provider = FlipFloppingWeatherFileProvider()
 
     static func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> ()) {
-        let filename = "Sample Weather API Response"
+        let filename = provider.next()!
         let ext = "json"
         guard let url = Bundle(for: DummyClass.self).url(forResource: filename, withExtension: ext) else {
             assertionFailure("Could not find URL of \(filename).\(ext)")
@@ -84,6 +102,27 @@ enum MockWeatherService: WeatherServiceType {
         }
 
         completion(.success(jsonObject))
+    }
+
+}
+
+struct FlipFloppingWeatherFileProvider: Sequence, IteratorProtocol {
+
+    private var index = [String].Index(0)
+
+    private let fileNames = [
+        "Sample Weather API Response with rain",
+        "Sample Weather API Response without rain",
+    ]
+
+    mutating func next() -> String? {
+        defer {
+            index += 1
+            if index == fileNames.count {
+                index = 0
+            }
+        }
+        return fileNames[index]
     }
 
 }
