@@ -8,19 +8,15 @@
 
 import UIKit
 
-class ForecastBackgroundView: UIView {
+class ForecastBackgroundView: UICollectionReusableView {
 
-    init() {
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
     }
 
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    @available(*, unavailable) required override init(frame: CGRect) {
-        fatalError("init(frame:) has not been implemented")
     }
 
 }

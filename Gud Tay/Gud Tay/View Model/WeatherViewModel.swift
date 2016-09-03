@@ -27,6 +27,7 @@ final class WeatherViewModel {
     }
 
     private(set) var fields: [WeatherField] = []
+    private(set) var forecastIndices = IndexSet()
 
     private let serviceType: WeatherServiceType.Type
 
@@ -46,7 +47,9 @@ final class WeatherViewModel {
 
                 do {
                     let forecast = try WeatherForecast(json: jsonObject)
-                    self.fields = WeatherViewModel.processForecast(forecast: forecast)
+                    let (fields, forecastIndices) = WeatherViewModel.processForecast(forecast: forecast)
+                    self.fields = fields
+                    self.forecastIndices = forecastIndices
                     completion(.success(self.fields))
                 }
                 catch let jsonError as JSONError {
@@ -65,7 +68,7 @@ final class WeatherViewModel {
 
 private extension WeatherViewModel {
 
-    static func processForecast(forecast: WeatherForecast) -> [WeatherField] {
+    static func processForecast(forecast: WeatherForecast) -> (fields: [WeatherField], forecastIndices: IndexSet) {
         var fields = [WeatherField]()
 
         let current = forecast.currently
@@ -104,6 +107,7 @@ private extension WeatherViewModel {
         let hourlyMeteorologies = forecast.hourly.meteorology
         let hourlyTemperatures = forecast.hourly.temperature
 
+        var forecastIndices = IndexSet()
         for index in 0..<24 {
             guard
                 let precipitation = hourlyPrecipitations.data[safe: index],
@@ -111,11 +115,11 @@ private extension WeatherViewModel {
                 let meteorology = hourlyMeteorologies.data[safe: index] else {
                     break
             }
-
+            forecastIndices.insert(fields.count)
             fields.append(.hour(time: precipitation.timestamp, icon: meteorology.icon, temp: temperature.current, precipProbability: precipitation.probability))
         }
 
-        return fields
+        return (fields: fields, forecastIndices: forecastIndices)
     }
 
 }

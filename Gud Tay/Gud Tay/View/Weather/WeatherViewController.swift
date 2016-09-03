@@ -14,12 +14,13 @@ final class WeatherViewController: RefreshableViewController {
     fileprivate let viewModel: WeatherViewModel
 
     fileprivate let collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
+        let layout = WeatherLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = UICollectionViewFlowLayoutAutomaticSize
         layout.estimatedItemSize = CGSize(width: 50.0, height: 205.0)
         layout.minimumInteritemSpacing = 0.0
         layout.minimumLineSpacing = 0.0
+        layout.register(ForecastBackgroundView.self, forDecorationViewOfKind: WeatherLayout.forecastBackgroundKind)
 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = Colors.white
@@ -32,9 +33,6 @@ final class WeatherViewController: RefreshableViewController {
         return collectionView
     }()
 
-    fileprivate let forecastBackground = ForecastBackgroundView()
-    fileprivate var forecastBackgroundLeadingConstraint: NSLayoutConstraint? = nil
-
     init(viewModel: WeatherViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -42,36 +40,26 @@ final class WeatherViewController: RefreshableViewController {
 
     override func loadView() {
         view = UIView(axId: "WeatherViewController.view")
-
-        view.addSubview(forecastBackground)
         view.addSubview(collectionView)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        forecastBackground.verticalAnchors == view.verticalAnchors
-        forecastBackground.widthAnchor == CGFloat(ForecastCell.preferredWidth * 24)
-        forecastBackgroundLeadingConstraint = (forecastBackground.leadingAnchor == view.leadingAnchor)
-
         collectionView.edgeAnchors == view.edgeAnchors
 
         collectionView.dataSource = self
-        collectionView.delegate = self
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         Timer.scheduledTimer(withTimeInterval: 10.0 * 60.0, repeats: true, block: { _ in
-            self.updateBackgroundForScrollPosition()
             self.viewModel.refresh() { result in
                 switch result {
                 case .success:
+                    (self.collectionView.collectionViewLayout as? WeatherLayout)?.forecastIndices = self.viewModel.forecastIndices
                     self.collectionView.reloadData()
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0 / 60.0) {
-                        self.updateBackgroundForScrollPosition()
-                    }
                 case .failure(let error):
                     self.processRefreshError(error)
                 }
@@ -117,31 +105,6 @@ extension WeatherViewController: UICollectionViewDataSource {
 
 }
 
-extension WeatherViewController: UICollectionViewDelegate {
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        updateBackgroundForScrollPosition()
-    }
-
-}
-
-private extension WeatherViewController {
-
-    func updateBackgroundForScrollPosition() {
-        guard let indexOfFirstForecastCell = viewModel.fields.index(where: {
-            switch $0 {
-            case .hour: return true
-            default: return false
-            }
-        }) else {
-            return
-        }
-
-        guard let frame = collectionView.layoutAttributesForItem(at: IndexPath(item: indexOfFirstForecastCell, section: 0))?.frame else {
-            return
-        }
-
-        forecastBackgroundLeadingConstraint?.constant = -collectionView.contentOffset.x + frame.minX
-    }
+extension WeatherViewController: UICollectionViewDelegateFlowLayout {
 
 }
