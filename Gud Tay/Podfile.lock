@@ -7,19 +7,19 @@ PODS:
   - SwiftGen (2.0.0)
 
 DEPENDENCIES:
-  - Anchorage (from `git@github.com:Raizlabs/Anchorage.git`, commit `11ae636b97ba83163b49addd679d11aaf312eabd`)
+  - Anchorage (from `git@github.com:Raizlabs/Anchorage.git`, commit `94cf07a8b1678781252699f9271700fab0a4e671`)
   - BonMot/UIKit
   - BuddyBuildSDK
   - SwiftGen
 
 EXTERNAL SOURCES:
   Anchorage:
-    :commit: 11ae636b97ba83163b49addd679d11aaf312eabd
+    :commit: 94cf07a8b1678781252699f9271700fab0a4e671
     :git: git@github.com:Raizlabs/Anchorage.git
 
 CHECKOUT OPTIONS:
   Anchorage:
-    :commit: 11ae636b97ba83163b49addd679d11aaf312eabd
+    :commit: 94cf07a8b1678781252699f9271700fab0a4e671
     :git: git@github.com:Raizlabs/Anchorage.git
 
 SPEC CHECKSUMS:
@@ -28,6 +28,6 @@ SPEC CHECKSUMS:
   BuddyBuildSDK: d5398183a8b50432d5cefeb1080f02b8c9b3928a
   SwiftGen: 67c900e9f1db8168612f2df843ec20a66783a8e5
 
-PODFILE CHECKSUM: c5b467ec588e4b89f12a5cc1b359d4109eba6c76
+PODFILE CHECKSUM: 5a583da702e181c9d7273efe2cbaa923c74f643c
 
-COCOAPODS: 1.1.0.beta.1
+COCOAPODS: 1.1.0.beta.2

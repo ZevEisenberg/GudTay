@@ -15,7 +15,7 @@ final class GudTayView: GridView {
 
     fileprivate let tapHandler: TapHandler
 
-    init(tapHandler: TapHandler) {
+    init(tapHandler: @escaping TapHandler) {
         self.tapHandler = tapHandler
         super.init(frame: .zero)
 
