@@ -3,8 +3,8 @@ PODS:
   - BonMot/Core (3.2)
   - BonMot/UIKit (3.2):
     - BonMot/Core
-  - BuddyBuildSDK (1.0.11)
-  - SwiftGen (2.0.0)
+  - BuddyBuildSDK (1.0.12)
+  - SwiftGen (3.0.0)
 
 DEPENDENCIES:
   - Anchorage (from `git@github.com:Raizlabs/Anchorage.git`, commit `94cf07a8b1678781252699f9271700fab0a4e671`)
@@ -25,8 +25,8 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Anchorage: 3fb9d1ca397ac68b7ce9857792660a0d683f2e11
   BonMot: 039d91a9f7e408ed21e8627bb093a926e34553e0
-  BuddyBuildSDK: d5398183a8b50432d5cefeb1080f02b8c9b3928a
-  SwiftGen: 67c900e9f1db8168612f2df843ec20a66783a8e5
+  BuddyBuildSDK: f4682598772ae66c9ef5554d2d78d0a19fb413a0
+  SwiftGen: f679cd0ed4173a5da3b01efd0da23542bf82f6ab
 
 PODFILE CHECKSUM: 5a583da702e181c9d7273efe2cbaa923c74f643c
 

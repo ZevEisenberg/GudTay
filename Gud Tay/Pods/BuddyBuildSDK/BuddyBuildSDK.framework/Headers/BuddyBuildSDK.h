@@ -109,6 +109,20 @@ typedef void (^BBCallback)();
 
 + (NSString*)buildConfiguration;
 
+/*
+ * Branch name for this build
+ */
+
++ (NSString*)branchName;
+
+/*
+ * Returns the user's email or more specifically, the email that was used to download and deploy the build.
+ * Returns "Unknown User" in cases where buddybuild is unable to identify the user.
+ * This is the same email seen in crash instances and feedbacks in the dashboard
+ * NOTE: To be called after [BuddyBuildSDK setup]
+ * this is different than the one returned in the user display name callback.
+*/
++ (NSString*)userEmail;
 
 /* Manually invoke the screenshot tutorial
  * If you don't want it to appear on app launch, disable it in the
@@ -125,6 +139,6 @@ typedef void (^BBCallback)();
 // Your app may contain certain sensitive customer information that you do not want to be included in the video.
 // If you set this property to be true, this view will be redacted from the screen capture and blacked out
 
-@property (nonatomic, assign) BOOL buddybuildViewContainsSensitiveInformation;
+@property (nonatomic, assign) BOOL buddybuildViewIsPrivate;
 
 @end
