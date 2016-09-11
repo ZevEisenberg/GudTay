@@ -74,6 +74,7 @@ final class WeatherViewController: RefreshableViewController {
                 switch result {
                 case .success:
                     self.collectionView.reloadData()
+                    self.collectionView.collectionViewLayout.invalidateLayout()
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0 / 60.0) {
                         self.updateBackgroundForScrollPosition()
                     }

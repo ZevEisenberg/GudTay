@@ -28,7 +28,7 @@ class GudTayUITests: XCTestCase {
 
     func testSwitchingFromRainToNoRain() {
 
-        RunLoop.main.run(until: Date() + 200)
+        RunLoop.main.run(until: Date() + 3)
 
         let app = XCUIApplication()
 
