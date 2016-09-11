@@ -8,7 +8,6 @@ disabled_rules: # rule identifiers to exclude from running
   # - type_body_length
   # - type_name
   # - variable_name
-  - conditional_binding_cascade
 
 enabled_rules:
   - vertical_whitespace
