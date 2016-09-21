@@ -44,7 +44,7 @@ private extension WeatherService {
     struct Constants {
 
         static let apiKey = "8d8fc9bf425e2a321f364f5ae10e7d1e"
-        static let host = "https://api.forecast.io/"
+        static let host = "https://api.darksky.net/"
 
     }
 
