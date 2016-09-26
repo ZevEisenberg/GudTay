@@ -64,6 +64,7 @@
 		CD6A63491D517899009571DE /* UtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63471D517898009571DE /* UtilityTests.swift */; };
 		CD7DAE711D55B5F400ED6AD3 /* Sample MBTA API Response.json in Resources */ = {isa = PBXBuildFile; fileRef = CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */; };
 		CD7DAE721D55B62C00ED6AD3 /* Sample MBTA API Response.json in Resources */ = {isa = PBXBuildFile; fileRef = CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */; };
+		CD8320181D98B03C00DED244 /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADC9921D655315005B60AD /* LogService.swift */; };
 		CD8357521D4C4DA5009E76A7 /* MBTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8357511D4C4DA5009E76A7 /* MBTAService.swift */; };
 		CD90219E1D6E96D200375FE7 /* AspectImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9021981D6E96D200375FE7 /* AspectImageCell.swift */; };
 		CD90219F1D6E96D200375FE7 /* ForecastBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9021991D6E96D200375FE7 /* ForecastBackgroundView.swift */; };
@@ -899,6 +900,7 @@
 				CDED234E1D60B0210023CC4B /* Minutely.swift in Sources */,
 				7AE9DA6E1D57A4A50087B401 /* Stop.swift in Sources */,
 				CDED23481D60AFCF0023CC4B /* Almanac.swift in Sources */,
+				CD8320181D98B03C00DED244 /* LogService.swift in Sources */,
 				7AE9DA761D57A54F0087B401 /* WeatherForecast.swift in Sources */,
 				CD1A10821D7A7D3F0072785B /* ProcessInfo+Extensions.swift in Sources */,
 				7AC59EEC1D57A1C1003863AE /* ViewModel.swift in Sources */,

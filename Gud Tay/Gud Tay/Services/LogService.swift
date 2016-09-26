@@ -6,6 +6,8 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
+import Foundation.NSDate
+
 enum LogService {
 
     // Private Properties
