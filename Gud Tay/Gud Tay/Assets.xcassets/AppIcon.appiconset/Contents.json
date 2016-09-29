@@ -36,8 +36,9 @@
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "Lunboks.png",
       "scale" : "2x"
     },
     {
