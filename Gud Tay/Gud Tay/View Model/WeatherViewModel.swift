@@ -104,7 +104,9 @@ private extension WeatherViewModel {
         let hourlyMeteorologies = forecast.hourly.meteorology
         let hourlyTemperatures = forecast.hourly.temperature
 
-        for index in 0..<24 {
+        let hoursUntilSameTimeNextDay = (hourlyPrecipitations.data[safe: 0]?.timestamp ?? Date()).hoursUntilSameTimeNextDay()
+
+        for index in 0..<hoursUntilSameTimeNextDay {
             guard
                 let precipitation = hourlyPrecipitations.data[safe: index],
                 let temperature = hourlyTemperatures.data[safe: index],

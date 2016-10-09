@@ -49,6 +49,9 @@
 		CD1A10881D7A91520072785B /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB31D46D97F007A82D5 /* APIClient.swift */; };
 		CD1A10891D7A91540072785B /* JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB41D46D97F007A82D5 /* JSONRepresentable.swift */; };
 		CD1A108A1D7A91600072785B /* CrashReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A633B1D514ACB009571DE /* CrashReporter.swift */; };
+		CD22CA941DAAEC6B000C0205 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD22CA931DAAEC6B000C0205 /* Date+Extensions.swift */; };
+		CD22CA951DAAEC6B000C0205 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD22CA931DAAEC6B000C0205 /* Date+Extensions.swift */; };
+		CD22CA971DAAEC94000C0205 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD22CA961DAAEC94000C0205 /* DateTests.swift */; };
 		CD2575BB1D66607F0017DEE6 /* RefreshableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2575BA1D66607F0017DEE6 /* RefreshableViewController.swift */; };
 		CD2575C21D6669020017DEE6 /* UICollectionReusableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2575C11D6669020017DEE6 /* UICollectionReusableView+Extensions.swift */; };
 		CD2575C41D666C7E0017DEE6 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2575C31D666C7E0017DEE6 /* Utility.swift */; };
@@ -173,6 +176,8 @@
 		CD12DE3B1D4FE82E00956B74 /* MBTATests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTATests.swift; sourceTree = "<group>"; };
 		CD1A107D1D7A743B0072785B /* Sample Weather API Response without rain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Sample Weather API Response without rain.json"; sourceTree = "<group>"; };
 		CD1A10801D7A7D3F0072785B /* ProcessInfo+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+Extensions.swift"; sourceTree = "<group>"; };
+		CD22CA931DAAEC6B000C0205 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		CD22CA961DAAEC94000C0205 /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		CD2575BA1D66607F0017DEE6 /* RefreshableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshableViewController.swift; sourceTree = "<group>"; };
 		CD2575C11D6669020017DEE6 /* UICollectionReusableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extensions.swift"; sourceTree = "<group>"; };
 		CD2575C31D666C7E0017DEE6 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -359,6 +364,7 @@
 				CD12DE3B1D4FE82E00956B74 /* MBTATests.swift */,
 				7A5BA37A1D57988B006AD6FC /* WeatherTests.swift */,
 				CD6A63471D517898009571DE /* UtilityTests.swift */,
+				CD22CA961DAAEC94000C0205 /* DateTests.swift */,
 				CD1279DD1D45B37B00DC7BB8 /* Info.plist */,
 			);
 			path = "Gud TayTests";
@@ -487,6 +493,7 @@
 				CDED235E1D60B3980023CC4B /* CloseEnough.swift */,
 				CD2575C31D666C7E0017DEE6 /* Utility.swift */,
 				CD1A10801D7A7D3F0072785B /* ProcessInfo+Extensions.swift */,
+				CD22CA931DAAEC6B000C0205 /* Date+Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -866,6 +873,7 @@
 				CD6A633C1D514ACB009571DE /* CrashReporter.swift in Sources */,
 				CDBF96881D56F39F008AC493 /* Colors.swift in Sources */,
 				7AE9DA711D57A4A50087B401 /* Vehicle.swift in Sources */,
+				CD22CA941DAAEC6B000C0205 /* Date+Extensions.swift in Sources */,
 				CD2575C21D6669020017DEE6 /* UICollectionReusableView+Extensions.swift in Sources */,
 				CD9021A31D6E96D200375FE7 /* WeatherViewController.swift in Sources */,
 				CDCFC3AD1D4863F8001807B0 /* Images.swift in Sources */,
@@ -886,6 +894,8 @@
 				CD555FCF1D50396700D9413F /* MBTAViewModel.swift in Sources */,
 				CD60D15C1D4FE87C000B74CF /* MBTAService.swift in Sources */,
 				CDED233C1D60AF4B0023CC4B /* WeatherProtocols.swift in Sources */,
+				CD22CA951DAAEC6B000C0205 /* Date+Extensions.swift in Sources */,
+				CD22CA971DAAEC94000C0205 /* DateTests.swift in Sources */,
 				CDED234B1D60B00E0023CC4B /* Currently.swift in Sources */,
 				CDED23571D60B0C00023CC4B /* Precipitation.swift in Sources */,
 				7AE9DA701D57A4A50087B401 /* Trip.swift in Sources */,
