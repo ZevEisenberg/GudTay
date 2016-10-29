@@ -23,26 +23,28 @@ final class SubwayHeaderView: MBTAHeaderView {
         orangeBar.heightAnchor == 50.0
         whiteBar.heightAnchor == 50.0
 
-        let routeChain = Fonts.MBTA.lineChain.string(route.localizedUppercase).color(Colors.white)
-        let directionChain = Fonts.MBTA.lineChain.string(direction.localizedUppercase).color(Colors.black)
+        let route = route.localizedUppercase.styled(with: Fonts.MBTA.lineStyle.byAdding(.color(Colors.white)))
+        let direction = direction.localizedUppercase.styled(with: Fonts.MBTA.lineStyle.byAdding(.color(Colors.black)))
 
         let destinationTagName = "destination"
         let destinationTemplate = "TO <\(destinationTagName)>\(destination.localizedUppercase)</\(destinationTagName)>"
-        let destinationChain = Fonts.MBTA.destinationPrefixChain
-            .color(Colors.black)
-            .string(destinationTemplate)
-            .tagStyles([
-                destinationTagName: Fonts.MBTA.destinationChain.color(Colors.black),
-                ])
+
+        let destination = destinationTemplate.styled(
+            with: Fonts.MBTA.destinationPrefixStyle.byAdding(
+                .color(Colors.black),
+                .xmlRules([
+                    .style(destinationTagName, Fonts.MBTA.destinationStyle.byAdding(.color(Colors.black)))
+                    ])
+        ))
 
         let routeLabel = UILabel(axId: "routeLabel")
-        routeLabel.attributedText = routeChain.attributedString
+        routeLabel.attributedText = route
 
         let directionLabel = UILabel(axId: "directionLabel")
-        directionLabel.attributedText = directionChain.attributedString
+        directionLabel.attributedText = direction
 
         let destinationLabel = UILabel(axId: "destinationLabel")
-        destinationLabel.attributedText = destinationChain.attributedString
+        destinationLabel.attributedText = destination
 
         orangeBar.addSubview(routeLabel)
         whiteBar.addSubview(directionLabel)
@@ -55,11 +57,12 @@ final class SubwayHeaderView: MBTAHeaderView {
         directionLabel.centerYAnchor == whiteBar.centerYAnchor
 
         destinationLabel.trailingAnchor == whiteBar.trailingAnchor - 11.0
-        BONTextAlignmentConstraint(item: directionLabel,
-                                   attribute: .capHeight,
-                                   relatedBy: .equal,
-                                   toItem: destinationLabel,
-                                   attribute: .capHeight).isActive = true
+        TextAlignmentConstraint.with(
+            item: directionLabel,
+            attribute: .capHeight,
+            relatedBy: .equal,
+            toItem: destinationLabel,
+            attribute: .capHeight).isActive = true
 
         let stackView = UIStackView(arrangedSubviews: [orangeBar, whiteBar, hairline])
         stackView.axis = .vertical

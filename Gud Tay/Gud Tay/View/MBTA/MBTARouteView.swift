@@ -14,8 +14,8 @@ final class MBTARouteView: GridView {
 
     // Private Properties
 
-    fileprivate let nextTripView = TripView(color: Colors.black, subtitle: "Mins Next", minutesChain: Fonts.MBTA.nextMinutesChain)
-    fileprivate let laterTripView = TripView(color: Colors.darkGray, subtitle: "Mins Later", minutesChain: Fonts.MBTA.laterMinutesChain)
+    fileprivate let nextTripView = TripView(color: Colors.black, subtitle: "Mins Next", minutesStyle: Fonts.MBTA.nextMinutesStyle)
+    fileprivate let laterTripView = TripView(color: Colors.darkGray, subtitle: "Mins Later", minutesStyle: Fonts.MBTA.laterMinutesStyle)
 
     init(headerView: MBTAHeaderView) {
         super.init(frame: .zero)
@@ -46,24 +46,20 @@ private extension MBTARouteView {
         // Public Properties
 
         func updateMinutesString(_ string: String) {
-            minutesLabel.setBonString(string)
+            minutesLabel.styledText = string
         }
 
         // Private Properties
 
         private let minutesLabel = UILabel()
 
-        init(color: UIColor, subtitle: String, minutesChain: BONChain) {
+        init(color: UIColor, subtitle: String, minutesStyle: StringStyle) {
             super.init(frame: .zero)
             minutesLabel.accessibilityIdentifier = "minutesLabel - \(subtitle)"
-            minutesLabel.bonTextable = minutesChain
-                .color(color)
+            minutesLabel.bonMotStyle = minutesStyle.byAdding(.color(color))
 
             let subtitleLabel = UILabel(axId: "subtitleLabel - \(subtitle)")
-            subtitleLabel.attributedText = Fonts.MBTA.minutesSubtitleChain
-                .color(color)
-                .string(subtitle)
-                .attributedString
+            subtitleLabel.attributedText = subtitle.styled(with: Fonts.MBTA.minutesSubtitleStyle.byAdding(.color(color)))
 
             let stackView = UIStackView(arrangedSubviews: [minutesLabel, subtitleLabel])
             stackView.axis = .vertical

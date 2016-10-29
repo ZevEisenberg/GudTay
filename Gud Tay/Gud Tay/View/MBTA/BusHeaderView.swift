@@ -24,15 +24,16 @@ final class BusHeaderView: MBTAHeaderView {
 
         let destinationTagName = "destination"
         let templateString = "\(route.localizedUppercase) <\(destinationTagName)>to \(destination.localizedUppercase)</\(destinationTagName)>"
-        let chain = Fonts.MBTA.lineChain
-            .color(Colors.white)
-            .string(templateString)
-            .tagStyles([
-                destinationTagName: Fonts.MBTA.lineChain.color(Colors.translucentWhite),
-                ])
+        let formatted = templateString.styled(
+            with:
+            Fonts.MBTA.lineStyle.byAdding(
+                .color(Colors.white),
+                .xmlRules([
+                    .style(destinationTagName, Fonts.MBTA.lineStyle.byAdding(.color(Colors.translucentWhite)))
+                    ])))
 
         let label = UILabel()
-        label.attributedText = chain.attributedString
+        label.attributedText = formatted
 
         blueBar.addSubview(label)
         label.leadingAnchor == blueBar.leadingAnchor + 13

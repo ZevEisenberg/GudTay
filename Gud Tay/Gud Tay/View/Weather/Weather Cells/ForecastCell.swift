@@ -16,28 +16,20 @@ final class ForecastCell: WeatherCell {
         didSet {
             if let model = model {
                 let dateString = ForecastCell.dateFormatter.string(from: model.time)
-                timeLabel.attributedText = Fonts.Weather.timeChain
-                    .string(dateString)
-                    .attributedString
+                timeLabel.attributedText = dateString.styled(with: Fonts.Weather.timeStyle)
 
                 if let probability = model.precipProbability, !probability.isPracticallyZero() {
-                    precipProbabilityLabel.attributedText = Fonts.Weather.precipProbabilityChain
-                        .string(String(format: "%.0f%%", probability * 100.0))
-                        .attributedString
+                    precipProbabilityLabel.attributedText = String(format: "%.0f%%", probability * 100.0).styled(with: Fonts.Weather.precipProbabilityStyle)
                     precipProbabilityLabel.alpha = 1.0
                 }
                 else {
-                    precipProbabilityLabel.attributedText = Fonts.Weather.precipProbabilityChain
-                        .string("foo")
-                        .attributedString
+                    precipProbabilityLabel.attributedText = "foo".styled(with: Fonts.Weather.precipProbabilityStyle)
                     precipProbabilityLabel.alpha = 0.0
                 }
 
                 iconImageView.image = model.icon?.image
 
-                tempLabel.attributedText = Fonts.Weather.tempForecastChain
-                    .string(String(format: "%.0f°", model.temp))
-                    .attributedString
+                tempLabel.attributedText = String(format: "%.0f°", model.temp).styled(with: Fonts.Weather.tempForecastStyle)
             }
             else {
                 timeLabel.text = nil
