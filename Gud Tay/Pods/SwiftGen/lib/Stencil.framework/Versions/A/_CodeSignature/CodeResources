@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		/vYcWbvKds/XhWEcXx8pQzqMBMU=
+		ylH8lRGPx0wUlPlOrn3yZaivoZg=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -15,44 +15,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IWIMleP8FvB/vOC1t/Cfafoa3us=
+			apTQLd3s1htspPwosb9Q4cqvci8=
 			</data>
 			<key>hash2</key>
 			<data>
-			Fz+r3DGuvlssHiR9AYaKERbv5ZQF+JAZLX4IzaPhVzs=
+			HATgXfSTFk16ELjT+x3ZRxkoNt3wWigL3K0dlgew034=
 			</data>
 		</dict>
 		<key>Headers/Stencil-umbrella.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			itM627YE9fzSkjAAeBcJt0LlIN4=
+			4rWcuA6hokwi0IiXZDqe7qFMGig=
 			</data>
 			<key>hash2</key>
 			<data>
-			pKRBIzqZUiL0Hr8xmL1BNorAkcE/TmUbYpYb8n4DXUo=
+			tRev8VkjKnGOnGkZozYiRYFpMk42B2r7De18LGcTBfY=
 			</data>
 		</dict>
 		<key>Modules/Stencil.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qKle6TIXFEQOJ5P0NsuScHGwF/Q=
+			NAlmZ7hMKboN/Dl4JUA6R9ikheY=
 			</data>
 			<key>hash2</key>
 			<data>
-			iNJwKkjbp6Q03xzGDPgE3m3o/jKfll/6DO4+t5/WeAk=
+			LGH4UEGU4GniCybIz+za4wvPonB6c5AM6qZflhTeVE0=
 			</data>
 		</dict>
 		<key>Modules/Stencil.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			FozfInN1UGsAG4s4dg1PauFYBGg=
+			J+Vn7nUGNvfN/QUmjMOZ1F0FYWE=
 			</data>
 			<key>hash2</key>
 			<data>
-			EI+urKnGosaCau+KV+LxEOboE1ykXN9/RKOO+PQnXjI=
+			y9MgLAKnFGw1Txk0Fv89ItOWPrXGnHAvxDq9Wds42yc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -70,11 +70,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/vYcWbvKds/XhWEcXx8pQzqMBMU=
+			ylH8lRGPx0wUlPlOrn3yZaivoZg=
 			</data>
 			<key>hash2</key>
 			<data>
-			LdcwS4BEkxw4NNCr4AuWJxkBtNW/rSHG33A4XplasDE=
+			AqKpDZAvbXHHSnaWjWMqK7v+n0p3DeDVaoDf7RTPZRo=
 			</data>
 		</dict>
 	</dict>
@@ -95,6 +95,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Resources/Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
@@ -154,6 +159,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Resources/Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^[^/]+$</key>
 		<dict>

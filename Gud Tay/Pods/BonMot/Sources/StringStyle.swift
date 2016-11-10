@@ -1,5 +1,6 @@
 //
 //  StringStyle.swift
+//  BonMot
 //
 //  Created by Brian King on 8/31/16.
 //  Copyright © 2016 Raizlabs. All rights reserved.
@@ -12,14 +13,11 @@
     import UIKit
 #endif
 
-/// The primary style container for BonMot responsible for encapsulating any attributes that are intended
-/// to be used with NSAttributedString.
-///
-/// NOTE: This was originally envisioned with a more functional closure implementation. However, the order of application
-///  is very important, and the API was confusing with a priority integer, and forcing the user to use the right order wasn't
-///  acceptable.
+/// The primary style container for BonMot, responsible for encapsulating any
+/// attributes that are intended to be used with `NSAttributedString`.
 public struct StringStyle {
-    public var initialAttributes: StyleAttributes = [:]
+
+    public var extraAttributes: StyleAttributes = [:]
     public var font: BONFont? = nil
     public var link: NSURL? = nil
     public var backgroundColor: BONColor? = nil
@@ -42,10 +40,23 @@ public struct StringStyle {
     public var paragraphSpacingBefore: CGFloat? = nil
     public var hyphenationFactor: Float? = nil
 
+    public var ligatures: Ligatures? = nil
+
     #if os(OSX) || os(iOS) || os(tvOS)
     public var fontFeatureProviders: [FontFeatureProvider] = []
+
     public var numberCase: NumberCase? = nil
     public var numberSpacing: NumberSpacing? = nil
+
+    public var superscript: Bool? = nil
+    public var `subscript`: Bool? = nil
+    public var ordinals: Bool? = nil
+    public var scientificInferiors: Bool? = nil
+
+    public var smallCaps: Set<SmallCaps> = []
+
+    public var stylisticAlternates: StylisticAlternates = StylisticAlternates()
+    public var contextualAlternates: ContextualAlternates = ContextualAlternates()
     #endif
     #if os(iOS) || os(tvOS)
     public var adaptations: [AdaptiveStyle] = []
@@ -53,15 +64,13 @@ public struct StringStyle {
     public var tracking: Tracking? = nil
     public var xmlStyler: XMLStyler? = nil
 
-    public init() {}
-
 }
 
 extension StringStyle {
 
-    /// Obtain a StyleAttributes representing the current style
+    /// A `StyleAttributes` dictionary representing the current style.
     public var attributes: StyleAttributes {
-        var theAttributes = initialAttributes
+        var theAttributes = extraAttributes
 
         theAttributes.update(possibleValue: font, forKey: NSFontAttributeName)
         theAttributes.update(possibleValue: link, forKey: NSLinkAttributeName)
@@ -72,6 +81,7 @@ extension StringStyle {
         theAttributes.update(possibleValue: strikethrough?.0.rawValue, forKey: NSStrikethroughStyleAttributeName)
         theAttributes.update(possibleValue: strikethrough?.1, forKey: NSStrikethroughColorAttributeName)
         theAttributes.update(possibleValue: baselineOffset, forKey: NSBaselineOffsetAttributeName)
+        theAttributes.update(possibleValue: ligatures?.rawValue, forKey: NSLigatureAttributeName)
 
         let paragraph = StringStyle.paragraph(from: theAttributes)
         paragraph.lineSpacing = lineSpacing ?? paragraph.lineSpacing
@@ -95,7 +105,19 @@ extension StringStyle {
         #if os(iOS) || os(tvOS) || os(OSX)
             // Apply the features to the font present
             let preFeaturedFont = theAttributes[NSFontAttributeName] as? BONFont
-            let featuredFont = preFeaturedFont?.font(withFeatures: fontFeatureProviders)
+            var featureProviders = fontFeatureProviders
+
+            featureProviders += [numberCase].flatMap { $0 as? FontFeatureProvider }
+            featureProviders += [numberSpacing].flatMap { $0 as? FontFeatureProvider }
+            featureProviders += [superscript].flatMap { $0 }.map { ($0 ? VerticalPosition.superscript : VerticalPosition.normal) } as [FontFeatureProvider]
+            featureProviders += [`subscript`].flatMap { $0 }.map { ($0 ? VerticalPosition.`subscript` : VerticalPosition.normal) } as [FontFeatureProvider]
+            featureProviders += [ordinals].flatMap { $0 }.map { $0 ? VerticalPosition.ordinals : VerticalPosition.normal } as [FontFeatureProvider]
+            featureProviders += [scientificInferiors].flatMap { $0 }.map { $0 ? VerticalPosition.scientificInferiors : VerticalPosition.normal } as [FontFeatureProvider]
+            featureProviders += smallCaps.map { $0 as FontFeatureProvider }
+            featureProviders += [stylisticAlternates as FontFeatureProvider]
+            featureProviders += [contextualAlternates as FontFeatureProvider]
+
+            let featuredFont = preFeaturedFont?.font(withFeatures: featureProviders)
             theAttributes.update(possibleValue: featuredFont, forKey: NSFontAttributeName)
         #endif
 
@@ -119,11 +141,12 @@ extension StringStyle {
         return theAttributes
     }
 
-    /// Create an NSMutableAttributedString from the specified string.
-    /// - parameter from: The String
-    /// - parameter existingAttributes: The existing attributes, if any, to use as default values for the style.
+    /// Create an `NSAttributedString` from the specified string.
+    /// - parameter from: The `String` to style.
+    /// - parameter existingAttributes: The existing attributes, if any, to use
+    ///                                 as default values for the style.
     ///
-    /// - returns: A new NSMutableAttributedString
+    /// - returns: A new `NSAttributedString`
     public func attributedString(from theString: String, existingAttributes: StyleAttributes? = nil) -> NSAttributedString {
         if let xmlStyler = xmlStyler {
             let builder = XMLBuilder(
@@ -143,22 +166,25 @@ extension StringStyle {
 
 extension StringStyle {
 
-    /// Update the initialAttributes in the style object. This is used to provide the default
-    /// values configured in UI elements, which the style can override.
+    /// Update the `extraAttributes` in the style object. This is used to
+    /// provide the default values configured in UI elements, which the style
+    /// can override.
     ///
-    /// - parameter initialAttributes: The attributes to add to the style before applying the other properties.
-    public mutating func add(initialAttributes attributes: StyleAttributes) {
+    /// - parameter extraAttributes: The attributes to add to the style before
+    ///                              applying the other properties.
+    public mutating func add(extraAttributes attributes: StyleAttributes) {
         for (key, value) in attributes {
-            initialAttributes[key] = value
+            extraAttributes[key] = value
         }
     }
 
-    /// Update the style with values specified in `stringStyle`. Any value configured in `stringStyle`
-    /// will over-write the values specified in this `stringStyle`.
+    /// Update the receiver with values specified in `stringStyle`. Any value
+    /// configured in `stringStyle` will overwrite the values specified in the
+    /// receiver.
     ///
-    /// - parameter stringStyle: The style to update this style with.
+    /// - parameter stringStyle: The style with which to update this style.
     public mutating func add(stringStyle theStringStyle: StringStyle) {
-        add(initialAttributes: theStringStyle.initialAttributes)
+        add(extraAttributes: theStringStyle.extraAttributes)
         font = theStringStyle.font ?? font
         link = theStringStyle.link ?? link
         backgroundColor = theStringStyle.backgroundColor ?? backgroundColor
@@ -166,6 +192,8 @@ extension StringStyle {
         underline = theStringStyle.underline ?? underline
         strikethrough = theStringStyle.strikethrough ?? strikethrough
         baselineOffset = theStringStyle.baselineOffset ?? baselineOffset
+
+        ligatures = theStringStyle.ligatures ?? ligatures
 
         lineSpacing = theStringStyle.lineSpacing ?? lineSpacing
         paragraphSpacingAfter = theStringStyle.paragraphSpacingAfter ?? paragraphSpacingAfter
@@ -183,8 +211,19 @@ extension StringStyle {
 
         #if os(iOS) || os(tvOS) || os(OSX)
             fontFeatureProviders.append(contentsOf: theStringStyle.fontFeatureProviders)
+
             numberCase = theStringStyle.numberCase ?? numberCase
             numberSpacing = theStringStyle.numberSpacing ?? numberSpacing
+
+            superscript = theStringStyle.superscript ?? superscript
+            `subscript` = theStringStyle.`subscript` ?? `subscript`
+            ordinals = theStringStyle.ordinals ?? ordinals
+            scientificInferiors = theStringStyle.scientificInferiors ?? scientificInferiors
+
+            smallCaps = theStringStyle.smallCaps.isEmpty ? smallCaps : theStringStyle.smallCaps
+
+            stylisticAlternates = stylisticAlternates + theStringStyle.stylisticAlternates
+            contextualAlternates = contextualAlternates + theStringStyle.contextualAlternates
         #endif
         #if os(iOS) || os(tvOS)
             adaptations.append(contentsOf: theStringStyle.adaptations)
@@ -201,13 +240,13 @@ extension StringStyle {
 
 }
 
-/// An extension to provide UIKit interaction helpers to the style object
 public extension StringStyle {
 
-    /// Supply the contained attributes as default values for the passed in StyleAttributes. This will also
-    /// perform some merging of values. This includes NSParagraphStyle and the embedded attributes.
+    /// Supply the receiver's attributes as default values for the passed
+    /// `StyleAttributes` dictionary. This will also perform some merging of
+    /// values. This includes `NSParagraphStyle` and the receiver's attributes.
     ///
-    /// - parameter for: The object to over-write the defaults with
+    /// - parameter for: The object with which to overwrite the defaults.
     /// - returns: The new attributes
     func supplyDefaults(for attributes: StyleAttributes?) -> StyleAttributes {
         guard var attributes = attributes else {
@@ -231,9 +270,12 @@ public extension StringStyle {
         return attributes
     }
 
-    /// A helper function to coerce an `NSMutableParagraphStyle` from a value in an attributes dictionary.
-    /// - parameter from: the attributes dictionary from which to extract the paragraph style
-    /// - returns: a mutable copy of an `NSParagraphStyle`, or a new `NSMutableParagraphStyle` if the value is `nil`.
+    /// A helper to extract an `NSMutableParagraphStyle` from a value in an
+    /// attributes dictionary.
+    /// - parameter from: the attributes dictionary from which to extract the
+    ///                   paragraph style.
+    /// - returns: A mutable copy of an `NSParagraphStyle`, or a new
+    ///            `NSMutableParagraphStyle` if the value is `nil`.
     static func paragraph(from styleAttributes: StyleAttributes) -> NSMutableParagraphStyle {
         let theObject = styleAttributes[NSParagraphStyleAttributeName]
         let result: NSMutableParagraphStyle
@@ -253,10 +295,14 @@ public extension StringStyle {
 
 extension NSParagraphStyle {
 
-    /// Update the supplied NSParagraphStyle properties with the value in this ParagraphStyle if the supplied
-    /// ParagraphStyle property is the default value.
-    // swiftlint:disable:next cyclomatic_complexity
-    func supplyDefaults(for paragraphStyle: NSParagraphStyle) -> NSMutableParagraphStyle {
+    //swiftlint:disable cyclomatic_complexity
+    /// Update the passed `NSParagraphStyle`'s properties with the value in this
+    /// the receiver (only if the supplied `NSParagraphStyle`'s value for a
+    /// given property is the default value).
+    ///
+    /// - Parameter paragraphStyle: The paragraph style to update.
+    /// - Returns: The updated paragraph style.
+    func supplyDefaults(for paragraphStyle: NSParagraphStyle) -> NSParagraphStyle {
         let defaults = NSParagraphStyle.bon_default
         let paragraph = paragraphStyle.mutableParagraphStyleCopy()
         if paragraph.lineSpacing == defaults.lineSpacing { paragraph.lineSpacing = lineSpacing }
@@ -275,13 +321,21 @@ extension NSParagraphStyle {
         if paragraph.tabStops == defaults.tabStops { paragraph.tabStops = tabStops }
         return paragraph
     }
+    //swiftlint:enable cyclomatic_complexity
 
 }
 
 extension Dictionary {
+
+    /// Set a given value in a `Dictionary`, but only if that value is non-nil.
+    ///
+    /// - Parameters:
+    ///   - value: The new value to insert into the dictionary if it is non-nil.
+    ///   - key: The key for which to set the value.
     internal mutating func update(possibleValue value: Value?, forKey key: Key) {
         if let value = value {
             self[key] = value
         }
     }
+
 }

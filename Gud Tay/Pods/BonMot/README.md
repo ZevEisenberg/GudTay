@@ -1,7 +1,7 @@
 <img width=443 src="Resources/readme-images/BonMot-logo.png" alt="BonMot Logo" />
 
 [![Swift 2.x + 3.0](https://img.shields.io/badge/Swift-2.3%20+%203.0-orange.svg?style=flat)](https://swift.org)
-[![CI Status](http://img.shields.io/travis/Raizlabs/BonMot.svg?style=flat)](https://travis-ci.org/Raizlabs/BonMot)
+[![CI Status](https://circleci.com/gh/Raizlabs/BonMot/tree/:branch.png)](https://circleci.com/gh/Raizlabs/BonMot)
 [![Version](https://img.shields.io/cocoapods/v/BonMot.svg?style=flat)](http://cocoapods.org/pods/BonMot)
 [![License](https://img.shields.io/cocoapods/l/BonMot.svg?style=flat)](http://cocoapods.org/pods/BonMot)
 [![Platform](https://img.shields.io/cocoapods/p/BonMot.svg?style=flat)](http://cocoapods.org/pods/BonMot)
@@ -10,6 +10,9 @@
 BonMot (pronounced *Bon Mo*, French for *good word*) is a Swift attributed string library. It abstracts away the complexities of the iOS, macOS, tvOS, and watchOS typography tools, freeing you to focus on making your text beautiful.
 
 To run the example project, run `pod try BonMot`, or clone the repo and open `Example/BonMot-Example.xcworkspace`.
+
+### Note
+If you are migrating a project from BonMot 3 to BonMot 4, please see the [Migration Guide](#bonmot-3--4-migration-guide).
 
 # Usage
 
@@ -24,7 +27,7 @@ let quote = "I used to love correcting people’s grammar until" +
             "I realized what I loved more was having friends.\n" +
             "-Mara Wilson"
 
-let style = StringStyle.style(
+let style = StringStyle(
     .font(UIFont(name: "AmericanTypewriter", size: 17)!),
     .lineHeightMultiple(1.8)
 )
@@ -36,12 +39,22 @@ let attributedString = quote.styled(with: style)
 let attributes = style.attributes
 ```
 
+### Glossary
+
+These are the types with which you will most commonly interact when using BonMot to build attributed strings.
+
+- `StringStyle`: a collection of attributes which can be used to style a string. These include basics, like font and color, and more advanced settings like paragraph controls and OpenType features. To get a good idea of the full set of features that BonMot supports, look at the interface for this struct.
+- `StringStyle.Part`: an enum which can be used to concisely construct a `StringStyle`. You will typically interact with these, rather than constructing `StringStyle`s directly.
+- `Composable`: a protocol defining any type that knows how to append itself to an attributed string. BonMot provides functions, such as the one in [this example](#debugging--testing-helpers), to join together multiple `Composable` values.
+- `NamedStyles`: use this to register custom, reusable styles in a global namespace.
+- `Special`: a utility to include special, ambiguous, and non-printing characters in your strings without making your code unreadable.
+
 ### Style Inheritance
 
 Styles can inherit from each other, which lets you create multiple styles that share common attributes:
 
 ```swift
-let baseStyle = StringStyle.style(
+let baseStyle = StringStyle(
     .lineHeightMultiple(1.2),
     .font(UIFont.systemFont(ofSize: 17))
 )
@@ -58,12 +71,13 @@ let blueBirdString = "bird".styled(with: redStyle)
 Are you trying to style just part of a string, perhaps even a localized string which is different depending on the locale of the app? No problem! BonMot can turn custom XML tags and simple HTML into attributed strings:
 
 ```swift
+// This would typically be a localized string
 let string = "one fish, two fish, <red>red fish</red>,<BON:noBreakSpace/><blue>blue fish</blue>"
 
-let redStyle = StringStyle.style(.color(.red))
-let blueStyle = StringStyle.style(.color(.blue))
+let redStyle = StringStyle(.color(.red))
+let blueStyle = StringStyle(.color(.blue))
 
-let fishStyle = StringStyle.style(
+let fishStyle = StringStyle(
     .font(UIFont.systemFont(ofSize: 17)),
     .lineHeightMultiple(1.8),
     .color(.darkGray),
@@ -81,6 +95,27 @@ This will produce:
 <img width=227 src="Resources/readme-images/fish-with-black-comma.png" />
 
 > Note the use of `<BON:noBreakSpace/>` to specify a special character within the string. This is a great way to add special characters to localized strings, since localizers might not know to look for special characters, and many of them are invisible or ambiguous when viewed in a normal text editor. You can use any characters in the `Special` enum, or use `<BON:unicode value='A1338'/>` or `&#a1338;`
+
+#### XML Parsing with Error Handling
+
+If the above method encounters invalid XML, the resulting string will be the entire original string, tags and all. If you are parsing XML that is out of your control, e.g. variable content from a server, you may want to use this alternate parsing mechanism, which allows you to handle errors encountered while parsing:
+
+```swift
+let rules: [XMLStyleRule] = [
+    .style("strong", strongStyle),
+    .style("em", emStyle),
+]
+
+let xml = // some XML from a server
+
+do {
+    let attrString = try NSAttributedString.composed(ofXML: xml, rules: rules)
+}
+catch {
+    // Handle errors encountered by Foundation's XMLParser,
+    // which is used by BonMot to parse XML.
+}
+```
 
 ## Image Attachments
 
@@ -121,7 +156,7 @@ Outputs:
 You can easily make any attributed string generated by BonMot respond to the system text size control. Simply add `.adapt` to any style declaration, and specify whether you want the style to scale like a `.control` or like `.body` text.
 
 ```swift
-let style = StringStyle.style(
+let style = StringStyle(
     .adapt(.control)
     // other style parts can go here as needed
 )
@@ -140,7 +175,7 @@ someLabel.attributedText = "Label".styled(with: style).adapted(to: traitCollecti
 You can register global named styles, and use them in Storyboards and XIBs via `IBInspectable`:
 
 ```swift
-let style = StringStyle.style(
+let style = StringStyle(
     .font(UIFont(name: "Avenir-Roman", size: 24)!),
     .color(.red),
     .underline(.styleSingle, .red)
@@ -219,6 +254,84 @@ label.bonMotStyleName = @"MyHeadline";
  ```
 
 - Use the inspectable properties of common UIKit elements as in the [Interface Builder section](#storyboard-and-xib-integration).
+
+# BonMot 3 → 4 Migration Guide
+
+BonMot 4 is a major update, but there are some common patterns that you can use to ease the transition. Note that this is mostly for Swift projects that were using BonMot 3. BonMot 4 has only limited [support for Objective-C](#objective-c-compatibility), so please check that section before attempting to upgrade if you need to maintain Objective-C compatibility.
+
+### Separating Style from Content
+
+BonMot 4 introduces the `StringStyle` struct, which encapsulates style information. When you apply a `StringStyle` to a plain `String`, the result is an `NSAttributedString`. This differs from BonMot 3, where a `BONChain` or `BONText` contained both style and string information. The decoupling of content from style follows in the footsteps of HTML/CSS, and makes it easier to test and reason about each component separately from the other.
+
+### Inline Styling
+
+The changes required to support inline styling are minimal. It won’t be a completely mechanical process due to some renaming that took place in 4.0, but it should be fairly straightforward:
+
+##### BonMot 3
+
+```swift
+let chain = BONChain()	
+   .color(myColor)
+   .font(myFont)
+   .figureSpacing(.Tabular)
+   .alignment(.Center)
+   .string(text)
+label.attributedText = chain.attributedString
+```
+
+##### BonMot 4
+
+```swift
+label.attributedText = text.styled(
+    with:
+    .color(myColor),
+    .font(myFont),
+    .numberSpacing(.monospaced), // renamed in 4.0
+    .alignment(.center)
+)
+```
+
+### Saved Styles
+
+In BonMot 3, you may have stored `BONChain`s for later use. You can accomplish the same thing with BonMot 4’s `StringStyle`, with one main difference: while a `BONChain` can contain a string, a `StringStyle` never does. It is applied to a string, producing an `NSAttributedString`:
+
+##### BonMot 3
+
+```swift
+struct Constants {
+
+    static let myChain = BONChain()
+        .color(myColor)
+        .font(myFont)
+        .tagStyles([
+            "bold": myBoldChain,
+            ])
+
+}
+
+// and then, later:
+
+let attrString = myChain.string("some string").attributedString
+```
+
+##### BonMot 4
+
+```swift
+struct Constants {
+
+    static let myStyle = StringStyle(
+        .color(myColor),
+        .font(myFont),
+        .xmlRules([
+            .style("bold", myBoldStyle),
+            ]))
+
+}
+
+// and then, later:
+
+let attrString = "some string".styled(with: Constants.myStyle)
+```
 
 # Installation
 
