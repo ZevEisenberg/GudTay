@@ -1,4 +1,6 @@
 source "https://rubygems.org"
 
-gem 'cocoapods', '~>1.0'
+# 1.2.0.beta.1 plus fix for https://github.com/CocoaPods/CocoaPods/issues/6346
+gem 'cocoapods', :git => 'https://github.com/CocoaPods/CocoaPods.git'
+
 gem 'snapshot'
