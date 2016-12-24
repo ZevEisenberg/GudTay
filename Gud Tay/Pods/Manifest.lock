@@ -1,21 +1,21 @@
 PODS:
   - Anchorage (3.0.0)
-  - BonMot (4.0.rc.1)
+  - BonMot (4.0.1)
   - BuddyBuildSDK (1.0.12)
   - SwiftGen (3.0.1)
 
 DEPENDENCIES:
   - Anchorage
-  - BonMot (= 4.0.rc.1)
+  - BonMot (~> 4.0)
   - BuddyBuildSDK
   - SwiftGen
 
 SPEC CHECKSUMS:
   Anchorage: 0b7244e31069ebc61a4e9611bc670feb7f24a3e2
-  BonMot: 5da7040874c9084ec8e80b79508fd7db76229367
+  BonMot: d8c3548412fcbb3b5f877f2097a5ca23f9adf5b4
   BuddyBuildSDK: f4682598772ae66c9ef5554d2d78d0a19fb413a0
   SwiftGen: 5f69367fae99c11d52d1ab9d45dcf10a3e59b8ef
 
-PODFILE CHECKSUM: 0e1f32c403bba2e52f877acb907a1ff2ee53652b
+PODFILE CHECKSUM: a055cad5a38429faaa63dd75bc1eb2aa49e2c127
 
 COCOAPODS: 1.2.0.beta.1

@@ -1,7 +1,7 @@
 <img width=443 src="Resources/readme-images/BonMot-logo.png" alt="BonMot Logo" />
 
 [![Swift 2.x + 3.0](https://img.shields.io/badge/Swift-2.3%20+%203.0-orange.svg?style=flat)](https://swift.org)
-[![CI Status](https://circleci.com/gh/Raizlabs/BonMot/tree/:branch.png)](https://circleci.com/gh/Raizlabs/BonMot)
+[![CircleCI](https://img.shields.io/circleci/project/github/Raizlabs/BonMot.svg)](https://circleci.com/gh/Raizlabs/BonMot)
 [![Version](https://img.shields.io/cocoapods/v/BonMot.svg?style=flat)](http://cocoapods.org/pods/BonMot)
 [![License](https://img.shields.io/cocoapods/l/BonMot.svg?style=flat)](http://cocoapods.org/pods/BonMot)
 [![Platform](https://img.shields.io/cocoapods/p/BonMot.svg?style=flat)](http://cocoapods.org/pods/BonMot)
@@ -9,7 +9,7 @@
 
 BonMot (pronounced *Bon Mo*, French for *good word*) is a Swift attributed string library. It abstracts away the complexities of the iOS, macOS, tvOS, and watchOS typography tools, freeing you to focus on making your text beautiful.
 
-To run the example project, run `pod try BonMot`, or clone the repo and open `Example/BonMot-Example.xcworkspace`.
+To run the example project, run `pod try BonMot`, or clone the repo, open `BonMot.xcodeproj`, and run the **Example-iOS** target.
 
 ### Note
 If you are migrating a project from BonMot 3 to BonMot 4, please see the [Migration Guide](#bonmot-3--4-migration-guide).
@@ -44,7 +44,7 @@ let attributes = style.attributes
 These are the types with which you will most commonly interact when using BonMot to build attributed strings.
 
 - `StringStyle`: a collection of attributes which can be used to style a string. These include basics, like font and color, and more advanced settings like paragraph controls and OpenType features. To get a good idea of the full set of features that BonMot supports, look at the interface for this struct.
-- `StringStyle.Part`: an enum which can be used to concisely construct a `StringStyle`. You will typically interact with these, rather than constructing `StringStyle`s directly.
+- `StringStyle.Part`: an enum which can be used to concisely construct a `StringStyle`. You will typically interact with these, rather than constructing `StringStyle`s attribute by attribute.
 - `Composable`: a protocol defining any type that knows how to append itself to an attributed string. BonMot provides functions, such as the one in [this example](#debugging--testing-helpers), to join together multiple `Composable` values.
 - `NamedStyles`: use this to register custom, reusable styles in a global namespace.
 - `Special`: a utility to include special, ambiguous, and non-printing characters in your strings without making your code unreadable.
@@ -63,7 +63,7 @@ let redStyle = baseStyle.byAdding(.color(.red))
 let blueStyle = baseStyle.byAdding(.color(.blue))
 
 let redBirdString = "bird".styled(with: redStyle)
-let blueBirdString = "bird".styled(with: redStyle)
+let blueBirdString = "bird".styled(with: blueStyle)
 ```
 
 ### XML Parsing
@@ -164,9 +164,17 @@ let style = StringStyle(
 someLabel.attributedText = "Label".styled(with: style).adapted(to: traitCollection)
 ```
 
-> **Note:** when setting attributed text on a UI element, you must use `adapted(to: traitCollection)` in order to scale the text based on the current trait collection. Prior to iOS 10, the preferred content size was not included in `UITraitCollection`, so if you support iOS 9, you must call `UIApplication.enableAdaptiveContentSizeMonitor()` at some point in your app setup code.
+If you want an attributed string to adapt to the current content size category, when setting it on a UI element, use `.adapted(to: traitCollection)` as in the above example.
 
-`.control` and `.body` both scale the same, except that when enabling the "Larger Dynamic Type" accessibility setting, `.body` grows unbounded. Here is a graph of the default behaviors of the [system Dynamic Type styles](https://developer.apple.com/ios/human-interface-guidelines/visual-design/typography#dynamic-type-sizes):
+### Responding to Content Size Category Changes
+
+If you call `UIApplication.enableAdaptiveContentSizeMonitor()` at some point in your app setup code, BonMot will update common UI elements as the preferred content size category changes. You can opt your custom controls into automatic updating by conforming them to the `AdaptableTextContainer` protocol.
+
+If you want more manual control over the adaptation process and are targeting iOS 10+, skip enabling the adaptive content size monitor, and call `.adapted(to: traitCollection)` inside `traitCollectionDidChange(_:)`. iOS 10 introduced a `preferredContentSizeCategory` property on `UITraitCollection`.
+
+### Scaling Behaviors
+
+The `.control` and `.body` behaviors both scale the same, except that when enabling the "Larger Dynamic Type" accessibility setting, `.body` grows unbounded. Here is a graph of the default behaviors of the [system Dynamic Type styles](https://developer.apple.com/ios/human-interface-guidelines/visual-design/typography#dynamic-type-sizes):
 
 <img width=443 src="Resources/readme-images/ios-type-scaling-behavior.png" alt="Graph of iOS Dynamic Type scaling behavior, showing that Control text tops out at the XXL size, but Body text keeps growing all the way up to AccessibilityXXL" />
 

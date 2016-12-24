@@ -7,7 +7,7 @@ target 'Gud Tay' do
   pod 'Anchorage'
   pod 'SwiftGen'
   pod 'BuddyBuildSDK'
-  pod 'BonMot', '4.0.rc.1'
+  pod 'BonMot', '~>4.0'
 
   target 'Gud TayTests' do
     inherit! :search_paths
