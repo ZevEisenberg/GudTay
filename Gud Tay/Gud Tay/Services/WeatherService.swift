@@ -10,7 +10,7 @@ import Foundation
 
 protocol WeatherServiceType {
 
-    static func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> ())
+    static func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> Void)
 
 }
 
@@ -32,7 +32,7 @@ enum WeatherServiceKind: String {
 
 enum WeatherService: WeatherServiceType {
 
-    static func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> ()) {
+    static func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> Void) {
         let url = baseUrl().appendingPathComponent(Endpoints.forecast).appendingPathComponent(Constants.apiKey).appendingPathComponent("\(latitude),\(longitude)")
         APIClient.get(baseUrl: url, path: "", completion: completion)
     }
@@ -58,7 +58,7 @@ private extension WeatherService {
         return URL(string: Constants.host)!
     }
 
-    static func getRequest(path: String, params: Dictionary<String, Any>? = nil, completion: @escaping (APIClient.Result) -> ()) {
+    static func getRequest(path: String, params: [String: Any]? = nil, completion: @escaping (APIClient.Result) -> Void) {
         var params = params ?? [:]
         params["api_key"] = Constants.apiKey
         APIClient.get(baseUrl: baseUrl(), path: path, params: params, completion: completion)
@@ -72,7 +72,7 @@ struct MockWeatherService: WeatherServiceType {
 
     private static var provider = FlipFloppingWeatherFileProvider()
 
-    static func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> ()) {
+    static func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> Void) {
         let filename = provider.next()!
         let ext = "json"
         guard let url = Bundle(for: DummyClass.self).url(forResource: filename, withExtension: ext) else {

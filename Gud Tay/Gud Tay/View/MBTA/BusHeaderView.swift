@@ -29,7 +29,7 @@ final class BusHeaderView: MBTAHeaderView {
             Fonts.MBTA.lineStyle.byAdding(
                 .color(Colors.white),
                 .xmlRules([
-                    .style(destinationTagName, Fonts.MBTA.lineStyle.byAdding(.color(Colors.translucentWhite)))
+                    .style(destinationTagName, Fonts.MBTA.lineStyle.byAdding(.color(Colors.translucentWhite))),
                     ])))
 
         let label = UILabel()

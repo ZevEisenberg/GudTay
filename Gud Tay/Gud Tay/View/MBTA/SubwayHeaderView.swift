@@ -33,7 +33,7 @@ final class SubwayHeaderView: MBTAHeaderView {
             with: Fonts.MBTA.destinationPrefixStyle.byAdding(
                 .color(Colors.black),
                 .xmlRules([
-                    .style(destinationTagName, Fonts.MBTA.destinationStyle.byAdding(.color(Colors.black)))
+                    .style(destinationTagName, Fonts.MBTA.destinationStyle.byAdding(.color(Colors.black))),
                     ])
         ))
 

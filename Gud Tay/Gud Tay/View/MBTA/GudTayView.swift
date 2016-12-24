@@ -11,7 +11,7 @@ import Anchorage
 
 final class GudTayView: GridView {
 
-    typealias TapHandler = () -> ()
+    typealias TapHandler = () -> Void
 
     fileprivate let tapHandler: TapHandler
 

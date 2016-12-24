@@ -10,7 +10,7 @@ import Foundation
 
 protocol MBTAServiceType {
 
-    static func predictionsByStop(stopId: String, completion: @escaping (APIClient.Result) -> ())
+    static func predictionsByStop(stopId: String, completion: @escaping (APIClient.Result) -> Void)
 
 }
 
@@ -32,7 +32,7 @@ enum MBTAServiceKind: String {
 
 enum MBTAService: MBTAServiceType {
 
-    static func predictionsByStop(stopId: String, completion: @escaping (APIClient.Result) -> ()) {
+    static func predictionsByStop(stopId: String, completion: @escaping (APIClient.Result) -> Void) {
         let params = ["stop": stopId] as [String: Any]
         MBTAService.getRequest(path: Endpoints.predictionsByStop, params: params, completion: completion)
     }
@@ -63,7 +63,7 @@ private extension MBTAService {
         return hostUrl.appendingPathComponent(Constants.commonPath)
     }
 
-    static func getRequest(path: String, params: Dictionary<String, Any>? = nil, completion: @escaping (APIClient.Result) -> ()) {
+    static func getRequest(path: String, params: [String: Any]? = nil, completion: @escaping (APIClient.Result) -> Void) {
         var params = params ?? [:]
         params["api_key"] = Constants.apiKey
         APIClient.get(baseUrl: baseUrl(), path: path, params: params, completion: completion)
@@ -75,7 +75,7 @@ private final class DummyClass { }
 
 enum MockMBTAService: MBTAServiceType {
 
-    static func predictionsByStop(stopId: String, completion: @escaping (APIClient.Result) -> ()) {
+    static func predictionsByStop(stopId: String, completion: @escaping (APIClient.Result) -> Void) {
         assert(stopId == "place-sull")
         let filename = "Sample MBTA API Response"
         let ext = "json"

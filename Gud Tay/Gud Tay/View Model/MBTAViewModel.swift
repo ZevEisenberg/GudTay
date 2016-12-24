@@ -42,7 +42,7 @@ final class MBTAViewModel {
         self.serviceType = serviceType
     }
 
-    func refresh(completion: @escaping (Result) -> ()) {
+    func refresh(completion: @escaping (Result) -> Void) {
         self.serviceType.predictionsByStop(stopId: "place-sull") { apiResult in
             switch apiResult {
             case .success(let jsonObject):
