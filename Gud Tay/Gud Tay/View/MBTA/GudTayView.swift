@@ -19,7 +19,7 @@ final class GudTayView: GridView {
         self.tapHandler = tapHandler
         super.init(frame: .zero)
 
-        let imageView = UIImageView(image: Asset.Gud_Tay.image)
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "gud-tay"))
         addSubview(imageView)
         imageView.edgeAnchors == edgeAnchors
         imageView.contentMode = .scaleAspectFit

@@ -5,7 +5,6 @@ target 'Gud Tay' do
 
   # Pods for Gud Tay
   pod 'Anchorage'
-  pod 'SwiftGen'
   pod 'BuddyBuildSDK'
   pod 'BonMot', '~>4.0'
 
