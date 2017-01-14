@@ -762,7 +762,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint Is not installed. Download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "SWIFTLINT_BINARY=\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\"${SWIFTLINT_BINARY}\" lint --strict\n";
 		};
 		DB2B5511529CFC1BD2453A49 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

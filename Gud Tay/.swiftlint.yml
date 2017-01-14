@@ -5,14 +5,13 @@ disabled_rules:
   - redundant_string_enum_value
   - large_tuple
 
-enabled_rules:
+opt_in_rules:
   - vertical_whitespace
   - operator_usage_whitespace
 
 excluded:
   - Carthage
   - Pods
-  - Constants
 
 statement_position:
   statement_mode: uncuddled_else
