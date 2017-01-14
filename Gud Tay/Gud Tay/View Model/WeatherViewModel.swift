@@ -12,7 +12,7 @@ final class WeatherViewModel {
 
     enum Result {
 
-        case success([WeatherField])
+        case success([WeatherField], ForecastBackgroundViewModel?)
         case failure(ViewModel.RefreshError)
 
     }
@@ -27,6 +27,7 @@ final class WeatherViewModel {
     }
 
     private(set) var fields: [WeatherField] = []
+    private(set) var forecastBackgroundViewModel: ForecastBackgroundViewModel?
 
     private let serviceType: WeatherServiceType.Type
 
@@ -34,7 +35,7 @@ final class WeatherViewModel {
         self.serviceType = serviceType
     }
 
-    func refresh(completion: @escaping (Result) -> Void) {
+    func refresh(referenceDate: Date, completion: @escaping (Result) -> Void) {
         // n.b. lat/long have been rebased to be the center of Boston instead of my real old address for privacy reasons.
         self.serviceType.predictions(latitude: 42.3601, longitude: -71.0589) { apiResult in
             switch apiResult {
@@ -46,8 +47,10 @@ final class WeatherViewModel {
 
                 do {
                     let forecast = try WeatherForecast(json: jsonObject)
-                    self.fields = WeatherViewModel.processForecast(forecast: forecast)
-                    completion(.success(self.fields))
+                    let (fields, forecastBackgroundViewModel) = WeatherViewModel.processForecast(forecast: forecast, referenceDate: referenceDate)
+                    self.fields = fields
+                    self.forecastBackgroundViewModel = forecastBackgroundViewModel
+                    completion(.success(self.fields, self.forecastBackgroundViewModel))
                 }
                 catch let jsonError as JSONError {
                     completion(.failure(.jsonError(jsonError)))
@@ -65,7 +68,7 @@ final class WeatherViewModel {
 
 private extension WeatherViewModel {
 
-    static func processForecast(forecast: WeatherForecast) -> [WeatherField] {
+    static func processForecast(forecast: WeatherForecast, referenceDate: Date) -> ([WeatherField], ForecastBackgroundViewModel?) {
         var fields = [WeatherField]()
 
         let current = forecast.currently
@@ -117,7 +120,29 @@ private extension WeatherViewModel {
             fields.append(.hour(time: precipitation.timestamp, icon: meteorology.icon, temp: temperature.current, precipProbability: precipitation.probability))
         }
 
-        return fields
+        var backgroundViewModel: ForecastBackgroundViewModel? = nil
+        if let firstTime = hourlyPrecipitations.data[safe: 0]?.timestamp,
+            let lastTime = hourlyPrecipitations.data[safe: (hoursUntilSameTimeNextDay - 1)]?.timestamp {
+
+            let interval = DateInterval(start: firstTime, end: lastTime)
+
+            let almanacs = forecast.daily.almanac.data
+
+            let events = almanacs.flatMap { almanac -> [SolarEvent] in
+                let sunrise = SolarEvent(kind: .sunrise, date: almanac.sunriseTime)
+                let sunset = SolarEvent(kind: .sunset, date: almanac.sunsetTime)
+                return [sunrise, sunset]
+                }.flatMap { event in
+                    return interval.contains(event.date) ? event : nil
+                }.sorted { $0.date < $1.date }
+
+            backgroundViewModel = ForecastBackgroundViewModel(
+                interval: interval,
+                solarEvents: events
+            )
+        }
+
+        return (fields, backgroundViewModel)
     }
 
 }

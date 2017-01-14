@@ -56,6 +56,9 @@
 		CD2575C21D6669020017DEE6 /* UICollectionReusableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2575C11D6669020017DEE6 /* UICollectionReusableView+Extensions.swift */; };
 		CD2575C41D666C7E0017DEE6 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2575C31D666C7E0017DEE6 /* Utility.swift */; };
 		CD2575C51D666C820017DEE6 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2575C31D666C7E0017DEE6 /* Utility.swift */; };
+		CD3D7B731DAC1DD2007BB87D /* ForecastBackgroundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3D7B721DAC1DD2007BB87D /* ForecastBackgroundViewModel.swift */; };
+		CD3D7B741DAC1DD2007BB87D /* ForecastBackgroundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3D7B721DAC1DD2007BB87D /* ForecastBackgroundViewModel.swift */; };
+		CD3D7B761DAC25AA007BB87D /* SunIntervalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3D7B751DAC25AA007BB87D /* SunIntervalView.swift */; };
 		CD555FCF1D50396700D9413F /* MBTAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAC21D46DF7A007A82D5 /* MBTAViewModel.swift */; };
 		CD60D15C1D4FE87C000B74CF /* MBTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8357511D4C4DA5009E76A7 /* MBTAService.swift */; };
 		CD60D15E1D4FE891000B74CF /* JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB41D46D97F007A82D5 /* JSONRepresentable.swift */; };
@@ -180,6 +183,8 @@
 		CD2575BA1D66607F0017DEE6 /* RefreshableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshableViewController.swift; sourceTree = "<group>"; };
 		CD2575C11D6669020017DEE6 /* UICollectionReusableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extensions.swift"; sourceTree = "<group>"; };
 		CD2575C31D666C7E0017DEE6 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		CD3D7B721DAC1DD2007BB87D /* ForecastBackgroundViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastBackgroundViewModel.swift; sourceTree = "<group>"; };
+		CD3D7B751DAC25AA007BB87D /* SunIntervalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunIntervalView.swift; sourceTree = "<group>"; };
 		CD6A633B1D514ACB009571DE /* CrashReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashReporter.swift; sourceTree = "<group>"; };
 		CD6A63441D51758C009571DE /* SafeArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeArray.swift; sourceTree = "<group>"; };
 		CD6A63471D517898009571DE /* UtilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityTests.swift; sourceTree = "<group>"; };
@@ -400,6 +405,7 @@
 			children = (
 				CD9021981D6E96D200375FE7 /* AspectImageCell.swift */,
 				CD9021991D6E96D200375FE7 /* ForecastBackgroundView.swift */,
+				CD3D7B751DAC25AA007BB87D /* SunIntervalView.swift */,
 				CD90219A1D6E96D200375FE7 /* ForecastCell.swift */,
 				CD90219B1D6E96D200375FE7 /* TemperatureCell.swift */,
 				CD90219C1D6E96D200375FE7 /* WeatherCell.swift */,
@@ -466,6 +472,7 @@
 				CDECBAC21D46DF7A007A82D5 /* MBTAViewModel.swift */,
 				7AC59EE71D579CCE003863AE /* WeatherViewModel.swift */,
 				7AC59EEA1D57A1C1003863AE /* ViewModel.swift */,
+				CD3D7B721DAC1DD2007BB87D /* ForecastBackgroundViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -796,6 +803,7 @@
 			files = (
 				CDED234A1D60B00E0023CC4B /* Currently.swift in Sources */,
 				CDED234D1D60B0210023CC4B /* Minutely.swift in Sources */,
+				CD3D7B761DAC25AA007BB87D /* SunIntervalView.swift in Sources */,
 				7AE9DA651D57A4A50087B401 /* Coordinate.swift in Sources */,
 				CDED23501D60B02D0023CC4B /* Hourly.swift in Sources */,
 				CDF60DF91D48302B003E2AFB /* RootViewController.swift in Sources */,
@@ -822,6 +830,7 @@
 				CD1A10811D7A7D3F0072785B /* ProcessInfo+Extensions.swift in Sources */,
 				CD8357521D4C4DA5009E76A7 /* MBTAService.swift in Sources */,
 				CD9021AC1D6E96D800375FE7 /* BusHeaderView.swift in Sources */,
+				CD3D7B731DAC1DD2007BB87D /* ForecastBackgroundViewModel.swift in Sources */,
 				CDED235C1D60B1000023CC4B /* WeatherBucket.swift in Sources */,
 				CDED23351D60AE5F0023CC4B /* WeatherCoordinate.swift in Sources */,
 				7AE9DA671D57A4A50087B401 /* Direction.swift in Sources */,
@@ -887,6 +896,7 @@
 				7AE9DA761D57A54F0087B401 /* WeatherForecast.swift in Sources */,
 				CD1A10821D7A7D3F0072785B /* ProcessInfo+Extensions.swift in Sources */,
 				7AC59EEC1D57A1C1003863AE /* ViewModel.swift in Sources */,
+				CD3D7B741DAC1DD2007BB87D /* ForecastBackgroundViewModel.swift in Sources */,
 				7AE9DA5C1D57A40B0087B401 /* WeatherService.swift in Sources */,
 				7AC59EE91D579CCE003863AE /* WeatherViewModel.swift in Sources */,
 				CDED23541D60B0440023CC4B /* Daily.swift in Sources */,
@@ -982,7 +992,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1027,7 +1036,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

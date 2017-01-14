@@ -11,13 +11,15 @@ import XCTest
 
 class GudTayTests: XCTestCase {
 
-    func testForecast() {
-        let exp = expectation(description: "forecastService")
+    let referenceDate = Date(timeIntervalSince1970: 1470587079.0)
+
+    func testForecastFields() {
+        let exp = expectation(description: "testForecastFields")
 
         let viewModel = WeatherViewModel(serviceType: MockWeatherService.self)
-        viewModel.refresh { result in
+        viewModel.refresh(referenceDate: referenceDate) { result in
             switch result {
-            case .success(let fields):
+            case let .success(fields, _):
 
                 let tempField = fields[0]
 
@@ -86,6 +88,53 @@ class GudTayTests: XCTestCase {
                 XCTFail("got unexpected error: \(error)")
             }
             exp.fulfill()
+        }
+
+        waitForExpectations(timeout: 0.1, handler: nil)
+    }
+
+    func testForecastBackgroundViewModel() {
+        let exp = expectation(description: "testForecastBackgroundViewModel")
+
+        let viewModel = WeatherViewModel(serviceType: MockWeatherService.self)
+        viewModel.refresh(referenceDate: referenceDate) { result in
+            switch result {
+            case let .success(_, backgroundVM):
+                defer {
+                    exp.fulfill()
+                }
+
+                guard let backgroundVM = backgroundVM else {
+                    XCTFail("Got unexpectedly nil background view model")
+                    return
+                }
+
+                let testInterval = DateInterval(
+                    start: Date(timeIntervalSinceReferenceDate: 492278400.0),
+                    end: Date(timeIntervalSinceReferenceDate: 492361200.0)
+                )
+                XCTAssertEqual(backgroundVM.interval, testInterval)
+
+                let ratios = backgroundVM.eventEndpoints(calendar: Calendar(identifier: .gregorian))
+                XCTAssertEqual(ratios.count, 3)
+
+                let first = ratios[0]
+                XCTAssertEqual(first.kind, .day)
+                XCTAssertEqualWithAccuracy(first.start, -0.271123188405797, accuracy: 0.001)
+                XCTAssertEqualWithAccuracy(first.end, 0.346243961352657, accuracy: 0.001)
+
+                let second = ratios[1]
+                XCTAssertEqual(second.kind, .night)
+                XCTAssertEqualWithAccuracy(second.start, 0.346243961352657, accuracy: 0.001)
+                XCTAssertEqualWithAccuracy(second.end, 0.772355072463768, accuracy: 0.001)
+
+                let third = ratios[2]
+                XCTAssertEqual(third.kind, .day)
+                XCTAssertEqualWithAccuracy(third.start, 0.772355072463768, accuracy: 0.001)
+                XCTAssertEqualWithAccuracy(third.end, 1.38972222222222, accuracy: 0.001)
+            case .failure(let error):
+                XCTFail("got unexpected error: \(error)")
+            }
         }
 
         waitForExpectations(timeout: 0.1, handler: nil)

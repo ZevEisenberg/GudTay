@@ -111,8 +111,8 @@ struct FlipFloppingWeatherFileProvider: Sequence, IteratorProtocol {
     private var index = [String].Index(0)
 
     private let fileNames = [
-        "Sample Weather API Response with rain",
         "Sample Weather API Response without rain",
+        "Sample Weather API Response with rain",
     ]
 
     mutating func next() -> String? {

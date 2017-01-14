@@ -31,6 +31,7 @@ final class RootViewController: UIViewController {
         }
         else {
             weatherServiceType = WeatherService.self
+//            weatherServiceType = MockWeatherService.self
         }
 
         weatherViewController = WeatherViewController(viewModel: WeatherViewModel(serviceType: weatherServiceType))
@@ -43,6 +44,7 @@ final class RootViewController: UIViewController {
         }
         else {
             mbtaServiceType = MBTAService.self
+//            mbtaServiceType = MockMBTAService.self
         }
 
         mbtaViewController = MBTAViewController(viewModel: MBTAViewModel(serviceType: mbtaServiceType))

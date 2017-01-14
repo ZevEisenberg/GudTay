@@ -18,6 +18,9 @@ struct Colors {
     static let white = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
     static let black = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 
+    static let day = #colorLiteral(red: 0.3624786437, green: 0.7380405068, blue: 0.9422387481, alpha: 1)
+    static let night = #colorLiteral(red: 0.2233890593, green: 0.2090522647, blue: 0.3250509799, alpha: 1)
+
     static var random: UIColor {
         return UIColor(
             red: CGFloat(arc4random_uniform(255)) / 255.0,
