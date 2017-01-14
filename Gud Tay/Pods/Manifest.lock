@@ -2,17 +2,20 @@ PODS:
   - Anchorage (3.0.0)
   - BonMot (4.0.2)
   - BuddyBuildSDK (1.0.12)
+  - Swiftilities/Math (0.8.0)
 
 DEPENDENCIES:
   - Anchorage
   - BonMot (~> 4.0)
   - BuddyBuildSDK
+  - Swiftilities/Math
 
 SPEC CHECKSUMS:
   Anchorage: 0b7244e31069ebc61a4e9611bc670feb7f24a3e2
   BonMot: eddf223b4054e7be8d632588188bdf70dfa3250d
   BuddyBuildSDK: f4682598772ae66c9ef5554d2d78d0a19fb413a0
+  Swiftilities: 02953a859e5b50bd1d670c70704ca38720850cfa
 
-PODFILE CHECKSUM: ce0dcb6ffce35240c3c58435d3ac16382cec1108
+PODFILE CHECKSUM: 84c0fd6d43912619fc4a237209c928035a2c4a1d
 
 COCOAPODS: 1.2.0.rc.1
