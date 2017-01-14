@@ -762,7 +762,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SWIFTLINT_BINARY=\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\"${SWIFTLINT_BINARY}\" lint --strict\n";
+			shellScript = "SWIFTLINT_BINARY=\"${PODS_ROOT}/SwiftLint/swiftlint\"\nif [[ $CONFIGURATION == \"Release\" ]]; then\n    \"${SWIFTLINT_BINARY}\" lint --strict\nelse\n    \"${SWIFTLINT_BINARY}\" lint\nfi\n";
 		};
 		DB2B5511529CFC1BD2453A49 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
