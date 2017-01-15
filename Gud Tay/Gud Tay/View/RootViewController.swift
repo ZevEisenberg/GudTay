@@ -31,7 +31,7 @@ final class RootViewController: UIViewController {
         }
         else {
             weatherServiceType = WeatherService.self
-//            weatherServiceType = MockWeatherService.self
+//            weatherServiceType = MockWeatherService<FlipFlopping>.self
         }
 
         weatherViewController = WeatherViewController(viewModel: WeatherViewModel(serviceType: weatherServiceType))

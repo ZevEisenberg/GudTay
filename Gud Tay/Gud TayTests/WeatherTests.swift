@@ -16,7 +16,7 @@ class GudTayTests: XCTestCase {
     func testForecastFields() {
         let exp = expectation(description: "testForecastFields")
 
-        let viewModel = WeatherViewModel(serviceType: MockWeatherService.self)
+        let viewModel = WeatherViewModel(serviceType: MockWeatherService<WithRain>.self)
         viewModel.refresh(referenceDate: referenceDate) { result in
             switch result {
             case let .success(fields, _):
@@ -96,7 +96,7 @@ class GudTayTests: XCTestCase {
     func testForecastBackgroundViewModel() {
         let exp = expectation(description: "testForecastBackgroundViewModel")
 
-        let viewModel = WeatherViewModel(serviceType: MockWeatherService.self)
+        let viewModel = WeatherViewModel(serviceType: MockWeatherService<FlipFlopping>.self)
         viewModel.refresh(referenceDate: referenceDate) { result in
             switch result {
             case let .success(_, backgroundVM):

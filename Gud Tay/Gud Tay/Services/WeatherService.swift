@@ -10,7 +10,8 @@ import Foundation
 
 protocol WeatherServiceType {
 
-    static func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> Void)
+    init()
+    func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> Void)
 
 }
 
@@ -24,16 +25,16 @@ enum WeatherServiceKind: String {
         case .normal:
             return WeatherService.self
         case .mock:
-            return MockWeatherService.self
+            return MockWeatherService<FlipFlopping>.self
         }
     }
 
 }
 
-enum WeatherService: WeatherServiceType {
+struct WeatherService: WeatherServiceType {
 
-    static func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> Void) {
-        let url = baseUrl().appendingPathComponent(Endpoints.forecast).appendingPathComponent(Constants.apiKey).appendingPathComponent("\(latitude),\(longitude)")
+    func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> Void) {
+        let url = WeatherService.baseUrl().appendingPathComponent(Endpoints.forecast).appendingPathComponent(Constants.apiKey).appendingPathComponent("\(latitude),\(longitude)")
         APIClient.get(baseUrl: url, path: "", completion: completion)
     }
 
@@ -68,11 +69,13 @@ private extension WeatherService {
 
 private final class DummyClass { }
 
-struct MockWeatherService: WeatherServiceType {
+class MockWeatherService<Stubs: WeatherStubs>: WeatherServiceType {
 
-    private static var provider = FlipFloppingWeatherFileProvider()
+    private var provider = WeatherFileProvider<Stubs>()
 
-    static func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> Void) {
+    required init() { }
+
+    func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> Void) {
         let filename = provider.next()!
         let ext = "json"
         guard let url = Bundle(for: DummyClass.self).url(forResource: filename, withExtension: ext) else {
@@ -106,23 +109,42 @@ struct MockWeatherService: WeatherServiceType {
 
 }
 
-struct FlipFloppingWeatherFileProvider: Sequence, IteratorProtocol {
+protocol WeatherStubs {
+    var fileNames: [String] { get }
+    init()
+}
 
-    private var index = [String].Index(0)
+struct WeatherFileProvider<Stubs: WeatherStubs>: Sequence, IteratorProtocol {
 
-    private let fileNames = [
-        "Sample Weather API Response without rain",
-        "Sample Weather API Response with rain",
-    ]
+    private var stubs = Stubs()
+
+    private var index: Int = 0
 
     mutating func next() -> String? {
         defer {
             index += 1
-            if index == fileNames.count {
+            if index == stubs.fileNames.count {
                 index = 0
             }
         }
-        return fileNames[index]
+        return stubs.fileNames[index]
     }
+
+}
+
+struct WithRain: WeatherStubs {
+
+    let fileNames = [
+        "Sample Weather API Response with rain",
+        ]
+
+}
+
+struct FlipFlopping: WeatherStubs {
+
+    let fileNames = [
+        "Sample Weather API Response without rain",
+        "Sample Weather API Response with rain",
+        ]
 
 }

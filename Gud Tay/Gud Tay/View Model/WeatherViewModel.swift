@@ -29,15 +29,15 @@ final class WeatherViewModel {
     private(set) var fields: [WeatherField] = []
     private(set) var forecastBackgroundViewModel: ForecastBackgroundViewModel?
 
-    private let serviceType: WeatherServiceType.Type
+    private let service: WeatherServiceType
 
     init(serviceType: WeatherServiceType.Type) {
-        self.serviceType = serviceType
+        self.service = serviceType.init()
     }
 
     func refresh(referenceDate: Date, completion: @escaping (Result) -> Void) {
         // n.b. lat/long have been rebased to be the center of Boston instead of my real old address for privacy reasons.
-        self.serviceType.predictions(latitude: 42.3601, longitude: -71.0589) { apiResult in
+        service.predictions(latitude: 42.3601, longitude: -71.0589) { apiResult in
             switch apiResult {
             case .success(let jsonObject):
                 guard let jsonObject = jsonObject else {
