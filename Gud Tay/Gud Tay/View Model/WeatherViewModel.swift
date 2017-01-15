@@ -35,7 +35,7 @@ final class WeatherViewModel {
         self.service = serviceType.init()
     }
 
-    func refresh(referenceDate: Date, completion: @escaping (Result) -> Void) {
+    func refresh(referenceDate: Date, calendar: Calendar, completion: @escaping (Result) -> Void) {
         // n.b. lat/long have been rebased to be the center of Boston instead of my real old address for privacy reasons.
         service.predictions(latitude: 42.3601, longitude: -71.0589) { apiResult in
             switch apiResult {
@@ -47,7 +47,7 @@ final class WeatherViewModel {
 
                 do {
                     let forecast = try WeatherForecast(json: jsonObject)
-                    let (fields, forecastBackgroundViewModel) = WeatherViewModel.processForecast(forecast: forecast, referenceDate: referenceDate)
+                    let (fields, forecastBackgroundViewModel) = WeatherViewModel.processForecast(forecast: forecast, referenceDate: referenceDate, calendar: calendar)
                     self.fields = fields
                     self.forecastBackgroundViewModel = forecastBackgroundViewModel
                     completion(.success(self.fields, self.forecastBackgroundViewModel))
@@ -68,7 +68,7 @@ final class WeatherViewModel {
 
 private extension WeatherViewModel {
 
-    static func processForecast(forecast: WeatherForecast, referenceDate: Date) -> ([WeatherField], ForecastBackgroundViewModel?) {
+    static func processForecast(forecast: WeatherForecast, referenceDate: Date, calendar: Calendar) -> ([WeatherField], ForecastBackgroundViewModel?) {
         var fields = [WeatherField]()
 
         let current = forecast.currently
@@ -91,7 +91,7 @@ private extension WeatherViewModel {
         // Need an umbrella?
 
         let hourlyPrecipitations = forecast.hourly.precipitation
-        let hoursWeCareAbout = WeatherViewModel.desiredDryInterval(for: current.precipitation.timestamp)
+        let hoursWeCareAbout = WeatherViewModel.desiredDryInterval(for: current.precipitation.timestamp, calendar: calendar)
         let precipitationsWeCareAbout = hourlyPrecipitations.data.filter { precipitation in
             hoursWeCareAbout.contains(precipitation.timestamp)
         }
@@ -107,7 +107,7 @@ private extension WeatherViewModel {
         let hourlyMeteorologies = forecast.hourly.meteorology
         let hourlyTemperatures = forecast.hourly.temperature
 
-        let hoursUntilSameTimeNextDay = (hourlyPrecipitations.data[safe: 0]?.timestamp ?? Date()).hoursUntilSameTimeNextDay()
+        let hoursUntilSameTimeNextDay = (hourlyPrecipitations.data[safe: 0]?.timestamp ?? referenceDate).hoursUntilSameTimeNextDay()
 
         for index in 0..<hoursUntilSameTimeNextDay {
             guard
@@ -121,10 +121,17 @@ private extension WeatherViewModel {
         }
 
         var backgroundViewModel: ForecastBackgroundViewModel? = nil
+        let hoursToExpand = 12
         if let firstTime = hourlyPrecipitations.data[safe: 0]?.timestamp,
             let lastTime = hourlyPrecipitations.data[safe: (hoursUntilSameTimeNextDay - 1)]?.timestamp {
 
+            guard let adjustedFirstTime = calendar.date(byAdding: .hour, value: -hoursToExpand, to: firstTime),
+                let adjustedLastTime = calendar.date(byAdding: .hour, value: hoursToExpand, to: lastTime) else {
+                    preconditionFailure("Should always be able to add and subtract a few hours from a date. Failed with dates \(firstTime) and \(lastTime), shifting by \(hoursToExpand)")
+            }
+
             let interval = DateInterval(start: firstTime, end: lastTime)
+            let expandedInterval = DateInterval(start: adjustedFirstTime, end: adjustedLastTime)
 
             let almanacs = forecast.daily.almanac.data
 
@@ -133,11 +140,11 @@ private extension WeatherViewModel {
                 let sunset = SolarEvent(kind: .sunset, date: almanac.sunsetTime)
                 return [sunrise, sunset]
                 }.flatMap { event in
-                    return interval.contains(event.date) ? event : nil
+                    return expandedInterval.contains(event.date) ? event : nil
                 }.sorted { $0.date < $1.date }
 
             backgroundViewModel = ForecastBackgroundViewModel(
-                interval: interval,
+                interval: interval, // original interval, for purposes of scaling in the UI
                 solarEvents: events
             )
         }
@@ -149,7 +156,7 @@ private extension WeatherViewModel {
 
 extension WeatherViewModel {
 
-    static func desiredDryInterval(for date: Date, calendar: Calendar = Calendar.current) -> DateInterval {
+    static func desiredDryInterval(for date: Date, calendar: Calendar) -> DateInterval {
         let components: Set<Calendar.Component> = [
             .year,
             .month,

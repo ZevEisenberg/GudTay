@@ -148,3 +148,11 @@ struct FlipFlopping: WeatherStubs {
         ]
 
 }
+
+struct JustAfterSunset: WeatherStubs {
+
+    let fileNames = [
+        "Sample Weather API Response just after sunset",
+    ]
+
+}

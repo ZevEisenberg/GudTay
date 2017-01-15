@@ -90,6 +90,8 @@
 		CDADC9951D65566C005B60AD /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADC9941D65566C005B60AD /* LogViewController.swift */; };
 		CDBF96881D56F39F008AC493 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF96871D56F39F008AC493 /* Colors.swift */; };
 		CDBF968A1D56F8CA008AC493 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF96891D56F8CA008AC493 /* Fonts.swift */; };
+		CDD8F99F1E2BD6270003679B /* Sample Weather API Response just after sunset.json in Resources */ = {isa = PBXBuildFile; fileRef = CDD8F99D1E2BD61E0003679B /* Sample Weather API Response just after sunset.json */; };
+		CDD8F9A01E2BD62B0003679B /* Sample Weather API Response just after sunset.json in Resources */ = {isa = PBXBuildFile; fileRef = CDD8F99D1E2BD61E0003679B /* Sample Weather API Response just after sunset.json */; };
 		CDECBAB61D46D97F007A82D5 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB31D46D97F007A82D5 /* APIClient.swift */; };
 		CDECBAB81D46D97F007A82D5 /* JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB41D46D97F007A82D5 /* JSONRepresentable.swift */; };
 		CDECBAC31D46DF7A007A82D5 /* MBTAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAC21D46DF7A007A82D5 /* MBTAViewModel.swift */; };
@@ -208,6 +210,7 @@
 		CDBF96871D56F39F008AC493 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CDBF96891D56F8CA008AC493 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		CDC371C21D4911E30054F343 /* Gud Tay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gud Tay-Bridging-Header.h"; sourceTree = "<group>"; };
+		CDD8F99D1E2BD61E0003679B /* Sample Weather API Response just after sunset.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Sample Weather API Response just after sunset.json"; sourceTree = "<group>"; };
 		CDECBAB31D46D97F007A82D5 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		CDECBAB41D46D97F007A82D5 /* JSONRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRepresentable.swift; sourceTree = "<group>"; };
 		CDECBAC21D46DF7A007A82D5 /* MBTAViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTAViewModel.swift; sourceTree = "<group>"; };
@@ -363,6 +366,7 @@
 				CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */,
 				7A5BA3771D579869006AD6FC /* Sample Weather API Response with rain.json */,
 				CD1A107D1D7A743B0072785B /* Sample Weather API Response without rain.json */,
+				CDD8F99D1E2BD61E0003679B /* Sample Weather API Response just after sunset.json */,
 				CD12DE3B1D4FE82E00956B74 /* MBTATests.swift */,
 				7A5BA37A1D57988B006AD6FC /* WeatherTests.swift */,
 				CD6A63471D517898009571DE /* UtilityTests.swift */,
@@ -623,6 +627,7 @@
 				7A5BA3791D57986D006AD6FC /* Sample Weather API Response with rain.json in Resources */,
 				CD1279CE1D45B37B00DC7BB8 /* Assets.xcassets in Resources */,
 				CD1A107F1D7A74470072785B /* Sample Weather API Response without rain.json in Resources */,
+				CDD8F99F1E2BD6270003679B /* Sample Weather API Response just after sunset.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +638,7 @@
 				7A5BA3781D579869006AD6FC /* Sample Weather API Response with rain.json in Resources */,
 				CD7DAE711D55B5F400ED6AD3 /* Sample MBTA API Response.json in Resources */,
 				CD1A107E1D7A743B0072785B /* Sample Weather API Response without rain.json in Resources */,
+				CDD8F9A01E2BD62B0003679B /* Sample Weather API Response just after sunset.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

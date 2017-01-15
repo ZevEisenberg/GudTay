@@ -70,7 +70,7 @@ final class WeatherViewController: RefreshableViewController {
 
         Timer.scheduledTimer(withTimeInterval: refreshInterval, repeats: true, block: { _ in
             self.updateBackgroundForScrollPosition()
-            self.viewModel.refresh(referenceDate: Date()) { result in
+            self.viewModel.refresh(referenceDate: Date(), calendar: .autoupdatingCurrent) { result in
                 switch result {
                 case let .success(_, forecastBackgroundViewModel):
                     self.collectionView.reloadData()

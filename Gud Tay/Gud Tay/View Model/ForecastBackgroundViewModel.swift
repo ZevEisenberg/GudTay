@@ -51,18 +51,10 @@ struct ForecastBackgroundViewModel {
     func eventEndpoints(calendar: Calendar) -> [EventEndpoints] {
         precondition(solarEvents.count >= 2, "There should be at least two solar events per day")
 
-        let second = solarEvents[1]
-        let secondToLast = solarEvents[solarEvents.count - 2]
-
-        let beforeFirst = second.clone(offsetByDays: -1, calendar: calendar)
-        let afterLast = secondToLast.clone(offsetByDays: 1, calendar: calendar)
-
-        let allEvents = [beforeFirst] + solarEvents + [afterLast]
-
         let intervalInSeconds = interval.start.timeIntervalSinceReferenceDate...interval.end.timeIntervalSinceReferenceDate
         let normalInterval = 0.0...1.0
 
-        let endpoints = zip(allEvents, allEvents.dropFirst()).map { first, second -> EventEndpoints in
+        let endpoints = zip(solarEvents, solarEvents.dropFirst()).map { first, second -> EventEndpoints in
             assert(second.date > first.date, "events should be ordered ascending by date")
             assert(first.kind != second.kind, "events should alternate between sunrise and sunset")
 

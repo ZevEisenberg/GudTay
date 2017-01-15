@@ -17,7 +17,7 @@ class GudTayTests: XCTestCase {
         let exp = expectation(description: "testForecastFields")
 
         let viewModel = WeatherViewModel(serviceType: MockWeatherService<WithRain>.self)
-        viewModel.refresh(referenceDate: referenceDate) { result in
+        viewModel.refresh(referenceDate: referenceDate, calendar: Calendar(identifier: .gregorian)) { result in
             switch result {
             case let .success(fields, _):
 
@@ -97,7 +97,7 @@ class GudTayTests: XCTestCase {
         let exp = expectation(description: "testForecastBackgroundViewModel")
 
         let viewModel = WeatherViewModel(serviceType: MockWeatherService<FlipFlopping>.self)
-        viewModel.refresh(referenceDate: referenceDate) { result in
+        viewModel.refresh(referenceDate: referenceDate, calendar: Calendar(identifier: .gregorian)) { result in
             switch result {
             case let .success(_, backgroundVM):
                 defer {
@@ -132,6 +132,40 @@ class GudTayTests: XCTestCase {
                 XCTAssertEqual(third.kind, .day)
                 XCTAssertEqualWithAccuracy(third.start, 0.772355072463768, accuracy: 0.001)
                 XCTAssertEqualWithAccuracy(third.end, 1.38972222222222, accuracy: 0.001)
+            case .failure(let error):
+                XCTFail("got unexpected error: \(error)")
+            }
+        }
+
+        waitForExpectations(timeout: 0.1, handler: nil)
+    }
+
+    func testJustAfterSunset() {
+        let afterSunsetReferenceDate = Date(timeIntervalSinceReferenceDate: 506125318)
+
+        let exp = expectation(description: "testJustAfterSunset")
+
+        let viewModel = WeatherViewModel(serviceType: MockWeatherService<JustAfterSunset>.self)
+        viewModel.refresh(referenceDate: afterSunsetReferenceDate, calendar: Calendar(identifier: .gregorian)) { result in
+            switch result {
+            case let .success(_, backgroundVM):
+                defer {
+                    exp.fulfill()
+                }
+
+                guard let backgroundVM = backgroundVM else {
+                    XCTFail("Got unexpectedly nil background view model")
+                    return
+                }
+
+                let testInterval = DateInterval(
+                    start: Date(timeIntervalSinceReferenceDate: 506124000.0),
+                    end: Date(timeIntervalSinceReferenceDate: 506206800.0)
+                )
+                XCTAssertEqual(backgroundVM.interval, testInterval)
+
+                let ratios = backgroundVM.eventEndpoints(calendar: Calendar(identifier: .gregorian))
+                XCTAssertEqual(ratios.count, 3)
             case .failure(let error):
                 XCTFail("got unexpected error: \(error)")
             }
