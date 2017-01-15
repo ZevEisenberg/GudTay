@@ -582,6 +582,7 @@
 						DevelopmentTeam = 2KJHM26Y46;
 						DevelopmentTeamName = "Zev Eisenberg (Personal Team)";
 						ProvisioningStyle = Automatic;
+						TestTargetID = CD1279C21D45B37B00DC7BB8;
 					};
 					CD1279E11D45B37B00DC7BB8 = {
 						CreatedOnToolsVersion = 8.0;
@@ -1086,6 +1087,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gud Tay.app/Gud Tay";
 			};
 			name = Debug;
 		};
@@ -1100,6 +1102,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gud Tay.app/Gud Tay";
 			};
 			name = Release;
 		};
