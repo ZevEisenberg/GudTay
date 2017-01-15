@@ -46,7 +46,7 @@ private extension MBTAService {
         static let apiKey = "40jKQwmnXk-4slxceBfcEA"
         static let username = "ZevEisenberg"
         static let appName = "status-board-mbta"
-        static let host = "https://realtime.mbta.com"
+        static let host = "http://realtime.mbta.com"
         static let commonPath = "developer/api/v2"
 
     }
