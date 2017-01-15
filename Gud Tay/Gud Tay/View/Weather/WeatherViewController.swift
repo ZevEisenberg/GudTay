@@ -13,6 +13,8 @@ final class WeatherViewController: RefreshableViewController {
 
     fileprivate let viewModel: WeatherViewModel
 
+    fileprivate var scrollBackTimer: Timer?
+
     fileprivate let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -71,6 +73,7 @@ final class WeatherViewController: RefreshableViewController {
         Timer.scheduledTimer(withTimeInterval: refreshInterval, repeats: true, block: { _ in
             self.updateBackgroundForScrollPosition()
             self.viewModel.refresh(referenceDate: Date(), calendar: .autoupdatingCurrent) { result in
+                self.restartScrollBackTimer()
                 switch result {
                 case let .success(_, forecastBackgroundViewModel):
                     self.collectionView.reloadData()
@@ -130,9 +133,30 @@ extension WeatherViewController: UICollectionViewDelegate {
         updateBackgroundForScrollPosition()
     }
 
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        restartScrollBackTimer()
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        restartScrollBackTimer()
+    }
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        restartScrollBackTimer()
+    }
+
 }
 
 private extension WeatherViewController {
+
+    func restartScrollBackTimer() {
+        scrollBackTimer?.invalidate()
+        scrollBackTimer = Timer.scheduledTimer(withTimeInterval: 45, repeats: false, block: { _ in
+            self.collectionView.setContentOffset(.zero, animated: true)
+            self.scrollBackTimer?.invalidate()
+            self.scrollBackTimer = nil
+        })
+    }
 
     func updateBackgroundForScrollPosition() {
         guard let indexOfFirstForecastCell = viewModel.fields.index(where: {
