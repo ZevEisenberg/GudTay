@@ -121,13 +121,13 @@ private extension WeatherViewModel {
         }
 
         var backgroundViewModel: ForecastBackgroundViewModel? = nil
-        let hoursToExpand = 12
+        let daysToExpand = 1
         if let firstTime = hourlyPrecipitations.data[safe: 0]?.timestamp,
             let lastTime = hourlyPrecipitations.data[safe: (hoursUntilSameTimeNextDay - 1)]?.timestamp {
 
-            guard let adjustedFirstTime = calendar.date(byAdding: .hour, value: -hoursToExpand, to: firstTime),
-                let adjustedLastTime = calendar.date(byAdding: .hour, value: hoursToExpand, to: lastTime) else {
-                    preconditionFailure("Should always be able to add and subtract a few hours from a date. Failed with dates \(firstTime) and \(lastTime), shifting by \(hoursToExpand)")
+            guard let adjustedFirstTime = calendar.date(byAdding: .day, value: -daysToExpand, to: firstTime),
+                let adjustedLastTime = calendar.date(byAdding: .day, value: daysToExpand, to: lastTime) else {
+                    preconditionFailure("Should always be able to add and subtract a day from a date. Failed with dates \(firstTime) and \(lastTime), shifting by \(daysToExpand) day(s)")
             }
 
             let interval = DateInterval(start: firstTime, end: lastTime)

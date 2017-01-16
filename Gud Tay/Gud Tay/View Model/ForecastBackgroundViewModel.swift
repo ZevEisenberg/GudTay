@@ -68,6 +68,12 @@ struct ForecastBackgroundViewModel {
             }
             return (kind: kind, start: startRatio, end: endRatio)
         }
+
+        if let start = endpoints.first?.start, let end = endpoints.last?.end {
+            assert(start <= 0.0)
+            assert(end > 1.0)
+        }
+
         return endpoints
     }
 

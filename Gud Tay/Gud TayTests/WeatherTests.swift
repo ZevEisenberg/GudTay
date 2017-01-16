@@ -116,11 +116,11 @@ class GudTayTests: XCTestCase {
                 XCTAssertEqual(backgroundVM.interval, testInterval)
 
                 let ratios = backgroundVM.eventEndpoints(calendar: Calendar(identifier: .gregorian))
-                XCTAssertEqual(ratios.count, 3)
+                XCTAssertEqual(ratios.count, 4)
 
                 let first = ratios[0]
                 XCTAssertEqual(first.kind, .day)
-                XCTAssertEqualWithAccuracy(first.start, -0.271123188405797, accuracy: 0.001)
+                XCTAssertEqualWithAccuracy(first.start, -0.271884057971015, accuracy: 0.001)
                 XCTAssertEqualWithAccuracy(first.end, 0.346243961352657, accuracy: 0.001)
 
                 let second = ratios[1]
@@ -131,7 +131,13 @@ class GudTayTests: XCTestCase {
                 let third = ratios[2]
                 XCTAssertEqual(third.kind, .day)
                 XCTAssertEqualWithAccuracy(third.start, 0.772355072463768, accuracy: 0.001)
-                XCTAssertEqualWithAccuracy(third.end, 1.38972222222222, accuracy: 0.001)
+                XCTAssertEqualWithAccuracy(third.end, 1.38878019323671, accuracy: 0.001)
+
+                let fourth = ratios[3]
+                XCTAssertEqual(fourth.kind, .night)
+                XCTAssertEqualWithAccuracy(fourth.start, 1.38878019323671, accuracy: 0.001)
+                XCTAssertEqualWithAccuracy(fourth.end, 1.81660628019324, accuracy: 0.001)
+
             case .failure(let error):
                 XCTFail("got unexpected error: \(error)")
             }
