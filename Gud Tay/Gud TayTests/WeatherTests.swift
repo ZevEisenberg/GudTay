@@ -171,7 +171,7 @@ class GudTayTests: XCTestCase {
                 XCTAssertEqual(backgroundVM.interval, testInterval)
 
                 let ratios = backgroundVM.eventEndpoints(calendar: Calendar(identifier: .gregorian))
-                XCTAssertEqual(ratios.count, 3)
+                XCTAssertEqual(ratios.count, 4)
             case .failure(let error):
                 XCTFail("got unexpected error: \(error)")
             }
