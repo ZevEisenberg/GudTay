@@ -8,6 +8,7 @@ target 'Gud Tay' do
   pod 'BuddyBuildSDK'
   pod 'BonMot', '~>4.0'
   pod 'Swiftilities/Math'
+  pod 'SwiftLint'
 
   target 'Gud TayTests' do
     inherit! :search_paths
