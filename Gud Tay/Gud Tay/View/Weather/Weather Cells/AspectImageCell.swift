@@ -28,7 +28,7 @@ final class AspectImageCell: WeatherCell {
 
     // Private Properties
 
-    private var aspectConstraint: NSLayoutConstraint? = nil
+    private var aspectConstraint: NSLayoutConstraint?
 
     private var imageView = UIImageView(axId: "imageView")
 

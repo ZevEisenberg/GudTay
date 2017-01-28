@@ -21,7 +21,7 @@ class WeatherCell: UICollectionViewCell {
 
     // Private Properties
 
-    private var heightConstraint: NSLayoutConstraint? = nil
+    private var heightConstraint: NSLayoutConstraint?
 
     override init(frame: CGRect) {
         super.init(frame: frame)

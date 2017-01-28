@@ -106,7 +106,7 @@ private extension NSError {
 
     class func my_httpError(response: HTTPURLResponse) -> NSError {
         return NSError(domain: NSError.myDomain, code: response.statusCode, userInfo: [
-            NSLocalizedDescriptionKey: "Got back HTTP code \(response.statusCode) from request to URL \(response.url).",
+            NSLocalizedDescriptionKey: "Got back HTTP code \(response.statusCode) from request to URL: \(response.url.flatMap(String.init(describing:)) ?? "nil").",
             ])
     }
 

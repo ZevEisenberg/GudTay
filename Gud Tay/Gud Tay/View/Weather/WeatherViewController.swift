@@ -33,7 +33,7 @@ final class WeatherViewController: RefreshableViewController {
     }()
 
     fileprivate let forecastBackground = ForecastBackgroundView()
-    fileprivate var forecastBackgroundLeadingConstraint: NSLayoutConstraint? = nil
+    fileprivate var forecastBackgroundLeadingConstraint: NSLayoutConstraint?
 
     init(viewModel: WeatherViewModel) {
         self.viewModel = viewModel
