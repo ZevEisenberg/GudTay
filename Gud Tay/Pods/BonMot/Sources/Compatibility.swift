@@ -19,7 +19,7 @@
 /// or methods to the external namespace. The bon_ prefix is used when Swift 2.x
 /// cannot support the token, e.g. ".default".
 
-/// Standard Library + Foundation
+// MARK: - Standard Library + Foundation
 #if swift(>=3.0)
 #else
     typealias OptionSet = OptionSetType
@@ -284,14 +284,14 @@
             return respondsToSelector(aSelector)
         }
 
-        func perform(_ aSelector: Selector!, with object: AnyObject!) -> Unmanaged<AnyObject>! {
+        func perform(aSelector: Selector!, with object: AnyObject!) -> Unmanaged<AnyObject>! {
             return performSelector(aSelector, withObject: object)
         }
 
     }
 #endif
 
-/// Shared (AppKit + UIKit)
+// MARK: - Shared (AppKit + UIKit)
 #if swift(>=3.0)
     extension NSParagraphStyle {
 
@@ -378,7 +378,7 @@
     }
 #endif
 
-/// UIKit Only
+// MARK: - UIKit Only
 #if swift(>=3.0)
 #else
 
@@ -515,7 +515,7 @@
     #endif
 #endif
 
-/// AppKit Only
+// MARK: - AppKit Only
 #if swift(>=3.0)
 #else
     #if os(OSX)
