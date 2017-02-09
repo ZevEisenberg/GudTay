@@ -19,10 +19,15 @@ final class GudTayView: GridView {
         self.tapHandler = tapHandler
         super.init(frame: .zero)
 
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "gud-tay"))
+        let image = #imageLiteral(resourceName: "gud-tay")
+        let imageView = UIImageView(image: image)
         addSubview(imageView)
-        imageView.edgeAnchors == edgeAnchors
-        imageView.contentMode = .scaleAspectFit
+        imageView.centerAnchors == centerAnchors
+        imageView.edgeAnchors >= edgeAnchors
+        imageView.setContentHuggingPriority(UILayoutPriorityRequired, for: .horizontal)
+        imageView.setContentHuggingPriority(UILayoutPriorityRequired, for: .vertical)
+        let aspect = image.size.width / image.size.height
+        imageView.widthAnchor == imageView.heightAnchor * aspect
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(GudTayView.tapped(sender:)))
         addGestureRecognizer(tap)

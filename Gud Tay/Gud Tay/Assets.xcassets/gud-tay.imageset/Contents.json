@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "gud-tay.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "gud-tay.png",
       "scale" : "2x"
     },
     {
