@@ -11,6 +11,16 @@ import Swiftilities
 
 final class ScreenService {
 
+    static func start() {
+        let interval: TimeInterval = 60
+        Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { _ in
+            let date = Date()
+            let brightness = ScreenService.brightness(for: date)
+            LogService.add(message: "Setting brightness to \(brightness)")
+            UIScreen.main.brightness = brightness
+        }
+    }
+
 }
 
 extension ScreenService {

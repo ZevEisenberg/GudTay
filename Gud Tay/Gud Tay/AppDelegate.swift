@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rootVC = RootViewController()
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
+
+        ScreenService.start()
         return true
     }
 
