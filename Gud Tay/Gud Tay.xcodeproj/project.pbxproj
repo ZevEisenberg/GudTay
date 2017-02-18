@@ -34,6 +34,10 @@
 		7AE9DA751D57A54F0087B401 /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE9DA741D57A54F0087B401 /* WeatherForecast.swift */; };
 		7AE9DA761D57A54F0087B401 /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE9DA741D57A54F0087B401 /* WeatherForecast.swift */; };
 		B4164F6990CDADEE81496E52 /* Pods_Gud_TayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370FEC8906996918721175C9 /* Pods_Gud_TayUITests.framework */; };
+		CD0911E91E57E36300381606 /* ScreenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0911E81E57E36300381606 /* ScreenService.swift */; };
+		CD0911EB1E57E65600381606 /* ScreenServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0911EA1E57E65600381606 /* ScreenServiceTests.swift */; };
+		CD0911EC1E57E9EB00381606 /* ScreenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0911E81E57E36300381606 /* ScreenService.swift */; };
+		CD0911ED1E57E9EB00381606 /* ScreenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0911E81E57E36300381606 /* ScreenService.swift */; };
 		CD1279C71D45B37B00DC7BB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */; };
 		CD1279CE1D45B37B00DC7BB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */; };
 		CD1279D11D45B37B00DC7BB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */; };
@@ -165,6 +169,8 @@
 		7AE9DA641D57A4A50087B401 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		7AE9DA741D57A54F0087B401 /* WeatherForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherForecast.swift; sourceTree = "<group>"; };
 		BD519AB98CE48C9434FA9B47 /* Pods-Gud Tay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud Tay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gud Tay/Pods-Gud Tay.debug.xcconfig"; sourceTree = "<group>"; };
+		CD0911E81E57E36300381606 /* ScreenService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenService.swift; sourceTree = "<group>"; };
+		CD0911EA1E57E65600381606 /* ScreenServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenServiceTests.swift; sourceTree = "<group>"; };
 		CD1279C31D45B37B00DC7BB8 /* Gud Tay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gud Tay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD1279C81D45B37B00DC7BB8 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -370,6 +376,7 @@
 				CD12DE3B1D4FE82E00956B74 /* MBTATests.swift */,
 				7A5BA37A1D57988B006AD6FC /* WeatherTests.swift */,
 				CD6A63471D517898009571DE /* UtilityTests.swift */,
+				CD0911EA1E57E65600381606 /* ScreenServiceTests.swift */,
 				CD22CA961DAAEC94000C0205 /* DateTests.swift */,
 				CD1279DD1D45B37B00DC7BB8 /* Info.plist */,
 			);
@@ -391,6 +398,7 @@
 				CD8357511D4C4DA5009E76A7 /* MBTAService.swift */,
 				7AAE0AAC1D578E6100A209BF /* WeatherService.swift */,
 				CDADC9921D655315005B60AD /* LogService.swift */,
+				CD0911E81E57E36300381606 /* ScreenService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -843,6 +851,7 @@
 				7AE9DA671D57A4A50087B401 /* Direction.swift in Sources */,
 				CD9021A21D6E96D200375FE7 /* WeatherCell.swift in Sources */,
 				CDED235F1D60B3980023CC4B /* CloseEnough.swift in Sources */,
+				CD0911E91E57E36300381606 /* ScreenService.swift in Sources */,
 				CDED23411D60AFAC0023CC4B /* Temperature.swift in Sources */,
 				7AE9DA751D57A54F0087B401 /* WeatherForecast.swift in Sources */,
 				7AC59EEB1D57A1C1003863AE /* ViewModel.swift in Sources */,
@@ -890,6 +899,8 @@
 				7AE9DA701D57A4A50087B401 /* Trip.swift in Sources */,
 				CD6A63491D517899009571DE /* UtilityTests.swift in Sources */,
 				CDED23601D60B3980023CC4B /* CloseEnough.swift in Sources */,
+				CD0911EB1E57E65600381606 /* ScreenServiceTests.swift in Sources */,
+				CD0911EC1E57E9EB00381606 /* ScreenService.swift in Sources */,
 				CDED23511D60B02D0023CC4B /* Hourly.swift in Sources */,
 				7AE9DA6C1D57A4A50087B401 /* Route.swift in Sources */,
 				CDED235A1D60B0DA0023CC4B /* Icon.swift in Sources */,
@@ -928,6 +939,7 @@
 				CD1A10851D7A911F0072785B /* WeatherService.swift in Sources */,
 				CD1A10871D7A91510072785B /* APIClient.swift in Sources */,
 				CD1A10831D7A7D3F0072785B /* ProcessInfo+Extensions.swift in Sources */,
+				CD0911ED1E57E9EB00381606 /* ScreenService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
