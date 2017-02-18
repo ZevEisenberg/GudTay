@@ -181,7 +181,7 @@ class GudTayTests: XCTestCase {
     }
 
     func testDryDateInterval() {
-        var calendar = Calendar.current
+        var calendar = Calendar(identifier: .gregorian)
         calendar.timeZone = TimeZone(abbreviation: "EDT")!
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"

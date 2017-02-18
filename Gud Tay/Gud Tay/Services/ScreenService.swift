@@ -11,6 +11,40 @@ import Swiftilities
 
 final class ScreenService {
 
+}
+
+extension ScreenService {
+
+    enum BrightnessStatus {
+        case max
+        case min
+        case rising
+        case falling
+    }
+
+    struct Time {
+
+        let hours: Int
+        let minutes: Int
+
+        var allMinutes: Int {
+            return hours * 60 + minutes
+        }
+
+        static var min: Time {
+            return 0.00
+        }
+
+        static var max: Time {
+            return 24.00
+        }
+
+    }
+
+}
+
+extension ScreenService {
+
     typealias BrightnessSegment = (range: Range<Time>, status: BrightnessStatus)
     private static let segments: [BrightnessSegment] = [
         (range: Time.min..<5.45, status :.min),
@@ -47,36 +81,6 @@ final class ScreenService {
             }
             return CGFloat(normalized)
         }
-    }
-
-}
-
-extension ScreenService {
-
-    enum BrightnessStatus {
-        case max
-        case min
-        case rising
-        case falling
-    }
-
-    struct Time {
-
-        let hours: Int
-        let minutes: Int
-
-        var allMinutes: Int {
-            return hours * 60 + minutes
-        }
-
-        static var min: Time {
-            return 0.00
-        }
-
-        static var max: Time {
-            return 24.00
-        }
-
     }
 
 }

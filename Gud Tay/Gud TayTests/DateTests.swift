@@ -12,7 +12,7 @@ import XCTest
 class DateTests: XCTestCase {
 
     func testHoursUntilSameTimeNextDay() {
-        let calendar = Calendar.current
+        let calendar = Calendar(identifier: .gregorian)
         let timeZone = TimeZone(identifier: "EDT")
 
         let dstStart4AM: Date = {
