@@ -131,6 +131,15 @@ typedef void (^BBCallback)();
  */
 + (void) showScreenshotTutorial;
 
+
++ (void) crash;
+
+/*
+ * Logs to the console only while the debugger is attached (when running in Xcode)
+ * They can be downloaded in crash instances and feedbacks in the dashboard
+ */
++ (void)log:(NSString *)message;
+
 @end
 
 @interface UIView (BuddyBuildSDK)
