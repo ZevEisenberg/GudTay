@@ -116,14 +116,14 @@ protocol JSONRepresentable {
 
 protocol JSONListable: JSONRepresentable {
 
-    static func objects(from: [JSONObject]) throws -> [Self]
+    static func objects(from objects: [JSONObject]) throws -> [Self]
 
 }
 
 extension JSONListable {
 
-    static func objects(from: [JSONObject]) throws -> [Self] {
-        return try from.map(Self.init(json:))
+    static func objects(from objects: [JSONObject]) throws -> [Self] {
+        return try objects.map(Self.init(json:))
     }
 
 }
