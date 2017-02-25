@@ -118,6 +118,7 @@ private extension MBTAViewModel {
 
         return upcomingTrips
     }
+
 }
 
 extension MBTAViewModel.UpcomingTrips: Equatable {
