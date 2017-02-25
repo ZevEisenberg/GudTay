@@ -19,7 +19,7 @@ struct Meteorology {
     }
 
     /// Between 0 and 1 (inclusive) representing the percentage of sky occluded by clouds.
-    let cloudCover: Double
+    let cloudCover: Double?
 
     /// The dew point at the given time in degrees Fahrenheit.
     let dewPoint: Double
@@ -52,9 +52,9 @@ extension Meteorology: JSONRepresentable {
 
     init(json: JSONObject) throws {
         visibility = json.optionalValue(key: "visibility")
+        cloudCover = json.optionalValue(key: "cloudCover")
 
         do {
-            cloudCover = try json.value(key: "cloudCover")
             dewPoint = try json.value(key: "dewPoint")
             humidity = try json.value(key: "humidity")
             icon = try Icon(rawValue: json.value(key: "icon"))

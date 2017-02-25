@@ -125,6 +125,13 @@ private extension WeatherViewModel {
         if let firstTime = hourlyPrecipitations.data[safe: 0]?.timestamp,
             let lastTime = hourlyPrecipitations.data[safe: (hoursUntilSameTimeNextDay - 1)]?.timestamp {
 
+            // Expand the interval by ±1 day in order to be able to draw the edges of the sun interval.
+            // Unfortunately, the API does not return data in the past when asking for predictions (and
+            // really, who can blame them). Instead of making a relatively costly second request for 
+            // historical data, when we really just need a value that's close enough, the
+            // ForecastBackgroundViewModel will artifically expand the range. The point of this comment is
+            // just to say that this code should not be surprised if the first solar event is after today's
+            // midnight, becuase ForecastBackgroundViewModel will work around it.
             guard let adjustedFirstTime = calendar.date(byAdding: .day, value: -daysToExpand, to: firstTime),
                 let adjustedLastTime = calendar.date(byAdding: .day, value: daysToExpand, to: lastTime) else {
                     preconditionFailure("Should always be able to add and subtract a day from a date. Failed with dates \(firstTime) and \(lastTime), shifting by \(daysToExpand) day(s)")

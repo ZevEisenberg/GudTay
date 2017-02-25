@@ -25,19 +25,15 @@ enum NearestStorm {
 extension NearestStorm: JSONRepresentable {
 
     init(json: JSONObject) throws {
-        do {
-            let distance: Double = try json.value(key: "nearestStormDistance")
-            if distance.isPracticallyZero() {
-                self = .none
-            }
-            else {
-                let bearing: Double = try json.value(key: "nearestStormBearing")
-                self = .some(distance: distance, bearing: bearing)
-            }
+        let distance: Double = json.optionalValue(key: "nearestStormDistance") ?? 0
+        if distance.isPracticallyZero() {
+            self = .none
         }
-        catch let error {
-            throw error
+        else {
+            let bearing: Double = try json.value(key: "nearestStormBearing")
+            self = .some(distance: distance, bearing: bearing)
         }
+
     }
 
 }

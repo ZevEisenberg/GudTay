@@ -8,7 +8,7 @@
 
 struct WeatherBucket<WeatherData> where WeatherData: JSONListable {
 
-    let summary: String
+    let summary: String?
     let icon: Icon?
     let data: [WeatherData]
 
@@ -17,9 +17,10 @@ struct WeatherBucket<WeatherData> where WeatherData: JSONListable {
 extension WeatherBucket: JSONRepresentable {
 
     init(json: JSONObject) throws {
+        summary = json.optionalValue(key: "summary")
+        icon = json.optionalValue(key: "icon").flatMap { Icon(rawValue: $0) }
+
         do {
-            summary = try json.value(key: "summary")
-            icon = try Icon(rawValue: json.value(key: "icon"))
             data = try WeatherData.objects(from: json.value(key: "data"))
         }
         catch let error {

@@ -156,3 +156,11 @@ struct JustAfterSunset: WeatherStubs {
     ]
 
 }
+
+struct JustAfterMidnight: WeatherStubs {
+
+    let fileNames = [
+        "Sample Weather API Response just after midnight",
+        ]
+
+}

@@ -91,6 +91,8 @@
 		CD9021B11D6E96D800375FE7 /* MBTAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9021AA1D6E96D800375FE7 /* MBTAViewController.swift */; };
 		CD9021B21D6E96D800375FE7 /* SubwayHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9021AB1D6E96D800375FE7 /* SubwayHeaderView.swift */; };
 		CD9021B51D6E96DD00375FE7 /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9021B41D6E96DD00375FE7 /* HairlineView.swift */; };
+		CDA18DA41E62054600D34C4B /* Sample Weather API Response just after midnight.json in Resources */ = {isa = PBXBuildFile; fileRef = CDA18DA31E62054600D34C4B /* Sample Weather API Response just after midnight.json */; };
+		CDA18DA51E62054600D34C4B /* Sample Weather API Response just after midnight.json in Resources */ = {isa = PBXBuildFile; fileRef = CDA18DA31E62054600D34C4B /* Sample Weather API Response just after midnight.json */; };
 		CDADC9931D655315005B60AD /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADC9921D655315005B60AD /* LogService.swift */; };
 		CDADC9951D65566C005B60AD /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADC9941D65566C005B60AD /* LogViewController.swift */; };
 		CDBF96881D56F39F008AC493 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF96871D56F39F008AC493 /* Colors.swift */; };
@@ -212,6 +214,7 @@
 		CD9021AA1D6E96D800375FE7 /* MBTAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTAViewController.swift; sourceTree = "<group>"; };
 		CD9021AB1D6E96D800375FE7 /* SubwayHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubwayHeaderView.swift; sourceTree = "<group>"; };
 		CD9021B41D6E96DD00375FE7 /* HairlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HairlineView.swift; sourceTree = "<group>"; };
+		CDA18DA31E62054600D34C4B /* Sample Weather API Response just after midnight.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Sample Weather API Response just after midnight.json"; sourceTree = "<group>"; };
 		CDADC9921D655315005B60AD /* LogService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 		CDADC9941D65566C005B60AD /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		CDBF96871D56F39F008AC493 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -371,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */,
+				CDA18DA31E62054600D34C4B /* Sample Weather API Response just after midnight.json */,
 				7A5BA3771D579869006AD6FC /* Sample Weather API Response with rain.json */,
 				CD1A107D1D7A743B0072785B /* Sample Weather API Response without rain.json */,
 				CDD8F99D1E2BD61E0003679B /* Sample Weather API Response just after sunset.json */,
@@ -636,6 +640,7 @@
 				7A5BA3791D57986D006AD6FC /* Sample Weather API Response with rain.json in Resources */,
 				CD1279CE1D45B37B00DC7BB8 /* Assets.xcassets in Resources */,
 				CD1A107F1D7A74470072785B /* Sample Weather API Response without rain.json in Resources */,
+				CDA18DA41E62054600D34C4B /* Sample Weather API Response just after midnight.json in Resources */,
 				CDD8F99F1E2BD6270003679B /* Sample Weather API Response just after sunset.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -644,6 +649,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDA18DA51E62054600D34C4B /* Sample Weather API Response just after midnight.json in Resources */,
 				7A5BA3781D579869006AD6FC /* Sample Weather API Response with rain.json in Resources */,
 				CD7DAE711D55B5F400ED6AD3 /* Sample MBTA API Response.json in Resources */,
 				CD1A107E1D7A743B0072785B /* Sample Weather API Response without rain.json in Resources */,

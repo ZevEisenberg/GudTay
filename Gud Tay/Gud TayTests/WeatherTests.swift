@@ -180,6 +180,40 @@ class GudTayTests: XCTestCase {
         waitForExpectations(timeout: 0.1, handler: nil)
     }
 
+    func testJustAfterMidnight() {
+        let afterMidnightReferenceDate = Date(timeIntervalSinceReferenceDate: 509692380)
+
+        let exp = expectation(description: "testJustAfterMidnight")
+
+        let viewModel = WeatherViewModel(serviceType: MockWeatherService<JustAfterMidnight>.self)
+        viewModel.refresh(referenceDate: afterMidnightReferenceDate, calendar: Calendar(identifier: .gregorian)) { result in
+            switch result {
+            case let .success(_, backgroundVM):
+                defer {
+                    exp.fulfill()
+                }
+
+                guard let backgroundVM = backgroundVM else {
+                    XCTFail("Got unexpectedly nil background view model")
+                    return
+                }
+
+                let testInterval = DateInterval(
+                    start: Date(timeIntervalSinceReferenceDate: 509659200.0),
+                    end: Date(timeIntervalSinceReferenceDate: 509742000.0)
+                )
+                XCTAssertEqual(backgroundVM.interval, testInterval)
+
+                let ratios = backgroundVM.eventEndpoints(calendar: Calendar(identifier: .gregorian))
+                XCTAssertEqual(ratios.count, 3)
+            case .failure(let error):
+                XCTFail("got unexpected error: \(error)")
+            }
+        }
+
+        waitForExpectations(timeout: 0.1, handler: nil)
+    }
+
     func testDryDateInterval() {
         var calendar = Calendar(identifier: .gregorian)
         calendar.timeZone = TimeZone(abbreviation: "EDT")!
