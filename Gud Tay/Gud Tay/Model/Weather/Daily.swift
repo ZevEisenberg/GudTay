@@ -16,13 +16,8 @@ struct Daily: MeteorologyHaver, AlmanacHaver {
 extension Daily: JSONRepresentable {
 
     init(json: JSONObject) throws {
-        do {
-            meteorology = try WeatherBucket(json: json)
-            almanac = try WeatherBucket(json: json)
-        }
-        catch let error {
-            throw error
-        }
+        meteorology = try WeatherBucket(json: json)
+        almanac = try WeatherBucket(json: json)
     }
 
 }

@@ -17,14 +17,9 @@ struct Hourly: PrecipitationHaver, MeteorologyHaver, TemperatureHaver {
 extension Hourly: JSONRepresentable {
 
     init(json: JSONObject) throws {
-        do {
-            precipitation = try WeatherBucket(json: json)
-            meteorology = try WeatherBucket(json: json)
-            temperature = try WeatherBucket(json: json)
-        }
-        catch let error {
-            throw error
-        }
+        precipitation = try WeatherBucket(json: json)
+        meteorology = try WeatherBucket(json: json)
+        temperature = try WeatherBucket(json: json)
     }
 
 }

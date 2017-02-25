@@ -19,13 +19,8 @@ struct Temperature {
 extension Temperature: JSONRepresentable {
 
     init(json: JSONObject) throws {
-        do {
-            current = try json.value(key: "temperature")
-            apparent = try json.value(key: "apparentTemperature")
-        }
-        catch let error {
-            throw error
-        }
+        current = try json.value(key: "temperature")
+        apparent = try json.value(key: "apparentTemperature")
     }
 
 }

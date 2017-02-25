@@ -32,14 +32,9 @@ struct Precipitation {
 extension Precipitation: JSONRepresentable {
 
     init(json: JSONObject) throws {
-        do {
-            intensity = try json.value(key: "precipIntensity")
-            probability = try json.value(key: "precipProbability")
-            timestamp = try json.date(key: "time")
-        }
-        catch let error {
-            throw error
-        }
+        intensity = try json.value(key: "precipIntensity")
+        probability = try json.value(key: "precipProbability")
+        timestamp = try json.date(key: "time")
     }
 
 }

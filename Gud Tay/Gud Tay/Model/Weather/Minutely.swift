@@ -15,12 +15,7 @@ struct Minutely: PrecipitationHaver {
 extension Minutely: JSONRepresentable {
 
     init(json: JSONObject) throws {
-        do {
-            precipitation = try WeatherBucket(json: json)
-        }
-        catch let error {
-            throw error
-        }
+        precipitation = try WeatherBucket(json: json)
     }
 
 }

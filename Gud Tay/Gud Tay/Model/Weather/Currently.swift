@@ -18,15 +18,10 @@ struct Currently {
 extension Currently: JSONRepresentable {
 
     init(json: JSONObject) throws {
-        do {
-            precipitation = try Precipitation(json: json)
-            meteorology = try Meteorology(json: json)
-            temperature = try Temperature(json: json)
-            nearestStorm = try NearestStorm(json: json)
-        }
-        catch let error {
-            throw error
-        }
+        precipitation = try Precipitation(json: json)
+        meteorology = try Meteorology(json: json)
+        temperature = try Temperature(json: json)
+        nearestStorm = try NearestStorm(json: json)
     }
 
 }

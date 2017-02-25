@@ -17,16 +17,11 @@ struct Route {
 extension Route: JSONRepresentable {
 
     init(json: JSONObject) throws {
-        do {
-            identifier = try json.value(key: "route_id")
-            name = try json.value(key: "route_name")
+        identifier = try json.value(key: "route_id")
+        name = try json.value(key: "route_name")
 
-            let directionsValue: [JSONObject] = try json.value(key: "direction")
-            directions = try Direction.objects(from: directionsValue)
-        }
-        catch let error {
-            throw error
-        }
+        let directionsValue: [JSONObject] = try json.value(key: "direction")
+        directions = try Direction.objects(from: directionsValue)
     }
 
 }

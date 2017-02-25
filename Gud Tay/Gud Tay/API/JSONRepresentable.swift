@@ -123,12 +123,7 @@ protocol JSONListable: JSONRepresentable {
 extension JSONListable {
 
     static func objects(from: [JSONObject]) throws -> [Self] {
-        do {
-            return try from.map(Self.init(json:))
-        }
-        catch let e {
-            throw e
-        }
+        return try from.map(Self.init(json:))
     }
 
 }

@@ -64,15 +64,10 @@ struct Almanac {
 extension Almanac.TemperatureRange {
 
     init(json: JSONObject, maxKey: String, minKey: String, maxTimeKey: String, minTimeKey: String) throws {
-        do {
-            max = try json.value(key: maxKey)
-            min = try json.value(key: minKey)
-            maxTime = try json.date(key: maxTimeKey)
-            minTime = try json.date(key: minTimeKey)
-        }
-        catch let error {
-            throw error
-        }
+        max = try json.value(key: maxKey)
+        min = try json.value(key: minKey)
+        maxTime = try json.date(key: maxTimeKey)
+        minTime = try json.date(key: minTimeKey)
     }
 
 }
@@ -80,47 +75,42 @@ extension Almanac.TemperatureRange {
 extension Almanac: JSONRepresentable {
 
     init(json: JSONObject) throws {
-        do {
-            temperatureRange = try TemperatureRange(
-                json: json,
-                maxKey: "temperatureMax",
-                minKey: "temperatureMin",
-                maxTimeKey: "temperatureMaxTime",
-                minTimeKey: "temperatureMinTime"
-            )
+        temperatureRange = try TemperatureRange(
+            json: json,
+            maxKey: "temperatureMax",
+            minKey: "temperatureMin",
+            maxTimeKey: "temperatureMaxTime",
+            minTimeKey: "temperatureMinTime"
+        )
 
-            apparentTemperatureRange = try TemperatureRange(
-                json: json,
-                maxKey: "apparentTemperatureMax",
-                minKey: "apparentTemperatureMin",
-                maxTimeKey: "apparentTemperatureMaxTime",
-                minTimeKey: "apparentTemperatureMinTime"
-            )
+        apparentTemperatureRange = try TemperatureRange(
+            json: json,
+            maxKey: "apparentTemperatureMax",
+            minKey: "apparentTemperatureMin",
+            maxTimeKey: "apparentTemperatureMaxTime",
+            minTimeKey: "apparentTemperatureMinTime"
+        )
 
-            moonPhase = try json.value(key: "moonPhase")
+        moonPhase = try json.value(key: "moonPhase")
 
-            if let precipIntensityMaxValue: Double = try json.value(key: "precipIntensityMax"), !precipIntensityMaxValue.isPracticallyZero() {
-                let precipIntensityMaxTime = try json.date(key: "precipIntensityMaxTime")
-                precipIntensityMax = .some(value: precipIntensityMaxValue, date: precipIntensityMaxTime)
-            }
-            else {
-                precipIntensityMax = .none
-            }
-
-            precipitation = try Precipitation(json: json)
-            if !precipitation.intensity.isPracticallyZero() {
-                precipType = try PrecipitationType(rawValue: json.value(key: "precipType"))
-            }
-            else {
-                precipType = nil
-            }
-
-            sunriseTime = try json.date(key: "sunriseTime")
-            sunsetTime = try json.date(key: "sunsetTime")
+        if let precipIntensityMaxValue: Double = try json.value(key: "precipIntensityMax"), !precipIntensityMaxValue.isPracticallyZero() {
+            let precipIntensityMaxTime = try json.date(key: "precipIntensityMaxTime")
+            precipIntensityMax = .some(value: precipIntensityMaxValue, date: precipIntensityMaxTime)
         }
-        catch let error {
-            throw error
+        else {
+            precipIntensityMax = .none
         }
+
+        precipitation = try Precipitation(json: json)
+        if !precipitation.intensity.isPracticallyZero() {
+            precipType = try PrecipitationType(rawValue: json.value(key: "precipType"))
+        }
+        else {
+            precipType = nil
+        }
+
+        sunriseTime = try json.date(key: "sunriseTime")
+        sunsetTime = try json.date(key: "sunsetTime")
     }
 
 }

@@ -20,12 +20,7 @@ extension WeatherBucket: JSONRepresentable {
         summary = json.optionalValue(key: "summary")
         icon = json.optionalValue(key: "icon").flatMap { Icon(rawValue: $0) }
 
-        do {
-            data = try WeatherData.objects(from: json.value(key: "data"))
-        }
-        catch let error {
-            throw error
-        }
+        data = try WeatherData.objects(from: json.value(key: "data"))
     }
 
 }

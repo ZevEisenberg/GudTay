@@ -46,26 +46,21 @@ struct Mode {
 extension Mode: JSONRepresentable {
 
     init(json: JSONObject) throws {
-        do {
-            name = try json.value(key: "mode_name")
+        name = try json.value(key: "mode_name")
 
-            let typeString: String = try json.value(key: "route_type")
-            guard let typeInt = Int(typeString),
-                let type = ModeType(rawValue: typeInt) else {
-                    throw JSONError.malformedValue(key: "route_type", value: typeString, parent: json)
-            }
-
-            self.type = type
-
-            if let routesValue: [JSONObject] = json.optionalValue(key: "route") {
-                routes = try Route.objects(from: routesValue)
-            }
-            else {
-                routes = []
-            }
+        let typeString: String = try json.value(key: "route_type")
+        guard let typeInt = Int(typeString),
+            let type = ModeType(rawValue: typeInt) else {
+                throw JSONError.malformedValue(key: "route_type", value: typeString, parent: json)
         }
-        catch let error {
-            throw error
+
+        self.type = type
+
+        if let routesValue: [JSONObject] = json.optionalValue(key: "route") {
+            routes = try Route.objects(from: routesValue)
+        }
+        else {
+            routes = []
         }
     }
 

@@ -28,24 +28,19 @@ extension Trip: JSONRepresentable {
         scheduledDeparture = json.optionalDate(key: "sch_dep_dt")
         headsign = json.optionalValue(key: "trip_headsign")
 
-        do {
-            identifier = try json.value(key: "trip_id")
-            name = try json.value(key: "trip_name")
-            predictedDeparture = try json.date(key: "pre_dt")
-            predictedSecondsAway = try json.timeInterval(key: "pre_away")
-            if predictedSecondsAway < 0 {
-                LogService.add(message: "Got a negative time interval from json: \(json)")
-            }
-
-            if let vehicleJson: JSONObject = json.optionalValue(key: "vehicle") {
-                vehicle = try Vehicle(json: vehicleJson)
-            }
-            else {
-                vehicle = nil
-            }
+        identifier = try json.value(key: "trip_id")
+        name = try json.value(key: "trip_name")
+        predictedDeparture = try json.date(key: "pre_dt")
+        predictedSecondsAway = try json.timeInterval(key: "pre_away")
+        if predictedSecondsAway < 0 {
+            LogService.add(message: "Got a negative time interval from json: \(json)")
         }
-        catch let error {
-            throw error
+
+        if let vehicleJson: JSONObject = json.optionalValue(key: "vehicle") {
+            vehicle = try Vehicle(json: vehicleJson)
+        }
+        else {
+            vehicle = nil
         }
     }
 

@@ -54,25 +54,20 @@ extension Meteorology: JSONRepresentable {
         visibility = json.optionalValue(key: "visibility")
         cloudCover = json.optionalValue(key: "cloudCover")
 
-        do {
-            dewPoint = try json.value(key: "dewPoint")
-            humidity = try json.value(key: "humidity")
-            icon = try Icon(rawValue: json.value(key: "icon"))
-            ozone = try json.value(key: "ozone")
-            pressure = try json.value(key: "pressure")
-            summary = try json.value(key: "summary")
+        dewPoint = try json.value(key: "dewPoint")
+        humidity = try json.value(key: "humidity")
+        icon = try Icon(rawValue: json.value(key: "icon"))
+        ozone = try json.value(key: "ozone")
+        pressure = try json.value(key: "pressure")
+        summary = try json.value(key: "summary")
 
-            let windSpeed: Double = try json.value(key: "windSpeed")
-            if windSpeed.isPracticallyZero() {
-                wind = .none
-            }
-            else {
-                let windBearing: Double = try json.value(key: "windBearing")
-                wind = .some(speed: windSpeed, bearing: windBearing)
-            }
+        let windSpeed: Double = try json.value(key: "windSpeed")
+        if windSpeed.isPracticallyZero() {
+            wind = .none
         }
-        catch let error {
-            throw error
+        else {
+            let windBearing: Double = try json.value(key: "windBearing")
+            wind = .some(speed: windSpeed, bearing: windBearing)
         }
     }
 

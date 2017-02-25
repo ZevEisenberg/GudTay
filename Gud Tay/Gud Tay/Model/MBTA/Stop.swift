@@ -17,19 +17,14 @@ struct Stop {
 extension Stop: JSONRepresentable {
 
     init(json: JSONObject) throws {
-        do {
-            identifier = try json.value(key: "stop_id")
-            name = try json.value(key: "stop_name")
+        identifier = try json.value(key: "stop_id")
+        name = try json.value(key: "stop_name")
 
-            if let modesValue: [JSONObject] = json.optionalValue(key: "mode") {
-                modes = try Mode.objects(from: modesValue)
-            }
-            else {
-                modes = []
-            }
+        if let modesValue: [JSONObject] = json.optionalValue(key: "mode") {
+            modes = try Mode.objects(from: modesValue)
         }
-        catch let error {
-            throw error
+        else {
+            modes = []
         }
     }
 

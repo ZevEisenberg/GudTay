@@ -16,13 +16,8 @@ struct WeatherCoordinate {
 extension WeatherCoordinate: JSONRepresentable {
 
     init(json: JSONObject) throws {
-        do {
-            lat = try json.value(key: "latitude")
-            lon = try json.value(key: "longitude")
-        }
-        catch let error {
-            throw error
-        }
+        lat = try json.value(key: "latitude")
+        lon = try json.value(key: "longitude")
     }
 
 }
