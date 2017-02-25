@@ -16,7 +16,7 @@ final class ScreenService {
         Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { _ in
             let date = Date()
             let brightness = ScreenService.brightness(for: date)
-            LogService.add(message: "Setting brightness to \(brightness)")
+            LogService.add(message: "Setting brightness to \(brightness)", date: date)
             UIScreen.main.brightness = brightness
         }
     }
