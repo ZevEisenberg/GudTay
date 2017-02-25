@@ -29,7 +29,7 @@ final class WeatherViewController: RefreshableViewController {
         collectionView.register(AspectImageCell.self, forCellWithReuseIdentifier: AspectImageCell.gudReuseID)
         collectionView.register(ForecastCell.self, forCellWithReuseIdentifier: ForecastCell.gudReuseID)
         collectionView.alwaysBounceHorizontal = true
-        collectionView.contentInset = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 0.0)
+        collectionView.contentInset = Constants.insets
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
@@ -150,10 +150,17 @@ extension WeatherViewController: UICollectionViewDelegate {
 
 private extension WeatherViewController {
 
+    enum Constants {
+
+        static let insets = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 0.0)
+
+    }
+
     func restartScrollBackTimer() {
         scrollBackTimer?.invalidate()
         scrollBackTimer = Timer.scheduledTimer(withTimeInterval: 45, repeats: false, block: { _ in
-            self.collectionView.setContentOffset(.zero, animated: true)
+            let offset = CGPoint(x: -Constants.insets.left, y: -Constants.insets.top)
+            self.collectionView.setContentOffset(offset, animated: true)
             self.scrollBackTimer?.invalidate()
             self.scrollBackTimer = nil
         })
