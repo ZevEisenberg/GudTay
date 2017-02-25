@@ -153,12 +153,13 @@ private extension WeatherViewController {
     enum Constants {
 
         static let insets = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 0.0)
+        static let scrollbackInterval: TimeInterval = 45
 
     }
 
     func restartScrollBackTimer() {
         scrollBackTimer?.invalidate()
-        scrollBackTimer = Timer.scheduledTimer(withTimeInterval: 45, repeats: false, block: { _ in
+        scrollBackTimer = Timer.scheduledTimer(withTimeInterval: Constants.scrollbackInterval, repeats: false, block: { _ in
             let offset = CGPoint(x: -Constants.insets.left, y: -Constants.insets.top)
             self.collectionView.setContentOffset(offset, animated: true)
             self.scrollBackTimer?.invalidate()
