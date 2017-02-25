@@ -14,19 +14,28 @@ enum LogService {
 
     fileprivate(set) static var messages = [String]()
 
+    fileprivate static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeZone = .autoupdatingCurrent
+        formatter.calendar = .autoupdatingCurrent
+        formatter.timeStyle = .long
+        formatter.dateStyle = .medium
+        return formatter
+    }()
+
 }
 
 extension LogService {
 
-    static func add(message: String) {
-        LogService.messages.append("\(Date()) - \(message)")
+    static func add(message: String, date: Date = Date()) {
+        LogService.messages.append("\(LogService.dateFormatter.string(from: date)) - \(message)")
         if LogService.messages.count > 200 {
             LogService.messages.removeFirst()
         }
     }
 
     static func clear() {
-        LogService.messages = ["Starting up at \(Date())"]
+        LogService.messages = ["Starting up at \(LogService.dateFormatter.string(from: Date()))"]
     }
 
 }
