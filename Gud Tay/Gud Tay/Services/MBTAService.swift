@@ -89,7 +89,7 @@ enum MockMBTAService: MBTAServiceType {
             jsonData = try Data(contentsOf: url)
         }
         catch let e {
-            assertionFailure("Error getting contents of \(filename)\(ext): \(e)")
+            assertionFailure("Error getting contents of \(filename).\(ext): \(e)")
         }
 
         var deserialized: Any! = nil
