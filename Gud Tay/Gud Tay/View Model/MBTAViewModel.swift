@@ -104,20 +104,16 @@ private extension MBTAViewModel {
             return .none
         }
 
-        let first = trips[safe: 0]
+        let first = trips[0]
         let second = trips[safe: 1]
 
         let upcomingTrips: UpcomingTrips
 
-        switch (first, second) {
-        case (.some(let first), .some(let second)):
+        if let second = second {
             upcomingTrips = .two(next: first.predictedSecondsAway, later: second.predictedSecondsAway)
-        case (.some(let first), .none):
+        }
+        else {
             upcomingTrips = .one(next: first.predictedSecondsAway)
-        case(.none, .some):
-            preconditionFailure("This shouldn't be possible")
-        case (.none, .none):
-            upcomingTrips = .none
         }
 
         return upcomingTrips
