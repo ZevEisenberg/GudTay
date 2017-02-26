@@ -59,9 +59,9 @@ extension ScreenService {
     private static let segments: [BrightnessSegment] = [
         (range: Time.min..<5.45, status :.min),
         (range: 5.45..<6.00, status: .rising),
-        (range: 6.00..<19.45, status: .max),
-        (range: 19.45..<20.00, status: .falling),
-        (range: 20.00..<Time.max, status: .min),
+        (range: 6.00..<21.45, status: .max),
+        (range: 21.45..<22.00, status: .falling),
+        (range: 22.00..<Time.max, status: .min),
         ]
 
     static func brightness(for date: Date) -> CGFloat {
