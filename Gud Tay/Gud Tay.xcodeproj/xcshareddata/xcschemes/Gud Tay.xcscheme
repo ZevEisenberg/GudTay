@@ -33,7 +33,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CD1279D61D45B37B00DC7BB8"
+               BlueprintIdentifier = "CD848F921E63799F00E49A85"
                BuildableName = "Gud TayTests.xctest"
                BlueprintName = "Gud TayTests"
                ReferencedContainer = "container:Gud Tay.xcodeproj">

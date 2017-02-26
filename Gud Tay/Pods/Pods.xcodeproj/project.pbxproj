@@ -10,23 +10,24 @@
 		034D4FE8E91B37D253E7A196D3187D3A /* AdaptiveStyleTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01B4EADD608114CC4DBB501FA430C88 /* AdaptiveStyleTransformation.swift */; };
 		05733F29BC27467CBB308BF68E4C1932 /* Pods-Gud Tay-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A9007698F2B441361AA5AC748D5A2071 /* Pods-Gud Tay-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05E3458D28080D0DCB0380B063BBA110 /* Pods-Gud TayUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AF7FCB9D46857EAED81FA1109DB0FDC1 /* Pods-Gud TayUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07A85B647B3CCDF7DD6146886C3382A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		09E397936CAAFDD2E64DB5AD6799924D /* AttributedStringTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058C3C734FA8566E500C6F9C3913551 /* AttributedStringTransformation.swift */; };
 		0F6BED2C99A5E52E2D2D542160EDD4AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		12A5B697D82C2F039BFD1C8542EC202D /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202506C0CA03B6592079A821D942A7D8 /* Platform.swift */; };
 		1563C1A06268C4413DFDF9DC5D166BCF /* Image+Tinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2007F0DE1AA2E5F6EE0A57F425FD3E /* Image+Tinting.swift */; };
-		178B5EAE571BD8DDB34EBFBD8CD71785 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		185165F13F608D074263CAC8F7858609 /* AnchorageCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9588A633F0D7E19F3CDB8FFCA676AF45 /* AnchorageCompatibility.swift */; };
 		1E019C78748FC5E656B089343474057A /* ContextualAlternates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E6E82CEFD5EAB954CD9B21690A578 /* ContextualAlternates.swift */; };
-		1F49A5D772242C34A4FA4CB6953A2E1B /* Pods-Gud TayTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA1E19685BBC27F3B02B196F085D224 /* Pods-Gud TayTests-dummy.m */; };
 		22499291A1A3EB646F92F27A0118220E /* NSAttributedString+BonMot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9963590C2F26FBFECF3A6421C1D65098 /* NSAttributedString+BonMot.swift */; };
 		334CDA17D6397931B3A2D0206A1D7DC9 /* StyleableUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1622732EF858422A9BEC4FB49498305 /* StyleableUIElement.swift */; };
 		35C7146D1FB565CB3905C50019C168F2 /* AdaptableTextContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7981E376D8F7A237890C37A488A65AB /* AdaptableTextContainer.swift */; };
+		3AA817BD82987C506F1709754F0BE0EF /* Pods-Gud TayTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AD365C99EC897CD36C859821F5C62E7B /* Pods-Gud TayTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41995E0473F55D00D87761DD3A71504A /* BonMot-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB2D7A3AD647FD69DC106CF4ADFA7E /* BonMot-dummy.m */; };
 		466EA575D0FCDACD5B290BCD21CCD337 /* StylisticAlternates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE6BC15CD459E8710854A85812DBA9 /* StylisticAlternates.swift */; };
 		4AECA3863EB0E626397BE8D71637CE79 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568DF01BA9E7CBA955E88DB57E5647E /* Tab.swift */; };
 		4BEFDE932EDB57581B079E7743D43178 /* TextAlignmentConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7881922529704C0CF4888598A6B513D2 /* TextAlignmentConstraint.swift */; };
 		4E3621F92D418C4BAC2BE19AA11B8C3E /* Tab+Adaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7ADBB0E67CECA9FE47529285C5C4A8 /* Tab+Adaptive.swift */; };
 		4F3A45F8CEEEBAC36616A78B7FBFE354 /* StringStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7119D51E50EEF32826C221BB8EBC73 /* StringStyle.swift */; };
+		51822F3C7414DEFF485CA783ACB452DF /* Pods-Gud TayTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA1E19685BBC27F3B02B196F085D224 /* Pods-Gud TayTests-dummy.m */; };
 		5671AEA2D1EBB2E177B83FD7DDD01FD7 /* Anchorage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B88AFF8CAED9EF89FFBBD855B65CABF4 /* Anchorage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AEEDE895C4CAC7EB3247FD4411819CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		61B2509F69ED1B0E19687583407B158E /* Ligatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6490467014ECEBFA5F1F002E192038 /* Ligatures.swift */; };
@@ -35,7 +36,6 @@
 		7A81A53D1B9FCD4185C4D790B9BA0002 /* Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D2CD496FEEDFC4F6C38E1E08FCDE9C /* Tracking.swift */; };
 		7EC1919CAC1D1A66498537D3B1E1D4B4 /* Anchorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6D64A78B373895DAB7E659AA37DAF5 /* Anchorage.swift */; };
 		8019464AC6C734E3A8E9E0E3AD124745 /* Swiftilities-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A84707DA815B6FEC037521B6212CFA67 /* Swiftilities-dummy.m */; };
-		84E44C98BD5399285D80B6CC894016BC /* Pods-Gud TayTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AD365C99EC897CD36C859821F5C62E7B /* Pods-Gud TayTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C694312AE3B69E8DFF9E2665BB692B8 /* NSAttributedString+Adaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764F12EDCA9464607749E5A0B4C8F459 /* NSAttributedString+Adaptive.swift */; };
 		9011AE997E7EF5EBD3DD1877080AB54F /* Composable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E1265052829BB12FF13240C0B6844 /* Composable.swift */; };
 		9118100F9BAD8FCF59F54F7F8B3F50C0 /* Anchorage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCCD3A08EDC6D9F5AB2B5CBD1FD9988 /* Anchorage-dummy.m */; };
@@ -82,6 +82,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = A1E4AABE0BD22AC9412BD4AAB7F19A5E;
 			remoteInfo = Swiftilities;
+		};
+		6B8D516931A54795AC5450B91131F55E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1E4AABE0BD22AC9412BD4AAB7F19A5E;
+			remoteInfo = Swiftilities;
+		};
+		981135EBFA1B04F09CD482ADDD4B9493 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85131B71BF4B7E50DEB922E8F543878C;
+			remoteInfo = BonMot;
+		};
+		EB102D439015E2906D28B131F4EED37B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D98028B1BDC1567CB9D933F987EEE53;
+			remoteInfo = Anchorage;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -197,14 +218,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		40850B77057DB9B4F2A76F3F80D245A9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				178B5EAE571BD8DDB34EBFBD8CD71785 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7C1B21ACA9044395281CF85DD016991F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -218,6 +231,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AEEDE895C4CAC7EB3247FD4411819CF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F758CAAA7D96E7C0D3353CB28360884 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07A85B647B3CCDF7DD6146886C3382A4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +509,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		2E533BAB842431A13C562763519EAA13 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AA817BD82987C506F1709754F0BE0EF /* Pods-Gud TayTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5872A0CD5EE99719437C1FA021383870 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -520,14 +549,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D12A606BD44664F6DD91E05981DF99B4 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				84E44C98BD5399285D80B6CC894016BC /* Pods-Gud TayTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E4CCE19C6A9E56765428A2CE57D1FB6F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -554,6 +575,26 @@
 			name = "Pods-Gud TayUITests";
 			productName = "Pods-Gud TayUITests";
 			productReference = 146F468D8A423A15B4F48B74713AE426 /* Pods_Gud_TayUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		530318E3147E8C19837D4C5AC1E1EFEA /* Pods-Gud TayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE34B5A3C396FAB70D3CF770201CA687 /* Build configuration list for PBXNativeTarget "Pods-Gud TayTests" */;
+			buildPhases = (
+				A3DF3A19E08085FA7454C1AAB15D2F28 /* Sources */,
+				8F758CAAA7D96E7C0D3353CB28360884 /* Frameworks */,
+				2E533BAB842431A13C562763519EAA13 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6672DE36B0527A43CA959911FD970C37 /* PBXTargetDependency */,
+				5B519E8866160E71CE4920CB41B62B58 /* PBXTargetDependency */,
+				D5874A9AE6A68F93E70A2E86DDD13874 /* PBXTargetDependency */,
+			);
+			name = "Pods-Gud TayTests";
+			productName = "Pods-Gud TayTests";
+			productReference = E52465FCBF2304E015A51C7218C94FAC /* Pods_Gud_TayTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6D98028B1BDC1567CB9D933F987EEE53 /* Anchorage */ = {
@@ -588,23 +629,6 @@
 			name = BonMot;
 			productName = BonMot;
 			productReference = C81F60CF7ED654E976BAF8D35AF3B3C1 /* BonMot.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		8967B200585397914A6E0EA6ED784E42 /* Pods-Gud TayTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 956E5ED3B2A0FEE4E5B224752A08EA17 /* Build configuration list for PBXNativeTarget "Pods-Gud TayTests" */;
-			buildPhases = (
-				6B187BC6B3482B2A5D4345C4FF1A1FC9 /* Sources */,
-				40850B77057DB9B4F2A76F3F80D245A9 /* Frameworks */,
-				D12A606BD44664F6DD91E05981DF99B4 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-Gud TayTests";
-			productName = "Pods-Gud TayTests";
-			productReference = E52465FCBF2304E015A51C7218C94FAC /* Pods_Gud_TayTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A1E4AABE0BD22AC9412BD4AAB7F19A5E /* Swiftilities */ = {
@@ -668,7 +692,7 @@
 				6D98028B1BDC1567CB9D933F987EEE53 /* Anchorage */,
 				85131B71BF4B7E50DEB922E8F543878C /* BonMot */,
 				EA04983265F88F796821A69742A2B0C7 /* Pods-Gud Tay */,
-				8967B200585397914A6E0EA6ED784E42 /* Pods-Gud TayTests */,
+				530318E3147E8C19837D4C5AC1E1EFEA /* Pods-Gud TayTests */,
 				0D810061FFD2C85390494006F93C78D8 /* Pods-Gud TayUITests */,
 				A1E4AABE0BD22AC9412BD4AAB7F19A5E /* Swiftilities */,
 			);
@@ -696,11 +720,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6B187BC6B3482B2A5D4345C4FF1A1FC9 /* Sources */ = {
+		A3DF3A19E08085FA7454C1AAB15D2F28 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F49A5D772242C34A4FA4CB6953A2E1B /* Pods-Gud TayTests-dummy.m in Sources */,
+				51822F3C7414DEFF485CA783ACB452DF /* Pods-Gud TayTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,6 +791,18 @@
 			target = A1E4AABE0BD22AC9412BD4AAB7F19A5E /* Swiftilities */;
 			targetProxy = 5794EBEF200F2D6DCAFB5D481C2717E5 /* PBXContainerItemProxy */;
 		};
+		5B519E8866160E71CE4920CB41B62B58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BonMot;
+			target = 85131B71BF4B7E50DEB922E8F543878C /* BonMot */;
+			targetProxy = 981135EBFA1B04F09CD482ADDD4B9493 /* PBXContainerItemProxy */;
+		};
+		6672DE36B0527A43CA959911FD970C37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Anchorage;
+			target = 6D98028B1BDC1567CB9D933F987EEE53 /* Anchorage */;
+			targetProxy = EB102D439015E2906D28B131F4EED37B /* PBXContainerItemProxy */;
+		};
 		75A42B24C0BF3CC5D57C77E465C41A0A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Anchorage;
@@ -778,6 +814,12 @@
 			name = BonMot;
 			target = 85131B71BF4B7E50DEB922E8F543878C /* BonMot */;
 			targetProxy = 4D88AE5A7842894273457983D0FFFE23 /* PBXContainerItemProxy */;
+		};
+		D5874A9AE6A68F93E70A2E86DDD13874 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Swiftilities;
+			target = A1E4AABE0BD22AC9412BD4AAB7F19A5E /* Swiftilities */;
+			targetProxy = 6B8D516931A54795AC5450B91131F55E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -884,6 +926,41 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		37708837EF86DEB7C6958EFCF56453E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2BF2F76821830BAE8E5761B729A38EE /* Pods-Gud TayTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Gud TayTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Gud TayTests/Pods-Gud TayTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Gud_TayTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		5D3E519844104B83735554E0CB377E26 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1047,6 +1124,42 @@
 			};
 			name = Debug;
 		};
+		BE6097C58610A73291A92A8CFC9ED9E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB12D8B619EE9E8ACD59E5DB33CB9FD3 /* Pods-Gud TayTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Gud TayTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Gud TayTests/Pods-Gud TayTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Gud_TayTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		CACE7C8415F53E79F07C6BBE57F0F61D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1162,41 +1275,6 @@
 			};
 			name = Debug;
 		};
-		DFA5A317EDC9D41CB6443343B6724C88 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2BF2F76821830BAE8E5761B729A38EE /* Pods-Gud TayTests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Gud TayTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Gud TayTests/Pods-Gud TayTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Gud_TayTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		ED4FC68AB2A4E06C718CFF338F6F156B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1237,41 +1315,6 @@
 			};
 			name = Release;
 		};
-		F3FB4128EC75019C05B2AA82286D4E89 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB12D8B619EE9E8ACD59E5DB33CB9FD3 /* Pods-Gud TayTests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Gud TayTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Gud TayTests/Pods-Gud TayTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Gud_TayTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1302,15 +1345,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		956E5ED3B2A0FEE4E5B224752A08EA17 /* Build configuration list for PBXNativeTarget "Pods-Gud TayTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F3FB4128EC75019C05B2AA82286D4E89 /* Debug */,
-				DFA5A317EDC9D41CB6443343B6724C88 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		9925EFC2266292576240F8631484A0C5 /* Build configuration list for PBXNativeTarget "Pods-Gud Tay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1325,6 +1359,15 @@
 			buildConfigurations = (
 				23D732ABF6A9174FE08804AAFC39DFD7 /* Debug */,
 				CB18D64492E0D892D3C24EBA188E9906 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE34B5A3C396FAB70D3CF770201CA687 /* Build configuration list for PBXNativeTarget "Pods-Gud TayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE6097C58610A73291A92A8CFC9ED9E5 /* Debug */,
+				37708837EF86DEB7C6958EFCF56453E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

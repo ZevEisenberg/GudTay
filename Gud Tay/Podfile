@@ -1,18 +1,23 @@
 platform :ios, '10.1'
 
+def common_pods
+  pod 'Anchorage'
+  pod 'BonMot', '~>4.0'
+  pod 'Swiftilities/Math'
+end
+
 target 'Gud Tay' do
   use_frameworks!
 
+  common_pods
+
   # Pods for Gud Tay
-  pod 'Anchorage'
   pod 'BuddyBuildSDK'
-  pod 'BonMot', '~>4.0'
-  pod 'Swiftilities/Math'
   pod 'SwiftLint'
 
   target 'Gud TayTests' do
     inherit! :search_paths
-    # Pods for testing
+    common_pods
   end
 
   target 'Gud TayUITests' do

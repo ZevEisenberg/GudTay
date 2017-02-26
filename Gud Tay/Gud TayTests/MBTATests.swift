@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import Gud_Tay
 
 class MBTATests: XCTestCase {
 
