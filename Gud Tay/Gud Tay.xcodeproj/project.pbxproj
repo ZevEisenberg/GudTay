@@ -300,20 +300,20 @@
 		7AE9DA731D57A4B20087B401 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				7AE9DA741D57A54F0087B401 /* WeatherForecast.swift */,
-				CDED23341D60AE5F0023CC4B /* WeatherCoordinate.swift */,
-				CDED23551D60B0C00023CC4B /* Precipitation.swift */,
-				CDED23581D60B0DA0023CC4B /* Icon.swift */,
-				CDED235B1D60B1000023CC4B /* WeatherBucket.swift */,
-				CDED233A1D60AF4B0023CC4B /* WeatherProtocols.swift */,
-				CDED233D1D60AF730023CC4B /* Meteorology.swift */,
-				CDED23401D60AFAC0023CC4B /* Temperature.swift */,
-				CDED23431D60AFBD0023CC4B /* NearestStorm.swift */,
 				CDED23461D60AFCF0023CC4B /* Almanac.swift */,
 				CDED23491D60B00E0023CC4B /* Currently.swift */,
-				CDED234C1D60B0210023CC4B /* Minutely.swift */,
-				CDED234F1D60B02D0023CC4B /* Hourly.swift */,
 				CDED23521D60B0440023CC4B /* Daily.swift */,
+				CDED234F1D60B02D0023CC4B /* Hourly.swift */,
+				CDED23581D60B0DA0023CC4B /* Icon.swift */,
+				CDED233D1D60AF730023CC4B /* Meteorology.swift */,
+				CDED234C1D60B0210023CC4B /* Minutely.swift */,
+				CDED23431D60AFBD0023CC4B /* NearestStorm.swift */,
+				CDED23551D60B0C00023CC4B /* Precipitation.swift */,
+				CDED23401D60AFAC0023CC4B /* Temperature.swift */,
+				CDED235B1D60B1000023CC4B /* WeatherBucket.swift */,
+				CDED23341D60AE5F0023CC4B /* WeatherCoordinate.swift */,
+				7AE9DA741D57A54F0087B401 /* WeatherForecast.swift */,
+				CDED233A1D60AF4B0023CC4B /* WeatherProtocols.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -331,12 +331,12 @@
 		CD1279BA1D45B37B00DC7BB8 = {
 			isa = PBXGroup;
 			children = (
+				AC80E7268D6F2FA1E99F8C13 /* Frameworks */,
 				CD1279C51D45B37B00DC7BB8 /* Gud Tay */,
 				CD1279DA1D45B37B00DC7BB8 /* Gud TayTests */,
 				CDD53CB41E624B7D00422296 /* Gud TayUITests */,
-				CD1279C41D45B37B00DC7BB8 /* Products */,
 				25C6FC41E3030A91DD1F4F28 /* Pods */,
-				AC80E7268D6F2FA1E99F8C13 /* Frameworks */,
+				CD1279C41D45B37B00DC7BB8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -353,17 +353,17 @@
 		CD1279C51D45B37B00DC7BB8 /* Gud Tay */ = {
 			isa = PBXGroup;
 			children = (
-				CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */,
 				CDECBAB21D46D97F007A82D5 /* API */,
-				CD8357501D4C4DA5009E76A7 /* Services */,
 				CDECBA9C1D46D94A007A82D5 /* Model */,
+				CD8357501D4C4DA5009E76A7 /* Services */,
+				CDF60DF51D482F8C003E2AFB /* Utilities */,
 				CDECBABD1D46DF48007A82D5 /* View */,
 				CDECBAC11D46DF6C007A82D5 /* View Model */,
-				CDF60DF51D482F8C003E2AFB /* Utilities */,
+				CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */,
 				CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */,
-				CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */,
-				CD1279D21D45B37B00DC7BB8 /* Info.plist */,
 				CDC371C21D4911E30054F343 /* Gud Tay-Bridging-Header.h */,
+				CD1279D21D45B37B00DC7BB8 /* Info.plist */,
+				CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */,
 			);
 			path = "Gud Tay";
 			sourceTree = "<group>";
@@ -371,17 +371,17 @@
 		CD1279DA1D45B37B00DC7BB8 /* Gud TayTests */ = {
 			isa = PBXGroup;
 			children = (
-				CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */,
-				CDA18DA31E62054600D34C4B /* Sample Weather API Response just after midnight.json */,
-				7A5BA3771D579869006AD6FC /* Sample Weather API Response with rain.json */,
-				CD1A107D1D7A743B0072785B /* Sample Weather API Response without rain.json */,
-				CDD8F99D1E2BD61E0003679B /* Sample Weather API Response just after sunset.json */,
-				CD12DE3B1D4FE82E00956B74 /* MBTATests.swift */,
-				7A5BA37A1D57988B006AD6FC /* WeatherTests.swift */,
-				CD6A63471D517898009571DE /* UtilityTests.swift */,
-				CD0911EA1E57E65600381606 /* ScreenServiceTests.swift */,
 				CD22CA961DAAEC94000C0205 /* DateTests.swift */,
 				CD1279DD1D45B37B00DC7BB8 /* Info.plist */,
+				CD12DE3B1D4FE82E00956B74 /* MBTATests.swift */,
+				CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */,
+				CDA18DA31E62054600D34C4B /* Sample Weather API Response just after midnight.json */,
+				CDD8F99D1E2BD61E0003679B /* Sample Weather API Response just after sunset.json */,
+				7A5BA3771D579869006AD6FC /* Sample Weather API Response with rain.json */,
+				CD1A107D1D7A743B0072785B /* Sample Weather API Response without rain.json */,
+				CD0911EA1E57E65600381606 /* ScreenServiceTests.swift */,
+				CD6A63471D517898009571DE /* UtilityTests.swift */,
+				7A5BA37A1D57988B006AD6FC /* WeatherTests.swift */,
 			);
 			path = "Gud TayTests";
 			sourceTree = "<group>";
@@ -389,10 +389,10 @@
 		CD8357501D4C4DA5009E76A7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CD8357511D4C4DA5009E76A7 /* MBTAService.swift */,
-				7AAE0AAC1D578E6100A209BF /* WeatherService.swift */,
 				CDADC9921D655315005B60AD /* LogService.swift */,
+				CD8357511D4C4DA5009E76A7 /* MBTAService.swift */,
 				CD0911E81E57E36300381606 /* ScreenService.swift */,
+				7AAE0AAC1D578E6100A209BF /* WeatherService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -400,8 +400,8 @@
 		CD9021961D6E96D200375FE7 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				CD90219D1D6E96D200375FE7 /* WeatherViewController.swift */,
 				CD9021971D6E96D200375FE7 /* Weather Cells */,
+				CD90219D1D6E96D200375FE7 /* WeatherViewController.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -411,8 +411,8 @@
 			children = (
 				CD9021981D6E96D200375FE7 /* AspectImageCell.swift */,
 				CD9021991D6E96D200375FE7 /* ForecastBackgroundView.swift */,
-				CD3D7B751DAC25AA007BB87D /* SunIntervalView.swift */,
 				CD90219A1D6E96D200375FE7 /* ForecastCell.swift */,
+				CD3D7B751DAC25AA007BB87D /* SunIntervalView.swift */,
 				CD90219B1D6E96D200375FE7 /* TemperatureCell.swift */,
 				CD90219C1D6E96D200375FE7 /* WeatherCell.swift */,
 			);
@@ -436,8 +436,8 @@
 		CD9021B31D6E96DD00375FE7 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				CD2575BA1D66607F0017DEE6 /* RefreshableViewController.swift */,
 				CD9021B41D6E96DD00375FE7 /* HairlineView.swift */,
+				CD2575BA1D66607F0017DEE6 /* RefreshableViewController.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -472,11 +472,11 @@
 		CDECBABD1D46DF48007A82D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CD1279C81D45B37B00DC7BB8 /* RootViewController.swift */,
-				CDADC9941D65566C005B60AD /* LogViewController.swift */,
-				CD9021B31D6E96DD00375FE7 /* Utility */,
 				CD9021A41D6E96D800375FE7 /* MBTA */,
+				CD9021B31D6E96DD00375FE7 /* Utility */,
 				CD9021961D6E96D200375FE7 /* Weather */,
+				CDADC9941D65566C005B60AD /* LogViewController.swift */,
+				CD1279C81D45B37B00DC7BB8 /* RootViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -484,10 +484,10 @@
 		CDECBAC11D46DF6C007A82D5 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				CDECBAC21D46DF7A007A82D5 /* MBTAViewModel.swift */,
-				7AC59EE71D579CCE003863AE /* WeatherViewModel.swift */,
-				7AC59EEA1D57A1C1003863AE /* ViewModel.swift */,
 				CD3D7B721DAC1DD2007BB87D /* ForecastBackgroundViewModel.swift */,
+				CDECBAC21D46DF7A007A82D5 /* MBTAViewModel.swift */,
+				7AC59EEA1D57A1C1003863AE /* ViewModel.swift */,
+				7AC59EE71D579CCE003863AE /* WeatherViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -495,16 +495,16 @@
 		CDF60DF51D482F8C003E2AFB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CDED235E1D60B3980023CC4B /* CloseEnough.swift */,
+				CDBF96871D56F39F008AC493 /* Colors.swift */,
+				CD6A633B1D514ACB009571DE /* CrashReporter.swift */,
+				CD22CA931DAAEC6B000C0205 /* Date+Extensions.swift */,
+				CDBF96891D56F8CA008AC493 /* Fonts.swift */,
+				CD1A10801D7A7D3F0072785B /* ProcessInfo+Extensions.swift */,
+				CD6A63441D51758C009571DE /* SafeArray.swift */,
 				CD2575C11D6669020017DEE6 /* UICollectionReusableView+Extensions.swift */,
 				CDF60DF61D482F9A003E2AFB /* UIView+Extensions.swift */,
-				CDBF96871D56F39F008AC493 /* Colors.swift */,
-				CDBF96891D56F8CA008AC493 /* Fonts.swift */,
-				CD6A633B1D514ACB009571DE /* CrashReporter.swift */,
-				CD6A63441D51758C009571DE /* SafeArray.swift */,
-				CDED235E1D60B3980023CC4B /* CloseEnough.swift */,
 				CD2575C31D666C7E0017DEE6 /* Utility.swift */,
-				CD1A10801D7A7D3F0072785B /* ProcessInfo+Extensions.swift */,
-				CD22CA931DAAEC6B000C0205 /* Date+Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -571,6 +571,7 @@
 				CDD53CB91E624B7D00422296 /* PBXTargetDependency */,
 			);
 			name = "Gud TayUITests";
+			productName = "Gud TayUITests";
 			productReference = CDD53CB31E624B7D00422296 /* Gud TayUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
@@ -967,6 +968,7 @@
 				CD1279D01D45B37B00DC7BB8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

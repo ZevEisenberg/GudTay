@@ -11,6 +11,7 @@ GEM
       public_suffix (~> 2.0, >= 2.0.2)
     babosa (1.0.2)
     claide (1.0.1)
+    clamp (0.6.5)
     cocoapods (1.2.0)
       activesupport (>= 4.0.2, < 5)
       claide (>= 1.0.1, < 2.0)
@@ -45,6 +46,7 @@ GEM
       netrc (= 0.7.8)
     cocoapods-try (1.1.0)
     colored (1.2)
+    colorize (0.8.1)
     commander (4.4.3)
       highline (~> 1.7.2)
     domain_name (0.5.20170223)
@@ -153,6 +155,10 @@ GEM
       jwt (~> 1.5)
       multi_json (~> 1.10)
     slack-notifier (1.5.1)
+    synx (0.2.1)
+      clamp (~> 0.6)
+      colorize (~> 0.7)
+      xcodeproj (~> 1.0)
     terminal-notifier (1.7.1)
     terminal-table (1.7.3)
       unicode-display_width (~> 1.1.1)
@@ -183,6 +189,7 @@ PLATFORMS
 DEPENDENCIES
   cocoapods (= 1.2)
   fastlane
+  synx
 
 BUNDLED WITH
    1.14.4
