@@ -62,7 +62,11 @@ final class ForecastCell: WeatherCell {
         return imageView
     }()
 
-    let tempLabel = UILabel(axId: "tempLabel")
+    let tempLabel: UILabel = {
+        let label = UILabel(axId: "tempLabel")
+        label.setContentCompressionResistancePriority(UILayoutPriorityRequired, for: .vertical)
+        return label
+    }()
 
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
