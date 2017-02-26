@@ -25,4 +25,15 @@ enum Icon: String {
         return UIImage(named: rawValue)!
     }
 
+    var smallImage: UIImage {
+        switch self {
+        case .clearDay:
+            return #imageLiteral(resourceName: "clear-day-small")
+        case .clearNight:
+            return #imageLiteral(resourceName: "clear-night-small")
+        default:
+            return image
+        }
+    }
+
 }

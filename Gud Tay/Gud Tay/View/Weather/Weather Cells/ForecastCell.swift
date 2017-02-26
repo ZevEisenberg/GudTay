@@ -27,7 +27,7 @@ final class ForecastCell: WeatherCell {
                     precipProbabilityLabel.alpha = 0.0
                 }
 
-                iconImageView.image = model.icon?.image
+                iconImageView.image = model.icon?.smallImage
 
                 tempLabel.attributedText = String(format: "%.0f°", model.temp).styled(with: Fonts.Weather.tempForecastStyle)
             }
