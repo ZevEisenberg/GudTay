@@ -18,10 +18,10 @@ final class AspectImageCell: WeatherCell {
             aspectConstraint?.isActive = false
             if let image = image {
                 let aspect = image.size.width / image.size.height
-                aspectConstraint = (imageView.widthAnchor == imageView.heightAnchor * aspect)
+                aspectConstraint = (imageView.widthAnchor == imageView.heightAnchor * aspect ~ UILayoutPriorityRequired - 1)
             }
             else {
-                aspectConstraint = (imageView.widthAnchor == 0)
+                aspectConstraint = (imageView.widthAnchor == 0 ~ UILayoutPriority(UILayoutPriorityRequired - 1))
             }
         }
     }

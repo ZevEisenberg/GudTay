@@ -25,7 +25,9 @@ class WeatherCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        heightConstraint = (contentView.heightAnchor == pinnedHeight)
+        // Don't use Anchorage so we avoid affecting translatesAutoresizingMaskIntoConstraints
+        heightConstraint = contentView.heightAnchor.constraint(equalToConstant: pinnedHeight)
+        heightConstraint?.isActive = true
     }
 
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
