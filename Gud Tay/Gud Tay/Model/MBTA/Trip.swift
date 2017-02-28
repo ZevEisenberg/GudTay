@@ -7,6 +7,7 @@
 //
 
 import Foundation.NSDate
+import JSON
 
 struct Trip {
 
@@ -21,9 +22,9 @@ struct Trip {
 
 }
 
-extension Trip: JSONRepresentable {
+extension Trip: JSON.Representable {
 
-    init(json: JSONObject) throws {
+    init(json: JSON.Object) throws {
         scheduledArrival = json.optionalDate(key: "sch_arr_dt")
         scheduledDeparture = json.optionalDate(key: "sch_dep_dt")
         headsign = json.optionalValue(key: "trip_headsign")
@@ -36,7 +37,7 @@ extension Trip: JSONRepresentable {
             LogService.add(message: "Got a negative time interval from json: \(json)")
         }
 
-        if let vehicleJson: JSONObject = json.optionalValue(key: "vehicle") {
+        if let vehicleJson: JSON.Object = json.optionalValue(key: "vehicle") {
             vehicle = try Vehicle(json: vehicleJson)
         }
         else {
@@ -46,4 +47,4 @@ extension Trip: JSONRepresentable {
 
 }
 
-extension Trip: JSONListable { }
+extension Trip: JSON.Listable { }

@@ -6,6 +6,8 @@
 //
 //
 
+import JSON
+
 import Foundation.NSDate
 
 struct Vehicle {
@@ -16,9 +18,9 @@ struct Vehicle {
 
 }
 
-extension Vehicle: JSONRepresentable {
+extension Vehicle: JSON.Representable {
 
-    init(json: JSONObject) throws {
+    init(json: JSON.Object) throws {
         identifier = try json.value(key: "vehicle_id")
         timestamp = try json.date(key: "vehicle_timestamp")
         location = try Coordinate(json: json)

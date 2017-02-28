@@ -6,6 +6,8 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
+import JSON
+
 enum NearestStorm {
 
     case none
@@ -22,9 +24,9 @@ enum NearestStorm {
 
 }
 
-extension NearestStorm: JSONRepresentable {
+extension NearestStorm: JSON.Representable {
 
-    init(json: JSONObject) throws {
+    init(json: JSON.Object) throws {
         let distance: Double = json.optionalValue(key: "nearestStormDistance") ?? 0
         if distance.isPracticallyZero() {
             self = .none
@@ -38,4 +40,4 @@ extension NearestStorm: JSONRepresentable {
 
 }
 
-extension NearestStorm: JSONListable { }
+extension NearestStorm: JSON.Listable { }

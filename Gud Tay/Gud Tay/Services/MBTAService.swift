@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import JSON
 
 protocol MBTAServiceType {
 
@@ -100,8 +101,8 @@ enum MockMBTAService: MBTAServiceType {
             assertionFailure("Error deserializing JSON data: \(e)")
         }
 
-        guard let jsonObject = deserialized as? JSONObject else {
-            assertionFailure("Could not convert deserialized JSON to a JSONObject: \(deserialized)")
+        guard let jsonObject = deserialized as? JSON.Object else {
+            assertionFailure("Could not convert deserialized JSON to a JSON.Object: \(deserialized)")
             return
         }
 

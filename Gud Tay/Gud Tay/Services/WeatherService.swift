@@ -6,6 +6,8 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
+import JSON
+
 import Foundation
 
 protocol WeatherServiceType {
@@ -99,8 +101,8 @@ class MockWeatherService<Stubs: WeatherStubs>: WeatherServiceType {
             assertionFailure("Error deserializing JSON data: \(e)")
         }
 
-        guard let jsonObject = deserialized as? JSONObject else {
-            assertionFailure("Could not convert deserialized JSON to a JSONObject: \(deserialized)")
+        guard let jsonObject = deserialized as? JSON.Object else {
+            assertionFailure("Could not convert deserialized JSON to a JSON.Object: \(deserialized)")
             return
         }
 

@@ -6,6 +6,8 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
+import JSON
+
 struct Hourly: PrecipitationHaver, MeteorologyHaver, TemperatureHaver {
 
     let precipitation: WeatherBucket<Precipitation>
@@ -14,9 +16,9 @@ struct Hourly: PrecipitationHaver, MeteorologyHaver, TemperatureHaver {
 
 }
 
-extension Hourly: JSONRepresentable {
+extension Hourly: JSON.Representable {
 
-    init(json: JSONObject) throws {
+    init(json: JSON.Object) throws {
         precipitation = try WeatherBucket(json: json)
         meteorology = try WeatherBucket(json: json)
         temperature = try WeatherBucket(json: json)

@@ -6,6 +6,8 @@
 //
 //
 
+import JSON
+
 /// Based on GTFS `route_type` key: <https://developers.google.com/transit/gtfs/reference/routes-file>
 enum ModeType: Int {
 
@@ -43,9 +45,9 @@ struct Mode {
 
 }
 
-extension Mode: JSONRepresentable {
+extension Mode: JSON.Representable {
 
-    init(json: JSONObject) throws {
+    init(json: JSON.Object) throws {
         name = try json.value(key: "mode_name")
 
         let typeString: String = try json.value(key: "route_type")
@@ -56,7 +58,7 @@ extension Mode: JSONRepresentable {
 
         self.type = type
 
-        if let routesValue: [JSONObject] = json.optionalValue(key: "route") {
+        if let routesValue: [JSON.Object] = json.optionalValue(key: "route") {
             routes = try Route.objects(from: routesValue)
         }
         else {
@@ -66,4 +68,4 @@ extension Mode: JSONRepresentable {
 
 }
 
-extension Mode: JSONListable { }
+extension Mode: JSON.Listable { }

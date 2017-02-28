@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import JSON
 
 final class MBTAViewModel {
 

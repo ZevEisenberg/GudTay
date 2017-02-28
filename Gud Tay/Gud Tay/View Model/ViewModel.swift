@@ -6,6 +6,8 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
+import JSON
+
 import Foundation.NSError
 
 class ViewModel {

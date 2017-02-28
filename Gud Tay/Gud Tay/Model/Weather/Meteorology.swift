@@ -6,6 +6,8 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
+import JSON
+
 struct Meteorology {
 
     enum Wind {
@@ -48,9 +50,9 @@ struct Meteorology {
 
 }
 
-extension Meteorology: JSONRepresentable {
+extension Meteorology: JSON.Representable {
 
-    init(json: JSONObject) throws {
+    init(json: JSON.Object) throws {
         visibility = json.optionalValue(key: "visibility")
         cloudCover = json.optionalValue(key: "cloudCover")
 
@@ -73,4 +75,4 @@ extension Meteorology: JSONRepresentable {
 
 }
 
-extension Meteorology: JSONListable { }
+extension Meteorology: JSON.Listable { }

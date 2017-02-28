@@ -1,0 +1,18 @@
+{
+    "trip_id_string": "30838431",
+    "trip_id_number": 30838431,
+    "trip_name": "11:16 pm from Oak Grove to Forest Hills Orange Line",
+    "trip_headsign": "Forest Hills",
+    "sch_arr_dt": "1469503560",
+    "sch_dep_dt": "1469503560",
+    "pre_dt": "1469503510",
+    "pre_away": "771",
+    "null_thing": null,
+    "vehicle": {
+        "vehicle_id": "544761EF",
+        "vehicle_lat": 42.43773,
+        "vehicle_lon": -71.07093,
+        "vehicle_bearing": "5",
+        "vehicle_timestamp": "1469502006"
+    }
+}

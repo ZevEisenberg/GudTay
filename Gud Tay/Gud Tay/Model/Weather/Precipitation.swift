@@ -7,6 +7,7 @@
 //
 
 import Foundation.NSDate
+import JSON
 
 struct Precipitation {
 
@@ -29,9 +30,9 @@ struct Precipitation {
 
 }
 
-extension Precipitation: JSONRepresentable {
+extension Precipitation: JSON.Representable {
 
-    init(json: JSONObject) throws {
+    init(json: JSON.Object) throws {
         intensity = try json.value(key: "precipIntensity")
         probability = try json.value(key: "precipProbability")
         timestamp = try json.date(key: "time")
@@ -39,4 +40,4 @@ extension Precipitation: JSONRepresentable {
 
 }
 
-extension Precipitation: JSONListable { }
+extension Precipitation: JSON.Listable { }

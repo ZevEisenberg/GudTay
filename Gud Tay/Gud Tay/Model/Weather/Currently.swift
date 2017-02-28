@@ -6,6 +6,8 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
+import JSON
+
 struct Currently {
 
     let precipitation: Precipitation
@@ -15,9 +17,9 @@ struct Currently {
 
 }
 
-extension Currently: JSONRepresentable {
+extension Currently: JSON.Representable {
 
-    init(json: JSONObject) throws {
+    init(json: JSON.Object) throws {
         precipitation = try Precipitation(json: json)
         meteorology = try Meteorology(json: json)
         temperature = try Temperature(json: json)

@@ -6,6 +6,8 @@
 //
 //
 
+import JSON
+
 struct Stop {
 
     let identifier: String
@@ -14,13 +16,13 @@ struct Stop {
 
 }
 
-extension Stop: JSONRepresentable {
+extension Stop: JSON.Representable {
 
-    init(json: JSONObject) throws {
+    init(json: JSON.Object) throws {
         identifier = try json.value(key: "stop_id")
         name = try json.value(key: "stop_name")
 
-        if let modesValue: [JSONObject] = json.optionalValue(key: "mode") {
+        if let modesValue: [JSON.Object] = json.optionalValue(key: "mode") {
             modes = try Mode.objects(from: modesValue)
         }
         else {

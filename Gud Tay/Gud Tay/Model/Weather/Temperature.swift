@@ -6,6 +6,8 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
+import JSON
+
 struct Temperature {
 
     /// The temperature in degrees Fahrenheit.
@@ -16,13 +18,13 @@ struct Temperature {
 
 }
 
-extension Temperature: JSONRepresentable {
+extension Temperature: JSON.Representable {
 
-    init(json: JSONObject) throws {
+    init(json: JSON.Object) throws {
         current = try json.value(key: "temperature")
         apparent = try json.value(key: "apparentTemperature")
     }
 
 }
 
-extension Temperature: JSONListable { }
+extension Temperature: JSON.Listable { }

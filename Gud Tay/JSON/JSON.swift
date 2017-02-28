@@ -1,6 +1,6 @@
 //
-//  JSONRepresentable.swift
-//  Gud Tay
+//  JSON.swift
+//  JSON
 //
 //  Created by Zev Eisenberg on 7/23/16.
 //
@@ -8,9 +8,9 @@
 
 import Foundation.NSDate
 
-typealias JSONObject = [String: AnyObject]
+public typealias Object = [String: AnyObject]
 
-enum JSONError: Error {
+public enum JSONError: Error {
 
     case generic
     case malformedOrMissingKey(key: String, parent: Any)
@@ -18,12 +18,21 @@ enum JSONError: Error {
 
 }
 
-extension Dictionary {
+public extension Dictionary {
 
-    func value<ReturnType>(key: Key) throws -> ReturnType {
-        guard let value = self[key] as? ReturnType else {
+    public func value<ReturnType>(key: Key) throws -> ReturnType {
+        guard let anyValue = self[key] else {
             if let key = key as? String {
                 throw JSONError.malformedOrMissingKey(key: key, parent: self)
+            }
+            else {
+                throw JSONError.generic
+            }
+        }
+
+        guard let value = anyValue as? ReturnType else {
+            if let key = key as? String {
+                throw JSONError.malformedValue(key: key, value: anyValue, parent: self)
             }
             else {
                 throw JSONError.generic
@@ -32,7 +41,7 @@ extension Dictionary {
         return value
     }
 
-    func optionalValue<ReturnType>(key: Key) -> ReturnType? {
+    public func optionalValue<ReturnType>(key: Key) -> ReturnType? {
         do {
             let value: ReturnType = try self.value(key: key)
             return value
@@ -42,7 +51,7 @@ extension Dictionary {
         }
     }
 
-    func date(key: Key) throws -> Date {
+    public func date(key: Key) throws -> Date {
 
         var secondsSinceEpoch: TimeInterval
 
@@ -74,7 +83,7 @@ extension Dictionary {
         return Date(timeIntervalSince1970: secondsSinceEpoch)
     }
 
-    func optionalDate(key: Key) -> Date? {
+    public func optionalDate(key: Key) -> Date? {
         do {
             let date = try self.date(key: key)
             return date
@@ -84,7 +93,7 @@ extension Dictionary {
         }
     }
 
-    func timeInterval(key: Key) throws -> TimeInterval {
+    public func timeInterval(key: Key) throws -> TimeInterval {
         guard let intervalString = self[key] as? String else {
             if let key = key as? String {
                 throw JSONError.malformedOrMissingKey(key: key, parent: self)
@@ -108,21 +117,21 @@ extension Dictionary {
 
 }
 
-protocol JSONRepresentable {
+public protocol Representable {
 
-    init(json: JSONObject) throws
-
-}
-
-protocol JSONListable: JSONRepresentable {
-
-    static func objects(from objects: [JSONObject]) throws -> [Self]
+    init(json: Object) throws
 
 }
 
-extension JSONListable {
+public protocol Listable: Representable {
 
-    static func objects(from objects: [JSONObject]) throws -> [Self] {
+    static func objects(from objects: [Object]) throws -> [Self]
+
+}
+
+public extension Listable {
+
+    public static func objects(from objects: [Object]) throws -> [Self] {
         return try objects.map(Self.init(json:))
     }
 

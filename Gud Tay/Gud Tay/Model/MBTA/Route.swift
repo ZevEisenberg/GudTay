@@ -6,6 +6,8 @@
 //
 //
 
+import JSON
+
 struct Route {
 
     let identifier: String
@@ -14,16 +16,16 @@ struct Route {
 
 }
 
-extension Route: JSONRepresentable {
+extension Route: JSON.Representable {
 
-    init(json: JSONObject) throws {
+    init(json: JSON.Object) throws {
         identifier = try json.value(key: "route_id")
         name = try json.value(key: "route_name")
 
-        let directionsValue: [JSONObject] = try json.value(key: "direction")
+        let directionsValue: [JSON.Object] = try json.value(key: "direction")
         directions = try Direction.objects(from: directionsValue)
     }
 
 }
 
-extension Route: JSONListable { }
+extension Route: JSON.Listable { }

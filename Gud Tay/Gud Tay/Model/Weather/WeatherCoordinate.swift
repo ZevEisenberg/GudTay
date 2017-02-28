@@ -6,6 +6,8 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
+import JSON
+
 struct WeatherCoordinate {
 
     let lat: Double
@@ -13,9 +15,9 @@ struct WeatherCoordinate {
 
 }
 
-extension WeatherCoordinate: JSONRepresentable {
+extension WeatherCoordinate: JSON.Representable {
 
-    init(json: JSONObject) throws {
+    init(json: JSON.Object) throws {
         lat = try json.value(key: "latitude")
         lon = try json.value(key: "longitude")
     }

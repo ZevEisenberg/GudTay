@@ -6,6 +6,8 @@
 //
 //
 
+import JSON
+
 import Foundation
 
 // APIClient design inspired by https://thatthinginswift.com/write-your-own-api-clients-swift/
@@ -14,7 +16,7 @@ enum APIClient {
 
     enum Result {
 
-        case success(JSONObject?)
+        case success(JSON.Object?)
         case failure(Error)
 
     }
@@ -46,7 +48,7 @@ private extension APIClient {
                 let json = try? JSONSerialization.jsonObject(with: data, options: [])
                 if let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode {
                     DispatchQueue.main.async {
-                        completion(.success(json as? JSONObject))
+                        completion(.success(json as? JSON.Object))
                     }
                 }
                 else {

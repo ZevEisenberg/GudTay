@@ -6,6 +6,8 @@
 //
 //
 
+import JSON
+
 struct Coordinate {
 
     let lat: Double
@@ -14,9 +16,9 @@ struct Coordinate {
 
 }
 
-extension Coordinate: JSONRepresentable {
+extension Coordinate: JSON.Representable {
 
-    init(json: JSONObject) throws {
+    init(json: JSON.Object) throws {
         guard let latString = json["vehicle_lat"] as? String else {
             throw JSONError.malformedOrMissingKey(key: "vehicle_lat", parent: json)
         }

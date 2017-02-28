@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AF91F04FB961F8D4E82309F /* Pods_Gud_Tay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C04EA3A9A26D3F4C10D4133 /* Pods_Gud_Tay.framework */; };
 		101C31A7FAFC3772C41D6158 /* Pods_Gud_TayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370FEC8906996918721175C9 /* Pods_Gud_TayUITests.framework */; };
-		3EC87ADB7E7F0DD5E7261F04 /* Pods_Gud_Tay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C04EA3A9A26D3F4C10D4133 /* Pods_Gud_Tay.framework */; };
 		4B4E54442DD00A606BBDE9E7 /* Pods_Gud_TayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC222D206FF1E0B1633B3D3A /* Pods_Gud_TayTests.framework */; };
 		7A5BA3791D57986D006AD6FC /* Sample Weather API Response with rain.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A5BA3771D579869006AD6FC /* Sample Weather API Response with rain.json */; };
 		7AAE0AAD1D578E6100A209BF /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE0AAC1D578E6100A209BF /* WeatherService.swift */; };
@@ -53,10 +53,21 @@
 		CD9021B21D6E96D800375FE7 /* SubwayHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9021AB1D6E96D800375FE7 /* SubwayHeaderView.swift */; };
 		CD9021B51D6E96DD00375FE7 /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9021B41D6E96DD00375FE7 /* HairlineView.swift */; };
 		CDA18DA41E62054600D34C4B /* Sample Weather API Response just after midnight.json in Resources */ = {isa = PBXBuildFile; fileRef = CDA18DA31E62054600D34C4B /* Sample Weather API Response just after midnight.json */; };
+		CDA457071E660EAF00636BDF /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA456FE1E660EAF00636BDF /* JSON.framework */; };
+		CDA4570E1E660EAF00636BDF /* JSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA4570D1E660EAF00636BDF /* JSONTests.swift */; };
+		CDA457131E660EAF00636BDF /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA456FE1E660EAF00636BDF /* JSON.framework */; };
+		CDA457141E660EAF00636BDF /* JSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CDA456FE1E660EAF00636BDF /* JSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CDA4571C1E660ED200636BDF /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA4571B1E660ED200636BDF /* JSON.swift */; };
+		CDA4571E1E66126C00636BDF /* Pods_Gud_Tay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA4571D1E66126C00636BDF /* Pods_Gud_Tay.framework */; };
+		CDA457201E66141400636BDF /* tests.json in Resources */ = {isa = PBXBuildFile; fileRef = CDA4571F1E66141400636BDF /* tests.json */; };
+		CDA82CE11E661789006BF76A /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA82CE01E661789006BF76A /* TestHelpers.swift */; };
+		CDA82CE21E661789006BF76A /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA82CE01E661789006BF76A /* TestHelpers.swift */; };
 		CDADC9931D655315005B60AD /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADC9921D655315005B60AD /* LogService.swift */; };
 		CDADC9951D65566C005B60AD /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADC9941D65566C005B60AD /* LogViewController.swift */; };
 		CDBF96881D56F39F008AC493 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF96871D56F39F008AC493 /* Colors.swift */; };
 		CDBF968A1D56F8CA008AC493 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF96891D56F8CA008AC493 /* Fonts.swift */; };
+		CDC00E381E63DB4700B3760D /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC00E371E63DB4700B3760D /* JSON.framework */; };
+		CDC00E3A1E63DB9600B3760D /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC00E391E63DB9600B3760D /* JSON.framework */; };
 		CDCF9B821E637B58009EE1DB /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD22CA961DAAEC94000C0205 /* DateTests.swift */; };
 		CDCF9B831E637B5B009EE1DB /* MBTATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12DE3B1D4FE82E00956B74 /* MBTATests.swift */; };
 		CDCF9B841E637B5E009EE1DB /* Sample MBTA API Response.json in Resources */ = {isa = PBXBuildFile; fileRef = CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */; };
@@ -72,7 +83,6 @@
 		CDCF9B901E637BA3009EE1DB /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC59EE71D579CCE003863AE /* WeatherViewModel.swift */; };
 		CDCF9B911E637BA8009EE1DB /* ForecastBackgroundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3D7B721DAC1DD2007BB87D /* ForecastBackgroundViewModel.swift */; };
 		CDCF9B921E637BAD009EE1DB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC59EEA1D57A1C1003863AE /* ViewModel.swift */; };
-		CDCF9B931E637BB3009EE1DB /* JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB41D46D97F007A82D5 /* JSONRepresentable.swift */; };
 		CDCF9B941E637BC6009EE1DB /* Almanac.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDED23461D60AFCF0023CC4B /* Almanac.swift */; };
 		CDCF9B951E637BC6009EE1DB /* Currently.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDED23491D60B00E0023CC4B /* Currently.swift */; };
 		CDCF9B961E637BC6009EE1DB /* Daily.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDED23521D60B0440023CC4B /* Daily.swift */; };
@@ -107,11 +117,9 @@
 		CDD53CBE1E624BB900422296 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE0AAC1D578E6100A209BF /* WeatherService.swift */; };
 		CDD53CBF1E624BD900422296 /* MBTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8357511D4C4DA5009E76A7 /* MBTAService.swift */; };
 		CDD53CC01E624BF100422296 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB31D46D97F007A82D5 /* APIClient.swift */; };
-		CDD53CC11E624BFC00422296 /* JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB41D46D97F007A82D5 /* JSONRepresentable.swift */; };
 		CDD53CC21E624C0300422296 /* CrashReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A633B1D514ACB009571DE /* CrashReporter.swift */; };
 		CDD8F99F1E2BD6270003679B /* Sample Weather API Response just after sunset.json in Resources */ = {isa = PBXBuildFile; fileRef = CDD8F99D1E2BD61E0003679B /* Sample Weather API Response just after sunset.json */; };
 		CDECBAB61D46D97F007A82D5 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB31D46D97F007A82D5 /* APIClient.swift */; };
-		CDECBAB81D46D97F007A82D5 /* JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB41D46D97F007A82D5 /* JSONRepresentable.swift */; };
 		CDECBAC31D46DF7A007A82D5 /* MBTAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAC21D46DF7A007A82D5 /* MBTAViewModel.swift */; };
 		CDED23351D60AE5F0023CC4B /* WeatherCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDED23341D60AE5F0023CC4B /* WeatherCoordinate.swift */; };
 		CDED233B1D60AF4B0023CC4B /* WeatherProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDED233A1D60AF4B0023CC4B /* WeatherProtocols.swift */; };
@@ -132,6 +140,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CDA457081E660EAF00636BDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD1279BB1D45B37B00DC7BB8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDA456FD1E660EAF00636BDF;
+			remoteInfo = JSON;
+		};
+		CDA4570A1E660EAF00636BDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD1279BB1D45B37B00DC7BB8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD1279C21D45B37B00DC7BB8;
+			remoteInfo = "Gud Tay";
+		};
+		CDA457111E660EAF00636BDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD1279BB1D45B37B00DC7BB8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDA456FD1E660EAF00636BDF;
+			remoteInfo = JSON;
+		};
 		CDD53CB81E624B7D00422296 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CD1279BB1D45B37B00DC7BB8 /* Project object */;
@@ -140,6 +169,20 @@
 			remoteInfo = "Gud Tay";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CD011F281E648FC800217BC1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CDA457141E660EAF00636BDF /* JSON.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0C04EA3A9A26D3F4C10D4133 /* Pods_Gud_Tay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gud_Tay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +229,7 @@
 		CD8357511D4C4DA5009E76A7 /* MBTAService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTAService.swift; sourceTree = "<group>"; };
 		CD848F931E63799F00E49A85 /* Gud TayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gud TayTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD848F971E63799F00E49A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD8F07A61E63D8D300F67968 /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = "JSON/build/Debug-iphoneos/JSON.framework"; sourceTree = "<group>"; };
 		CD9021981D6E96D200375FE7 /* AspectImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AspectImageCell.swift; sourceTree = "<group>"; };
 		CD9021991D6E96D200375FE7 /* ForecastBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastBackgroundView.swift; sourceTree = "<group>"; };
 		CD90219A1D6E96D200375FE7 /* ForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
@@ -201,17 +245,27 @@
 		CD9021AB1D6E96D800375FE7 /* SubwayHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubwayHeaderView.swift; sourceTree = "<group>"; };
 		CD9021B41D6E96DD00375FE7 /* HairlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HairlineView.swift; sourceTree = "<group>"; };
 		CDA18DA31E62054600D34C4B /* Sample Weather API Response just after midnight.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Sample Weather API Response just after midnight.json"; sourceTree = "<group>"; };
+		CDA456FE1E660EAF00636BDF /* JSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDA457011E660EAF00636BDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDA457061E660EAF00636BDF /* JSONTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDA4570D1E660EAF00636BDF /* JSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTests.swift; sourceTree = "<group>"; };
+		CDA4570F1E660EAF00636BDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDA4571B1E660ED200636BDF /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		CDA4571D1E66126C00636BDF /* Pods_Gud_Tay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Gud_Tay.framework; path = "Pods/../build/Debug-iphoneos/Pods_Gud_Tay.framework"; sourceTree = "<group>"; };
+		CDA4571F1E66141400636BDF /* tests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tests.json; sourceTree = "<group>"; };
+		CDA82CE01E661789006BF76A /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestHelpers.swift; path = "../../../../Raizlabs/fastaff-iOS/recruit/FastaffRecruit/FastaffRecruitTests/TestHelpers.swift"; sourceTree = "<group>"; };
 		CDADC9921D655315005B60AD /* LogService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 		CDADC9941D65566C005B60AD /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		CDBF96871D56F39F008AC493 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CDBF96891D56F8CA008AC493 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		CDC00E371E63DB4700B3760D /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = "JSON/build/Debug-iphoneos/JSON.framework"; sourceTree = "<group>"; };
+		CDC00E391E63DB9600B3760D /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = "JSON/build/Debug-iphoneos/JSON.framework"; sourceTree = "<group>"; };
 		CDC371C21D4911E30054F343 /* Gud Tay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gud Tay-Bridging-Header.h"; sourceTree = "<group>"; };
 		CDD53CB31E624B7D00422296 /* Gud TayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gud TayUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD53CB51E624B7D00422296 /* Gud_TayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gud_TayUITests.swift; sourceTree = "<group>"; };
 		CDD53CB71E624B7D00422296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDD8F99D1E2BD61E0003679B /* Sample Weather API Response just after sunset.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Sample Weather API Response just after sunset.json"; sourceTree = "<group>"; };
 		CDECBAB31D46D97F007A82D5 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		CDECBAB41D46D97F007A82D5 /* JSONRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRepresentable.swift; sourceTree = "<group>"; };
 		CDECBAC21D46DF7A007A82D5 /* MBTAViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTAViewModel.swift; sourceTree = "<group>"; };
 		CDED23341D60AE5F0023CC4B /* WeatherCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCoordinate.swift; sourceTree = "<group>"; };
 		CDED233A1D60AF4B0023CC4B /* WeatherProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherProtocols.swift; sourceTree = "<group>"; };
@@ -238,7 +292,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EC87ADB7E7F0DD5E7261F04 /* Pods_Gud_Tay.framework in Frameworks */,
+				CDA4571E1E66126C00636BDF /* Pods_Gud_Tay.framework in Frameworks */,
+				CDA457131E660EAF00636BDF /* JSON.framework in Frameworks */,
+				0AF91F04FB961F8D4E82309F /* Pods_Gud_Tay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +302,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDC00E381E63DB4700B3760D /* JSON.framework in Frameworks */,
 				4B4E54442DD00A606BBDE9E7 /* Pods_Gud_TayTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA456FA1E660EAF00636BDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA457031E660EAF00636BDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA457071E660EAF00636BDF /* JSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +326,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDC00E3A1E63DB9600B3760D /* JSON.framework in Frameworks */,
 				101C31A7FAFC3772C41D6158 /* Pods_Gud_TayUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +385,10 @@
 		AC80E7268D6F2FA1E99F8C13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CDA4571D1E66126C00636BDF /* Pods_Gud_Tay.framework */,
+				CDC00E391E63DB9600B3760D /* JSON.framework */,
+				CDC00E371E63DB4700B3760D /* JSON.framework */,
+				CD8F07A61E63D8D300F67968 /* JSON.framework */,
 				0C04EA3A9A26D3F4C10D4133 /* Pods_Gud_Tay.framework */,
 				DC222D206FF1E0B1633B3D3A /* Pods_Gud_TayTests.framework */,
 				370FEC8906996918721175C9 /* Pods_Gud_TayUITests.framework */,
@@ -322,6 +399,9 @@
 		CD1279BA1D45B37B00DC7BB8 = {
 			isa = PBXGroup;
 			children = (
+				CDA82CDF1E661776006BF76A /* Test Helpers */,
+				CDA456FF1E660EAF00636BDF /* JSON */,
+				CDA4570C1E660EAF00636BDF /* JSONTests */,
 				AC80E7268D6F2FA1E99F8C13 /* Frameworks */,
 				CD1279C51D45B37B00DC7BB8 /* Gud Tay */,
 				CD848F941E63799F00E49A85 /* Gud TayTests */,
@@ -337,6 +417,8 @@
 				CD1279C31D45B37B00DC7BB8 /* Gud Tay.app */,
 				CDD53CB31E624B7D00422296 /* Gud TayUITests.xctest */,
 				CD848F931E63799F00E49A85 /* Gud TayTests.xctest */,
+				CDA456FE1E660EAF00636BDF /* JSON.framework */,
+				CDA457061E660EAF00636BDF /* JSONTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -433,6 +515,33 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		CDA456FF1E660EAF00636BDF /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				CDA4571B1E660ED200636BDF /* JSON.swift */,
+				CDA457011E660EAF00636BDF /* Info.plist */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		CDA4570C1E660EAF00636BDF /* JSONTests */ = {
+			isa = PBXGroup;
+			children = (
+				CDA4570D1E660EAF00636BDF /* JSONTests.swift */,
+				CDA4571F1E66141400636BDF /* tests.json */,
+				CDA4570F1E660EAF00636BDF /* Info.plist */,
+			);
+			path = JSONTests;
+			sourceTree = "<group>";
+		};
+		CDA82CDF1E661776006BF76A /* Test Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CDA82CE01E661789006BF76A /* TestHelpers.swift */,
+			);
+			path = "Test Helpers";
+			sourceTree = "<group>";
+		};
 		CDD53CB41E624B7D00422296 /* Gud TayUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,7 +564,6 @@
 			isa = PBXGroup;
 			children = (
 				CDECBAB31D46D97F007A82D5 /* APIClient.swift */,
-				CDECBAB41D46D97F007A82D5 /* JSONRepresentable.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -502,6 +610,16 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		CDA456FB1E660EAF00636BDF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		CD1279C21D45B37B00DC7BB8 /* Gud Tay */ = {
 			isa = PBXNativeTarget;
@@ -514,10 +632,12 @@
 				CD1279C11D45B37B00DC7BB8 /* Resources */,
 				FFF51A6AE93B0C9C916BD0E7 /* [CP] Embed Pods Frameworks */,
 				89AAB7AF6C963DD81798E751 /* [CP] Copy Pods Resources */,
+				CD011F281E648FC800217BC1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CDA457121E660EAF00636BDF /* PBXTargetDependency */,
 			);
 			name = "Gud Tay";
 			productName = "Gud Tay";
@@ -542,6 +662,43 @@
 			name = "Gud TayTests";
 			productName = "Gud TayTests";
 			productReference = CD848F931E63799F00E49A85 /* Gud TayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CDA456FD1E660EAF00636BDF /* JSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDA457191E660EAF00636BDF /* Build configuration list for PBXNativeTarget "JSON" */;
+			buildPhases = (
+				CDA456F91E660EAF00636BDF /* Sources */,
+				CDA456FA1E660EAF00636BDF /* Frameworks */,
+				CDA456FB1E660EAF00636BDF /* Headers */,
+				CDA456FC1E660EAF00636BDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JSON;
+			productName = JSON;
+			productReference = CDA456FE1E660EAF00636BDF /* JSON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CDA457051E660EAF00636BDF /* JSONTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDA4571A1E660EAF00636BDF /* Build configuration list for PBXNativeTarget "JSONTests" */;
+			buildPhases = (
+				CDA457021E660EAF00636BDF /* Sources */,
+				CDA457031E660EAF00636BDF /* Frameworks */,
+				CDA457041E660EAF00636BDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CDA457091E660EAF00636BDF /* PBXTargetDependency */,
+				CDA4570B1E660EAF00636BDF /* PBXTargetDependency */,
+			);
+			name = JSONTests;
+			productName = JSONTests;
+			productReference = CDA457061E660EAF00636BDF /* JSONTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		CDD53CB21E624B7D00422296 /* Gud TayUITests */ = {
@@ -587,6 +744,17 @@
 						DevelopmentTeam = 2KJHM26Y46;
 						ProvisioningStyle = Automatic;
 					};
+					CDA456FD1E660EAF00636BDF = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 2KJHM26Y46;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					CDA457051E660EAF00636BDF = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 2KJHM26Y46;
+						ProvisioningStyle = Automatic;
+					};
 					CDD53CB21E624B7D00422296 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 2KJHM26Y46;
@@ -611,6 +779,8 @@
 				CD1279C21D45B37B00DC7BB8 /* Gud Tay */,
 				CD848F921E63799F00E49A85 /* Gud TayTests */,
 				CDD53CB21E624B7D00422296 /* Gud TayUITests */,
+				CDA456FD1E660EAF00636BDF /* JSON */,
+				CDA457051E660EAF00636BDF /* JSONTests */,
 			);
 		};
 /* End PBXProject section */
@@ -639,6 +809,21 @@
 				CDCF9B861E637B5E009EE1DB /* Sample Weather API Response just after sunset.json in Resources */,
 				CDCF9B871E637B5E009EE1DB /* Sample Weather API Response with rain.json in Resources */,
 				CDCF9B881E637B5E009EE1DB /* Sample Weather API Response without rain.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA456FC1E660EAF00636BDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA457041E660EAF00636BDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA457201E66141400636BDF /* tests.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,7 +1037,6 @@
 				CD9021B51D6E96DD00375FE7 /* HairlineView.swift in Sources */,
 				CDADC9931D655315005B60AD /* LogService.swift in Sources */,
 				CD6A63451D51758C009571DE /* SafeArray.swift in Sources */,
-				CDECBAB81D46D97F007A82D5 /* JSONRepresentable.swift in Sources */,
 				CDECBAC31D46DF7A007A82D5 /* MBTAViewModel.swift in Sources */,
 				CD1279C71D45B37B00DC7BB8 /* AppDelegate.swift in Sources */,
 				CD9021B01D6E96D800375FE7 /* MBTARouteView.swift in Sources */,
@@ -902,11 +1086,11 @@
 				CDCF9BA51E637BE8009EE1DB /* CrashReporter.swift in Sources */,
 				CDCF9B9B1E637BC6009EE1DB /* NearestStorm.swift in Sources */,
 				CDCF9B971E637BC6009EE1DB /* Hourly.swift in Sources */,
-				CDCF9B931E637BB3009EE1DB /* JSONRepresentable.swift in Sources */,
 				CDCF9B8C1E637B67009EE1DB /* WeatherTests.swift in Sources */,
 				CDCF9BA01E637BC6009EE1DB /* WeatherForecast.swift in Sources */,
 				CDCF9B9E1E637BC6009EE1DB /* WeatherBucket.swift in Sources */,
 				CDCF9B901E637BA3009EE1DB /* WeatherViewModel.swift in Sources */,
+				CDA82CE11E661789006BF76A /* TestHelpers.swift in Sources */,
 				CDCF9B8F1E637B8D009EE1DB /* LogService.swift in Sources */,
 				CDCF9B8E1E637B86009EE1DB /* Date+Extensions.swift in Sources */,
 				CDCF9B911E637BA8009EE1DB /* ForecastBackgroundViewModel.swift in Sources */,
@@ -918,11 +1102,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CDA456F91E660EAF00636BDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA4571C1E660ED200636BDF /* JSON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA457021E660EAF00636BDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA4570E1E660EAF00636BDF /* JSONTests.swift in Sources */,
+				CDA82CE21E661789006BF76A /* TestHelpers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CDD53CAF1E624B7D00422296 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDD53CC11E624BFC00422296 /* JSONRepresentable.swift in Sources */,
 				CDD53CB61E624B7D00422296 /* Gud_TayUITests.swift in Sources */,
 				CDD53CBF1E624BD900422296 /* MBTAService.swift in Sources */,
 				CDD53CC21E624C0300422296 /* CrashReporter.swift in Sources */,
@@ -935,6 +1135,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CDA457091E660EAF00636BDF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CDA456FD1E660EAF00636BDF /* JSON */;
+			targetProxy = CDA457081E660EAF00636BDF /* PBXContainerItemProxy */;
+		};
+		CDA4570B1E660EAF00636BDF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD1279C21D45B37B00DC7BB8 /* Gud Tay */;
+			targetProxy = CDA4570A1E660EAF00636BDF /* PBXContainerItemProxy */;
+		};
+		CDA457121E660EAF00636BDF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CDA456FD1E660EAF00636BDF /* JSON */;
+			targetProxy = CDA457111E660EAF00636BDF /* PBXContainerItemProxy */;
+		};
 		CDD53CB91E624B7D00422296 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CD1279C21D45B37B00DC7BB8 /* Gud Tay */;
@@ -1111,6 +1326,85 @@
 			};
 			name = Release;
 		};
+		CDA457151E660EAF00636BDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = JSON/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.JSON;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CDA457161E660EAF00636BDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = JSON/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.JSON;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CDA457171E660EAF00636BDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 2KJHM26Y46;
+				INFOPLIST_FILE = JSONTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.JSONTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		CDA457181E660EAF00636BDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 2KJHM26Y46;
+				INFOPLIST_FILE = JSONTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.JSONTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		CDD53CBA1E624B7D00422296 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3699ED083B111605113BD927 /* Pods-Gud TayUITests.debug.xcconfig */;
@@ -1171,6 +1465,24 @@
 			buildConfigurations = (
 				CD848F981E63799F00E49A85 /* Debug */,
 				CD848F991E63799F00E49A85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDA457191E660EAF00636BDF /* Build configuration list for PBXNativeTarget "JSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDA457151E660EAF00636BDF /* Debug */,
+				CDA457161E660EAF00636BDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDA4571A1E660EAF00636BDF /* Build configuration list for PBXNativeTarget "JSONTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDA457171E660EAF00636BDF /* Debug */,
+				CDA457181E660EAF00636BDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,6 +6,8 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
+import JSON
+
 import Foundation.NSTimeZone
 
 struct WeatherForecast {
@@ -20,9 +22,9 @@ struct WeatherForecast {
 
 }
 
-extension WeatherForecast: JSONRepresentable {
+extension WeatherForecast: JSON.Representable {
 
-    init(json: JSONObject) throws {
+    init(json: JSON.Object) throws {
         coordinate = try WeatherCoordinate(json: json)
         timeZone = try TimeZone(identifier: json.value(key: "timezone")) ?? TimeZone.current
 

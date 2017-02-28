@@ -7,6 +7,7 @@
 //
 
 import Foundation.NSDate
+import JSON
 
 struct Almanac {
 
@@ -63,7 +64,7 @@ struct Almanac {
 
 extension Almanac.TemperatureRange {
 
-    init(json: JSONObject, maxKey: String, minKey: String, maxTimeKey: String, minTimeKey: String) throws {
+    init(json: JSON.Object, maxKey: String, minKey: String, maxTimeKey: String, minTimeKey: String) throws {
         max = try json.value(key: maxKey)
         min = try json.value(key: minKey)
         maxTime = try json.date(key: maxTimeKey)
@@ -72,9 +73,9 @@ extension Almanac.TemperatureRange {
 
 }
 
-extension Almanac: JSONRepresentable {
+extension Almanac: JSON.Representable {
 
-    init(json: JSONObject) throws {
+    init(json: JSON.Object) throws {
         temperatureRange = try TemperatureRange(
             json: json,
             maxKey: "temperatureMax",
@@ -115,4 +116,4 @@ extension Almanac: JSONRepresentable {
 
 }
 
-extension Almanac: JSONListable { }
+extension Almanac: JSON.Listable { }
