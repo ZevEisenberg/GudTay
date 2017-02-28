@@ -32,6 +32,7 @@
 		CD2575BB1D66607F0017DEE6 /* RefreshableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2575BA1D66607F0017DEE6 /* RefreshableViewController.swift */; };
 		CD2575C21D6669020017DEE6 /* UICollectionReusableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2575C11D6669020017DEE6 /* UICollectionReusableView+Extensions.swift */; };
 		CD2575C41D666C7E0017DEE6 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2575C31D666C7E0017DEE6 /* Utility.swift */; };
+		CD36A8CD1E66226A00B3DDA8 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD36A8CC1E66226A00B3DDA8 /* TestHelpers.swift */; };
 		CD3D7B731DAC1DD2007BB87D /* ForecastBackgroundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3D7B721DAC1DD2007BB87D /* ForecastBackgroundViewModel.swift */; };
 		CD3D7B761DAC25AA007BB87D /* SunIntervalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3D7B751DAC25AA007BB87D /* SunIntervalView.swift */; };
 		CD6A633C1D514ACB009571DE /* CrashReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A633B1D514ACB009571DE /* CrashReporter.swift */; };
@@ -60,8 +61,6 @@
 		CDA4571C1E660ED200636BDF /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA4571B1E660ED200636BDF /* JSON.swift */; };
 		CDA4571E1E66126C00636BDF /* Pods_Gud_Tay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA4571D1E66126C00636BDF /* Pods_Gud_Tay.framework */; };
 		CDA457201E66141400636BDF /* tests.json in Resources */ = {isa = PBXBuildFile; fileRef = CDA4571F1E66141400636BDF /* tests.json */; };
-		CDA82CE11E661789006BF76A /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA82CE01E661789006BF76A /* TestHelpers.swift */; };
-		CDA82CE21E661789006BF76A /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA82CE01E661789006BF76A /* TestHelpers.swift */; };
 		CDADC9931D655315005B60AD /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADC9921D655315005B60AD /* LogService.swift */; };
 		CDADC9951D65566C005B60AD /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADC9941D65566C005B60AD /* LogViewController.swift */; };
 		CDBF96881D56F39F008AC493 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF96871D56F39F008AC493 /* Colors.swift */; };
@@ -221,6 +220,7 @@
 		CD2575BA1D66607F0017DEE6 /* RefreshableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshableViewController.swift; sourceTree = "<group>"; };
 		CD2575C11D6669020017DEE6 /* UICollectionReusableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extensions.swift"; sourceTree = "<group>"; };
 		CD2575C31D666C7E0017DEE6 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		CD36A8CC1E66226A00B3DDA8 /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		CD3D7B721DAC1DD2007BB87D /* ForecastBackgroundViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastBackgroundViewModel.swift; sourceTree = "<group>"; };
 		CD3D7B751DAC25AA007BB87D /* SunIntervalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunIntervalView.swift; sourceTree = "<group>"; };
 		CD6A633B1D514ACB009571DE /* CrashReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashReporter.swift; sourceTree = "<group>"; };
@@ -253,7 +253,6 @@
 		CDA4571B1E660ED200636BDF /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		CDA4571D1E66126C00636BDF /* Pods_Gud_Tay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Gud_Tay.framework; path = "Pods/../build/Debug-iphoneos/Pods_Gud_Tay.framework"; sourceTree = "<group>"; };
 		CDA4571F1E66141400636BDF /* tests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tests.json; sourceTree = "<group>"; };
-		CDA82CE01E661789006BF76A /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestHelpers.swift; path = "../../../../Raizlabs/fastaff-iOS/recruit/FastaffRecruit/FastaffRecruitTests/TestHelpers.swift"; sourceTree = "<group>"; };
 		CDADC9921D655315005B60AD /* LogService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 		CDADC9941D65566C005B60AD /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		CDBF96871D56F39F008AC493 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -537,7 +536,7 @@
 		CDA82CDF1E661776006BF76A /* Test Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				CDA82CE01E661789006BF76A /* TestHelpers.swift */,
+				CD36A8CC1E66226A00B3DDA8 /* TestHelpers.swift */,
 			);
 			path = "Test Helpers";
 			sourceTree = "<group>";
@@ -1090,7 +1089,6 @@
 				CDCF9BA01E637BC6009EE1DB /* WeatherForecast.swift in Sources */,
 				CDCF9B9E1E637BC6009EE1DB /* WeatherBucket.swift in Sources */,
 				CDCF9B901E637BA3009EE1DB /* WeatherViewModel.swift in Sources */,
-				CDA82CE11E661789006BF76A /* TestHelpers.swift in Sources */,
 				CDCF9B8F1E637B8D009EE1DB /* LogService.swift in Sources */,
 				CDCF9B8E1E637B86009EE1DB /* Date+Extensions.swift in Sources */,
 				CDCF9B911E637BA8009EE1DB /* ForecastBackgroundViewModel.swift in Sources */,
@@ -1115,7 +1113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDA4570E1E660EAF00636BDF /* JSONTests.swift in Sources */,
-				CDA82CE21E661789006BF76A /* TestHelpers.swift in Sources */,
+				CD36A8CD1E66226A00B3DDA8 /* TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,9 +6,8 @@
 //
 //
 
-import JSON
-
 import Foundation
+import JSON
 
 // APIClient design inspired by https://thatthinginswift.com/write-your-own-api-clients-swift/
 
