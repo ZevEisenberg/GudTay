@@ -8,25 +8,10 @@
 
 import XCTest
 
-typealias Time = ScreenService.Time
-
 class ScreenServiceTests: XCTestCase {
 
-    func testTime() {
-
-        for hour in 0...23 {
-            for minute in 0...59 {
-                let double = Double(String(format: "%d.%02d", hour, minute))!
-                let time = Time(floatLiteral: double)
-                let control = String(format: "%d:%02d", hour, minute)
-                XCTAssertEqual(time.description, control)
-            }
-        }
-
-    }
-
     func testBrightnessFunction() {
-        let valuesLine = #line; let values: [(ScreenService.Time, CGFloat)] = [
+        let valuesLine = #line; let values: [(ClockTime, CGFloat)] = [
             (0.00, 0),
             (0.01, 0),
             (3.00, 0),
@@ -55,7 +40,7 @@ class ScreenServiceTests: XCTestCase {
 
 private extension ScreenServiceTests {
 
-    func testingDate(from time: ScreenService.Time) -> Date {
+    func testingDate(from time: ClockTime) -> Date {
         let calendar = Calendar(identifier: .gregorian)
         let timeZone = TimeZone(identifier: "EDT")
 

@@ -11,6 +11,12 @@
 		101C31A7FAFC3772C41D6158 /* Pods_Gud_TayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370FEC8906996918721175C9 /* Pods_Gud_TayUITests.framework */; };
 		4B4E54442DD00A606BBDE9E7 /* Pods_Gud_TayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC222D206FF1E0B1633B3D3A /* Pods_Gud_TayTests.framework */; };
 		7A5BA3791D57986D006AD6FC /* Sample Weather API Response with rain.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A5BA3771D579869006AD6FC /* Sample Weather API Response with rain.json */; };
+		7AAB4E4A1E75D36400C05BA4 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAB4E491E75D36300C05BA4 /* ClockView.swift */; };
+		7AACF0D61E75D6CE00990A6E /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AACF0D51E75D6CE00990A6E /* Time.swift */; };
+		7AACF0D71E75D6E100990A6E /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AACF0D51E75D6CE00990A6E /* Time.swift */; };
+		7AACF0D91E75D79C00990A6E /* ClockTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AACF0D81E75D79C00990A6E /* ClockTimeTests.swift */; };
+		7AACF0DA1E75FEFA00990A6E /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAB4E491E75D36300C05BA4 /* ClockView.swift */; };
+		7AACF0DB1E75FF0F00990A6E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF60DF61D482F9A003E2AFB /* UIView+Extensions.swift */; };
 		7AAE0AAD1D578E6100A209BF /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE0AAC1D578E6100A209BF /* WeatherService.swift */; };
 		7AC59EE81D579CCE003863AE /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC59EE71D579CCE003863AE /* WeatherViewModel.swift */; };
 		7AC59EEB1D57A1C1003863AE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC59EEA1D57A1C1003863AE /* ViewModel.swift */; };
@@ -191,6 +197,9 @@
 		43503C8DE54F3EA4F36E22A3 /* Pods-Gud TayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud TayTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gud TayTests/Pods-Gud TayTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7A5BA3771D579869006AD6FC /* Sample Weather API Response with rain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Sample Weather API Response with rain.json"; sourceTree = "<group>"; };
 		7A5BA37A1D57988B006AD6FC /* WeatherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTests.swift; sourceTree = "<group>"; };
+		7AAB4E491E75D36300C05BA4 /* ClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		7AACF0D51E75D6CE00990A6E /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		7AACF0D81E75D79C00990A6E /* ClockTimeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockTimeTests.swift; sourceTree = "<group>"; };
 		7AAE0AAC1D578E6100A209BF /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		7AC59EE71D579CCE003863AE /* WeatherViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		7AC59EEA1D57A1C1003863AE /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -462,6 +471,7 @@
 				7A5BA3771D579869006AD6FC /* Sample Weather API Response with rain.json */,
 				CD1A107D1D7A743B0072785B /* Sample Weather API Response without rain.json */,
 				CD0911EA1E57E65600381606 /* ScreenServiceTests.swift */,
+				7AACF0D81E75D79C00990A6E /* ClockTimeTests.swift */,
 				CD6A63471D517898009571DE /* UtilityTests.swift */,
 				7A5BA37A1D57988B006AD6FC /* WeatherTests.swift */,
 				CD848F971E63799F00E49A85 /* Info.plist */,
@@ -575,6 +585,7 @@
 				CD9021961D6E96D200375FE7 /* Weather */,
 				CDADC9941D65566C005B60AD /* LogViewController.swift */,
 				CD1279C81D45B37B00DC7BB8 /* RootViewController.swift */,
+				7AAB4E491E75D36300C05BA4 /* ClockView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -603,6 +614,7 @@
 				CD2575C11D6669020017DEE6 /* UICollectionReusableView+Extensions.swift */,
 				CDF60DF61D482F9A003E2AFB /* UIView+Extensions.swift */,
 				CD2575C31D666C7E0017DEE6 /* Utility.swift */,
+				7AACF0D51E75D6CE00990A6E /* Time.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1008,6 +1020,7 @@
 				7AAE0AAD1D578E6100A209BF /* WeatherService.swift in Sources */,
 				CDED23561D60B0C00023CC4B /* Precipitation.swift in Sources */,
 				CDED23591D60B0DA0023CC4B /* Icon.swift in Sources */,
+				7AACF0D61E75D6CE00990A6E /* Time.swift in Sources */,
 				CD9021B11D6E96D800375FE7 /* MBTAViewController.swift in Sources */,
 				CDED233E1D60AF730023CC4B /* Meteorology.swift in Sources */,
 				CDADC9951D65566C005B60AD /* LogViewController.swift in Sources */,
@@ -1046,6 +1059,7 @@
 				CDF60DF71D482F9A003E2AFB /* UIView+Extensions.swift in Sources */,
 				CD6A633C1D514ACB009571DE /* CrashReporter.swift in Sources */,
 				CDBF96881D56F39F008AC493 /* Colors.swift in Sources */,
+				7AAB4E4A1E75D36400C05BA4 /* ClockView.swift in Sources */,
 				7AE9DA711D57A4A50087B401 /* Vehicle.swift in Sources */,
 				CD22CA941DAAEC6B000C0205 /* Date+Extensions.swift in Sources */,
 				CD2575C21D6669020017DEE6 /* UICollectionReusableView+Extensions.swift in Sources */,
@@ -1070,6 +1084,7 @@
 				CDCF9BB01E637C1E009EE1DB /* MBTAService.swift in Sources */,
 				CDCF9BAA1E637C15009EE1DB /* Direction.swift in Sources */,
 				CDCF9BAC1E637C15009EE1DB /* Route.swift in Sources */,
+				7AACF0D71E75D6E100990A6E /* Time.swift in Sources */,
 				CDCF9BAE1E637C15009EE1DB /* Trip.swift in Sources */,
 				CDCF9B9F1E637BC6009EE1DB /* WeatherCoordinate.swift in Sources */,
 				CDCF9B821E637B58009EE1DB /* DateTests.swift in Sources */,
@@ -1079,11 +1094,14 @@
 				CDCF9BAD1E637C15009EE1DB /* Stop.swift in Sources */,
 				CDCF9B831E637B5B009EE1DB /* MBTATests.swift in Sources */,
 				CDCF9B991E637BC6009EE1DB /* Meteorology.swift in Sources */,
+				7AACF0DB1E75FF0F00990A6E /* UIView+Extensions.swift in Sources */,
 				CDCF9BA71E637C04009EE1DB /* SafeArray.swift in Sources */,
 				CDCF9B8A1E637B62009EE1DB /* ScreenServiceTests.swift in Sources */,
 				CDCF9BA21E637BCF009EE1DB /* WeatherService.swift in Sources */,
+				7AACF0DA1E75FEFA00990A6E /* ClockView.swift in Sources */,
 				CDCF9BA51E637BE8009EE1DB /* CrashReporter.swift in Sources */,
 				CDCF9B9B1E637BC6009EE1DB /* NearestStorm.swift in Sources */,
+				7AACF0D91E75D79C00990A6E /* ClockTimeTests.swift in Sources */,
 				CDCF9B971E637BC6009EE1DB /* Hourly.swift in Sources */,
 				CDCF9B8C1E637B67009EE1DB /* WeatherTests.swift in Sources */,
 				CDCF9BA01E637BC6009EE1DB /* WeatherForecast.swift in Sources */,

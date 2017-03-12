@@ -31,6 +31,11 @@ final class GudTayView: GridView {
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(GudTayView.tapped(sender:)))
         addGestureRecognizer(tap)
+
+        let clock = ClockView()
+        addSubview(clock)
+        clock.trailingAnchor == trailingAnchor - 22
+        clock.bottomAnchor == bottomAnchor - 24
     }
 
 }
