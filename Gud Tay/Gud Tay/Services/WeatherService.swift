@@ -13,7 +13,7 @@ import Foundation
 protocol WeatherServiceType {
 
     init()
-    func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> Void)
+    func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result<JSON.Object?>) -> Void)
 
 }
 
@@ -35,9 +35,9 @@ enum WeatherServiceKind: String {
 
 struct WeatherService: WeatherServiceType {
 
-    func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> Void) {
+    func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result<JSON.Object?>) -> Void) {
         let url = WeatherService.baseUrl().appendingPathComponent(Endpoints.forecast).appendingPathComponent(Constants.apiKey).appendingPathComponent("\(latitude),\(longitude)")
-        APIClient.get(baseUrl: url, path: "", completion: completion)
+        APIClient.getJson(baseUrl: url, path: "", completion: completion)
     }
 
 }
@@ -61,10 +61,10 @@ private extension WeatherService {
         return URL(string: Constants.host)!
     }
 
-    static func getRequest(path: String, params: [String: Any]? = nil, completion: @escaping (APIClient.Result) -> Void) {
+    static func getRequest(path: String, params: [String: Any]? = nil, completion: @escaping (APIClient.Result<JSON.Object?>) -> Void) {
         var params = params ?? [:]
         params["api_key"] = Constants.apiKey
-        APIClient.get(baseUrl: baseUrl(), path: path, params: params, completion: completion)
+        APIClient.getJson(baseUrl: baseUrl(), path: path, params: params, completion: completion)
     }
 
 }
@@ -77,7 +77,7 @@ class MockWeatherService<Stubs: WeatherStubs>: WeatherServiceType {
 
     required init() { }
 
-    func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result) -> Void) {
+    func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result<JSON.Object?>) -> Void) {
         let filename = provider.next()!
         let ext = "json"
         guard let url = Bundle(for: DummyClass.self).url(forResource: filename, withExtension: ext) else {

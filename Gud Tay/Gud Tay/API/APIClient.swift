@@ -13,24 +13,24 @@ import JSON
 
 enum APIClient {
 
-    enum Result {
+    enum Result<T> {
 
-        case success(JSON.Object?)
+        case success(T)
         case failure(Error)
 
     }
 
-    static func get(baseUrl: URL, path: String, params: [String: Any]? = nil, completion: @escaping (Result) -> Void) {
+    static func getJson(baseUrl: URL, path: String, params: [String: Any]? = nil, completion: @escaping (Result<JSON.Object?>) -> Void) {
         let params = params ?? [:]
         let request = clientURLRequest(baseUrl: baseUrl, path: path, params: params)
-        dataTask(request, method: "GET", completion: completion)
+        jsonDataTask(request, method: "GET", completion: completion)
     }
 
 }
 
 private extension APIClient {
 
-    static func dataTask(_ request: NSMutableURLRequest, method: String, completion: @escaping (Result) -> Void) {
+    static func jsonDataTask(_ request: NSMutableURLRequest, method: String, completion: @escaping (Result<JSON.Object?>) -> Void) {
         request.httpMethod = method
 
         let session = URLSession(configuration: URLSessionConfiguration.default)
