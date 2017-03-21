@@ -407,15 +407,15 @@
 		CD1279BA1D45B37B00DC7BB8 = {
 			isa = PBXGroup;
 			children = (
-				CDA82CDF1E661776006BF76A /* Test Helpers */,
-				CDA456FF1E660EAF00636BDF /* JSON */,
-				CDA4570C1E660EAF00636BDF /* JSONTests */,
 				AC80E7268D6F2FA1E99F8C13 /* Frameworks */,
 				CD1279C51D45B37B00DC7BB8 /* Gud Tay */,
 				CD848F941E63799F00E49A85 /* Gud TayTests */,
 				CDD53CB41E624B7D00422296 /* Gud TayUITests */,
+				CDA456FF1E660EAF00636BDF /* JSON */,
+				CDA4570C1E660EAF00636BDF /* JSONTests */,
 				25C6FC41E3030A91DD1F4F28 /* Pods */,
 				CD1279C41D45B37B00DC7BB8 /* Products */,
+				CDA82CDF1E661776006BF76A /* Test Helpers */,
 			);
 			sourceTree = "<group>";
 		};
@@ -463,7 +463,9 @@
 		CD848F941E63799F00E49A85 /* Gud TayTests */ = {
 			isa = PBXGroup;
 			children = (
+				7AACF0D81E75D79C00990A6E /* ClockTimeTests.swift */,
 				CD22CA961DAAEC94000C0205 /* DateTests.swift */,
+				CD848F971E63799F00E49A85 /* Info.plist */,
 				CD12DE3B1D4FE82E00956B74 /* MBTATests.swift */,
 				CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */,
 				CDA18DA31E62054600D34C4B /* Sample Weather API Response just after midnight.json */,
@@ -471,10 +473,8 @@
 				7A5BA3771D579869006AD6FC /* Sample Weather API Response with rain.json */,
 				CD1A107D1D7A743B0072785B /* Sample Weather API Response without rain.json */,
 				CD0911EA1E57E65600381606 /* ScreenServiceTests.swift */,
-				7AACF0D81E75D79C00990A6E /* ClockTimeTests.swift */,
 				CD6A63471D517898009571DE /* UtilityTests.swift */,
 				7A5BA37A1D57988B006AD6FC /* WeatherTests.swift */,
-				CD848F971E63799F00E49A85 /* Info.plist */,
 			);
 			path = "Gud TayTests";
 			sourceTree = "<group>";
@@ -527,8 +527,8 @@
 		CDA456FF1E660EAF00636BDF /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				CDA4571B1E660ED200636BDF /* JSON.swift */,
 				CDA457011E660EAF00636BDF /* Info.plist */,
+				CDA4571B1E660ED200636BDF /* JSON.swift */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -536,9 +536,9 @@
 		CDA4570C1E660EAF00636BDF /* JSONTests */ = {
 			isa = PBXGroup;
 			children = (
+				CDA4570F1E660EAF00636BDF /* Info.plist */,
 				CDA4570D1E660EAF00636BDF /* JSONTests.swift */,
 				CDA4571F1E66141400636BDF /* tests.json */,
-				CDA4570F1E660EAF00636BDF /* Info.plist */,
 			);
 			path = JSONTests;
 			sourceTree = "<group>";
@@ -583,9 +583,9 @@
 				CD9021A41D6E96D800375FE7 /* MBTA */,
 				CD9021B31D6E96DD00375FE7 /* Utility */,
 				CD9021961D6E96D200375FE7 /* Weather */,
+				7AAB4E491E75D36300C05BA4 /* ClockView.swift */,
 				CDADC9941D65566C005B60AD /* LogViewController.swift */,
 				CD1279C81D45B37B00DC7BB8 /* RootViewController.swift */,
-				7AAB4E491E75D36300C05BA4 /* ClockView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -611,10 +611,10 @@
 				CDBF96891D56F8CA008AC493 /* Fonts.swift */,
 				CD1A10801D7A7D3F0072785B /* ProcessInfo+Extensions.swift */,
 				CD6A63441D51758C009571DE /* SafeArray.swift */,
+				7AACF0D51E75D6CE00990A6E /* Time.swift */,
 				CD2575C11D6669020017DEE6 /* UICollectionReusableView+Extensions.swift */,
 				CDF60DF61D482F9A003E2AFB /* UIView+Extensions.swift */,
 				CD2575C31D666C7E0017DEE6 /* Utility.swift */,
-				7AACF0D51E75D6CE00990A6E /* Time.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
