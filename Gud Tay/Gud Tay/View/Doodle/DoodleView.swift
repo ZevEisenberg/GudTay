@@ -7,5 +7,9 @@
 //
 
 final class DoodleView: GridView {
-        //foo get rid of whitespace lol
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
 }

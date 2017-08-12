@@ -398,6 +398,7 @@
 				9A218EE81F24F6E200FAFA4D /* DoodleView.swift */,
 			);
 			name = Doodle;
+			path = Doodle;
 			sourceTree = "<group>";
 		};
 		AC80E7268D6F2FA1E99F8C13 /* Frameworks */ = {

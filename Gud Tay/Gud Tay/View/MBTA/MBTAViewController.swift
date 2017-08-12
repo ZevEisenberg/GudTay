@@ -17,10 +17,6 @@ final class MBTAViewController: RefreshableViewController {
 
     private let subwayOrangeLine = MBTARouteView(headerView:
         SubwayHeaderView(route: "Orange Line", direction: "Inbound", destination: "Forest Hills"))
-  /* <CLP>
-    private let busCT2 = MBTARouteView(headerView:
-        BusHeaderView(route: "CT2", destination: "Ruggles"))
- */
     private let doodle = DoodleView()
     private let bus86 = MBTARouteView(headerView:
         BusHeaderView(route: "86", destination: "Reservoir"))
@@ -57,7 +53,6 @@ final class MBTAViewController: RefreshableViewController {
         }
 
         rowStackViews[0].addArrangedSubview(subwayOrangeLine)
-//<CLP>        rowStackViews[0].addArrangedSubview(busCT2)
         rowStackViews[0].addArrangedSubview(doodle)
         rowStackViews[1].addArrangedSubview(bus86)
         rowStackViews[1].addArrangedSubview(bus90)
