@@ -12,24 +12,17 @@ final class DoodleView: GridView {
 
     // Private Properties
 
-    private var lineColor = UIColor.black
-    private var lineWidth: CGFloat = 5.0
+    fileprivate var lineColor = UIColor.black
+    fileprivate var lineWidth: CGFloat = 5.0
 
-    fileprivate var path = UIBezierPath()
+    fileprivate var lastPoint: CGPoint = .zero
+    fileprivate var buffer: UIImage?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         let pan = UIPanGestureRecognizer(target: self, action: #selector(panned(sender:)))
         addGestureRecognizer(pan)
-    }
-
-    override func draw(_ rect: CGRect) {
-        lineColor.setStroke()
-        path.lineWidth = lineWidth
-        path.lineCapStyle = .round
-        path.lineJoinStyle = .round
-        path.stroke()
     }
 
 }
@@ -59,16 +52,54 @@ private extension DoodleView {
 private extension DoodleView {
 
     func startAt(_ point: CGPoint) {
-        path.move(to: point)
+        lastPoint = point
     }
 
     func continueTo(_ point: CGPoint) {
-        path.addLine(to: point)
-        setNeedsDisplay()
+        // 2. Draw the current stroke in an accumulated bitmap
+        buffer = drawLine(from: lastPoint, to: point, buffer: buffer)
+
+        // 3. Replace the layer contents with the updated image
+        layer.contents = self.buffer?.cgImage
+
+        // 4. Update last point for next stroke
+        self.lastPoint = point
     }
 
     func endAt(_ point: CGPoint) {
-        // no-op
+        lastPoint = .zero
+    }
+
+    func drawLine(from start: CGPoint, to end: CGPoint, buffer: UIImage?) -> UIImage? {
+        let size = bounds.size
+
+        // Initialize a full size image. Opaque because we don't need to draw over anything. Will be more performant.
+        UIGraphicsBeginImageContextWithOptions(size, true, 0)
+
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
+
+        context.setFillColor(backgroundColor?.cgColor ?? UIColor.white.cgColor)
+        context.fill(bounds)
+
+        // Draw previous buffer first
+        buffer?.draw(at: .zero)
+
+        // Draw the line
+        lineColor.setStroke()
+        context.setLineWidth(lineWidth)
+        context.setLineCap(.round)
+        context.setLineJoin(.round)
+
+        context.move(to: start)
+        context.addLine(to: end)
+        context.strokePath()
+
+        // Grab the updated buffer
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
     }
 
 }
