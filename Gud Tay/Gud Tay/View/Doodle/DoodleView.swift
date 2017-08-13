@@ -36,7 +36,7 @@ final class DoodleView: GridView {
         super.init(frame: frame)
 
         let clearButton = UIButton()
-        clearButton.setTitle("🗑", for: .normal)
+        clearButton.setTitle("🔫", for: .normal)
 
         // View Hierarchy
 
