@@ -8,6 +8,8 @@
 
 // Code modified from https://techblog.badoo.com/blog/2015/06/15/lets-build-freehand-drawing-in-ios-part-1/
 
+import Anchorage
+
 final class DoodleView: GridView {
 
     // Private Properties
@@ -18,8 +20,20 @@ final class DoodleView: GridView {
     fileprivate var lastPoint: CGPoint = .zero
     fileprivate var buffer: UIImage?
 
+    fileprivate let imageView = UIImageView()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
+
+        // View Hierarchy
+
+        addSubview(imageView)
+
+        // Layout
+
+        imageView.edgeAnchors == edgeAnchors
+
+        // Setup
 
         let pan = UIPanGestureRecognizer(target: self, action: #selector(panned(sender:)))
         addGestureRecognizer(pan)
@@ -59,8 +73,8 @@ private extension DoodleView {
         // 2. Draw the current stroke in an accumulated bitmap
         buffer = drawLine(from: lastPoint, to: point, buffer: buffer)
 
-        // 3. Replace the layer contents with the updated image
-        layer.contents = buffer?.cgImage
+        // 3. Replace the imageView contents with the updated image
+        imageView.image = buffer
 
         // 4. Update last point for next stroke
         lastPoint = point
