@@ -10,7 +10,17 @@
 
 import Anchorage
 
+protocol DoodleViewDelegate: class {
+
+    func showClearPrompt(from button: UIButton, completion: @escaping (_ clear: Bool) -> Void)
+
+}
+
 final class DoodleView: GridView {
+
+    // Public Properties
+
+    weak var delegate: DoodleViewDelegate?
 
     // Private Properties
 
@@ -25,18 +35,26 @@ final class DoodleView: GridView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        let clearButton = UIButton()
+        clearButton.setTitle("🗑", for: .normal)
+
         // View Hierarchy
 
         addSubview(imageView)
+        addSubview(clearButton)
 
         // Layout
 
         imageView.edgeAnchors == edgeAnchors
+        clearButton.trailingAnchor == trailingAnchor - 10
+        clearButton.bottomAnchor == bottomAnchor - 10
 
         // Setup
 
         let pan = UIPanGestureRecognizer(target: self, action: #selector(panned(sender:)))
         addGestureRecognizer(pan)
+
+        clearButton.addTarget(self, action: #selector(clearTapped(sender:)), for: .touchUpInside)
     }
 
 }
@@ -57,6 +75,14 @@ private extension DoodleView {
         default:
             fatalError("That's not a thing: \(sender.state)")
         }
+    }
+
+    @objc func clearTapped(sender: UIButton) {
+        delegate?.showClearPrompt(from: sender, completion: { [weak self] (clear) in
+            if clear {
+                self?.clearDrawing()
+            }
+        })
     }
 
 }
@@ -85,10 +111,8 @@ private extension DoodleView {
     }
 
     func drawLine(from start: CGPoint, to end: CGPoint, buffer: UIImage?) -> UIImage? {
-        let size = bounds.size
-
         // Initialize a full size image. Opaque because we don't need to draw over anything. Will be more performant.
-        UIGraphicsBeginImageContextWithOptions(size, true, 0)
+        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0)
 
         guard let context = UIGraphicsGetCurrentContext() else {
             return nil
@@ -114,6 +138,22 @@ private extension DoodleView {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image
+    }
+
+    func clearDrawing() {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0)
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return
+        }
+
+        context.setFillColor(backgroundColor?.cgColor ?? UIColor.white.cgColor)
+        context.fill(bounds)
+
+        // Grab the updated buffer
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        buffer = image
+        imageView.image = image
     }
 
 }

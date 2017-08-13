@@ -42,6 +42,8 @@ final class MBTAViewController: RefreshableViewController {
     init(viewModel: MBTAViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+
+        doodle.delegate = self
     }
 
     override func loadView() {
@@ -76,7 +78,6 @@ final class MBTAViewController: RefreshableViewController {
 
         let routeViews = [
             subwayOrangeLine,
-//<CLP>            busCT2,
             bus86,
             bus90,
             bus91,
@@ -95,6 +96,29 @@ final class MBTAViewController: RefreshableViewController {
     }
 
 }
+
+// MARK: - DoodleViewDelegate
+
+extension MBTAViewController: DoodleViewDelegate {
+
+    func showClearPrompt(from button: UIButton, completion: @escaping (_ clear: Bool) -> Void) {
+        let alert = UIAlertController(title: "Zap Drawing?", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+            completion(false)
+        }))
+
+        alert.addAction(UIAlertAction(title: "ZAP!", style: .destructive, handler: { _ in
+            completion(true)
+        }))
+
+        show(alert, sender: self)
+        alert.popoverPresentationController?.sourceView = button
+        alert.popoverPresentationController?.sourceRect = button.bounds
+    }
+
+}
+
+// MARK: - Private
 
 private extension MBTAViewController {
 
