@@ -60,10 +60,10 @@ private extension DoodleView {
         buffer = drawLine(from: lastPoint, to: point, buffer: buffer)
 
         // 3. Replace the layer contents with the updated image
-        layer.contents = self.buffer?.cgImage
+        layer.contents = buffer?.cgImage
 
         // 4. Update last point for next stroke
-        self.lastPoint = point
+        lastPoint = point
     }
 
     func endAt(_ point: CGPoint) {
