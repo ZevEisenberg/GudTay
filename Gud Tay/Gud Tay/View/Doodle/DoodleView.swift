@@ -6,6 +6,8 @@
 //  Copyright © 2017 Zev Eisenberg. All rights reserved.
 //
 
+// Code modified from https://techblog.badoo.com/blog/2015/06/15/lets-build-freehand-drawing-in-ios-part-1/
+
 final class DoodleView: GridView {
 
     // Private Properties
