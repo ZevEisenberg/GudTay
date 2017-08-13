@@ -54,6 +54,9 @@ final class DoodleView: GridView {
         let pan = UIPanGestureRecognizer(target: self, action: #selector(panned(sender:)))
         addGestureRecognizer(pan)
 
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(sender:)))
+        addGestureRecognizer(tap)
+
         clearButton.addTarget(self, action: #selector(clearTapped(sender:)), for: .touchUpInside)
     }
 
@@ -72,6 +75,19 @@ private extension DoodleView {
             continueTo(point)
         case .ended, .cancelled:
             endAt(point)
+        default:
+            fatalError("That's not a thing: \(sender.state)")
+        }
+    }
+
+    @objc func tapped(sender: UITapGestureRecognizer) {
+        let point = sender.location(in: self)
+        switch sender.state {
+        case .recognized:
+            startAt(point)
+            let endPoint = point.applying(.init(translationX: 0.01, y: 0.01))
+            continueTo(endPoint)
+            endAt(endPoint)
         default:
             fatalError("That's not a thing: \(sender.state)")
         }
