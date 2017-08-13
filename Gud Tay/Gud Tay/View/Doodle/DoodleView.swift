@@ -51,11 +51,12 @@ final class DoodleView: GridView {
 
         // Setup
 
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(panned(sender:)))
+        let pan = ImmediatePanGestureRecognizer(target: self, action: #selector(panned(sender:)))
         addGestureRecognizer(pan)
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(sender:)))
         addGestureRecognizer(tap)
+        tap.delegate = self
 
         clearButton.addTarget(self, action: #selector(clearTapped(sender:)), for: .touchUpInside)
     }
@@ -99,6 +100,17 @@ private extension DoodleView {
                 self?.clearDrawing()
             }
         })
+    }
+
+}
+
+// MARK: - UIGestureRecognizerDelegate
+
+extension DoodleView: UIGestureRecognizerDelegate {
+
+    // Allow tap and pan to recognize at the same time
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 
 }

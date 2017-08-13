@@ -29,6 +29,7 @@
 		7AE9DA711D57A4A50087B401 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE9DA641D57A4A50087B401 /* Vehicle.swift */; };
 		7AE9DA751D57A54F0087B401 /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE9DA741D57A54F0087B401 /* WeatherForecast.swift */; };
 		9A218EE91F24F6E200FAFA4D /* DoodleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A218EE81F24F6E200FAFA4D /* DoodleView.swift */; };
+		CD04FA7B1F40C11300FAAB67 /* ImmediatePanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD04FA7A1F40C11300FAAB67 /* ImmediatePanGestureRecognizer.swift */; };
 		CD0911E91E57E36300381606 /* ScreenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0911E81E57E36300381606 /* ScreenService.swift */; };
 		CD1279C71D45B37B00DC7BB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */; };
 		CD1279CE1D45B37B00DC7BB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */; };
@@ -214,6 +215,7 @@
 		7AE9DA741D57A54F0087B401 /* WeatherForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherForecast.swift; sourceTree = "<group>"; };
 		9A218EE81F24F6E200FAFA4D /* DoodleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoodleView.swift; sourceTree = "<group>"; };
 		BD519AB98CE48C9434FA9B47 /* Pods-Gud Tay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud Tay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gud Tay/Pods-Gud Tay.debug.xcconfig"; sourceTree = "<group>"; };
+		CD04FA7A1F40C11300FAAB67 /* ImmediatePanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImmediatePanGestureRecognizer.swift; sourceTree = "<group>"; };
 		CD0911E81E57E36300381606 /* ScreenService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenService.swift; sourceTree = "<group>"; };
 		CD0911EA1E57E65600381606 /* ScreenServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenServiceTests.swift; sourceTree = "<group>"; };
 		CD1279C31D45B37B00DC7BB8 /* Gud Tay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gud Tay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -396,8 +398,8 @@
 			isa = PBXGroup;
 			children = (
 				9A218EE81F24F6E200FAFA4D /* DoodleView.swift */,
+				CD04FA7A1F40C11300FAAB67 /* ImmediatePanGestureRecognizer.swift */,
 			);
-			name = Doodle;
 			path = Doodle;
 			sourceTree = "<group>";
 		};
@@ -1086,6 +1088,7 @@
 				CDADC9931D655315005B60AD /* LogService.swift in Sources */,
 				CD6A63451D51758C009571DE /* SafeArray.swift in Sources */,
 				CDECBAC31D46DF7A007A82D5 /* MBTAViewModel.swift in Sources */,
+				CD04FA7B1F40C11300FAAB67 /* ImmediatePanGestureRecognizer.swift in Sources */,
 				CD1279C71D45B37B00DC7BB8 /* AppDelegate.swift in Sources */,
 				CD9021B01D6E96D800375FE7 /* MBTARouteView.swift in Sources */,
 				7AE9DA691D57A4A50087B401 /* Mode.swift in Sources */,
