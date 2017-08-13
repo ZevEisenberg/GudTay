@@ -11,7 +11,7 @@ final class DoodleView: GridView {
     // Private Properties
 
     private var lineColor = UIColor.black
-    private var lineWidth: CGFloat = 10.0
+    private var lineWidth: CGFloat = 5.0
 
     fileprivate var path = UIBezierPath()
 
