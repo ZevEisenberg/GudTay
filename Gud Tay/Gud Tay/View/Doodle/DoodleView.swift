@@ -37,6 +37,7 @@ final class DoodleView: GridView {
 
         let clearButton = UIButton()
         clearButton.setTitle("🔫", for: .normal)
+        clearButton.sizeAnchors == CGSize(width: 44, height: 44)
 
         // View Hierarchy
 
@@ -46,8 +47,8 @@ final class DoodleView: GridView {
         // Layout
 
         imageView.edgeAnchors == edgeAnchors
-        clearButton.trailingAnchor == trailingAnchor - 10
-        clearButton.bottomAnchor == bottomAnchor - 10
+        clearButton.trailingAnchor == trailingAnchor
+        clearButton.bottomAnchor == bottomAnchor
 
         // Setup
 
