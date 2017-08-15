@@ -71,6 +71,7 @@
 		CDA457201E66141400636BDF /* tests.json in Resources */ = {isa = PBXBuildFile; fileRef = CDA4571F1E66141400636BDF /* tests.json */; };
 		CDADC9931D655315005B60AD /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADC9921D655315005B60AD /* LogService.swift */; };
 		CDADC9951D65566C005B60AD /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADC9941D65566C005B60AD /* LogViewController.swift */; };
+		CDBC1AE51F43A4FA002B7FD5 /* ImageIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC1AE41F43A4FA002B7FD5 /* ImageIO.swift */; };
 		CDBF96881D56F39F008AC493 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF96871D56F39F008AC493 /* Colors.swift */; };
 		CDBF968A1D56F8CA008AC493 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF96891D56F8CA008AC493 /* Fonts.swift */; };
 		CDC00E381E63DB4700B3760D /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC00E371E63DB4700B3760D /* JSON.framework */; };
@@ -268,6 +269,7 @@
 		CDA4571F1E66141400636BDF /* tests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tests.json; sourceTree = "<group>"; };
 		CDADC9921D655315005B60AD /* LogService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 		CDADC9941D65566C005B60AD /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		CDBC1AE41F43A4FA002B7FD5 /* ImageIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageIO.swift; sourceTree = "<group>"; };
 		CDBF96871D56F39F008AC493 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CDBF96891D56F8CA008AC493 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		CDC00E371E63DB4700B3760D /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = "JSON/build/Debug-iphoneos/JSON.framework"; sourceTree = "<group>"; };
@@ -465,6 +467,7 @@
 		CD8357501D4C4DA5009E76A7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CDBC1AE41F43A4FA002B7FD5 /* ImageIO.swift */,
 				CDADC9921D655315005B60AD /* LogService.swift */,
 				CD8357511D4C4DA5009E76A7 /* MBTAService.swift */,
 				CD0911E81E57E36300381606 /* ScreenService.swift */,
@@ -1076,6 +1079,7 @@
 				CDED235C1D60B1000023CC4B /* WeatherBucket.swift in Sources */,
 				CDED23351D60AE5F0023CC4B /* WeatherCoordinate.swift in Sources */,
 				7AE9DA671D57A4A50087B401 /* Direction.swift in Sources */,
+				CDBC1AE51F43A4FA002B7FD5 /* ImageIO.swift in Sources */,
 				CD9021A21D6E96D200375FE7 /* WeatherCell.swift in Sources */,
 				CDED235F1D60B3980023CC4B /* CloseEnough.swift in Sources */,
 				CD0911E91E57E36300381606 /* ScreenService.swift in Sources */,

@@ -62,6 +62,17 @@ final class DoodleView: GridView {
         clearButton.addTarget(self, action: #selector(clearTapped(sender:)), for: .touchUpInside)
     }
 
+    override func didMoveToWindow() {
+        super.didMoveToWindow()
+        ImageIO.loadPersistedImage(named: Constants.imageName) { [weak self] image in
+            if let image = image {
+                DispatchQueue.main.async {
+                    self?.imageView.image = image
+                }
+            }
+        }
+    }
+
 }
 
 // MARK: - Actions
@@ -120,6 +131,12 @@ extension DoodleView: UIGestureRecognizerDelegate {
 
 private extension DoodleView {
 
+    enum Constants {
+
+        static let imageName = "doodle"
+
+    }
+
     func startAt(_ point: CGPoint) {
         lastPoint = point
     }
@@ -137,6 +154,11 @@ private extension DoodleView {
 
     func endAt(_ point: CGPoint) {
         lastPoint = .zero
+
+        if let image = buffer {
+            ImageIO.persistImage(image, named: Constants.imageName)
+        }
+        
     }
 
     func drawLine(from start: CGPoint, to end: CGPoint, buffer: UIImage?) -> UIImage? {
@@ -183,6 +205,9 @@ private extension DoodleView {
         UIGraphicsEndImageContext()
         buffer = image
         imageView.image = image
+        if let image = image {
+            ImageIO.persistImage(image, named: Constants.imageName)
+        }
     }
 
 }
