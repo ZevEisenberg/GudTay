@@ -72,8 +72,7 @@ final class RootViewController: UIViewController {
         super.viewDidLoad()
 
         mainStackView.horizontalAnchors == view.horizontalAnchors
-        mainStackView.topAnchor == topLayoutGuide.bottomAnchor
-        mainStackView.bottomAnchor == bottomLayoutGuide.topAnchor
+        mainStackView.verticalAnchors == view.safeAreaLayoutGuide.verticalAnchors
         weatherViewController.view.heightAnchor == view.heightAnchor * 0.2
     }
 
