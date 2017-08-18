@@ -1,8 +1,8 @@
 platform :ios, '10.1'
 
 def common_pods
-  pod 'Anchorage'
-  pod 'BonMot', '~>4.0'
+  pod 'Anchorage', :git => 'https://github.com/Raizlabs/Anchorage.git', :branch => 'feature/xcode-9'
+  pod 'BonMot', :git => 'https://github.com/Raizlabs/BonMot.git', :branch => 'feature/xcode-9'
   pod 'Swiftilities/Math'
 end
 
