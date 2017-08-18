@@ -31,7 +31,7 @@ class ScreenServiceTests: XCTestCase {
         for (index, (date, brightness)) in values.enumerated() {
             let line = UInt(valuesLine + index + 1)
             let testBrightness = ScreenService.brightness(for: testingDate(from: date))
-            XCTAssertEqualWithAccuracy(testBrightness, brightness, accuracy: 0.01, line: line)
+            XCTAssertEqual(testBrightness, brightness, accuracy: 0.01, line: line)
         }
 
     }

@@ -27,9 +27,9 @@ class GudTayTests: XCTestCase {
                     break
                 }
 
-                XCTAssertEqualWithAccuracy(current, 83.65, accuracy: 0.001)
-                XCTAssertEqualWithAccuracy(high, 84.73, accuracy: 0.001)
-                XCTAssertEqualWithAccuracy(low, 68.3, accuracy: 0.001)
+                XCTAssertEqual(current, 83.65, accuracy: 0.001)
+                XCTAssertEqual(high, 84.73, accuracy: 0.001)
+                XCTAssertEqual(low, 68.3, accuracy: 0.001)
 
                 let iconField = fields[1]
 
@@ -68,8 +68,8 @@ class GudTayTests: XCTestCase {
 
                 XCTAssertEqual(time0, Date(timeIntervalSince1970: 1470585600))
                 XCTAssertEqual(icon0, .clearDay)
-                XCTAssertEqualWithAccuracy(temp0, 83.46, accuracy: 0.001)
-                XCTAssertEqualWithAccuracy(precipProbability0!, 0.0, accuracy: 0.001)
+                XCTAssertEqual(temp0, 83.46, accuracy: 0.001)
+                XCTAssertEqual(precipProbability0!, 0.0, accuracy: 0.001)
 
                 let hour2 = hourlyFields[2]
 
@@ -80,8 +80,8 @@ class GudTayTests: XCTestCase {
 
                 XCTAssertEqual(time2, Date(timeIntervalSince1970: 1470592800))
                 XCTAssertEqual(icon2, .rain)
-                XCTAssertEqualWithAccuracy(temp2, -12.34, accuracy: 0.001)
-                XCTAssertEqualWithAccuracy(precipProbability2!, 0.9, accuracy: 0.001)
+                XCTAssertEqual(temp2, -12.34, accuracy: 0.001)
+                XCTAssertEqual(precipProbability2!, 0.9, accuracy: 0.001)
 
             case .failure(let error):
                 XCTFail("got unexpected error: \(error)")
@@ -119,23 +119,23 @@ class GudTayTests: XCTestCase {
 
                 let first = ratios[0]
                 XCTAssertEqual(first.kind, .day)
-                XCTAssertEqualWithAccuracy(first.start, -0.271884057971015, accuracy: 0.001)
-                XCTAssertEqualWithAccuracy(first.end, 0.346243961352657, accuracy: 0.001)
+                XCTAssertEqual(first.start, -0.271884057971015, accuracy: 0.001)
+                XCTAssertEqual(first.end, 0.346243961352657, accuracy: 0.001)
 
                 let second = ratios[1]
                 XCTAssertEqual(second.kind, .night)
-                XCTAssertEqualWithAccuracy(second.start, 0.346243961352657, accuracy: 0.001)
-                XCTAssertEqualWithAccuracy(second.end, 0.772355072463768, accuracy: 0.001)
+                XCTAssertEqual(second.start, 0.346243961352657, accuracy: 0.001)
+                XCTAssertEqual(second.end, 0.772355072463768, accuracy: 0.001)
 
                 let third = ratios[2]
                 XCTAssertEqual(third.kind, .day)
-                XCTAssertEqualWithAccuracy(third.start, 0.772355072463768, accuracy: 0.001)
-                XCTAssertEqualWithAccuracy(third.end, 1.38878019323671, accuracy: 0.001)
+                XCTAssertEqual(third.start, 0.772355072463768, accuracy: 0.001)
+                XCTAssertEqual(third.end, 1.38878019323671, accuracy: 0.001)
 
                 let fourth = ratios[3]
                 XCTAssertEqual(fourth.kind, .night)
-                XCTAssertEqualWithAccuracy(fourth.start, 1.38878019323671, accuracy: 0.001)
-                XCTAssertEqualWithAccuracy(fourth.end, 1.81660628019324, accuracy: 0.001)
+                XCTAssertEqual(fourth.start, 1.38878019323671, accuracy: 0.001)
+                XCTAssertEqual(fourth.end, 1.81660628019324, accuracy: 0.001)
 
             case .failure(let error):
                 XCTFail("got unexpected error: \(error)")

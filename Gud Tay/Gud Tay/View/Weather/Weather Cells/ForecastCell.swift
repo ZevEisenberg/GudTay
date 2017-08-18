@@ -46,13 +46,13 @@ final class ForecastCell: WeatherCell {
 
     let timeLabel: UILabel = {
         let label = UILabel(axId: "timeLabel")
-        label.setContentCompressionResistancePriority(UILayoutPriorityRequired, for: .vertical)
+        label.setContentCompressionResistancePriority(.required, for: .vertical)
         return label
     }()
 
     let precipProbabilityLabel: UILabel = {
         let label = UILabel(axId: "precipProbabilityLabel")
-        label.setContentCompressionResistancePriority(UILayoutPriorityRequired, for: .vertical)
+        label.setContentCompressionResistancePriority(.required, for: .vertical)
         return label
     }()
 
@@ -64,7 +64,7 @@ final class ForecastCell: WeatherCell {
 
     let tempLabel: UILabel = {
         let label = UILabel(axId: "tempLabel")
-        label.setContentCompressionResistancePriority(UILayoutPriorityRequired, for: .vertical)
+        label.setContentCompressionResistancePriority(.required, for: .vertical)
         return label
     }()
 
@@ -98,7 +98,7 @@ final class ForecastCell: WeatherCell {
 
         // Don't use Anchorage so we avoid affecting translatesAutoresizingMaskIntoConstraints
         let constraint = contentView.widthAnchor.constraint(equalToConstant: ForecastCell.preferredWidth)
-        constraint.priority = UILayoutPriorityRequired - 1
+        constraint.priority = UILayoutPriority(UILayoutPriority.required.rawValue - 1)
         constraint.isActive = true
     }
 

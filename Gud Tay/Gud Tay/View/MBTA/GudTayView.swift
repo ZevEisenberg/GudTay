@@ -24,8 +24,8 @@ final class GudTayView: GridView {
         addSubview(imageView)
         imageView.centerAnchors == centerAnchors
         imageView.edgeAnchors >= edgeAnchors
-        imageView.setContentHuggingPriority(UILayoutPriorityRequired, for: .horizontal)
-        imageView.setContentHuggingPriority(UILayoutPriorityRequired, for: .vertical)
+        imageView.setContentHuggingPriority(.required, for: .horizontal)
+        imageView.setContentHuggingPriority(.required, for: .vertical)
         let aspect = image.size.width / image.size.height
         imageView.widthAnchor == imageView.heightAnchor * aspect
 

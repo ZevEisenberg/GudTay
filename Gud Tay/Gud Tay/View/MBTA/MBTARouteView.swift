@@ -57,7 +57,7 @@ private extension MBTARouteView {
             super.init(frame: .zero)
             minutesLabel.accessibilityIdentifier = "minutesLabel - \(subtitle)"
             minutesLabel.bonMotStyle = minutesStyle.byAdding(.color(color))
-            minutesLabel.setContentHuggingPriority(UILayoutPriorityRequired, for: .vertical)
+            minutesLabel.setContentHuggingPriority(.required, for: .vertical)
 
             let subtitleLabel = UILabel(axId: "subtitleLabel - \(subtitle)")
             subtitleLabel.attributedText = subtitle.styled(with: Fonts.MBTA.minutesSubtitleStyle.byAdding(.color(color)))

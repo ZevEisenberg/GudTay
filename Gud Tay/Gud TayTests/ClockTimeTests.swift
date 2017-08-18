@@ -56,8 +56,8 @@ class ClockTimeTests: XCTestCase {
         for (index, test) in tests.enumerated() {
             let testLine = testsLine + UInt(index) + 1
             let rotations = test.time.handRotations
-            XCTAssertEqualWithAccuracy(rotations.hour, test.rotations.hourRotation, accuracy: 0.0001, line: testLine)
-            XCTAssertEqualWithAccuracy(rotations.minute, test.rotations.minuteRotation, accuracy: 0.0001, line: testLine)
+            XCTAssertEqual(rotations.hour, test.rotations.hourRotation, accuracy: 0.0001, line: testLine)
+            XCTAssertEqual(rotations.minute, test.rotations.minuteRotation, accuracy: 0.0001, line: testLine)
         }
     }
 

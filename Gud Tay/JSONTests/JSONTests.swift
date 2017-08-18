@@ -76,7 +76,7 @@ class JSONTests: XCTestCase {
         let id: String = try subDict.value(key: "vehicle_id")
         XCTAssertEqual(id, "544761EF")
         let lat: Double = try subDict.value(key: "vehicle_lat")
-        XCTAssertEqualWithAccuracy(lat, 42.43773, accuracy: 0.0001)
+        XCTAssertEqual(lat, 42.43773, accuracy: 0.0001)
     }
 
 }

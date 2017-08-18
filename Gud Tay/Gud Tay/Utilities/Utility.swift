@@ -14,7 +14,7 @@
     // There is weirdness with collection types (array, dictionary, etc.),
     // where they need to be first cast as AnyObject before they can be downcast
     guard let typedValue = value as? T else {
-        preconditionFailure("Expected object of type \(T.self), got \(type(of: value)).")
+        preconditionFailure("Expected object of type \(T.self), got \(Swift.type(of: value)).")
     }
 
     return typedValue

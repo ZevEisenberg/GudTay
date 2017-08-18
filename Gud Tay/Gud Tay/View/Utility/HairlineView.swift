@@ -61,7 +61,7 @@ final class HairlineView: UIView {
     }
 
     override func contentHuggingPriority(for axis: UILayoutConstraintAxis) -> UILayoutPriority {
-        return (self.axis == axis ? UILayoutPriorityRequired : UILayoutPriorityDefaultLow)
+        return (self.axis == axis ? .required : .defaultLow)
     }
 
     override func contentCompressionResistancePriority(for axis: UILayoutConstraintAxis) -> UILayoutPriority {

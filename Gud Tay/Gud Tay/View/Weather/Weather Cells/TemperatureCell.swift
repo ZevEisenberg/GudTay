@@ -26,7 +26,7 @@ final class TemperatureCell: WeatherCell {
 
     let currentLabel: UILabel = {
         let label = UILabel(axId: "currentLabel")
-        label.setContentHuggingPriority(UILayoutPriorityDefaultLow - 1, for: .vertical)
+        label.setContentHuggingPriority(UILayoutPriority(UILayoutPriority.defaultLow.rawValue - 1), for: .vertical)
         return label
     }()
     let highLabel = UILabel(axId: "highLabel")
