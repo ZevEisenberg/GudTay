@@ -27,7 +27,7 @@ final class DoodleView: GridView {
     fileprivate var lineColor = UIColor.black
     fileprivate var lineWidth: CGFloat = 5.0
 
-    fileprivate var lastPoint: CGPoint = .zero
+    fileprivate var lastPoints: [CGPoint] = Array(repeating: .zero, count: 4)
     fileprivate var buffer: UIImage?
 
     fileprivate let imageView = UIImageView()
@@ -54,10 +54,6 @@ final class DoodleView: GridView {
 
         let pan = ImmediatePanGestureRecognizer(target: self, action: #selector(panned(sender:)))
         addGestureRecognizer(pan)
-
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(sender:)))
-        addGestureRecognizer(tap)
-        tap.delegate = self
 
         clearButton.addTarget(self, action: #selector(clearTapped(sender:)), for: .touchUpInside)
     }
@@ -88,19 +84,6 @@ private extension DoodleView {
             continueTo(point)
         case .ended, .cancelled:
             endAt(point)
-        default:
-            fatalError("That's not a thing: \(sender.state)")
-        }
-    }
-
-    @objc func tapped(sender: UITapGestureRecognizer) {
-        let point = sender.location(in: self)
-        switch sender.state {
-        case .recognized:
-            startAt(point)
-            let endPoint = point.applying(.init(translationX: 0.01, y: 0.01))
-            continueTo(endPoint)
-            endAt(endPoint)
         default:
             fatalError("That's not a thing: \(sender.state)")
         }
@@ -138,22 +121,28 @@ private extension DoodleView {
     }
 
     func startAt(_ point: CGPoint) {
-        lastPoint = point
+        lastPoints = Array(repeating: point, count: 4)
     }
 
     func continueTo(_ point: CGPoint) {
-        // 2. Draw the current stroke in an accumulated bitmap
-        buffer = drawLine(from: lastPoint, to: point, buffer: buffer)
 
-        // 3. Replace the imageView contents with the updated image
+        // Update last point for next stroke
+        lastPoints.removeFirst()
+        lastPoints.append(point)
+
+        // Draw the current stroke in an accumulated bitmap
+        buffer = drawLine(fourPoints: lastPoints, buffer: buffer)
+
+        // Replace the imageView contents with the updated image
         imageView.image = buffer
-
-        // 4. Update last point for next stroke
-        lastPoint = point
     }
 
     func endAt(_ point: CGPoint) {
-        lastPoint = .zero
+        if point == lastPoints[0] {
+            buffer = drawDot(at: point)
+            imageView.image = buffer
+        }
+        lastPoints = Array(repeating: .zero, count: 4)
 
         if let image = buffer {
             ImageIO.persistImage(image, named: Constants.imageName)
@@ -161,7 +150,37 @@ private extension DoodleView {
         
     }
 
-    func drawLine(from start: CGPoint, to end: CGPoint, buffer: UIImage?) -> UIImage? {
+    func drawDot(at point: CGPoint) -> UIImage? {
+        // Initialize a full size image. Opaque because we don't need to draw over anything. Will be more performant.
+        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0)
+
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
+
+        context.setFillColor(backgroundColor?.cgColor ?? UIColor.white.cgColor)
+        context.fill(bounds)
+
+        // Draw previous buffer first
+        buffer?.draw(at: .zero)
+
+        // Draw the line
+        lineColor.setFill()
+
+        let rect = CGRect(
+            x: point.x - lineWidth / 2,
+            y: point.y - lineWidth / 2,
+            width: lineWidth,
+            height: lineWidth)
+        context.fillEllipse(in: rect)
+
+        // Grab the updated buffer
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+
+    func drawLine(fourPoints: [CGPoint], buffer: UIImage?) -> UIImage? {
         // Initialize a full size image. Opaque because we don't need to draw over anything. Will be more performant.
         UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0)
 
@@ -181,8 +200,8 @@ private extension DoodleView {
         context.setLineCap(.round)
         context.setLineJoin(.round)
 
-        context.move(to: start)
-        context.addLine(to: end)
+        let path = CGPath.smoothedPathSegment(points: fourPoints)
+        context.addPath(path)
         context.strokePath()
 
         // Grab the updated buffer

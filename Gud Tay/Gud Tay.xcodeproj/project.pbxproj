@@ -34,6 +34,7 @@
 		CD1279C71D45B37B00DC7BB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */; };
 		CD1279CE1D45B37B00DC7BB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */; };
 		CD1279D11D45B37B00DC7BB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */; };
+		CD15071C1F466A6400CBBAB8 /* PathExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD15071B1F466A6400CBBAB8 /* PathExtensions.swift */; };
 		CD1A107F1D7A74470072785B /* Sample Weather API Response without rain.json in Resources */ = {isa = PBXBuildFile; fileRef = CD1A107D1D7A743B0072785B /* Sample Weather API Response without rain.json */; };
 		CD1A10811D7A7D3F0072785B /* ProcessInfo+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1A10801D7A7D3F0072785B /* ProcessInfo+Extensions.swift */; };
 		CD22CA941DAAEC6B000C0205 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD22CA931DAAEC6B000C0205 /* Date+Extensions.swift */; };
@@ -227,6 +228,7 @@
 		CD1279D21D45B37B00DC7BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Sample MBTA API Response.json"; sourceTree = "<group>"; };
 		CD12DE3B1D4FE82E00956B74 /* MBTATests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTATests.swift; sourceTree = "<group>"; };
+		CD15071B1F466A6400CBBAB8 /* PathExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathExtensions.swift; sourceTree = "<group>"; };
 		CD1A107D1D7A743B0072785B /* Sample Weather API Response without rain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Sample Weather API Response without rain.json"; sourceTree = "<group>"; };
 		CD1A10801D7A7D3F0072785B /* ProcessInfo+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+Extensions.swift"; sourceTree = "<group>"; };
 		CD22CA931DAAEC6B000C0205 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 			children = (
 				9A218EE81F24F6E200FAFA4D /* DoodleView.swift */,
 				CD04FA7A1F40C11300FAAB67 /* ImmediatePanGestureRecognizer.swift */,
+				CD15071B1F466A6400CBBAB8 /* PathExtensions.swift */,
 			);
 			path = Doodle;
 			sourceTree = "<group>";
@@ -1105,6 +1108,7 @@
 				7AAB4E4A1E75D36400C05BA4 /* ClockView.swift in Sources */,
 				7AE9DA711D57A4A50087B401 /* Vehicle.swift in Sources */,
 				CD22CA941DAAEC6B000C0205 /* Date+Extensions.swift in Sources */,
+				CD15071C1F466A6400CBBAB8 /* PathExtensions.swift in Sources */,
 				CD2575C21D6669020017DEE6 /* UICollectionReusableView+Extensions.swift in Sources */,
 				CD9021A31D6E96D200375FE7 /* WeatherViewController.swift in Sources */,
 				CDBF968A1D56F8CA008AC493 /* Fonts.swift in Sources */,
