@@ -64,6 +64,7 @@ final class DoodleView: GridView {
             if let image = image {
                 DispatchQueue.main.async {
                     self?.imageView.image = image
+                    self?.buffer = image
                 }
             }
         }
@@ -162,7 +163,7 @@ private extension DoodleView {
         context.fill(bounds)
 
         // Draw previous buffer first
-        buffer?.draw(at: .zero)
+        buffer?.draw(in: bounds)
 
         // Draw the line
         lineColor.setFill()
@@ -192,7 +193,7 @@ private extension DoodleView {
         context.fill(bounds)
 
         // Draw previous buffer first
-        buffer?.draw(at: .zero)
+        buffer?.draw(in: bounds)
 
         // Draw the line
         lineColor.setStroke()
