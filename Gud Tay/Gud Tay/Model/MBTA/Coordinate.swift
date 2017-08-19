@@ -6,8 +6,6 @@
 //
 //
 
-import JSON
-
 struct Coordinate {
 
     let lat: Double
@@ -16,31 +14,31 @@ struct Coordinate {
 
 }
 
-extension Coordinate: JSON.Representable {
+extension Coordinate: Decodable {
 
-    init(json: JSON.Object) throws {
-        guard let latString = json["vehicle_lat"] as? String else {
-            throw JSONError.malformedOrMissingKey(key: "vehicle_lat", parent: json)
-        }
+    private enum CodingKeys: String, CodingKey {
+        case lat = "vehicle_lat"
+        case lon = "vehicle_lon"
+        case bearing = "vehicle_bearing"
+    }
 
-        guard let lonString = json["vehicle_lon"] as? String else {
-            throw JSONError.malformedOrMissingKey(key: "vehicle_lon", parent: json)
-        }
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
 
-        guard let bearingString = json["vehicle_bearing"] as? String else {
-            throw JSONError.malformedOrMissingKey(key: "vehicle_bearing", parent: json)
-        }
+        let latString = try values.decode(String.self, forKey: .lat)
+        let lonString = try values.decode(String.self, forKey: .lon)
+        let bearingString = try values.decode(String.self, forKey: .bearing)
 
         guard let lat = Double(latString) else {
-            throw JSONError.malformedValue(key: "vehicle_lat", value: latString, parent: json)
+            throw DecodingError.dataCorruptedError(forKey: .lat, in: values, debugDescription: "Expected string convertible to \(Double.self), but got \'(latString)'")
         }
 
         guard let lon = Double(lonString) else {
-            throw JSONError.malformedValue(key: "vehicle_lon", value: lonString, parent: json)
+            throw DecodingError.dataCorruptedError(forKey: .lon, in: values, debugDescription: "Expected string convertible to \(Double.self), but got \'(lonString)'")
         }
 
         guard let bearing = Int(bearingString) else {
-            throw JSONError.malformedValue(key: "vehicle_bearing", value: bearingString, parent: json)
+            throw DecodingError.dataCorruptedError(forKey: .bearing, in: values, debugDescription: "Expected string convertible to \(Int.self), but got \'(bearingString)'")
         }
 
         self.lat = lat

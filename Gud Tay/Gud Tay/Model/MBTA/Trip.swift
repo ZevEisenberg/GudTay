@@ -7,7 +7,6 @@
 //
 
 import Foundation.NSDate
-import JSON
 
 struct Trip {
 
@@ -22,29 +21,40 @@ struct Trip {
 
 }
 
-extension Trip: JSON.Representable {
+extension Trip: Decodable {
 
-    init(json: JSON.Object) throws {
-        scheduledArrival = json.optionalDate(key: "sch_arr_dt")
-        scheduledDeparture = json.optionalDate(key: "sch_dep_dt")
-        headsign = json.optionalValue(key: "trip_headsign")
-
-        identifier = try json.value(key: "trip_id")
-        name = try json.value(key: "trip_name")
-        predictedDeparture = try json.date(key: "pre_dt")
-        predictedSecondsAway = try json.timeInterval(key: "pre_away")
-        if predictedSecondsAway < 0 {
-            LogService.add(message: "Got a negative time interval from json: \(json)")
-        }
-
-        if let vehicleJson: JSON.Object = json.optionalValue(key: "vehicle") {
-            vehicle = try Vehicle(json: vehicleJson)
-        }
-        else {
-            vehicle = nil
-        }
+    private enum CodingKeys: String, CodingKey {
+        case scheduledArrival = "sch_arr_dt"
+        case scheduledDeparture = "sch_dep_dt"
+        case headsign = "trip_headsign"
+        case tripFooBarId = "trip_id"
+        case name = "trip_name"
+        case predictedDeparture = "pre_dt"
+        case predictedSecondsAway = "pre_away"
+        case vehicle = "vehicle"
     }
 
-}
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
 
-extension Trip: JSON.Listable { }
+        identifier = try values.decode(String.self, forKey: .tripFooBarId)
+        name = try values.decode(String.self, forKey: .name)
+        headsign = try values.decodeIfPresent(String.self, forKey: .headsign)
+        scheduledArrival = values.decodeDateCleverlyIfPresent(forKey: .scheduledArrival)
+        scheduledDeparture = values.decodeDateCleverlyIfPresent(forKey: .scheduledDeparture)
+        predictedDeparture = try values.decodeDateCleverly(forKey: .predictedDeparture)
+        vehicle = try values.decodeIfPresent(Vehicle.self, forKey: .vehicle)
+
+        if let predictedSecondsString = (try? values.decodeIfPresent(String.self, forKey: .predictedSecondsAway)).flatMap({ $0 }),
+            let predictedSecondsInterval = TimeInterval(predictedSecondsString) {
+            predictedSecondsAway = predictedSecondsInterval
+        }
+        else {
+            predictedSecondsAway = try values.decode(TimeInterval.self, forKey: .predictedSecondsAway)
+        }
+
+        if predictedSecondsAway < 0 {
+            LogService.add(message: "Got a negative time interval from JSON: \(decoder.userInfo)")
+        }
+    }
+}

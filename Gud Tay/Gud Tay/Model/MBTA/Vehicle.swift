@@ -6,8 +6,6 @@
 //
 //
 
-import JSON
-
 import Foundation.NSDate
 
 struct Vehicle {
@@ -18,12 +16,19 @@ struct Vehicle {
 
 }
 
-extension Vehicle: JSON.Representable {
+extension Vehicle: Decodable {
 
-    init(json: JSON.Object) throws {
-        identifier = try json.value(key: "vehicle_id")
-        timestamp = try json.date(key: "vehicle_timestamp")
-        location = try Coordinate(json: json)
+    private enum CodingKeys: String, CodingKey {
+        case identifier = "vehicle_id"
+        case timestamp = "vehicle_timestamp"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+
+        identifier = try values.decode(String.self, forKey: .identifier)
+        timestamp = try values.decodeDateCleverly(forKey: .timestamp)
+        location = try Coordinate(from: decoder)
     }
 
 }

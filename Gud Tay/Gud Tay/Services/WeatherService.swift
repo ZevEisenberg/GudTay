@@ -6,14 +6,12 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
-import JSON
-
 import Foundation
 
 protocol WeatherServiceType {
 
     init()
-    func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result<JSON.Object?>) -> Void)
+    func predictions<Value: Decodable>(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result<Value>) -> Void)
 
 }
 
@@ -35,7 +33,7 @@ enum WeatherServiceKind: String {
 
 struct WeatherService: WeatherServiceType {
 
-    func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result<JSON.Object?>) -> Void) {
+    func predictions<Value: Decodable>(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result<Value>) -> Void) {
         let url = WeatherService.baseUrl().appendingPathComponent(Endpoints.forecast).appendingPathComponent(Constants.apiKey).appendingPathComponent("\(latitude),\(longitude)")
         APIClient.getJson(baseUrl: url, path: "", completion: completion)
     }
@@ -61,7 +59,7 @@ private extension WeatherService {
         return URL(string: Constants.host)!
     }
 
-    static func getRequest(path: String, params: [String: Any]? = nil, completion: @escaping (APIClient.Result<JSON.Object?>) -> Void) {
+    static func getRequest<Value: Decodable>(path: String, params: [String: Any]? = nil, completion: @escaping (APIClient.Result<Value>) -> Void) {
         var params = params ?? [:]
         params["api_key"] = Constants.apiKey
         APIClient.getJson(baseUrl: baseUrl(), path: path, params: params, completion: completion)
@@ -77,7 +75,7 @@ class MockWeatherService<Stubs: WeatherStubs>: WeatherServiceType {
 
     required init() { }
 
-    func predictions(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result<JSON.Object?>) -> Void) {
+    func predictions<Value: Decodable>(latitude: Double, longitude: Double, completion: @escaping (APIClient.Result<Value>) -> Void) {
         let filename = provider.next()!
         let ext = "json"
         guard let url = Bundle(for: DummyClass.self).url(forResource: filename, withExtension: ext) else {
@@ -85,28 +83,34 @@ class MockWeatherService<Stubs: WeatherStubs>: WeatherServiceType {
             return
         }
 
-        var jsonData: Data! = nil
+        var data: Data! = nil
         do {
-            jsonData = try Data(contentsOf: url)
+            data = try Data(contentsOf: url)
         }
         catch let e {
             assertionFailure("Error getting contents of \(filename)\(ext): \(e)")
         }
 
-        var deserialized: Any! = nil
         do {
-            deserialized = try JSONSerialization.jsonObject(with: jsonData, options: [])
+            let forecast = try JSONDecoder().decode(Value.self, from: data)
+            completion(.success(forecast))
         }
-        catch let e {
-            assertionFailure("Error deserializing JSON data: \(e)")
+        catch let error as DecodingError {
+            switch error {
+            case let .dataCorrupted(context):
+                assertionFailure("data corrupted: \(context)")
+            case let .keyNotFound(key, context):
+                assertionFailure("key \(key) not found: \(context)")
+            case let .typeMismatch(theType, context):
+                assertionFailure("type mismatch: \(theType): \(context)")
+            case let .valueNotFound(type, context):
+                assertionFailure("value not found: \(type): \(context)")
+            }
+        }
+        catch {
+            assertionFailure("Could not decode JSON: \(error)")
         }
 
-        guard let jsonObject = deserialized as? JSON.Object else {
-            assertionFailure("Could not convert deserialized JSON to a JSON.Object: \(deserialized)")
-            return
-        }
-
-        completion(.success(jsonObject))
     }
 
 }

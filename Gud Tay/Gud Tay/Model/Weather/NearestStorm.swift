@@ -6,8 +6,6 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
-import JSON
-
 enum NearestStorm {
 
     case none
@@ -24,20 +22,23 @@ enum NearestStorm {
 
 }
 
-extension NearestStorm: JSON.Representable {
+extension NearestStorm: Decodable {
 
-    init(json: JSON.Object) throws {
-        let distance: Double = json.optionalValue(key: "nearestStormDistance") ?? 0
+    private enum CodingKeys: String, CodingKey {
+        case distance = "nearestStormDistance"
+        case bearing = "nearestStormBearing"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        let distance = try values.decodeIfPresent(Double.self, forKey: .distance) ?? 0
         if distance.isPracticallyZero() {
             self = .none
         }
         else {
-            let bearing: Double = try json.value(key: "nearestStormBearing")
+            let bearing = try values.decode(Double.self, forKey: .bearing)
             self = .some(distance: distance, bearing: bearing)
         }
-
     }
 
 }
-
-extension NearestStorm: JSON.Listable { }

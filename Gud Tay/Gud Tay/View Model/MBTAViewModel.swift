@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import JSON
 
 final class MBTAViewModel {
 
@@ -30,9 +29,8 @@ final class MBTAViewModel {
 
     enum RefreshError: Error {
 
-        case jsonWasNil
         case networkError(Error)
-        case jsonError(JSONError)
+        case decodingError(DecodingError)
         case genericError(Error)
 
     }
@@ -44,24 +42,12 @@ final class MBTAViewModel {
     }
 
     func refresh(completion: @escaping (Result) -> Void) {
-        self.serviceType.predictionsByStop(stopId: "place-sull") { apiResult in
+        self.serviceType.predictionsByStop(stopId: "place-sull") { (apiResult: APIClient.Result<Stop>) in
             switch apiResult {
-            case .success(let jsonObject):
-                guard let jsons = jsonObject else {
-                    completion(.failure(.jsonWasNil))
-                    return
-                }
-
+            case .success(let sullivan):
                 do {
-                    let sullivan = try Stop(json: jsons)
                     let upcomingTrips = MBTAViewModel.upcomingTrips(from: sullivan)
                     completion(.success(upcomingTrips))
-                }
-                catch let jsonError as JSONError {
-                    completion(.failure(.jsonError(jsonError)))
-                }
-                catch let genericError {
-                    completion(.failure(.genericError(genericError)))
                 }
             case .failure(let networkError):
                 completion(.failure(.networkError(networkError)))

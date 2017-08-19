@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import JSON
 
 // APIClient design inspired by https://thatthinginswift.com/write-your-own-api-clients-swift/
 
@@ -20,7 +19,7 @@ enum APIClient {
 
     }
 
-    static func getJson(baseUrl: URL, path: String, params: [String: Any]? = nil, completion: @escaping (Result<JSON.Object?>) -> Void) {
+    static func getJson<Value: Decodable>(baseUrl: URL, path: String, params: [String: Any]? = nil, completion: @escaping (Result<Value>) -> Void) {
         let params = params ?? [:]
         let request = clientURLRequest(baseUrl: baseUrl, path: path, params: params)
         jsonDataTask(request, method: "GET", completion: completion)
@@ -30,7 +29,7 @@ enum APIClient {
 
 private extension APIClient {
 
-    static func jsonDataTask(_ request: NSMutableURLRequest, method: String, completion: @escaping (Result<JSON.Object?>) -> Void) {
+    static func jsonDataTask<Value: Decodable>(_ request: NSMutableURLRequest, method: String, completion: @escaping (Result<Value>) -> Void) {
         request.httpMethod = method
 
         let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -44,10 +43,17 @@ private extension APIClient {
                 else {
                     CrashReporter.set(metadataObject: data, forKey: "originalResponseThatCouldNotBeConvertedToAString")
                 }
-                let json = try? JSONSerialization.jsonObject(with: data, options: [])
                 if let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode {
-                    DispatchQueue.main.async {
-                        completion(.success(json as? JSON.Object))
+                    do {
+                        let decoded = try JSONDecoder().decode(Value.self, from: data)
+                        DispatchQueue.main.async {
+                            completion(.success(decoded))
+                        }
+                    }
+                    catch {
+                        DispatchQueue.main.async {
+                            completion(.failure(error))
+                        }
                     }
                 }
                 else {

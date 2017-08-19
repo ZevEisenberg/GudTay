@@ -7,7 +7,6 @@
 //
 
 import Foundation.NSDate
-import JSON
 
 struct Almanac {
 
@@ -60,60 +59,82 @@ struct Almanac {
     /// the first sunset after the solar noon closest to local noon on the given day. (Note: near the poles, this may occur on a different day entirely from `sunriseTime`!)
     let sunsetTime: Date
 
-}
+    fileprivate enum CodingKeys: String, CodingKey {
+        case temperatureMax = "temperatureMax"
+        case temperatureMin = "temperatureMin"
+        case temperatureMaxTime = "temperatureMaxTime"
+        case temperatureMinTime = "temperatureMinTime"
 
-extension Almanac.TemperatureRange {
+        case apparentTemperatureMax = "apparentTemperatureMax"
+        case apparentTemperatureMin = "apparentTemperatureMin"
+        case apparentTemperatureMaxTime = "apparentTemperatureMaxTime"
+        case apparentTemperatureMinTime = "apparentTemperatureMinTime"
 
-    init(json: JSON.Object, maxKey: String, minKey: String, maxTimeKey: String, minTimeKey: String) throws {
-        max = try json.value(key: maxKey)
-        min = try json.value(key: minKey)
-        maxTime = try json.date(key: maxTimeKey)
-        minTime = try json.date(key: minTimeKey)
+        case moonPhase = "moonPhase"
+        case precipIntensityMax = "precipIntensityMax"
+        case precipIntensityMaxTime = "precipIntensityMaxTime"
+        case precipType = "precipType"
+        case sunriseTime = "sunriseTime"
+        case sunsetTime = "sunsetTime"
     }
 
 }
 
-extension Almanac: JSON.Representable {
+private extension Almanac.TemperatureRange {
 
-    init(json: JSON.Object) throws {
+    typealias Keys = Almanac.CodingKeys
+
+    init(values: KeyedDecodingContainer<Keys>, maxKey: Keys, minKey: Keys, maxTimeKey: Keys, minTimeKey: Keys) throws {
+        max = try values.decode(Double.self, forKey: maxKey)
+        min = try values.decode(Double.self, forKey: minKey)
+        maxTime = try values.decodeDateCleverly(forKey: maxTimeKey)
+        minTime = try values.decodeDateCleverly(forKey: minTimeKey)
+    }
+
+}
+
+extension Almanac: Decodable {
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+
         temperatureRange = try TemperatureRange(
-            json: json,
-            maxKey: "temperatureMax",
-            minKey: "temperatureMin",
-            maxTimeKey: "temperatureMaxTime",
-            minTimeKey: "temperatureMinTime"
+            values: values,
+            maxKey: .temperatureMax,
+            minKey: .temperatureMin,
+            maxTimeKey: .temperatureMaxTime,
+            minTimeKey: .temperatureMinTime
         )
 
         apparentTemperatureRange = try TemperatureRange(
-            json: json,
-            maxKey: "apparentTemperatureMax",
-            minKey: "apparentTemperatureMin",
-            maxTimeKey: "apparentTemperatureMaxTime",
-            minTimeKey: "apparentTemperatureMinTime"
+            values: values,
+            maxKey: .apparentTemperatureMax,
+            minKey: .apparentTemperatureMin,
+            maxTimeKey: .apparentTemperatureMaxTime,
+            minTimeKey: .apparentTemperatureMinTime
         )
 
-        moonPhase = try json.value(key: "moonPhase")
+        moonPhase = try values.decode(Double.self, forKey: .moonPhase)
 
-        if let precipIntensityMaxValue: Double = try json.value(key: "precipIntensityMax"), !precipIntensityMaxValue.isPracticallyZero() {
-            let precipIntensityMaxTime = try json.date(key: "precipIntensityMaxTime")
+        if let precipIntensityMaxValue = try values.decodeIfPresent(Double.self, forKey: .precipIntensityMax),
+            !precipIntensityMaxValue.isPracticallyZero() {
+            let precipIntensityMaxTime = try values.decodeDateCleverly(forKey: .precipIntensityMaxTime)
             precipIntensityMax = .some(value: precipIntensityMaxValue, date: precipIntensityMaxTime)
         }
         else {
             precipIntensityMax = .none
         }
 
-        precipitation = try Precipitation(json: json)
+        precipitation = try Precipitation(from: decoder)
         if !precipitation.intensity.isPracticallyZero() {
-            precipType = try PrecipitationType(rawValue: json.value(key: "precipType"))
+            precipType = try PrecipitationType(rawValue: values.decode(String.self, forKey: .precipType))
         }
         else {
             precipType = nil
         }
 
-        sunriseTime = try json.date(key: "sunriseTime")
-        sunsetTime = try json.date(key: "sunsetTime")
+        sunriseTime = try values.decodeDateCleverly(forKey: .sunriseTime)
+        sunsetTime = try values.decodeDateCleverly(forKey: .sunsetTime)
     }
 
 }
-
-extension Almanac: JSON.Listable { }

@@ -42,4 +42,29 @@ class MBTATests: XCTestCase {
 
     }
 
+    func testDecodingVehicle() {
+
+        let testVehicle = [
+            "vehicle_id": "5447D16F",
+            "vehicle_lat": "42.43223",
+            "vehicle_lon": "-71.07213",
+            "vehicle_bearing": "200",
+            "vehicle_timestamp": "1471093360",
+            ]
+
+        do {
+            let encoded = try JSONSerialization.data(withJSONObject: testVehicle, options: [])
+
+            let vehicle = try JSONDecoder().decode(Vehicle.self, from: encoded)
+
+            XCTAssertEqual(vehicle.identifier, "5447D16F")
+            XCTAssertEqual(vehicle.location.bearing, 200)
+            XCTAssertEqual(vehicle.location.lat, 42.43223, accuracy: 0.001)
+            XCTAssertEqual(vehicle.location.lon, -71.07213, accuracy: 0.001)
+        }
+        catch {
+            XCTFail("Failed with error: \(error)")
+        }
+    }
+
 }

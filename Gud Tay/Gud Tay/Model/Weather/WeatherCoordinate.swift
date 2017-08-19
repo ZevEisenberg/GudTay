@@ -6,20 +6,14 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
-import JSON
-
-struct WeatherCoordinate {
+struct WeatherCoordinate: Decodable {
 
     let lat: Double
     let lon: Double
 
-}
-
-extension WeatherCoordinate: JSON.Representable {
-
-    init(json: JSON.Object) throws {
-        lat = try json.value(key: "latitude")
-        lon = try json.value(key: "longitude")
+    private enum CodingKeys: String, CodingKey {
+        case lat = "latitude"
+        case lon = "longitude"
     }
 
 }

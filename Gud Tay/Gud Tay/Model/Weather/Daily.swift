@@ -6,8 +6,6 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
-import JSON
-
 struct Daily: MeteorologyHaver, AlmanacHaver {
 
     let meteorology: WeatherBucket<Meteorology>
@@ -15,11 +13,11 @@ struct Daily: MeteorologyHaver, AlmanacHaver {
 
 }
 
-extension Daily: JSON.Representable {
+extension Daily: Decodable {
 
-    init(json: JSON.Object) throws {
-        meteorology = try WeatherBucket(json: json)
-        almanac = try WeatherBucket(json: json)
+    init(from decoder: Decoder) throws {
+        meteorology = try WeatherBucket(from: decoder)
+        almanac = try WeatherBucket(from: decoder)
     }
 
 }

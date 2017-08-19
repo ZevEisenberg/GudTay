@@ -6,9 +6,7 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
-import JSON
-
-struct WeatherBucket<WeatherData> where WeatherData: JSON.Listable {
+struct WeatherBucket<WeatherData> {
 
     let summary: String?
     let icon: Icon?
@@ -16,13 +14,19 @@ struct WeatherBucket<WeatherData> where WeatherData: JSON.Listable {
 
 }
 
-extension WeatherBucket: JSON.Representable {
+extension WeatherBucket: Decodable {
 
-    init(json: JSON.Object) throws {
-        summary = json.optionalValue(key: "summary")
-        icon = json.optionalValue(key: "icon").flatMap { Icon(rawValue: $0) }
+    private enum CodingKeys: String, CodingKey {
+        case summary = "summary"
+        case icon = "icon"
+        case data = "data"
+    }
 
-        data = try WeatherData.objects(from: json.value(key: "data"))
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        summary = try values.decodeIfPresent(String.self, forKey: .summary)
+        icon = try values.decodeIfPresent(String.self, forKey: .icon).flatMap(Icon.init(rawValue:))
+        data = try values.decode([WeatherData].self, forKey: .data)
     }
 
 }

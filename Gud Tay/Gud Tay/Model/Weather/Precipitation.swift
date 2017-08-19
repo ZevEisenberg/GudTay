@@ -7,7 +7,6 @@
 //
 
 import Foundation.NSDate
-import JSON
 
 struct Precipitation {
 
@@ -30,14 +29,20 @@ struct Precipitation {
 
 }
 
-extension Precipitation: JSON.Representable {
+extension Precipitation: Decodable {
 
-    init(json: JSON.Object) throws {
-        intensity = try json.value(key: "precipIntensity")
-        probability = try json.value(key: "precipProbability")
-        timestamp = try json.date(key: "time")
+    private enum CodingKeys: String, CodingKey {
+        case intensity = "precipIntensity"
+        case probability = "precipProbability"
+        case time = "time"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        intensity = try values.decode(Double.self, forKey: .intensity)
+        probability = try values.decode(Double.self, forKey: .probability)
+        timestamp = try values.decodeDateCleverly(forKey: .time)
+
     }
 
 }
-
-extension Precipitation: JSON.Listable { }

@@ -6,17 +6,14 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
-import JSON
-
 import Foundation.NSError
 
 class ViewModel {
 
     enum RefreshError: Error {
 
-        case jsonWasNil
         case networkError(Error)
-        case jsonError(JSONError)
+        case decodingError(DecodingError)
         case genericError(Error)
 
     }

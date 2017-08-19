@@ -6,26 +6,16 @@
 //
 //
 
-import JSON
-
-struct Route {
+struct Route: Decodable {
 
     let identifier: String
     let name: String
     let directions: [Direction]
 
-}
-
-extension Route: JSON.Representable {
-
-    init(json: JSON.Object) throws {
-        identifier = try json.value(key: "route_id")
-        name = try json.value(key: "route_name")
-
-        let directionsValue: [JSON.Object] = try json.value(key: "direction")
-        directions = try Direction.objects(from: directionsValue)
+    private enum CodingKeys: String, CodingKey {
+        case identifier = "route_id"
+        case name = "route_name"
+        case directions = "direction"
     }
 
 }
-
-extension Route: JSON.Listable { }

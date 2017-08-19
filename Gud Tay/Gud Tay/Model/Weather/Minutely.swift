@@ -6,18 +6,16 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
-import JSON
-
 struct Minutely: PrecipitationHaver {
 
     let precipitation: WeatherBucket<Precipitation>
 
 }
 
-extension Minutely: JSON.Representable {
+extension Minutely: Decodable {
 
-    init(json: JSON.Object) throws {
-        precipitation = try WeatherBucket(json: json)
+    init(from decoder: Decoder) throws {
+        precipitation = try WeatherBucket(from: decoder)
     }
 
 }

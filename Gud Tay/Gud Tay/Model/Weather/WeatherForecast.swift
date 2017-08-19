@@ -7,7 +7,6 @@
 //
 
 import Foundation.NSTimeZone
-import JSON
 
 struct WeatherForecast {
 
@@ -21,16 +20,27 @@ struct WeatherForecast {
 
 }
 
-extension WeatherForecast: JSON.Representable {
+extension WeatherForecast: Decodable {
 
-    init(json: JSON.Object) throws {
-        coordinate = try WeatherCoordinate(json: json)
-        timeZone = try TimeZone(identifier: json.value(key: "timezone")) ?? TimeZone.current
+    private enum CodingKeys: String, CodingKey {
+        case timeZone = "timezone"
+        case currently = "currently"
+        case minutely = "minutely"
+        case hourly = "hourly"
+        case daily = "daily"
+    }
 
-        currently = try Currently(json: json.value(key: "currently"))
-        minutely = try Minutely(json: json.value(key: "minutely"))
-        hourly = try Hourly(json: json.value(key: "hourly"))
-        daily = try Daily(json: json.value(key: "daily"))
+    init(from decoder: Decoder) throws {
+        coordinate = try WeatherCoordinate(from: decoder)
+
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+
+        timeZone = TimeZone(identifier: try values.decode(String.self, forKey: .timeZone)) ?? .current
+
+        currently = try values.decode(Currently.self, forKey: .currently)
+        minutely = try values.decode(Minutely.self, forKey: .minutely)
+        hourly = try values.decode(Hourly.self, forKey: .hourly)
+        daily = try values.decode(Daily.self, forKey: .daily)
     }
 
 }

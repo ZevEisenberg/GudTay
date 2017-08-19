@@ -6,8 +6,6 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
-import JSON
-
 struct Meteorology {
 
     enum Wind {
@@ -50,29 +48,41 @@ struct Meteorology {
 
 }
 
-extension Meteorology: JSON.Representable {
+extension Meteorology: Decodable {
 
-    init(json: JSON.Object) throws {
-        visibility = json.optionalValue(key: "visibility")
-        cloudCover = json.optionalValue(key: "cloudCover")
+    private enum CodingKeys: String, CodingKey {
+        case visibility = "visibility"
+        case cloudCover = "cloudCover"
+        case dewPoint = "dewPoint"
+        case humidity = "humidity"
+        case icon = "icon"
+        case ozone = "ozone"
+        case pressure = "pressure"
+        case summary = "summary"
+        case windSpeed = "windSpeed"
+        case windBearing = "windBearing"
+    }
 
-        dewPoint = try json.value(key: "dewPoint")
-        humidity = try json.value(key: "humidity")
-        icon = try Icon(rawValue: json.value(key: "icon"))
-        ozone = try json.value(key: "ozone")
-        pressure = try json.value(key: "pressure")
-        summary = try json.value(key: "summary")
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        visibility = try values.decodeIfPresent(Double.self, forKey: .visibility)
+        cloudCover = try values.decodeIfPresent(Double.self, forKey: .cloudCover)
 
-        let windSpeed: Double = try json.value(key: "windSpeed")
+        dewPoint = try values.decode(Double.self, forKey: .dewPoint)
+        humidity = try values.decode(Double.self, forKey: .humidity)
+        icon = try values.decodeIfPresent(String.self, forKey: .icon).flatMap(Icon.init(rawValue:))
+        ozone = try values.decode(Double.self, forKey: .ozone)
+        pressure = try values.decode(Double.self, forKey: .pressure)
+        summary = try values.decode(String.self, forKey: .summary)
+
+        let windSpeed = try values.decode(Double.self, forKey: .windSpeed)
         if windSpeed.isPracticallyZero() {
             wind = .none
         }
         else {
-            let windBearing: Double = try json.value(key: "windBearing")
+            let windBearing = try values.decode(Double.self, forKey: .windBearing)
             wind = .some(speed: windSpeed, bearing: windBearing)
         }
     }
 
 }
-
-extension Meteorology: JSON.Listable { }

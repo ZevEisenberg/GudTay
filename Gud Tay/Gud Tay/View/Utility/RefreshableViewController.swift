@@ -28,12 +28,10 @@ extension RefreshableViewController {
 
     func processRefreshError(_ error: ViewModel.RefreshError) {
         switch error {
-        case .jsonWasNil:
-            errorHandler?("Error: JSON from server was nil")
         case .networkError(let nsError):
             errorHandler?("Network error: \(nsError.localizedDescription)")
-        case .jsonError(let jsonError):
-            errorHandler?("JSON Error: \(jsonError)")
+        case .decodingError(let decodingError):
+            errorHandler?("Decoding Error: \(decodingError)")
         case .genericError(let genericError):
             errorHandler?("Generic error: \(genericError)")
         }

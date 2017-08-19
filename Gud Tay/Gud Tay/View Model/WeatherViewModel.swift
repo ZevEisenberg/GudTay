@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import JSON
 
 final class WeatherViewModel {
 
@@ -38,26 +37,14 @@ final class WeatherViewModel {
 
     func refresh(referenceDate: Date, calendar: Calendar, completion: @escaping (Result) -> Void) {
         // n.b. lat/long have been rebased to be the center of Boston instead of my real old address for privacy reasons.
-        service.predictions(latitude: 42.3601, longitude: -71.0589) { apiResult in
+        service.predictions(latitude: 42.3601, longitude: -71.0589) { (apiResult: APIClient.Result<WeatherForecast>) in
             switch apiResult {
-            case .success(let jsonObject):
-                guard let jsonObject = jsonObject else {
-                    completion(.failure(.jsonWasNil))
-                    return
-                }
-
+            case .success(let forecast):
                 do {
-                    let forecast = try WeatherForecast(json: jsonObject)
                     let (fields, forecastBackgroundViewModel) = WeatherViewModel.processForecast(forecast: forecast, referenceDate: referenceDate, calendar: calendar)
                     self.fields = fields
                     self.forecastBackgroundViewModel = forecastBackgroundViewModel
                     completion(.success(self.fields, self.forecastBackgroundViewModel))
-                }
-                catch let jsonError as JSONError {
-                    completion(.failure(.jsonError(jsonError)))
-                }
-                catch let genericError {
-                    completion(.failure(.genericError(genericError)))
                 }
             case .failure(let networkError):
                 completion(.failure(.networkError(networkError)))

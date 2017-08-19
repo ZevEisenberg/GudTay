@@ -6,10 +6,8 @@
 //
 //
 
-import JSON
-
 /// Based on GTFS `route_type` key: <https://developers.google.com/transit/gtfs/reference/routes-file>
-enum ModeType: Int {
+enum ModeType: Int, Decodable {
 
     /// Tram, Streetcar, Light rail. Any light rail or street level system within a metropolitan area.
     case tramOrStreetcar = 0
@@ -45,27 +43,27 @@ struct Mode {
 
 }
 
-extension Mode: JSON.Representable {
+extension Mode: Decodable {
 
-    init(json: JSON.Object) throws {
-        name = try json.value(key: "mode_name")
+    private enum CodingKeys: String, CodingKey {
+        case type = "route_type"
+        case name = "mode_name"
+        case routes = "route"
+    }
 
-        let typeString: String = try json.value(key: "route_type")
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        name = try values.decode(String.self, forKey: .name)
+
+        let typeString = try values.decode(String.self, forKey: .type)
         guard let typeInt = Int(typeString),
             let type = ModeType(rawValue: typeInt) else {
-                throw JSONError.malformedValue(key: "route_type", value: typeString, parent: json)
+                throw DecodingError.dataCorruptedError(forKey: .type, in: values, debugDescription: "Malformed value '\(typeString)'")
         }
 
         self.type = type
 
-        if let routesValue: [JSON.Object] = json.optionalValue(key: "route") {
-            routes = try Route.objects(from: routesValue)
-        }
-        else {
-            routes = []
-        }
+        routes = try values.decodeIfPresent([Route].self, forKey: .routes) ?? []
     }
 
 }
-
-extension Mode: JSON.Listable { }

@@ -7,11 +7,10 @@
 //
 
 import Foundation
-import JSON
 
 protocol MBTAServiceType {
 
-    static func predictionsByStop(stopId: String, completion: @escaping (APIClient.Result<JSON.Object?>) -> Void)
+    static func predictionsByStop<Value: Decodable>(stopId: String, completion: @escaping (APIClient.Result<Value>) -> Void)
 
 }
 
@@ -33,7 +32,7 @@ enum MBTAServiceKind: String {
 
 enum MBTAService: MBTAServiceType {
 
-    static func predictionsByStop(stopId: String, completion: @escaping (APIClient.Result<JSON.Object?>) -> Void) {
+    static func predictionsByStop<Value: Decodable>(stopId: String, completion: @escaping (APIClient.Result<Value>) -> Void) {
         let params = ["stop": stopId] as [String: Any]
         MBTAService.getRequest(path: Endpoints.predictionsByStop, params: params, completion: completion)
     }
@@ -64,7 +63,7 @@ private extension MBTAService {
         return hostUrl.appendingPathComponent(Constants.commonPath)
     }
 
-    static func getRequest(path: String, params: [String: Any]? = nil, completion: @escaping (APIClient.Result<JSON.Object?>) -> Void) {
+    static func getRequest<Value: Decodable>(path: String, params: [String: Any]? = nil, completion: @escaping (APIClient.Result<Value>) -> Void) {
         var params = params ?? [:]
         params["api_key"] = Constants.apiKey
         APIClient.getJson(baseUrl: baseUrl(), path: path, params: params, completion: completion)
@@ -76,7 +75,7 @@ private final class DummyClass { }
 
 enum MockMBTAService: MBTAServiceType {
 
-    static func predictionsByStop(stopId: String, completion: @escaping (APIClient.Result<JSON.Object?>) -> Void) {
+    static func predictionsByStop<Value: Decodable>(stopId: String, completion: @escaping (APIClient.Result<Value>) -> Void) {
         assert(stopId == "place-sull")
         let filename = "Sample MBTA API Response"
         let ext = "json"
@@ -85,28 +84,33 @@ enum MockMBTAService: MBTAServiceType {
             return
         }
 
-        var jsonData: Data! = nil
+        var data: Data! = nil
         do {
-            jsonData = try Data(contentsOf: url)
+            data = try Data(contentsOf: url)
         }
         catch let e {
             assertionFailure("Error getting contents of \(filename).\(ext): \(e)")
         }
 
-        var deserialized: Any! = nil
         do {
-            deserialized = try JSONSerialization.jsonObject(with: jsonData, options: [])
+            let stop = try JSONDecoder().decode(Value.self, from: data)
+            completion(.success(stop))
         }
-        catch let e {
-            assertionFailure("Error deserializing JSON data: \(e)")
+        catch let error as DecodingError {
+            switch error {
+            case let .dataCorrupted(context):
+                assertionFailure("data corrupted: \(context)")
+            case let .keyNotFound(key, context):
+                assertionFailure("key \(key) not found: \(context)")
+            case let .typeMismatch(theType, context):
+                assertionFailure("type mismatch: \(theType): \(context)")
+            case let .valueNotFound(type, context):
+                assertionFailure("value not found: \(type): \(context)")
+            }
         }
-
-        guard let jsonObject = deserialized as? JSON.Object else {
-            assertionFailure("Could not convert deserialized JSON to a JSON.Object: \(deserialized)")
-            return
+        catch {
+            assertionFailure("Could not decode JSON: \(error)")
         }
-
-        completion(.success(jsonObject))
     }
 
 }
