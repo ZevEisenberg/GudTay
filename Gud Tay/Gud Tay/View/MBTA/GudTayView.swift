@@ -21,7 +21,7 @@ final class GudTayView: GridView {
 
         let image = #imageLiteral(resourceName: "gud-tay")
         let imageView = UIImageView(image: image)
-        addSubview(imageView)
+        contentView.addSubview(imageView)
         imageView.centerAnchors == centerAnchors
         imageView.edgeAnchors >= edgeAnchors
         imageView.setContentHuggingPriority(.required, for: .horizontal)
@@ -33,7 +33,7 @@ final class GudTayView: GridView {
         addGestureRecognizer(tap)
 
         let clock = ClockView()
-        addSubview(clock)
+        contentView.addSubview(clock)
         clock.trailingAnchor == trailingAnchor - 22
         clock.bottomAnchor == bottomAnchor - 24
     }

@@ -41,8 +41,8 @@ final class DoodleView: GridView {
 
         // View Hierarchy
 
-        addSubview(imageView)
-        addSubview(clearButton)
+        contentView.addSubview(imageView)
+        contentView.addSubview(clearButton)
 
         // Layout
 

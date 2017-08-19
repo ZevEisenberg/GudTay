@@ -6,19 +6,91 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
+import Anchorage
 import UIKit
 
 class GridView: UIView {
 
+    // Public Properties
+
+    let contentView = UIView(axId: "contentView")
+
+    var borderedEdges: UIRectEdge = .all {
+        didSet {
+            let pairs: [UIRectEdge: HairlineView] = [
+                .top: top,
+                .left: leading,
+                .bottom: bottom,
+                .right: trailing,
+            ]
+            for (edge, hairline) in pairs {
+                hairline.isHidden = !borderedEdges.contains(edge)
+            }
+        }
+    }
+
+    // Private Properties
+
+    private let top = GridView.hairline(.horizontal)
+    private let leading = GridView.hairline(.vertical)
+    private let bottom = GridView.hairline(.horizontal)
+    private let trailing = GridView.hairline(.vertical)
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.white
-        layer.borderColor = UIColor.black.cgColor
-        layer.borderWidth = 1
+
+        // View Hierarchy
+
+        addSubview(contentView)
+
+        addSubview(top)
+        addSubview(leading)
+        addSubview(bottom)
+        addSubview(trailing)
+
+        // Layout
+
+        contentView.edgeAnchors == edgeAnchors
+
+        top.topAnchor == topAnchor
+        top.horizontalAnchors == horizontalAnchors
+
+        leading.leadingAnchor == leadingAnchor
+        leading.verticalAnchors == verticalAnchors
+
+        bottom.bottomAnchor == bottomAnchor
+        bottom.horizontalAnchors == horizontalAnchors
+
+        trailing.trailingAnchor == trailingAnchor
+        trailing.verticalAnchors == verticalAnchors
     }
 
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+}
+
+private extension GridView {
+
+    private enum Constants {
+
+        static let hairlineColor = UIColor.black
+        static let hairlineWidth: CGFloat = 1
+
+    }
+
+    static func hairline(_ axis: UILayoutConstraintAxis) -> HairlineView {
+        return HairlineView(axis: axis, thickness: Constants.hairlineWidth, color: Constants.hairlineColor)
+    }
+
+}
+
+extension UIRectEdge: Hashable {
+
+    public var hashValue: Int {
+        return Int(rawValue)
     }
 
 }

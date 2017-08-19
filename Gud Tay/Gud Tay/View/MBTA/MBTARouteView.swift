@@ -20,7 +20,7 @@ final class MBTARouteView: GridView {
     init(headerView: MBTAHeaderView) {
         super.init(frame: .zero)
 
-        addSubview(headerView)
+        contentView.addSubview(headerView)
         headerView.topAnchor == topAnchor
         headerView.horizontalAnchors == horizontalAnchors
 
@@ -28,7 +28,7 @@ final class MBTARouteView: GridView {
         stackView.axis = .horizontal
         stackView.spacing = 58.0
 
-        addSubview(stackView)
+        contentView.addSubview(stackView)
         stackView.centerXAnchor == centerXAnchor
         stackView.bottomAnchor == bottomAnchor - 19.0
     }

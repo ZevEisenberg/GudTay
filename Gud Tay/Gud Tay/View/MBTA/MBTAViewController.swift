@@ -54,17 +54,26 @@ final class MBTAViewController: RefreshableViewController {
             mainStackView.addArrangedSubview($0)
         }
 
+        let gudTayView = GudTayView(tapHandler: { [weak self] in
+            let logVC = LogViewController()
+            let navCon = UINavigationController(rootViewController: logVC)
+            navCon.modalPresentationStyle = .formSheet
+            self?.show(navCon, sender: self)
+        })
+
         rowStackViews[0].addArrangedSubview(subwayOrangeLine)
         rowStackViews[0].addArrangedSubview(doodle)
         rowStackViews[1].addArrangedSubview(bus86)
         rowStackViews[1].addArrangedSubview(bus90)
         rowStackViews[2].addArrangedSubview(bus91)
-        rowStackViews[2].addArrangedSubview(GudTayView(tapHandler: { [weak self] in
-            let logVC = LogViewController()
-            let navCon = UINavigationController(rootViewController: logVC)
-            navCon.modalPresentationStyle = .formSheet
-            self?.show(navCon, sender: self)
-        }))
+        rowStackViews[2].addArrangedSubview(gudTayView)
+
+        subwayOrangeLine.borderedEdges = [.top, .bottom, .right]
+        doodle.borderedEdges = [.top, .bottom]
+        bus86.borderedEdges = [.bottom, .right]
+        bus90.borderedEdges = [.bottom]
+        bus91.borderedEdges = [.bottom, .right]
+        gudTayView.borderedEdges = [.bottom]
     }
 
     override func viewDidLoad() {
