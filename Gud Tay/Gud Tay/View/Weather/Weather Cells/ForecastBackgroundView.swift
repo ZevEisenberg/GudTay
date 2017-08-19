@@ -18,7 +18,6 @@ class ForecastBackgroundView: UIView {
             if let viewModel = viewModel {
                 updateView(viewModel: viewModel)
             }
-
         }
     }
 
