@@ -41,11 +41,13 @@ struct Fonts {
 
         static let currentTempStyle = StringStyle(
             .numberSpacing(.proportional),
-            .font(UIFont(name: "HelveticaNeue-Bold", size: 120.0)!))
+            .font(UIFont(name: "HelveticaNeue-Bold", size: 120.0)!),
+            .color(.white))
 
         static let tempRangeStyle = StringStyle(
             .numberSpacing(.proportional),
-            .font(UIFont(name: "HelveticaNeue-Bold", size: 48.0)!))
+            .font(UIFont(name: "HelveticaNeue-Bold", size: 48.0)!),
+            .color(.white))
 
         private static let baseForecastStyle = StringStyle(
             .numberSpacing(.proportional),

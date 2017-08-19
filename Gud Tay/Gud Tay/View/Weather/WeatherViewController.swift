@@ -83,6 +83,8 @@ final class WeatherViewController: RefreshableViewController {
                         self.updateBackgroundForScrollPosition()
                     }
                     self.forecastBackground.viewModel = forecastBackgroundViewModel
+                    let color = self.forecastBackground.colorOfUpperLeadingPixel
+                    self.view.backgroundColor = color
                 case .failure(let error):
                     self.processRefreshError(error)
                 }

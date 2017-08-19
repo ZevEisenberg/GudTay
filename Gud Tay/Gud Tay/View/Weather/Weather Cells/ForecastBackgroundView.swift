@@ -21,6 +21,23 @@ class ForecastBackgroundView: UIView {
         }
     }
 
+    var colorOfUpperLeadingPixel: UIColor {
+        layoutIfNeeded()
+
+        let (context, data, byteCount) = ForecastBackgroundView.createBitmapContext()
+        layer.render(in: context)
+
+        let alpha: UInt8 = data[0]
+        let red: UInt8 = data[1]
+        let green: UInt8 = data[2]
+        let blue: UInt8 = data[3]
+
+        data.deallocate(capacity: byteCount)
+
+        let color = UIColor(red: CGFloat(red) / 255, green: CGFloat(green) / 255, blue: CGFloat(blue) / 255, alpha: CGFloat(alpha) / 255)
+        return color
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         clipsToBounds = true
@@ -77,6 +94,27 @@ private extension ForecastBackgroundView {
                 height: height)
             intervalView.frame = frame
         }
+    }
+
+    class func createBitmapContext() -> (context: CGContext, bitmapData: UnsafeMutablePointer<UInt8>, bitmapDatByteCount: Int) {
+        let pixelsWide = 1
+        let pixelsHigh = 1
+
+        let bytesPerRow = pixelsWide * 4
+        let byteCount = bytesPerRow * Int(pixelsHigh)
+
+        let bitmapData = malloc(byteCount)!
+
+        let context = CGContext(
+            data: bitmapData,
+            width: pixelsWide,
+            height: pixelsHigh,
+            bitsPerComponent: 8,
+            bytesPerRow: bytesPerRow,
+            space: CGColorSpaceCreateDeviceRGB(),
+            bitmapInfo: CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedFirst.rawValue).rawValue)
+
+        return (context!, bitmapData.assumingMemoryBound(to: UInt8.self), byteCount)
     }
 
 }
