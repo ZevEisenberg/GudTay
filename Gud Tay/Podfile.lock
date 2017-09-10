@@ -3,7 +3,7 @@ PODS:
   - BonMot (4.3.1)
   - BuddyBuildSDK (1.0.16)
   - Swiftilities/Math (0.15.0)
-  - SwiftLint (0.21.0)
+  - SwiftLint (0.22.0)
 
 DEPENDENCIES:
   - Anchorage (from `https://github.com/Raizlabs/Anchorage.git`, branch `feature/xcode-9`)
@@ -33,7 +33,7 @@ SPEC CHECKSUMS:
   BonMot: 8e958faa27676990d26d5b83bc853d4a2651f3ea
   BuddyBuildSDK: 2c5469eee2981a3365386e46393e97068d75e4f4
   Swiftilities: c72484f028c5ea224c434666ab9bb8e9258405cb
-  SwiftLint: 6de8b2d15f43c482bdec2953b8cfd696faa876e8
+  SwiftLint: 1134786caedd2caab0560d2f36b76414a5a56808
 
 PODFILE CHECKSUM: b1c9b20735d8ff95a8f5a7d848e54189eba58a15
 

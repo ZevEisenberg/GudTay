@@ -55,14 +55,14 @@ class GudTayTests: XCTestCase {
                     if case WeatherViewModel.WeatherField.hour(time: _, icon: _, temp: _, precipProbability: _) = field {
                     }
                     else {
-                        XCTFail()
+                        XCTFail("Unexpected case: \(field)")
                     }
                 }
 
                 let hour0 = hourlyFields[0]
 
                 guard case WeatherViewModel.WeatherField.hour(let time0, let icon0, let temp0, let precipProbability0) = hour0 else {
-                    XCTFail()
+                    XCTFail("Unexpected case: \(hour0)")
                     return
                 }
 
@@ -74,7 +74,7 @@ class GudTayTests: XCTestCase {
                 let hour2 = hourlyFields[2]
 
                 guard case WeatherViewModel.WeatherField.hour(let time2, let icon2, let temp2, let precipProbability2) = hour2 else {
-                    XCTFail()
+                    XCTFail("unexpected case: \(hour2)")
                     return
                 }
 
