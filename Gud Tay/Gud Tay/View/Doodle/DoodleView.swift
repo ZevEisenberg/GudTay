@@ -52,9 +52,6 @@ final class DoodleView: GridView {
 
         // Setup
 
-        let pan = ImmediatePanGestureRecognizer(target: self, action: #selector(panned(sender:)))
-        addGestureRecognizer(pan)
-
         clearButton.addTarget(self, action: #selector(clearTapped(sender:)), for: .touchUpInside)
     }
 
@@ -70,25 +67,27 @@ final class DoodleView: GridView {
         }
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        startAt(touches.first!.location(in: self))
+    }
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        continueTo(touches.first!.location(in: self))
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        endAt(touches.first!.location(in: self))
+    }
+
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        endAt(touches.first!.location(in: self))
+    }
+
 }
 
 // MARK: - Actions
 
 private extension DoodleView {
-
-    @objc func panned(sender: UILongPressGestureRecognizer) {
-        let point = sender.location(in: self)
-        switch sender.state {
-        case .began:
-            startAt(point)
-        case .changed:
-            continueTo(point)
-        case .ended, .cancelled:
-            endAt(point)
-        default:
-            fatalError("That's not a thing: \(sender.state)")
-        }
-    }
 
     @objc func clearTapped(sender: UIButton) {
         delegate?.showClearPrompt(from: sender, completion: { [weak self] (clear) in
@@ -96,17 +95,6 @@ private extension DoodleView {
                 self?.clearDrawing()
             }
         })
-    }
-
-}
-
-// MARK: - UIGestureRecognizerDelegate
-
-extension DoodleView: UIGestureRecognizerDelegate {
-
-    // Allow tap and pan to recognize at the same time
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
     }
 
 }
