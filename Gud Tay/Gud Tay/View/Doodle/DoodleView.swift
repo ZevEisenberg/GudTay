@@ -36,8 +36,7 @@ final class DoodleView: GridView {
         super.init(frame: frame)
 
         let clearButton = UIButton()
-        clearButton.setTitle("🔫", for: .normal)
-        clearButton.sizeAnchors == CGSize(width: 44, height: 44)
+        clearButton.setImage(#imageLiteral(resourceName: "gun"), for: .normal)
 
         // View Hierarchy
 
