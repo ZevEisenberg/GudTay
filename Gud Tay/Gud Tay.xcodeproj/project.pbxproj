@@ -46,6 +46,7 @@
 		CD6A63451D51758C009571DE /* SafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63441D51758C009571DE /* SafeArray.swift */; };
 		CD7DAE721D55B62C00ED6AD3 /* Sample MBTA API Response.json in Resources */ = {isa = PBXBuildFile; fileRef = CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */; };
 		CD8357521D4C4DA5009E76A7 /* MBTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8357511D4C4DA5009E76A7 /* MBTAService.swift */; };
+		CD8596B31F65985400DB3907 /* Array+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8596B21F65985400DB3907 /* Array+Random.swift */; };
 		CD90219E1D6E96D200375FE7 /* AspectImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9021981D6E96D200375FE7 /* AspectImageCell.swift */; };
 		CD90219F1D6E96D200375FE7 /* ForecastBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9021991D6E96D200375FE7 /* ForecastBackgroundView.swift */; };
 		CD9021A01D6E96D200375FE7 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD90219A1D6E96D200375FE7 /* ForecastCell.swift */; };
@@ -214,6 +215,7 @@
 		CD8357511D4C4DA5009E76A7 /* MBTAService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTAService.swift; sourceTree = "<group>"; };
 		CD848F931E63799F00E49A85 /* Gud TayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gud TayTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD848F971E63799F00E49A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD8596B21F65985400DB3907 /* Array+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Random.swift"; sourceTree = "<group>"; };
 		CD9021981D6E96D200375FE7 /* AspectImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AspectImageCell.swift; sourceTree = "<group>"; };
 		CD9021991D6E96D200375FE7 /* ForecastBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastBackgroundView.swift; sourceTree = "<group>"; };
 		CD90219A1D6E96D200375FE7 /* ForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
@@ -551,6 +553,7 @@
 				CDF60DF61D482F9A003E2AFB /* UIView+Extensions.swift */,
 				CD2575C31D666C7E0017DEE6 /* Utility.swift */,
 				CDD9DE511F47EB6C008804D8 /* KeyedDecodingContainer+Utilities.swift */,
+				CD8596B21F65985400DB3907 /* Array+Random.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -891,6 +894,7 @@
 			files = (
 				CDD9DE521F47EB6C008804D8 /* KeyedDecodingContainer+Utilities.swift in Sources */,
 				CDED234A1D60B00E0023CC4B /* Currently.swift in Sources */,
+				CD8596B31F65985400DB3907 /* Array+Random.swift in Sources */,
 				CDED234D1D60B0210023CC4B /* Minutely.swift in Sources */,
 				CD3D7B761DAC25AA007BB87D /* SunIntervalView.swift in Sources */,
 				7AE9DA651D57A4A50087B401 /* Coordinate.swift in Sources */,

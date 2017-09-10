@@ -111,12 +111,18 @@ final class MBTAViewController: RefreshableViewController {
 extension MBTAViewController: DoodleViewDelegate {
 
     func showClearPrompt(from button: UIButton, completion: @escaping (_ clear: Bool) -> Void) {
-        let alert = UIAlertController(title: "Zap Drawing?", message: nil, preferredStyle: .actionSheet)
+        // verbs via http://calvinandhobbes.wikia.com/wiki/Spaceman_Spiff#Spiff.27s_Weaponry_and_Equipment
+        let verbs = ["Shake-n’-Bake", "Medium Well", "Deep Fat-fry", "Frappe", "Liquefy"]
+        guard let verb = verbs.random else {
+            preconditionFailure("Accessing random element from collection literal should never be nil")
+        }
+
+        let alert = UIAlertController(title: "Zap drawing at \(verb) setting?", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
             completion(false)
         }))
 
-        alert.addAction(UIAlertAction(title: "ZAP!", style: .destructive, handler: { _ in
+        alert.addAction(UIAlertAction(title: "\(verb.localizedUppercase)!", style: .destructive, handler: { _ in
             completion(true)
         }))
 
