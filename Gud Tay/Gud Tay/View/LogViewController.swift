@@ -68,7 +68,7 @@ private extension LogViewController {
 
     func updateErrorDisplay() {
         errorTextView.text = LogService.messages.joined(separator: "\n\n")
-        let range = NSRange(location: errorTextView.text.characters.count - 2, length: 1)
+        let range = NSRange(location: errorTextView.text.count - 2, length: 1)
         errorTextView.scrollRangeToVisible(range)
     }
 
