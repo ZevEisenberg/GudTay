@@ -1,40 +1,24 @@
 PODS:
-  - Anchorage (4.0.0)
-  - BonMot (4.3.1)
+  - Anchorage (4.1.0)
+  - BonMot (5.0)
   - BuddyBuildSDK (1.0.16)
   - Swiftilities/Math (0.15.0)
   - SwiftLint (0.22.0)
 
 DEPENDENCIES:
-  - Anchorage (from `https://github.com/Raizlabs/Anchorage.git`, branch `feature/xcode-9`)
-  - BonMot (from `https://github.com/Raizlabs/BonMot.git`, branch `feature/xcode-9`)
+  - Anchorage
+  - BonMot
   - BuddyBuildSDK
   - Swiftilities/Math
   - SwiftLint
 
-EXTERNAL SOURCES:
-  Anchorage:
-    :branch: feature/xcode-9
-    :git: https://github.com/Raizlabs/Anchorage.git
-  BonMot:
-    :branch: feature/xcode-9
-    :git: https://github.com/Raizlabs/BonMot.git
-
-CHECKOUT OPTIONS:
-  Anchorage:
-    :commit: 3108a3741a4baf56e7669180e6212549a10712e7
-    :git: https://github.com/Raizlabs/Anchorage.git
-  BonMot:
-    :commit: 040304805d13a29435ef60525954741c223dffe4
-    :git: https://github.com/Raizlabs/BonMot.git
-
 SPEC CHECKSUMS:
-  Anchorage: b4ed6555296ae9ee9264def6efd8e7352ea7b893
-  BonMot: 8e958faa27676990d26d5b83bc853d4a2651f3ea
+  Anchorage: 6c20225cb7f44fdf9609ec99949ee160c803969c
+  BonMot: 3ff354572f2aa9295d3760947f7578490cb810be
   BuddyBuildSDK: 2c5469eee2981a3365386e46393e97068d75e4f4
   Swiftilities: c72484f028c5ea224c434666ab9bb8e9258405cb
   SwiftLint: 1134786caedd2caab0560d2f36b76414a5a56808
 
-PODFILE CHECKSUM: b1c9b20735d8ff95a8f5a7d848e54189eba58a15
+PODFILE CHECKSUM: d2c723808f697ada9fdeab058e076073d68bb07d
 
 COCOAPODS: 1.3.1
