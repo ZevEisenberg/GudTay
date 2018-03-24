@@ -15,15 +15,9 @@ final class MBTAViewController: RefreshableViewController {
 
     private let viewModel: MBTAViewModel
 
-    private let subwayOrangeLine = MBTARouteView(headerView:
-        SubwayHeaderView(route: "Orange Line", direction: "Inbound", destination: "Forest Hills"))
+    private let bus32 = MBTARouteView(headerView:
+        BusHeaderView(route: "32", destination: "Forest Hills"))
     private let doodle = DoodleView()
-    private let bus86 = MBTARouteView(headerView:
-        BusHeaderView(route: "86", destination: "Reservoir"))
-    private let bus90 = MBTARouteView(headerView:
-        BusHeaderView(route: "90", destination: "Davis"))
-    private let bus91 = MBTARouteView(headerView:
-        BusHeaderView(route: "91", destination: "Central"))
 
     private let mainStackView: UIStackView = {
         let stackView = UIStackView(axId: "mainStackView")
@@ -61,18 +55,12 @@ final class MBTAViewController: RefreshableViewController {
             self?.show(navCon, sender: self)
         })
 
-        rowStackViews[0].addArrangedSubview(subwayOrangeLine)
-        rowStackViews[0].addArrangedSubview(doodle)
-        rowStackViews[1].addArrangedSubview(bus86)
-        rowStackViews[1].addArrangedSubview(bus90)
-        rowStackViews[2].addArrangedSubview(bus91)
+        rowStackViews[0].addArrangedSubview(bus32)
+        rowStackViews[1].addArrangedSubview(doodle)
         rowStackViews[2].addArrangedSubview(gudTayView)
 
-        subwayOrangeLine.borderedEdges = [.top, .bottom, .right]
-        doodle.borderedEdges = [.top, .bottom]
-        bus86.borderedEdges = [.bottom, .right]
-        bus90.borderedEdges = [.bottom]
-        bus91.borderedEdges = [.bottom, .right]
+        bus32.borderedEdges = [.bottom]
+        doodle.borderedEdges = [.bottom]
         gudTayView.borderedEdges = [.bottom]
     }
 
@@ -86,10 +74,7 @@ final class MBTAViewController: RefreshableViewController {
         super.viewDidAppear(animated)
 
         let routeViews = [
-            subwayOrangeLine,
-            bus86,
-            bus90,
-            bus91,
+            bus32,
         ]
 
         Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true, block: { _ in

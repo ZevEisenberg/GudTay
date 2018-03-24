@@ -76,7 +76,7 @@ private final class DummyClass { }
 enum MockMBTAService: MBTAServiceType {
 
     static func predictionsByStop<Value: Decodable>(stopId: String, completion: @escaping (APIClient.Result<Value>) -> Void) {
-        assert(stopId == "place-sull")
+        assert(stopId == "6480")
         let filename = "Sample MBTA API Response"
         let ext = "json"
         guard let url = Bundle(for: DummyClass.self).url(forResource: filename, withExtension: ext) else {

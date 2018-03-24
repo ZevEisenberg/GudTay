@@ -42,11 +42,13 @@ final class MBTAViewModel {
     }
 
     func refresh(completion: @escaping (Result) -> Void) {
-        self.serviceType.predictionsByStop(stopId: "place-sull") { (apiResult: APIClient.Result<Stop>) in
+        // Hyde Park Ave @ Mt Hope St
+        let hydeParkAveAtMtHopeSt = "6480"
+        self.serviceType.predictionsByStop(stopId: hydeParkAveAtMtHopeSt) { (apiResult: APIClient.Result<Stop>) in
             switch apiResult {
-            case .success(let sullivan):
+            case .success(let busStop):
                 do {
-                    let upcomingTrips = MBTAViewModel.upcomingTrips(from: sullivan)
+                    let upcomingTrips = MBTAViewModel.upcomingTrips(from: busStop)
                     completion(.success(upcomingTrips))
                 }
             case .failure(let networkError):
@@ -62,11 +64,7 @@ private extension MBTAViewModel {
     static func upcomingTrips(from stop: Stop) -> [UpcomingTrips] {
 
         let routeDescriptions = [
-            (routeType: ModeType.subway, routeId: "Orange", directionId: "0"),
-            (routeType: ModeType.bus, routeId: "747", directionId: "1"),
-            (routeType: ModeType.bus, routeId: "86", directionId: "1"),
-            (routeType: ModeType.bus, routeId: "90", directionId: "1"),
-            (routeType: ModeType.bus, routeId: "91", directionId: "1"),
+            (routeType: ModeType.bus, routeId: "32", directionId: "1"),
             ]
 
         return routeDescriptions.map { description in
