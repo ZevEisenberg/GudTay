@@ -78,12 +78,12 @@ private extension MBTAViewModel {
         let (routeType, routeId, directionId) = routeDescription
 
         let trips = stop.modes
-            .filter { mode in mode.type == routeType }
-            .flatMap { mode in mode.routes }
-            .filter { route in route.identifier == routeId }
-            .flatMap { route in route.directions }
-            .filter { direction in direction.identifier == directionId }
-            .flatMap { direction in direction.trips }
+            .filter { (mode: Mode) in mode.type == routeType }
+            .flatMap { (mode: Mode) in mode.routes }
+            .filter { (route: Route) in route.identifier == routeId }
+            .flatMap { (route: Route) in route.directions }
+            .filter { (direction: Direction) in direction.identifier == directionId }
+            .flatMap { (direction: Direction) in direction.trips }
 
         guard !trips.isEmpty else {
             return .none
