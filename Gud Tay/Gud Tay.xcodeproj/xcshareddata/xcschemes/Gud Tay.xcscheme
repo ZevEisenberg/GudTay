@@ -50,16 +50,6 @@
                ReferencedContainer = "container:Gud Tay.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CDA457051E660EAF00636BDF"
-               BuildableName = "JSONTests.xctest"
-               BlueprintName = "JSONTests"
-               ReferencedContainer = "container:Gud Tay.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
