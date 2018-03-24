@@ -84,6 +84,7 @@ private extension MBTAViewModel {
             .flatMap { (route: Route) in route.directions }
             .filter { (direction: Direction) in direction.identifier == directionId }
             .flatMap { (direction: Direction) in direction.trips }
+            .sorted { $0.predictedSecondsAway < $1.predictedSecondsAway }
 
         guard !trips.isEmpty else {
             return .none

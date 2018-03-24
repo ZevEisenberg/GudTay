@@ -17,9 +17,11 @@ class MBTATests: XCTestCase {
         viewModel.refresh { result in
             switch result {
             case .success(let trips):
-
                 let bus32Trips = trips[0]
-                XCTAssertEqual(bus32Trips, MBTAViewModel.UpcomingTrips.two(next: 1173, later: 1893))
+                XCTAssertEqual(bus32Trips, MBTAViewModel.UpcomingTrips.two(next: 15, later: 102))
+                let (first, second) = bus32Trips.strings
+                XCTAssertEqual(first, "0")
+                XCTAssertEqual(second, "1")
             case .failure(let error):
                 XCTFail("got unexpected error: \(error)")
             }
