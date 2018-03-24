@@ -52,9 +52,5 @@ extension Trip: Decodable {
         else {
             predictedSecondsAway = try values.decode(TimeInterval.self, forKey: .predictedSecondsAway)
         }
-
-        if predictedSecondsAway < 0 {
-            LogService.add(message: "Got a negative time interval from JSON: \(decoder.userInfo)")
-        }
     }
 }
