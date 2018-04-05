@@ -541,19 +541,19 @@
 		CDF60DF51D482F8C003E2AFB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CD8596B21F65985400DB3907 /* Array+Random.swift */,
 				CDED235E1D60B3980023CC4B /* CloseEnough.swift */,
 				CDBF96871D56F39F008AC493 /* Colors.swift */,
 				CD6A633B1D514ACB009571DE /* CrashReporter.swift */,
 				CD22CA931DAAEC6B000C0205 /* Date+Extensions.swift */,
 				CDBF96891D56F8CA008AC493 /* Fonts.swift */,
+				CDD9DE511F47EB6C008804D8 /* KeyedDecodingContainer+Utilities.swift */,
 				CD1A10801D7A7D3F0072785B /* ProcessInfo+Extensions.swift */,
 				CD6A63441D51758C009571DE /* SafeArray.swift */,
 				7AACF0D51E75D6CE00990A6E /* Time.swift */,
 				CD2575C11D6669020017DEE6 /* UICollectionReusableView+Extensions.swift */,
 				CDF60DF61D482F9A003E2AFB /* UIView+Extensions.swift */,
 				CD2575C31D666C7E0017DEE6 /* Utility.swift */,
-				CDD9DE511F47EB6C008804D8 /* KeyedDecodingContainer+Utilities.swift */,
-				CD8596B21F65985400DB3907 /* Array+Random.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
