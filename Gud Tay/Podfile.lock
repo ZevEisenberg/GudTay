@@ -12,6 +12,14 @@ DEPENDENCIES:
   - Swiftilities/Math
   - SwiftLint
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Anchorage
+    - BonMot
+    - BuddyBuildSDK
+    - Swiftilities
+    - SwiftLint
+
 SPEC CHECKSUMS:
   Anchorage: 6c20225cb7f44fdf9609ec99949ee160c803969c
   BonMot: 3ff354572f2aa9295d3760947f7578490cb810be
@@ -21,4 +29,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 49bdf8fcd199790fc6f17a74c8bd5b08f17e9e28
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.0
