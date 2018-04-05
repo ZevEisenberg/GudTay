@@ -6,7 +6,7 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
-struct WeatherBucket<WeatherData> {
+struct WeatherBucket<WeatherData: Decodable> {
 
     let summary: String?
     let icon: Icon?

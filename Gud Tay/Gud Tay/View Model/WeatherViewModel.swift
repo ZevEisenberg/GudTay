@@ -134,7 +134,7 @@ private extension WeatherViewModel {
                 let sunrise = SolarEvent(kind: .sunrise, date: almanac.sunriseTime)
                 let sunset = SolarEvent(kind: .sunset, date: almanac.sunsetTime)
                 return [sunrise, sunset]
-                }.flatMap { event in
+                }.compactMap { event in
                     return expandedInterval.contains(event.date) ? event : nil
                 }.sorted { $0.date < $1.date }
 
