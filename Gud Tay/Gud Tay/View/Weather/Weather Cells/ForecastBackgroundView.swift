@@ -24,7 +24,7 @@ class ForecastBackgroundView: UIView {
     var colorOfUpperLeadingPixel: UIColor {
         layoutIfNeeded()
 
-        let (context, data, byteCount) = ForecastBackgroundView.createBitmapContext()
+        let (context, data) = ForecastBackgroundView.createBitmapContext()
         layer.render(in: context)
 
         let alpha: UInt8 = data[0]
@@ -32,7 +32,7 @@ class ForecastBackgroundView: UIView {
         let green: UInt8 = data[2]
         let blue: UInt8 = data[3]
 
-        data.deallocate(capacity: byteCount)
+        data.deallocate()
 
         let color = UIColor(red: CGFloat(red) / 255, green: CGFloat(green) / 255, blue: CGFloat(blue) / 255, alpha: CGFloat(alpha) / 255)
         return color
@@ -96,7 +96,7 @@ private extension ForecastBackgroundView {
         }
     }
 
-    class func createBitmapContext() -> (context: CGContext, bitmapData: UnsafeMutablePointer<UInt8>, bitmapDatByteCount: Int) {
+    class func createBitmapContext() -> (context: CGContext, bitmapData: UnsafeMutablePointer<UInt8>) {
         let pixelsWide = 1
         let pixelsHigh = 1
 
@@ -114,7 +114,7 @@ private extension ForecastBackgroundView {
             space: CGColorSpaceCreateDeviceRGB(),
             bitmapInfo: CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedFirst.rawValue).rawValue)
 
-        return (context!, bitmapData.assumingMemoryBound(to: UInt8.self), byteCount)
+        return (context!, bitmapData.assumingMemoryBound(to: UInt8.self))
     }
 
 }

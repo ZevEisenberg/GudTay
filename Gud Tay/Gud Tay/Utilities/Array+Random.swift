@@ -6,6 +6,8 @@
 //  Copyright © 2017 Zev Eisenberg. All rights reserved.
 //
 
+import Darwin
+
 extension Array {
 
     // via https://stackoverflow.com/a/24101606/255489
