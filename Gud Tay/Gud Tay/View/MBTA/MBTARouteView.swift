@@ -6,9 +6,9 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
-import UIKit
 import Anchorage
 import BonMot
+import UIKit
 
 final class MBTARouteView: GridView {
 

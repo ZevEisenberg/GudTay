@@ -6,8 +6,8 @@
 //  Copyright © 2017 Zev Eisenberg. All rights reserved.
 //
 
-import UIKit
 import Swiftilities
+import UIKit
 
 final class ScreenService {
 

@@ -6,8 +6,8 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
-import UIKit
 import Anchorage
+import UIKit
 
 final class RootViewController: UIViewController {
 
