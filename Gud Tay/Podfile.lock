@@ -1,6 +1,6 @@
 PODS:
   - Anchorage (4.1.0)
-  - BonMot (5.0)
+  - BonMot (5.2)
   - Swiftilities/Math (0.16.0)
   - SwiftLint (0.23.1)
 
@@ -19,7 +19,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Anchorage: 6c20225cb7f44fdf9609ec99949ee160c803969c
-  BonMot: 3ff354572f2aa9295d3760947f7578490cb810be
+  BonMot: 68da0bd7c2f602aca85511bedabd211eb0fae666
   Swiftilities: d185d1bb04085a0e455bdc94340fa8ba0248b136
   SwiftLint: 1b670ce79284c76520f84060e87d645078fd32fa
 
