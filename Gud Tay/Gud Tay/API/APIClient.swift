@@ -37,12 +37,6 @@ private extension APIClient {
         session.dataTask(with: request as URLRequest) { (data, response, error) -> Void in
 
             if let data = data {
-                if let string = String(data: data, encoding: .utf8) {
-                    CrashReporter.set(metadataObject: string, forKey: "originalResponse")
-                }
-                else {
-                    CrashReporter.set(metadataObject: data, forKey: "originalResponseThatCouldNotBeConvertedToAString")
-                }
                 if let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode {
                     do {
                         let decoded = try JSONDecoder().decode(Value.self, from: data)
@@ -62,7 +56,6 @@ private extension APIClient {
                         error = NSError.my_httpError(response: response)
                     }
                     DispatchQueue.main.async {
-                        CrashReporter.set(metadataObject: error, forKey: "httpResponseError")
                         completion(.failure(error))
                     }
                 }
@@ -70,7 +63,6 @@ private extension APIClient {
             else {
                 DispatchQueue.main.async {
                     let error = error ?? NSError.my_genericError()
-                    CrashReporter.set(metadataObject: error, forKey: "httpResponseError")
                     completion(.failure(error))
                 }
             }

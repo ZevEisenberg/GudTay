@@ -42,7 +42,6 @@
 		CD2575C41D666C7E0017DEE6 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2575C31D666C7E0017DEE6 /* Utility.swift */; };
 		CD3D7B731DAC1DD2007BB87D /* ForecastBackgroundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3D7B721DAC1DD2007BB87D /* ForecastBackgroundViewModel.swift */; };
 		CD3D7B761DAC25AA007BB87D /* SunIntervalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3D7B751DAC25AA007BB87D /* SunIntervalView.swift */; };
-		CD6A633C1D514ACB009571DE /* CrashReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A633B1D514ACB009571DE /* CrashReporter.swift */; };
 		CD6A63451D51758C009571DE /* SafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63441D51758C009571DE /* SafeArray.swift */; };
 		CD7DAE721D55B62C00ED6AD3 /* Sample MBTA API Response.json in Resources */ = {isa = PBXBuildFile; fileRef = CD12DE3A1D4FE82E00956B74 /* Sample MBTA API Response.json */; };
 		CD8357521D4C4DA5009E76A7 /* MBTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8357511D4C4DA5009E76A7 /* MBTAService.swift */; };
@@ -100,7 +99,6 @@
 		CDCF9BA21E637BCF009EE1DB /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE0AAC1D578E6100A209BF /* WeatherService.swift */; };
 		CDCF9BA31E637BD8009EE1DB /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB31D46D97F007A82D5 /* APIClient.swift */; };
 		CDCF9BA41E637BE1009EE1DB /* CloseEnough.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDED235E1D60B3980023CC4B /* CloseEnough.swift */; };
-		CDCF9BA51E637BE8009EE1DB /* CrashReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A633B1D514ACB009571DE /* CrashReporter.swift */; };
 		CDCF9BA61E637BF0009EE1DB /* ScreenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0911E81E57E36300381606 /* ScreenService.swift */; };
 		CDCF9BA71E637C04009EE1DB /* SafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63441D51758C009571DE /* SafeArray.swift */; };
 		CDCF9BA81E637C0B009EE1DB /* MBTAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAC21D46DF7A007A82D5 /* MBTAViewModel.swift */; };
@@ -117,7 +115,6 @@
 		CDD53CBE1E624BB900422296 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE0AAC1D578E6100A209BF /* WeatherService.swift */; };
 		CDD53CBF1E624BD900422296 /* MBTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8357511D4C4DA5009E76A7 /* MBTAService.swift */; };
 		CDD53CC01E624BF100422296 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECBAB31D46D97F007A82D5 /* APIClient.swift */; };
-		CDD53CC21E624C0300422296 /* CrashReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A633B1D514ACB009571DE /* CrashReporter.swift */; };
 		CDD8F99F1E2BD6270003679B /* Sample Weather API Response just after sunset.json in Resources */ = {isa = PBXBuildFile; fileRef = CDD8F99D1E2BD61E0003679B /* Sample Weather API Response just after sunset.json */; };
 		CDD9DE521F47EB6C008804D8 /* KeyedDecodingContainer+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9DE511F47EB6C008804D8 /* KeyedDecodingContainer+Utilities.swift */; };
 		CDD9DE531F47EB6C008804D8 /* KeyedDecodingContainer+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9DE511F47EB6C008804D8 /* KeyedDecodingContainer+Utilities.swift */; };
@@ -209,7 +206,6 @@
 		CD36A8CC1E66226A00B3DDA8 /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		CD3D7B721DAC1DD2007BB87D /* ForecastBackgroundViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastBackgroundViewModel.swift; sourceTree = "<group>"; };
 		CD3D7B751DAC25AA007BB87D /* SunIntervalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunIntervalView.swift; sourceTree = "<group>"; };
-		CD6A633B1D514ACB009571DE /* CrashReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashReporter.swift; sourceTree = "<group>"; };
 		CD6A63441D51758C009571DE /* SafeArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeArray.swift; sourceTree = "<group>"; };
 		CD6A63471D517898009571DE /* UtilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityTests.swift; sourceTree = "<group>"; };
 		CD8357511D4C4DA5009E76A7 /* MBTAService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTAService.swift; sourceTree = "<group>"; };
@@ -237,7 +233,6 @@
 		CDBC1AE41F43A4FA002B7FD5 /* ImageIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageIO.swift; sourceTree = "<group>"; };
 		CDBF96871D56F39F008AC493 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CDBF96891D56F8CA008AC493 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		CDC371C21D4911E30054F343 /* Gud Tay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gud Tay-Bridging-Header.h"; sourceTree = "<group>"; };
 		CDD53CB31E624B7D00422296 /* Gud TayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gud TayUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD53CB51E624B7D00422296 /* Gud_TayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gud_TayUITests.swift; sourceTree = "<group>"; };
 		CDD53CB71E624B7D00422296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -396,7 +391,6 @@
 				CDECBAC11D46DF6C007A82D5 /* View Model */,
 				CD1279C61D45B37B00DC7BB8 /* AppDelegate.swift */,
 				CD1279CD1D45B37B00DC7BB8 /* Assets.xcassets */,
-				CDC371C21D4911E30054F343 /* Gud Tay-Bridging-Header.h */,
 				CD1279D21D45B37B00DC7BB8 /* Info.plist */,
 				CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */,
 			);
@@ -544,7 +538,6 @@
 				CD8596B21F65985400DB3907 /* Array+Random.swift */,
 				CDED235E1D60B3980023CC4B /* CloseEnough.swift */,
 				CDBF96871D56F39F008AC493 /* Colors.swift */,
-				CD6A633B1D514ACB009571DE /* CrashReporter.swift */,
 				CD22CA931DAAEC6B000C0205 /* Date+Extensions.swift */,
 				CDBF96891D56F8CA008AC493 /* Fonts.swift */,
 				CDD9DE511F47EB6C008804D8 /* KeyedDecodingContainer+Utilities.swift */,
@@ -885,7 +878,6 @@
 				CD2575BB1D66607F0017DEE6 /* RefreshableViewController.swift in Sources */,
 				CD90219F1D6E96D200375FE7 /* ForecastBackgroundView.swift in Sources */,
 				CDF60DF71D482F9A003E2AFB /* UIView+Extensions.swift in Sources */,
-				CD6A633C1D514ACB009571DE /* CrashReporter.swift in Sources */,
 				CDBF96881D56F39F008AC493 /* Colors.swift in Sources */,
 				7AAB4E4A1E75D36400C05BA4 /* ClockView.swift in Sources */,
 				7AE9DA711D57A4A50087B401 /* Vehicle.swift in Sources */,
@@ -929,7 +921,6 @@
 				CDCF9B8A1E637B62009EE1DB /* ScreenServiceTests.swift in Sources */,
 				CDCF9BA21E637BCF009EE1DB /* WeatherService.swift in Sources */,
 				7AACF0DA1E75FEFA00990A6E /* ClockView.swift in Sources */,
-				CDCF9BA51E637BE8009EE1DB /* CrashReporter.swift in Sources */,
 				CDCF9B9B1E637BC6009EE1DB /* NearestStorm.swift in Sources */,
 				7AACF0D91E75D79C00990A6E /* ClockTimeTests.swift in Sources */,
 				CDCF9B971E637BC6009EE1DB /* Hourly.swift in Sources */,
@@ -954,7 +945,6 @@
 			files = (
 				CDD53CB61E624B7D00422296 /* Gud_TayUITests.swift in Sources */,
 				CDD53CBF1E624BD900422296 /* MBTAService.swift in Sources */,
-				CDD53CC21E624C0300422296 /* CrashReporter.swift in Sources */,
 				CDD53CBE1E624BB900422296 /* WeatherService.swift in Sources */,
 				CDD53CC01E624BF100422296 /* APIClient.swift in Sources */,
 				CDD53CBD1E624BB200422296 /* ProcessInfo+Extensions.swift in Sources */,
@@ -1103,7 +1093,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Gud Tay/Gud Tay-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1120,7 +1109,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Gud Tay/Gud Tay-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};

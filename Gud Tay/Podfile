@@ -12,7 +12,6 @@ target 'Gud Tay' do
   common_pods
 
   # Pods for Gud Tay
-  pod 'BuddyBuildSDK'
   pod 'SwiftLint'
 
   target 'Gud TayTests' do
