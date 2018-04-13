@@ -1,12 +1,14 @@
 PODS:
   - Anchorage (4.2.1)
   - BonMot (5.2)
+  - Sourcery (0.12.0)
   - Swiftilities/Math (0.17.0)
   - SwiftLint (0.25.1)
 
 DEPENDENCIES:
   - Anchorage
   - BonMot
+  - Sourcery
   - Swiftilities/Math
   - SwiftLint
 
@@ -14,15 +16,17 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Anchorage
     - BonMot
+    - Sourcery
     - Swiftilities
     - SwiftLint
 
 SPEC CHECKSUMS:
   Anchorage: f4dbf32771115b8ef9c9cc4e55a002ad87711f48
   BonMot: 68da0bd7c2f602aca85511bedabd211eb0fae666
+  Sourcery: 10fa92cd8890864856ee3657ca460d597ebc064b
   Swiftilities: 38a1e58d290e1a70f3ad345ccb2e2e0556375540
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
 
-PODFILE CHECKSUM: bf4ca208cce5774d93acabad19a9b1082aaae351
+PODFILE CHECKSUM: 042b31186c9767ed937c269fad764f3517f15790
 
 COCOAPODS: 1.5.0

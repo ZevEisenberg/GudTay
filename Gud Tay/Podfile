@@ -13,6 +13,7 @@ target 'Gud Tay' do
 
   # Pods for Gud Tay
   pod 'SwiftLint'
+  pod 'Sourcery'
 
   target 'Gud TayTests' do
     inherit! :search_paths
