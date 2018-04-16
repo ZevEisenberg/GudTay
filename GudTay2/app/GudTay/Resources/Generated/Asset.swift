@@ -44,11 +44,71 @@ internal struct ColorAsset {
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
+  internal enum Clock {
+    internal static let face = ImageAsset(name: "Clock/Face")
+    internal static let hourHand = ImageAsset(name: "Clock/Hour Hand")
+    internal static let minuteHand = ImageAsset(name: "Clock/Minute Hand")
+  }
+  internal enum Colors {
+    internal static let black = ColorAsset(name: "Black")
+    internal static let blue = ColorAsset(name: "Blue")
+    internal static let darkGray = ColorAsset(name: "Dark Gray")
+    internal static let day = ColorAsset(name: "Day")
+    internal static let night = ColorAsset(name: "Night")
+    internal static let orange = ColorAsset(name: "Orange")
+    internal static let translucentWhite = ColorAsset(name: "Translucent White")
+    internal static let white = ColorAsset(name: "White")
+    internal static let yellow = ColorAsset(name: "Yellow")
+  }
+  internal enum Small {
+    internal static let clearDay = ImageAsset(name: "Small/clear-day")
+    internal static let clearNight = ImageAsset(name: "Small/clear-night")
+  }
+  internal static let calvinUmbrella = ImageAsset(name: "calvin-umbrella")
+  internal static let clearDay = ImageAsset(name: "clear-day")
+  internal static let clearNight = ImageAsset(name: "clear-night")
+  internal static let cloudy = ImageAsset(name: "cloudy")
+  internal static let fog = ImageAsset(name: "fog")
+  internal static let gudTay = ImageAsset(name: "gud-tay")
+  internal static let gun = ImageAsset(name: "gun")
+  internal static let partlyCloudyDay = ImageAsset(name: "partly-cloudy-day")
+  internal static let partlyCloudyNight = ImageAsset(name: "partly-cloudy-night")
+  internal static let rain = ImageAsset(name: "rain")
+  internal static let sleet = ImageAsset(name: "sleet")
+  internal static let snow = ImageAsset(name: "snow")
+  internal static let wind = ImageAsset(name: "wind")
 
   // swiftlint:disable trailing_comma
   internal static let allColors: [ColorAsset] = [
+    Colors.black,
+    Colors.blue,
+    Colors.darkGray,
+    Colors.day,
+    Colors.night,
+    Colors.orange,
+    Colors.translucentWhite,
+    Colors.white,
+    Colors.yellow,
   ]
   internal static let allImages: [ImageAsset] = [
+    Clock.face,
+    Clock.hourHand,
+    Clock.minuteHand,
+    Small.clearDay,
+    Small.clearNight,
+    calvinUmbrella,
+    clearDay,
+    clearNight,
+    cloudy,
+    fog,
+    gudTay,
+    gun,
+    partlyCloudyDay,
+    partlyCloudyNight,
+    rain,
+    sleet,
+    snow,
+    wind,
   ]
   // swiftlint:enable trailing_comma
   @available(*, deprecated, renamed: "allImages")

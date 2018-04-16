@@ -60,7 +60,7 @@
 		ABF84F8C1DC99CFD002DB24D /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84F8A1DC99CFD002DB24D /* Appearance.swift */; };
 		ABF84F8D1DC99CFD002DB24D /* StringStyle+GudTay.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84F8B1DC99CFD002DB24D /* StringStyle+GudTay.swift */; };
 		ABF84F911DC99D33002DB24D /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84F8F1DC99D33002DB24D /* Localized.swift */; };
-		ABF84F921DC99D33002DB24D /* UIImage+Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84F901DC99D33002DB24D /* UIImage+Asset.swift */; };
+		ABF84F921DC99D33002DB24D /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84F901DC99D33002DB24D /* Asset.swift */; };
 		ABF84FA01DCBAB1B002DB24D /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84F9F1DCBAB1B002DB24D /* TestConstants.swift */; };
 		ABF84FA41DCBCD89002DB24D /* MBTATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84FA31DCBCD89002DB24D /* MBTATests.swift */; };
 		ABF84FA61DCBCEA1002DB24D /* Payloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84FA51DCBCEA1002DB24D /* Payloads.swift */; };
@@ -68,6 +68,7 @@
 		BE2809301E8038BE006E50D5 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28092F1E8038BE006E50D5 /* ContentViewController.swift */; };
 		BE4C21EB1E81970A00645143 /* DebugMenuConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4C21EA1E81970A00645143 /* DebugMenuConfiguration.swift */; };
 		CD24C47820854D7B00380C9E /* predictions.json in Resources */ = {isa = PBXBuildFile; fileRef = CD24C475208548AD00380C9E /* predictions.json */; };
+		CD24C47A20855A9800380C9E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24C47920855A9800380C9E /* UIView+Extensions.swift */; };
 		CD31A792208536D700C26A7E /* JSONAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A791208536D700C26A7E /* JSONAPI.swift */; };
 		CD31A794208536EE00C26A7E /* JSONAPIPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A793208536EE00C26A7E /* JSONAPIPayload.swift */; };
 		CD31A796208536FF00C26A7E /* JSONAPIResourceType+ImportIncluded.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A795208536FF00C26A7E /* JSONAPIResourceType+ImportIncluded.swift */; };
@@ -225,7 +226,7 @@
 		ABF84F8A1DC99CFD002DB24D /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		ABF84F8B1DC99CFD002DB24D /* StringStyle+GudTay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StringStyle+GudTay.swift"; sourceTree = "<group>"; };
 		ABF84F8F1DC99D33002DB24D /* Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
-		ABF84F901DC99D33002DB24D /* UIImage+Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Asset.swift"; sourceTree = "<group>"; };
+		ABF84F901DC99D33002DB24D /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		ABF84F9F1DCBAB1B002DB24D /* TestConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
 		ABF84FA31DCBCD89002DB24D /* MBTATests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTATests.swift; sourceTree = "<group>"; };
 		ABF84FA51DCBCEA1002DB24D /* Payloads.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payloads.swift; sourceTree = "<group>"; };
@@ -236,6 +237,7 @@
 		C7DBD1236E57FBDDF10B2FB0 /* Pods-GudTay.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTay.develop.xcconfig"; path = "Pods/Target Support Files/Pods-GudTay/Pods-GudTay.develop.xcconfig"; sourceTree = "<group>"; };
 		C931202F5CCD552D7C50FB8E /* Pods-Gud Tay.sprint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud Tay.sprint.xcconfig"; path = "Pods/Target Support Files/Pods-Gud Tay/Pods-Gud Tay.sprint.xcconfig"; sourceTree = "<group>"; };
 		CD24C475208548AD00380C9E /* predictions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = predictions.json; sourceTree = "<group>"; };
+		CD24C47920855A9800380C9E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		CD31A791208536D700C26A7E /* JSONAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAPI.swift; sourceTree = "<group>"; };
 		CD31A793208536EE00C26A7E /* JSONAPIPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAPIPayload.swift; sourceTree = "<group>"; };
 		CD31A795208536FF00C26A7E /* JSONAPIResourceType+ImportIncluded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONAPIResourceType+ImportIncluded.swift"; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				86A65B1F1FA0F6DB00705C14 /* UserDefaults+Utility.swift */,
+				CD24C47920855A9800380C9E /* UIView+Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -621,7 +624,7 @@
 				209BE2582051CB4B004CF0FF /* Actionable+AutoConformance.swift */,
 				ABF84F8F1DC99D33002DB24D /* Localized.swift */,
 				0055142520615F9C00E4CF68 /* Storyboards.swift */,
-				ABF84F901DC99D33002DB24D /* UIImage+Asset.swift */,
+				ABF84F901DC99D33002DB24D /* Asset.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -992,7 +995,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -x \"$PODS_ROOT/SwiftGen/bin/swiftgen\" ]; then\n  $PODS_ROOT/SwiftGen/bin/swiftgen xcassets --template swift4 --output GudTay/Resources/Generated/UIImage+Asset.swift GudTay/Resources/Assets.xcassets\n  $PODS_ROOT/SwiftGen/bin/swiftgen strings --template structured-swift4 --output GudTay/Resources/Generated/Localized.swift GudTay/Resources/Localizable.strings\n  $PODS_ROOT/SwiftGen/bin/swiftgen storyboards -t swift4 GudTay/ --output GudTay/Resources/Generated/Storyboards.swift\nfi\n";
+			shellScript = "if [ -x \"$PODS_ROOT/SwiftGen/bin/swiftgen\" ]; then\n  $PODS_ROOT/SwiftGen/bin/swiftgen xcassets --template swift4 --output GudTay/Resources/Generated/Asset.swift GudTay/Resources/Assets.xcassets\n  $PODS_ROOT/SwiftGen/bin/swiftgen strings --template structured-swift4 --output GudTay/Resources/Generated/Localized.swift GudTay/Resources/Localizable.strings\n  $PODS_ROOT/SwiftGen/bin/swiftgen storyboards -t swift4 GudTay/ --output GudTay/Resources/Generated/Storyboards.swift\nfi\n";
 		};
 		4B79AD4EE86D9527DA2201EB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1183,7 +1186,7 @@
 				861732F51FA2984600C14354 /* TableViewCellRepresentable.swift in Sources */,
 				ABC778E11DC94F4400815FB9 /* AppLifecycle.swift in Sources */,
 				2DFF1D161E8BF38F00B1AD70 /* UIColor+Extensions.swift in Sources */,
-				ABF84F921DC99D33002DB24D /* UIImage+Asset.swift in Sources */,
+				ABF84F921DC99D33002DB24D /* Asset.swift in Sources */,
 				209BE2592051CB4B004CF0FF /* Actionable+AutoConformance.swift in Sources */,
 				ABF84F911DC99D33002DB24D /* Localized.swift in Sources */,
 				209BE2512051C768004CF0FF /* Actionable.swift in Sources */,
@@ -1198,6 +1201,7 @@
 				862B204E1FA11345007D33BC /* DebugTextStyleViewController.swift in Sources */,
 				86A65B201FA0F6DB00705C14 /* UserDefaults+Utility.swift in Sources */,
 				861732FE1FA29BE600C14354 /* DebugMenuViewController.swift in Sources */,
+				CD24C47A20855A9800380C9E /* UIView+Extensions.swift in Sources */,
 				2DFF1D181E8BF82A00B1AD70 /* Color.swift in Sources */,
 				861732D51FA28DB600C14354 /* ModalDismissBehavior.swift in Sources */,
 			);
