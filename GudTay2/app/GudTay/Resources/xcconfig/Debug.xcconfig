@@ -1,0 +1,13 @@
+//
+//  Debug.xcconfig
+//  GudTay
+//
+//  Created by ZevEisenberg on 11/1/16.
+//  Copyright © 2017 ZevEisenberg. All rights reserved.
+//
+
+PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay.debug
+PRODUCT_NAME = $(TARGET_NAME)
+
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG
+

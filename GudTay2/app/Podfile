@@ -1,0 +1,30 @@
+platform :ios, '11.0'
+use_frameworks!
+inhibit_all_warnings!
+
+def shared
+    pod 'Marshal'
+    pod 'BonMot'
+    pod 'Alamofire'
+    pod 'Anchorage'
+
+    pod 'Swiftilities/Lifecycle'
+    pod 'Swiftilities/Logging'
+end
+
+target 'GudTay' do
+
+  target 'GudTayTests' do
+    pod 'OHHTTPStubs/Swift'
+  end
+
+  shared()
+end
+
+target 'Services' do
+    shared()
+end
+
+pod 'SwiftGen'
+pod 'Sourcery'
+pod 'SwiftLint'

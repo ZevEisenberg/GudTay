@@ -1,0 +1,16 @@
+fastlane_version "2.91.0"
+
+default_platform :ios
+
+ENV['CI_BUILD'] = 'yes'
+
+platform :ios do
+
+  # Helpers ----------------------
+
+  desc "Sync Project and Directory Structure"
+  lane :synx do
+    sh "cd .. && synx GudTay.xcodeproj"
+  end
+
+end
