@@ -9,7 +9,7 @@
 import Services
 import UIKit
 
-class ContentCoordinator: Coordinator {
+class ContentCoordinator: NSObject, Coordinator {
 
     let baseController: UIViewController
     var childCoordinator: Coordinator?
@@ -19,7 +19,7 @@ class ContentCoordinator: Coordinator {
     }
 
     func start(animated: Bool, completion: VoidClosure?) {
-        let vc = ContentTabBarViewController()
+        let vc = ContentViewController()
         vc.modalTransitionStyle = .crossDissolve
         baseController.present(vc, animated: animated, completion: completion)
     }

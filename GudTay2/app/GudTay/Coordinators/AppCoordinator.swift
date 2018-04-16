@@ -9,7 +9,7 @@
 import Services
 import UIKit
 
-class AppCoordinator: Coordinator {
+class AppCoordinator: NSObject, Coordinator {
 
     private let window: UIWindow
     fileprivate let rootController: UIViewController
@@ -26,9 +26,9 @@ class AppCoordinator: Coordinator {
         // Configure window/root view
         let contentCoordinator = ContentCoordinator(self.rootController)
         self.childCoordinator = contentCoordinator
-        contentCoordinator.start(animated: false, completion: nil)
-
+        window.rootViewController = rootController
         window.makeKeyAndVisible()
+        contentCoordinator.start(animated: false, completion: nil)
     }
 
     func cleanup(animated: Bool, completion: VoidClosure?) {

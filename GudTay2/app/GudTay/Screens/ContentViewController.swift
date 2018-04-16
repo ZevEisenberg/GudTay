@@ -1,5 +1,5 @@
 //
-//  ContentTabBarViewController.swift
+//  ContentViewController.swift
 //  GudTay
 //
 //  Created by ZevEisenberg on 3/20/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContentTabBarViewController: UITabBarController {
+class ContentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
