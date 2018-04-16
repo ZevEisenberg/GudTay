@@ -1,5 +1,5 @@
 //
-//  RandomEndpoint.swift
+//  TestEndpoint.swift
 //  GudTay
 //
 //  Created by ZevEisenberg on 11/3/16.
