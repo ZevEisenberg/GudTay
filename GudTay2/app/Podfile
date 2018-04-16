@@ -3,10 +3,11 @@ use_frameworks!
 inhibit_all_warnings!
 
 def shared
-    pod 'Marshal'
-    pod 'BonMot'
-    pod 'Alamofire'
     pod 'Anchorage'
+    pod 'BonMot'
+
+    pod 'Alamofire'    
+    pod 'Then'
 
     pod 'Swiftilities/Lifecycle'
     pod 'Swiftilities/Logging'

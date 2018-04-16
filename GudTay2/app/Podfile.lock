@@ -2,7 +2,6 @@ PODS:
   - Alamofire (4.7.2)
   - Anchorage (4.2.1)
   - BonMot (5.2)
-  - Marshal (1.2.4)
   - OHHTTPStubs/Core (6.1.0)
   - OHHTTPStubs/Default (6.1.0):
     - OHHTTPStubs/Core
@@ -25,42 +24,43 @@ PODS:
   - Swiftilities/Logging (0.17.0)
   - Swiftilities/Math (0.17.0)
   - SwiftLint (0.25.1)
+  - Then (2.3.0)
 
 DEPENDENCIES:
   - Alamofire
   - Anchorage
   - BonMot
-  - Marshal
   - OHHTTPStubs/Swift
   - Sourcery
   - SwiftGen
   - Swiftilities/Lifecycle
   - Swiftilities/Logging
   - SwiftLint
+  - Then
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Anchorage
     - BonMot
-    - Marshal
     - OHHTTPStubs
     - Sourcery
     - SwiftGen
     - Swiftilities
     - SwiftLint
+    - Then
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Anchorage: f4dbf32771115b8ef9c9cc4e55a002ad87711f48
   BonMot: 68da0bd7c2f602aca85511bedabd211eb0fae666
-  Marshal: 8e04e6624e506921db7143b0bfd83caee03f32d6
   OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
   Sourcery: 10fa92cd8890864856ee3657ca460d597ebc064b
   SwiftGen: 4379bd3640b0a212a0f6ea3c494adba385513d10
   Swiftilities: 38a1e58d290e1a70f3ad345ccb2e2e0556375540
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
+  Then: ee21c97b85ff6062b9b0080c9abb1eea46743345
 
-PODFILE CHECKSUM: f6c19e1fec2062b8e49b5ac5dfacdba86b663633
+PODFILE CHECKSUM: bb0a8b8a2ebed034a4ca34c21f747d6a78848115
 
 COCOAPODS: 1.5.0

@@ -10,7 +10,4 @@
 import XCTest
 
 class GudTayTests: XCTestCase {
-    func testUserDefaults() {
-        XCTAssertFalse(UserDefaults.hasOnboarded)
-    }
 }

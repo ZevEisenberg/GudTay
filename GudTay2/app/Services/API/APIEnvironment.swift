@@ -25,6 +25,9 @@ public enum APIEnvironment {
 }
 
 extension APIEnvironment {
-    var oathClientToken: String { return "OAUTH_CLIENT_TOKEN_NEEDED" }
-    var oathClientID: String { return "OAUTH_CLIENT_ID_NEEDED" }
+
+    var mbtaUrl: URL {
+        return URL(string: "https://api-v3.mbta.com")!
+    }
+
 }

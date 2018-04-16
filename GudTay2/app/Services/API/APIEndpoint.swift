@@ -7,9 +7,8 @@
 //
 
 import Alamofire
-import Marshal
 
-public protocol APIEndpoint: NetworkLoggable {
+protocol APIEndpoint: NetworkLoggable {
     associatedtype ResponseType
 
     var path: String { get }
@@ -17,17 +16,17 @@ public protocol APIEndpoint: NetworkLoggable {
     var queryParams: [QueryParam]? { get }
     var method: HTTPMethod { get }
     var encoding: ParameterEncoding { get }
-    var parameters: JSONObject? { get }
+    var parameters: Parameters? { get }
     var headers: HTTPHeaders { get }
 }
 
-public extension APIEndpoint {
+extension APIEndpoint {
 
     var encoding: ParameterEncoding {
         return JSONEncoding.default
     }
 
-    var parameters: JSONObject? {
+    var parameters: Parameters? {
         return nil
     }
 

@@ -10,5 +10,5 @@ public enum APIError: Error {
     case tokenExpired
     case invalidCredentials
     case invalidResponse
-    case server
+    case server(code: Int)
 }

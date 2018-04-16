@@ -7,7 +7,6 @@
 //
 
 import Alamofire
-import Marshal
 import Swiftilities
 
 public class NetworkLog: Log {}
@@ -21,19 +20,31 @@ public protocol NetworkLoggable {
 extension NetworkLoggable {
 
     public var logLevel: Log.Level {
-        return .verbose
+        #if DEBUG
+            return .verbose
+        #else
+            return .warn
+        #endif
     }
 
 }
 
 extension APIEndpoint {
 
-    func log(_ jsonArray: [JSONObject]) {
-        log(jsonArray.debugDescription)
-    }
+    func log(_ apiData: Data) {
+        guard logLevel.rawValue <= Log.Level.verbose.rawValue else { return }
 
-    func log(_ json: JSONObject) {
-        log(json.debugDescription)
+        if let jsonObject = try? JSONSerialization.jsonObject(with: apiData, options: []),
+            let reserialized = try? JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted, .sortedKeys]),
+            let string = String(data: reserialized, encoding: .utf8) {
+            log(string)
+        }
+        else if let string = String(data: apiData, encoding: .utf8) {
+            log(string)
+        }
+        else {
+            log("Failed to decode data: \(apiData)")
+        }
     }
 
     func log(_ request: DataRequest) {

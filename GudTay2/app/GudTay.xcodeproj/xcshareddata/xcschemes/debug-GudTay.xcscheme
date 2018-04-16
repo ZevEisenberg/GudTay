@@ -39,6 +39,16 @@
                ReferencedContainer = "container:GudTay.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CD31A7BB20853BA900C26A7E"
+               BuildableName = "UtilitiesTests.xctest"
+               BlueprintName = "UtilitiesTests"
+               ReferencedContainer = "container:GudTay.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

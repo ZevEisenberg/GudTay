@@ -8,12 +8,11 @@
 
 import Alamofire
 @testable import GudTay
-import Marshal
-import Services
+@testable import Services
 
 struct TestEndpoint: APIEndpoint {
     typealias ResponseType = [TestEndpointResult]
-    var path: String { return "test" }
+    var path: String { return "predictions" }
     var method: HTTPMethod { return .get }
     var encoding: ParameterEncoding { return URLEncoding.default }
     var parameters: JSONObject? { return [:] }
@@ -21,11 +20,8 @@ struct TestEndpoint: APIEndpoint {
 
 }
 
-struct TestEndpointResult: Unmarshaling {
+struct TestEndpointResult: Decodable {
 
     let value: String
 
-    init(object: MarshaledObject) throws {
-        value = try object.value(for: "value")
-    }
 }

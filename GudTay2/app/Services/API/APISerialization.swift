@@ -7,103 +7,45 @@
 //
 
 import Alamofire
-import Marshal
 
-private func ResponseSerializer<T>(_ serializer: @escaping (Data) throws -> T) -> DataResponseSerializer<T> {
+private func ResponseSerializer<T>(decoder: JSONDecoder, serializer: @escaping (Data) throws -> T) -> DataResponseSerializer<T> {
     return DataResponseSerializer { _, _, data, error in
         do {
             if let error = error { throw error }
-            guard let validData = data, !validData.isEmpty else {
+            guard let validData = data else {
                 throw APIError.invalidResponse
             }
             return .success(try serializer(validData))
         }
         catch {
-            return .failure(error as NSError)
-        }
-    }
-}
-
-private func ResponseSerializerAllowingOptional<T>(_ serializer: @escaping (Data) throws -> T) -> DataResponseSerializer<T> {
-    return DataResponseSerializer { _, _, data, error in
-        do {
-            if let error = error { throw error }
-            guard let validData = data, !validData.isEmpty else {
-                throw APIError.invalidResponse
+            if let validData = data, let errorDocument = try? decoder.decode(JSONAPI.Errors.self, from: validData),
+                let firstError = errorDocument.errors.first {
+                return .failure(firstError)
             }
-            return .success(try serializer(validData))
+            else {
+                return .failure(error as NSError)
+            }
         }
-        catch {
-            return .failure(error as NSError)
+    }
+}
+
+func APIObjectResponseSerializer<Endpoint: APIEndpoint>(_ endpoint: Endpoint, decoder: JSONDecoder) -> DataResponseSerializer<Void> where Endpoint.ResponseType == Payload.Empty {
+    return ResponseSerializer(decoder: decoder) { data in
+        endpoint.log(data)
+    }
+}
+
+/// Response serializer to import JSON Object using JSONDecoder and return an object
+func APIObjectResponseSerializer<Endpoint: APIEndpoint>(_ endpoint: Endpoint, decoder: JSONDecoder) -> DataResponseSerializer<Endpoint.ResponseType> where Endpoint.ResponseType: Decodable {
+    return ResponseSerializer(decoder: decoder) { data in
+        endpoint.log(data)
+        if let cache = decoder.cache {
+            return try cache.deferObserverNotifications(during: {
+                return try decoder.decode(Endpoint.ResponseType.self, from: data)
+            })
         }
-    }
-}
-
-/// Response serializer to unwrap data to a JSON Object
-func APIJSONObjectResponseSerializer<Endpoint: APIEndpoint>(_ endpoint: Endpoint) -> DataResponseSerializer<JSONObject> {
-    return ResponseSerializer { data in
-        let json = try JSONParser.JSONObjectWithData(data)
-        endpoint.log(json)
-        return json
-    }
-}
-
-/// Response serializer to unwrap data to a JSON Collection
-func APIJSONCollectionResponseSerializer<Endpoint: APIEndpoint>(_ endpoint: Endpoint) -> DataResponseSerializer<[JSONObject]> {
-    return ResponseSerializer { data in
-        let json = try JSONParser.JSONArrayWithData(data)
-        endpoint.log(json)
-        return json
-    }
-}
-
-/// Response serializer to import JSON Object using Marshal and return an object
-func APIObjectResponseSerializer<Endpoint: APIEndpoint>(_ endpoint: Endpoint) -> DataResponseSerializer<Endpoint.ResponseType> where Endpoint.ResponseType: Unmarshaling {
-    return ResponseSerializer { data in
-        let json = try JSONParser.JSONObjectWithData(data)
-        endpoint.log(json)
-        return try Endpoint.ResponseType.init(object: json)
-    }
-}
-
-/// Response serializer to import JSON Array using Marshal and return an array of objects
-func APICollectionResponseSerializer<Endpoint: APIEndpoint>(_ endpoint: Endpoint) -> DataResponseSerializer<Endpoint.ResponseType> where Endpoint.ResponseType: Collection, Endpoint.ResponseType.Iterator.Element: Unmarshaling {
-    return ResponseSerializer { data in
-        let jsonArray = try JSONParser.JSONArrayWithData(data)
-        endpoint.log(jsonArray)
-        let result = try jsonArray.map({ try Endpoint.ResponseType.Iterator.Element.init(object: $0) })
-        guard let typedResult = result as? Endpoint.ResponseType else {
-            // Result is identical to T, but of type [T.Iterator.Element] which Swift can not infer correctly.
-            fatalError("Unable to transfer typed arrays")
+        else {
+            return try decoder.decode(Endpoint.ResponseType.self, from: data)
         }
-        return typedResult
-    }
-}
-
-/// Response serializer to import JSON Object using Marshal and return a managed object
-func APIObjectResponseSerializer<Endpoint: APIEndpoint>(_ endpoint: Endpoint, context: Endpoint.ResponseType.ContextType) -> DataResponseSerializer<Endpoint.ResponseType> where Endpoint.ResponseType: UnmarshalingWithContext {
-    return ResponseSerializer { data in
-        let json = try JSONParser.JSONObjectWithData(data)
-        endpoint.log(json)
-        let result = try Endpoint.ResponseType.value(from: json, inContext: context)
-        guard let typedResult = result as? Endpoint.ResponseType else {
-            // Result is identical to T, but of type T.ConvertibleType which Swift can not infer correctly.
-            fatalError("error serializing type \(Endpoint.ResponseType.self) with result \(result)")
-        }
-        return typedResult
-    }
-}
-
-/// Response serializer to import JSON Array using Marshal and return an array of managed objects
-func APICollectionResponseSerializer<Endpoint: APIEndpoint>(_ endpoint: Endpoint, context: Endpoint.ResponseType.Iterator.Element.ContextType) -> DataResponseSerializer<Endpoint.ResponseType> where Endpoint.ResponseType: Collection, Endpoint.ResponseType.Iterator.Element: UnmarshalingWithContext {
-    return ResponseSerializer { data in
-        let jsonArray = try JSONParser.JSONArrayWithData(data)
-        endpoint.log(jsonArray)
-        let result = try jsonArray.map({ try Endpoint.ResponseType.Iterator.Element.value(from: $0, inContext: context) })
-        guard let typedResult = result as? Endpoint.ResponseType else {
-            // Result is identical to T, but of type [T.Iterator.Element] which Swift can not infer correctly.
-            fatalError("Unable to transfer typed arrays")
-        }
-        return typedResult
     }
 }

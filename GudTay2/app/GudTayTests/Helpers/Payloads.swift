@@ -10,33 +10,16 @@ import Foundation
 @testable import GudTay
 import Services
 
-enum Payloads {
-    static let oauth: Data = {
-        let json = [
-            "refreshToken": "FAKE_REFRESH_TOKEN",
-            "token": "FAKE_TOKEN",
-            "expirationDate": Formatters.ISODateFormatter.string(from: Date.distantFuture),
-        ]
-        do {
-            return try JSONSerialization.data(withJSONObject: json)
-        }
-        catch {
-            return Data()
-        }
-    }()
+private final class Dummy {}
 
-    static let test: Data = {
-        let json = [
-            [
-                "value": "FAKE_VALUE",
-            ],
-        ]
-        do {
-            return try JSONSerialization.data(withJSONObject: json)
-        }
-        catch {
-            return Data()
-        }
-    }()
+private func testingJSON(named name: String) -> Data {
+    // swiftlint:disable:next force_try
+    return try! Data(contentsOf: Bundle(for: Dummy.self).url(forResource: name, withExtension: "json")!)
+}
+
+enum Payloads {
+    enum MBTA {
+        static let predictions = testingJSON(named: "predictions")
+    }
 
 }
