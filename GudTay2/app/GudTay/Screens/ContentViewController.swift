@@ -47,8 +47,8 @@ class ContentViewController: UIViewController {
         mainStackView.verticalAnchors == view.safeAreaLayoutGuide.verticalAnchors
         weatherViewController.view.heightAnchor == view.heightAnchor * 0.2
 
-        mbtaViewController.view.backgroundColor = Asset.Colors.orange.color
-        weatherViewController.view.backgroundColor = Asset.Colors.day.color
+        mbtaViewController.view.backgroundColor = Color.orange.color
+        weatherViewController.view.backgroundColor = Color.day.color
     }
 
 }
