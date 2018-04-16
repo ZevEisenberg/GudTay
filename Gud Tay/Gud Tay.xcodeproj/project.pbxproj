@@ -361,7 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				AC80E7268D6F2FA1E99F8C13 /* Frameworks */,
-				CD1279C51D45B37B00DC7BB8 /* Gud Tay */,
+				CD1279C51D45B37B00DC7BB8 /* GudTay */,
 				CD848F941E63799F00E49A85 /* Gud TayTests */,
 				CDD53CB41E624B7D00422296 /* Gud TayUITests */,
 				25C6FC41E3030A91DD1F4F28 /* Pods */,
@@ -380,7 +380,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CD1279C51D45B37B00DC7BB8 /* Gud Tay */ = {
+		CD1279C51D45B37B00DC7BB8 /* GudTay */ = {
 			isa = PBXGroup;
 			children = (
 				CDECBAB21D46D97F007A82D5 /* API */,
@@ -394,7 +394,7 @@
 				CD1279D21D45B37B00DC7BB8 /* Info.plist */,
 				CD1279CF1D45B37B00DC7BB8 /* LaunchScreen.storyboard */,
 			);
-			path = "Gud Tay";
+			path = GudTay;
 			sourceTree = "<group>";
 		};
 		CD8357501D4C4DA5009E76A7 /* Services */ = {
@@ -1093,7 +1093,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = "Gud Tay/Info.plist";
+				INFOPLIST_FILE = GudTay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1109,7 +1109,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = "Gud Tay/Info.plist";
+				INFOPLIST_FILE = GudTay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
