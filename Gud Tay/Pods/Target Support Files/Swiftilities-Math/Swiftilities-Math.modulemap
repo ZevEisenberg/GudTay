@@ -1,5 +1,5 @@
 framework module Swiftilities {
-  umbrella header "Swiftilities-umbrella.h"
+  umbrella header "Swiftilities-Math-umbrella.h"
 
   export *
   module * { export * }
