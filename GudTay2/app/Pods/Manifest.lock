@@ -33,6 +33,7 @@ DEPENDENCIES:
   - OHHTTPStubs/Swift
   - Sourcery
   - SwiftGen
+  - Swiftilities/HairlineView
   - Swiftilities/Lifecycle
   - Swiftilities/Logging
   - SwiftLint
@@ -61,6 +62,6 @@ SPEC CHECKSUMS:
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
   Then: ee21c97b85ff6062b9b0080c9abb1eea46743345
 
-PODFILE CHECKSUM: bb0a8b8a2ebed034a4ca34c21f747d6a78848115
+PODFILE CHECKSUM: 803ffe14c0d43085880ae92f65e10aa02d1ba4eb
 
 COCOAPODS: 1.5.0

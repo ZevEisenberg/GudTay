@@ -9,6 +9,7 @@ def shared
     pod 'Alamofire'    
     pod 'Then'
 
+    pod 'Swiftilities/HairlineView'
     pod 'Swiftilities/Lifecycle'
     pod 'Swiftilities/Logging'
 end
