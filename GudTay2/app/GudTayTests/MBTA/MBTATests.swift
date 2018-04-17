@@ -11,12 +11,13 @@ import OHHTTPStubs
 import XCTest
 
 class MBTATests: XCTestCase {
-    let client: APIClient = {
+    let service: MBTAService = {
         let configuration = URLSessionConfiguration.default
         OHHTTPStubs.setEnabled(true, for: configuration)
-        let client = APIClient(baseURL: TestClient.baseURL, configuration: configuration)
-        return client
+        let service = MBTAService(configuration: configuration)
+        return service
     }()
+
     override class func setUp() {
         super.setUp()
     }
@@ -32,8 +33,9 @@ class MBTATests: XCTestCase {
         }
 
         let expectation = self.expectation(description: "Test Endpoint")
-        client.request(TestEndpoint()) { _, error in
-            XCTAssertNotNil(error)
+        _ = service.getPredictions(forStop: "6480") { result in
+            XCTAssert(result.isSuccess)
+            XCTAssertEqual(result.value?.count, 4)
             expectation.fulfill()
         }
         waitForExpectations(timeout: timeout, handler: nil)

@@ -13,12 +13,12 @@ enum MBTAEndpoint {
         typealias ResponseType = JSONAPI.Payload<[Prediction]>
         let path = "/predictions"
         let method: HTTPMethod = .get
-        let stopId: String
+        let stop: Identifier<Stop>
 
         var queryParams: [APIEndpoint.QueryParam]? {
             return [
                 ("include", [Stop.apiType, Route.apiType, Trip.apiType].joined(separator: ",")), // TODO: add vehicle?
-                ("stop", stopId),
+                ("stop", stop.value),
             ]
         }
     }

@@ -6,6 +6,7 @@
 //  Copyright © 2017 ZevEisenberg. All rights reserved.
 //
 
+import Services
 import UIKit
 
 @UIApplicationMain
@@ -39,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
 
-        self.coordinator = AppCoordinator(window: window)
+        self.coordinator = AppCoordinator(window: window, mbtaService: MBTAService())
         coordinator.start(animated: true, completion: {
             for config in self.rootViewControllerDependentConfigurations where config.isEnabled {
                 config.onDidLaunch(application: application, launchOptions: launchOptions)

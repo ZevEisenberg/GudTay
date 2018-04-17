@@ -45,7 +45,6 @@
 		86A65B0F1FA0EB0600705C14 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A65B041FA0EB0600705C14 /* APIError.swift */; };
 		86A65B101FA0EB0600705C14 /* APISerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A65B051FA0EB0600705C14 /* APISerialization.swift */; };
 		86A65B111FA0EB0600705C14 /* APIValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A65B061FA0EB0600705C14 /* APIValidation.swift */; };
-		86A65B181FA0F22B00705C14 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A65B141FA0F22B00705C14 /* Closures.swift */; };
 		86A65B191FA0F22B00705C14 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A65B151FA0F22B00705C14 /* Formatters.swift */; };
 		86A65B1D1FA0F2C900705C14 /* BuildType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A65B1C1FA0F2C900705C14 /* BuildType.swift */; };
 		86A65B201FA0F6DB00705C14 /* UserDefaults+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A65B1F1FA0F6DB00705C14 /* UserDefaults+Utility.swift */; };
@@ -64,7 +63,6 @@
 		ABF84FA01DCBAB1B002DB24D /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84F9F1DCBAB1B002DB24D /* TestConstants.swift */; };
 		ABF84FA41DCBCD89002DB24D /* MBTATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84FA31DCBCD89002DB24D /* MBTATests.swift */; };
 		ABF84FA61DCBCEA1002DB24D /* Payloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84FA51DCBCEA1002DB24D /* Payloads.swift */; };
-		ABF84FA81DCBFF84002DB24D /* TestEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84FA71DCBFF84002DB24D /* TestEndpoint.swift */; };
 		BE2809301E8038BE006E50D5 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28092F1E8038BE006E50D5 /* ContentViewController.swift */; };
 		BE4C21EB1E81970A00645143 /* DebugMenuConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4C21EA1E81970A00645143 /* DebugMenuConfiguration.swift */; };
 		CD24C47820854D7B00380C9E /* predictions.json in Resources */ = {isa = PBXBuildFile; fileRef = CD24C475208548AD00380C9E /* predictions.json */; };
@@ -92,6 +90,9 @@
 		CD6B88A6208588BE0064F31A /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88A5208588BE0064F31A /* Route.swift */; };
 		CD6B88A8208589F30064F31A /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88A7208589F30064F31A /* Trip.swift */; };
 		CD6B88AA208631F70064F31A /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88A9208631F70064F31A /* Prediction.swift */; };
+		CD6B88B12086366A0064F31A /* MBTAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88B02086366A0064F31A /* MBTAViewController.swift */; };
+		CD6B88B320863BEE0064F31A /* MBTACoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88B220863BEE0064F31A /* MBTACoordinator.swift */; };
+		CD6B88B620863C380064F31A /* MBTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88B520863C380064F31A /* MBTAService.swift */; };
 		F922186C768324FA2228E6B2 /* Pods_GudTay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD9F2E21AB27A0230007885 /* Pods_GudTay.framework */; };
 		FBD81C07C6B1D4B037E01D99 /* Pods_GudTay_GudTayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305313D8CBC1657136D59614 /* Pods_GudTay_GudTayTests.framework */; };
 /* End PBXBuildFile section */
@@ -205,7 +206,6 @@
 		86A65B041FA0EB0600705C14 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		86A65B051FA0EB0600705C14 /* APISerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISerialization.swift; sourceTree = "<group>"; };
 		86A65B061FA0EB0600705C14 /* APIValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIValidation.swift; sourceTree = "<group>"; };
-		86A65B141FA0F22B00705C14 /* Closures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
 		86A65B151FA0F22B00705C14 /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		86A65B1C1FA0F2C900705C14 /* BuildType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildType.swift; sourceTree = "<group>"; };
 		86A65B1F1FA0F6DB00705C14 /* UserDefaults+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Utility.swift"; sourceTree = "<group>"; };
@@ -233,7 +233,6 @@
 		ABF84F9F1DCBAB1B002DB24D /* TestConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
 		ABF84FA31DCBCD89002DB24D /* MBTATests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTATests.swift; sourceTree = "<group>"; };
 		ABF84FA51DCBCEA1002DB24D /* Payloads.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payloads.swift; sourceTree = "<group>"; };
-		ABF84FA71DCBFF84002DB24D /* TestEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEndpoint.swift; sourceTree = "<group>"; };
 		BE28092F1E8038BE006E50D5 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		BE4C21EA1E81970A00645143 /* DebugMenuConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugMenuConfiguration.swift; sourceTree = "<group>"; };
 		C3A4171B7E64E228CC7A0DF7 /* Pods-GudTay-GudTayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTay-GudTayTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GudTay-GudTayTests/Pods-GudTay-GudTayTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -265,6 +264,9 @@
 		CD6B88A5208588BE0064F31A /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		CD6B88A7208589F30064F31A /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		CD6B88A9208631F70064F31A /* Prediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
+		CD6B88B02086366A0064F31A /* MBTAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTAViewController.swift; sourceTree = "<group>"; };
+		CD6B88B220863BEE0064F31A /* MBTACoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTACoordinator.swift; sourceTree = "<group>"; };
+		CD6B88B520863C380064F31A /* MBTAService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTAService.swift; sourceTree = "<group>"; };
 		CDED0C5C528C00DBF0AF54A0 /* Pods-GudTayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTayTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GudTayTests/Pods-GudTayTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7F90A3B2F8D15AE9564FF78 /* Pods-Services.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Services.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Services/Pods-Services.debug.xcconfig"; sourceTree = "<group>"; };
 		DCD1E696B5452D855D78934E /* Pods-GudTay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTay.release.xcconfig"; path = "Pods/Target Support Files/Pods-GudTay/Pods-GudTay.release.xcconfig"; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 				2D4FA8F41E8574F9006C38ED /* AppCoordinator.swift */,
 				2DFF1CF01E8950F000B1AD70 /* ContentCoordinator.swift */,
 				2D4FA8F61E85752B006C38ED /* Coordinator.swift */,
+				CD6B88B220863BEE0064F31A /* MBTACoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 			isa = PBXGroup;
 			children = (
 				86A65AFC1FA0EB0600705C14 /* API */,
+				CD6B88B420863C2F0064F31A /* Services */,
 				86A65B131FA0F22B00705C14 /* Utilities */,
 				86A65B1C1FA0F2C900705C14 /* BuildType.swift */,
 				86A65AF11FA0EA2400705C14 /* Info.plist */,
@@ -485,7 +489,6 @@
 		86A65B131FA0F22B00705C14 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				86A65B141FA0F22B00705C14 /* Closures.swift */,
 				86A65B151FA0F22B00705C14 /* Formatters.swift */,
 				CD31A7AD20853B6F00C26A7E /* RequestProtocol.swift */,
 			);
@@ -504,6 +507,7 @@
 		AB955DCB1DE3BDD300D0347E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				CD6B88AF208636600064F31A /* MBTA */,
 				BE28092F1E8038BE006E50D5 /* ContentViewController.swift */,
 			);
 			path = Screens;
@@ -649,7 +653,6 @@
 				ABF84FA51DCBCEA1002DB24D /* Payloads.swift */,
 				006EFEF51F264204004A95DE /* TestClient.swift */,
 				ABF84F9F1DCBAB1B002DB24D /* TestConstants.swift */,
-				ABF84FA71DCBFF84002DB24D /* TestEndpoint.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -745,6 +748,22 @@
 				CD6B88A7208589F30064F31A /* Trip.swift */,
 			);
 			path = MBTA;
+			sourceTree = "<group>";
+		};
+		CD6B88AF208636600064F31A /* MBTA */ = {
+			isa = PBXGroup;
+			children = (
+				CD6B88B02086366A0064F31A /* MBTAViewController.swift */,
+			);
+			path = MBTA;
+			sourceTree = "<group>";
+		};
+		CD6B88B420863C2F0064F31A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CD6B88B520863C380064F31A /* MBTAService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1176,7 +1195,6 @@
 				86A65B0D1FA0EB0600705C14 /* APIEndpoint.swift in Sources */,
 				86A65B0E1FA0EB0600705C14 /* APIEnvironment.swift in Sources */,
 				86A65B0B1FA0EB0600705C14 /* APIConstants.swift in Sources */,
-				86A65B181FA0F22B00705C14 /* Closures.swift in Sources */,
 				CD6B88A8208589F30064F31A /* Trip.swift in Sources */,
 				86A65B091FA0EB0600705C14 /* APIClient+GudTay.swift in Sources */,
 				CD31A794208536EE00C26A7E /* JSONAPIPayload.swift in Sources */,
@@ -1194,6 +1212,7 @@
 				86A65B0A1FA0EB0600705C14 /* APIClient.swift in Sources */,
 				86A65B111FA0EB0600705C14 /* APIValidation.swift in Sources */,
 				CD31A796208536FF00C26A7E /* JSONAPIResourceType+ImportIncluded.swift in Sources */,
+				CD6B88B620863C380064F31A /* MBTAService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1206,6 +1225,7 @@
 				8662C00A1FA2AA9900ADCBA9 /* SimpleTableCellItem.swift in Sources */,
 				861732F61FA2984600C14354 /* ViewRepresentable.swift in Sources */,
 				ABC778EA1DC951B900815FB9 /* LoggingConfiguration.swift in Sources */,
+				CD6B88B320863BEE0064F31A /* MBTACoordinator.swift in Sources */,
 				BE4C21EB1E81970A00645143 /* DebugMenuConfiguration.swift in Sources */,
 				2D4FA8F71E85752B006C38ED /* Coordinator.swift in Sources */,
 				2D4FA8F51E8574F9006C38ED /* AppCoordinator.swift in Sources */,
@@ -1223,6 +1243,7 @@
 				861732FA1FA29B5E00C14354 /* TableDataSource.swift in Sources */,
 				861732FC1FA29B7300C14354 /* TableSection.swift in Sources */,
 				ABF84F8C1DC99CFD002DB24D /* Appearance.swift in Sources */,
+				CD6B88B12086366A0064F31A /* MBTAViewController.swift in Sources */,
 				ABC778791DC90B7A00815FB9 /* AppDelegate.swift in Sources */,
 				862B204C1FA11315007D33BC /* DebugMenu.swift in Sources */,
 				BE2809301E8038BE006E50D5 /* ContentViewController.swift in Sources */,
@@ -1242,7 +1263,6 @@
 				ABC7788E1DC90B7A00815FB9 /* GudTayTests.swift in Sources */,
 				ABF84FA61DCBCEA1002DB24D /* Payloads.swift in Sources */,
 				ABF84FA01DCBAB1B002DB24D /* TestConstants.swift in Sources */,
-				ABF84FA81DCBFF84002DB24D /* TestEndpoint.swift in Sources */,
 				006EFEF61F264204004A95DE /* TestClient.swift in Sources */,
 				ABF84FA41DCBCD89002DB24D /* MBTATests.swift in Sources */,
 			);

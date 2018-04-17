@@ -23,6 +23,8 @@ public enum JSONAPI {
         public let id: String
     }
 
+    public struct MissingRelationships: Swift.Error {}
+
     enum ResponseKeys: String, CodingKey {
         case data
         case included
@@ -49,9 +51,9 @@ public enum JSONAPI {
         let id: Identifier<T>
         let decoder: Decoder
         private let attributes: KeyedDecodingContainer<AttributeKeys>
-        private let relationships: KeyedDecodingContainer<RelationshipKeys>
+        private let relationships: KeyedDecodingContainer<RelationshipKeys>?
 
-        init(id: Identifier<T>, decoder: Decoder, attributes: KeyedDecodingContainer<AttributeKeys>, relationships: KeyedDecodingContainer<RelationshipKeys>) {
+        init(id: Identifier<T>, decoder: Decoder, attributes: KeyedDecodingContainer<AttributeKeys>, relationships: KeyedDecodingContainer<RelationshipKeys>?) {
             self.id = id
             self.decoder = decoder
             self.attributes = attributes
@@ -63,17 +65,26 @@ public enum JSONAPI {
         }
 
         func relationship<U: Identifiable>(for key: RelationshipKeys) throws -> Set<Identifier<U>> {
+            guard let relationships = relationships else {
+                throw MissingRelationships()
+            }
             let container = try relationships.nestedContainer(keyedBy: JSONAPI.ResponseKeys.self, forKey: key)
             let resources = try container.decode([JSONAPI.Resource].self, forKey: .data)
             return Set(resources.map { Identifier<U>($0.id.value) })
         }
 
         func relationship<U: Identifiable>(for key: RelationshipKeys) throws -> [Identifier<U>] {
+            guard let relationships = relationships else {
+                throw MissingRelationships()
+            }
             let container = try relationships.nestedContainer(keyedBy: JSONAPI.ResponseKeys.self, forKey: key)
             return try container.decode([JSONAPI.Resource].self, forKey: .data).map { Identifier<U>($0.id.value) }
         }
 
         func relationship<U: Identifiable>(for key: RelationshipKeys) throws -> Identifier<U> {
+            guard let relationships = relationships else {
+                throw MissingRelationships()
+            }
             let container = try relationships.nestedContainer(keyedBy: JSONAPI.ResponseKeys.self, forKey: key)
             let resource = try container.decode(JSONAPI.Resource.self, forKey: .data)
             return Identifier<U>(resource.id.value)
@@ -129,7 +140,10 @@ extension JSONAPIDecodable {
         let values = try decoder.container(keyedBy: JSONAPI.ResourceKeys.self)
         let anyId = try values.decode(AnyIdentifier.self, forKey: .id)
         let attributes = try values.nestedContainer(keyedBy: AttributeKeys.self, forKey: .attributes)
-        let relationships = try values.nestedContainer(keyedBy: RelationshipKeys.self, forKey: .relationships)
+        var relationships: KeyedDecodingContainer<RelationshipKeys>?
+        if values.allKeys.contains(.relationships) {
+            relationships = try values.nestedContainer(keyedBy: RelationshipKeys.self, forKey: .relationships)
+        }
         let id = Identifier<Self>(anyId.value)
         try self.init(helper: JSONAPI.DecodingHelper(id: id, decoder: decoder, attributes: attributes, relationships: relationships))
         decoder.cache!.set(self)

@@ -11,7 +11,6 @@ import Alamofire
 public class APIClient {
     let manager: Alamofire.SessionManager
     let baseURL: URL
-    let authorizationToken: String? = nil
     let cache: FlatCache
     let decoder: JSONDecoder
 

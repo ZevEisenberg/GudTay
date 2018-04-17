@@ -12,18 +12,16 @@ import UIKit
 
 class ContentViewController: UIViewController {
 
-    private let mbtaViewController: UIViewController //TODO: MBTAViewController
-    private let weatherViewController: UIViewController //TODO: WeatherViewController
+    let mbtaContainer = UIView(axId: "mbtaContainer")
+    let weatherContainer = UIView(axId: "weatherContainer")
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 
         // MBTA
 
-        mbtaViewController = UIViewController()
 
         // Weather
 
-        weatherViewController = UIViewController()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
     }
@@ -41,14 +39,14 @@ class ContentViewController: UIViewController {
             $0.alignment = .fill
         }
         view.addSubview(mainStackView)
-        mainStackView.addArrangedSubview(mbtaViewController.view)
-        mainStackView.addArrangedSubview(weatherViewController.view)
+        mainStackView.addArrangedSubview(mbtaContainer)
+        mainStackView.addArrangedSubview(weatherContainer)
         mainStackView.horizontalAnchors == view.horizontalAnchors
         mainStackView.verticalAnchors == view.safeAreaLayoutGuide.verticalAnchors
-        weatherViewController.view.heightAnchor == view.heightAnchor * 0.2
+        weatherContainer.heightAnchor == view.heightAnchor * 0.2
 
-        mbtaViewController.view.backgroundColor = Color.orange.color
-        weatherViewController.view.backgroundColor = Color.day.color
+        mbtaContainer.backgroundColor = Color.orange.color
+        weatherContainer.backgroundColor = Color.day.color
     }
 
 }
