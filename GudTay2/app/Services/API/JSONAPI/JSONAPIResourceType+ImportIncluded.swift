@@ -13,7 +13,10 @@ func decode(resources: [JSONAPI.Resource], from container: UnkeyedDecodingContai
 
     return try resources.compactMap { (resource: JSONAPI.Resource) -> AnyIdentifiable? in
         switch resource.type {
-        case Trivial.apiType: return try container.decode(Trivial.self)
+        case Prediction.apiType: return try container.decode(Prediction.self)
+        case Route.apiType: return try container.decode(Route.self)
+        case Stop.apiType: return try container.decode(Stop.self)
+        case Trip.apiType: return try container.decode(Trip.self)
         default:
             print("Unknown object type: \(resource.type)")
             // Unkeyed decoding container requires a successful decoding to step to the next value.

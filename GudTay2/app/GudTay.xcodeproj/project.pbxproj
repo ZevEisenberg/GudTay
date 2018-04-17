@@ -74,7 +74,6 @@
 		CD31A796208536FF00C26A7E /* JSONAPIResourceType+ImportIncluded.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A795208536FF00C26A7E /* JSONAPIResourceType+ImportIncluded.swift */; };
 		CD31A7982085384200C26A7E /* JSONEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A7972085384200C26A7E /* JSONEncodable.swift */; };
 		CD31A79A208538FE00C26A7E /* APIEndpoint+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A799208538FE00C26A7E /* APIEndpoint+Codable.swift */; };
-		CD31A7A020853A6E00C26A7E /* Swiftkeep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A79F20853A6E00C26A7E /* Swiftkeep.swift */; };
 		CD31A7A320853A8C00C26A7E /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A7A220853A8C00C26A7E /* Entity.swift */; };
 		CD31A7A620853AB700C26A7E /* FlatCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A7A520853AB700C26A7E /* FlatCache.swift */; };
 		CD31A7A820853AD100C26A7E /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A7A720853AD100C26A7E /* Identifier.swift */; };
@@ -88,7 +87,11 @@
 		CD31A7CA20853BA900C26A7E /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD31A7B420853BA900C26A7E /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD31A7D620853BBE00C26A7E /* Collection+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A7D520853BBE00C26A7E /* Collection+Utilities.swift */; };
 		CD31A7D720853C3B00C26A7E /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD31A7B420853BA900C26A7E /* Utilities.framework */; };
-		CD31A7DA2085406F00C26A7E /* Trivial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A7D92085406F00C26A7E /* Trivial.swift */; };
+		CD6B88A12085872B0064F31A /* MBTAEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88A02085872B0064F31A /* MBTAEndpoint.swift */; };
+		CD6B88A4208587680064F31A /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88A3208587680064F31A /* Stop.swift */; };
+		CD6B88A6208588BE0064F31A /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88A5208588BE0064F31A /* Route.swift */; };
+		CD6B88A8208589F30064F31A /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88A7208589F30064F31A /* Trip.swift */; };
+		CD6B88AA208631F70064F31A /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88A9208631F70064F31A /* Prediction.swift */; };
 		F922186C768324FA2228E6B2 /* Pods_GudTay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD9F2E21AB27A0230007885 /* Pods_GudTay.framework */; };
 		FBD81C07C6B1D4B037E01D99 /* Pods_GudTay_GudTayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305313D8CBC1657136D59614 /* Pods_GudTay_GudTayTests.framework */; };
 /* End PBXBuildFile section */
@@ -243,7 +246,6 @@
 		CD31A795208536FF00C26A7E /* JSONAPIResourceType+ImportIncluded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONAPIResourceType+ImportIncluded.swift"; sourceTree = "<group>"; };
 		CD31A7972085384200C26A7E /* JSONEncodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONEncodable.swift; sourceTree = "<group>"; };
 		CD31A799208538FE00C26A7E /* APIEndpoint+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIEndpoint+Codable.swift"; sourceTree = "<group>"; };
-		CD31A79F20853A6E00C26A7E /* Swiftkeep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swiftkeep.swift; sourceTree = "<group>"; };
 		CD31A7A220853A8C00C26A7E /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		CD31A7A520853AB700C26A7E /* FlatCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatCache.swift; sourceTree = "<group>"; };
 		CD31A7A720853AD100C26A7E /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
@@ -258,7 +260,11 @@
 		CD31A7C520853BA900C26A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD31A7D520853BBE00C26A7E /* Collection+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Utilities.swift"; sourceTree = "<group>"; };
 		CD31A7D820853CD200C26A7E /* Sourcery */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sourcery; sourceTree = "<group>"; };
-		CD31A7D92085406F00C26A7E /* Trivial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trivial.swift; sourceTree = "<group>"; };
+		CD6B88A02085872B0064F31A /* MBTAEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTAEndpoint.swift; sourceTree = "<group>"; };
+		CD6B88A3208587680064F31A /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
+		CD6B88A5208588BE0064F31A /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		CD6B88A7208589F30064F31A /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		CD6B88A9208631F70064F31A /* Prediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
 		CDED0C5C528C00DBF0AF54A0 /* Pods-GudTayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTayTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GudTayTests/Pods-GudTayTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7F90A3B2F8D15AE9564FF78 /* Pods-Services.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Services.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Services/Pods-Services.debug.xcconfig"; sourceTree = "<group>"; };
 		DCD1E696B5452D855D78934E /* Pods-GudTay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTay.release.xcconfig"; path = "Pods/Target Support Files/Pods-GudTay/Pods-GudTay.release.xcconfig"; sourceTree = "<group>"; };
@@ -489,8 +495,8 @@
 		86A65B1E1FA0F6C700705C14 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				86A65B1F1FA0F6DB00705C14 /* UserDefaults+Utility.swift */,
 				CD24C47920855A9800380C9E /* UIView+Extensions.swift */,
+				86A65B1F1FA0F6DB00705C14 /* UserDefaults+Utility.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -622,9 +628,9 @@
 			isa = PBXGroup;
 			children = (
 				209BE2582051CB4B004CF0FF /* Actionable+AutoConformance.swift */,
+				ABF84F901DC99D33002DB24D /* Asset.swift */,
 				ABF84F8F1DC99D33002DB24D /* Localized.swift */,
 				0055142520615F9C00E4CF68 /* Storyboards.swift */,
-				ABF84F901DC99D33002DB24D /* Asset.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -670,8 +676,8 @@
 		CD31A79B20853A3600C26A7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD6B88A2208587570064F31A /* MBTA */,
 				CD31A7A120853A8500C26A7E /* Meta */,
-				CD31A7D92085406F00C26A7E /* Trivial.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -679,7 +685,7 @@
 		CD31A79E20853A6000C26A7E /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
-				CD31A79F20853A6E00C26A7E /* Swiftkeep.swift */,
+				CD6B889F2085870D0064F31A /* MBTA */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -720,6 +726,25 @@
 				CD31A7C320853BA900C26A7E /* UtilitiesTests.swift */,
 			);
 			path = UtilitiesTests;
+			sourceTree = "<group>";
+		};
+		CD6B889F2085870D0064F31A /* MBTA */ = {
+			isa = PBXGroup;
+			children = (
+				CD6B88A02085872B0064F31A /* MBTAEndpoint.swift */,
+			);
+			path = MBTA;
+			sourceTree = "<group>";
+		};
+		CD6B88A2208587570064F31A /* MBTA */ = {
+			isa = PBXGroup;
+			children = (
+				CD6B88A9208631F70064F31A /* Prediction.swift */,
+				CD6B88A5208588BE0064F31A /* Route.swift */,
+				CD6B88A3208587680064F31A /* Stop.swift */,
+				CD6B88A7208589F30064F31A /* Trip.swift */,
+			);
+			path = MBTA;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1152,17 +1177,20 @@
 				86A65B0E1FA0EB0600705C14 /* APIEnvironment.swift in Sources */,
 				86A65B0B1FA0EB0600705C14 /* APIConstants.swift in Sources */,
 				86A65B181FA0F22B00705C14 /* Closures.swift in Sources */,
+				CD6B88A8208589F30064F31A /* Trip.swift in Sources */,
 				86A65B091FA0EB0600705C14 /* APIClient+GudTay.swift in Sources */,
 				CD31A794208536EE00C26A7E /* JSONAPIPayload.swift in Sources */,
 				86A65B0F1FA0EB0600705C14 /* APIError.swift in Sources */,
 				86A65B081FA0EB0600705C14 /* Alamofire+GudTay.swift in Sources */,
 				CD31A7982085384200C26A7E /* JSONEncodable.swift in Sources */,
+				CD6B88AA208631F70064F31A /* Prediction.swift in Sources */,
 				CD31A792208536D700C26A7E /* JSONAPI.swift in Sources */,
+				CD6B88A6208588BE0064F31A /* Route.swift in Sources */,
 				86A65B1D1FA0F2C900705C14 /* BuildType.swift in Sources */,
-				CD31A7DA2085406F00C26A7E /* Trivial.swift in Sources */,
-				CD31A7A020853A6E00C26A7E /* Swiftkeep.swift in Sources */,
 				CD31A7A320853A8C00C26A7E /* Entity.swift in Sources */,
 				CD31A7A620853AB700C26A7E /* FlatCache.swift in Sources */,
+				CD6B88A4208587680064F31A /* Stop.swift in Sources */,
+				CD6B88A12085872B0064F31A /* MBTAEndpoint.swift in Sources */,
 				86A65B0A1FA0EB0600705C14 /* APIClient.swift in Sources */,
 				86A65B111FA0EB0600705C14 /* APIValidation.swift in Sources */,
 				CD31A796208536FF00C26A7E /* JSONAPIResourceType+ImportIncluded.swift in Sources */,

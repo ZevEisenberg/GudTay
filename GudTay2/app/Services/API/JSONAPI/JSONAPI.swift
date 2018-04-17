@@ -107,6 +107,14 @@ public protocol JSONAPIResourceType: Identifiable {
 
 }
 
+extension JSONAPIResourceType {
+
+    public static var apiType: String {
+        return String(describing: Self.self).lowercased()
+    }
+
+}
+
 public protocol JSONAPIDecodable: JSONAPI.ResourceType, Decodable {
 
     associatedtype AttributeKeys: CodingKey
