@@ -31,7 +31,9 @@ class AppCoordinator: NSObject, Coordinator {
         self.childCoordinator = contentCoordinator
         window.rootViewController = rootController
         window.makeKeyAndVisible()
-        contentCoordinator.start(completion: nil)
+        DispatchQueue.main.async { // avoid unbalanced calls to begin/end appearance transitions
+            contentCoordinator.start(completion: nil)
+        }
     }
 
     func cleanup(animated: Bool, completion: (() -> Void)?) {
