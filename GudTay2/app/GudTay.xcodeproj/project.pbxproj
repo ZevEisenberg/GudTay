@@ -527,10 +527,10 @@
 		86A65B1E1FA0F6C700705C14 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				CD24C47920855A9800380C9E /* UIView+Extensions.swift */,
-				86A65B1F1FA0F6DB00705C14 /* UserDefaults+Utility.swift */,
 				CDB539C820879738006EE89E /* Array+Utilities.swift */,
 				CDB539CD2087DFEA006EE89E /* ClockTime.swift */,
+				CD24C47920855A9800380C9E /* UIView+Extensions.swift */,
+				86A65B1F1FA0F6DB00705C14 /* UserDefaults+Utility.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -538,8 +538,8 @@
 		AB955DCB1DE3BDD300D0347E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				CDB539CA2087DF8C006EE89E /* Gud Tay */,
 				CDB539C120879495006EE89E /* Doodle */,
+				CDB539CA2087DF8C006EE89E /* Gud Tay */,
 				CD6B88AF208636600064F31A /* MBTA */,
 				BE28092F1E8038BE006E50D5 /* ContentViewController.swift */,
 				CDB539D12087E132006EE89E /* LogViewController.swift */,
@@ -799,8 +799,8 @@
 		CD6B88B420863C2F0064F31A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CD6B88B520863C380064F31A /* MBTAService.swift */,
 				CDB539D32087E171006EE89E /* LogService.swift */,
+				CD6B88B520863C380064F31A /* MBTAService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -808,9 +808,9 @@
 		CDB539C120879495006EE89E /* Doodle */ = {
 			isa = PBXGroup;
 			children = (
+				CDB539C6208795AC006EE89E /* CGPath+Utilities.swift */,
 				CDB539C2208794A5006EE89E /* DoodleView.swift */,
 				CDB539C4208794F8006EE89E /* ImageIO.swift */,
-				CDB539C6208795AC006EE89E /* CGPath+Utilities.swift */,
 			);
 			path = Doodle;
 			sourceTree = "<group>";
