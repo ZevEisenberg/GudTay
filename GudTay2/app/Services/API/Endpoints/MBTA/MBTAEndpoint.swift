@@ -17,7 +17,7 @@ enum MBTAEndpoint {
 
         var queryParams: [APIEndpoint.QueryParam]? {
             return [
-                ("include", [Stop.apiType, Route.apiType, Trip.apiType].joined(separator: ",")), // TODO: add vehicle?
+                ("include", [Stop.apiType, Route.apiType, Trip.apiType].joined(separator: ",")),
                 ("stop", stop.value),
             ]
         }

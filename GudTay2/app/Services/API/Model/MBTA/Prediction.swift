@@ -20,7 +20,6 @@ public struct Prediction {
     let routeId: Identifier<Route>
     let stopId: Identifier<Stop>
     let tripId: Identifier<Trip>
-    // TODO: vehicle?
 
 }
 
