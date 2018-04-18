@@ -17,10 +17,26 @@ public struct Prediction {
     public let stopSequence: Int
     public let track: String?
 
-    public let routeId: Identifier<Route>
-    public let stopId: Identifier<Stop>
-    public let tripId: Identifier<Trip>
+    let routeId: Identifier<Route>
+    let stopId: Identifier<Stop>
+    let tripId: Identifier<Trip>
     // TODO: vehicle?
+
+}
+
+extension Prediction {
+
+    public var route: Route {
+        return cache!.get(id: routeId)!
+    }
+
+    public var stop: Stop {
+        return cache!.get(id: stopId)!
+    }
+
+    public var trip: Trip {
+        return cache!.get(id: tripId)!
+    }
 
 }
 

@@ -14,13 +14,13 @@ public struct Trip {
     public let headsign: String
     public let name: String
 
-    public let routeId: Identifier<Route>
+    let routeId: Identifier<Route>
 
 }
 
 extension Trip {
 
-    var route: Route {
+    public var route: Route {
         return cache!.get(id: routeId)!
     }
 

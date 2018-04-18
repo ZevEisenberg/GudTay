@@ -23,10 +23,10 @@ class ContentCoordinator: NSObject, Coordinator {
         self.mbtaService = mbtaService
     }
 
-    func start(animated: Bool, completion: (() -> Void)?) {
+    func start(completion: (() -> Void)?) {
         let vc = ContentViewController()
         vc.modalTransitionStyle = .crossDissolve
-        baseController.present(vc, animated: animated, completion: {
+        baseController.present(vc, animated: false, completion: {
             self.mbtaCoordinator = MBTACoordinator(service: self.mbtaService)
             self.mbtaCoordinator?.start(in: vc, subview: vc.mbtaContainer)
             completion?()

@@ -79,7 +79,6 @@
 		CD31A7AC20853B0900C26A7E /* AnyIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A7AB20853B0900C26A7E /* AnyIdentifier.swift */; };
 		CD31A7AE20853B6F00C26A7E /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A7AD20853B6F00C26A7E /* RequestProtocol.swift */; };
 		CD31A7BD20853BA900C26A7E /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD31A7B420853BA900C26A7E /* Utilities.framework */; };
-		CD31A7C420853BA900C26A7E /* UtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A7C320853BA900C26A7E /* UtilitiesTests.swift */; };
 		CD31A7C620853BA900C26A7E /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = CD31A7B620853BA900C26A7E /* Utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD31A7C920853BA900C26A7E /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD31A7B420853BA900C26A7E /* Utilities.framework */; };
 		CD31A7CA20853BA900C26A7E /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD31A7B420853BA900C26A7E /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -93,6 +92,13 @@
 		CD6B88B12086366A0064F31A /* MBTAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88B02086366A0064F31A /* MBTAViewController.swift */; };
 		CD6B88B320863BEE0064F31A /* MBTACoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88B220863BEE0064F31A /* MBTACoordinator.swift */; };
 		CD6B88B620863C380064F31A /* MBTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88B520863C380064F31A /* MBTAService.swift */; };
+		CDB539AE2086AF2B006EE89E /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539AD2086AF2B006EE89E /* GridView.swift */; };
+		CDB539B02086AF3D006EE89E /* MBTARouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539AF2086AF3D006EE89E /* MBTARouteView.swift */; };
+		CDB539B22086AF51006EE89E /* MBTAHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539B12086AF51006EE89E /* MBTAHeaderView.swift */; };
+		CDB539B42086AF86006EE89E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539B32086AF86006EE89E /* Fonts.swift */; };
+		CDB539B82086B15B006EE89E /* BusHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539B72086B15B006EE89E /* BusHeaderView.swift */; };
+		CDB539BA2086B2DA006EE89E /* RandomAccessCollection+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539B92086B2DA006EE89E /* RandomAccessCollection+Utilities.swift */; };
+		CDB539BC2086B301006EE89E /* CollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539BB2086B301006EE89E /* CollectionTests.swift */; };
 		F922186C768324FA2228E6B2 /* Pods_GudTay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD9F2E21AB27A0230007885 /* Pods_GudTay.framework */; };
 		FBD81C07C6B1D4B037E01D99 /* Pods_GudTay_GudTayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305313D8CBC1657136D59614 /* Pods_GudTay_GudTayTests.framework */; };
 /* End PBXBuildFile section */
@@ -255,7 +261,6 @@
 		CD31A7B620853BA900C26A7E /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		CD31A7B720853BA900C26A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD31A7BC20853BA900C26A7E /* UtilitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD31A7C320853BA900C26A7E /* UtilitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesTests.swift; sourceTree = "<group>"; };
 		CD31A7C520853BA900C26A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD31A7D520853BBE00C26A7E /* Collection+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Utilities.swift"; sourceTree = "<group>"; };
 		CD31A7D820853CD200C26A7E /* Sourcery */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sourcery; sourceTree = "<group>"; };
@@ -267,6 +272,13 @@
 		CD6B88B02086366A0064F31A /* MBTAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTAViewController.swift; sourceTree = "<group>"; };
 		CD6B88B220863BEE0064F31A /* MBTACoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTACoordinator.swift; sourceTree = "<group>"; };
 		CD6B88B520863C380064F31A /* MBTAService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTAService.swift; sourceTree = "<group>"; };
+		CDB539AD2086AF2B006EE89E /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridView.swift; path = ../../../../../GudTay/GudTay/View/MBTA/GridView.swift; sourceTree = "<group>"; };
+		CDB539AF2086AF3D006EE89E /* MBTARouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTARouteView.swift; sourceTree = "<group>"; };
+		CDB539B12086AF51006EE89E /* MBTAHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTAHeaderView.swift; sourceTree = "<group>"; };
+		CDB539B32086AF86006EE89E /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		CDB539B72086B15B006EE89E /* BusHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusHeaderView.swift; sourceTree = "<group>"; };
+		CDB539B92086B2DA006EE89E /* RandomAccessCollection+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+Utilities.swift"; sourceTree = "<group>"; };
+		CDB539BB2086B301006EE89E /* CollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTests.swift; sourceTree = "<group>"; };
 		CDED0C5C528C00DBF0AF54A0 /* Pods-GudTayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTayTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GudTayTests/Pods-GudTayTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7F90A3B2F8D15AE9564FF78 /* Pods-Services.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Services.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Services/Pods-Services.debug.xcconfig"; sourceTree = "<group>"; };
 		DCD1E696B5452D855D78934E /* Pods-GudTay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTay.release.xcconfig"; path = "Pods/Target Support Files/Pods-GudTay/Pods-GudTay.release.xcconfig"; sourceTree = "<group>"; };
@@ -422,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				861732D71FA290F400C14354 /* ControlContainable.swift */,
+				CDB539AD2086AF2B006EE89E /* GridView.swift */,
 				861732F71FA2989000C14354 /* TableViewContainerCell.swift */,
 			);
 			path = Views;
@@ -586,6 +599,7 @@
 				ABC778DC1DC94EE500815FB9 /* Acknowledgements.plist */,
 				ABC7787F1DC90B7A00815FB9 /* Assets.xcassets */,
 				2DFF1D171E8BF82A00B1AD70 /* Color.swift */,
+				CDB539B32086AF86006EE89E /* Fonts.swift */,
 				ABC778841DC90B7A00815FB9 /* Info.plist */,
 				00551421206144E200E4CF68 /* InfoPlist.strings */,
 				ABC778811DC90B7A00815FB9 /* LaunchScreen.storyboard */,
@@ -717,6 +731,7 @@
 			children = (
 				CD31A7D520853BBE00C26A7E /* Collection+Utilities.swift */,
 				CD31A7B720853BA900C26A7E /* Info.plist */,
+				CDB539B92086B2DA006EE89E /* RandomAccessCollection+Utilities.swift */,
 				CD31A7B620853BA900C26A7E /* Utilities.h */,
 			);
 			path = Utilities;
@@ -725,8 +740,8 @@
 		CD31A7C220853BA900C26A7E /* UtilitiesTests */ = {
 			isa = PBXGroup;
 			children = (
+				CDB539BB2086B301006EE89E /* CollectionTests.swift */,
 				CD31A7C520853BA900C26A7E /* Info.plist */,
-				CD31A7C320853BA900C26A7E /* UtilitiesTests.swift */,
 			);
 			path = UtilitiesTests;
 			sourceTree = "<group>";
@@ -753,6 +768,9 @@
 		CD6B88AF208636600064F31A /* MBTA */ = {
 			isa = PBXGroup;
 			children = (
+				CDB539B72086B15B006EE89E /* BusHeaderView.swift */,
+				CDB539B12086AF51006EE89E /* MBTAHeaderView.swift */,
+				CDB539AF2086AF3D006EE89E /* MBTARouteView.swift */,
 				CD6B88B02086366A0064F31A /* MBTAViewController.swift */,
 			);
 			path = MBTA;
@@ -925,6 +943,7 @@
 					CD31A7BB20853BA900C26A7E = {
 						CreatedOnToolsVersion = 9.3;
 						DevelopmentTeam = 2KJHM26Y46;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 						TestTargetID = ABC778741DC90B7A00815FB9;
 					};
@@ -1221,6 +1240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DFF1CF11E8950F000B1AD70 /* ContentCoordinator.swift in Sources */,
+				CDB539B02086AF3D006EE89E /* MBTARouteView.swift in Sources */,
 				ABF84F8D1DC99CFD002DB24D /* StringStyle+GudTay.swift in Sources */,
 				8662C00A1FA2AA9900ADCBA9 /* SimpleTableCellItem.swift in Sources */,
 				861732F61FA2984600C14354 /* ViewRepresentable.swift in Sources */,
@@ -1230,6 +1250,7 @@
 				2D4FA8F71E85752B006C38ED /* Coordinator.swift in Sources */,
 				2D4FA8F51E8574F9006C38ED /* AppCoordinator.swift in Sources */,
 				861732F41FA2984600C14354 /* TableCellItem.swift in Sources */,
+				CDB539AE2086AF2B006EE89E /* GridView.swift in Sources */,
 				861732F81FA2989100C14354 /* TableViewContainerCell.swift in Sources */,
 				861732F51FA2984600C14354 /* TableViewCellRepresentable.swift in Sources */,
 				ABC778E11DC94F4400815FB9 /* AppLifecycle.swift in Sources */,
@@ -1241,6 +1262,7 @@
 				0055142620615F9D00E4CF68 /* Storyboards.swift in Sources */,
 				861732D81FA290F400C14354 /* ControlContainable.swift in Sources */,
 				861732FA1FA29B5E00C14354 /* TableDataSource.swift in Sources */,
+				CDB539B22086AF51006EE89E /* MBTAHeaderView.swift in Sources */,
 				861732FC1FA29B7300C14354 /* TableSection.swift in Sources */,
 				ABF84F8C1DC99CFD002DB24D /* Appearance.swift in Sources */,
 				CD6B88B12086366A0064F31A /* MBTAViewController.swift in Sources */,
@@ -1249,9 +1271,11 @@
 				BE2809301E8038BE006E50D5 /* ContentViewController.swift in Sources */,
 				862B204E1FA11345007D33BC /* DebugTextStyleViewController.swift in Sources */,
 				86A65B201FA0F6DB00705C14 /* UserDefaults+Utility.swift in Sources */,
+				CDB539B82086B15B006EE89E /* BusHeaderView.swift in Sources */,
 				861732FE1FA29BE600C14354 /* DebugMenuViewController.swift in Sources */,
 				CD24C47A20855A9800380C9E /* UIView+Extensions.swift in Sources */,
 				2DFF1D181E8BF82A00B1AD70 /* Color.swift in Sources */,
+				CDB539B42086AF86006EE89E /* Fonts.swift in Sources */,
 				861732D51FA28DB600C14354 /* ModalDismissBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1273,6 +1297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD31A7D620853BBE00C26A7E /* Collection+Utilities.swift in Sources */,
+				CDB539BA2086B2DA006EE89E /* RandomAccessCollection+Utilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1280,7 +1305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD31A7C420853BA900C26A7E /* UtilitiesTests.swift in Sources */,
+				CDB539BC2086B301006EE89E /* CollectionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2140,6 +2165,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2150,6 +2176,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay.utilities.UtilitiesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GudTay.app/GudTay";

@@ -25,13 +25,13 @@ class AppCoordinator: NSObject, Coordinator {
         self.rootController = rootController
     }
 
-    func start(animated: Bool, completion: (() -> Void)?) {
+    func start(completion: (() -> Void)?) {
         // Configure window/root view
-        let contentCoordinator = ContentCoordinator(self.rootController, mbtaService: mbtaService)
+        let contentCoordinator = ContentCoordinator(rootController, mbtaService: mbtaService)
         self.childCoordinator = contentCoordinator
         window.rootViewController = rootController
         window.makeKeyAndVisible()
-        contentCoordinator.start(animated: false, completion: nil)
+        contentCoordinator.start(completion: nil)
     }
 
     func cleanup(animated: Bool, completion: (() -> Void)?) {

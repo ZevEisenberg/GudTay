@@ -7,7 +7,7 @@
 //
 
 /// APIConstants that are used in multiple places
-enum APIConstants {
+public enum APIConstants {
     // Headers
     static let authorization = "Authorization"
     static let accept = "Accept"
@@ -16,5 +16,7 @@ enum APIConstants {
     // Values
     static let applicationJSON = "application/json"
     static let formEncoded = "application/x-www-form-urlencoded"
+
+    public static let routeOfInterest: Identifier<Route> = "32"
 
 }

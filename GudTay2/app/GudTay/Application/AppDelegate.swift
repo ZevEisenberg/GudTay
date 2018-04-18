@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
 
         self.coordinator = AppCoordinator(window: window, mbtaService: MBTAService())
-        coordinator.start(animated: true, completion: {
+        coordinator.start(completion: {
             for config in self.rootViewControllerDependentConfigurations where config.isEnabled {
                 config.onDidLaunch(application: application, launchOptions: launchOptions)
             }

@@ -10,13 +10,13 @@ public struct Route {
     public var cache: FlatCache?
     public let id: Identifier<Route>
 
-    let colorString: String
-    let mbtaDescription: String
-    let directionNames: [String]
-    let longName: String
-    let shortName: String
-    let textColorString: String
-    let type: Int
+    public let colorString: String
+    public let mbtaDescription: String
+    public let directionNames: [String]
+    public let longName: String
+    public let shortName: String
+    public let textColorString: String
+    public let type: Int
 
 }
 
