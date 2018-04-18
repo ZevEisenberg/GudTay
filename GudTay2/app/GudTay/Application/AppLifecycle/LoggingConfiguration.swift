@@ -15,6 +15,9 @@ struct LoggingConfiguration: AppLifecycle {
     func onDidLaunch(application: UIApplication, launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
         Log.logLevel = .info
         NetworkLog.logLevel = .info
+        Log.handler = { (level, message) in
+            LogService.add(message: message)
+        }
     }
 
 }

@@ -10,7 +10,7 @@ import Swiftilities
 
 final class ModalDismissBehavior: ViewControllerLifecycleBehavior {
 
-    fileprivate weak var viewController: UIViewController?
+    private weak var viewController: UIViewController?
 
     func beforeAppearing(_ viewController: UIViewController, animated: Bool) {
         self.viewController = viewController

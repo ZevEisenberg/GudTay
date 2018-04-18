@@ -24,13 +24,13 @@ final class DoodleView: GridView {
 
     // Private Properties
 
-    fileprivate var lineColor = UIColor.black
-    fileprivate var lineWidth: CGFloat = 5.0
+    private var lineColor = UIColor.black
+    private var lineWidth: CGFloat = 5.0
 
-    fileprivate var lastPoints: [CGPoint] = Array(repeating: .zero, count: 4)
-    fileprivate var buffer: UIImage?
+    private var lastPoints: [CGPoint] = Array(repeating: .zero, count: 4)
+    private var buffer: UIImage?
 
-    fileprivate let imageView = UIImageView()
+    private let imageView = UIImageView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)

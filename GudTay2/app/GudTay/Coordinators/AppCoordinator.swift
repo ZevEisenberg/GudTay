@@ -14,7 +14,7 @@ class AppCoordinator: NSObject, Coordinator {
     private let window: UIWindow
     private let mbtaService: MBTAService
 
-    fileprivate let rootController: UIViewController
+    private let rootController: UIViewController
     var childCoordinator: Coordinator?
 
     init(window: UIWindow, mbtaService: MBTAService) {

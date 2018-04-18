@@ -102,6 +102,11 @@
 		CDB539C5208794F8006EE89E /* ImageIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539C4208794F8006EE89E /* ImageIO.swift */; };
 		CDB539C7208795AD006EE89E /* CGPath+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539C6208795AC006EE89E /* CGPath+Utilities.swift */; };
 		CDB539C920879738006EE89E /* Array+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539C820879738006EE89E /* Array+Utilities.swift */; };
+		CDB539CC2087DFA1006EE89E /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539CB2087DFA1006EE89E /* ClockView.swift */; };
+		CDB539CE2087DFEA006EE89E /* ClockTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539CD2087DFEA006EE89E /* ClockTime.swift */; };
+		CDB539D02087E050006EE89E /* GudTayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539CF2087E050006EE89E /* GudTayView.swift */; };
+		CDB539D22087E132006EE89E /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539D12087E132006EE89E /* LogViewController.swift */; };
+		CDB539D42087E171006EE89E /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539D32087E171006EE89E /* LogService.swift */; };
 		F922186C768324FA2228E6B2 /* Pods_GudTay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD9F2E21AB27A0230007885 /* Pods_GudTay.framework */; };
 		FBD81C07C6B1D4B037E01D99 /* Pods_GudTay_GudTayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305313D8CBC1657136D59614 /* Pods_GudTay_GudTayTests.framework */; };
 /* End PBXBuildFile section */
@@ -285,6 +290,11 @@
 		CDB539C4208794F8006EE89E /* ImageIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageIO.swift; sourceTree = "<group>"; };
 		CDB539C6208795AC006EE89E /* CGPath+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPath+Utilities.swift"; sourceTree = "<group>"; };
 		CDB539C820879738006EE89E /* Array+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utilities.swift"; sourceTree = "<group>"; };
+		CDB539CB2087DFA1006EE89E /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		CDB539CD2087DFEA006EE89E /* ClockTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTime.swift; sourceTree = "<group>"; };
+		CDB539CF2087E050006EE89E /* GudTayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GudTayView.swift; sourceTree = "<group>"; };
+		CDB539D12087E132006EE89E /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		CDB539D32087E171006EE89E /* LogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 		CDED0C5C528C00DBF0AF54A0 /* Pods-GudTayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTayTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GudTayTests/Pods-GudTayTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7F90A3B2F8D15AE9564FF78 /* Pods-Services.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Services.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Services/Pods-Services.debug.xcconfig"; sourceTree = "<group>"; };
 		DCD1E696B5452D855D78934E /* Pods-GudTay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTay.release.xcconfig"; path = "Pods/Target Support Files/Pods-GudTay/Pods-GudTay.release.xcconfig"; sourceTree = "<group>"; };
@@ -520,6 +530,7 @@
 				CD24C47920855A9800380C9E /* UIView+Extensions.swift */,
 				86A65B1F1FA0F6DB00705C14 /* UserDefaults+Utility.swift */,
 				CDB539C820879738006EE89E /* Array+Utilities.swift */,
+				CDB539CD2087DFEA006EE89E /* ClockTime.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -527,9 +538,11 @@
 		AB955DCB1DE3BDD300D0347E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				CDB539CA2087DF8C006EE89E /* Gud Tay */,
 				CDB539C120879495006EE89E /* Doodle */,
 				CD6B88AF208636600064F31A /* MBTA */,
 				BE28092F1E8038BE006E50D5 /* ContentViewController.swift */,
+				CDB539D12087E132006EE89E /* LogViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -787,6 +800,7 @@
 			isa = PBXGroup;
 			children = (
 				CD6B88B520863C380064F31A /* MBTAService.swift */,
+				CDB539D32087E171006EE89E /* LogService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -799,6 +813,15 @@
 				CDB539C6208795AC006EE89E /* CGPath+Utilities.swift */,
 			);
 			path = Doodle;
+			sourceTree = "<group>";
+		};
+		CDB539CA2087DF8C006EE89E /* Gud Tay */ = {
+			isa = PBXGroup;
+			children = (
+				CDB539CB2087DFA1006EE89E /* ClockView.swift */,
+				CDB539CF2087E050006EE89E /* GudTayView.swift */,
+			);
+			path = "Gud Tay";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1229,6 +1252,7 @@
 				CD31A7AA20853AEA00C26A7E /* FlatCache+Observer.swift in Sources */,
 				86A65B0D1FA0EB0600705C14 /* APIEndpoint.swift in Sources */,
 				86A65B0E1FA0EB0600705C14 /* APIEnvironment.swift in Sources */,
+				CDB539D42087E171006EE89E /* LogService.swift in Sources */,
 				86A65B0B1FA0EB0600705C14 /* APIConstants.swift in Sources */,
 				CD6B88A8208589F30064F31A /* Trip.swift in Sources */,
 				86A65B091FA0EB0600705C14 /* APIClient+GudTay.swift in Sources */,
@@ -1270,6 +1294,7 @@
 				861732F51FA2984600C14354 /* TableViewCellRepresentable.swift in Sources */,
 				ABC778E11DC94F4400815FB9 /* AppLifecycle.swift in Sources */,
 				CDB539C920879738006EE89E /* Array+Utilities.swift in Sources */,
+				CDB539D22087E132006EE89E /* LogViewController.swift in Sources */,
 				2DFF1D161E8BF38F00B1AD70 /* UIColor+Extensions.swift in Sources */,
 				CDB539BE2087932D006EE89E /* GridView.swift in Sources */,
 				ABF84F921DC99D33002DB24D /* Asset.swift in Sources */,
@@ -1277,18 +1302,21 @@
 				CDB539C3208794A5006EE89E /* DoodleView.swift in Sources */,
 				CDB539C5208794F8006EE89E /* ImageIO.swift in Sources */,
 				ABF84F911DC99D33002DB24D /* Localized.swift in Sources */,
+				CDB539CC2087DFA1006EE89E /* ClockView.swift in Sources */,
 				209BE2512051C768004CF0FF /* Actionable.swift in Sources */,
 				0055142620615F9D00E4CF68 /* Storyboards.swift in Sources */,
 				861732D81FA290F400C14354 /* ControlContainable.swift in Sources */,
 				861732FA1FA29B5E00C14354 /* TableDataSource.swift in Sources */,
 				CDB539B22086AF51006EE89E /* MBTAHeaderView.swift in Sources */,
 				861732FC1FA29B7300C14354 /* TableSection.swift in Sources */,
+				CDB539CE2087DFEA006EE89E /* ClockTime.swift in Sources */,
 				ABF84F8C1DC99CFD002DB24D /* Appearance.swift in Sources */,
 				CD6B88B12086366A0064F31A /* MBTAViewController.swift in Sources */,
 				ABC778791DC90B7A00815FB9 /* AppDelegate.swift in Sources */,
 				862B204C1FA11315007D33BC /* DebugMenu.swift in Sources */,
 				CDB539C7208795AD006EE89E /* CGPath+Utilities.swift in Sources */,
 				BE2809301E8038BE006E50D5 /* ContentViewController.swift in Sources */,
+				CDB539D02087E050006EE89E /* GudTayView.swift in Sources */,
 				862B204E1FA11345007D33BC /* DebugTextStyleViewController.swift in Sources */,
 				86A65B201FA0F6DB00705C14 /* UserDefaults+Utility.swift in Sources */,
 				CDB539B82086B15B006EE89E /* BusHeaderView.swift in Sources */,

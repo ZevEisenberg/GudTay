@@ -38,6 +38,17 @@ class ContentCoordinator: NSObject, Coordinator {
             doodleView.edgeAnchors == contentViewController.doodleContainer.edgeAnchors
             doodleView.borderedEdges = [.bottom]
             doodleView.delegate = self
+
+            let gudTayView = GudTayView(tapHandler: { [weak self] in
+                let logVC = LogViewController()
+                let navCon = UINavigationController(rootViewController: logVC)
+                navCon.modalPresentationStyle = .formSheet
+                self?.contentViewController?.show(navCon, sender: self)
+            })
+            contentViewController.calvinContainer.addSubview(gudTayView)
+            gudTayView.edgeAnchors == contentViewController.calvinContainer.edgeAnchors
+            gudTayView.borderedEdges = [.bottom]
+
             completion?()
         })
     }

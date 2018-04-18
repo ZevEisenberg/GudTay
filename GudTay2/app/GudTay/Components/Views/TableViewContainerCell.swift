@@ -35,7 +35,7 @@ public class TableViewContainerCell<View: UIView>: UITableViewCell {
         return containerView
     }()
 
-    fileprivate let shadowView: UIView = {
+    private let shadowView: UIView = {
         let shadowView = UIView()
         shadowView.backgroundColor = .white
 
