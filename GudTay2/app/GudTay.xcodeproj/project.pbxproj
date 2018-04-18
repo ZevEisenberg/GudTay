@@ -92,13 +92,13 @@
 		CD6B88B12086366A0064F31A /* MBTAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88B02086366A0064F31A /* MBTAViewController.swift */; };
 		CD6B88B320863BEE0064F31A /* MBTACoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88B220863BEE0064F31A /* MBTACoordinator.swift */; };
 		CD6B88B620863C380064F31A /* MBTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88B520863C380064F31A /* MBTAService.swift */; };
-		CDB539AE2086AF2B006EE89E /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539AD2086AF2B006EE89E /* GridView.swift */; };
 		CDB539B02086AF3D006EE89E /* MBTARouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539AF2086AF3D006EE89E /* MBTARouteView.swift */; };
 		CDB539B22086AF51006EE89E /* MBTAHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539B12086AF51006EE89E /* MBTAHeaderView.swift */; };
 		CDB539B42086AF86006EE89E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539B32086AF86006EE89E /* Fonts.swift */; };
 		CDB539B82086B15B006EE89E /* BusHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539B72086B15B006EE89E /* BusHeaderView.swift */; };
 		CDB539BA2086B2DA006EE89E /* RandomAccessCollection+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539B92086B2DA006EE89E /* RandomAccessCollection+Utilities.swift */; };
 		CDB539BC2086B301006EE89E /* CollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539BB2086B301006EE89E /* CollectionTests.swift */; };
+		CDB539BE2087932D006EE89E /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539BD2087932D006EE89E /* GridView.swift */; };
 		F922186C768324FA2228E6B2 /* Pods_GudTay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD9F2E21AB27A0230007885 /* Pods_GudTay.framework */; };
 		FBD81C07C6B1D4B037E01D99 /* Pods_GudTay_GudTayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305313D8CBC1657136D59614 /* Pods_GudTay_GudTayTests.framework */; };
 /* End PBXBuildFile section */
@@ -272,13 +272,13 @@
 		CD6B88B02086366A0064F31A /* MBTAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTAViewController.swift; sourceTree = "<group>"; };
 		CD6B88B220863BEE0064F31A /* MBTACoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTACoordinator.swift; sourceTree = "<group>"; };
 		CD6B88B520863C380064F31A /* MBTAService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTAService.swift; sourceTree = "<group>"; };
-		CDB539AD2086AF2B006EE89E /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridView.swift; path = ../../../../../GudTay/GudTay/View/MBTA/GridView.swift; sourceTree = "<group>"; };
 		CDB539AF2086AF3D006EE89E /* MBTARouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTARouteView.swift; sourceTree = "<group>"; };
 		CDB539B12086AF51006EE89E /* MBTAHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTAHeaderView.swift; sourceTree = "<group>"; };
 		CDB539B32086AF86006EE89E /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		CDB539B72086B15B006EE89E /* BusHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusHeaderView.swift; sourceTree = "<group>"; };
 		CDB539B92086B2DA006EE89E /* RandomAccessCollection+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+Utilities.swift"; sourceTree = "<group>"; };
 		CDB539BB2086B301006EE89E /* CollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTests.swift; sourceTree = "<group>"; };
+		CDB539BD2087932D006EE89E /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridView.swift; path = GridView.swift; sourceTree = "<group>"; };
 		CDED0C5C528C00DBF0AF54A0 /* Pods-GudTayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTayTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GudTayTests/Pods-GudTayTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7F90A3B2F8D15AE9564FF78 /* Pods-Services.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Services.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Services/Pods-Services.debug.xcconfig"; sourceTree = "<group>"; };
 		DCD1E696B5452D855D78934E /* Pods-GudTay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTay.release.xcconfig"; path = "Pods/Target Support Files/Pods-GudTay/Pods-GudTay.release.xcconfig"; sourceTree = "<group>"; };
@@ -434,7 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				861732D71FA290F400C14354 /* ControlContainable.swift */,
-				CDB539AD2086AF2B006EE89E /* GridView.swift */,
+				CDB539BD2087932D006EE89E /* GridView.swift */,
 				861732F71FA2989000C14354 /* TableViewContainerCell.swift */,
 			);
 			path = Views;
@@ -1250,11 +1250,11 @@
 				2D4FA8F71E85752B006C38ED /* Coordinator.swift in Sources */,
 				2D4FA8F51E8574F9006C38ED /* AppCoordinator.swift in Sources */,
 				861732F41FA2984600C14354 /* TableCellItem.swift in Sources */,
-				CDB539AE2086AF2B006EE89E /* GridView.swift in Sources */,
 				861732F81FA2989100C14354 /* TableViewContainerCell.swift in Sources */,
 				861732F51FA2984600C14354 /* TableViewCellRepresentable.swift in Sources */,
 				ABC778E11DC94F4400815FB9 /* AppLifecycle.swift in Sources */,
 				2DFF1D161E8BF38F00B1AD70 /* UIColor+Extensions.swift in Sources */,
+				CDB539BE2087932D006EE89E /* GridView.swift in Sources */,
 				ABF84F921DC99D33002DB24D /* Asset.swift in Sources */,
 				209BE2592051CB4B004CF0FF /* Actionable+AutoConformance.swift in Sources */,
 				ABF84F911DC99D33002DB24D /* Localized.swift in Sources */,
