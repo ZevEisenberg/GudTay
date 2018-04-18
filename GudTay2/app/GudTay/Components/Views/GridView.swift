@@ -7,6 +7,7 @@
 //
 
 import Anchorage
+import Swiftilities
 import UIKit
 
 class GridView: UIView {
@@ -82,7 +83,7 @@ private extension GridView {
     }
 
     static func hairline(_ axis: UILayoutConstraintAxis) -> HairlineView {
-        return HairlineView(axis: axis, thickness: Constants.hairlineWidth, color: Constants.hairlineColor)
+        return HairlineView(axis: axis, thickness: Constants.hairlineWidth, hairlineColor: Constants.hairlineColor)
     }
 
 }
