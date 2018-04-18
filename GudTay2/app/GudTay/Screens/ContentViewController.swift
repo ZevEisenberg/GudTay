@@ -13,7 +13,7 @@ import UIKit
 class ContentViewController: UIViewController {
 
     let mbtaContainer = UIView(axId: "mbtaContainer")
-    let whiteboardContainer = UIView(axId: "whiteboardContainer")
+    let doodleContainer = UIView(axId: "doodleContainer")
     let calvinContainer = UIView(axId: "calvinContainer")
     let weatherContainer = UIView(axId: "weatherContainer")
 
@@ -42,7 +42,7 @@ class ContentViewController: UIViewController {
         }
         view.addSubview(mainStackView)
         mainStackView.addArrangedSubview(mbtaContainer)
-        mainStackView.addArrangedSubview(whiteboardContainer)
+        mainStackView.addArrangedSubview(doodleContainer)
         mainStackView.addArrangedSubview(calvinContainer)
         mainStackView.addArrangedSubview(weatherContainer)
         mainStackView.horizontalAnchors == view.horizontalAnchors
