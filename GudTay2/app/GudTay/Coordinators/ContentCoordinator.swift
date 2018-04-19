@@ -13,16 +13,19 @@ import UIKit
 class ContentCoordinator: NSObject, Coordinator {
 
     let mbtaService: MBTAService
+    let weatherService: WeatherServiceProtocol
 
     let baseController: UIViewController
     var childCoordinator: Coordinator?
     var contentViewController: ContentViewController?
 
     var mbtaCoordinator: MBTACoordinator?
+    var weatherCoordinator: WeatherCoordinator?
 
-    init(_ baseController: UIViewController, mbtaService: MBTAService) {
+    init(_ baseController: UIViewController, mbtaService: MBTAService, weatherService: WeatherServiceProtocol) {
         self.baseController = baseController
         self.mbtaService = mbtaService
+        self.weatherService = weatherService
     }
 
     func start(completion: (() -> Void)?) {
@@ -48,6 +51,9 @@ class ContentCoordinator: NSObject, Coordinator {
             contentViewController.calvinContainer.addSubview(gudTayView)
             gudTayView.edgeAnchors == contentViewController.calvinContainer.edgeAnchors
             gudTayView.borderedEdges = [.bottom]
+
+            self.weatherCoordinator = WeatherCoordinator(service: self.weatherService)
+            self.weatherCoordinator?.start(in: contentViewController, subview: contentViewController.weatherContainer)
 
             completion?()
         })

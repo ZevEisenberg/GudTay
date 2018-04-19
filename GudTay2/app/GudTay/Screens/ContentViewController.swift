@@ -38,17 +38,19 @@ class ContentViewController: UIViewController {
         let mainStackView = UIStackView(axId: "mainStackView").then {
             $0.axis = .vertical
             $0.alignment = .fill
-            $0.distribution = .fillEqually
         }
         view.addSubview(mainStackView)
         mainStackView.addArrangedSubview(mbtaContainer)
         mainStackView.addArrangedSubview(doodleContainer)
         mainStackView.addArrangedSubview(calvinContainer)
         mainStackView.addArrangedSubview(weatherContainer)
+
+        mbtaContainer.heightAnchor == doodleContainer.heightAnchor
+        doodleContainer.heightAnchor == calvinContainer.heightAnchor
+
         mainStackView.horizontalAnchors == view.horizontalAnchors
         mainStackView.verticalAnchors == view.safeAreaLayoutGuide.verticalAnchors
-
-        weatherContainer.backgroundColor = Color.day.color
+        weatherContainer.heightAnchor == 205
     }
 
 }

@@ -6,6 +6,8 @@
 //  Copyright © 2017 ZevEisenberg. All rights reserved.
 //
 
+import Foundation
+
 public enum Formatters {
 
     public static var ISODateFormatter: ISO8601DateFormatter = {

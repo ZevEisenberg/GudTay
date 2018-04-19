@@ -5,6 +5,8 @@
 //  Created by Zev Eisenberg on 4/16/18.
 //
 
+import Foundation.NSHashTable
+
 public protocol Cachable {
 
     var cache: FlatCache? { get set }

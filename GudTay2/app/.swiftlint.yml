@@ -4,6 +4,7 @@ disabled_rules:
 - file_length
 - function_body_length
 - function_parameter_count
+- large_tuple
 - line_length
 - nesting
 - type_body_length

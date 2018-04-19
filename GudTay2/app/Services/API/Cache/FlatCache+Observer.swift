@@ -5,6 +5,8 @@
 //  Created by Zev Eisenberg on 4/16/18.
 //
 
+import Dispatch
+
 public class Observer {
     let key: Key
     let observation: (Any) -> Void
@@ -147,7 +149,7 @@ extension Entity {
 
     public static func observeAll(_ observation: @escaping ([Self]) -> Void) -> Observer? {
         let cache = APIClient.mbta.cache
-        return cache.observe(observation: observation)
+        return cache?.observe(observation: observation)
     }
 
 }

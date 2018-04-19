@@ -5,6 +5,8 @@
 //  Created by Zev Eisenberg on 4/17/18.
 //
 
+import Foundation.NSDate
+
 public struct Prediction {
 
     public var cache: FlatCache?

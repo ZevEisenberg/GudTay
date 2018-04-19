@@ -13,13 +13,15 @@ class AppCoordinator: NSObject, Coordinator {
 
     private let window: UIWindow
     private let mbtaService: MBTAService
+    private let weatherService: WeatherServiceProtocol
 
     private let rootController: UIViewController
     var childCoordinator: Coordinator?
 
-    init(window: UIWindow, mbtaService: MBTAService) {
+    init(window: UIWindow, mbtaService: MBTAService, weatherService: WeatherServiceProtocol) {
         self.window = window
         self.mbtaService = mbtaService
+        self.weatherService = weatherService
         let rootController = UIViewController()
         rootController.view.backgroundColor = .white
         self.rootController = rootController
@@ -27,7 +29,7 @@ class AppCoordinator: NSObject, Coordinator {
 
     func start(completion: (() -> Void)?) {
         // Configure window/root view
-        let contentCoordinator = ContentCoordinator(rootController, mbtaService: mbtaService)
+        let contentCoordinator = ContentCoordinator(rootController, mbtaService: mbtaService, weatherService: weatherService)
         self.childCoordinator = contentCoordinator
         window.rootViewController = rootController
         window.makeKeyAndVisible()

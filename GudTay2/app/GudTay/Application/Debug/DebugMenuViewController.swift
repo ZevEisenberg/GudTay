@@ -8,16 +8,17 @@
 
 import Foundation
 import Services
+import UIKit
 
 class DebugMenuViewController: UITableViewController {
     lazy var dataSource: TableDataSource = { [weak self] in
         let dataSource = TableDataSource(rows: [
-        SimpleTableCellItem(text: "Text Styles") {
-            self?.navigationController?.pushViewController(DebugTextStyleViewController(), animated: true)
-        },
-        ])
+            SimpleTableCellItem(text: "Text Styles") {
+                self?.navigationController?.pushViewController(DebugTextStyleViewController(), animated: true)
+            },
+            ])
         return dataSource
-    }()
+        }()
 
     override func viewDidLoad() {
         super.viewDidLoad()

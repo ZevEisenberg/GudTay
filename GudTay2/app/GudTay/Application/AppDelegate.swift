@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
 
-        self.coordinator = AppCoordinator(window: window, mbtaService: MBTAService())
+        self.coordinator = AppCoordinator(window: window, mbtaService: MBTAService(), weatherService: WeatherService())
         coordinator.start(completion: {
             for config in self.rootViewControllerDependentConfigurations where config.isEnabled {
                 config.onDidLaunch(application: application, launchOptions: launchOptions)

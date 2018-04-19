@@ -30,4 +30,8 @@ extension APIEnvironment {
         return URL(string: "https://api-v3.mbta.com")!
     }
 
+    var weatherUrl: URL {
+        return URL(string: "https://api.darksky.net")!
+    }
+
 }
