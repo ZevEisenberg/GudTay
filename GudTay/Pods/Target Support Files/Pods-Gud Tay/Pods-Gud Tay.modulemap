@@ -1,6 +1,0 @@
-framework module Pods_Gud_Tay {
-  umbrella header "Pods-Gud Tay-umbrella.h"
-
-  export *
-  module * { export * }
-}
