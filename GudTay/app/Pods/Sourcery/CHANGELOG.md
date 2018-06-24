@@ -2,6 +2,25 @@
 
 ---
 
+## 0.13.1
+
+### New Features
+
+- Added support for enums in AutoCodable template
+- You can now specify the base path for the Sourcery cache directory with a `cacheBasePath` key in the config file
+
+## 0.13.0
+
+### New Features
+
+- Added AutoCodable template
+
+### Bug fixes
+
+- Fixed parsing protocol method return type followed by declaration with attribute
+- Fixed inserting auto-inlined code on the last line of declaration body
+- AutoEquatable and AutoHashable templates should not add protocol conformances in extensions
+
 ## 0.12.0
 
 ### Internal Changes

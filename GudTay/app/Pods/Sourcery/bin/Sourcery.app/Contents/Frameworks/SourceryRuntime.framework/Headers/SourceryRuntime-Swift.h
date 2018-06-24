@@ -301,6 +301,8 @@ SWIFT_CLASS("_TtC15SourceryRuntime9Attribute")
 /// Attribute arguments
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, NSObject *> * _Nonnull arguments;
 /// :nodoc:
+@property (nonatomic) id _Nullable __parserData;
+/// :nodoc:
 - (nonnull instancetype)initWithName:(NSString * _Nonnull)name arguments:(NSDictionary<NSString *, NSObject *> * _Nonnull)arguments description:(NSString * _Nullable)description OBJC_DESIGNATED_INITIALIZER;
 /// Attribute description that can be used in a template.
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
