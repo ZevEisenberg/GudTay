@@ -54,6 +54,7 @@ internal enum Asset {
     internal static let blue = ColorAsset(name: "Blue")
     internal static let darkGray = ColorAsset(name: "Dark Gray")
     internal static let day = ColorAsset(name: "Day")
+    internal static let lightGray = ColorAsset(name: "Light Gray")
     internal static let night = ColorAsset(name: "Night")
     internal static let orange = ColorAsset(name: "Orange")
     internal static let translucentWhite = ColorAsset(name: "Translucent White")
@@ -70,6 +71,7 @@ internal enum Asset {
     Colors.blue,
     Colors.darkGray,
     Colors.day,
+    Colors.lightGray,
     Colors.night,
     Colors.orange,
     Colors.translucentWhite,

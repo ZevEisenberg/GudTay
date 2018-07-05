@@ -18,6 +18,7 @@ final class MBTARouteView: GridView {
 
     private let nextTripView = TripView(color: Color.black.color, subtitle: "Mins Next", minutesStyle: Fonts.MBTA.nextMinutesStyle)
     private let laterTripView = TripView(color: Color.darkGray.color, subtitle: "Mins Later", minutesStyle: Fonts.MBTA.laterMinutesStyle)
+    private let afterThatTripView = TripView(color: Color.lightGray.color, subtitle: "After That", minutesStyle: Fonts.MBTA.laterMinutesStyle)
 
     init(headerView: MBTAHeaderView) {
         super.init(frame: .zero)
@@ -26,7 +27,7 @@ final class MBTARouteView: GridView {
         headerView.topAnchor == topAnchor
         headerView.horizontalAnchors == horizontalAnchors
 
-        let stackView = UIStackView(arrangedSubviews: [nextTripView, laterTripView])
+        let stackView = UIStackView(arrangedSubviews: [nextTripView, laterTripView, afterThatTripView])
         stackView.axis = .horizontal
         stackView.spacing = 58.0
 
@@ -80,10 +81,11 @@ private extension MBTARouteView {
     }
 
     func updateUI(forUpcomingTrips upcomingTrips: UpcomingTrips, relativeToDate now: Date) {
-        let (next, later) = upcomingTrips.strings(forDate: now)
+        let (next, later, afterThat) = upcomingTrips.strings(forDate: now)
 
         nextTripView.updateMinutesString(next)
         laterTripView.updateMinutesString(later)
+        afterThatTripView.updateMinutesString(afterThat)
     }
 
 }
@@ -99,12 +101,13 @@ private extension TimeInterval {
 extension MBTARouteView {
 
     enum UpcomingTrips: Equatable {
+        case three(next: Date, later: Date, afterThat: Date)
         case two(next: Date, later: Date)
         case one(next: Date)
         case none
 
         init(predictions: [Prediction]) {
-            assert(predictions.count <= 2)
+            assert(predictions.count <= 3)
 
             guard !predictions.isEmpty else {
                 self = .none
@@ -113,8 +116,12 @@ extension MBTARouteView {
 
             let first = predictions[0]
             let second = predictions[checked: 1]
+            let third = predictions[checked: 2]
 
-            if let second = second {
+            if let third = third, let second = second {
+                self = .three(next: first.departureTime, later: second.departureTime, afterThat: third.departureTime)
+            }
+            else if let second = second {
                 self = .two(next: first.departureTime, later: second.departureTime)
             }
             else {
@@ -123,18 +130,26 @@ extension MBTARouteView {
 
         }
 
-        func strings(forDate now: Date) -> (next: String, later: String) {
+        func strings(forDate now: Date) -> (next: String, later: String, afterThat: String) {
+            let noUpcomingTime = "--"
             switch self {
             case .none:
-                return (next: "--", later: "--")
-            case .one(next: let next):
+                return (next: noUpcomingTime, later: noUpcomingTime, afterThat: noUpcomingTime)
+            case let .one(next):
                 let nextSeconds = next.timeIntervalSince(now)
-                return (next: nextSeconds.formattedAsMinutes, later: "--")
-            case .two(next: let next, later: let later):
+                return (next: nextSeconds.formattedAsMinutes, later: noUpcomingTime, afterThat: noUpcomingTime)
+            case let .two(next, later):
                 let nextSeconds = next.timeIntervalSince(now)
                 let laterSeconds = later.timeIntervalSince(now)
                 let secondsAfterNextSeconds = laterSeconds - nextSeconds
-                return (next: nextSeconds.formattedAsMinutes, later: secondsAfterNextSeconds.formattedAsMinutes)
+                return (next: nextSeconds.formattedAsMinutes, later: secondsAfterNextSeconds.formattedAsMinutes, afterThat: noUpcomingTime)
+            case let .three(next, later, afterThat):
+                let nextSeconds = next.timeIntervalSince(now)
+                let laterSeconds = later.timeIntervalSince(now)
+                let afterThatSeconds = afterThat.timeIntervalSince(now)
+                let secondsAfterNextSeconds = laterSeconds - nextSeconds
+                let secondsAfterThatSeconds = afterThatSeconds - laterSeconds
+                return (next: nextSeconds.formattedAsMinutes, later: secondsAfterNextSeconds.formattedAsMinutes, secondsAfterThatSeconds.formattedAsMinutes)
             }
         }
 

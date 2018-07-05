@@ -23,7 +23,7 @@ class MBTAViewController: UIViewController {
                 .filter { $0.directionId == $0.route.directionNames.index(of: "Inbound")! }
                 .filter { $0.departureTime > data.date }
                 .sorted { $0.departureTime < $1.departureTime }
-                .prefix(2)
+                .prefix(3)
             busHeader.setUpcomingTrips(upcomingTrips: MBTARouteView.UpcomingTrips(predictions: Array(predictionsOfInterest)), relativeToDate: data.date)
         }
     }
