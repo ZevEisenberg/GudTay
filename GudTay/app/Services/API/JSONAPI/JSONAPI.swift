@@ -64,6 +64,18 @@ public enum JSONAPI {
             return try attributes.decode(T.self, forKey: key)
         }
 
+        func attributeIfPresent<T: Decodable>(_ type: T.Type = T.self, forKey key: AttributeKeys) throws -> T? {
+            do {
+                return try attributes.decode(T.self, forKey: key)
+            }
+            catch DecodingError.keyNotFound(_, _) {
+                return nil
+            }
+            catch {
+                throw error
+            }
+        }
+
         func relationship<U: Identifiable>(for key: RelationshipKeys) throws -> Set<Identifier<U>> {
             guard let relationships = relationships else {
                 throw MissingRelationships()

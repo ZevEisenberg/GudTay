@@ -67,7 +67,7 @@ extension Prediction: Entity {
         self.directionId = try helper.attribute(forKey: .directionId)
         self.status = try helper.attribute(forKey: .status)
         self.stopSequence = try helper.attribute(forKey: .stopSequence)
-        self.track = try helper.attribute(forKey: .track)
+        self.track = try helper.attributeIfPresent(forKey: .track)
 
         self.routeId = try helper.relationship(for: .route)
         self.stopId = try helper.relationship(for: .stop)
