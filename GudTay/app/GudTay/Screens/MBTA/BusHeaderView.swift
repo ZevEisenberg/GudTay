@@ -15,9 +15,9 @@ final class BusHeaderView: MBTAHeaderView {
         super.init(frame: .zero)
 
         let blueBar = UIView(axId: "blueBar")
-        blueBar.backgroundColor = Color.blue.color
+        blueBar.backgroundColor = Asset.blue.color
         let yellowBar = UIView(axId: "yellowBar")
-        yellowBar.backgroundColor = Color.yellow.color
+        yellowBar.backgroundColor = Asset.yellow.color
 
         blueBar.heightAnchor == 50.0
         yellowBar.heightAnchor == 20.0
@@ -27,9 +27,9 @@ final class BusHeaderView: MBTAHeaderView {
         let formatted = templateString.styled(
             with:
             Fonts.MBTA.lineStyle.byAdding(
-                .color(Color.white.color),
+                .color(Asset.white.color),
                 .xmlRules([
-                    .style(destinationTagName, Fonts.MBTA.lineStyle.byAdding(.color(Color.translucentWhite.color))),
+                    .style(destinationTagName, Fonts.MBTA.lineStyle.byAdding(.color(Asset.translucentWhite.color))),
                     ])))
 
         let label = UILabel()

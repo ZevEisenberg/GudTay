@@ -25,7 +25,7 @@ final class WeatherViewController: UIViewController {
         layout.minimumLineSpacing = 0.0
 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = Color.white.color
+        collectionView.backgroundColor = Asset.white.color
         collectionView.register(TemperatureCell.self, forCellWithReuseIdentifier: TemperatureCell.gudReuseID)
         collectionView.register(AspectImageCell.self, forCellWithReuseIdentifier: AspectImageCell.gudReuseID)
         collectionView.register(ForecastCell.self, forCellWithReuseIdentifier: ForecastCell.gudReuseID)

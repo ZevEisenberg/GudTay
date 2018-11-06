@@ -52,7 +52,7 @@ struct Fonts {
         private static let baseForecastStyle = StringStyle(
             .numberSpacing(.proportional),
             .alignment(.center),
-            .color(Color.white.color))
+            .color(Asset.white.color))
 
         static let timeStyle = baseForecastStyle.byAdding(
             .font(UIFont(name: "HelveticaNeue-Medium", size: 20.0)!))
