@@ -13,7 +13,7 @@ struct ImageIO {
 
     static func persistImage(_ image: UIImage, named name: String) {
         DispatchQueue.global(qos: .background).async {
-            guard let imageData = UIImagePNGRepresentation(image) else {
+            guard let imageData = image.pngData() else {
                 Log.error("Could not generate PNG to save image: \(image)")
                 return
             }

@@ -28,7 +28,7 @@ final class WeatherCoordinator: NSObject, Coordinator {
         self.rootViewController = rootViewController
         let vm = WeatherViewModel(service: service)
         let vc = WeatherViewController(viewModel: vm, refreshInterval: refreshInterval)
-        rootViewController.addChildViewController(vc)
+        rootViewController.addChild(vc)
         subview.addSubview(vc.view)
         vc.view.edgeAnchors == subview.edgeAnchors
     }

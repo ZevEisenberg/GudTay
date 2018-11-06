@@ -27,7 +27,7 @@ final class MBTACoordinator: NSObject, Coordinator {
         assert(subview.isDescendant(of: rootViewController.view))
         self.rootViewController = rootViewController
         let vc = MBTAViewController()
-        rootViewController.addChildViewController(vc)
+        rootViewController.addChild(vc)
         subview.addSubview(vc.view)
         vc.view.edgeAnchors == subview.edgeAnchors
         let stop: Identifier<Stop> = "6480" // Hyde Park Ave @ Mt Hope St

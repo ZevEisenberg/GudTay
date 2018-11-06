@@ -19,7 +19,7 @@ final class WeatherViewController: UIViewController {
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = UICollectionViewFlowLayoutAutomaticSize
+        layout.itemSize = UICollectionViewFlowLayout.automaticSize
         layout.estimatedItemSize = CGSize(width: 50.0, height: 205.0)
         layout.minimumInteritemSpacing = 0.0
         layout.minimumLineSpacing = 0.0
