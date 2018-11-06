@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_GudTay_GudTayTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_GudTay_GudTayTestsVersionString[];
+FOUNDATION_EXPORT double Pods_UtilitiesVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_UtilitiesVersionString[];
 

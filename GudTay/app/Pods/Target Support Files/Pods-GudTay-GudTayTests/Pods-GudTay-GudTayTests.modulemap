@@ -1,6 +1,0 @@
-framework module Pods_GudTay_GudTayTests {
-  umbrella header "Pods-GudTay-GudTayTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

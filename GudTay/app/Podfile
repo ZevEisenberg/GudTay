@@ -3,28 +3,34 @@ use_frameworks!
 inhibit_all_warnings!
 
 def shared
-    pod 'Anchorage'
-    pod 'BonMot'
+  pod 'Anchorage'
+  pod 'BonMot'
 
-    pod 'Alamofire'    
-    pod 'Then'
+  pod 'Alamofire'    
+  pod 'Then'
 
-    pod 'Swiftilities/HairlineView'
-    pod 'Swiftilities/Lifecycle'
-    pod 'Swiftilities/Logging'
+  pod 'Swiftilities/HairlineView'
+  pod 'Swiftilities/Lifecycle'
+  pod 'Swiftilities/Logging'
 end
 
 target 'GudTay' do
-
-  target 'GudTayTests' do
-    pod 'OHHTTPStubs/Swift'
-  end
-
   shared()
 end
 
+target 'GudTayTests' do
+  shared()
+  pod 'OHHTTPStubs/Swift'
+end
+
 target 'Services' do
-    shared()
+  shared()
+end
+
+target 'Utilities' do
+end
+
+target 'UtilitiesTests' do
 end
 
 pod 'SwiftGen'
