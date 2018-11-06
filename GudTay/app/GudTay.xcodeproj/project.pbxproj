@@ -1224,7 +1224,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GudTay/Pods-GudTay-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-GudTay/Pods-GudTay-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Anchorage/Anchorage.framework",
 				"${BUILT_PRODUCTS_DIR}/BonMot/BonMot.framework",
@@ -1241,7 +1241,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GudTay/Pods-GudTay-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GudTay/Pods-GudTay-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5BD18785D9BC5E2781EBCD52 /* [CP] Check Pods Manifest.lock */ = {
@@ -1268,7 +1268,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GudTay-GudTayTests/Pods-GudTay-GudTayTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-GudTay-GudTayTests/Pods-GudTay-GudTayTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Anchorage/Anchorage.framework",
 				"${BUILT_PRODUCTS_DIR}/BonMot/BonMot.framework",
@@ -1287,7 +1287,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GudTay-GudTayTests/Pods-GudTay-GudTayTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GudTay-GudTayTests/Pods-GudTay-GudTayTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A73242EDA34917F3097C9620 /* [CP] Check Pods Manifest.lock */ = {
