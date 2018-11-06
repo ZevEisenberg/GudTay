@@ -39,14 +39,8 @@
 		<key>TrackingID</key>
 		<string>$(GA_TRACKING_ID)</string>
 	</dict>
-	<key>InstabugToken</key>
-	<string>$(INSTABUG_TOKEN)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>The microphone is used by Instabug in debug builds to allow users to record descriptions of bugs.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>The photo library is used by Instabug in debug builds to allow users to upload screenshots.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
