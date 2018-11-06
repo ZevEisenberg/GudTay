@@ -2,34 +2,19 @@
   "data": [
     {
       "attributes": {
-        "arrival_time": "2018-04-17T10:17:14-04:00",
-        "departure_time": "2018-04-17T10:17:14-04:00",
+        "arrival_time": "2018-11-05T20:59:49-05:00",
+        "departure_time": "2018-11-05T20:59:49-05:00",
         "direction_id": 1,
         "schedule_relationship": null,
         "status": null,
-        "stop_sequence": 20,
-        "track": null
+        "stop_sequence": 20
       },
-      "id": "prediction-36542697-6480-20",
+      "id": "prediction-38486951-6480-20",
       "relationships": {
-        "alerts": {
-          "data": [
-            {
-              "id": "237173",
-              "type": "alert"
-            }
-          ]
-        },
         "route": {
           "data": {
             "id": "32",
             "type": "route"
-          }
-        },
-        "schedule": {
-          "data": {
-            "id": "schedule-36542697-6480-20",
-            "type": "schedule"
           }
         },
         "stop": {
@@ -40,46 +25,28 @@
         },
         "trip": {
           "data": {
-            "id": "36542697",
+            "id": "38486951",
             "type": "trip"
           }
-        },
-        "vehicle": {
-          "data": null
         }
       },
       "type": "prediction"
     },
     {
       "attributes": {
-        "arrival_time": "2018-04-17T10:20:38-04:00",
-        "departure_time": "2018-04-17T10:20:38-04:00",
+        "arrival_time": "2018-11-05T21:14:49-05:00",
+        "departure_time": "2018-11-05T21:14:49-05:00",
         "direction_id": 1,
         "schedule_relationship": null,
         "status": null,
-        "stop_sequence": 20,
-        "track": null
+        "stop_sequence": 20
       },
-      "id": "prediction-36542728-6480-20",
+      "id": "prediction-38486749-6480-20",
       "relationships": {
-        "alerts": {
-          "data": [
-            {
-              "id": "237173",
-              "type": "alert"
-            }
-          ]
-        },
         "route": {
           "data": {
             "id": "32",
             "type": "route"
-          }
-        },
-        "schedule": {
-          "data": {
-            "id": "schedule-36542728-6480-20",
-            "type": "schedule"
           }
         },
         "stop": {
@@ -90,46 +57,28 @@
         },
         "trip": {
           "data": {
-            "id": "36542728",
+            "id": "38486749",
             "type": "trip"
           }
-        },
-        "vehicle": {
-          "data": null
         }
       },
       "type": "prediction"
     },
     {
       "attributes": {
-        "arrival_time": "2018-04-17T10:34:39-04:00",
-        "departure_time": "2018-04-17T10:34:39-04:00",
+        "arrival_time": "2018-11-05T21:29:49-05:00",
+        "departure_time": "2018-11-05T21:29:49-05:00",
         "direction_id": 1,
         "schedule_relationship": null,
         "status": null,
-        "stop_sequence": 20,
-        "track": null
+        "stop_sequence": 20
       },
-      "id": "prediction-36542744-6480-20",
+      "id": "prediction-38486350-6480-20",
       "relationships": {
-        "alerts": {
-          "data": [
-            {
-              "id": "237173",
-              "type": "alert"
-            }
-          ]
-        },
         "route": {
           "data": {
             "id": "32",
             "type": "route"
-          }
-        },
-        "schedule": {
-          "data": {
-            "id": "schedule-36542744-6480-20",
-            "type": "schedule"
           }
         },
         "stop": {
@@ -140,46 +89,28 @@
         },
         "trip": {
           "data": {
-            "id": "36542744",
+            "id": "38486350",
             "type": "trip"
           }
-        },
-        "vehicle": {
-          "data": null
         }
       },
       "type": "prediction"
     },
     {
       "attributes": {
-        "arrival_time": "2018-04-17T10:44:38-04:00",
-        "departure_time": "2018-04-17T10:44:38-04:00",
+        "arrival_time": "2018-11-05T21:44:49-05:00",
+        "departure_time": "2018-11-05T21:44:49-05:00",
         "direction_id": 1,
         "schedule_relationship": null,
         "status": null,
-        "stop_sequence": 20,
-        "track": null
+        "stop_sequence": 20
       },
-      "id": "prediction-36542759-6480-20",
+      "id": "prediction-38486943-6480-20",
       "relationships": {
-        "alerts": {
-          "data": [
-            {
-              "id": "237173",
-              "type": "alert"
-            }
-          ]
-        },
         "route": {
           "data": {
             "id": "32",
             "type": "route"
-          }
-        },
-        "schedule": {
-          "data": {
-            "id": "schedule-36542759-6480-20",
-            "type": "schedule"
           }
         },
         "stop": {
@@ -190,12 +121,9 @@
         },
         "trip": {
           "data": {
-            "id": "36542759",
+            "id": "38486943",
             "type": "trip"
           }
-        },
-        "vehicle": {
-          "data": null
         }
       },
       "type": "prediction"
@@ -204,718 +132,13 @@
   "included": [
     {
       "attributes": {
-        "active_period": [
-          {
-            "end": null,
-            "start": "2018-04-01T04:30:00-04:00"
-          }
-        ],
-        "banner": null,
-        "cause": "UNKNOWN_CAUSE",
-        "created_at": "2018-03-25T06:10:26-04:00",
-        "description": "You can also ask your bus driver for a printed spring schedule.",
-        "effect": "SCHEDULE_CHANGE",
-        "header": "Starting April 1, 2018, this route has spring schedule changes. Please find your route at https://www.mbta.com/schedules/bus and check the schedule for April 1 or later.",
-        "informed_entity": [
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "1",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "100",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "104",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "106",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "108",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "109",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "110",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "111",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "112",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "114",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "116117",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "117",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "131",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "132",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "134",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "136",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "137",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "15",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "16",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "17",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "18",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "19",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "21",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "210",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "211",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "212",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "23",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "236",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "238",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "28",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "29",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "31",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "32",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "3233",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "325",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "326",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "36",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "4050",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "41",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "411",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "426",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "428",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "43",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "430",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "436",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "441",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "441442",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "450",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "455",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "50",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "504",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "55",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "553",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "558",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "60",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "62",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "627",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "65",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "66",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "7",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "70",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "701",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "73",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "742",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "746",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "77",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "8",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "8993",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "9",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "90",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "91",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "92",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "93",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "94",
-            "route_type": 3
-          },
-          {
-            "activities": [
-              "BOARD",
-              "EXIT",
-              "RIDE"
-            ],
-            "route": "96",
-            "route_type": 3
-          }
-        ],
-        "lifecycle": "ONGOING",
-        "service_effect": "Bus schedule change",
-        "severity": 3,
-        "short_header": "Starting April 1, 2018, this route has spring schedule changes. Find your route at https://www.mbta.com/schedules/bus",
-        "timeframe": "ongoing",
-        "updated_at": "2018-04-03T13:16:38-04:00",
-        "url": null
-      },
-      "id": "237173",
-      "links": {
-        "self": "/alerts/237173"
-      },
-      "type": "alert"
-    },
-    {
-      "attributes": {
         "color": "FFC72C",
         "description": "Key Bus Route (Frequent Service)",
         "direction_names": [
           "Outbound",
           "Inbound"
         ],
-        "long_name": "",
+        "long_name": "Wolcott Square - Forest Hills",
         "short_name": "32",
         "sort_order": 3200,
         "text_color": "000000",
@@ -929,15 +152,16 @@
     },
     {
       "attributes": {
-        "block_id": "B26-27",
+        "bikes_allowed": 0,
+        "block_id": "B30-61",
         "direction_id": 1,
         "headsign": "Forest Hills",
         "name": "",
         "wheelchair_accessible": 1
       },
-      "id": "36542697",
+      "id": "38486350",
       "links": {
-        "self": "/trips/36542697"
+        "self": "/trips/38486350"
       },
       "relationships": {
         "route": {
@@ -948,7 +172,7 @@
         },
         "service": {
           "data": {
-            "id": "BUS22018-hbb28ns1-Weekday-02",
+            "id": "BUS42018-hbb48011-Weekday-02",
             "type": "service"
           }
         },
@@ -957,24 +181,22 @@
             "id": "320121",
             "type": "shape"
           }
-        },
-        "vehicle": {
-          "data": null
         }
       },
       "type": "trip"
     },
     {
       "attributes": {
-        "block_id": "B29-36",
+        "bikes_allowed": 0,
+        "block_id": "B32-124",
         "direction_id": 1,
         "headsign": "Forest Hills",
         "name": "",
         "wheelchair_accessible": 1
       },
-      "id": "36542728",
+      "id": "38486749",
       "links": {
-        "self": "/trips/36542728"
+        "self": "/trips/38486749"
       },
       "relationships": {
         "route": {
@@ -985,7 +207,7 @@
         },
         "service": {
           "data": {
-            "id": "BUS22018-hbb28ns1-Weekday-02",
+            "id": "BUS42018-hbb48011-Weekday-02",
             "type": "service"
           }
         },
@@ -994,24 +216,22 @@
             "id": "320121",
             "type": "shape"
           }
-        },
-        "vehicle": {
-          "data": null
         }
       },
       "type": "trip"
     },
     {
       "attributes": {
-        "block_id": "B32-82",
+        "bikes_allowed": 0,
+        "block_id": "B32-123",
         "direction_id": 1,
         "headsign": "Forest Hills",
         "name": "",
         "wheelchair_accessible": 1
       },
-      "id": "36542744",
+      "id": "38486943",
       "links": {
-        "self": "/trips/36542744"
+        "self": "/trips/38486943"
       },
       "relationships": {
         "route": {
@@ -1022,7 +242,7 @@
         },
         "service": {
           "data": {
-            "id": "BUS22018-hbb28ns1-Weekday-02",
+            "id": "BUS42018-hbb48011-Weekday-02",
             "type": "service"
           }
         },
@@ -1031,24 +251,22 @@
             "id": "320121",
             "type": "shape"
           }
-        },
-        "vehicle": {
-          "data": null
         }
       },
       "type": "trip"
     },
     {
       "attributes": {
-        "block_id": "B32-113",
+        "bikes_allowed": 0,
+        "block_id": "B32-123",
         "direction_id": 1,
         "headsign": "Forest Hills",
         "name": "",
         "wheelchair_accessible": 1
       },
-      "id": "36542759",
+      "id": "38486951",
       "links": {
-        "self": "/trips/36542759"
+        "self": "/trips/38486951"
       },
       "relationships": {
         "route": {
@@ -1059,7 +277,7 @@
         },
         "service": {
           "data": {
-            "id": "BUS22018-hbb28ns1-Weekday-02",
+            "id": "BUS42018-hbb48011-Weekday-02",
             "type": "service"
           }
         },
@@ -1068,18 +286,20 @@
             "id": "320121",
             "type": "shape"
           }
-        },
-        "vehicle": {
-          "data": null
         }
       },
       "type": "trip"
     },
     {
       "attributes": {
+        "address": null,
+        "description": null,
         "latitude": 42.285066,
+        "location_type": 0,
         "longitude": -71.118763,
         "name": "Hyde Park Ave @ Mt Hope St",
+        "platform_code": null,
+        "platform_name": null,
         "wheelchair_boarding": 1
       },
       "id": "6480",
@@ -1087,147 +307,18 @@
         "self": "/stops/6480"
       },
       "relationships": {
+        "child_stops": {
+        },
+        "facilities": {
+          "links": {
+            "related": "/facilities/?filter[stop]=6480"
+          }
+        },
         "parent_station": {
           "data": null
         }
       },
       "type": "stop"
-    },
-    {
-      "attributes": {
-        "arrival_time": "2018-04-17T10:05:00-04:00",
-        "departure_time": "2018-04-17T10:05:00-04:00",
-        "drop_off_type": 0,
-        "pickup_type": 0,
-        "stop_sequence": 20,
-        "timepoint": false
-      },
-      "id": "schedule-36542697-6480-20",
-      "relationships": {
-        "prediction": {
-        },
-        "route": {
-          "data": {
-            "id": "32",
-            "type": "route"
-          }
-        },
-        "stop": {
-          "data": {
-            "id": "6480",
-            "type": "stop"
-          }
-        },
-        "trip": {
-          "data": {
-            "id": "36542697",
-            "type": "trip"
-          }
-        }
-      },
-      "type": "schedule"
-    },
-    {
-      "attributes": {
-        "arrival_time": "2018-04-17T10:18:00-04:00",
-        "departure_time": "2018-04-17T10:18:00-04:00",
-        "drop_off_type": 0,
-        "pickup_type": 0,
-        "stop_sequence": 20,
-        "timepoint": false
-      },
-      "id": "schedule-36542728-6480-20",
-      "relationships": {
-        "prediction": {
-        },
-        "route": {
-          "data": {
-            "id": "32",
-            "type": "route"
-          }
-        },
-        "stop": {
-          "data": {
-            "id": "6480",
-            "type": "stop"
-          }
-        },
-        "trip": {
-          "data": {
-            "id": "36542728",
-            "type": "trip"
-          }
-        }
-      },
-      "type": "schedule"
-    },
-    {
-      "attributes": {
-        "arrival_time": "2018-04-17T10:30:00-04:00",
-        "departure_time": "2018-04-17T10:30:00-04:00",
-        "drop_off_type": 0,
-        "pickup_type": 0,
-        "stop_sequence": 20,
-        "timepoint": false
-      },
-      "id": "schedule-36542744-6480-20",
-      "relationships": {
-        "prediction": {
-        },
-        "route": {
-          "data": {
-            "id": "32",
-            "type": "route"
-          }
-        },
-        "stop": {
-          "data": {
-            "id": "6480",
-            "type": "stop"
-          }
-        },
-        "trip": {
-          "data": {
-            "id": "36542744",
-            "type": "trip"
-          }
-        }
-      },
-      "type": "schedule"
-    },
-    {
-      "attributes": {
-        "arrival_time": "2018-04-17T10:44:00-04:00",
-        "departure_time": "2018-04-17T10:44:00-04:00",
-        "drop_off_type": 0,
-        "pickup_type": 0,
-        "stop_sequence": 20,
-        "timepoint": false
-      },
-      "id": "schedule-36542759-6480-20",
-      "relationships": {
-        "prediction": {
-        },
-        "route": {
-          "data": {
-            "id": "32",
-            "type": "route"
-          }
-        },
-        "stop": {
-          "data": {
-            "id": "6480",
-            "type": "stop"
-          }
-        },
-        "trip": {
-          "data": {
-            "id": "36542759",
-            "type": "trip"
-          }
-        }
-      },
-      "type": "schedule"
     }
   ],
   "jsonapi": {
