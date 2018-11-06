@@ -107,7 +107,7 @@ private extension WeatherViewModel {
             fields.append(.hour(time: precipitation.timestamp, icon: meteorology.icon, temp: temperature.current, precipProbability: precipitation.probability))
         }
 
-        var backgroundViewModel: ForecastBackgroundViewModel? = nil
+        var backgroundViewModel: ForecastBackgroundViewModel?
         let daysToExpand = 1
         if let firstTime = hourlyPrecipitations.data[checked: 0]?.timestamp,
             let lastTime = hourlyPrecipitations.data[checked: (hoursUntilSameTimeNextDay - 1)]?.timestamp {
