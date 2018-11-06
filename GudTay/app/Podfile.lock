@@ -17,12 +17,12 @@ PODS:
     - OHHTTPStubs/Default
   - Sourcery (0.15.0)
   - SwiftGen (5.3.0)
-  - Swiftilities/HairlineView (0.19.0)
-  - Swiftilities/Lifecycle (0.19.0):
+  - Swiftilities/HairlineView (0.20.0)
+  - Swiftilities/Lifecycle (0.20.0):
     - Swiftilities/HairlineView
     - Swiftilities/Math
-  - Swiftilities/Logging (0.19.0)
-  - Swiftilities/Math (0.19.0)
+  - Swiftilities/Logging (0.20.0)
+  - Swiftilities/Math (0.20.0)
   - SwiftLint (0.26.0)
   - Then (2.3.0)
 
@@ -58,7 +58,7 @@ SPEC CHECKSUMS:
   OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
   Sourcery: 5895672cae353cdbfa95f3f4aaeb75a664d76f6a
   SwiftGen: 4379bd3640b0a212a0f6ea3c494adba385513d10
-  Swiftilities: ff339192499b66a2044b4fa648796b96d5bc5fce
+  Swiftilities: 03f8267eef129cbea588364a8ee4cd786ebe9de4
   SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
   Then: ee21c97b85ff6062b9b0080c9abb1eea46743345
 
