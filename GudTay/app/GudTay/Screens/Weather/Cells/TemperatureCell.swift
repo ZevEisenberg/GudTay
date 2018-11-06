@@ -50,7 +50,11 @@ final class TemperatureCell: WeatherCell {
 
         contentView.addSubview(mainStackView)
 
-        mainStackView.edgeAnchors == contentView.edgeAnchors + 5.0
+        batch { // batch so we can modify priorities before activating constraints
+            let edgeConstraints = mainStackView.edgeAnchors == contentView.edgeAnchors + 5.0
+            edgeConstraints.trailing.priority = .required - 1
+            edgeConstraints.bottom.priority = .required - 1
+        }
     }
 
 }
