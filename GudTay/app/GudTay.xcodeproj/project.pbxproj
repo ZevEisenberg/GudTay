@@ -1334,7 +1334,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Sourcery/bin/sourcery\" --sources \"Services\" --templates \"Services/Sourcery/JSONAPIResourceType+ImportIncluded.swifttemplate\" --output \"Services/API/JSONAPI/JSONAPIResourceType+ImportIncluded.swift\"";
+			shellScript = "\"${PODS_ROOT}/Sourcery/bin/sourcery\" --sources \"Services\" --templates \"Services/Sourcery/JSONAPIResourceType+ImportIncluded.swifttemplate\" --output \"Services/API/JSONAPI/JSONAPIResourceType+ImportIncluded.swift\"\n";
 		};
 		CDB61EB42087EBAF00E0E99C /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
