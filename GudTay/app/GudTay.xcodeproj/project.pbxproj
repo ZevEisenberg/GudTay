@@ -18,6 +18,7 @@
 		2DFF1CF11E8950F000B1AD70 /* ContentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF1CF01E8950F000B1AD70 /* ContentCoordinator.swift */; };
 		2DFF1D161E8BF38F00B1AD70 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF1D151E8BF38F00B1AD70 /* UIColor+Extensions.swift */; };
 		2F58A2C96B775E27BA568478 /* Pods_GudTayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2686773EC58D31098F19DAE7 /* Pods_GudTayTests.framework */; };
+		5B7B99AC21A45FDC0070D71F /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5B7B99AB21A45FDC0070D71F /* Release.xcconfig */; };
 		63E19DA1AE4BD0875DF235F8 /* Pods_Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D465E6ECC8509BBB6035678 /* Pods_Services.framework */; };
 		81F1C6024CDA707450DEC8E4 /* Pods_Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01DC68269C24246C5A696E5 /* Pods_Utilities.framework */; };
 		861732D51FA28DB600C14354 /* ModalDismissBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861732D31FA28DB600C14354 /* ModalDismissBehavior.swift */; };
@@ -210,6 +211,7 @@
 		2481EA1893B5C8C48CE299CE /* Pods-GudTayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTayTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GudTayTests/Pods-GudTayTests.debug.xcconfig"; sourceTree = "<group>"; };
 		26465BC71C576A61144F4E22 /* Pods-Gud Tay.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud Tay.develop.xcconfig"; path = "Pods/Target Support Files/Pods-Gud Tay/Pods-Gud Tay.develop.xcconfig"; sourceTree = "<group>"; };
 		2686773EC58D31098F19DAE7 /* Pods_GudTayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GudTayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C6745BD2D120AADA1F23269 /* Pods-GudTayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTayTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GudTayTests/Pods-GudTayTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D4FA8F41E8574F9006C38ED /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		2D4FA8F61E85752B006C38ED /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		2DFF1CF01E8950F000B1AD70 /* ContentCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCoordinator.swift; sourceTree = "<group>"; };
@@ -219,11 +221,13 @@
 		497BF43B8C3EDA3582863D3B /* Pods-Gud Tay-GudTayTests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud Tay-GudTayTests.develop.xcconfig"; path = "Pods/Target Support Files/Pods-Gud Tay-GudTayTests/Pods-Gud Tay-GudTayTests.develop.xcconfig"; sourceTree = "<group>"; };
 		55DEA6B41600AEE9A7BCFC9B /* Pods-GudTayTests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTayTests.develop.xcconfig"; path = "Pods/Target Support Files/Pods-GudTayTests/Pods-GudTayTests.develop.xcconfig"; sourceTree = "<group>"; };
 		5ACD0C241DC1679246EC1429 /* Pods-Gud Tay.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud Tay.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Gud Tay/Pods-Gud Tay.appstore.xcconfig"; sourceTree = "<group>"; };
+		5B7B99AB21A45FDC0070D71F /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		5DC114E65C5252470A62E594 /* Pods-Utilities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utilities.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Utilities/Pods-Utilities.debug.xcconfig"; sourceTree = "<group>"; };
 		5EFEF7207D3767CF1AF6AABB /* Pods-UtilitiesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilitiesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UtilitiesTests/Pods-UtilitiesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		644AC416679C4339A3CE9958 /* Pods-UtilitiesTests.sprint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilitiesTests.sprint.xcconfig"; path = "Pods/Target Support Files/Pods-UtilitiesTests/Pods-UtilitiesTests.sprint.xcconfig"; sourceTree = "<group>"; };
 		67A9A9A8D39CF739F589CA5C /* Pods_Gud_Tay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gud_Tay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D465E6ECC8509BBB6035678 /* Pods_Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		749ECB15B7C15F4B15B79F8E /* Pods-UtilitiesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilitiesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UtilitiesTests/Pods-UtilitiesTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DA6085A924797A53A836C85 /* Pods-GudTay.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTay.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-GudTay/Pods-GudTay.appstore.xcconfig"; sourceTree = "<group>"; };
 		84E99E34623D294F4907F801 /* Pods-UtilitiesTests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilitiesTests.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-UtilitiesTests/Pods-UtilitiesTests.appstore.xcconfig"; sourceTree = "<group>"; };
 		861732D31FA28DB600C14354 /* ModalDismissBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalDismissBehavior.swift; sourceTree = "<group>"; };
@@ -254,6 +258,7 @@
 		86A65B1C1FA0F2C900705C14 /* BuildType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildType.swift; sourceTree = "<group>"; };
 		86A65B1F1FA0F6DB00705C14 /* UserDefaults+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Utility.swift"; sourceTree = "<group>"; };
 		8CD9F2E21AB27A0230007885 /* Pods_GudTay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GudTay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C7C2D1348FE14D4577D1D3E /* Pods-Services.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Services.release.xcconfig"; path = "Pods/Target Support Files/Pods-Services/Pods-Services.release.xcconfig"; sourceTree = "<group>"; };
 		9E14AD116B1BB93B2490FFA3 /* Pods-Services.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Services.develop.xcconfig"; path = "Pods/Target Support Files/Pods-Services/Pods-Services.develop.xcconfig"; sourceTree = "<group>"; };
 		9E61F9E4F9A440040EE8DCF0 /* Pods-GudTay.sprint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTay.sprint.xcconfig"; path = "Pods/Target Support Files/Pods-GudTay/Pods-GudTay.sprint.xcconfig"; sourceTree = "<group>"; };
 		A4AD03FEF0D75A7A74AAD1CF /* Pods-Gud Tay-GudTayTests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud Tay-GudTayTests.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Gud Tay-GudTayTests/Pods-Gud Tay-GudTayTests.appstore.xcconfig"; sourceTree = "<group>"; };
@@ -362,6 +367,7 @@
 		DCD1E696B5452D855D78934E /* Pods-GudTay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTay.release.xcconfig"; path = "Pods/Target Support Files/Pods-GudTay/Pods-GudTay.release.xcconfig"; sourceTree = "<group>"; };
 		E01DC68269C24246C5A696E5 /* Pods_Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E69BCBCC6EED37586706AF13 /* Pods-GudTayTests.sprint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTayTests.sprint.xcconfig"; path = "Pods/Target Support Files/Pods-GudTayTests/Pods-GudTayTests.sprint.xcconfig"; sourceTree = "<group>"; };
+		F20E3B821DBD16A665E88127 /* Pods-Utilities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utilities.release.xcconfig"; path = "Pods/Target Support Files/Pods-Utilities/Pods-Utilities.release.xcconfig"; sourceTree = "<group>"; };
 		F91864F676863135FD7139AC /* Pods-UtilitiesTests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilitiesTests.develop.xcconfig"; path = "Pods/Target Support Files/Pods-UtilitiesTests/Pods-UtilitiesTests.develop.xcconfig"; sourceTree = "<group>"; };
 		FFD64D1B9F46C8783397D86D /* Pods-Gud Tay-GudTayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud Tay-GudTayTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gud Tay-GudTayTests/Pods-Gud Tay-GudTayTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -486,6 +492,10 @@
 				55DEA6B41600AEE9A7BCFC9B /* Pods-GudTayTests.develop.xcconfig */,
 				E69BCBCC6EED37586706AF13 /* Pods-GudTayTests.sprint.xcconfig */,
 				169BE24EF5162F213640CEC8 /* Pods-GudTayTests.appstore.xcconfig */,
+				2C6745BD2D120AADA1F23269 /* Pods-GudTayTests.release.xcconfig */,
+				9C7C2D1348FE14D4577D1D3E /* Pods-Services.release.xcconfig */,
+				F20E3B821DBD16A665E88127 /* Pods-Utilities.release.xcconfig */,
+				749ECB15B7C15F4B15B79F8E /* Pods-UtilitiesTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -718,6 +728,7 @@
 			isa = PBXGroup;
 			children = (
 				ABC778CE1DC92BDF00815FB9 /* Debug.xcconfig */,
+				5B7B99AB21A45FDC0070D71F /* Release.xcconfig */,
 			);
 			path = xcconfig;
 			sourceTree = "<group>";
@@ -1166,6 +1177,7 @@
 			files = (
 				00551422206144E300E4CF68 /* InfoPlist.strings in Resources */,
 				209BE2562051C90C004CF0FF /* actionable.swifttemplate in Resources */,
+				5B7B99AC21A45FDC0070D71F /* Release.xcconfig in Resources */,
 				ABF84F811DC97653002DB24D /* Localizable.strings in Resources */,
 				ABC778831DC90B7A00815FB9 /* LaunchScreen.storyboard in Resources */,
 				ABC778801DC90B7A00815FB9 /* Assets.xcassets in Resources */,
@@ -1634,6 +1646,173 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5B7B99A521A45FCD0070D71F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B7B99AB21A45FDC0070D71F /* Release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-expression-type-checking=100";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		5B7B99A621A45FCD0070D71F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCD1E696B5452D855D78934E /* Pods-GudTay.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2KJHM26Y46;
+				INFOPLIST_FILE = GudTay/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		5B7B99A721A45FCD0070D71F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C6745BD2D120AADA1F23269 /* Pods-GudTayTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2KJHM26Y46;
+				INFOPLIST_FILE = GudTayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raizlabs.GudTayTests;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GudTay.app/GudTay";
+			};
+			name = Release;
+		};
+		5B7B99A821A45FCD0070D71F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C7C2D1348FE14D4577D1D3E /* Pods-Services.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2KJHM26Y46;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Services/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raizlabs.GudTay.Services;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5B7B99A921A45FCD0070D71F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F20E3B821DBD16A665E88127 /* Pods-Utilities.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2KJHM26Y46;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Utilities/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay.utilities.Utilities;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5B7B99AA21A45FCD0070D71F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 749ECB15B7C15F4B15B79F8E /* Pods-UtilitiesTests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2KJHM26Y46;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = UtilitiesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay.utilities.UtilitiesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GudTay.app/GudTay";
+			};
+			name = Release;
+		};
 		86A65AF71FA0EA2400705C14 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D7F90A3B2F8D15AE9564FF78 /* Pods-Services.debug.xcconfig */;
@@ -1699,11 +1878,6 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1716,7 +1890,6 @@
 				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-expression-type-checking=100";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -1814,6 +1987,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86A65AF71FA0EA2400705C14 /* Debug */,
+				5B7B99A821A45FCD0070D71F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -1822,6 +1996,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ABC778901DC90B7A00815FB9 /* Debug */,
+				5B7B99A521A45FCD0070D71F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -1830,6 +2005,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ABC778931DC90B7A00815FB9 /* Debug */,
+				5B7B99A621A45FCD0070D71F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -1838,6 +2014,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ABC778961DC90B7A00815FB9 /* Debug */,
+				5B7B99A721A45FCD0070D71F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -1846,6 +2023,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD31A7CC20853BA900C26A7E /* Debug */,
+				5B7B99A921A45FCD0070D71F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -1854,6 +2032,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD31A7D120853BA900C26A7E /* Debug */,
+				5B7B99AA21A45FCD0070D71F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
