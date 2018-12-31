@@ -21,6 +21,7 @@ end
 target 'GudTayTests' do
   shared()
   pod 'OHHTTPStubs/Swift'
+  pod 'SnapshotTesting'
 end
 
 target 'Services' do
