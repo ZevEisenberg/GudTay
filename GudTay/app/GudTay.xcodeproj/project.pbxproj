@@ -18,6 +18,7 @@
 		2DFF1CF11E8950F000B1AD70 /* ContentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF1CF01E8950F000B1AD70 /* ContentCoordinator.swift */; };
 		2DFF1D161E8BF38F00B1AD70 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF1D151E8BF38F00B1AD70 /* UIColor+Extensions.swift */; };
 		2F58A2C96B775E27BA568478 /* Pods_GudTayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2686773EC58D31098F19DAE7 /* Pods_GudTayTests.framework */; };
+		5B85E5B821DA7DA6009A2202 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85E5B721DA7DA6009A2202 /* Result.swift */; };
 		63E19DA1AE4BD0875DF235F8 /* Pods_Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D465E6ECC8509BBB6035678 /* Pods_Services.framework */; };
 		81F1C6024CDA707450DEC8E4 /* Pods_Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01DC68269C24246C5A696E5 /* Pods_Utilities.framework */; };
 		861732D51FA28DB600C14354 /* ModalDismissBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861732D31FA28DB600C14354 /* ModalDismissBehavior.swift */; };
@@ -221,6 +222,7 @@
 		55DEA6B41600AEE9A7BCFC9B /* Pods-GudTayTests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTayTests.develop.xcconfig"; path = "Pods/Target Support Files/Pods-GudTayTests/Pods-GudTayTests.develop.xcconfig"; sourceTree = "<group>"; };
 		5ACD0C241DC1679246EC1429 /* Pods-Gud Tay.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud Tay.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Gud Tay/Pods-Gud Tay.appstore.xcconfig"; sourceTree = "<group>"; };
 		5B7B99AB21A45FDC0070D71F /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		5B85E5B721DA7DA6009A2202 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		5DC114E65C5252470A62E594 /* Pods-Utilities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utilities.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Utilities/Pods-Utilities.debug.xcconfig"; sourceTree = "<group>"; };
 		5EFEF7207D3767CF1AF6AABB /* Pods-UtilitiesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilitiesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UtilitiesTests/Pods-UtilitiesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		644AC416679C4339A3CE9958 /* Pods-UtilitiesTests.sprint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilitiesTests.sprint.xcconfig"; path = "Pods/Target Support Files/Pods-UtilitiesTests/Pods-UtilitiesTests.sprint.xcconfig"; sourceTree = "<group>"; };
@@ -842,6 +844,7 @@
 				CD31A7D520853BBE00C26A7E /* Collection+Utilities.swift */,
 				CD31A7B720853BA900C26A7E /* Info.plist */,
 				CDB539B92086B2DA006EE89E /* RandomAccessCollection+Utilities.swift */,
+				5B85E5B721DA7DA6009A2202 /* Result.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1588,6 +1591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B85E5B821DA7DA6009A2202 /* Result.swift in Sources */,
 				CD31A7D620853BBE00C26A7E /* Collection+Utilities.swift in Sources */,
 				CDB539BA2086B2DA006EE89E /* RandomAccessCollection+Utilities.swift in Sources */,
 			);
