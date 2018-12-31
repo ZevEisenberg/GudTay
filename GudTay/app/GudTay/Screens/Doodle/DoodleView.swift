@@ -24,19 +24,17 @@ final class DoodleView: GridView {
 
     // Private Properties
 
-    private var lineColor = UIColor.black
-    private var lineWidth: CGFloat = 5.0
-
-    private var lastPoints: [CGPoint] = Array(repeating: .zero, count: 4)
-    private var buffer: UIImage?
-
-    private var renderer: UIGraphicsImageRenderer
+    private let viewModel: DoodleViewModel
     private let imageView = UIImageView()
 
     override init(frame: CGRect) {
-        renderer = UIGraphicsImageRenderer(size: frame.size)
+        viewModel = DoodleViewModel(size: frame.size)
 
         super.init(frame: frame)
+
+        viewModel.newImageCallback = { [weak self] image in
+            self?.imageView.image = image
+        }
 
         let clearButton = UIButton()
         clearButton.setImage(Asset.gun.image, for: .normal)
@@ -58,36 +56,35 @@ final class DoodleView: GridView {
     }
 
     override func layoutSubviews() {
-        renderer = UIGraphicsImageRenderer(size: bounds.size)
+        viewModel.size = bounds.size
         super.layoutSubviews()
     }
 
     override func didMoveToWindow() {
         super.didMoveToWindow()
-        ImageIO.loadPersistedImage(named: Constants.imageName) { [weak self] image in
-            if let image = image {
+        viewModel.loadPersistedImage() { result in
+            if let image = result.success {
                 DispatchQueue.main.async {
-                    self?.imageView.image = image
-                    self?.buffer = image
+                    self.imageView.image = image
                 }
             }
         }
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        startAt(touches.first!.location(in: self))
+        viewModel.startAt(touches.first!.location(in: self))
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        continueTo(touches.first!.location(in: self))
+        viewModel.continueTo(touches.first!.location(in: self))
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        endAt(touches.first!.location(in: self))
+        viewModel.endAt(touches.first!.location(in: self))
     }
 
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        endAt(touches.first!.location(in: self))
+        viewModel.endAt(touches.first!.location(in: self))
     }
 
 }
@@ -97,106 +94,11 @@ final class DoodleView: GridView {
 private extension DoodleView {
 
     @objc func clearTapped(sender: UIButton) {
-        notify(.showClearPrompt(sourceButton: sender, completion: { [weak self] (clear) in
+        notify(.showClearPrompt(sourceButton: sender, completion: { [weak self] clear in
             if clear {
-                self?.clearDrawing()
+                self?.viewModel.clearDrawing()
             }
         }))
-    }
-
-}
-
-// MARK: - Private
-
-private extension DoodleView {
-
-    enum Constants {
-
-        static let imageName = "doodle"
-
-    }
-
-    func startAt(_ point: CGPoint) {
-        lastPoints = Array(repeating: point, count: 4)
-    }
-
-    func continueTo(_ point: CGPoint) {
-
-        // Update last point for next stroke
-        lastPoints.removeFirst()
-        lastPoints.append(point)
-
-        // Draw the current stroke in an accumulated bitmap
-        buffer = drawLine(fourPoints: lastPoints, buffer: buffer)
-
-        // Replace the imageView contents with the updated image
-        imageView.image = buffer
-    }
-
-    func endAt(_ point: CGPoint) {
-        if point == lastPoints[0] {
-            buffer = drawDot(at: point)
-            imageView.image = buffer
-        }
-        lastPoints = Array(repeating: .zero, count: 4)
-
-        if let image = buffer {
-            ImageIO.persistImage(image, named: Constants.imageName)
-        }
-
-    }
-
-    func drawDot(at point: CGPoint) -> UIImage {
-        return renderer.image { rendererContext in
-            let context = rendererContext.cgContext
-            context.setFillColor(backgroundColor?.cgColor ?? UIColor.white.cgColor)
-            context.fill(bounds)
-
-            // Draw previous buffer first
-            buffer?.draw(in: bounds)
-
-            // Draw the line
-            lineColor.setFill()
-
-            let rect = CGRect(
-                x: point.x - lineWidth / 2,
-                y: point.y - lineWidth / 2,
-                width: lineWidth,
-                height: lineWidth)
-            context.fillEllipse(in: rect)
-        }
-    }
-
-    func drawLine(fourPoints: [CGPoint], buffer: UIImage?) -> UIImage {
-        return renderer.image { rendererContext in
-            let context = rendererContext.cgContext
-            context.setFillColor(backgroundColor?.cgColor ?? UIColor.white.cgColor)
-            context.fill(bounds)
-
-            // Draw previous buffer first
-            buffer?.draw(in: bounds)
-
-            // Draw the line
-            lineColor.setStroke()
-            context.setLineWidth(lineWidth)
-            context.setLineCap(.round)
-            context.setLineJoin(.round)
-
-            let path = CGPath.smoothedPathSegment(points: fourPoints)
-            context.addPath(path)
-            context.strokePath()
-        }
-    }
-
-    func clearDrawing() {
-        let image = renderer.image { rendererContext in
-            let context = rendererContext.cgContext
-            context.setFillColor(backgroundColor?.cgColor ?? UIColor.white.cgColor)
-            context.fill(bounds)
-        }
-        buffer = image
-        imageView.image = image
-        ImageIO.persistImage(image, named: Constants.imageName)
     }
 
 }

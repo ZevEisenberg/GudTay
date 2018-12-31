@@ -8,8 +8,11 @@
 
 import Swiftilities
 import UIKit.UIImage
+import Utilities
 
 struct ImageIO {
+
+    struct CorruptedImageDataError: Error {}
 
     static func persistImage(_ image: UIImage, named name: String) {
         DispatchQueue.global(qos: .background).async {
@@ -29,21 +32,23 @@ struct ImageIO {
         }
     }
 
-    static func loadPersistedImage(named name: String, completion: @escaping (UIImage?) -> Void) {
+    static func loadPersistedImage(named name: String, completion: @escaping (Result<UIImage>) -> Void) {
         DispatchQueue.global(qos: .background).async {
             let imageURL = urlForImage(named: name)
-
             do {
                 let imageData = try Data(contentsOf: imageURL)
-                let image = UIImage(data: imageData)
-                completion(image)
+                if let image = UIImage(data: imageData) {
+                    completion(.success(image))
+                }
+                else {
+                    completion(.failure(CorruptedImageDataError()))
+                }
             }
             catch {
                 Log.error("Error loading image from url: \(imageURL): \(error)")
-                completion(nil)
+                completion(.failure(error))
             }
         }
-
     }
 
 }
