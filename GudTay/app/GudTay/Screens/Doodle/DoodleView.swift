@@ -28,12 +28,14 @@ final class DoodleView: GridView {
     private let imageView = UIImageView()
 
     override init(frame: CGRect) {
-        viewModel = DoodleViewModel(size: frame.size)
+        viewModel = DoodleViewModel(size: frame.size, persistence: .onDisk)
 
         super.init(frame: frame)
 
         viewModel.newImageCallback = { [weak self] image in
-            self?.imageView.image = image
+            DispatchQueue.main.async {
+                self?.imageView.image = image
+            }
         }
 
         let clearButton = UIButton()
@@ -62,13 +64,7 @@ final class DoodleView: GridView {
 
     override func didMoveToWindow() {
         super.didMoveToWindow()
-        viewModel.loadPersistedImage() { result in
-            if let image = result.success {
-                DispatchQueue.main.async {
-                    self.imageView.image = image
-                }
-            }
-        }
+        viewModel.loadPersistedImage()
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

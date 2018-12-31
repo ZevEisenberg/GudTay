@@ -10,6 +10,12 @@ import Utilities
 
 final class DoodleViewModel {
 
+    // Nested Types
+
+    enum Persistence {
+        case onDisk, inMemory
+    }
+
     // Public Properties
 
     var size: CGSize = .zero {
@@ -31,6 +37,8 @@ final class DoodleViewModel {
     private var lastPoints: [CGPoint] = Array(repeating: .zero, count: 4)
     private var buffer: UIImage?
 
+    private let persistence: Persistence
+
     private var renderer: UIGraphicsImageRenderer!
 
     /// Convenience getter for working with drawing APIs that expect a bounds rect
@@ -38,16 +46,23 @@ final class DoodleViewModel {
         return CGRect(origin: .zero, size: size)
     }
 
-    init(size: CGSize) {
+    init(size: CGSize, persistence: Persistence) {
+        self.size = size
         renderer = UIGraphicsImageRenderer(size: size)
+        self.persistence = persistence
     }
 
-    func loadPersistedImage(completion: @escaping (Result<UIImage>) -> Void) {
-        ImageIO.loadPersistedImage(named: Constants.imageName) { result in
-            if let image = result.success {
-                self.buffer = image
+    func loadPersistedImage() {
+        switch persistence {
+        case .inMemory:
+            clearDrawing()
+        case .onDisk:
+            ImageIO.loadPersistedImage(named: Constants.imageName) { result in
+                if let image = result.success {
+                    self.buffer = image
+                    self.newImageCallback?(image)
+                }
             }
-            completion(result)
         }
     }
 
@@ -69,13 +84,22 @@ final class DoodleViewModel {
     }
 
     func endAt(_ point: CGPoint) {
-        if point == lastPoints[0] {
+        // Update last point for next stroke
+        lastPoints.removeFirst()
+        lastPoints.append(point)
+
+        if point == lastPoints.first {
             buffer = drawDot(at: point)
             buffer.flatMap { newImageCallback?($0) }
         }
+        else {
+            continueTo(point)
+        }
+
+        // Reset drawing points
         lastPoints = Array(repeating: .zero, count: 4)
 
-        if let image = buffer {
+        if case .onDisk = persistence, let image = buffer {
             ImageIO.persistImage(image, named: Constants.imageName)
         }
 
@@ -110,7 +134,9 @@ final class DoodleViewModel {
         }
         buffer = image
         buffer.flatMap { newImageCallback?($0) }
-        ImageIO.persistImage(image, named: Constants.imageName)
+        if persistence == .onDisk {
+            ImageIO.persistImage(image, named: Constants.imageName)
+        }
     }
 
 }
