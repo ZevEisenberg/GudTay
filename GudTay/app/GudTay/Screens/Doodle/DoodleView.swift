@@ -30,9 +30,12 @@ final class DoodleView: GridView {
     private var lastPoints: [CGPoint] = Array(repeating: .zero, count: 4)
     private var buffer: UIImage?
 
+    private var renderer: UIGraphicsImageRenderer
     private let imageView = UIImageView()
 
     override init(frame: CGRect) {
+        renderer = UIGraphicsImageRenderer(size: frame.size)
+
         super.init(frame: frame)
 
         let clearButton = UIButton()
@@ -52,6 +55,11 @@ final class DoodleView: GridView {
         // Setup
 
         clearButton.addTarget(self, action: #selector(clearTapped(sender:)), for: .touchUpInside)
+    }
+
+    override func layoutSubviews() {
+        renderer = UIGraphicsImageRenderer(size: bounds.size)
+        super.layoutSubviews()
     }
 
     override func didMoveToWindow() {
@@ -138,83 +146,57 @@ private extension DoodleView {
 
     }
 
-    func drawDot(at point: CGPoint) -> UIImage? {
-        // Initialize a full size image. Opaque because we don't need to draw over anything. Will be more performant.
-        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0)
+    func drawDot(at point: CGPoint) -> UIImage {
+        return renderer.image { rendererContext in
+            let context = rendererContext.cgContext
+            context.setFillColor(backgroundColor?.cgColor ?? UIColor.white.cgColor)
+            context.fill(bounds)
 
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return nil
+            // Draw previous buffer first
+            buffer?.draw(in: bounds)
+
+            // Draw the line
+            lineColor.setFill()
+
+            let rect = CGRect(
+                x: point.x - lineWidth / 2,
+                y: point.y - lineWidth / 2,
+                width: lineWidth,
+                height: lineWidth)
+            context.fillEllipse(in: rect)
         }
-
-        context.setFillColor(backgroundColor?.cgColor ?? UIColor.white.cgColor)
-        context.fill(bounds)
-
-        // Draw previous buffer first
-        buffer?.draw(in: bounds)
-
-        // Draw the line
-        lineColor.setFill()
-
-        let rect = CGRect(
-            x: point.x - lineWidth / 2,
-            y: point.y - lineWidth / 2,
-            width: lineWidth,
-            height: lineWidth)
-        context.fillEllipse(in: rect)
-
-        // Grab the updated buffer
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
     }
 
-    func drawLine(fourPoints: [CGPoint], buffer: UIImage?) -> UIImage? {
-        // Initialize a full size image. Opaque because we don't need to draw over anything. Will be more performant.
-        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0)
+    func drawLine(fourPoints: [CGPoint], buffer: UIImage?) -> UIImage {
+        return renderer.image { rendererContext in
+            let context = rendererContext.cgContext
+            context.setFillColor(backgroundColor?.cgColor ?? UIColor.white.cgColor)
+            context.fill(bounds)
 
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return nil
+            // Draw previous buffer first
+            buffer?.draw(in: bounds)
+
+            // Draw the line
+            lineColor.setStroke()
+            context.setLineWidth(lineWidth)
+            context.setLineCap(.round)
+            context.setLineJoin(.round)
+
+            let path = CGPath.smoothedPathSegment(points: fourPoints)
+            context.addPath(path)
+            context.strokePath()
         }
-
-        context.setFillColor(backgroundColor?.cgColor ?? UIColor.white.cgColor)
-        context.fill(bounds)
-
-        // Draw previous buffer first
-        buffer?.draw(in: bounds)
-
-        // Draw the line
-        lineColor.setStroke()
-        context.setLineWidth(lineWidth)
-        context.setLineCap(.round)
-        context.setLineJoin(.round)
-
-        let path = CGPath.smoothedPathSegment(points: fourPoints)
-        context.addPath(path)
-        context.strokePath()
-
-        // Grab the updated buffer
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
     }
 
     func clearDrawing() {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0)
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return
+        let image = renderer.image { rendererContext in
+            let context = rendererContext.cgContext
+            context.setFillColor(backgroundColor?.cgColor ?? UIColor.white.cgColor)
+            context.fill(bounds)
         }
-
-        context.setFillColor(backgroundColor?.cgColor ?? UIColor.white.cgColor)
-        context.fill(bounds)
-
-        // Grab the updated buffer
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
         buffer = image
         imageView.image = image
-        if let image = image {
-            ImageIO.persistImage(image, named: Constants.imageName)
-        }
+        ImageIO.persistImage(image, named: Constants.imageName)
     }
 
 }
