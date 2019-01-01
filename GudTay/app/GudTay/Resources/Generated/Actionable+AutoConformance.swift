@@ -5,6 +5,22 @@
 
 //swiftlint:disable:previous vertical_whitespace
 
+// MARK: - DoodleService
+protocol DoodleServiceDelegate: class {
+    func doodleService(_ component: DoodleService, didNotify action: DoodleService.Action)
+}
+
+extension DoodleService {
+
+    typealias ActionType = Action
+    typealias Delegate = DoodleServiceDelegate
+
+    func notify(_ action: ActionType) {
+        delegate?.doodleService(self, didNotify: action)
+    }
+
+}
+
 // MARK: - DoodleView
 protocol DoodleViewDelegate: class {
     func doodleView(_ view: DoodleView, didNotify action: DoodleView.Action)

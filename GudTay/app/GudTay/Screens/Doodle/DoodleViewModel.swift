@@ -16,6 +16,12 @@ final class DoodleViewModel {
         case onDisk, inMemory
     }
 
+    enum ImageUpdateKind {
+        case transient
+        case committedLocally
+        case fromNetwork
+    }
+
     // Public Properties
 
     var size: CGSize = .zero {
@@ -27,7 +33,7 @@ final class DoodleViewModel {
         }
     }
 
-    var newImageCallback: ((UIImage) -> Void)?
+    var newImageCallback: ((UIImage, ImageUpdateKind) -> Void)?
 
     // Private Properties
 
@@ -60,17 +66,22 @@ final class DoodleViewModel {
             ImageIO.loadPersistedImage(named: Constants.imageName) { result in
                 if let image = result.success {
                     self.buffer = image
-                    self.newImageCallback?(image)
+                    self.newImageCallback?(image, .committedLocally)
                 }
             }
         }
+    }
+
+    func updateImage(_ newImage: UIImage, kind: ImageUpdateKind) {
+        buffer = newImage
+        newImageCallback?(newImage, kind)
     }
 
     func startAt(_ point: CGPoint) {
         lastPoints = Array(repeating: point, count: 4)
     }
 
-    func continueTo(_ point: CGPoint) {
+    func continueTo(_ point: CGPoint, updateKind: ImageUpdateKind) {
 
         // Update last point for next stroke
         lastPoints.removeFirst()
@@ -80,7 +91,7 @@ final class DoodleViewModel {
         buffer = drawLine(fourPoints: lastPoints, buffer: buffer)
 
         // Replace the imageView contents with the updated image
-        buffer.flatMap { newImageCallback?($0) }
+        buffer.flatMap { newImageCallback?($0, updateKind) }
     }
 
     func endAt(_ point: CGPoint) {
@@ -90,10 +101,10 @@ final class DoodleViewModel {
 
         if point == lastPoints.first {
             buffer = drawDot(at: point)
-            buffer.flatMap { newImageCallback?($0) }
+            buffer.flatMap { newImageCallback?($0, .committedLocally) }
         }
         else {
-            continueTo(point)
+            continueTo(point, updateKind: .committedLocally)
         }
 
         // Reset drawing points
@@ -133,7 +144,7 @@ final class DoodleViewModel {
             context.fill(bounds)
         }
         buffer = image
-        buffer.flatMap { newImageCallback?($0) }
+        buffer.flatMap { newImageCallback?($0, .committedLocally) }
         if persistence == .onDisk {
             ImageIO.persistImage(image, named: Constants.imageName)
         }

@@ -13,6 +13,9 @@ import Anchorage
 extension DoodleView: Actionable {
     enum Action {
         case showClearPrompt(sourceButton: UIButton, completion: (_ clear: Bool) -> Void)
+
+        /// Not used for transient changes. Used to send completed images once touches end.
+        case imageUpdateCommitted(UIImage)
     }
 }
 
@@ -32,29 +35,23 @@ final class DoodleView: GridView {
 
         super.init(frame: frame)
 
-        viewModel.newImageCallback = { [weak self] image in
+        viewModel.newImageCallback = { [weak self] image, updateKind in
             DispatchQueue.main.async {
                 self?.imageView.image = image
+                if updateKind == .committedLocally {
+                    self?.notify(.imageUpdateCommitted(image))
+                }
             }
         }
-
-        let clearButton = UIButton()
-        clearButton.setImage(Asset.gun.image, for: .normal)
 
         // View Hierarchy
 
         contentView.addSubview(imageView)
-        contentView.addSubview(clearButton)
 
         // Layout
 
         imageView.edgeAnchors == edgeAnchors
-        clearButton.trailingAnchor == trailingAnchor
-        clearButton.bottomAnchor == bottomAnchor
 
-        // Setup
-
-        clearButton.addTarget(self, action: #selector(clearTapped(sender:)), for: .touchUpInside)
     }
 
     override func layoutSubviews() {
@@ -72,7 +69,7 @@ final class DoodleView: GridView {
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        viewModel.continueTo(touches.first!.location(in: self))
+        viewModel.continueTo(touches.first!.location(in: self), updateKind: .transient)
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -85,16 +82,16 @@ final class DoodleView: GridView {
 
 }
 
-// MARK: - Actions
+// MARK: - Public Methods
 
-private extension DoodleView {
+extension DoodleView {
 
-    @objc func clearTapped(sender: UIButton) {
-        notify(.showClearPrompt(sourceButton: sender, completion: { [weak self] clear in
-            if clear {
-                self?.viewModel.clearDrawing()
-            }
-        }))
+    func updateImage(_ newImage: UIImage, kind: DoodleViewModel.ImageUpdateKind) {
+        viewModel.updateImage(newImage, kind: kind)
+    }
+
+    func clearDrawing() {
+        viewModel.clearDrawing()
     }
 
 }
