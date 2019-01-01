@@ -40,7 +40,7 @@ class DrawingTests: XCTestCase {
     func testDrawAZee() {
         // recorded by drawing in the view
         sut.startAt(CGPoint(x: 10.5, y: 12.5))
-        let continueTo = { (x: Double, y: Double) in self.sut.continueTo(CGPoint(x: x, y: y), updateKind: .transient) }
+        let continueTo = { (x: Double, y: Double) in self.sut.continueTo(CGPoint(x: x, y: y)) }
         continueTo(12.0, 12.5)
         continueTo(14.0, 12.5)
         continueTo(25.0, 12.5)
@@ -71,6 +71,17 @@ class DrawingTests: XCTestCase {
         continueTo(48.0, 42.0)
         continueTo(49.0, 42.0)
         sut.endAt(CGPoint(x: 49.5, y: 42.0))
+        assertSnapshot(matching: result!, as: .image)
+    }
+
+    func testExtraEndBit() {
+        sut.startAt(CGPoint(x: 14.0, y: 19.5))
+        let continueTo = { (x: Double, y: Double) in self.sut.continueTo(CGPoint(x: x, y: y)) }
+        continueTo(14.0, 21.0)
+        continueTo(14.0, 24.5)
+        continueTo(14.0, 31.5)
+        continueTo(14.0, 40.0)
+        sut.endAt(CGPoint(x: 14.0, y: 46.0))
         assertSnapshot(matching: result!, as: .image)
     }
 

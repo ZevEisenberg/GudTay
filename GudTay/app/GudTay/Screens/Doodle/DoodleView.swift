@@ -69,7 +69,7 @@ final class DoodleView: GridView {
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        viewModel.continueTo(touches.first!.location(in: self), updateKind: .transient)
+        viewModel.continueTo(touches.first!.location(in: self))
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -81,8 +81,7 @@ final class DoodleViewModel {
         lastPoints = Array(repeating: point, count: 4)
     }
 
-    func continueTo(_ point: CGPoint, updateKind: ImageUpdateKind) {
-
+    func continueTo(_ point: CGPoint) {
         // Update last point for next stroke
         lastPoints.removeFirst()
         lastPoints.append(point)
@@ -91,7 +90,7 @@ final class DoodleViewModel {
         buffer = drawLine(fourPoints: lastPoints, buffer: buffer)
 
         // Replace the imageView contents with the updated image
-        buffer.flatMap { newImageCallback?($0, updateKind) }
+        buffer.flatMap { newImageCallback?($0, .transient) }
     }
 
     func endAt(_ point: CGPoint) {
@@ -99,13 +98,14 @@ final class DoodleViewModel {
         lastPoints.removeFirst()
         lastPoints.append(point)
 
-        if point == lastPoints.first {
-            buffer = drawDot(at: point)
-            buffer.flatMap { newImageCallback?($0, .committedLocally) }
+        if lastPoints.movesMoreThanOnePt {
+            buffer = drawLine(fourPoints: lastPoints, buffer: buffer)
         }
         else {
-            continueTo(point, updateKind: .committedLocally)
+            buffer = drawDot(at: point)
         }
+
+        buffer.flatMap { newImageCallback?($0, .committedLocally) }
 
         // Reset drawing points
         lastPoints = Array(repeating: .zero, count: 4)

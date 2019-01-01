@@ -18,6 +18,8 @@
 		2DFF1CF11E8950F000B1AD70 /* ContentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF1CF01E8950F000B1AD70 /* ContentCoordinator.swift */; };
 		2DFF1D161E8BF38F00B1AD70 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF1D151E8BF38F00B1AD70 /* UIColor+Extensions.swift */; };
 		2F58A2C96B775E27BA568478 /* Pods_GudTayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2686773EC58D31098F19DAE7 /* Pods_GudTayTests.framework */; };
+		5B3325AC21DBE72B00FEA6E3 /* ArrayOfPoints+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3325AB21DBE72B00FEA6E3 /* ArrayOfPoints+Distance.swift */; };
+		5B3325AE21DBEC5D00FEA6E3 /* ArrayOfPointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3325AD21DBEC5D00FEA6E3 /* ArrayOfPointsTests.swift */; };
 		5B85E5B421DA7537009A2202 /* DrawingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85E5B321DA7537009A2202 /* DrawingTests.swift */; };
 		5B85E5B621DA758B009A2202 /* DoodleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85E5B521DA758B009A2202 /* DoodleViewModel.swift */; };
 		5B85E5B821DA7DA6009A2202 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85E5B721DA7DA6009A2202 /* Result.swift */; };
@@ -226,6 +228,8 @@
 		55DEA6B41600AEE9A7BCFC9B /* Pods-GudTayTests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTayTests.develop.xcconfig"; path = "Pods/Target Support Files/Pods-GudTayTests/Pods-GudTayTests.develop.xcconfig"; sourceTree = "<group>"; };
 		5ACD0C241DC1679246EC1429 /* Pods-Gud Tay.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gud Tay.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Gud Tay/Pods-Gud Tay.appstore.xcconfig"; sourceTree = "<group>"; };
 		5B3325AA21DB157C00FEA6E3 /* __Snapshots__ */ = {isa = PBXFileReference; lastKnownFileType = folder; path = __Snapshots__; sourceTree = "<group>"; };
+		5B3325AB21DBE72B00FEA6E3 /* ArrayOfPoints+Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArrayOfPoints+Distance.swift"; sourceTree = "<group>"; };
+		5B3325AD21DBEC5D00FEA6E3 /* ArrayOfPointsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayOfPointsTests.swift; sourceTree = "<group>"; };
 		5B7B99AB21A45FDC0070D71F /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		5B85E5B321DA7537009A2202 /* DrawingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingTests.swift; sourceTree = "<group>"; };
 		5B85E5B521DA758B009A2202 /* DoodleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleViewModel.swift; sourceTree = "<group>"; };
@@ -462,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				2DFF1D151E8BF38F00B1AD70 /* UIColor+Extensions.swift */,
+				5B3325AB21DBE72B00FEA6E3 /* ArrayOfPoints+Distance.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -515,6 +520,7 @@
 			children = (
 				5B3325AA21DB157C00FEA6E3 /* __Snapshots__ */,
 				5B85E5B321DA7537009A2202 /* DrawingTests.swift */,
+				5B3325AD21DBEC5D00FEA6E3 /* ArrayOfPointsTests.swift */,
 			);
 			path = Drawing;
 			sourceTree = "<group>";
@@ -1598,6 +1604,7 @@
 				CDB61EDA208833D700E0E99C /* TemperatureCell.swift in Sources */,
 				CDB539B42086AF86006EE89E /* Fonts.swift in Sources */,
 				861732D51FA28DB600C14354 /* ModalDismissBehavior.swift in Sources */,
+				5B3325AC21DBE72B00FEA6E3 /* ArrayOfPoints+Distance.swift in Sources */,
 				CDB61ECC2088320900E0E99C /* ForecastBackgroundViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1610,6 +1617,7 @@
 				ABF84FA61DCBCEA1002DB24D /* Payloads.swift in Sources */,
 				ABF84FA01DCBAB1B002DB24D /* TestConstants.swift in Sources */,
 				006EFEF61F264204004A95DE /* TestClient.swift in Sources */,
+				5B3325AE21DBEC5D00FEA6E3 /* ArrayOfPointsTests.swift in Sources */,
 				5B85E5B421DA7537009A2202 /* DrawingTests.swift in Sources */,
 				ABF84FA41DCBCD89002DB24D /* MBTATests.swift in Sources */,
 			);

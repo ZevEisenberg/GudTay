@@ -36,6 +36,12 @@ extension CGPath {
         let divisor1 = len1 + len2
         let divisor2 = len2 + len3
 
+        guard divisor1 != 0, divisor2 != 0 else {
+            let pathSegment = CGMutablePath()
+            pathSegment.addLines(between: points)
+            return pathSegment
+        }
+
         let k1 = len1 / divisor1
         let k2 = len2 / divisor2
 
