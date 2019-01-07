@@ -114,8 +114,7 @@ extension DoodleService: MCSessionDelegate {
     }
 
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        let dataDescription = String(data: data, encoding: .utf8) ?? "<non-UTF-8 data with bytes: \(data.count)>"
-        Log.info("\(#function), \(dataDescription), \(peerID)")
+        Log.info("\(#function), \(String(data: data, encoding: .utf8) ?? "<non-UTF-8 data with bytes: \(data.count)>"), \(peerID)")
         guard let image = UIImage(data: data) else { return }
         notify(.receivedImage(image))
     }

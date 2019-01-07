@@ -13,8 +13,13 @@ import UIKit
 struct LoggingConfiguration: AppLifecycle {
 
     func onDidLaunch(application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-        Log.logLevel = .info
-        NetworkLog.logLevel = .info
+        #if DEBUG
+            Log.logLevel = .info
+            NetworkLog.logLevel = .info
+        #else
+            Log.logLevel = .error
+            NetworkLog.logLevel = .error
+        #endif
         Log.handler = { (level, message) in
             LogService.add(message: message)
         }
