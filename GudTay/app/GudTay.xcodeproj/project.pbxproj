@@ -20,6 +20,7 @@
 		2F58A2C96B775E27BA568478 /* Pods_GudTayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2686773EC58D31098F19DAE7 /* Pods_GudTayTests.framework */; };
 		5B3325AC21DBE72B00FEA6E3 /* ArrayOfPoints+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3325AB21DBE72B00FEA6E3 /* ArrayOfPoints+Distance.swift */; };
 		5B3325AE21DBEC5D00FEA6E3 /* ArrayOfPointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3325AD21DBEC5D00FEA6E3 /* ArrayOfPointsTests.swift */; };
+		5B357A9121E40723003DBFC4 /* DrawingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357A9021E40723003DBFC4 /* DrawingContext.swift */; };
 		5B85E5B421DA7537009A2202 /* DrawingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85E5B321DA7537009A2202 /* DrawingTests.swift */; };
 		5B85E5B621DA758B009A2202 /* DoodleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85E5B521DA758B009A2202 /* DoodleViewModel.swift */; };
 		5B85E5B821DA7DA6009A2202 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85E5B721DA7DA6009A2202 /* Result.swift */; };
@@ -230,6 +231,7 @@
 		5B3325AA21DB157C00FEA6E3 /* __Snapshots__ */ = {isa = PBXFileReference; lastKnownFileType = folder; path = __Snapshots__; sourceTree = "<group>"; };
 		5B3325AB21DBE72B00FEA6E3 /* ArrayOfPoints+Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArrayOfPoints+Distance.swift"; sourceTree = "<group>"; };
 		5B3325AD21DBEC5D00FEA6E3 /* ArrayOfPointsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayOfPointsTests.swift; sourceTree = "<group>"; };
+		5B357A9021E40723003DBFC4 /* DrawingContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingContext.swift; sourceTree = "<group>"; };
 		5B7B99AB21A45FDC0070D71F /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		5B85E5B321DA7537009A2202 /* DrawingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingTests.swift; sourceTree = "<group>"; };
 		5B85E5B521DA758B009A2202 /* DoodleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleViewModel.swift; sourceTree = "<group>"; };
@@ -920,6 +922,7 @@
 			children = (
 				CDB539C6208795AC006EE89E /* CGPath+Utilities.swift */,
 				5B85E5B521DA758B009A2202 /* DoodleViewModel.swift */,
+				5B357A9021E40723003DBFC4 /* DrawingContext.swift */,
 				CDB539C2208794A5006EE89E /* DoodleView.swift */,
 				5B85E5B921DABD61009A2202 /* DoodleViewController.swift */,
 				5B85E5BB21DABF61009A2202 /* DoodleService.swift */,
@@ -1606,6 +1609,7 @@
 				861732D51FA28DB600C14354 /* ModalDismissBehavior.swift in Sources */,
 				5B3325AC21DBE72B00FEA6E3 /* ArrayOfPoints+Distance.swift in Sources */,
 				CDB61ECC2088320900E0E99C /* ForecastBackgroundViewModel.swift in Sources */,
+				5B357A9121E40723003DBFC4 /* DrawingContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

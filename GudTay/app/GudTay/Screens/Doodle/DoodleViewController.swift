@@ -29,14 +29,20 @@ final class DoodleViewController: UIViewController {
         doodleView.delegate = self
         service.delegate = self
 
+        let modeSwitch = UISwitch()
+
         let clearButton = UIButton()
-        clearButton.setImage(Asset.gun.image, for: .normal)
+        clearButton.setImage(Asset.Doodle.gun.image, for: .normal)
 
         // View Hierarchy
+        doodleView.contentView.addSubview(modeSwitch)
         doodleView.contentView.addSubview(clearButton)
 
         // Layout
 
+        modeSwitch.trailingAnchor == doodleView.trailingAnchor
+
+        clearButton.topAnchor == modeSwitch.bottomAnchor + 15
         clearButton.trailingAnchor == doodleView.trailingAnchor
         clearButton.bottomAnchor == doodleView.bottomAnchor
         clearButton.layoutIfNeeded()
@@ -44,6 +50,9 @@ final class DoodleViewController: UIViewController {
         // Setup
 
         clearButton.addTarget(self, action: #selector(clearTapped(sender:)), for: .touchUpInside)
+        modeSwitch.addTarget(self, action: #selector(modeSwitched(sender:)), for: .valueChanged)
+
+        modeSwitch.isSelected = true
     }
 
 }
@@ -54,6 +63,10 @@ private extension DoodleViewController {
 
     @objc func clearTapped(sender: UIButton) {
         showClearPrompt(from: sender)
+    }
+
+    @objc func modeSwitched(sender: UISwitch) {
+        doodleView.setDrawing(enabled: sender.isOn)
     }
 
 }

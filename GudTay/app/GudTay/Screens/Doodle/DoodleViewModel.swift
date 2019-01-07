@@ -22,6 +22,10 @@ final class DoodleViewModel {
         case fromNetwork
     }
 
+    enum Mode {
+        case drawing, erasing
+    }
+
     // Public Properties
 
     var size: CGSize = .zero {
@@ -35,12 +39,26 @@ final class DoodleViewModel {
 
     var newImageCallback: ((UIImage, ImageUpdateKind) -> Void)?
 
+    var currentMode: Mode = .drawing
+
     // Private Properties
 
-    private var lineColor = UIColor.black
-    private var lineWidth: CGFloat = 5.0
+    private let penContext = DrawingContext(
+        lineColor: .black,
+        lineWidth: 5
+    )
+    private let eraserContext = DrawingContext(
+        lineColor: Constants.backgroundColor,
+        lineWidth: 30
+    )
 
-    private var lastPoints: [CGPoint] = Array(repeating: .zero, count: 4)
+    private var currentDrawingContext: DrawingContext {
+        switch currentMode {
+        case .drawing: return penContext
+        case .erasing: return eraserContext
+        }
+    }
+
     private var buffer: UIImage?
 
     private let persistence: Persistence
@@ -78,16 +96,14 @@ final class DoodleViewModel {
     }
 
     func startAt(_ point: CGPoint) {
-        lastPoints = Array(repeating: point, count: 4)
+        currentDrawingContext.lastPoints = Array(repeating: point, count: 4)
     }
 
     func continueTo(_ point: CGPoint) {
-        // Update last point for next stroke
-        lastPoints.removeFirst()
-        lastPoints.append(point)
+        currentDrawingContext.addPoint(point)
 
         // Draw the current stroke in an accumulated bitmap
-        buffer = drawLine(fourPoints: lastPoints, buffer: buffer)
+        buffer = drawLine(fourPoints: currentDrawingContext.lastPoints, buffer: buffer)
 
         // Replace the imageView contents with the updated image
         buffer.flatMap { newImageCallback?($0, .transient) }
@@ -95,11 +111,10 @@ final class DoodleViewModel {
 
     func endAt(_ point: CGPoint) {
         // Update last point for next stroke
-        lastPoints.removeFirst()
-        lastPoints.append(point)
+        currentDrawingContext.addPoint(point)
 
-        if lastPoints.movesMoreThanOnePt {
-            buffer = drawLine(fourPoints: lastPoints, buffer: buffer)
+        if currentDrawingContext.lastPoints.movesMoreThanOnePt {
+            buffer = drawLine(fourPoints: currentDrawingContext.lastPoints, buffer: buffer)
         }
         else {
             buffer = drawDot(at: point)
@@ -108,7 +123,7 @@ final class DoodleViewModel {
         buffer.flatMap { newImageCallback?($0, .committedLocally) }
 
         // Reset drawing points
-        lastPoints = Array(repeating: .zero, count: 4)
+        currentDrawingContext.lastPoints = Array(repeating: .zero, count: 4)
 
         if case .onDisk = persistence, let image = buffer {
             ImageIO.persistImage(image, named: Constants.imageName)
@@ -126,8 +141,9 @@ final class DoodleViewModel {
             buffer?.draw(in: bounds)
 
             // Draw the line
-            lineColor.setFill()
+            currentDrawingContext.lineColor.setFill()
 
+            let lineWidth = currentDrawingContext.lineWidth
             let rect = CGRect(
                 x: point.x - lineWidth / 2,
                 y: point.y - lineWidth / 2,
@@ -171,8 +187,8 @@ private extension DoodleViewModel {
             buffer?.draw(in: bounds)
 
             // Draw the line
-            lineColor.setStroke()
-            context.setLineWidth(lineWidth)
+            currentDrawingContext.lineColor.setStroke()
+            context.setLineWidth(currentDrawingContext.lineWidth)
             context.setLineCap(.round)
             context.setLineJoin(.round)
 

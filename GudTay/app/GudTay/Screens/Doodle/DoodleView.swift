@@ -51,7 +51,6 @@ final class DoodleView: GridView {
         // Layout
 
         imageView.edgeAnchors == edgeAnchors
-
     }
 
     override func layoutSubviews() {
@@ -92,6 +91,10 @@ extension DoodleView {
 
     func clearDrawing() {
         viewModel.clearDrawing()
+    }
+
+    func setDrawing(enabled: Bool) {
+        viewModel.currentMode = enabled ? .drawing : .erasing
     }
 
 }
