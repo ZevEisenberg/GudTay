@@ -24,7 +24,7 @@ opt_in_rules:
 type_name:
   min_length: 2
 
-variable_name:
+identifier_name:
     excluded:
         - URL
 
