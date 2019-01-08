@@ -21,6 +21,11 @@
 		5B3325AC21DBE72B00FEA6E3 /* ArrayOfPoints+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3325AB21DBE72B00FEA6E3 /* ArrayOfPoints+Distance.swift */; };
 		5B3325AE21DBEC5D00FEA6E3 /* ArrayOfPointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3325AD21DBEC5D00FEA6E3 /* ArrayOfPointsTests.swift */; };
 		5B357A9121E40723003DBFC4 /* DrawingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357A9021E40723003DBFC4 /* DrawingContext.swift */; };
+		5B357A9321E40EE0003DBFC4 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357A9221E40EE0003DBFC4 /* ToggleButton.swift */; };
+		5B357A9521E416E5003DBFC4 /* BinaryFloatingPoint+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357A9421E416E5003DBFC4 /* BinaryFloatingPoint+Utilities.swift */; };
+		5B357A9721E41706003DBFC4 /* FloatingPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357A9621E41706003DBFC4 /* FloatingPointTests.swift */; };
+		5B357A9921E4187B003DBFC4 /* CGRect+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357A9821E4187B003DBFC4 /* CGRect+Utilities.swift */; };
+		5B357A9B21E41AD7003DBFC4 /* RectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357A9A21E41AD7003DBFC4 /* RectTests.swift */; };
 		5B85E5B421DA7537009A2202 /* DrawingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85E5B321DA7537009A2202 /* DrawingTests.swift */; };
 		5B85E5B621DA758B009A2202 /* DoodleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85E5B521DA758B009A2202 /* DoodleViewModel.swift */; };
 		5B85E5B821DA7DA6009A2202 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85E5B721DA7DA6009A2202 /* Result.swift */; };
@@ -232,6 +237,11 @@
 		5B3325AB21DBE72B00FEA6E3 /* ArrayOfPoints+Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArrayOfPoints+Distance.swift"; sourceTree = "<group>"; };
 		5B3325AD21DBEC5D00FEA6E3 /* ArrayOfPointsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayOfPointsTests.swift; sourceTree = "<group>"; };
 		5B357A9021E40723003DBFC4 /* DrawingContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingContext.swift; sourceTree = "<group>"; };
+		5B357A9221E40EE0003DBFC4 /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
+		5B357A9421E416E5003DBFC4 /* BinaryFloatingPoint+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryFloatingPoint+Utilities.swift"; sourceTree = "<group>"; };
+		5B357A9621E41706003DBFC4 /* FloatingPointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPointTests.swift; sourceTree = "<group>"; };
+		5B357A9821E4187B003DBFC4 /* CGRect+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Utilities.swift"; sourceTree = "<group>"; };
+		5B357A9A21E41AD7003DBFC4 /* RectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectTests.swift; sourceTree = "<group>"; };
 		5B7B99AB21A45FDC0070D71F /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		5B85E5B321DA7537009A2202 /* DrawingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingTests.swift; sourceTree = "<group>"; };
 		5B85E5B521DA758B009A2202 /* DoodleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleViewModel.swift; sourceTree = "<group>"; };
@@ -868,10 +878,12 @@
 		CD31A7B520853BA900C26A7E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				5B357A9821E4187B003DBFC4 /* CGRect+Utilities.swift */,
 				CD31A7D520853BBE00C26A7E /* Collection+Utilities.swift */,
 				CD31A7B720853BA900C26A7E /* Info.plist */,
 				CDB539B92086B2DA006EE89E /* RandomAccessCollection+Utilities.swift */,
 				5B85E5B721DA7DA6009A2202 /* Result.swift */,
+				5B357A9421E416E5003DBFC4 /* BinaryFloatingPoint+Utilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -880,7 +892,9 @@
 			isa = PBXGroup;
 			children = (
 				CDB539BB2086B301006EE89E /* CollectionTests.swift */,
+				5B357A9621E41706003DBFC4 /* FloatingPointTests.swift */,
 				CD31A7C520853BA900C26A7E /* Info.plist */,
+				5B357A9A21E41AD7003DBFC4 /* RectTests.swift */,
 			);
 			path = UtilitiesTests;
 			sourceTree = "<group>";
@@ -927,6 +941,7 @@
 				5B85E5B921DABD61009A2202 /* DoodleViewController.swift */,
 				5B85E5BB21DABF61009A2202 /* DoodleService.swift */,
 				CDB539C4208794F8006EE89E /* ImageIO.swift */,
+				5B357A9221E40EE0003DBFC4 /* ToggleButton.swift */,
 			);
 			path = Doodle;
 			sourceTree = "<group>";
@@ -1168,7 +1183,6 @@
 						DevelopmentTeam = 2KJHM26Y46;
 						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
-						TestTargetID = ABC778741DC90B7A00815FB9;
 					};
 				};
 				ZevEisenbergNAME = ZevEisenberg;
@@ -1590,6 +1604,7 @@
 				ABF84F8C1DC99CFD002DB24D /* Appearance.swift in Sources */,
 				CD6B88B12086366A0064F31A /* MBTAViewController.swift in Sources */,
 				5B85E5BA21DABD61009A2202 /* DoodleViewController.swift in Sources */,
+				5B357A9321E40EE0003DBFC4 /* ToggleButton.swift in Sources */,
 				CDB61EDB208833D700E0E99C /* SunIntervalView.swift in Sources */,
 				ABC778791DC90B7A00815FB9 /* AppDelegate.swift in Sources */,
 				862B204C1FA11315007D33BC /* DebugMenu.swift in Sources */,
@@ -1631,6 +1646,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B357A9921E4187B003DBFC4 /* CGRect+Utilities.swift in Sources */,
+				5B357A9521E416E5003DBFC4 /* BinaryFloatingPoint+Utilities.swift in Sources */,
 				5B85E5B821DA7DA6009A2202 /* Result.swift in Sources */,
 				CD31A7D620853BBE00C26A7E /* Collection+Utilities.swift in Sources */,
 				CDB539BA2086B2DA006EE89E /* RandomAccessCollection+Utilities.swift in Sources */,
@@ -1641,7 +1658,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B357A9721E41706003DBFC4 /* FloatingPointTests.swift in Sources */,
 				CDB539BC2086B301006EE89E /* CollectionTests.swift in Sources */,
+				5B357A9B21E41AD7003DBFC4 /* RectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1849,7 +1868,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay.utilities.UtilitiesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GudTay.app/GudTay";
 			};
 			name = Release;
 		};
@@ -2014,7 +2032,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay.utilities.UtilitiesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GudTay.app/GudTay";
 			};
 			name = Debug;
 		};

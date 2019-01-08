@@ -29,30 +29,33 @@ final class DoodleViewController: UIViewController {
         doodleView.delegate = self
         service.delegate = self
 
-        let modeSwitch = UISwitch()
+        let modeToggle = ToggleButton()
 
         let clearButton = UIButton()
         clearButton.setImage(Asset.Doodle.gun.image, for: .normal)
 
         // View Hierarchy
-        doodleView.contentView.addSubview(modeSwitch)
+        doodleView.contentView.addSubview(modeToggle)
         doodleView.contentView.addSubview(clearButton)
 
         // Layout
 
-        modeSwitch.trailingAnchor == doodleView.trailingAnchor
+        modeToggle.trailingAnchor == doodleView.trailingAnchor
 
-        clearButton.topAnchor == modeSwitch.bottomAnchor + 15
+        clearButton.topAnchor == modeToggle.bottomAnchor + 15
         clearButton.trailingAnchor == doodleView.trailingAnchor
         clearButton.bottomAnchor == doodleView.bottomAnchor
         clearButton.layoutIfNeeded()
 
         // Setup
 
-        clearButton.addTarget(self, action: #selector(clearTapped(sender:)), for: .touchUpInside)
-        modeSwitch.addTarget(self, action: #selector(modeSwitched(sender:)), for: .valueChanged)
+        modeToggle.primaryImage = Asset.Doodle.marker.image
+        modeToggle.secondaryImage = Asset.Doodle.eraser.image
 
-        modeSwitch.isSelected = true
+        clearButton.addTarget(self, action: #selector(clearTapped(sender:)), for: .touchUpInside)
+        modeToggle.addTarget(self, action: #selector(modeToggled(sender:)), for: .valueChanged)
+
+        modeToggle.sizeToFit()
     }
 
 }
@@ -65,8 +68,8 @@ private extension DoodleViewController {
         showClearPrompt(from: sender)
     }
 
-    @objc func modeSwitched(sender: UISwitch) {
-        doodleView.setDrawing(enabled: sender.isOn)
+    @objc func modeToggled(sender: ToggleButton) {
+        doodleView.setDrawing(enabled: sender.mode == .primary)
     }
 
 }
