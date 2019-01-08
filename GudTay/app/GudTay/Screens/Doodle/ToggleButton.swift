@@ -107,12 +107,11 @@ final class ToggleButton: UIControl {
     }
 
     override var isHighlighted: Bool {
-
         didSet {
-            primaryImageView.isHighlighted = isHighlighted
-            secondaryImageView.isHighlighted = isHighlighted
+            for view in [primaryImageView, secondaryImageView] {
+                view.backgroundColor = isHighlighted ? .lightGray : .white
+            }
         }
-
     }
 
     override func layoutSubviews() {
