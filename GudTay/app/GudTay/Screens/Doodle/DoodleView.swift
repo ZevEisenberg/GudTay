@@ -24,10 +24,10 @@ final class DoodleView: GridView {
     // Public Properties
 
     weak var delegate: DoodleViewDelegate?
+    let viewModel: DoodleViewModel
 
     // Private Properties
 
-    private let viewModel: DoodleViewModel
     private let imageView = UIImageView()
 
     override init(frame: CGRect) {

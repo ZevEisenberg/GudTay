@@ -36,3 +36,19 @@ extension DoodleView {
     }
 
 }
+
+// MARK: - DoodleViewModel
+protocol DoodleViewModelDelegate: class {
+    func doodleViewModel(_ component: DoodleViewModel, didNotify action: DoodleViewModel.Action)
+}
+
+extension DoodleViewModel {
+
+    typealias ActionType = Action
+    typealias Delegate = DoodleViewModelDelegate
+
+    func notify(_ action: ActionType) {
+        delegate?.doodleViewModel(self, didNotify: action)
+    }
+
+}

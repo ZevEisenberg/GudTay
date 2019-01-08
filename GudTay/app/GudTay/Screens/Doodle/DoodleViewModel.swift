@@ -8,6 +8,14 @@
 import UIKit
 import Utilities
 
+extension DoodleViewModel: Actionable {
+
+    enum Action {
+        case changedMode(Mode)
+    }
+
+}
+
 final class DoodleViewModel {
 
     // Nested Types
@@ -28,6 +36,8 @@ final class DoodleViewModel {
 
     // Public Properties
 
+    weak var delegate: Delegate?
+
     var size: CGSize = .zero {
         didSet {
             guard !(size.width == 0 || size.height == 0) else {
@@ -39,7 +49,16 @@ final class DoodleViewModel {
 
     var newImageCallback: ((UIImage, ImageUpdateKind) -> Void)?
 
-    var currentMode: Mode = .drawing
+    var currentMode: Mode = .drawing {
+        didSet {
+            if currentMode != oldValue {
+                notify(.changedMode(currentMode))
+            }
+            if currentMode == .erasing {
+                restartErasingTimer()
+            }
+        }
+    }
 
     // Private Properties
 
@@ -64,6 +83,10 @@ final class DoodleViewModel {
     private let persistence: Persistence
 
     private var renderer: UIGraphicsImageRenderer!
+
+    // After erasing, start a timer. If you haven't erased in a certain amount of time,
+    // you automatically get switched back to drawing mode.
+    private var erasingTimer: Timer?
 
     /// Convenience getter for working with drawing APIs that expect a bounds rect
     private var bounds: CGRect {
@@ -96,10 +119,12 @@ final class DoodleViewModel {
     }
 
     func startAt(_ point: CGPoint) {
+        restartErasingTimer()
         currentDrawingContext.lastPoints = Array(repeating: point, count: 4)
     }
 
     func continueTo(_ point: CGPoint) {
+        restartErasingTimer()
         currentDrawingContext.addPoint(point)
 
         // Draw the current stroke in an accumulated bitmap
@@ -110,6 +135,7 @@ final class DoodleViewModel {
     }
 
     func endAt(_ point: CGPoint) {
+        restartErasingTimer()
         // Update last point for next stroke
         currentDrawingContext.addPoint(point)
 
@@ -132,6 +158,7 @@ final class DoodleViewModel {
     }
 
     func drawDot(at point: CGPoint) -> UIImage {
+        restartErasingTimer()
         return renderer.image { rendererContext in
             let context = rendererContext.cgContext
             context.setFillColor(Constants.backgroundColor.cgColor)
@@ -196,6 +223,15 @@ private extension DoodleViewModel {
             context.addPath(path)
             context.strokePath()
         }
+    }
+
+    func restartErasingTimer() {
+        guard currentMode == .erasing else { return }
+        erasingTimer?.invalidate()
+        erasingTimer = Timer.scheduledTimer(withTimeInterval: 30, repeats: false, block: { [weak self] _ in
+            self?.erasingTimer = nil
+            self?.currentMode = .drawing
+        })
     }
 
 }

@@ -18,6 +18,7 @@ final class DoodleViewController: UIViewController {
     // Private Properties
 
     private let service = DoodleService()
+    private let modeToggle = ToggleButton()
 
     override func loadView() {
         view = doodleView
@@ -27,9 +28,8 @@ final class DoodleViewController: UIViewController {
         super.viewDidLoad()
 
         doodleView.delegate = self
+        doodleView.viewModel.delegate = self // sorry, Demeter
         service.delegate = self
-
-        let modeToggle = ToggleButton()
 
         let clearButton = UIButton()
         clearButton.setImage(Asset.Doodle.gun.image, for: .normal)
@@ -93,6 +93,17 @@ private extension DoodleViewController {
         show(alert, sender: self)
         alert.popoverPresentationController?.sourceView = sourceButton
         alert.popoverPresentationController?.sourceRect = sourceButton.bounds
+    }
+
+}
+
+extension DoodleViewController: DoodleViewModel.Delegate {
+
+    func doodleViewModel(_ component: DoodleViewModel, didNotify action: DoodleViewModel.Action) {
+        switch action {
+        case .changedMode(let mode):
+            modeToggle.setMode(mode == .drawing ? .primary : .secondary, animated: true)
+        }
     }
 
 }
