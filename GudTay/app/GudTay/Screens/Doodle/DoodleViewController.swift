@@ -40,7 +40,7 @@ final class DoodleViewController: UIViewController {
 
         // Layout
 
-        modeToggle.trailingAnchor == doodleView.trailingAnchor
+        modeToggle.trailingAnchor == doodleView.trailingAnchor - 5
 
         clearButton.topAnchor == modeToggle.bottomAnchor + 15
         clearButton.trailingAnchor == doodleView.trailingAnchor
