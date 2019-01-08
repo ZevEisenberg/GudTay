@@ -10,4 +10,4 @@ import Foundation
 
 /// Coordinators inherit from `NSObject` because they often need to be made
 /// delegates or message receivers.
-protocol Coordinator: class, NSObjectProtocol { }
+protocol Coordinator: AnyObject, NSObjectProtocol { }

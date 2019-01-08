@@ -6,7 +6,7 @@
 //swiftlint:disable:previous vertical_whitespace
 
 // MARK: - DoodleService
-protocol DoodleServiceDelegate: class {
+protocol DoodleServiceDelegate: AnyObject {
     func doodleService(_ component: DoodleService, didNotify action: DoodleService.Action)
 }
 
@@ -22,7 +22,7 @@ extension DoodleService {
 }
 
 // MARK: - DoodleView
-protocol DoodleViewDelegate: class {
+protocol DoodleViewDelegate: AnyObject {
     func doodleView(_ view: DoodleView, didNotify action: DoodleView.Action)
 }
 
@@ -38,7 +38,7 @@ extension DoodleView {
 }
 
 // MARK: - DoodleViewModel
-protocol DoodleViewModelDelegate: class {
+protocol DoodleViewModelDelegate: AnyObject {
     func doodleViewModel(_ component: DoodleViewModel, didNotify action: DoodleViewModel.Action)
 }
 

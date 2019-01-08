@@ -43,7 +43,7 @@ func lowerFirstCamelCaseGroup(_ input: String) -> String {
 <% for type in (types.implementing["Actionable"] ?? []) { %>
 <% let lowerFirstTypeName = lowerFirstCamelCaseGroup(type.name) -%>
 // MARK: - <%= type.name %>
-protocol <%= type.name %>Delegate: class {
+protocol <%= type.name %>Delegate: AnyObject {
     func <%= lowerFirstTypeName %>(_ <%= variableName(fromTypeName: type.name) %>: <%= type.name %>, didNotify action: <%= type.name %>.Action)
 }
 

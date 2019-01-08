@@ -12,7 +12,7 @@ extension Array {
     // via https://stackoverflow.com/a/24101606/255489
     var random: Element? {
         if isEmpty { return nil }
-        return self[numericCast(arc4random_uniform(numericCast(count)))]
+        return self[.random(in: 0..<count)]
     }
 
 }

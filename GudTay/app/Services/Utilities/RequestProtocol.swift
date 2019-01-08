@@ -8,7 +8,7 @@
 import Alamofire
 import Utilities
 
-public protocol RequestProtocol: class {
+public protocol RequestProtocol: AnyObject {
 
     var isFinished: Bool { get }
 
