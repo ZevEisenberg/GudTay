@@ -57,6 +57,9 @@ final class DoodleViewModel {
             if currentMode == .erasing {
                 restartErasingTimer()
             }
+            else {
+                invalidateErasingTimer()
+            }
         }
     }
 
@@ -232,6 +235,11 @@ private extension DoodleViewModel {
             self?.erasingTimer = nil
             self?.currentMode = .drawing
         })
+    }
+
+    func invalidateErasingTimer() {
+        erasingTimer?.invalidate()
+        erasingTimer = nil
     }
 
 }
