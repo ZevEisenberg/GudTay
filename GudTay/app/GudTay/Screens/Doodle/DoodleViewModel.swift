@@ -164,11 +164,13 @@ final class DoodleViewModel {
         restartErasingTimer()
         return renderer.image { rendererContext in
             let context = rendererContext.cgContext
-            context.setFillColor(Constants.backgroundColor.cgColor)
-            context.fill(bounds)
-
-            // Draw previous buffer first
-            buffer?.draw(in: bounds)
+            if let buffer = buffer {
+                buffer.draw(in: bounds)
+            }
+            else {
+                context.setFillColor(Constants.backgroundColor.cgColor)
+                context.fill(bounds)
+            }
 
             // Draw the line
             currentDrawingContext.lineColor.setFill()
@@ -210,11 +212,14 @@ private extension DoodleViewModel {
     func drawLine(fourPoints: [CGPoint], buffer: UIImage?) -> UIImage {
         return renderer.image { (rendererContext: UIGraphicsRendererContext) in
             let context = rendererContext.cgContext
-            context.setFillColor(Constants.backgroundColor.cgColor)
-            context.fill(CGRect(origin: .zero, size: size))
 
-            // Draw previous buffer first
-            buffer?.draw(in: bounds)
+            if let buffer = buffer {
+                buffer.draw(in: bounds)
+            }
+            else {
+                context.setFillColor(Constants.backgroundColor.cgColor)
+                context.fill(CGRect(origin: .zero, size: size))
+            }
 
             // Draw the line
             currentDrawingContext.lineColor.setStroke()
