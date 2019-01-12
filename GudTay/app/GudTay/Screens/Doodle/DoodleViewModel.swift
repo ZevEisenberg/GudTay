@@ -43,11 +43,11 @@ final class DoodleViewModel {
             guard !(size.width == 0 || size.height == 0) else {
                 return
             }
-            renderer = UIGraphicsImageRenderer(size: size)
+            reconfigureContext()
         }
     }
 
-    var newImageCallback: ((UIImage, ImageUpdateKind) -> Void)?
+    var newContextCallback: ((CGContext, ImageUpdateKind) -> Void)?
 
     var currentMode: Mode = .drawing {
         didSet {
@@ -81,11 +81,9 @@ final class DoodleViewModel {
         }
     }
 
-    private var buffer: UIImage?
-
     private let persistence: Persistence
 
-    private var renderer: UIGraphicsImageRenderer!
+    private var context: CGContext?
 
     // After erasing, start a timer. If you haven't erased in a certain amount of time,
     // you automatically get switched back to drawing mode.
@@ -98,8 +96,8 @@ final class DoodleViewModel {
 
     init(size: CGSize, persistence: Persistence) {
         self.size = size
-        renderer = UIGraphicsImageRenderer(size: size)
         self.persistence = persistence
+        reconfigureContext()
     }
 
     func loadPersistedImage() {
@@ -108,17 +106,19 @@ final class DoodleViewModel {
             clearDrawing()
         case .onDisk:
             ImageIO.loadPersistedImage(named: Constants.imageName) { result in
-                if let image = result.success {
-                    self.buffer = image
-                    self.newImageCallback?(image, .committedLocally)
+                if let image = result.success, let context = self.context {
+                    self.drawImage(image)
+                    self.newContextCallback?(context, .committedLocally)
                 }
             }
         }
     }
 
     func updateImage(_ newImage: UIImage, kind: ImageUpdateKind) {
-        buffer = newImage
-        newImageCallback?(newImage, kind)
+        drawImage(newImage)
+        if let context = context {
+            newContextCallback?(context, kind)
+        }
     }
 
     func startAt(_ point: CGPoint) {
@@ -131,10 +131,10 @@ final class DoodleViewModel {
         currentDrawingContext.addPoint(point)
 
         // Draw the current stroke in an accumulated bitmap
-        buffer = drawLine(fourPoints: currentDrawingContext.lastPoints, buffer: buffer)
+        drawLine(fourPoints: currentDrawingContext.lastPoints)
 
         // Replace the imageView contents with the updated image
-        buffer.flatMap { newImageCallback?($0, .transient) }
+        context.flatMap { newContextCallback?($0, .transient) }
     }
 
     func endAt(_ point: CGPoint) {
@@ -143,58 +143,43 @@ final class DoodleViewModel {
         currentDrawingContext.addPoint(point)
 
         if currentDrawingContext.lastPoints.movesMoreThanOnePt {
-            buffer = drawLine(fourPoints: currentDrawingContext.lastPoints, buffer: buffer)
+            drawLine(fourPoints: currentDrawingContext.lastPoints)
         }
         else {
-            buffer = drawDot(at: point)
+            drawDot(at: point)
         }
 
-        buffer.flatMap { newImageCallback?($0, .committedLocally) }
+        context.flatMap { newContextCallback?($0, .committedLocally) }
 
         // Reset drawing points
         currentDrawingContext.lastPoints = Array(repeating: .zero, count: 4)
 
-        if case .onDisk = persistence, let image = buffer {
-            ImageIO.persistImage(image, named: Constants.imageName)
+        if case .onDisk = persistence, let cgImage = context?.makeImage() {
+            ImageIO.persistImage(UIImage(cgImage: cgImage), named: Constants.imageName)
         }
 
     }
 
-    func drawDot(at point: CGPoint) -> UIImage {
+    func drawDot(at point: CGPoint) {
         restartErasingTimer()
-        return renderer.image { rendererContext in
-            let context = rendererContext.cgContext
-            if let buffer = buffer {
-                buffer.draw(in: bounds)
-            }
-            else {
-                context.setFillColor(Constants.backgroundColor.cgColor)
-                context.fill(bounds)
-            }
 
-            // Draw the line
-            currentDrawingContext.lineColor.setFill()
+        context?.setFillColor(currentDrawingContext.lineColor.cgColor)
 
-            let lineWidth = currentDrawingContext.lineWidth
-            let rect = CGRect(
-                x: point.x - lineWidth / 2,
-                y: point.y - lineWidth / 2,
-                width: lineWidth,
-                height: lineWidth)
-            context.fillEllipse(in: rect)
-        }
+        let lineWidth = currentDrawingContext.lineWidth
+        let rect = CGRect(
+            x: point.x - lineWidth / 2,
+            y: point.y - lineWidth / 2,
+            width: lineWidth,
+            height: lineWidth)
+        context?.fillEllipse(in: rect)
     }
 
     func clearDrawing() {
-        let image = renderer.image { rendererContext in
-            let context = rendererContext.cgContext
-            context.setFillColor(Constants.backgroundColor.cgColor)
-            context.fill(bounds)
-        }
-        buffer = image
-        buffer.flatMap { newImageCallback?($0, .committedLocally) }
-        if persistence == .onDisk {
-            ImageIO.persistImage(image, named: Constants.imageName)
+            context?.setFillColor(Constants.backgroundColor.cgColor)
+            context?.fill(bounds)
+        context.flatMap { newContextCallback?($0, .committedLocally) }
+        if persistence == .onDisk, let cgImage = context?.makeImage() {
+            ImageIO.persistImage(UIImage(cgImage: cgImage), named: Constants.imageName)
         }
     }
 
@@ -209,28 +194,15 @@ private extension DoodleViewModel {
 
     }
 
-    func drawLine(fourPoints: [CGPoint], buffer: UIImage?) -> UIImage {
-        return renderer.image { (rendererContext: UIGraphicsRendererContext) in
-            let context = rendererContext.cgContext
+    func drawLine(fourPoints: [CGPoint]) {
+        context?.setStrokeColor(currentDrawingContext.lineColor.cgColor)
+        context?.setLineWidth(currentDrawingContext.lineWidth)
+        context?.setLineCap(.round)
+        context?.setLineJoin(.round)
 
-            if let buffer = buffer {
-                buffer.draw(in: bounds)
-            }
-            else {
-                context.setFillColor(Constants.backgroundColor.cgColor)
-                context.fill(CGRect(origin: .zero, size: size))
-            }
-
-            // Draw the line
-            currentDrawingContext.lineColor.setStroke()
-            context.setLineWidth(currentDrawingContext.lineWidth)
-            context.setLineCap(.round)
-            context.setLineJoin(.round)
-
-            let path = CGPath.smoothedPathSegment(points: fourPoints)
-            context.addPath(path)
-            context.strokePath()
-        }
+        let path = CGPath.smoothedPathSegment(points: fourPoints)
+        context?.addPath(path)
+        context?.strokePath()
     }
 
     func restartErasingTimer() {
@@ -245,6 +217,33 @@ private extension DoodleViewModel {
     func invalidateErasingTimer() {
         erasingTimer?.invalidate()
         erasingTimer = nil
+    }
+
+    func reconfigureContext() {
+        let scale = UIScreen.main.scale
+        let width = Int(size.width * scale)
+        let bitsPerComponent = 8
+        let bytesPerPixel = 4
+        context = CGContext(
+            data: nil,
+            width: width,
+            height: Int(size.height * scale),
+            bitsPerComponent: bitsPerComponent,
+            bytesPerRow: width * bytesPerPixel,
+            space: CGColorSpaceCreateDeviceRGB(),
+            bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue
+        )
+        // Scale by screen scale because the context is in pixels, not points.
+        // Not sure why we need to invert it, but if we don't, the world is turned upside down.
+        context?.scaleBy(x: scale, y: -scale)
+        context?.translateBy(x: 0, y: -size.height)
+        context?.setFillColor(Constants.backgroundColor.cgColor)
+        context?.fill(bounds)
+    }
+
+    func drawImage(_ image: UIImage) {
+        guard let cgImage = image.cgImage else { return }
+        context?.draw(cgImage, in: bounds)
     }
 
 }

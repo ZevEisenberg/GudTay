@@ -10,31 +10,36 @@ import SnapshotTesting
 import XCTest
 
 private let size = CGSize(width: 200, height: 100)
-private var result: UIImage?
+private var result: CGImage?
+
+extension Snapshotting where Value == CGImage, Format == UIImage {
+    public static let cgImage: Snapshotting =
+        Snapshotting<UIImage, UIImage>.image.pullback { cgImage in UIImage(cgImage: cgImage, scale: UIScreen.main.scale, orientation: .up) }
+}
 
 class DrawingTests: XCTestCase {
 
     let sut = DoodleViewModel(size: size, persistence: .inMemory)
 
     override func setUp() {
-        sut.newImageCallback = { (image, kind) in result = image }
+        sut.newContextCallback = { (context, kind) in result = context.makeImage() }
         sut.loadPersistedImage()
     }
 
     func testEmptyDrawing() {
-        assertSnapshot(matching: result!, as: .image)
+        assertSnapshot(matching: result!, as: .cgImage)
     }
 
     func testPoint() {
         sut.startAt(CGPoint(x: 20, y: 30))
         sut.endAt(CGPoint(x: 20, y: 30))
-        assertSnapshot(matching: result!, as: .image)
+        assertSnapshot(matching: result!, as: .cgImage)
     }
 
     func testLine() {
         sut.startAt(CGPoint(x: 20, y: 30))
         sut.endAt(CGPoint(x: 40, y: 40))
-        assertSnapshot(matching: result!, as: .image)
+        assertSnapshot(matching: result!, as: .cgImage)
     }
 
     func testDrawAZee() {
@@ -71,7 +76,7 @@ class DrawingTests: XCTestCase {
         continueTo(48.0, 42.0)
         continueTo(49.0, 42.0)
         sut.endAt(CGPoint(x: 49.5, y: 42.0))
-        assertSnapshot(matching: result!, as: .image)
+        assertSnapshot(matching: result!, as: .cgImage)
     }
 
     func testExtraEndBit() {
@@ -82,7 +87,7 @@ class DrawingTests: XCTestCase {
         continueTo(14.0, 31.5)
         continueTo(14.0, 40.0)
         sut.endAt(CGPoint(x: 14.0, y: 46.0))
-        assertSnapshot(matching: result!, as: .image)
+        assertSnapshot(matching: result!, as: .cgImage)
     }
 
 }

@@ -28,29 +28,20 @@ final class DoodleView: GridView {
 
     // Private Properties
 
-    private let imageView = UIImageView()
-
     override init(frame: CGRect) {
         viewModel = DoodleViewModel(size: frame.size, persistence: .onDisk)
 
         super.init(frame: frame)
 
-        viewModel.newImageCallback = { [weak self] image, updateKind in
+        viewModel.newContextCallback = { [weak self] context, updateKind in
             DispatchQueue.main.async {
-                self?.imageView.image = image
-                if updateKind == .committedLocally {
-                    self?.notify(.imageUpdateCommitted(image))
+                let cgImage = context.makeImage()
+                self?.layer.contents = cgImage
+                if updateKind == .committedLocally, let cgImage = cgImage {
+                    self?.notify(.imageUpdateCommitted(UIImage(cgImage: cgImage)))
                 }
             }
         }
-
-        // View Hierarchy
-
-        contentView.addSubview(imageView)
-
-        // Layout
-
-        imageView.edgeAnchors == edgeAnchors
     }
 
     override func layoutSubviews() {
