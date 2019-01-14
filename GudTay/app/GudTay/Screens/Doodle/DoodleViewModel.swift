@@ -83,6 +83,7 @@ final class DoodleViewModel {
 
     private let persistence: Persistence
 
+    private var buffer: UnsafeMutableRawBufferPointer?
     private var context: CGContext?
 
     // After erasing, start a timer. If you haven't erased in a certain amount of time,
@@ -220,23 +221,38 @@ private extension DoodleViewModel {
     }
 
     func reconfigureContext() {
+        // Clean Up
+        context = nil
+        buffer?.deallocate()
+
+        // Constants
         let scale = UIScreen.main.scale
-        let width = Int(size.width * scale)
+        let widthPx = Int(size.width * scale)
+        let heightPx = Int(size.height * scale)
         let bitsPerComponent = 8
         let bytesPerPixel = 4
+        let bytesPerRow = widthPx * bytesPerPixel
+
+        // New Stuff
+        buffer = UnsafeMutableRawBufferPointer.allocate(
+            byteCount: bytesPerRow * heightPx,
+            alignment: MemoryLayout<UInt8>.alignment
+        )
         context = CGContext(
-            data: nil,
-            width: width,
-            height: Int(size.height * scale),
+            data: UnsafeMutableRawPointer(buffer?.baseAddress),
+            width: widthPx,
+            height: heightPx,
             bitsPerComponent: bitsPerComponent,
-            bytesPerRow: width * bytesPerPixel,
+            bytesPerRow: bytesPerRow,
             space: CGColorSpaceCreateDeviceRGB(),
             bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue
         )
         // Scale by screen scale because the context is in pixels, not points.
-        // Not sure why we need to invert it, but if we don't, the world is turned upside down.
+        // If we don't invert the y axis, the world will be turned upside down
+        context?.translateBy(x: 0, y: CGFloat(heightPx))
         context?.scaleBy(x: scale, y: -scale)
-        context?.translateBy(x: 0, y: -size.height)
+
+        // Start out with a default fill
         context?.setFillColor(Constants.backgroundColor.cgColor)
         context?.fill(bounds)
     }
