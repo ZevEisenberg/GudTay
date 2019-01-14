@@ -1,5 +1,5 @@
 //
-//  DrawingContext.swift
+//  Brush.swift
 //  GudTay
 //
 //  Created by Zev Eisenberg on 1/7/19.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DrawingContext {
+class Brush {
 
     let lineColor: UIColor
     let lineWidth: CGFloat

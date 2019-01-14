@@ -20,7 +20,7 @@
 		2F58A2C96B775E27BA568478 /* Pods_GudTayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2686773EC58D31098F19DAE7 /* Pods_GudTayTests.framework */; };
 		5B3325AC21DBE72B00FEA6E3 /* ArrayOfPoints+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3325AB21DBE72B00FEA6E3 /* ArrayOfPoints+Distance.swift */; };
 		5B3325AE21DBEC5D00FEA6E3 /* ArrayOfPointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3325AD21DBEC5D00FEA6E3 /* ArrayOfPointsTests.swift */; };
-		5B357A9121E40723003DBFC4 /* DrawingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357A9021E40723003DBFC4 /* DrawingContext.swift */; };
+		5B357A9121E40723003DBFC4 /* Brush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357A9021E40723003DBFC4 /* Brush.swift */; };
 		5B357A9321E40EE0003DBFC4 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357A9221E40EE0003DBFC4 /* ToggleButton.swift */; };
 		5B357A9521E416E5003DBFC4 /* BinaryFloatingPoint+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357A9421E416E5003DBFC4 /* BinaryFloatingPoint+Utilities.swift */; };
 		5B357A9721E41706003DBFC4 /* FloatingPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357A9621E41706003DBFC4 /* FloatingPointTests.swift */; };
@@ -236,7 +236,7 @@
 		5B3325AA21DB157C00FEA6E3 /* __Snapshots__ */ = {isa = PBXFileReference; lastKnownFileType = folder; path = __Snapshots__; sourceTree = "<group>"; };
 		5B3325AB21DBE72B00FEA6E3 /* ArrayOfPoints+Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArrayOfPoints+Distance.swift"; sourceTree = "<group>"; };
 		5B3325AD21DBEC5D00FEA6E3 /* ArrayOfPointsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayOfPointsTests.swift; sourceTree = "<group>"; };
-		5B357A9021E40723003DBFC4 /* DrawingContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingContext.swift; sourceTree = "<group>"; };
+		5B357A9021E40723003DBFC4 /* Brush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brush.swift; sourceTree = "<group>"; };
 		5B357A9221E40EE0003DBFC4 /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		5B357A9421E416E5003DBFC4 /* BinaryFloatingPoint+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryFloatingPoint+Utilities.swift"; sourceTree = "<group>"; };
 		5B357A9621E41706003DBFC4 /* FloatingPointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPointTests.swift; sourceTree = "<group>"; };
@@ -936,7 +936,7 @@
 			children = (
 				CDB539C6208795AC006EE89E /* CGPath+Utilities.swift */,
 				5B85E5B521DA758B009A2202 /* DoodleViewModel.swift */,
-				5B357A9021E40723003DBFC4 /* DrawingContext.swift */,
+				5B357A9021E40723003DBFC4 /* Brush.swift */,
 				CDB539C2208794A5006EE89E /* DoodleView.swift */,
 				5B85E5B921DABD61009A2202 /* DoodleViewController.swift */,
 				5B85E5BB21DABF61009A2202 /* DoodleService.swift */,
@@ -1624,7 +1624,7 @@
 				861732D51FA28DB600C14354 /* ModalDismissBehavior.swift in Sources */,
 				5B3325AC21DBE72B00FEA6E3 /* ArrayOfPoints+Distance.swift in Sources */,
 				CDB61ECC2088320900E0E99C /* ForecastBackgroundViewModel.swift in Sources */,
-				5B357A9121E40723003DBFC4 /* DrawingContext.swift in Sources */,
+				5B357A9121E40723003DBFC4 /* Brush.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

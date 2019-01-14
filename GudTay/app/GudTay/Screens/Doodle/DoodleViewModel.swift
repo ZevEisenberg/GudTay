@@ -65,19 +65,19 @@ final class DoodleViewModel {
 
     // Private Properties
 
-    private let penContext = DrawingContext(
+    private let pen = Brush(
         lineColor: .black,
         lineWidth: 5
     )
-    private let eraserContext = DrawingContext(
+    private let eraser = Brush(
         lineColor: Constants.backgroundColor,
         lineWidth: 30
     )
 
-    private var currentDrawingContext: DrawingContext {
+    private var currentBrush: Brush {
         switch currentMode {
-        case .drawing: return penContext
-        case .erasing: return eraserContext
+        case .drawing: return pen
+        case .erasing: return eraser
         }
     }
 
@@ -123,15 +123,15 @@ final class DoodleViewModel {
 
     func startAt(_ point: CGPoint) {
         restartErasingTimer()
-        currentDrawingContext.lastPoints = Array(repeating: point, count: 4)
+        currentBrush.lastPoints = Array(repeating: point, count: 4)
     }
 
     func continueTo(_ point: CGPoint) {
         restartErasingTimer()
-        currentDrawingContext.addPoint(point)
+        currentBrush.addPoint(point)
 
         // Draw the current stroke in an accumulated bitmap
-        drawLine(fourPoints: currentDrawingContext.lastPoints)
+        drawLine(fourPoints: currentBrush.lastPoints)
 
         // Replace the imageView contents with the updated image
         context.flatMap { newContextCallback?($0, .transient) }
@@ -140,10 +140,10 @@ final class DoodleViewModel {
     func endAt(_ point: CGPoint) {
         restartErasingTimer()
         // Update last point for next stroke
-        currentDrawingContext.addPoint(point)
+        currentBrush.addPoint(point)
 
-        if currentDrawingContext.lastPoints.movesMoreThanOnePt {
-            drawLine(fourPoints: currentDrawingContext.lastPoints)
+        if currentBrush.lastPoints.movesMoreThanOnePt {
+            drawLine(fourPoints: currentBrush.lastPoints)
         }
         else {
             drawDot(at: point)
@@ -152,7 +152,7 @@ final class DoodleViewModel {
         context.flatMap { newContextCallback?($0, .committedLocally) }
 
         // Reset drawing points
-        currentDrawingContext.lastPoints = Array(repeating: .zero, count: 4)
+        currentBrush.lastPoints = Array(repeating: .zero, count: 4)
 
         if case .onDisk = persistence, let cgImage = context?.makeImage() {
             ImageIO.persistImage(UIImage(cgImage: cgImage), named: Constants.imageName)
@@ -163,9 +163,9 @@ final class DoodleViewModel {
     func drawDot(at point: CGPoint) {
         restartErasingTimer()
 
-        context?.setFillColor(currentDrawingContext.lineColor.cgColor)
+        context?.setFillColor(currentBrush.lineColor.cgColor)
 
-        let lineWidth = currentDrawingContext.lineWidth
+        let lineWidth = currentBrush.lineWidth
         let rect = CGRect(
             x: point.x - lineWidth / 2,
             y: point.y - lineWidth / 2,
@@ -195,8 +195,8 @@ private extension DoodleViewModel {
     }
 
     func drawLine(fourPoints: [CGPoint]) {
-        context?.setStrokeColor(currentDrawingContext.lineColor.cgColor)
-        context?.setLineWidth(currentDrawingContext.lineWidth)
+        context?.setStrokeColor(currentBrush.lineColor.cgColor)
+        context?.setLineWidth(currentBrush.lineWidth)
         context?.setLineCap(.round)
         context?.setLineJoin(.round)
 
