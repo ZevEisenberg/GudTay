@@ -31,6 +31,7 @@
 		5B85E5B821DA7DA6009A2202 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85E5B721DA7DA6009A2202 /* Result.swift */; };
 		5B85E5BA21DABD61009A2202 /* DoodleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85E5B921DABD61009A2202 /* DoodleViewController.swift */; };
 		5B85E5BC21DABF61009A2202 /* DoodleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85E5BB21DABF61009A2202 /* DoodleService.swift */; };
+		5BC144C521ED74D20015ACBC /* CATransaction+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC144C421ED74D20015ACBC /* CATransaction+Utilities.swift */; };
 		63E19DA1AE4BD0875DF235F8 /* Pods_Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D465E6ECC8509BBB6035678 /* Pods_Services.framework */; };
 		81F1C6024CDA707450DEC8E4 /* Pods_Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01DC68269C24246C5A696E5 /* Pods_Utilities.framework */; };
 		861732D51FA28DB600C14354 /* ModalDismissBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861732D31FA28DB600C14354 /* ModalDismissBehavior.swift */; };
@@ -248,6 +249,7 @@
 		5B85E5B721DA7DA6009A2202 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		5B85E5B921DABD61009A2202 /* DoodleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleViewController.swift; sourceTree = "<group>"; };
 		5B85E5BB21DABF61009A2202 /* DoodleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleService.swift; sourceTree = "<group>"; };
+		5BC144C421ED74D20015ACBC /* CATransaction+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransaction+Utilities.swift"; sourceTree = "<group>"; };
 		5DC114E65C5252470A62E594 /* Pods-Utilities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utilities.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Utilities/Pods-Utilities.debug.xcconfig"; sourceTree = "<group>"; };
 		5EFEF7207D3767CF1AF6AABB /* Pods-UtilitiesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilitiesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UtilitiesTests/Pods-UtilitiesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		644AC416679C4339A3CE9958 /* Pods-UtilitiesTests.sprint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilitiesTests.sprint.xcconfig"; path = "Pods/Target Support Files/Pods-UtilitiesTests/Pods-UtilitiesTests.sprint.xcconfig"; sourceTree = "<group>"; };
@@ -657,6 +659,7 @@
 				CDB61EDD2088343100E0E99C /* UICollectionReusableView+Utilities.swift */,
 				CD24C47920855A9800380C9E /* UIView+Extensions.swift */,
 				86A65B1F1FA0F6DB00705C14 /* UserDefaults+Utility.swift */,
+				5BC144C421ED74D20015ACBC /* CATransaction+Utilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1614,6 +1617,7 @@
 				CDB539D02087E050006EE89E /* GudTayView.swift in Sources */,
 				862B204E1FA11345007D33BC /* DebugTextStyleViewController.swift in Sources */,
 				86A65B201FA0F6DB00705C14 /* UserDefaults+Utility.swift in Sources */,
+				5BC144C521ED74D20015ACBC /* CATransaction+Utilities.swift in Sources */,
 				CDB539B82086B15B006EE89E /* BusHeaderView.swift in Sources */,
 				861732FE1FA29BE600C14354 /* DebugMenuViewController.swift in Sources */,
 				CD24C47A20855A9800380C9E /* UIView+Extensions.swift in Sources */,
