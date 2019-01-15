@@ -141,11 +141,13 @@ extension DoodleViewController: DoodleView.Delegate {
 extension DoodleViewController: DoodleService.Delegate {
 
     func doodleService(_ component: DoodleService, didNotify action: DoodleService.Action) {
-        switch action {
-        case .connectedDevicesChanged(let deviceNames):
-            Log.info("now connected to devices: \(deviceNames)")
-        case .receivedImage(let image):
-            doodleView.updateImage(image, kind: .fromNetwork)
+        DispatchQueue.main.async {
+            switch action {
+            case .connectedDevicesChanged(let deviceNames):
+                Log.info("now connected to devices: \(deviceNames)")
+            case .receivedImage(let image):
+                self.doodleView.updateImage(image, kind: .fromNetwork)
+            }
         }
     }
 
