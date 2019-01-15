@@ -28,16 +28,21 @@ final class DoodleView: GridView {
 
     // Private Properties
 
+    private let imageLayer = CALayer()
+
     override init(frame: CGRect) {
         viewModel = DoodleViewModel(size: frame.size, persistence: .onDisk)
 
         super.init(frame: frame)
 
-        viewModel.newContextCallback = { [weak self] context, updateKind in
+        contentView.layer.addSublayer(imageLayer)
+
+        viewModel.newImageCallback = { [weak self] cgImage, updateKind in
             DispatchQueue.main.async {
-                let cgImage = context.makeImage()
-                self?.layer.contents = cgImage
-                if updateKind == .committedLocally, let cgImage = cgImage {
+                CATransaction.performWithoutAnimation {
+                    self?.imageLayer.contents = cgImage
+                }
+                if updateKind == .committedLocally {
                     self?.notify(.imageUpdateCommitted(UIImage(cgImage: cgImage)))
                 }
             }
@@ -46,6 +51,9 @@ final class DoodleView: GridView {
 
     override func layoutSubviews() {
         viewModel.size = bounds.size
+        imageLayer.bounds = bounds
+        imageLayer.anchorPoint = .zero
+        imageLayer.position = .zero
         super.layoutSubviews()
     }
 
