@@ -83,7 +83,7 @@ final class DoodleViewModel {
 
     private let persistence: Persistence
 
-    private var buffer: UnsafeMutableRawBufferPointer?
+    private var buffer: UnsafeMutableBufferPointer<UInt8>?
     private var context: CGContext?
 
     // After erasing, start a timer. If you haven't erased in a certain amount of time,
@@ -234,10 +234,7 @@ private extension DoodleViewModel {
         let bytesPerRow = widthPx * bytesPerPixel
 
         // New Stuff
-        buffer = UnsafeMutableRawBufferPointer.allocate(
-            byteCount: bytesPerRow * heightPx,
-            alignment: MemoryLayout<UInt8>.alignment
-        )
+        buffer = UnsafeMutableBufferPointer<UInt8>.allocate(capacity: bytesPerRow * heightPx)
         context = CGContext(
             data: UnsafeMutableRawPointer(buffer?.baseAddress),
             width: widthPx,
