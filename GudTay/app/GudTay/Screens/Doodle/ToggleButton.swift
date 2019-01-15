@@ -77,6 +77,7 @@ final class ToggleButton: UIControl {
 
         addSubview(primaryImageView)
         addSubview(secondaryImageView)
+        bringSubviewToFront(primaryImageView)
 
         for imageView in [primaryImageView, secondaryImageView] {
             imageView.contentMode = .scaleAspectFit
