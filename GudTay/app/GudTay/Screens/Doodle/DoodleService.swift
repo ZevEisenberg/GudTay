@@ -136,7 +136,11 @@ extension DoodleService: MCSessionDelegate {
 private extension DoodleService {
 
     enum Constants {
-        static let serviceType = "gudtay-doodle"
+        #if DEBUG
+            static let serviceType = "gudtay-doodle"
+        #else
+            static let serviceType = "gudtay-doodle-debug"
+        #endif
     }
 
 }
