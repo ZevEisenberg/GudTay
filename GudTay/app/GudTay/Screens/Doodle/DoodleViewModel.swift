@@ -47,7 +47,7 @@ final class DoodleViewModel {
         }
     }
 
-    var newContextCallback: ((CGContext, ImageUpdateKind) -> Void)?
+    var newImageCallback: ((CGImage, ImageUpdateKind) -> Void)?
 
     var currentMode: Mode = .drawing {
         didSet {
@@ -83,7 +83,6 @@ final class DoodleViewModel {
 
     private let persistence: Persistence
 
-    private var buffer: UnsafeMutableBufferPointer<UInt8>?
     private var context: CGContext?
 
     // After erasing, start a timer. If you haven't erased in a certain amount of time,
@@ -107,9 +106,11 @@ final class DoodleViewModel {
             clearDrawing()
         case .onDisk:
             ImageIO.loadPersistedImage(named: Constants.imageName) { result in
-                if let image = result.success, let context = self.context {
-                    self.drawImage(image)
-                    self.newContextCallback?(context, .committedLocally)
+                DispatchQueue.main.async {
+                    if let image = result.success {
+                        self.drawImage(image)
+                        self.context?.makeImage().flatMap { self.newImageCallback?($0, .committedLocally) }
+                    }
                 }
             }
         }
@@ -117,9 +118,7 @@ final class DoodleViewModel {
 
     func updateImage(_ newImage: UIImage, kind: ImageUpdateKind) {
         drawImage(newImage)
-        if let context = context {
-            newContextCallback?(context, kind)
-        }
+        context?.makeImage().flatMap { newImageCallback?($0, kind) }
     }
 
     func startAt(_ point: CGPoint) {
@@ -135,7 +134,7 @@ final class DoodleViewModel {
         drawLine(fourPoints: currentBrush.lastPoints)
 
         // Replace the imageView contents with the updated image
-        context.flatMap { newContextCallback?($0, .transient) }
+        context?.makeImage().flatMap { newImageCallback?($0, .transient) }
     }
 
     func endAt(_ point: CGPoint) {
@@ -150,7 +149,7 @@ final class DoodleViewModel {
             drawDot(at: point)
         }
 
-        context.flatMap { newContextCallback?($0, .committedLocally) }
+        context?.makeImage().flatMap { newImageCallback?($0, .committedLocally) }
 
         // Reset drawing points
         currentBrush.lastPoints = Array(repeating: .zero, count: 4)
@@ -176,10 +175,11 @@ final class DoodleViewModel {
     }
 
     func clearDrawing() {
-            context?.setFillColor(Constants.backgroundColor.cgColor)
-            context?.fill(bounds)
-        context.flatMap { newContextCallback?($0, .committedLocally) }
-        if persistence == .onDisk, let cgImage = context?.makeImage() {
+        context?.setFillColor(Constants.backgroundColor.cgColor)
+        context?.fill(bounds)
+        guard let cgImage = context?.makeImage() else { return }
+        newImageCallback?(cgImage, .committedLocally)
+        if persistence == .onDisk {
             ImageIO.persistImage(UIImage(cgImage: cgImage), named: Constants.imageName)
         }
     }
@@ -221,22 +221,14 @@ private extension DoodleViewModel {
     }
 
     func reconfigureContext() {
-        // Clean Up
-        context = nil
-        buffer?.deallocate()
-
-        // Constants
         let scale = UIScreen.main.scale
         let widthPx = Int(size.width * scale)
         let heightPx = Int(size.height * scale)
         let bitsPerComponent = 8
         let bytesPerPixel = 4
         let bytesPerRow = widthPx * bytesPerPixel
-
-        // New Stuff
-        buffer = UnsafeMutableBufferPointer<UInt8>.allocate(capacity: bytesPerRow * heightPx)
         context = CGContext(
-            data: UnsafeMutableRawPointer(buffer?.baseAddress),
+            data: nil,
             width: widthPx,
             height: heightPx,
             bitsPerComponent: bitsPerComponent,
