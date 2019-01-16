@@ -26,7 +26,38 @@ final class DoodleService: NSObject {
 
     // Private Properties
 
-    private let myPeerId = MCPeerID(displayName: UIDevice.current.name)
+    private let myPeerId: MCPeerID = { () -> MCPeerID in
+        // Apple’s suggested archiving/unarchiving to prevent "ghost" peer IDs
+        // https://developer.apple.com/documentation/multipeerconnectivity/mcpeerid
+        let displayName = UIDevice.current.name
+
+        let displayNameKey = "com.zeveisenberg.gudtay.displayName"
+        let peerIdKey = "com.zeveisenberg.gudtay.peerId"
+
+        let defaults = UserDefaults.standard
+        let oldDisplayName = defaults.string(forKey: displayNameKey)
+
+        do {
+            if oldDisplayName == displayName {
+                guard
+                    let peerIdData = defaults.data(forKey: peerIdKey),
+                    let unarchivedPeerId = try NSKeyedUnarchiver.unarchivedObject(ofClass: MCPeerID.self, from: peerIdData)
+                    else { return MCPeerID(displayName: displayName) }
+                return unarchivedPeerId
+            }
+            else {
+                let peerId = MCPeerID(displayName: displayName)
+                let peerIdData = try NSKeyedArchiver.archivedData(withRootObject: peerId, requiringSecureCoding: true)
+                defaults.set(peerIdData, forKey: peerIdKey)
+                defaults.set(displayName, forKey: displayNameKey)
+                return peerId
+            }
+        }
+        catch {
+            Log.error("Error archiving or unarchiving peer ID: \(error)")
+            return MCPeerID(displayName: displayName)
+        }
+    }()
 
     private let serviceAdvertiser: MCNearbyServiceAdvertiser
     private let serviceBrowser: MCNearbyServiceBrowser
