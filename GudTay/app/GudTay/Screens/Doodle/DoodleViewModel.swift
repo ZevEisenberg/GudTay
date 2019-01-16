@@ -108,7 +108,7 @@ final class DoodleViewModel {
             ImageIO.loadPersistedImage(named: Constants.imageName) { result in
                 DispatchQueue.main.async {
                     if let image = result.success {
-                        self.drawImage(image)
+                        self.drawImage(image, inverted: true)
                         self.context?.makeImage().flatMap { self.newImageCallback?($0, .committedLocally) }
                     }
                 }
@@ -117,7 +117,7 @@ final class DoodleViewModel {
     }
 
     func updateImage(_ newImage: UIImage, kind: ImageUpdateKind) {
-        drawImage(newImage)
+        drawImage(newImage, inverted: kind == .fromNetwork)
         context?.makeImage().flatMap { newImageCallback?($0, kind) }
     }
 
@@ -246,9 +246,17 @@ private extension DoodleViewModel {
         context?.fill(bounds)
     }
 
-    func drawImage(_ image: UIImage) {
+    func drawImage(_ image: UIImage, inverted: Bool) {
         guard let cgImage = image.cgImage else { return }
-        context?.draw(cgImage, in: bounds)
+        context?.withSavedState { context in
+            if inverted {
+                // Flip vertically about the top horizontal line
+                context.scaleBy(x: 1, y: -1)
+                // Move back down
+                context.translateBy(x: 0, y: -size.height)
+            }
+            context.draw(cgImage, in: bounds)
+        }
     }
 
 }
