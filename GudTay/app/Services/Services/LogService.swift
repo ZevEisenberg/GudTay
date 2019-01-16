@@ -10,9 +10,17 @@ import Foundation.NSDate
 
 public enum LogService {
 
+    // Public Properites
+
+    public static var messages: [String] {
+        return queue.sync { _messages }
+    }
+
     // Private Properties
 
-    private(set) public static var messages = [String]()
+    private static var _messages = [String]()
+
+    private static let queue = DispatchQueue(label: "LogService", qos: .background, attributes: [], autoreleaseFrequency: .workItem, target: nil)
 
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -28,14 +36,18 @@ public enum LogService {
 extension LogService {
 
     public static func add(message: String, date: Date = Date()) {
-        LogService.messages.append("\(LogService.dateFormatter.string(from: date)) - \(message)")
-        if LogService.messages.count > 200 {
-            LogService.messages.removeFirst()
+        queue.async {
+            LogService._messages.append("\(LogService.dateFormatter.string(from: date)) - \(message)")
+            if LogService._messages.count > 200 {
+                LogService._messages.removeFirst()
+            }
         }
     }
 
     public static func clear() {
-        LogService.messages = ["Starting up at \(LogService.dateFormatter.string(from: Date()))"]
+        queue.async {
+            LogService._messages = ["Starting up at \(LogService.dateFormatter.string(from: Date()))"]
+        }
     }
 
 }
