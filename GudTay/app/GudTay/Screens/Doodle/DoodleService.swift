@@ -59,6 +59,10 @@ final class DoodleService: NSObject {
     }
 
     deinit {
+        // Nil out delegates in attempt to prevent crash
+        // https://stackoverflow.com/questions/22888367/multipeer-mcnearbybrowserservice-crashing
+        serviceAdvertiser.delegate = nil
+        serviceBrowser.delegate = nil
         serviceAdvertiser.stopAdvertisingPeer()
         serviceBrowser.stopBrowsingForPeers()
     }
