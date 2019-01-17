@@ -132,7 +132,14 @@ extension DoodleService: MCNearbyServiceBrowserDelegate {
 
     func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String: String]?) {
         Log.info("\(#function), \(peerID), \(info as Any)")
-        browser.invitePeer(peerID, to: session, withContext: nil, timeout: 10)
+        // Deterministically defer to one device or the other
+        // to prevent crossing the streams.
+        // Assumes the peer IDs aren't the same.
+        // via https://stackoverflow.com/a/19529933/255489
+        let shouldInvite = myPeerId.displayName < peerID.displayName
+        if shouldInvite {
+            browser.invitePeer(peerID, to: session, withContext: nil, timeout: 10)
+        }
     }
 
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
