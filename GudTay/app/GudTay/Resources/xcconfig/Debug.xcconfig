@@ -6,7 +6,7 @@
 //  Copyright © 2017 ZevEisenberg. All rights reserved.
 //
 
-PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay.debug
+PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay
 PRODUCT_NAME = GudTay
 
 SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG
