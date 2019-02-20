@@ -12,16 +12,29 @@ final class AspectImageCell: WeatherCell {
 
     // Public Properties
 
-    var image: UIImage? {
+    /// A stack of images, arranged back-to-front.
+    /// All images are assumed to be of the same aspect ratio; the aspect
+    /// ratio of the first (back-most) image is used for constraint purposes.
+    var images: [UIImage] = [] {
         didSet {
-            imageView.image = image
+            imageViews.forEach { $0.removeFromSuperview() }
+            imageViews = images.map(UIImageView.init)
+            imageViews.forEach(contentView.addSubview)
+            imageViews.forEach {
+                $0.edgeAnchors == contentView.edgeAnchors
+            }
             aspectConstraint?.isActive = false
-            if let image = image {
+            if let image = images.first, let imageView = imageViews.first {
                 let aspect = image.size.width / image.size.height
                 aspectConstraint = (imageView.widthAnchor == imageView.heightAnchor * aspect ~ .required - 1)
             }
             else {
-                aspectConstraint = (imageView.widthAnchor == 0 ~ .required - 1)
+                // Can't use Anchorage to adjust the conentView, since doing so
+                // will also set translatesAutoresizingMaskIntoConstraints to
+                // false, and we shouldn't do that on views we don't own.
+                aspectConstraint = contentView.widthAnchor.constraint(equalToConstant: 0)
+                aspectConstraint?.priority = .required - 1
+                aspectConstraint?.isActive = true
             }
         }
     }
@@ -30,12 +43,6 @@ final class AspectImageCell: WeatherCell {
 
     private var aspectConstraint: NSLayoutConstraint?
 
-    private var imageView = UIImageView(axId: "imageView")
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        contentView.addSubview(imageView)
-        imageView.edgeAnchors == contentView.edgeAnchors
-    }
+    private var imageViews: [UIImageView] = []
 
 }

@@ -116,12 +116,16 @@ extension WeatherViewController: UICollectionViewDataSource {
             return cell
         case .currentIcon(let icon):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AspectImageCell.gudReuseID, for: indexPath) as! AspectImageCell
-            cell.image = icon.image
+            cell.images = [icon.image]
             cell.pinnedHeight = view.frame.height
             return cell
         case .needUmbrella:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AspectImageCell.gudReuseID, for: indexPath) as! AspectImageCell
-            cell.image = #imageLiteral(resourceName: "calvin-umbrella")
+            cell.images = [
+                Asset.Clothing.frame.image,
+                Asset.Clothing._19andBelow.image,
+                Asset.Clothing.umbrella19andBelow.image,
+            ]
             cell.pinnedHeight = view.frame.height
             return cell
         case .hour(let time, let icon, let temp, let precipProbability):
