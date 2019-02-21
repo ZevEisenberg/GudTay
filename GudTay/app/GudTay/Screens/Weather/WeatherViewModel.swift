@@ -23,7 +23,7 @@ final class WeatherViewModel {
 
         case temperatures(current: Double, high: Double, low: Double)
         case currentIcon(Icon)
-        case needUmbrella
+        case clothing(temp: Double, needUmbrella: Bool)
         case hour(time: Date, icon: Icon?, temp: Double, precipProbability: Double?)
 
     }
@@ -75,19 +75,9 @@ private extension WeatherViewModel {
             fields.append(.currentIcon(icon))
         }
 
-        // Need an umbrella?
-
+        // Clothing/umbrella
         let hourlyPrecipitations = forecast.hourly.precipitation
-        let hoursWeCareAbout = WeatherViewModel.desiredDryInterval(for: current.precipitation.timestamp, calendar: calendar)
-        let precipitationsWeCareAbout = hourlyPrecipitations.data.filter { precipitation in
-            hoursWeCareAbout.contains(precipitation.timestamp)
-        }
-
-        if precipitationsWeCareAbout.contains(where: { precipitation in
-            return precipitation.probability > 0.15 || precipitation.intensity >= 0.1
-        }) {
-            fields.append(.needUmbrella)
-        }
+        fields.append(WeatherViewModel.clothingField(forForecast: forecast, currently: current, hourlyPrecipitations: hourlyPrecipitations, referenceDate: referenceDate, calendar: calendar))
 
         // Hourly Forecast
 
@@ -148,7 +138,7 @@ private extension WeatherViewModel {
 
 }
 
-extension WeatherViewModel {
+private extension WeatherViewModel {
 
     static func desiredDryInterval(for date: Date, calendar: Calendar) -> DateInterval {
         let components: Set<Calendar.Component> = [
@@ -172,6 +162,62 @@ extension WeatherViewModel {
         let startDate = calendar.date(from: startComponents)!
         let endDate = calendar.date(from: endComponents)!
         return DateInterval(start: startDate, end: endDate)
+    }
+
+    private static func clothingField(
+        forForecast forecast: WeatherForecast,
+        currently current: Currently,
+        hourlyPrecipitations: WeatherBucket<Precipitation>,
+        referenceDate: Date,
+        calendar: Calendar) -> WeatherField {
+        let hoursWeCareAboutForUmbrella = WeatherViewModel.desiredDryInterval(for: current.precipitation.timestamp, calendar: calendar)
+        let precipitationsWeCareAbout = hourlyPrecipitations.data.filter { precipitation in
+            hoursWeCareAboutForUmbrella.contains(precipitation.timestamp)
+        }
+
+        // TODO: consolidate precipitation date range with similar logic for temperature logic
+        let currentHour = calendar.component(.hour, from: referenceDate)
+        let eightAMHour = 8
+        let elevenPMHour = 23
+        let interestingTimeRangeStartHour = max(eightAMHour, currentHour)
+
+        let tempForClothing: Double
+        if  interestingTimeRangeStartHour < elevenPMHour,
+            case let interestingTimeRange = interestingTimeRangeStartHour..<elevenPMHour,
+            interestingTimeRange.contains(currentHour) {
+            // use minimum temp for relevant range
+            let timesAndTemps = zip(forecast.hourly.precipitation.data, forecast.hourly.temperature.data)
+                .map { (time: $0.0.timestamp, temp: $0.1.current) }
+            // TODO: use full date range comparison, not just hourly, to prevent getting morning hours from tomorrow
+            let relevantTimesAndTemps = timesAndTemps
+                .filter { interestingTimeRange.contains($0.time.hour(using: calendar)) }
+
+            if let minimumTempForRange = relevantTimesAndTemps.map({ $0.temp }).min() {
+                tempForClothing = minimumTempForRange
+            }
+            else {
+                assertionFailure("There has to be a minimum temp")
+                tempForClothing = 0
+            }
+        }
+        else {
+            // use current temp
+            tempForClothing = current.temperature.current
+        }
+
+        let needUmbrella = precipitationsWeCareAbout.contains { $0.probability > 0.15 || $0.intensity >= 0.1 }
+        return .clothing(
+            temp: tempForClothing,
+            needUmbrella: needUmbrella
+        )
+    }
+
+}
+
+extension Date {
+
+    func hour(using calendar: Calendar) -> Int {
+        return calendar.component(.hour, from: self)
     }
 
 }

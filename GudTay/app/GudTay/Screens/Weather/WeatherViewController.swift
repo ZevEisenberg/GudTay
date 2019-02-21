@@ -119,13 +119,39 @@ extension WeatherViewController: UICollectionViewDataSource {
             cell.images = [icon.image]
             cell.pinnedHeight = view.frame.height
             return cell
-        case .needUmbrella:
+        case .clothing(let temp, let needsUmbrella):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AspectImageCell.gudReuseID, for: indexPath) as! AspectImageCell
-            cell.images = [
-                Asset.Clothing.frame.image,
-                Asset.Clothing._19andBelow.image,
-                Asset.Clothing.umbrella19andBelow.image,
-            ]
+            var images: [ImageAsset] = [Asset.Clothing.frame]
+            switch temp {
+            case ...19: images.append(Asset.Clothing._19andBelow)
+            case ...24: images.append(Asset.Clothing._20to24)
+            case ...29: images.append(Asset.Clothing._25to29)
+            case ...34: images.append(Asset.Clothing._30to34)
+            case ...40: images.append(Asset.Clothing._35to40)
+            case ...47: images.append(Asset.Clothing._41to47)
+            case ...53: images.append(Asset.Clothing._48to53)
+            case ...59: images.append(Asset.Clothing._54to59)
+            case ...65: images.append(Asset.Clothing._60to65)
+            case ...75: images.append(Asset.Clothing._66to75)
+            case ...80: images.append(Asset.Clothing._76to80)
+            case ...86: images.append(Asset.Clothing._81to86)
+            case ...91: images.append(Asset.Clothing._87to91)
+            case 92...: images.append(Asset.Clothing._92andOver)
+            default: fatalError("boooooo Swift")
+            }
+
+            if needsUmbrella {
+                switch temp {
+                case ...19: images.append(Asset.Clothing.umbrella19andBelow)
+                case ...47: images.append(Asset.Clothing.umbrella20to47)
+                case ...53: images.append(Asset.Clothing.umbrella48to53)
+                case ...59: images.append(Asset.Clothing.umbrella54to59)
+                case ...91: images.append(Asset.Clothing.umbrella60to91)
+                case 92...: images.append(Asset.Clothing.umbrella92andOver)
+                default: fatalError("boooooo Swift")
+                }
+            }
+            cell.images = images.map { $0.image }
             cell.pinnedHeight = view.frame.height
             return cell
         case .hour(let time, let icon, let temp, let precipProbability):
