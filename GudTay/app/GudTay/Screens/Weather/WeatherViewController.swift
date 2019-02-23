@@ -121,7 +121,10 @@ extension WeatherViewController: UICollectionViewDataSource {
             return cell
         case .clothing(let temp, let needsUmbrella):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AspectImageCell.gudReuseID, for: indexPath) as! AspectImageCell
-            var images: [ImageAsset] = [Asset.Clothing.frame]
+            var images: [ImageAsset] = [
+                Asset.Clothing.frameBackground,
+                Asset.Clothing.frameEdges,
+            ]
             switch temp {
             case ...19: images.append(Asset.Clothing._19andBelow)
             case ...24: images.append(Asset.Clothing._20to24)
