@@ -33,6 +33,7 @@
 		5B85E5BC21DABF61009A2202 /* DoodleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85E5BB21DABF61009A2202 /* DoodleService.swift */; };
 		5BC144C521ED74D20015ACBC /* CATransaction+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC144C421ED74D20015ACBC /* CATransaction+Utilities.swift */; };
 		5BC144C721ED7F1A0015ACBC /* CGContext+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC144C621ED7F1A0015ACBC /* CGContext+Utilities.swift */; };
+		5BF393D0221E4C2300E93348 /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF393CF221E4C2300E93348 /* WeatherTests.swift */; };
 		63E19DA1AE4BD0875DF235F8 /* Pods_Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D465E6ECC8509BBB6035678 /* Pods_Services.framework */; };
 		81F1C6024CDA707450DEC8E4 /* Pods_Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01DC68269C24246C5A696E5 /* Pods_Utilities.framework */; };
 		861732D51FA28DB600C14354 /* ModalDismissBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861732D31FA28DB600C14354 /* ModalDismissBehavior.swift */; };
@@ -252,6 +253,7 @@
 		5B85E5BB21DABF61009A2202 /* DoodleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleService.swift; sourceTree = "<group>"; };
 		5BC144C421ED74D20015ACBC /* CATransaction+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransaction+Utilities.swift"; sourceTree = "<group>"; };
 		5BC144C621ED7F1A0015ACBC /* CGContext+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGContext+Utilities.swift"; sourceTree = "<group>"; };
+		5BF393CF221E4C2300E93348 /* WeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTests.swift; sourceTree = "<group>"; };
 		5DC114E65C5252470A62E594 /* Pods-Utilities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utilities.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Utilities/Pods-Utilities.debug.xcconfig"; sourceTree = "<group>"; };
 		5EFEF7207D3767CF1AF6AABB /* Pods-UtilitiesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilitiesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UtilitiesTests/Pods-UtilitiesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		644AC416679C4339A3CE9958 /* Pods-UtilitiesTests.sprint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilitiesTests.sprint.xcconfig"; path = "Pods/Target Support Files/Pods-UtilitiesTests/Pods-UtilitiesTests.sprint.xcconfig"; sourceTree = "<group>"; };
@@ -541,6 +543,14 @@
 			path = Drawing;
 			sourceTree = "<group>";
 		};
+		5BF393CE221E4C1000E93348 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				5BF393CF221E4C2300E93348 /* WeatherTests.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
 		8338A961860BEC40421553DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -727,6 +737,7 @@
 				5B85E5B221DA7523009A2202 /* Drawing */,
 				ABF84F9E1DCBAB0A002DB24D /* Helpers */,
 				ABF84F9B1DCBA329002DB24D /* MBTA */,
+				5BF393CE221E4C1000E93348 /* Weather */,
 				CD24C4742085488D00380C9E /* Stubs */,
 				ABC7788D1DC90B7A00815FB9 /* GudTayTests.swift */,
 				ABC7788F1DC90B7A00815FB9 /* Info.plist */,
@@ -1640,6 +1651,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BF393D0221E4C2300E93348 /* WeatherTests.swift in Sources */,
 				ABC7788E1DC90B7A00815FB9 /* GudTayTests.swift in Sources */,
 				ABF84FA61DCBCEA1002DB24D /* Payloads.swift in Sources */,
 				ABF84FA01DCBAB1B002DB24D /* TestConstants.swift in Sources */,

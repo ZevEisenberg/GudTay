@@ -9,6 +9,7 @@
 import Alamofire
 import Foundation
 import Services
+import Then
 
 final class WeatherViewModel {
 
@@ -138,30 +139,49 @@ private extension WeatherViewModel {
 
 }
 
-private extension WeatherViewModel {
+extension WeatherViewModel {
 
-    static func desiredDryInterval(for date: Date, calendar: Calendar) -> DateInterval {
+    /// Given a date representing the current time,
+    /// gives us the interval that is interesting for
+    /// determining what to wear and what to bring
+    /// in order to be comfortable with the weather.
+    /// If we're inside the normal daily range, ignore
+    /// time that has already passed (i.e. the returned range
+    /// will start at the current date). Otherwise, return nil,
+    /// signifying that we are outside the range and should
+    /// just use the current date
+    static func interestingHourlyInterval(for date: Date, calendar: Calendar) -> DateInterval? {
         let components: Set<Calendar.Component> = [
             .year,
             .month,
             .day,
+            .hour,
+            .timeZone,
             ]
         let currentComponents = calendar.dateComponents(components, from: date)
-        let startComponents: DateComponents = {
-            var comps = currentComponents
-            comps.hour = 7
-            return comps
-        }()
 
-        let endComponents: DateComponents = {
-            var comps = currentComponents
-            comps.hour = 23
-            return comps
-        }()
+        let startComponents = currentComponents.with {
+            $0.hour = 7
+            $0.minute = 0
+        }
+
+        let endComponents = currentComponents.with {
+            $0.hour = 23
+            $0.minute = 0
+        }
 
         let startDate = calendar.date(from: startComponents)!
         let endDate = calendar.date(from: endComponents)!
-        return DateInterval(start: startDate, end: endDate)
+
+        guard startDate < endDate else { return nil }
+
+        let fullInterestingInterval = DateInterval(start: startDate, end: endDate)
+        guard
+            fullInterestingInterval.contains(date)
+            else { return nil } // ignore interval, because we are not inside it
+
+        let adjustedInterval = DateInterval(start: date, end: endDate)
+        return adjustedInterval
     }
 
     private static func clothingField(
@@ -170,28 +190,21 @@ private extension WeatherViewModel {
         hourlyPrecipitations: WeatherBucket<Precipitation>,
         referenceDate: Date,
         calendar: Calendar) -> WeatherField {
-        let hoursWeCareAboutForUmbrella = WeatherViewModel.desiredDryInterval(for: current.precipitation.timestamp, calendar: calendar)
-        let precipitationsWeCareAbout = hourlyPrecipitations.data.filter { precipitation in
-            hoursWeCareAboutForUmbrella.contains(precipitation.timestamp)
-        }
-
-        // TODO: consolidate precipitation date range with similar logic for temperature logic
-        let currentHour = calendar.component(.hour, from: referenceDate)
-        let eightAMHour = 8
-        let elevenPMHour = 23
-        let interestingTimeRangeStartHour = max(eightAMHour, currentHour)
+        let hoursWeCareAbout = WeatherViewModel.interestingHourlyInterval(for: current.precipitation.timestamp, calendar: calendar)
 
         let tempForClothing: Double
-        if  interestingTimeRangeStartHour < elevenPMHour,
-            case let interestingTimeRange = interestingTimeRangeStartHour..<elevenPMHour,
-            interestingTimeRange.contains(currentHour) {
-            // use minimum temp for relevant range
+        let needUmbrella: Bool
+
+        let precipitationWantsUmbrella = { (precip: Precipitation) in
+            precip.probability > 0.15 || precip.intensity >= 0.1
+        }
+
+        if let range = hoursWeCareAbout {
             let timesAndTemps = zip(forecast.hourly.precipitation.data, forecast.hourly.temperature.data)
                 .map { (time: $0.0.timestamp, temp: $0.1.current) }
-            // TODO: use full date range comparison, not just hourly, to prevent getting morning hours from tomorrow
             let relevantTimesAndTemps = timesAndTemps
-                .filter { interestingTimeRange.contains($0.time.hour(using: calendar)) }
-
+                .filter { range.contains($0.time) }
+            assert(!relevantTimesAndTemps.isEmpty)
             if let minimumTempForRange = relevantTimesAndTemps.map({ $0.temp }).min() {
                 tempForClothing = minimumTempForRange
             }
@@ -199,13 +212,17 @@ private extension WeatherViewModel {
                 assertionFailure("There has to be a minimum temp")
                 tempForClothing = 0
             }
+
+            let precipitationsWeCareAbout = hourlyPrecipitations.data.filter { precipitation in
+                range.contains(precipitation.timestamp)
+            }
+            needUmbrella = precipitationsWeCareAbout.contains(where: precipitationWantsUmbrella)
         }
         else {
-            // use current temp
             tempForClothing = current.temperature.current
+            needUmbrella = precipitationWantsUmbrella(current.precipitation)
         }
 
-        let needUmbrella = precipitationsWeCareAbout.contains { $0.probability > 0.15 || $0.intensity >= 0.1 }
         return .clothing(
             temp: tempForClothing,
             needUmbrella: needUmbrella
@@ -214,10 +231,4 @@ private extension WeatherViewModel {
 
 }
 
-extension Date {
-
-    func hour(using calendar: Calendar) -> Int {
-        return calendar.component(.hour, from: self)
-    }
-
-}
+extension DateComponents: Then {}
