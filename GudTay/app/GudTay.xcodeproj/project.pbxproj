@@ -483,8 +483,8 @@
 		2DFF1D141E8BF37C00B1AD70 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2DFF1D151E8BF38F00B1AD70 /* UIColor+Extensions.swift */,
 				5B3325AB21DBE72B00FEA6E3 /* ArrayOfPoints+Distance.swift */,
+				2DFF1D151E8BF38F00B1AD70 /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -536,9 +536,9 @@
 		5B85E5B221DA7523009A2202 /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
-				5B3325AA21DB157C00FEA6E3 /* __Snapshots__ */,
-				5B85E5B321DA7537009A2202 /* DrawingTests.swift */,
 				5B3325AD21DBEC5D00FEA6E3 /* ArrayOfPointsTests.swift */,
+				5B85E5B321DA7537009A2202 /* DrawingTests.swift */,
+				5B3325AA21DB157C00FEA6E3 /* __Snapshots__ */,
 			);
 			path = Drawing;
 			sourceTree = "<group>";
@@ -666,13 +666,13 @@
 			isa = PBXGroup;
 			children = (
 				CDB539C820879738006EE89E /* Array+Utilities.swift */,
+				5BC144C421ED74D20015ACBC /* CATransaction+Utilities.swift */,
+				5BC144C621ED7F1A0015ACBC /* CGContext+Utilities.swift */,
 				CDB539CD2087DFEA006EE89E /* ClockTime.swift */,
 				CDB61ECD2088332E00E0E99C /* Date+Utilities.swift */,
 				CDB61EDD2088343100E0E99C /* UICollectionReusableView+Utilities.swift */,
 				CD24C47920855A9800380C9E /* UIView+Extensions.swift */,
 				86A65B1F1FA0F6DB00705C14 /* UserDefaults+Utility.swift */,
-				5BC144C421ED74D20015ACBC /* CATransaction+Utilities.swift */,
-				5BC144C621ED7F1A0015ACBC /* CGContext+Utilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -737,8 +737,8 @@
 				5B85E5B221DA7523009A2202 /* Drawing */,
 				ABF84F9E1DCBAB0A002DB24D /* Helpers */,
 				ABF84F9B1DCBA329002DB24D /* MBTA */,
-				5BF393CE221E4C1000E93348 /* Weather */,
 				CD24C4742085488D00380C9E /* Stubs */,
+				5BF393CE221E4C1000E93348 /* Weather */,
 				ABC7788D1DC90B7A00815FB9 /* GudTayTests.swift */,
 				ABC7788F1DC90B7A00815FB9 /* Info.plist */,
 			);
@@ -895,12 +895,12 @@
 		CD31A7B520853BA900C26A7E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				5B357A9421E416E5003DBFC4 /* BinaryFloatingPoint+Utilities.swift */,
 				5B357A9821E4187B003DBFC4 /* CGRect+Utilities.swift */,
 				CD31A7D520853BBE00C26A7E /* Collection+Utilities.swift */,
 				CD31A7B720853BA900C26A7E /* Info.plist */,
 				CDB539B92086B2DA006EE89E /* RandomAccessCollection+Utilities.swift */,
 				5B85E5B721DA7DA6009A2202 /* Result.swift */,
-				5B357A9421E416E5003DBFC4 /* BinaryFloatingPoint+Utilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -951,12 +951,12 @@
 		CDB539C120879495006EE89E /* Doodle */ = {
 			isa = PBXGroup;
 			children = (
-				CDB539C6208795AC006EE89E /* CGPath+Utilities.swift */,
-				5B85E5B521DA758B009A2202 /* DoodleViewModel.swift */,
 				5B357A9021E40723003DBFC4 /* Brush.swift */,
+				CDB539C6208795AC006EE89E /* CGPath+Utilities.swift */,
+				5B85E5BB21DABF61009A2202 /* DoodleService.swift */,
 				CDB539C2208794A5006EE89E /* DoodleView.swift */,
 				5B85E5B921DABD61009A2202 /* DoodleViewController.swift */,
-				5B85E5BB21DABF61009A2202 /* DoodleService.swift */,
+				5B85E5B521DA758B009A2202 /* DoodleViewModel.swift */,
 				CDB539C4208794F8006EE89E /* ImageIO.swift */,
 				5B357A9221E40EE0003DBFC4 /* ToggleButton.swift */,
 			);
