@@ -8,37 +8,31 @@
 
 import Foundation
 
+private let secondsPerMinute = 60
+private let minutesPerHour = 60
+
 struct ClockTime: Equatable {
 
     let hours: Int
     let minutes: Int
+    let seconds: Int
 
-    var allMinutes: Int {
-        return hours * 60 + minutes
+    var minutesInSeconds: Int {
+        return (minutes * secondsPerMinute) + seconds
+    }
+
+    var allSeconds: Int {
+        return (hours * minutesPerHour * secondsPerMinute)
+        + (minutes * secondsPerMinute)
+        + seconds
     }
 
     static var min: ClockTime {
-        return 0.00
+        return ClockTime(hours: 00, minutes: 00, seconds: 00)
     }
 
     static var max: ClockTime {
-        return 24.00
-    }
-
-}
-
-extension ClockTime: ExpressibleByFloatLiteral {
-
-    init(floatLiteral value: Double) {
-        let hours = Int(floor(value))
-        let rawMinutes = value.truncatingRemainder(dividingBy: 1.0)
-        let minutes = Int(round(rawMinutes * 100))
-
-        if hours < 0 || minutes < 0 || minutes > 59 {
-            preconditionFailure("Invalid time \(hours):\(minutes)")
-        }
-
-        self.init(hours: hours, minutes: minutes)
+        return ClockTime(hours: 24, minutes: 00, seconds: 00)
     }
 
 }
@@ -46,7 +40,7 @@ extension ClockTime: ExpressibleByFloatLiteral {
 extension ClockTime: CustomStringConvertible {
 
     var description: String {
-        return String(format: "%d:%02d", hours, minutes)
+        return String(format: "%d:%02d:%02d", hours, minutes, seconds)
     }
 
 }
@@ -67,12 +61,12 @@ extension ClockTime: Comparable {
 extension Date {
 
     func clockTime(calendar: Calendar = .autoupdatingCurrent) -> ClockTime {
-        let comps = calendar.dateComponents([.hour, .minute], from: self)
-        guard let hour = comps.hour, let minute = comps.minute else {
-            preconditionFailure("What kind of date doesn't have hours and minutes? This kind: \(self)")
+        let comps = calendar.dateComponents([.hour, .minute, .second], from: self)
+        guard let hour = comps.hour, let minute = comps.minute, let second = comps.second else {
+            preconditionFailure("What kind of date doesn't have hours, minutes, and seconds? This kind: \(self)")
         }
 
-        return ClockTime(hours: hour, minutes: minute)
+        return ClockTime(hours: hour, minutes: minute, seconds: second)
     }
 
 }

@@ -64,7 +64,6 @@
 		ABC778791DC90B7A00815FB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC778781DC90B7A00815FB9 /* AppDelegate.swift */; };
 		ABC778801DC90B7A00815FB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABC7787F1DC90B7A00815FB9 /* Assets.xcassets */; };
 		ABC778831DC90B7A00815FB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABC778811DC90B7A00815FB9 /* LaunchScreen.storyboard */; };
-		ABC7788E1DC90B7A00815FB9 /* GudTayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC7788D1DC90B7A00815FB9 /* GudTayTests.swift */; };
 		ABC778E11DC94F4400815FB9 /* AppLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC778E01DC94F4400815FB9 /* AppLifecycle.swift */; };
 		ABC778EA1DC951B900815FB9 /* LoggingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC778E91DC951B900815FB9 /* LoggingConfiguration.swift */; };
 		ABF84F811DC97653002DB24D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABF84F801DC97653002DB24D /* Localizable.strings */; };
@@ -283,7 +282,6 @@
 		ABC778821DC90B7A00815FB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABC778841DC90B7A00815FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABC778891DC90B7A00815FB9 /* GudTayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GudTayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABC7788D1DC90B7A00815FB9 /* GudTayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GudTayTests.swift; sourceTree = "<group>"; };
 		ABC7788F1DC90B7A00815FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABC778CE1DC92BDF00815FB9 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		ABC778E01DC94F4400815FB9 /* AppLifecycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLifecycle.swift; sourceTree = "<group>"; };
@@ -616,7 +614,6 @@
 				6907C2C0B910C6E0919B916D /* Pods-UtilitiesTests.debug.xcconfig */,
 				22D9A6B0CE8F9D31869B3656 /* Pods-UtilitiesTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -682,7 +679,6 @@
 				ABF84F9B1DCBA329002DB24D /* MBTA */,
 				CD24C4742085488D00380C9E /* Stubs */,
 				5BF393CE221E4C1000E93348 /* Weather */,
-				ABC7788D1DC90B7A00815FB9 /* GudTayTests.swift */,
 				ABC7788F1DC90B7A00815FB9 /* Info.plist */,
 			);
 			path = GudTayTests;
@@ -1607,7 +1603,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BF393D0221E4C2300E93348 /* WeatherTests.swift in Sources */,
-				ABC7788E1DC90B7A00815FB9 /* GudTayTests.swift in Sources */,
 				ABF84FA61DCBCEA1002DB24D /* Payloads.swift in Sources */,
 				ABF84FA01DCBAB1B002DB24D /* TestConstants.swift in Sources */,
 				006EFEF61F264204004A95DE /* TestClient.swift in Sources */,

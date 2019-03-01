@@ -23,6 +23,8 @@ internal enum Asset {
     internal static let face = ImageAsset(name: "Clock/Face")
     internal static let hourHand = ImageAsset(name: "Clock/Hour Hand")
     internal static let minuteHand = ImageAsset(name: "Clock/Minute Hand")
+    internal static let pivot = ImageAsset(name: "Clock/Pivot")
+    internal static let secondHand = ImageAsset(name: "Clock/Second Hand")
   }
   internal enum Clothing {
 

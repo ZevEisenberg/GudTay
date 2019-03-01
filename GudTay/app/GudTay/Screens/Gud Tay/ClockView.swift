@@ -8,11 +8,16 @@
 
 import Anchorage
 import Swiftilities
+import Then
 import UIKit
 
 final class ClockView: UIView {
 
-    let faceView = UIImageView(image: Asset.Clock.face.image)
+    let faceView = UIImageView(image: Asset.Clock.face.image).then {
+        $0.accessibilityIdentifier = "clock face"
+        $0.setContentHuggingPriority(.required, for: .horizontal)
+        $0.setContentHuggingPriority(.required, for: .vertical)
+    }
 
     // Wrappers so we can rotate the views about their centers without having
     // to adjust their .anchorPoint, which throws off Auto layout.
@@ -39,6 +44,21 @@ final class ClockView: UIView {
         return minuteWrapper
     }()
 
+    let secondWrapper: UIView = {
+        let secondHand = UIImageView(image: Asset.Clock.secondHand.image)
+        secondHand.accessibilityIdentifier = "secondHand"
+        let secondWrapper = UIView(axId: "secondWrapper")
+        secondWrapper.addSubview(secondHand)
+        secondHand.horizontalAnchors == secondWrapper.horizontalAnchors
+        secondHand.topAnchor == secondWrapper.topAnchor
+        secondHand.heightAnchor == secondWrapper.heightAnchor / 2.0
+        return secondWrapper
+    }()
+
+    let pivot = UIImageView(image: Asset.Clock.pivot.image).then {
+        $0.accessibilityIdentifier = "pivot"
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -46,9 +66,11 @@ final class ClockView: UIView {
 
         addSubview(faceView)
 
-        // Hour hand after minute hand, so you can see it even when they're on top of each other.
-        addSubview(minuteWrapper)
+        // Same order as a real clock
         addSubview(hourWrapper)
+        addSubview(minuteWrapper)
+        addSubview(secondWrapper)
+        addSubview(pivot)
 
         // Layout
 
@@ -56,12 +78,16 @@ final class ClockView: UIView {
 
         hourWrapper.centerAnchors == centerAnchors
         minuteWrapper.centerAnchors == centerAnchors
+        secondWrapper.centerAnchors == centerAnchors
+
+        pivot.centerAnchors == centerAnchors
 
         // Configuration
 
-        let timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
-        timer.tolerance = 1.0
-        timer.fire()
+        let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
+        timer.tolerance = 0.05
+        // Start the second hand in the right place to start
+        tick(animated: false)
     }
 
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
@@ -74,12 +100,29 @@ final class ClockView: UIView {
 
 private extension ClockView {
 
-    @objc func tick() {
+    @objc func timerFired() {
+        tick(animated: true)
+    }
+
+    func tick(animated: Bool) {
         let time = Date().clockTime()
         let rotations = time.handRotations
 
         hourWrapper.layer.transform = CATransform3DMakeRotation(rotations.hour, 0, 0, 1)
         minuteWrapper.layer.transform = CATransform3DMakeRotation(rotations.minute, 0, 0, 1)
+
+        let oldSecondTransform = secondWrapper.layer.transform
+        secondWrapper.layer.transform = CATransform3DMakeRotation(rotations.second, 0, 0, 1)
+        if animated {
+            let newSecondTransform = CATransform3DMakeRotation(rotations.second, 0, 0, 1)
+            let animation = CASpringAnimation(keyPath: #keyPath(CALayer.transform))
+            animation.damping = 100
+            animation.stiffness = 10_000
+            animation.fromValue = oldSecondTransform
+            animation.toValue = newSecondTransform
+            animation.duration = 0.5
+            secondWrapper.layer.add(animation, forKey: "secondTick")
+        }
     }
 
 }
@@ -87,16 +130,17 @@ private extension ClockView {
 extension ClockTime {
 
     var asTwelveHour: ClockTime {
-        return ClockTime(hours: hours % 12, minutes: minutes)
+        return ClockTime(hours: hours % 12, minutes: minutes, seconds: seconds)
     }
 
-    var handRotations: (hour: CGFloat, minute: CGFloat) {
+    var handRotations: (hour: CGFloat, minute: CGFloat, second: CGFloat) {
         let twelveHour = asTwelveHour
 
-        let hourRotation = CGFloat(twelveHour.allMinutes).scaled(from: 0...(60.0 * 12.0), to: 0...(.pi * 2.0))
-        let minuteRotation = CGFloat(twelveHour.minutes).scaled(from: 0...60, to: 0...(.pi * 2.0))
+        let hourRotation = CGFloat(twelveHour.allSeconds).scaled(from: 0...(60 * 60 * 12), to: 0...(.pi * 2.0))
+        let minuteRotation = CGFloat(twelveHour.minutesInSeconds).scaled(from: 0...(60 * 60), to: 0...(.pi * 2.0))
+        let secondRotation = CGFloat(twelveHour.seconds).scaled(from: 0...60, to: 0...(.pi * 2))
 
-        return (hour: hourRotation, minute: minuteRotation)
+        return (hour: hourRotation, minute: minuteRotation, second: secondRotation)
     }
 
 }
