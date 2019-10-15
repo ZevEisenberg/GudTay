@@ -42,7 +42,7 @@ DEPENDENCIES:
   - Then
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
     - Anchorage
     - BonMot
@@ -68,4 +68,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 17c46a76deb90572b6a6e0f640cf6ef679e021f4
 
-COCOAPODS: 1.7.0.beta.1
+COCOAPODS: 1.8.3
