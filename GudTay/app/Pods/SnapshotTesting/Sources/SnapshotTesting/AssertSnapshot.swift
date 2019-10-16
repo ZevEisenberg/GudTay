@@ -1,4 +1,3 @@
-#if !os(Linux)
 import XCTest
 
 /// Enhances failure messages with a command line diff tool expression that can be copied and pasted into a terminal.
@@ -32,7 +31,7 @@ public func assertSnapshot<Value, Format>(
   ) {
 
   let failure = verifySnapshot(
-    matching: value,
+    matching: try value(),
     as: snapshotting,
     named: name,
     record: recording,
@@ -65,9 +64,9 @@ public func assertSnapshots<Value, Format>(
   line: UInt = #line
   ) {
 
-  strategies.forEach { name, strategy in
+  try? strategies.forEach { name, strategy in
     assertSnapshot(
-      matching: value,
+      matching: try value(),
       as: strategy,
       named: name,
       record: recording,
@@ -99,9 +98,9 @@ public func assertSnapshots<Value, Format>(
   line: UInt = #line
   ) {
 
-  strategies.forEach { strategy in
+  try? strategies.forEach { strategy in
     assertSnapshot(
-      matching: value,
+      matching: try value(),
       as: strategy,
       record: recording,
       timeout: timeout,
@@ -169,10 +168,10 @@ public func verifySnapshot<Value, Format>(
     let recording = recording || record
 
     do {
-      let fileUrl = URL(fileURLWithPath: "\(file)")
+      let fileUrl = URL(fileURLWithPath: "\(file)", isDirectory: false)
       let fileName = fileUrl.deletingPathExtension().lastPathComponent
 
-      let snapshotDirectoryUrl = snapshotDirectory.map(URL.init(fileURLWithPath:))
+      let snapshotDirectoryUrl = snapshotDirectory.map { URL(fileURLWithPath: $0, isDirectory: true) }
         ?? fileUrl
           .deletingLastPathComponent()
           .appendingPathComponent("__Snapshots__")
@@ -210,6 +209,8 @@ public func verifySnapshot<Value, Format>(
       case .timedOut:
         return "Exceeded timeout of \(timeout) seconds waiting for snapshot"
       case .incorrectOrder, .invertedFulfillment, .interrupted:
+        return "Couldn't snapshot value"
+      @unknown default:
         return "Couldn't snapshot value"
       }
 
@@ -249,7 +250,7 @@ public func verifySnapshot<Value, Format>(
       }
 
       let artifactsUrl = URL(
-        fileURLWithPath: ProcessInfo.processInfo.environment["SNAPSHOT_ARTIFACTS"] ?? NSTemporaryDirectory()
+        fileURLWithPath: ProcessInfo.processInfo.environment["SNAPSHOT_ARTIFACTS"] ?? NSTemporaryDirectory(), isDirectory: true
       )
       let artifactsSubUrl = artifactsUrl.appendingPathComponent(fileName)
       try fileManager.createDirectory(at: artifactsSubUrl, withIntermediateDirectories: true)
@@ -283,9 +284,10 @@ public func verifySnapshot<Value, Format>(
     }
 }
 
+// MARK: - Private
+
 private let counterQueue = DispatchQueue(label: "co.pointfree.SnapshotTesting.counter")
 private var counterMap: [URL: Int] = [:]
-#endif
 
 func sanitizePathComponent(_ string: String) -> String {
   return string
