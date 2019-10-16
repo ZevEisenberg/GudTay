@@ -1,7 +1,7 @@
 PODS:
   - Alamofire (4.8.1)
   - Anchorage (4.3.1)
-  - BonMot (5.3)
+  - BonMot (5.4.1)
   - OHHTTPStubs/Core (8.0.0)
   - OHHTTPStubs/Default (8.0.0):
     - OHHTTPStubs/Core
@@ -57,7 +57,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   Anchorage: a187da0bc9b07440637d42c8744b8c82a4490295
-  BonMot: 0104d1b4eda54f4a4b7393d6559539ef25498fbd
+  BonMot: aa82119ff2ffa184223d8a31c72aed84fbb009e0
   OHHTTPStubs: 9cbce6364bec557cc3439aa6bb7514670d780881
   SnapshotTesting: bd92e40aaef4a735f7950d42cb0b8ea7c3716b00
   Sourcery: 3ed61be7c8a1218fce349266139379dba477efe0
