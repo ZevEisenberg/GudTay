@@ -56,7 +56,8 @@ private extension LogViewController {
     }
 
     @objc func shareTapped(sender: UIBarButtonItem) {
-        let shareSheet = UIActivityViewController(activityItems: [errorTextView.text], applicationActivities: nil)
+        guard let errorText = errorTextView.text else { return }
+        let shareSheet = UIActivityViewController(activityItems: [errorText], applicationActivities: nil)
         present(shareSheet, animated: true, completion: nil)
         shareSheet.modalPresentationStyle = .popover
         shareSheet.popoverPresentationController?.barButtonItem = sender
