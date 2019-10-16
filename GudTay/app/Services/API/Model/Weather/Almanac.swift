@@ -80,11 +80,11 @@ public struct Almanac {
 
 }
 
-fileprivate extension Almanac.TemperatureRange {
+private extension Almanac.TemperatureRange {
 
-    fileprivate typealias Keys = Almanac.CodingKeys
+    typealias Keys = Almanac.CodingKeys
 
-    fileprivate init(values: KeyedDecodingContainer<Keys>, maxKey: Keys, minKey: Keys, maxTimeKey: Keys, minTimeKey: Keys) throws {
+    init(values: KeyedDecodingContainer<Keys>, maxKey: Keys, minKey: Keys, maxTimeKey: Keys, minTimeKey: Keys) throws {
         max = try values.decode(Double.self, forKey: maxKey)
         min = try values.decode(Double.self, forKey: minKey)
         maxTime = try values.decode(Date.self, forKey: maxTimeKey)

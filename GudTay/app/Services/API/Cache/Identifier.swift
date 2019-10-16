@@ -48,7 +48,7 @@ public protocol Identifiable: AnyIdentifiable {
 
 public extension Collection where Element: Identifiable {
 
-    public var ids: [Identifier<Element>] {
+    var ids: [Identifier<Element>] {
         return map { $0.id }
     }
 
