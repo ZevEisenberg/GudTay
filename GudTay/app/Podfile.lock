@@ -25,7 +25,7 @@ PODS:
   - Swiftilities/Logging (0.20.0)
   - Swiftilities/Math (0.20.0)
   - SwiftLint (0.31.0)
-  - Then (2.4.0)
+  - Then (2.6.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -64,7 +64,7 @@ SPEC CHECKSUMS:
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   Swiftilities: 03f8267eef129cbea588364a8ee4cd786ebe9de4
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
-  Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
+  Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
 
 PODFILE CHECKSUM: 17c46a76deb90572b6a6e0f640cf6ef679e021f4
 
