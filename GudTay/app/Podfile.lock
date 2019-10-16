@@ -16,7 +16,7 @@ PODS:
   - OHHTTPStubs/Swift (6.1.0):
     - OHHTTPStubs/Default
   - SnapshotTesting (1.2.0)
-  - Sourcery (0.15.0)
+  - Sourcery (0.17.0)
   - SwiftGen (6.1.0)
   - Swiftilities/HairlineView (0.20.0)
   - Swiftilities/Lifecycle (0.20.0):
@@ -60,7 +60,7 @@ SPEC CHECKSUMS:
   BonMot: 0104d1b4eda54f4a4b7393d6559539ef25498fbd
   OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
   SnapshotTesting: bd92e40aaef4a735f7950d42cb0b8ea7c3716b00
-  Sourcery: 5895672cae353cdbfa95f3f4aaeb75a664d76f6a
+  Sourcery: 3ed61be7c8a1218fce349266139379dba477efe0
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   Swiftilities: 03f8267eef129cbea588364a8ee4cd786ebe9de4
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
