@@ -2,18 +2,18 @@ PODS:
   - Alamofire (4.8.1)
   - Anchorage (4.3)
   - BonMot (5.3)
-  - OHHTTPStubs/Core (6.1.0)
-  - OHHTTPStubs/Default (6.1.0):
+  - OHHTTPStubs/Core (8.0.0)
+  - OHHTTPStubs/Default (8.0.0):
     - OHHTTPStubs/Core
     - OHHTTPStubs/JSON
     - OHHTTPStubs/NSURLSession
     - OHHTTPStubs/OHPathHelpers
-  - OHHTTPStubs/JSON (6.1.0):
+  - OHHTTPStubs/JSON (8.0.0):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/NSURLSession (6.1.0):
+  - OHHTTPStubs/NSURLSession (8.0.0):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/OHPathHelpers (6.1.0)
-  - OHHTTPStubs/Swift (6.1.0):
+  - OHHTTPStubs/OHPathHelpers (8.0.0)
+  - OHHTTPStubs/Swift (8.0.0):
     - OHHTTPStubs/Default
   - SnapshotTesting (1.2.0)
   - Sourcery (0.17.0)
@@ -58,7 +58,7 @@ SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   Anchorage: 21a98675245188427f0bcea21404d42a824a766f
   BonMot: 0104d1b4eda54f4a4b7393d6559539ef25498fbd
-  OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
+  OHHTTPStubs: 9cbce6364bec557cc3439aa6bb7514670d780881
   SnapshotTesting: bd92e40aaef4a735f7950d42cb0b8ea7c3716b00
   Sourcery: 3ed61be7c8a1218fce349266139379dba477efe0
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
