@@ -84,7 +84,8 @@ final class ClockView: UIView {
 
         // Configuration
 
-        let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
+        let timer = Timer(fireAt: Date(), interval: 1, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer, forMode: .common)
         timer.tolerance = 0.05
         // Start the second hand in the right place to start
         tick(animated: false)
