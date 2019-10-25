@@ -18,12 +18,12 @@ PODS:
   - SnapshotTesting (1.6.0)
   - Sourcery (0.17.0)
   - SwiftGen (6.1.0)
-  - Swiftilities/HairlineView (0.24.0)
-  - Swiftilities/Lifecycle (0.24.0):
+  - Swiftilities/HairlineView (0.25.0)
+  - Swiftilities/Lifecycle (0.25.0):
     - Swiftilities/HairlineView
     - Swiftilities/Math
-  - Swiftilities/Logging (0.24.0)
-  - Swiftilities/Math (0.24.0)
+  - Swiftilities/Logging (0.25.0)
+  - Swiftilities/Math (0.25.0)
   - SwiftLint (0.35.0)
   - Then (2.6.0)
 
@@ -62,7 +62,7 @@ SPEC CHECKSUMS:
   SnapshotTesting: 9f478335073a830eafb7dc1fcd526c5e90143991
   Sourcery: 3ed61be7c8a1218fce349266139379dba477efe0
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
-  Swiftilities: d49cfdb179100ddd10b59d9e20a5df76beb57285
+  Swiftilities: 219eb73f3c1d4e95812fc61d3527a5504444a405
   SwiftLint: 5553187048b900c91aa03552807681bb6b027846
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
 
