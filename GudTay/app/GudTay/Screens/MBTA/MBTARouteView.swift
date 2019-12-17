@@ -81,7 +81,8 @@ private extension MBTARouteView {
     }
 
     func updateUI(forUpcomingTrips upcomingTrips: UpcomingTrips, relativeToDate now: Date) {
-        let (next, later, afterThat) = upcomingTrips.strings(forDate: now)
+        let oneMinuteFromNow = now.addingTimeInterval(60)
+        let (next, later, afterThat) = upcomingTrips.strings(forDate: oneMinuteFromNow)
 
         nextTripView.updateMinutesString(next)
         laterTripView.updateMinutesString(later)
