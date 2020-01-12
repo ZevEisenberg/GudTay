@@ -9,6 +9,8 @@
 import Services
 import Swiftilities
 
+// false positive: https://github.com/realm/SwiftLint/issues/3033
+// swiftlint:disable convenience_type
 class DebugMenu {
 
     static func enableDebugGesture(_ viewController: UIViewController) {

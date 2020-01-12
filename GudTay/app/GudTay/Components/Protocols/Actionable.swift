@@ -15,6 +15,10 @@ protocol Actionable: AnyObject {
     func notify(_ action: ActionType)
 }
 
+// SwiftLint bug/conflict between opening_brace
+// and implicit_return: https://github.com/realm/SwiftLint/issues/3034
+// swiftlint:disable opening_brace
+
 extension Actionable {
 
     func notify(_ action: ActionType) -> () -> Void {
