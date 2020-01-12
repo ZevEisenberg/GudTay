@@ -93,8 +93,8 @@ private extension MBTARouteView {
 
 private extension TimeInterval {
 
-    var formattedAsMinutes: String {
-        return String(Int(floor(self / 60.0)))
+    var asNonNegativeMinutes: String {
+        String(Int(floor(max(self, 0) / 60.0)))
     }
 
 }
@@ -138,19 +138,19 @@ extension MBTARouteView {
                 return (next: noUpcomingTime, later: noUpcomingTime, afterThat: noUpcomingTime)
             case let .one(next):
                 let nextSeconds = next.timeIntervalSince(now)
-                return (next: nextSeconds.formattedAsMinutes, later: noUpcomingTime, afterThat: noUpcomingTime)
+                return (next: nextSeconds.asNonNegativeMinutes, later: noUpcomingTime, afterThat: noUpcomingTime)
             case let .two(next, later):
                 let nextSeconds = next.timeIntervalSince(now)
                 let laterSeconds = later.timeIntervalSince(now)
                 let secondsAfterNextSeconds = laterSeconds - nextSeconds
-                return (next: nextSeconds.formattedAsMinutes, later: secondsAfterNextSeconds.formattedAsMinutes, afterThat: noUpcomingTime)
+                return (next: nextSeconds.asNonNegativeMinutes, later: secondsAfterNextSeconds.asNonNegativeMinutes, afterThat: noUpcomingTime)
             case let .three(next, later, afterThat):
                 let nextSeconds = next.timeIntervalSince(now)
                 let laterSeconds = later.timeIntervalSince(now)
                 let afterThatSeconds = afterThat.timeIntervalSince(now)
                 let secondsAfterNextSeconds = laterSeconds - nextSeconds
                 let secondsAfterThatSeconds = afterThatSeconds - laterSeconds
-                return (next: nextSeconds.formattedAsMinutes, later: secondsAfterNextSeconds.formattedAsMinutes, secondsAfterThatSeconds.formattedAsMinutes)
+                return (next: nextSeconds.asNonNegativeMinutes, later: secondsAfterNextSeconds.asNonNegativeMinutes, secondsAfterThatSeconds.asNonNegativeMinutes)
             }
         }
 

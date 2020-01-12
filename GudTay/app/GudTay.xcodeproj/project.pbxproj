@@ -30,6 +30,7 @@
 		5B85E5B821DA7DA6009A2202 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85E5B721DA7DA6009A2202 /* Result.swift */; };
 		5B85E5BA21DABD61009A2202 /* DoodleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85E5B921DABD61009A2202 /* DoodleViewController.swift */; };
 		5B85E5BC21DABF61009A2202 /* DoodleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85E5BB21DABF61009A2202 /* DoodleService.swift */; };
+		5B9FD8BC23CBB0F300C77A03 /* MBTAViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9FD8BB23CBB0F300C77A03 /* MBTAViewTests.swift */; };
 		5BC144C521ED74D20015ACBC /* CATransaction+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC144C421ED74D20015ACBC /* CATransaction+Utilities.swift */; };
 		5BC144C721ED7F1A0015ACBC /* CGContext+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC144C621ED7F1A0015ACBC /* CGContext+Utilities.swift */; };
 		5BF393D0221E4C2300E93348 /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF393CF221E4C2300E93348 /* WeatherTests.swift */; };
@@ -238,6 +239,7 @@
 		5B85E5B721DA7DA6009A2202 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		5B85E5B921DABD61009A2202 /* DoodleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleViewController.swift; sourceTree = "<group>"; };
 		5B85E5BB21DABF61009A2202 /* DoodleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleService.swift; sourceTree = "<group>"; };
+		5B9FD8BB23CBB0F300C77A03 /* MBTAViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTAViewTests.swift; sourceTree = "<group>"; };
 		5BC144C421ED74D20015ACBC /* CATransaction+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransaction+Utilities.swift"; sourceTree = "<group>"; };
 		5BC144C621ED7F1A0015ACBC /* CGContext+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGContext+Utilities.swift"; sourceTree = "<group>"; };
 		5BF393CF221E4C2300E93348 /* WeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTests.swift; sourceTree = "<group>"; };
@@ -760,6 +762,7 @@
 			isa = PBXGroup;
 			children = (
 				ABF84FA31DCBCD89002DB24D /* MBTATests.swift */,
+				5B9FD8BB23CBB0F300C77A03 /* MBTAViewTests.swift */,
 			);
 			path = MBTA;
 			sourceTree = "<group>";
@@ -1595,6 +1598,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B9FD8BC23CBB0F300C77A03 /* MBTAViewTests.swift in Sources */,
 				5BF393D0221E4C2300E93348 /* WeatherTests.swift in Sources */,
 				ABF84FA61DCBCEA1002DB24D /* Payloads.swift in Sources */,
 				ABF84FA01DCBAB1B002DB24D /* TestConstants.swift in Sources */,
