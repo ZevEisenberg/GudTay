@@ -10,8 +10,6 @@ import Foundation
 
 public enum Formatters {
 
-    public static var ISODateFormatter: ISO8601DateFormatter = {
-        return ISO8601DateFormatter()
-    }()
+    public static var ISODateFormatter = ISO8601DateFormatter()
 
 }

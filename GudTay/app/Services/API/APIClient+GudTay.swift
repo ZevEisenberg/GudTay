@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension APIClient {
+public extension APIClient {
 
-    public static var mbta = APIClient(baseURL: APIEnvironment.active.mbtaUrl, cache: FlatCache())
+    static var mbta = APIClient(baseURL: APIEnvironment.active.mbtaUrl, cache: FlatCache())
 
 }

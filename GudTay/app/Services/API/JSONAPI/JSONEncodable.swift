@@ -27,7 +27,7 @@ struct ResourceStub<T: Entity> {
 extension ResourceStub: JSONAPIEncodable {
 
     var jsonEncoded: JSONObject {
-        return [
+        [
             "type": type,
             "attributes": attributes,
             "relationships": relationships,
@@ -39,14 +39,14 @@ extension ResourceStub: JSONAPIEncodable {
 extension Entity {
 
     public var jsonEncoded: JSONObject {
-        return [
+        [
             "type": Self.apiType,
             "id": id.value,
         ]
     }
 
     func jsonEncodedWith(attributes: JSONObject? = nil, relationships: JSONObject? = nil) -> JSONObject {
-        return [
+        [
             "type": Self.apiType,
             "id": id.value,
             "attributes": attributes,
@@ -59,7 +59,7 @@ extension Entity {
 extension Array where Element == JSONAPIEncodable {
 
     var jsonEncoded: [JSONObject] {
-        return compactMap { $0.jsonEncoded }
+        compactMap { $0.jsonEncoded }
     }
 
 }
@@ -67,7 +67,7 @@ extension Array where Element == JSONAPIEncodable {
 extension Array where Element: JSONAPIEncodable {
 
     var jsonEncoded: [JSONObject] {
-        return compactMap { $0.jsonEncoded }
+        compactMap { $0.jsonEncoded }
     }
 
 }

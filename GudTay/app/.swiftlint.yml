@@ -14,20 +14,32 @@ opt_in_rules:
   - anyobject_protocol
   - array_init
   - closure_spacing
+  - contains_over_filter_count
+  - contains_over_filter_is_empty
   - contains_over_first_not_nil
+  - contains_over_range_nil_comparison
+  - convenience_type
   - empty_count
+  - extension_access_modifier
   - fatal_error_message
   - first_where
   - identical_operands
+  - implicit_return
   - last_where
   - legacy_random
+  - modifier_order
+  - multiline_arguments
   - operator_usage_whitespace
+  - optional_enum_case_matching
+  - prefer_self_type_over_type_of_self
   - redundant_objc_attribute
   - sorted_first_last
   - sorted_imports
   - static_operator
   - toggle_bool
   - unused_control_flow_label
+  - unused_import
+  - vertical_whitespace
 
 type_name:
   min_length: 2

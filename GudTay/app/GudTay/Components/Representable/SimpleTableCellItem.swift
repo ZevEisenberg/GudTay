@@ -26,7 +26,7 @@ extension SimpleTableCellItem: TableViewCellRepresentable, CellIdentifiable {
     }
 
     public func cell(for tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: type(of: self).reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Self.reuseIdentifier, for: indexPath)
         cell.textLabel?.text = text
         return cell
     }
@@ -35,6 +35,6 @@ extension SimpleTableCellItem: TableViewCellRepresentable, CellIdentifiable {
         self.selectCell()
     }
     public func canSelect() -> Bool {
-        return true
+        true
     }
 }

@@ -45,7 +45,7 @@ final class BusHeaderView: MBTAHeaderView {
         stackView.edgeAnchors == edgeAnchors
     }
 
-    @available(*, unavailable) required override init(frame: CGRect) {
+    @available(*, unavailable) override required init(frame: CGRect) {
         fatalError("init(frame:) has not been implemented")
     }
 

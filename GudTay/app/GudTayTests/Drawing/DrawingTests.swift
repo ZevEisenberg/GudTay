@@ -12,8 +12,8 @@ import XCTest
 private let size = CGSize(width: 200, height: 100)
 private var result: CGImage?
 
-extension Snapshotting where Value == CGImage, Format == UIImage {
-    public static let cgImage: Snapshotting =
+public extension Snapshotting where Value == CGImage, Format == UIImage {
+    static let cgImage: Snapshotting =
         Snapshotting<UIImage, UIImage>.image.pullback { cgImage in UIImage(cgImage: cgImage, scale: UIScreen.main.scale, orientation: .up) }
 }
 

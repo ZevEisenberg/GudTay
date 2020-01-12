@@ -13,7 +13,7 @@ import UIKit
 class DebugMenuConfiguration: AppLifecycle {
 
     var isEnabled: Bool {
-        return BuildType.active == .internal || BuildType.active == .debug
+        BuildType.active == .internal || BuildType.active == .debug
     }
 
     func onDidLaunch(application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {

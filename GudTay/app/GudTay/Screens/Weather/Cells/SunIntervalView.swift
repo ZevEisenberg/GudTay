@@ -28,14 +28,14 @@ final class SunIntervalView: UIView {
     }
 
     override class var layerClass: AnyClass {
-        return CAGradientLayer.self
+        CAGradientLayer.self
     }
 
 }
 
 private extension SunIntervalView {
 
-    struct Constants {
+    enum Constants {
 
         static let dayColors: [CGColor] = {
             let prefix: [CGColor] = [

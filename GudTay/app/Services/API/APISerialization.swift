@@ -9,7 +9,7 @@
 import Alamofire
 
 private func ResponseSerializer<T>(decoder: JSONDecoder, serializer: @escaping (Data) throws -> T) -> DataResponseSerializer<T> {
-    return DataResponseSerializer { _, _, data, error in
+    DataResponseSerializer { _, _, data, error in
         do {
             if let error = error { throw error }
             guard let validData = data else {
@@ -30,18 +30,18 @@ private func ResponseSerializer<T>(decoder: JSONDecoder, serializer: @escaping (
 }
 
 func APIObjectResponseSerializer<Endpoint: APIEndpoint>(_ endpoint: Endpoint, decoder: JSONDecoder) -> DataResponseSerializer<Void> where Endpoint.ResponseType == Payload.Empty {
-    return ResponseSerializer(decoder: decoder) { data in
+    ResponseSerializer(decoder: decoder) { data in
         endpoint.log(data)
     }
 }
 
 /// Response serializer to import JSON Object using JSONDecoder and return an object
 func APIObjectResponseSerializer<Endpoint: APIEndpoint>(_ endpoint: Endpoint, decoder: JSONDecoder) -> DataResponseSerializer<Endpoint.ResponseType> where Endpoint.ResponseType: Decodable {
-    return ResponseSerializer(decoder: decoder) { data in
+    ResponseSerializer(decoder: decoder) { data in
         endpoint.log(data)
         if let cache = decoder.cache {
             return try cache.deferObserverNotifications(during: {
-                return try decoder.decode(Endpoint.ResponseType.self, from: data)
+                try decoder.decode(Endpoint.ResponseType.self, from: data)
             })
         }
         else {

@@ -20,11 +20,11 @@ public protocol RequestProtocol: AnyObject {
 extension DataRequest: RequestProtocol {
 
     public var isFinished: Bool {
-        return progress.isFinished
+        progress.isFinished
     }
 
     public func onCompletion(_ closure: @escaping () -> Void) -> Self {
-        return response { _ in
+        response { _ in
             closure()
         }
     }
@@ -59,7 +59,7 @@ public class RequestBatch {
 extension RequestBatch: RequestProtocol {
 
     public var isFinished: Bool {
-        return requests.containsOnly { $0.isFinished }
+        requests.allSatisfy { $0.isFinished }
     }
 
     public func cancel() {

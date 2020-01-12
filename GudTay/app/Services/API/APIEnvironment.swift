@@ -27,11 +27,11 @@ public enum APIEnvironment {
 extension APIEnvironment {
 
     var mbtaUrl: URL {
-        return URL(string: "https://api-v3.mbta.com")!
+        URL(string: "https://api-v3.mbta.com")!
     }
 
     var weatherUrl: URL {
-        return URL(string: "https://api.darksky.net")!
+        URL(string: "https://api.darksky.net")!
     }
 
 }

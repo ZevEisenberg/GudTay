@@ -41,7 +41,7 @@ extension APIClient {
      */
     @discardableResult
     func request<Endpoint: APIEndpoint>(_ endpoint: Endpoint, completion: @escaping (_ error: Error?) -> Void) -> RequestProtocol where Endpoint.ResponseType == Payload.Empty {
-        return manager.request(baseURL, endpoint: endpoint, decoder: decoder) { error in
+        manager.request(baseURL, endpoint: endpoint, decoder: decoder) { error in
             completion(error)
         }
     }
@@ -61,7 +61,7 @@ extension APIClient {
      */
     @discardableResult
     func request<Endpoint: APIEndpoint>(_ endpoint: Endpoint, completion: @escaping (_ object: Endpoint.ResponseType?, _ error: Error?) -> Void) -> RequestProtocol where Endpoint.ResponseType: Decodable {
-        return manager.request(baseURL, endpoint: endpoint, decoder: decoder) { (obj, error) in
+        manager.request(baseURL, endpoint: endpoint, decoder: decoder) { (obj, error) in
             completion(obj, error)
         }
     }

@@ -8,9 +8,9 @@
 
 import BonMot
 
-struct Fonts {
+enum Fonts {
 
-    struct MBTA {
+    enum MBTA {
 
         private static let baseMinutesStyle = StringStyle(
             .tracking(.point(-2.68)),
@@ -37,7 +37,7 @@ struct Fonts {
 
     }
 
-    struct Weather {
+    enum Weather {
 
         static let currentTempStyle = StringStyle(
             .numberSpacing(.proportional),

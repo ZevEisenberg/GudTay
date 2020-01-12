@@ -24,7 +24,7 @@ public enum Icon: String {
     case partlyCloudyNight = "partly-cloudy-night"
 
     public var image: UIImage {
-        return UIImage(named: rawValue, in: Bundle(for: ImageDummyClass.self), compatibleWith: nil)!
+        UIImage(named: rawValue, in: Bundle(for: ImageDummyClass.self), compatibleWith: nil)!
     }
 
     public var smallImage: UIImage {

@@ -23,19 +23,19 @@ protocol APIEndpoint: NetworkLoggable {
 extension APIEndpoint {
 
     var encoding: ParameterEncoding {
-        return JSONEncoding.default
+        JSONEncoding.default
     }
 
     var parameters: Parameters? {
-        return nil
+        nil
     }
 
     var queryParams: [QueryParam]? {
-        return nil
+        nil
     }
 
     var headers: HTTPHeaders {
-        return [:]
+        [:]
     }
 
 }

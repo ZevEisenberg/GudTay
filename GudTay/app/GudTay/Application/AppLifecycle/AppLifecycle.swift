@@ -30,7 +30,7 @@ protocol AppLifecycle {
 extension AppLifecycle {
 
     var isEnabled: Bool {
-        return true
+        true
     }
 
 }

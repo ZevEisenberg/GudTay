@@ -18,14 +18,14 @@ public class TableDataSource: NSObject {
 
     subscript(rows index: Int) -> [TableViewCellRepresentable] {
         get {
-            return sections[index].rows
+            sections[index].rows
         }
         set(newValue) {
             sections[index].rows = newValue
         }
     }
     public subscript(indexPath: IndexPath) -> TableViewCellRepresentable {
-        return sections[indexPath.section].rows[indexPath.row]
+        sections[indexPath.section].rows[indexPath.row]
     }
 
     public func append(rows: [TableViewCellRepresentable]) {
@@ -44,7 +44,7 @@ public class TableDataSource: NSObject {
 extension TableDataSource: UITableViewDataSource {
 
     public func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        sections.count
     }
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,7 +53,7 @@ extension TableDataSource: UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return row(at: indexPath).cell(for: tableView, at: indexPath)
+        row(at: indexPath).cell(for: tableView, at: indexPath)
     }
 
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

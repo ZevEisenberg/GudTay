@@ -13,7 +13,7 @@ public enum LogService {
     // Public Properites
 
     public static var messages: [String] {
-        return queue.sync { _messages }
+        queue.sync { _messages }
     }
 
     // Private Properties
@@ -33,9 +33,9 @@ public enum LogService {
 
 }
 
-extension LogService {
+public extension LogService {
 
-    public static func add(message: String, date: Date = Date()) {
+    static func add(message: String, date: Date = Date()) {
         queue.async {
             LogService._messages.append("\(LogService.dateFormatter.string(from: date)) - \(message)")
             if LogService._messages.count > 200 {
@@ -44,7 +44,7 @@ extension LogService {
         }
     }
 
-    public static func clear() {
+    static func clear() {
         queue.async {
             LogService._messages = ["Starting up at \(LogService.dateFormatter.string(from: Date()))"]
         }

@@ -12,7 +12,7 @@ import Foundation
 enum TestClient {
 
     static var baseURL: URL {
-        return URL(string: "https://google.com")!
+        URL(string: "https://google.com")!
     }
 
 }

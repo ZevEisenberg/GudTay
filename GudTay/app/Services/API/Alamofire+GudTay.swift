@@ -20,7 +20,7 @@ extension SessionManager {
             let url: URL = {
                 var urlComponents = URLComponents(url: endpointURL, resolvingAgainstBaseURL: true)
                 urlComponents?.queryItems = endpoint.queryParams?.compactMap { (name, value) in
-                    return URLQueryItem(name: name, value: value)
+                    URLQueryItem(name: name, value: value)
                 }
                 return urlComponents?.url
             }()

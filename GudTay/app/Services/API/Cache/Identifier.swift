@@ -35,7 +35,7 @@ extension Identifier: ExpressibleByStringLiteral {
 extension Identifier: CustomStringConvertible {
 
     public var description: String {
-        return value
+        value
     }
 
 }
@@ -49,7 +49,7 @@ public protocol Identifiable: AnyIdentifiable {
 public extension Collection where Element: Identifiable {
 
     var ids: [Identifier<Element>] {
-        return map { $0.id }
+        map { $0.id }
     }
 
 }

@@ -18,21 +18,21 @@ struct ClockTime: Equatable {
     let seconds: Int
 
     var minutesInSeconds: Int {
-        return (minutes * secondsPerMinute) + seconds
+        (minutes * secondsPerMinute) + seconds
     }
 
     var allSeconds: Int {
-        return (hours * minutesPerHour * secondsPerMinute)
-        + (minutes * secondsPerMinute)
-        + seconds
+        (hours * minutesPerHour * secondsPerMinute)
+            + (minutes * secondsPerMinute)
+            + seconds
     }
 
     static var min: ClockTime {
-        return ClockTime(hours: 00, minutes: 00, seconds: 00)
+        ClockTime(hours: 00, minutes: 00, seconds: 00)
     }
 
     static var max: ClockTime {
-        return ClockTime(hours: 24, minutes: 00, seconds: 00)
+        ClockTime(hours: 24, minutes: 00, seconds: 00)
     }
 
 }
@@ -40,7 +40,7 @@ struct ClockTime: Equatable {
 extension ClockTime: CustomStringConvertible {
 
     var description: String {
-        return String(format: "%d:%02d:%02d", hours, minutes, seconds)
+        String(format: "%d:%02d:%02d", hours, minutes, seconds)
     }
 
 }

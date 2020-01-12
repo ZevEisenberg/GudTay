@@ -61,7 +61,7 @@ public enum JSONAPI {
         }
 
         func attribute<T: Decodable>(_ type: T.Type = T.self, forKey key: AttributeKeys) throws -> T {
-            return try attributes.decode(T.self, forKey: key)
+            try attributes.decode(T.self, forKey: key)
         }
 
         func attributeIfPresent<T: Decodable>(_ type: T.Type = T.self, forKey key: AttributeKeys) throws -> T? {
@@ -130,10 +130,10 @@ public protocol JSONAPIResourceType: Identifiable {
 
 }
 
-extension JSONAPIResourceType {
+public extension JSONAPIResourceType {
 
-    public static var apiType: String {
-        return String(describing: Self.self).lowercased()
+    static var apiType: String {
+        String(describing: Self.self).lowercased()
     }
 
 }
@@ -146,9 +146,9 @@ public protocol JSONAPIDecodable: JSONAPI.ResourceType, Decodable {
     init(helper: JSONAPI.DecodingHelper<Self, AttributeKeys, RelationshipKeys>) throws
 }
 
-extension JSONAPIDecodable {
+public extension JSONAPIDecodable {
 
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: JSONAPI.ResourceKeys.self)
         let anyId = try values.decode(AnyIdentifier.self, forKey: .id)
         let attributes = try values.nestedContainer(keyedBy: AttributeKeys.self, forKey: .attributes)

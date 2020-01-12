@@ -91,7 +91,7 @@ final class DoodleViewModel {
 
     /// Convenience getter for working with drawing APIs that expect a bounds rect
     private var bounds: CGRect {
-        return CGRect(origin: .zero, size: size)
+        CGRect(origin: .zero, size: size)
     }
 
     init(size: CGSize, persistence: Persistence) {

@@ -14,7 +14,7 @@ extension JSONDecoder {
 
     var cache: FlatCache? {
         get {
-            return userInfo[cacheKey] as? FlatCache
+            userInfo[cacheKey] as? FlatCache
         }
         set {
             userInfo[cacheKey] = newValue
@@ -25,7 +25,7 @@ extension JSONDecoder {
 extension Decoder {
 
     var cache: FlatCache? {
-        return userInfo[cacheKey] as? FlatCache
+        userInfo[cacheKey] as? FlatCache
     }
 }
 

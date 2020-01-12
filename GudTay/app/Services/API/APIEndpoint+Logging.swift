@@ -17,9 +17,9 @@ public protocol NetworkLoggable {
 
 }
 
-extension NetworkLoggable {
+public extension NetworkLoggable {
 
-    public var logLevel: Log.Level {
+    var logLevel: Log.Level {
         #if DEBUG
             return .verbose
         #else

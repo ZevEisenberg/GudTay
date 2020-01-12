@@ -16,7 +16,7 @@ enum MBTAEndpoint {
         let stop: Identifier<Stop>
 
         var queryParams: [APIEndpoint.QueryParam]? {
-            return [
+            [
                 ("api_key", "1b8ef1c876f24cc39c7973f78f5bafd8"),
                 ("include", [Stop.apiType, Route.apiType, Trip.apiType].joined(separator: ",")),
                 ("stop", stop.value),

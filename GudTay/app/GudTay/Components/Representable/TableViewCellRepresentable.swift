@@ -23,7 +23,7 @@ public extension TableViewCellRepresentable where Self: ViewRepresentable {
     }
 
     func dequeueConfiguredCell(for tableView: UITableView, at indexPath: IndexPath) -> TableViewContainerCell<View> {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: type(of: self).reuseIdentifier, for: indexPath) as? TableViewContainerCell<View> else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Self.reuseIdentifier, for: indexPath) as? TableViewContainerCell<View> else {
             fatalError("Wrong cell dequeued from tableView")
         }
         let containedView = cell.containedView ?? makeView()
@@ -42,7 +42,7 @@ public extension TableViewCellRepresentable where Self: ViewRepresentable {
     }
 
     func canSelect() -> Bool {
-        return true
+        true
     }
 
     func performSelection() {}
@@ -54,6 +54,6 @@ public protocol CellIdentifiable {
 
 public extension CellIdentifiable {
     static var reuseIdentifier: String {
-        return "Default-\(self)"
+        "Default-\(self)"
     }
 }

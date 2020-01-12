@@ -10,7 +10,7 @@ import Swiftilities
 import UIKit.UIImage
 import Utilities
 
-struct ImageIO {
+enum ImageIO {
 
     struct CorruptedImageDataError: Error {}
 

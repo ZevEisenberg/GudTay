@@ -83,7 +83,7 @@ private extension GridView {
     }
 
     static func hairline(_ axis: NSLayoutConstraint.Axis) -> HairlineView {
-        return HairlineView(axis: axis, thickness: Constants.hairlineWidth, hairlineColor: Constants.hairlineColor)
+        HairlineView(axis: axis, thickness: Constants.hairlineWidth, hairlineColor: Constants.hairlineColor)
     }
 
 }

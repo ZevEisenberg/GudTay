@@ -25,18 +25,18 @@ public struct Prediction {
 
 }
 
-extension Prediction {
+public extension Prediction {
 
-    public var route: Route {
-        return cache!.get(id: routeId)!
+    var route: Route {
+        cache!.get(id: routeId)!
     }
 
-    public var stop: Stop {
-        return cache!.get(id: stopId)!
+    var stop: Stop {
+        cache!.get(id: stopId)!
     }
 
-    public var trip: Trip {
-        return cache!.get(id: tripId)!
+    var trip: Trip {
+        cache!.get(id: tripId)!
     }
 
 }

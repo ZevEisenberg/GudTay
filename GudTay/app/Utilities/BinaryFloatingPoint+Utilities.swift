@@ -5,19 +5,19 @@
 //  Created by Zev Eisenberg on 1/7/19.
 //
 
-extension BinaryFloatingPoint {
+public extension BinaryFloatingPoint {
 
-    public func roundedToNearest<I: BinaryFloatingPoint>(_ increment: I) -> Self {
+    func roundedToNearest<I: BinaryFloatingPoint>(_ increment: I) -> Self {
         precondition(increment > 0)
         return roundedToNearest(increment, using: .toNearestOrAwayFromZero)
     }
 
-    public func flooredToNearest<I: BinaryFloatingPoint>(_ increment: I) -> Self {
+    func flooredToNearest<I: BinaryFloatingPoint>(_ increment: I) -> Self {
         precondition(increment > 0)
         return roundedToNearest(increment, using: .towardZero)
     }
 
-    public func ceiledToNearest<I: BinaryFloatingPoint>(_ increment: I) -> Self {
+    func ceiledToNearest<I: BinaryFloatingPoint>(_ increment: I) -> Self {
         precondition(increment > 0)
         return roundedToNearest(increment, using: self > 0 ? .up : .down)
     }

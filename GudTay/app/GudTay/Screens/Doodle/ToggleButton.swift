@@ -17,7 +17,7 @@ final class ToggleButton: UIControl {
         case secondary
 
         var isPrimary: Bool {
-            return self == .primary
+            self == .primary
         }
 
         var opposite: Mode {
@@ -32,7 +32,7 @@ final class ToggleButton: UIControl {
 
     var primaryImage: UIImage? {
         get {
-            return primaryImageView.image
+            primaryImageView.image
         }
         set {
             primaryImageView.image = newValue
@@ -43,7 +43,7 @@ final class ToggleButton: UIControl {
 
     var secondaryImage: UIImage? {
         get {
-            return secondaryImageView.image
+            secondaryImageView.image
         }
         set {
             secondaryImageView.image = newValue
@@ -55,7 +55,7 @@ final class ToggleButton: UIControl {
     private var _mode: Mode = .primary
 
     var mode: Mode {
-        return _mode
+        _mode
     }
 
     // Private Properties
@@ -164,9 +164,12 @@ final class ToggleButton: UIControl {
         // but that requires creating keyframes and finessing the animation. In the interim,
         // doing the reorder looks better at the beginning than at the end.
         self.bringSubviewToFront(mode.isPrimary ? primaryImageView : secondaryImageView)
-        UIView.animate(withDuration: animated ? 0.3 : 0.0, animations: {
-            self.layoutIfNeeded()
-        }, completion: { _ in })
+        UIView.animate(
+            withDuration: animated ? 0.3 : 0.0,
+            animations: ({
+                self.layoutIfNeeded()
+            }),
+            completion: { _ in })
     }
 
 }

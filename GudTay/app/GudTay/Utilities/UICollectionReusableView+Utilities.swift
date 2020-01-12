@@ -10,7 +10,7 @@ import UIKit
 extension UICollectionReusableView {
 
     @nonobjc final class var gudReuseID: String {
-        return "\(self)"
+        "\(self)"
     }
 
 }

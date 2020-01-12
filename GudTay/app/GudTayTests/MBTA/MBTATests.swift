@@ -29,7 +29,7 @@ class MBTATests: XCTestCase {
 
     func testPredictions() {
         stub(condition: pathStartsWith("/predictions")) { _ in
-            return OHHTTPStubsResponse(data: Payloads.MBTA.predictions, statusCode: 200, headers: nil)
+            OHHTTPStubsResponse(data: Payloads.MBTA.predictions, statusCode: 200, headers: nil)
         }
 
         let expectation = self.expectation(description: "Test Endpoint")

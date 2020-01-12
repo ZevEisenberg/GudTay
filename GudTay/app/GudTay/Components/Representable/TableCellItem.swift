@@ -16,7 +16,7 @@ public struct TableCellItem<View: UIView> {
     let configureCell: (TableViewContainerCell<View>) -> Void
     let selectCell: VoidBlock?
 
-    public init(make: @escaping () -> View = { return View() },
+    public init(make: @escaping () -> View = { View() },
                 configure: @escaping (View) -> Void = { _ in },
                 configureCell: @escaping (TableViewContainerCell<View>) -> Void = { _ in },
                 selectCell: VoidBlock? = nil) {
@@ -29,7 +29,7 @@ public struct TableCellItem<View: UIView> {
 
 extension TableCellItem: ViewRepresentable {
     public func makeView() -> View {
-        return make()
+        make()
     }
     public func configure(view: View) {
         configure(view)
@@ -38,7 +38,7 @@ extension TableCellItem: ViewRepresentable {
 
 extension TableCellItem: CellIdentifiable {
     public static var reuseIdentifier: String {
-        return "Default-\(self)-\(View.self)"
+        "Default-\(self)-\(View.self)"
     }
 }
 
@@ -50,7 +50,7 @@ extension TableCellItem: TableViewCellRepresentable {
     }
 
     public func canSelect() -> Bool {
-        return selectCell != nil
+        selectCell != nil
     }
 
     public func performSelection() {

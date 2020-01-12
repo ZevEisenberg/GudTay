@@ -131,7 +131,7 @@ private extension ClockView {
 extension ClockTime {
 
     var asTwelveHour: ClockTime {
-        return ClockTime(hours: hours % 12, minutes: minutes, seconds: seconds)
+        ClockTime(hours: hours % 12, minutes: minutes, seconds: seconds)
     }
 
     var handRotations: (hour: CGFloat, minute: CGFloat, second: CGFloat) {

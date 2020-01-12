@@ -21,9 +21,9 @@ public class MBTAService {
 
 }
 
-extension MBTAService {
+public extension MBTAService {
 
-    public func getPredictions(forStop stop: Identifier<Stop>, completion: @escaping(Result<[Prediction]>) -> Void) -> RequestProtocol {
+    func getPredictions(forStop stop: Identifier<Stop>, completion: @escaping(Result<[Prediction]>) -> Void) -> RequestProtocol {
         let endpoint = MBTAEndpoint.PredictionsByStop(stop: stop)
         client.cache?.clearCache()
         return client.request(endpoint) { [weak self] (response, error) in

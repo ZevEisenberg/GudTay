@@ -27,7 +27,7 @@ extension FlatCache.Row: AnyRow {
 public class FlatCache {
 
     static func key(for type: Any.Type) -> String {
-        return String(describing: type)
+        String(describing: type)
     }
 
     fileprivate struct Row<T> {
@@ -36,7 +36,7 @@ public class FlatCache {
 
         subscript(_ id: Identifier<T>) -> T? {
             get {
-                return storage[id]
+                storage[id]
             }
             set {
                 storage[id] = newValue
@@ -44,7 +44,7 @@ public class FlatCache {
         }
 
         var values: [T] {
-            return Array(storage.values)
+            Array(storage.values)
         }
 
     }
@@ -105,20 +105,23 @@ public class FlatCache {
     }
 
     func any<T: Identifiable>(ofType: T.Type = T.self, where predicate: (T) throws -> Bool) rethrows -> T? {
-        return try row(for: T.self, lookup: { row in
-            return try row.values.first(where: predicate)
+        try row(for: T.self, lookup: { row in
+            try row.values.first(where: predicate)
         })
     }
 
     func deleteAll<T: Identifiable, Coll: Collection>(_ type: T.Type, excluding excluded: Coll) where Coll.Element == T {
         var removed = [Identifier<T>]()
-        updateRow(for: T.self, change: {
-            removed = $0.removeAll(excluding: excluded.ids)
-        }, completion: { [weak self] in
-            if !removed.isEmpty {
-                self?.notifyObservers(for: T.self, ids: removed)
-            }
-        })
+        updateRow(
+            for: T.self,
+            change: ({
+                removed = $0.removeAll(excluding: excluded.ids)
+            }),
+            completion: ({ [weak self] in
+                if !removed.isEmpty {
+                    self?.notifyObservers(for: T.self, ids: removed)
+                }
+            }))
     }
 
     func delete<T: Identifiable>(_ value: T) {
@@ -134,15 +137,15 @@ public class FlatCache {
     }
 
     func get<T, Coll: Collection>(allOfType type: T.Type = T.self, with ids: Coll) -> [T] where Coll.Element == Identifier<T> {
-        return ids.compactMap { get(id: $0, type: type) }
+        ids.compactMap { get(id: $0, type: type) }
     }
 
     func get<T>(id: Identifier<T>, type: T.Type = T.self) -> T? {
-        return row(for: T.self, lookup: { return $0[id] })
+        row(for: T.self, lookup: { $0[id] })
     }
 
     func all<T>(ofType: T.Type) -> [T] {
-        return row(for: T.self, lookup: { return $0.values }) ?? []
+        row(for: T.self, lookup: { $0.values }) ?? []
     }
 
     func clearCache() {

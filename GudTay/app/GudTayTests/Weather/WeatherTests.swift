@@ -42,7 +42,7 @@ private extension WeatherTests {
         hour: Int = 6,
         minute: Int = 22,
         second: Int = 0) -> Date {
-        return DateComponents(
+        DateComponents(
             calendar: calendar,
             timeZone: calendar.timeZone,
             year: year,
@@ -51,7 +51,7 @@ private extension WeatherTests {
             hour: hour,
             minute: minute,
             second: second
-            ).date!
+        ).date!
     }
 
 }

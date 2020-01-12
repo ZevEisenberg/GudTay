@@ -5,14 +5,10 @@
 //  Created by Zev Eisenberg on 4/16/18.
 //
 
-extension Collection {
+public extension Collection {
 
-    public func doesNotContain(where predicate: (Element) throws -> Bool) rethrows -> Bool {
-        return try !contains(where: predicate)
-    }
-
-    public func containsOnly(where predicate: (Element) throws -> Bool) rethrows -> Bool {
-        return try !contains { try !predicate($0) }
+    func doesNotContain(where predicate: (Element) throws -> Bool) rethrows -> Bool {
+        try !contains(where: predicate)
     }
 
 }

@@ -55,16 +55,16 @@ public class TableViewContainerCell<View: UIView>: UITableViewCell {
         [self, shadowView, containerView].forEach { $0.backgroundColor = .clear }
     }
 
-    @available(*, unavailable) required public init?(coder aDecoder: NSCoder) {
+    @available(*, unavailable) public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         updateShadowPath()
     }
 
-    public override func prepareForReuse() {
+    override public func prepareForReuse() {
         super.prepareForReuse()
         backgroundColor = nil
         contentView.backgroundColor = nil
@@ -73,13 +73,13 @@ public class TableViewContainerCell<View: UIView>: UITableViewCell {
         }
     }
 
-    public override var bounds: CGRect {
+    override public var bounds: CGRect {
         didSet {
             updateShadowPath()
         }
     }
 
-    public override var frame: CGRect {
+    override public var frame: CGRect {
         didSet {
             updateShadowPath()
         }

@@ -15,7 +15,7 @@ public protocol ViewRepresentable: AnyViewRepresentable {
 
 public extension ViewRepresentable {
     func makeView() -> View {
-        return View()
+        View()
     }
 }
 
@@ -26,7 +26,7 @@ public protocol AnyViewRepresentable {
 
 public extension ViewRepresentable {
     func initialView() -> UIView {
-        return makeView()
+        makeView()
     }
 
     func update(view: UIView) {

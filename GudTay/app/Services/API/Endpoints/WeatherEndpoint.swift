@@ -15,7 +15,7 @@ enum WeatherEndpoint {
         let latitude: Double
         let longitude: Double
         var path: String {
-            return "/forecast/\(apiKey)/\(latitude),\(longitude)"
+            "/forecast/\(apiKey)/\(latitude),\(longitude)"
         }
         let method: HTTPMethod = .get
     }

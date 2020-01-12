@@ -24,13 +24,13 @@ extension Observer: Hashable {
     }
 
     public static func == (lhs: Observer, rhs: Observer) -> Bool {
-        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
+        ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
     }
 }
 
-extension Observer {
+public extension Observer {
 
-    public enum Key: Hashable {
+    enum Key: Hashable {
         case entity(typeName: String, id: AnyIdentifier)
         case type(typeName: String)
     }
@@ -144,13 +144,13 @@ extension FlatCache {
 
 }
 
-extension Entity {
+public extension Entity {
 
-    public func observe(_ observation: @escaping (Self) -> Void) -> Observer? {
-        return cache?.observe(id, observation: observation)
+    func observe(_ observation: @escaping (Self) -> Void) -> Observer? {
+        cache?.observe(id, observation: observation)
     }
 
-    public static func observeAll(_ observation: @escaping ([Self]) -> Void) -> Observer? {
+    static func observeAll(_ observation: @escaping ([Self]) -> Void) -> Observer? {
         let cache = APIClient.mbta.cache
         return cache?.observe(observation: observation)
     }

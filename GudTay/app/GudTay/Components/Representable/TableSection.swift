@@ -20,8 +20,8 @@ public class TableSection {
     }
 }
 
-extension TableSection {
-    public enum HeaderFooter {
+public extension TableSection {
+    enum HeaderFooter {
         case title(String)
         case view(UIView)
 

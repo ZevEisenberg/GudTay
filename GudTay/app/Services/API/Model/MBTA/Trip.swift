@@ -18,10 +18,10 @@ public struct Trip {
 
 }
 
-extension Trip {
+public extension Trip {
 
-    public var route: Route {
-        return cache!.get(id: routeId)!
+    var route: Route {
+        cache!.get(id: routeId)!
     }
 
 }
