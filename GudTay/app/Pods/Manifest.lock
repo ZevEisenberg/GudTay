@@ -1,5 +1,4 @@
 PODS:
-  - Alamofire (4.9.1)
   - Anchorage (4.4.0)
   - BonMot (5.5)
   - OHHTTPStubs/Core (9.0.0)
@@ -28,7 +27,6 @@ PODS:
   - Then (2.6.0)
 
 DEPENDENCIES:
-  - Alamofire
   - Anchorage
   - BonMot
   - OHHTTPStubs/Swift
@@ -43,7 +41,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - Alamofire
     - Anchorage
     - BonMot
     - OHHTTPStubs
@@ -55,7 +52,6 @@ SPEC REPOS:
     - Then
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Anchorage: d7f02c4f9425b537053237aab11ae97e59b55f36
   BonMot: 58a86daf442518ff78e00cf54430fd03de37945a
   OHHTTPStubs: cb29d2a9d09a828ecb93349a2b0c64f99e0db89f
@@ -66,6 +62,6 @@ SPEC CHECKSUMS:
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
 
-PODFILE CHECKSUM: 17c46a76deb90572b6a6e0f640cf6ef679e021f4
+PODFILE CHECKSUM: 27f33a8cee42ad8644f2f7c252a34abeca766217
 
 COCOAPODS: 1.9.1

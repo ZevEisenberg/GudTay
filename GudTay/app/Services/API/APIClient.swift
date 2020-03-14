@@ -6,10 +6,10 @@
 //  Copyright © 2017 ZevEisenberg. All rights reserved.
 //
 
-import Alamofire
+import Foundation
 
 public class APIClient {
-    let manager: Alamofire.SessionManager
+    let session: URLSession
     let baseURL: URL
     let cache: FlatCache?
     let decoder: JSONDecoder
@@ -20,49 +20,18 @@ public class APIClient {
         self.decoder = decoder
         decoder.cache = cache
         configuration.httpAdditionalHeaders?[APIConstants.accept] = APIConstants.applicationJSON
-        manager = SessionManager(configuration: configuration)
+        session = URLSession(configuration: configuration)
     }
 }
 
-// MARK: - JSON
 extension APIClient {
 
-    /**
-     *For ResponseType: Empty Payload*
-
-     Perform request and optionally unwrap an error
-
-     - Parameters:
-     - endpoint: An `APIEndpoint` with an associated `ResponseType` conforming to `Decodable`
-     - completion: A closure to process the API response
-     - error: a server or serialization error
-
-     - Returns: a `DataRequest`
-     */
     @discardableResult
-    func request<Endpoint: APIEndpoint>(_ endpoint: Endpoint, completion: @escaping (_ error: Error?) -> Void) -> RequestProtocol where Endpoint.ResponseType == Payload.Empty {
-        manager.request(baseURL, endpoint: endpoint, decoder: decoder) { error in
-            completion(error)
-        }
-    }
-
-    /**
-     *For ResponseType: Decodable*
-
-     Perform request and serialize the response automatically according to your Response Type's `Decodable` conformance
-
-     - Parameters:
-     - endpoint: An `APIEndpoint` with an associated `ResponseType` conforming to `Decodable`
-     - completion: A closure to process the API response
-     - object: the decoded response object
-     - error: a server or serialization error
-
-     - Returns: a `DataRequest`
-     */
-    @discardableResult
-    func request<Endpoint: APIEndpoint>(_ endpoint: Endpoint, completion: @escaping (_ object: Endpoint.ResponseType?, _ error: Error?) -> Void) -> RequestProtocol where Endpoint.ResponseType: Decodable {
-        manager.request(baseURL, endpoint: endpoint, decoder: decoder) { (obj, error) in
-            completion(obj, error)
+    func dataTask<Endpoint: APIEndpoint>(_ endpoint: Endpoint, completion: @escaping (Result<Endpoint.ResponseType, Error>) -> Void) -> URLSessionTask where Endpoint.ResponseType: Decodable {
+        session.dataTask(baseURL, endpoint: endpoint, decoder: decoder) { result in
+            DispatchQueue.main.async {
+                completion(result)
+            }
         }
     }
 

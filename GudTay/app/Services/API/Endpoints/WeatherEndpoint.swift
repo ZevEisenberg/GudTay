@@ -5,8 +5,6 @@
 //  Created by Zev Eisenberg on 4/18/18.
 //
 
-import Alamofire
-
 enum WeatherEndpoint {
 
     struct Forecast: APIEndpoint {
@@ -17,7 +15,7 @@ enum WeatherEndpoint {
         var path: String {
             "/forecast/\(apiKey)/\(latitude),\(longitude)"
         }
-        let method: HTTPMethod = .get
+        let method = "GET"
     }
 
 }

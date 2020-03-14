@@ -6,13 +6,12 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
-import Alamofire
 import Then
 
 public protocol WeatherServiceProtocol {
 
     init(configuration: URLSessionConfiguration, decoder: JSONDecoder)
-    func predictions(_ completion: @escaping (Result<WeatherForecast>) -> Void)
+    func predictions(_ completion: @escaping (Result<WeatherForecast, Error>) -> Void)
 
 }
 
@@ -31,16 +30,9 @@ public final class WeatherService: WeatherServiceProtocol {
         })
     }
 
-    public func predictions(_ completion: @escaping (Result<WeatherForecast>) -> Void) {
+    public func predictions(_ completion: @escaping (Result<WeatherForecast, Error>) -> Void) {
         let endpoint = WeatherEndpoint.Forecast(apiKey: Constants.apiKey, latitude: 42.3601, longitude: -71.0589)
-        _ = client.request(endpoint) { (response, error) in
-            if let forecast = response {
-                completion(.success(forecast))
-            }
-            else {
-                completion(.failure(error ?? APIError.invalidResponse))
-            }
-        }
+        _ = client.dataTask(endpoint, completion: completion)
     }
 
 }

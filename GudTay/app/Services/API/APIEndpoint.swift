@@ -6,35 +6,29 @@
 //  Copyright © 2017 ZevEisenberg. All rights reserved.
 //
 
-import Alamofire
+import Foundation
 
 protocol APIEndpoint: NetworkLoggable {
     associatedtype ResponseType
 
     var path: String { get }
-    typealias QueryParam = (String, String)
-    var queryParams: [QueryParam]? { get }
-    var method: HTTPMethod { get }
-    var encoding: ParameterEncoding { get }
-    var parameters: Parameters? { get }
-    var headers: HTTPHeaders { get }
+    var queryItems: [URLQueryItem]? { get }
+    var method: String { get }
+    var parameters: [String: Any]? { get }
+    var headers: [String: String] { get }
 }
 
 extension APIEndpoint {
 
-    var encoding: ParameterEncoding {
-        JSONEncoding.default
-    }
-
-    var parameters: Parameters? {
+    var parameters: [String: Any]? {
         nil
     }
 
-    var queryParams: [QueryParam]? {
+    var queryItems: [URLQueryItem]? {
         nil
     }
 
-    var headers: HTTPHeaders {
+    var headers: [String: String] {
         [:]
     }
 

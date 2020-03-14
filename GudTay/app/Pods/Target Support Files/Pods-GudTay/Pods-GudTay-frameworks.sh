@@ -197,14 +197,12 @@ if [ -r "${ARTIFACT_LIST_FILE}" ]; then
 fi
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Anchorage/Anchorage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BonMot/BonMot.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Swiftilities/Swiftilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Then/Then.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Anchorage/Anchorage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BonMot/BonMot.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Swiftilities/Swiftilities.framework"

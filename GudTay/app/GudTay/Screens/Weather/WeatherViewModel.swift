@@ -6,19 +6,11 @@
 //  Copyright © 2016 Zev Eisenberg. All rights reserved.
 //
 
-import Alamofire
 import Foundation
 import Services
 import Then
 
 final class WeatherViewModel {
-
-    enum Result {
-
-        case success([WeatherField], ForecastBackgroundViewModel?)
-        case failure(Error)
-
-    }
 
     enum WeatherField {
 
@@ -38,14 +30,14 @@ final class WeatherViewModel {
         self.service = service
     }
 
-    func refresh(referenceDate: Date, calendar: Calendar, completion: @escaping (Result) -> Void) {
-        service.predictions() { (apiResult: Alamofire.Result<WeatherForecast>) in
+    func refresh(referenceDate: Date, calendar: Calendar, completion: @escaping (Result<(fields: [WeatherField], background: ForecastBackgroundViewModel?), Error>) -> Void) {
+        service.predictions() { (apiResult: Swift.Result<WeatherForecast, Error>) in
             switch apiResult {
             case .success(let forecast):
                 let (fields, forecastBackgroundViewModel) = WeatherViewModel.processForecast(forecast: forecast, referenceDate: referenceDate, calendar: calendar)
                 self.fields = fields
                 self.forecastBackgroundViewModel = forecastBackgroundViewModel
-                completion(.success(self.fields, self.forecastBackgroundViewModel))
+                completion(.success((fields: self.fields, background: self.forecastBackgroundViewModel)))
             case .failure(let error):
                 completion(.failure(error))
             }

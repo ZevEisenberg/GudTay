@@ -6,7 +6,6 @@
 //
 //
 
-import Alamofire
 import Swiftilities
 
 public class NetworkLog: Log {}
@@ -47,8 +46,8 @@ extension APIEndpoint {
         }
     }
 
-    func log(_ request: DataRequest) {
-        log(request.debugDescription)
+    func log(_ request: URLRequest) {
+        log(request.description)
     }
 
     func log(_ any: Any) {

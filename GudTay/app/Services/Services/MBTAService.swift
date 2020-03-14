@@ -5,7 +5,6 @@
 //  Created by Zev Eisenberg on 4/17/18.
 //
 
-import Alamofire
 import Then
 
 public class MBTAService {
@@ -23,16 +22,16 @@ public class MBTAService {
 
 public extension MBTAService {
 
-    func getPredictions(forStop stop: Identifier<Stop>, completion: @escaping(Result<[Prediction]>) -> Void) -> RequestProtocol {
+    func getPredictions(forStop stop: Identifier<Stop>, completion: @escaping(Result<[Prediction], Error>) -> Void) -> URLSessionTask {
         let endpoint = MBTAEndpoint.PredictionsByStop(stop: stop)
         client.cache?.clearCache()
-        return client.request(endpoint) { [weak self] (response, error) in
-            if let predictions = response?.data {
-                self?.client.cache?.deleteAll(Prediction.self, excluding: predictions)
-                completion(.success(predictions))
-            }
-            else {
-                completion(.failure(error ?? APIError.invalidResponse))
+        return client.dataTask(endpoint) { [weak self] result in
+            switch result {
+            case .success(let predictions):
+                self?.client.cache?.deleteAll(Prediction.self, excluding: predictions.data)
+                completion(.success(predictions.data))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }

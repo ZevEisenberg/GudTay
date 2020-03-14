@@ -32,7 +32,7 @@ enum ImageIO {
         }
     }
 
-    static func loadPersistedImage(named name: String, completion: @escaping (Result<UIImage>) -> Void) {
+    static func loadPersistedImage(named name: String, completion: @escaping (Result<UIImage, Error>) -> Void) {
         DispatchQueue.global(qos: .background).async {
             let imageURL = urlForImage(named: name)
             do {

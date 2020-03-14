@@ -15,7 +15,6 @@ public enum APIConstants {
 
     // Values
     static let applicationJSON = "application/json"
-    static let formEncoded = "application/x-www-form-urlencoded"
 
     public static let routeOfInterest: Identifier<Route> = "32"
 

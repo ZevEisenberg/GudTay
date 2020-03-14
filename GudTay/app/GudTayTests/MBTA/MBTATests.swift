@@ -35,7 +35,7 @@ class MBTATests: XCTestCase {
         let expectation = self.expectation(description: "Test Endpoint")
         _ = service.getPredictions(forStop: "6480") { result in
             XCTAssert(result.isSuccess)
-            XCTAssertEqual(result.value?.count, 4)
+            XCTAssertEqual(result.success?.count, 4)
             expectation.fulfill()
         }
         waitForExpectations(timeout: timeout, handler: nil)
