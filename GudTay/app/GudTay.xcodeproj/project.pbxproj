@@ -38,16 +38,7 @@
 		5BF393D0221E4C2300E93348 /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF393CF221E4C2300E93348 /* WeatherTests.swift */; };
 		861732D51FA28DB600C14354 /* ModalDismissBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861732D31FA28DB600C14354 /* ModalDismissBehavior.swift */; };
 		861732D81FA290F400C14354 /* ControlContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861732D71FA290F400C14354 /* ControlContainable.swift */; };
-		861732F41FA2984600C14354 /* TableCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861732F01FA2984600C14354 /* TableCellItem.swift */; };
-		861732F51FA2984600C14354 /* TableViewCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861732F11FA2984600C14354 /* TableViewCellRepresentable.swift */; };
-		861732F61FA2984600C14354 /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861732F21FA2984600C14354 /* ViewRepresentable.swift */; };
 		861732F81FA2989100C14354 /* TableViewContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861732F71FA2989000C14354 /* TableViewContainerCell.swift */; };
-		861732FA1FA29B5E00C14354 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861732F91FA29B5E00C14354 /* TableDataSource.swift */; };
-		861732FC1FA29B7300C14354 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861732FB1FA29B7300C14354 /* TableSection.swift */; };
-		861732FE1FA29BE600C14354 /* DebugMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861732FD1FA29BE600C14354 /* DebugMenuViewController.swift */; };
-		862B204C1FA11315007D33BC /* DebugMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862B204B1FA11315007D33BC /* DebugMenu.swift */; };
-		862B204E1FA11345007D33BC /* DebugTextStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862B204D1FA11345007D33BC /* DebugTextStyleViewController.swift */; };
-		8662C00A1FA2AA9900ADCBA9 /* SimpleTableCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662C0091FA2AA9900ADCBA9 /* SimpleTableCellItem.swift */; };
 		86A65AF51FA0EA2400705C14 /* Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A65AEE1FA0EA2400705C14 /* Services.framework */; };
 		86A65AF61FA0EA2400705C14 /* Services.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 86A65AEE1FA0EA2400705C14 /* Services.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		86A65B081FA0EB0600705C14 /* URLSession+GudTay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A65AFD1FA0EB0600705C14 /* URLSession+GudTay.swift */; };
@@ -67,15 +58,12 @@
 		ABC778E11DC94F4400815FB9 /* AppLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC778E01DC94F4400815FB9 /* AppLifecycle.swift */; };
 		ABC778EA1DC951B900815FB9 /* LoggingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC778E91DC951B900815FB9 /* LoggingConfiguration.swift */; };
 		ABF84F811DC97653002DB24D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABF84F801DC97653002DB24D /* Localizable.strings */; };
-		ABF84F8C1DC99CFD002DB24D /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84F8A1DC99CFD002DB24D /* Appearance.swift */; };
-		ABF84F8D1DC99CFD002DB24D /* StringStyle+GudTay.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84F8B1DC99CFD002DB24D /* StringStyle+GudTay.swift */; };
 		ABF84F911DC99D33002DB24D /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84F8F1DC99D33002DB24D /* Localized.swift */; };
 		ABF84F921DC99D33002DB24D /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84F901DC99D33002DB24D /* Asset.swift */; };
 		ABF84FA01DCBAB1B002DB24D /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84F9F1DCBAB1B002DB24D /* TestConstants.swift */; };
 		ABF84FA41DCBCD89002DB24D /* MBTATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84FA31DCBCD89002DB24D /* MBTATests.swift */; };
 		ABF84FA61DCBCEA1002DB24D /* Payloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84FA51DCBCEA1002DB24D /* Payloads.swift */; };
 		BE2809301E8038BE006E50D5 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28092F1E8038BE006E50D5 /* ContentViewController.swift */; };
-		BE4C21EB1E81970A00645143 /* DebugMenuConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4C21EA1E81970A00645143 /* DebugMenuConfiguration.swift */; };
 		CA70337BE55AFBD7BB860A57 /* Pods_Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08235A7D8DFD1D8D9BD08C1 /* Pods_Utilities.framework */; };
 		CD24C47820854D7B00380C9E /* predictions.json in Resources */ = {isa = PBXBuildFile; fileRef = CD24C475208548AD00380C9E /* predictions.json */; };
 		CD24C47A20855A9800380C9E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24C47920855A9800380C9E /* UIView+Extensions.swift */; };
@@ -242,16 +230,7 @@
 		5F0D3C4E4A0826BFCB6D1F0A /* Pods_Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		861732D31FA28DB600C14354 /* ModalDismissBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalDismissBehavior.swift; sourceTree = "<group>"; };
 		861732D71FA290F400C14354 /* ControlContainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlContainable.swift; sourceTree = "<group>"; };
-		861732F01FA2984600C14354 /* TableCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellItem.swift; sourceTree = "<group>"; };
-		861732F11FA2984600C14354 /* TableViewCellRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellRepresentable.swift; sourceTree = "<group>"; };
-		861732F21FA2984600C14354 /* ViewRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
 		861732F71FA2989000C14354 /* TableViewContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewContainerCell.swift; sourceTree = "<group>"; };
-		861732F91FA29B5E00C14354 /* TableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
-		861732FB1FA29B7300C14354 /* TableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
-		861732FD1FA29BE600C14354 /* DebugMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugMenuViewController.swift; sourceTree = "<group>"; };
-		862B204B1FA11315007D33BC /* DebugMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugMenu.swift; sourceTree = "<group>"; };
-		862B204D1FA11345007D33BC /* DebugTextStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugTextStyleViewController.swift; sourceTree = "<group>"; };
-		8662C0091FA2AA9900ADCBA9 /* SimpleTableCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableCellItem.swift; sourceTree = "<group>"; };
 		86A65AEE1FA0EA2400705C14 /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A65AF11FA0EA2400705C14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A65AFD1FA0EB0600705C14 /* URLSession+GudTay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+GudTay.swift"; sourceTree = "<group>"; };
@@ -276,8 +255,6 @@
 		ABC778E01DC94F4400815FB9 /* AppLifecycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLifecycle.swift; sourceTree = "<group>"; };
 		ABC778E91DC951B900815FB9 /* LoggingConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingConfiguration.swift; sourceTree = "<group>"; };
 		ABF84F801DC97653002DB24D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		ABF84F8A1DC99CFD002DB24D /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
-		ABF84F8B1DC99CFD002DB24D /* StringStyle+GudTay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StringStyle+GudTay.swift"; sourceTree = "<group>"; };
 		ABF84F8F1DC99D33002DB24D /* Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		ABF84F901DC99D33002DB24D /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		ABF84F9F1DCBAB1B002DB24D /* TestConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
@@ -287,7 +264,6 @@
 		B1596421EF7DA328A955D16B /* Pods_GudTay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GudTay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBB55E00414355A82A6FD3FD /* Pods-GudTay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTay.debug.xcconfig"; path = "Target Support Files/Pods-GudTay/Pods-GudTay.debug.xcconfig"; sourceTree = "<group>"; };
 		BE28092F1E8038BE006E50D5 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
-		BE4C21EA1E81970A00645143 /* DebugMenuConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugMenuConfiguration.swift; sourceTree = "<group>"; };
 		C08235A7D8DFD1D8D9BD08C1 /* Pods_Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD24C475208548AD00380C9E /* predictions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = predictions.json; sourceTree = "<group>"; };
 		CD24C47920855A9800380C9E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -487,7 +463,6 @@
 			children = (
 				861732D11FA28DB600C14354 /* Behaviors */,
 				209BE24F2051C758004CF0FF /* Protocols */,
-				861732EE1FA2984600C14354 /* Representable */,
 				861732D61FA290F400C14354 /* Views */,
 			);
 			path = Components;
@@ -509,29 +484,6 @@
 				861732F71FA2989000C14354 /* TableViewContainerCell.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		861732EE1FA2984600C14354 /* Representable */ = {
-			isa = PBXGroup;
-			children = (
-				8662C0091FA2AA9900ADCBA9 /* SimpleTableCellItem.swift */,
-				861732F01FA2984600C14354 /* TableCellItem.swift */,
-				861732F91FA29B5E00C14354 /* TableDataSource.swift */,
-				861732FB1FA29B7300C14354 /* TableSection.swift */,
-				861732F11FA2984600C14354 /* TableViewCellRepresentable.swift */,
-				861732F21FA2984600C14354 /* ViewRepresentable.swift */,
-			);
-			path = Representable;
-			sourceTree = "<group>";
-		};
-		862B204A1FA1130B007D33BC /* Debug */ = {
-			isa = PBXGroup;
-			children = (
-				862B204B1FA11315007D33BC /* DebugMenu.swift */,
-				861732FD1FA29BE600C14354 /* DebugMenuViewController.swift */,
-				862B204D1FA11345007D33BC /* DebugTextStyleViewController.swift */,
-			);
-			path = Debug;
 			sourceTree = "<group>";
 		};
 		86A65AEF1FA0EA2400705C14 /* Services */ = {
@@ -678,8 +630,6 @@
 			isa = PBXGroup;
 			children = (
 				ABC778E21DC94F9300815FB9 /* AppLifecycle */,
-				ABF84F891DC99CFD002DB24D /* Appearance */,
-				862B204A1FA1130B007D33BC /* Debug */,
 				ABC778781DC90B7A00815FB9 /* AppDelegate.swift */,
 			);
 			path = Application;
@@ -721,19 +671,9 @@
 			isa = PBXGroup;
 			children = (
 				ABC778E01DC94F4400815FB9 /* AppLifecycle.swift */,
-				BE4C21EA1E81970A00645143 /* DebugMenuConfiguration.swift */,
 				ABC778E91DC951B900815FB9 /* LoggingConfiguration.swift */,
 			);
 			path = AppLifecycle;
-			sourceTree = "<group>";
-		};
-		ABF84F891DC99CFD002DB24D /* Appearance */ = {
-			isa = PBXGroup;
-			children = (
-				ABF84F8A1DC99CFD002DB24D /* Appearance.swift */,
-				ABF84F8B1DC99CFD002DB24D /* StringStyle+GudTay.swift */,
-			);
-			path = Appearance;
 			sourceTree = "<group>";
 		};
 		ABF84F8E1DC99D33002DB24D /* Generated */ = {
@@ -1509,20 +1449,14 @@
 				2DFF1CF11E8950F000B1AD70 /* ContentCoordinator.swift in Sources */,
 				5B85E5BC21DABF61009A2202 /* DoodleService.swift in Sources */,
 				CDB539B02086AF3D006EE89E /* MBTARouteView.swift in Sources */,
-				ABF84F8D1DC99CFD002DB24D /* StringStyle+GudTay.swift in Sources */,
-				8662C00A1FA2AA9900ADCBA9 /* SimpleTableCellItem.swift in Sources */,
 				CDB61ED7208833D700E0E99C /* WeatherCell.swift in Sources */,
-				861732F61FA2984600C14354 /* ViewRepresentable.swift in Sources */,
 				ABC778EA1DC951B900815FB9 /* LoggingConfiguration.swift in Sources */,
 				CD6B88B320863BEE0064F31A /* MBTACoordinator.swift in Sources */,
-				BE4C21EB1E81970A00645143 /* DebugMenuConfiguration.swift in Sources */,
 				5BC144C721ED7F1A0015ACBC /* CGContext+Utilities.swift in Sources */,
 				2D4FA8F71E85752B006C38ED /* Coordinator.swift in Sources */,
 				2D4FA8F51E8574F9006C38ED /* AppCoordinator.swift in Sources */,
-				861732F41FA2984600C14354 /* TableCellItem.swift in Sources */,
 				CDB61ECE2088332E00E0E99C /* Date+Utilities.swift in Sources */,
 				861732F81FA2989100C14354 /* TableViewContainerCell.swift in Sources */,
-				861732F51FA2984600C14354 /* TableViewCellRepresentable.swift in Sources */,
 				ABC778E11DC94F4400815FB9 /* AppLifecycle.swift in Sources */,
 				CDB539C920879738006EE89E /* Array+Utilities.swift in Sources */,
 				CDB539D22087E132006EE89E /* LogViewController.swift in Sources */,
@@ -1540,27 +1474,21 @@
 				CDB539CC2087DFA1006EE89E /* ClockView.swift in Sources */,
 				209BE2512051C768004CF0FF /* Actionable.swift in Sources */,
 				861732D81FA290F400C14354 /* ControlContainable.swift in Sources */,
-				861732FA1FA29B5E00C14354 /* TableDataSource.swift in Sources */,
 				CDB539B22086AF51006EE89E /* MBTAHeaderView.swift in Sources */,
 				5B85E5B621DA758B009A2202 /* DoodleViewModel.swift in Sources */,
-				861732FC1FA29B7300C14354 /* TableSection.swift in Sources */,
 				CDB539CE2087DFEA006EE89E /* ClockTime.swift in Sources */,
-				ABF84F8C1DC99CFD002DB24D /* Appearance.swift in Sources */,
 				CD6B88B12086366A0064F31A /* MBTAViewController.swift in Sources */,
 				5B85E5BA21DABD61009A2202 /* DoodleViewController.swift in Sources */,
 				5B357A9321E40EE0003DBFC4 /* ToggleButton.swift in Sources */,
 				CDB61EDB208833D700E0E99C /* SunIntervalView.swift in Sources */,
 				ABC778791DC90B7A00815FB9 /* AppDelegate.swift in Sources */,
-				862B204C1FA11315007D33BC /* DebugMenu.swift in Sources */,
 				CDB539C7208795AD006EE89E /* CGPath+Utilities.swift in Sources */,
 				CDB61EC82088319200E0E99C /* WeatherViewController.swift in Sources */,
 				BE2809301E8038BE006E50D5 /* ContentViewController.swift in Sources */,
 				CDB539D02087E050006EE89E /* GudTayView.swift in Sources */,
-				862B204E1FA11345007D33BC /* DebugTextStyleViewController.swift in Sources */,
 				86A65B201FA0F6DB00705C14 /* UserDefaults+Utility.swift in Sources */,
 				5BC144C521ED74D20015ACBC /* CATransaction+Utilities.swift in Sources */,
 				CDB539B82086B15B006EE89E /* BusHeaderView.swift in Sources */,
-				861732FE1FA29BE600C14354 /* DebugMenuViewController.swift in Sources */,
 				CD24C47A20855A9800380C9E /* UIView+Extensions.swift in Sources */,
 				CDB61ECA208831DE00E0E99C /* WeatherViewModel.swift in Sources */,
 				CDB61EDE2088343100E0E99C /* UICollectionReusableView+Utilities.swift in Sources */,
