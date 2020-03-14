@@ -46,7 +46,7 @@ final class DebugTextStyleViewController: UIViewController {
         scrollView.addSubview(stackView)
         scrollView.edgeAnchors == edgeAnchors
         stackView.verticalAnchors == scrollView.verticalAnchors + 20
-        stackView.horizontalAnchors == horizontalAnchors + 20
+        stackView.horizontalAnchors == view.horizontalAnchors + 20
 
         for style in textStyles {
             let label = UILabel()
