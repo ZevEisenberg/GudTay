@@ -68,6 +68,7 @@ internal enum Asset {
     internal static let gun = ImageAsset(name: "Doodle/gun")
   }
   internal static let gudTay = ImageAsset(name: "gud-tay")
+  internal static let wifi = ImageAsset(name: "wifi")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
