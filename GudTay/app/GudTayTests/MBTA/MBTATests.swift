@@ -13,7 +13,7 @@ import XCTest
 class MBTATests: XCTestCase {
     let service: MBTAService = {
         let configuration = URLSessionConfiguration.default
-        OHHTTPStubs.setEnabled(true, for: configuration)
+        HTTPStubs.setEnabled(true, for: configuration)
         let service = MBTAService(configuration: configuration)
         return service
     }()
@@ -24,12 +24,12 @@ class MBTATests: XCTestCase {
 
     override func tearDown() {
         super.tearDown()
-        OHHTTPStubs.removeAllStubs()
+        HTTPStubs.removeAllStubs()
     }
 
     func testPredictions() {
         stub(condition: pathStartsWith("/predictions")) { _ in
-            OHHTTPStubsResponse(data: Payloads.MBTA.predictions, statusCode: 200, headers: nil)
+            HTTPStubsResponse(data: Payloads.MBTA.predictions, statusCode: 200, headers: nil)
         }
 
         let expectation = self.expectation(description: "Test Endpoint")
