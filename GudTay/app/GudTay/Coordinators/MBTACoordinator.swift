@@ -10,6 +10,7 @@ import Services
 import Swiftilities
 
 private let refreshInterval: TimeInterval = 30 // should be 30
+private let stop: Identifier<Stop> = "6480" // Hyde Park Ave @ Mt Hope St
 
 final class MBTACoordinator: NSObject, Coordinator {
 
@@ -18,6 +19,7 @@ final class MBTACoordinator: NSObject, Coordinator {
     private let service: Service
 
     private weak var rootViewController: UIViewController?
+    private weak var mbtaViewController: MBTAViewController?
 
     init(service: Service) {
         self.service = service
@@ -27,22 +29,25 @@ final class MBTACoordinator: NSObject, Coordinator {
         assert(subview.isDescendant(of: rootViewController.view))
         self.rootViewController = rootViewController
         let vc = MBTAViewController()
+        mbtaViewController = vc
         rootViewController.addChild(vc)
         subview.addSubview(vc.view)
         vc.view.edgeAnchors == subview.edgeAnchors
-        let stop: Identifier<Stop> = "6480" // Hyde Park Ave @ Mt Hope St
 
-        Timer.scheduledTimer(withTimeInterval: refreshInterval, repeats: true, block: { [unowned self] _ in
-            _ = self.service.getPredictions(forStop: stop) { result in
-                switch result {
-                case .success(let predictions):
-                    vc.data = (predictions: predictions, date: Date())
-                case .failure(let error):
-                    Log.error("Error refreshing predictions: \(error)")
-                }
-            }
+        Timer.scheduledTimer(withTimeInterval: refreshInterval, repeats: true, block: { [weak self] _ in
+            self?.refresh()
         }).fire() // fire once initially
+    }
 
+    func refresh() {
+        _ = self.service.getPredictions(forStop: stop) { result in
+            switch result {
+            case .success(let predictions):
+                self.mbtaViewController?.data = (predictions: predictions, date: Date())
+            case .failure(let error):
+                Log.error("Error refreshing predictions: \(error)")
+            }
+        }
     }
 
 }

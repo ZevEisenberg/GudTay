@@ -75,24 +75,28 @@ final class WeatherViewController: UIViewController {
         super.viewDidAppear(animated)
 
         Timer.scheduledTimer(withTimeInterval: refreshInterval, repeats: true, block: { [weak self] _ in
-            self?.updateBackgroundForScrollPosition()
-            self?.viewModel.refresh(referenceDate: Date(), calendar: .autoupdatingCurrent) { result in
-                self?.restartScrollBackTimer()
-                switch result {
-                case let .success(_, forecastBackgroundViewModel):
-                    self?.collectionView.reloadData()
-                    self?.collectionView.collectionViewLayout.invalidateLayout()
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0 / 60.0) {
-                        self?.updateBackgroundForScrollPosition()
-                    }
-                    self?.forecastBackground.viewModel = forecastBackgroundViewModel
-                    let color = self?.forecastBackground.colorOfUpperLeadingPixel
-                    self?.view.backgroundColor = color
-                case .failure(let error):
-                    Log.error("Error refreshing weather: \(error)")
-                }
-            }
+            self?.refresh()
         }).fire() // fire once initially
+    }
+
+    func refresh() {
+        updateBackgroundForScrollPosition()
+        viewModel.refresh(referenceDate: Date(), calendar: .autoupdatingCurrent) { result in
+            self.restartScrollBackTimer()
+            switch result {
+            case let .success(_, forecastBackgroundViewModel):
+                self.collectionView.reloadData()
+                self.collectionView.collectionViewLayout.invalidateLayout()
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0 / 60.0) {
+                    self.updateBackgroundForScrollPosition()
+                }
+                self.forecastBackground.viewModel = forecastBackgroundViewModel
+                let color = self.forecastBackground.colorOfUpperLeadingPixel
+                self.view.backgroundColor = color
+            case .failure(let error):
+                Log.error("Error refreshing weather: \(error)")
+            }
+        }
     }
 
 }

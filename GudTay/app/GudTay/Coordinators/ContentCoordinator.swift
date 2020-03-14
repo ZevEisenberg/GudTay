@@ -7,6 +7,7 @@
 //
 
 import Anchorage
+import Reachability
 import Services
 import UIKit
 
@@ -22,6 +23,8 @@ class ContentCoordinator: NSObject, Coordinator {
 
     var mbtaCoordinator: MBTACoordinator?
     var weatherCoordinator: WeatherCoordinator?
+
+    private let reachability = try! Reachability() // swiftlint:disable:this force_try
 
     init(_ baseController: UIViewController, mbtaService: MBTAService, weatherService: WeatherServiceProtocol) {
         self.baseController = baseController
@@ -58,6 +61,24 @@ class ContentCoordinator: NSObject, Coordinator {
 
             self.weatherCoordinator = WeatherCoordinator(service: self.weatherService)
             self.weatherCoordinator?.start(in: contentViewController, subview: contentViewController.weatherContainer)
+
+            self.reachability.whenUnreachable = { [weak self] _ in
+                self?.contentViewController?.setOfflineViewVisible(true)
+            }
+
+            self.reachability.whenReachable = { [weak self] _ in
+                self?.contentViewController?.setOfflineViewVisible(false)
+                self?.mbtaCoordinator?.refresh()
+                self?.weatherCoordinator?.refresh()
+            }
+
+            do {
+                try self.reachability.startNotifier()
+            }
+            catch {
+                LogService.add(message: "Error starting Reachability: \(error)")
+                assertionFailure("Error starting Reachability: \(error)")
+            }
 
             completion?()
         })

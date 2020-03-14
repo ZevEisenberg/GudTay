@@ -17,19 +17,7 @@ class ContentViewController: UIViewController {
     let calvinContainer = UIView(axId: "calvinContainer")
     let weatherContainer = UIView(axId: "weatherContainer")
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-
-        // MBTA
-
-        // Weather
-
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-
-    }
-
-    @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    lazy var offlineView = OfflineView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +39,14 @@ class ContentViewController: UIViewController {
         mainStackView.horizontalAnchors == view.horizontalAnchors
         mainStackView.verticalAnchors == view.safeAreaLayoutGuide.verticalAnchors
         weatherContainer.heightAnchor == 205
+    }
+
+    func setOfflineViewVisible(_ visible: Bool) {
+        offlineView.removeFromSuperview()
+        if visible {
+            view.addSubview(offlineView)
+            offlineView.edgeAnchors == view.safeAreaLayoutGuide.edgeAnchors
+        }
     }
 
 }
