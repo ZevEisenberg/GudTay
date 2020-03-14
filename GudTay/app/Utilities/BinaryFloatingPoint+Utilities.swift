@@ -19,7 +19,7 @@ public extension BinaryFloatingPoint {
 
     func ceiledToNearest<I: BinaryFloatingPoint>(_ increment: I) -> Self {
         precondition(increment > 0)
-        return roundedToNearest(increment, using: self > 0 ? .up : .down)
+        return roundedToNearest(increment, using: .awayFromZero)
     }
 
 }
