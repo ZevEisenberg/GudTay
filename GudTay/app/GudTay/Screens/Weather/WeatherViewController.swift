@@ -84,7 +84,8 @@ final class WeatherViewController: UIViewController {
         viewModel.refresh(referenceDate: Date(), calendar: .autoupdatingCurrent) { result in
             self.restartScrollBackTimer()
             switch result {
-            case let .success(_, forecastBackgroundViewModel):
+            case let .success(tuple):
+                let (_, forecastBackgroundViewModel) = tuple
                 self.collectionView.reloadData()
                 self.collectionView.collectionViewLayout.invalidateLayout()
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0 / 60.0) {
