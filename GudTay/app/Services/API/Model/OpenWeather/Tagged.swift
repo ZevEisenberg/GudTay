@@ -25,3 +25,9 @@ public extension OpenWeatherAPI {
 }
 
 extension OpenWeatherAPI.Tagged: RawRepresentable {}
+
+extension OpenWeatherAPI.Tagged: ExpressibleByIntegerLiteral where RawValue: ExpressibleByIntegerLiteral, RawValue.IntegerLiteralType == IntegerLiteralType {
+    public init(integerLiteral value: RawValue.IntegerLiteralType) {
+        self.init(rawValue: .init(integerLiteral: value))
+    }
+}
