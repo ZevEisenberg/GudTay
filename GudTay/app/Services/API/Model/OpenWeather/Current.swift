@@ -5,10 +5,12 @@
 //  Created by Zev Eisenberg on 5/28/20.
 //
 
+import Foundation
+
 public extension OpenWeatherAPI {
 
     struct Current: Codable {
-        public let dt: Int
+        public let date: Date
         public let sunrise: Int
         public let sunset: Int
         public let temp: Double
@@ -24,11 +26,17 @@ public extension OpenWeatherAPI {
         public let weather: [Weather]
 
         enum CodingKeys: String, CodingKey {
-            case dt, sunrise, sunset, temp
+            case date = "dt"
+            case sunrise
+            case sunset
+            case temp
             case feelsLike
-            case pressure, humidity
+            case pressure
+            case humidity
             case dewPoint
-            case uvi, clouds, visibility
+            case uvi
+            case clouds
+            case visibility
             case windSpeed
             case windDeg
             case windGust

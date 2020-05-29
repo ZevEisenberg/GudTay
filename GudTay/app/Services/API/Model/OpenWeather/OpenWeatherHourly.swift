@@ -5,10 +5,12 @@
 //  Created by Zev Eisenberg on 5/28/20.
 //
 
+import Foundation
+
 public extension OpenWeatherAPI {
 
     struct Hourly: Codable {
-        public let dt: Int
+        public let date: Date
         public let temp: Double
         public let feelsLike: Double
         public let pressure: Int
@@ -21,7 +23,7 @@ public extension OpenWeatherAPI {
         public let rain: Rain?
 
         enum CodingKeys: String, CodingKey {
-            case dt
+            case date = "dt"
             case temp
             case feelsLike
             case pressure
