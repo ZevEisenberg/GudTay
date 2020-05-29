@@ -34,7 +34,7 @@
 		5BC144C721ED7F1A0015ACBC /* CGContext+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC144C621ED7F1A0015ACBC /* CGContext+Utilities.swift */; };
 		5BF393D0221E4C2300E93348 /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF393CF221E4C2300E93348 /* WeatherTests.swift */; };
 		768F01D42363E39ECBDA320D /* Pods_GudTayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10690B914E1BCAB65173975 /* Pods_GudTayTests.framework */; };
-		7A432B5A241D750B001D7F1F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 7A432B59241D750B001D7F1F /* SwiftPackageProductDependency */; };
+		7A432B5A241D750B001D7F1F /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 7A432B59241D750B001D7F1F /* Reachability */; };
 		7A432B5C241D7556001D7F1F /* OfflineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A432B5B241D7556001D7F1F /* OfflineView.swift */; };
 		861732D51FA28DB600C14354 /* ModalDismissBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861732D31FA28DB600C14354 /* ModalDismissBehavior.swift */; };
 		861732D81FA290F400C14354 /* ControlContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861732D71FA290F400C14354 /* ControlContainable.swift */; };
@@ -361,7 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86A65AF51FA0EA2400705C14 /* Services.framework in Frameworks */,
-				7A432B5A241D750B001D7F1F /* BuildFile in Frameworks */,
+				7A432B5A241D750B001D7F1F /* Reachability in Frameworks */,
 				CD31A7C920853BA900C26A7E /* Utilities.framework in Frameworks */,
 				DEC486AC77CA71862094786E /* Pods_GudTay.framework in Frameworks */,
 			);
@@ -974,7 +974,7 @@
 			);
 			name = GudTay;
 			packageProductDependencies = (
-				7A432B59241D750B001D7F1F /* SwiftPackageProductDependency */,
+				7A432B59241D750B001D7F1F /* Reachability */,
 			);
 			productName = GudTay;
 			productReference = ABC778751DC90B7A00815FB9 /* GudTay.app */;
@@ -1092,7 +1092,7 @@
 			);
 			mainGroup = ABC7786C1DC90B7A00815FB9;
 			packageReferences = (
-				7A432B58241D750B001D7F1F /* RemoteSwiftPackageReference */,
+				7A432B58241D750B001D7F1F /* XCRemoteSwiftPackageReference "Reachability.swift" */,
 			);
 			productRefGroup = ABC778761DC90B7A00815FB9 /* Products */;
 			projectDirPath = "";
@@ -1173,9 +1173,11 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/GudTay/Resources/Sourcery/actionable.swifttemplate",
 			);
 			name = Sourcery;
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/GudTay/Resources/Generated/Actionable+AutoConformance.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1190,6 +1192,10 @@
 			);
 			name = SwiftGen;
 			outputPaths = (
+				"$(SRCROOT)/GudTay/Resources/Generated/Asset.swift",
+				"$(SRCROOT)/GudTay/Resources/Assets.xcassets",
+				"$(SRCROOT)/GudTay/Resources/Generated/Localized.swift",
+				"$(SRCROOT)/GudTay/Resources/Localizable.strings",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1298,9 +1304,11 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Services/Sourcery/JSONAPIResourceType+ImportIncluded.swifttemplate",
 			);
 			name = Sourcery;
 			outputPaths = (
+				"$(SRCROOT)/Services/API/JSONAPI/JSONAPIResourceType+ImportIncluded.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1315,6 +1323,8 @@
 			);
 			name = SwiftGen;
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Services/Resources/Generated/Asset.swift",
+				"$(DERIVED_FILE_DIR)/Services/Resources/Assets.xcassets",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2004,7 +2014,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7A432B58241D750B001D7F1F /* RemoteSwiftPackageReference */ = {
+		7A432B58241D750B001D7F1F /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:ashleymills/Reachability.swift.git";
 			requirement = {
@@ -2015,9 +2025,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7A432B59241D750B001D7F1F /* SwiftPackageProductDependency */ = {
+		7A432B59241D750B001D7F1F /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7A432B58241D750B001D7F1F /* RemoteSwiftPackageReference */;
+			package = 7A432B58241D750B001D7F1F /* XCRemoteSwiftPackageReference "Reachability.swift" */;
 			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
