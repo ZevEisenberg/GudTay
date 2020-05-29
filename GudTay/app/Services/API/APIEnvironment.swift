@@ -34,4 +34,8 @@ extension APIEnvironment {
         URL(string: "https://api.darksky.net")!
     }
 
+    var openWeatherUrl: URL {
+        URL(string: "https://api.openweathermap.org/data/2.5")!
+    }
+
 }

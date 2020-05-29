@@ -82,6 +82,18 @@
 		CD31A7CA20853BA900C26A7E /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD31A7B420853BA900C26A7E /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD31A7D620853BBE00C26A7E /* Collection+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A7D520853BBE00C26A7E /* Collection+Utilities.swift */; };
 		CD31A7D720853C3B00C26A7E /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD31A7B420853BA900C26A7E /* Utilities.framework */; };
+		CD39CFEC24809E5E000D9973 /* OpenWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39CFEB24809E5E000D9973 /* OpenWeatherService.swift */; };
+		CD39CFEE24809F44000D9973 /* OpenWeather_forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = CD39CFED24809F44000D9973 /* OpenWeather_forecast.json */; };
+		CD39CFF124809FC1000D9973 /* OpenWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39CFF024809FC1000D9973 /* OpenWeatherTests.swift */; };
+		CD39CFF32480A088000D9973 /* OpenWeatherEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39CFF22480A088000D9973 /* OpenWeatherEndpoint.swift */; };
+		CD39D00F2480A39C000D9973 /* OpenWeatherHourly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D0062480A39B000D9973 /* OpenWeatherHourly.swift */; };
+		CD39D0102480A39C000D9973 /* Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D0072480A39C000D9973 /* Current.swift */; };
+		CD39D0122480A39C000D9973 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D0092480A39C000D9973 /* Main.swift */; };
+		CD39D0132480A39C000D9973 /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D00A2480A39C000D9973 /* Description.swift */; };
+		CD39D0142480A39C000D9973 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D00B2480A39C000D9973 /* Weather.swift */; };
+		CD39D0152480A39C000D9973 /* OneCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D00C2480A39C000D9973 /* OneCall.swift */; };
+		CD39D0172480A39C000D9973 /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D00E2480A39C000D9973 /* Rain.swift */; };
+		CD39D0192480A3E9000D9973 /* OpenWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D0182480A3E9000D9973 /* OpenWeatherAPI.swift */; };
 		CD6B88A12085872B0064F31A /* MBTAEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88A02085872B0064F31A /* MBTAEndpoint.swift */; };
 		CD6B88A4208587680064F31A /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88A3208587680064F31A /* Stop.swift */; };
 		CD6B88A6208588BE0064F31A /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88A5208588BE0064F31A /* Route.swift */; };
@@ -282,6 +294,18 @@
 		CD31A7C520853BA900C26A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD31A7D520853BBE00C26A7E /* Collection+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Utilities.swift"; sourceTree = "<group>"; };
 		CD31A7D820853CD200C26A7E /* Sourcery */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sourcery; sourceTree = "<group>"; };
+		CD39CFEB24809E5E000D9973 /* OpenWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherService.swift; sourceTree = "<group>"; };
+		CD39CFED24809F44000D9973 /* OpenWeather_forecast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OpenWeather_forecast.json; sourceTree = "<group>"; };
+		CD39CFF024809FC1000D9973 /* OpenWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherTests.swift; sourceTree = "<group>"; };
+		CD39CFF22480A088000D9973 /* OpenWeatherEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherEndpoint.swift; sourceTree = "<group>"; };
+		CD39D0062480A39B000D9973 /* OpenWeatherHourly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherHourly.swift; sourceTree = "<group>"; };
+		CD39D0072480A39C000D9973 /* Current.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Current.swift; sourceTree = "<group>"; };
+		CD39D0092480A39C000D9973 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		CD39D00A2480A39C000D9973 /* Description.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
+		CD39D00B2480A39C000D9973 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		CD39D00C2480A39C000D9973 /* OneCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneCall.swift; sourceTree = "<group>"; };
+		CD39D00E2480A39C000D9973 /* Rain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rain.swift; sourceTree = "<group>"; };
+		CD39D0182480A3E9000D9973 /* OpenWeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherAPI.swift; sourceTree = "<group>"; };
 		CD6B88A02085872B0064F31A /* MBTAEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTAEndpoint.swift; sourceTree = "<group>"; };
 		CD6B88A3208587680064F31A /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		CD6B88A5208588BE0064F31A /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -624,6 +648,7 @@
 				5B85E5B221DA7523009A2202 /* Drawing */,
 				ABF84F9E1DCBAB0A002DB24D /* Helpers */,
 				ABF84F9B1DCBA329002DB24D /* MBTA */,
+				CD39CFEF24809FA3000D9973 /* OpenWeather */,
 				CD24C4742085488D00380C9E /* Stubs */,
 				5BF393CE221E4C1000E93348 /* Weather */,
 				ABC7788F1DC90B7A00815FB9 /* Info.plist */,
@@ -714,6 +739,7 @@
 			isa = PBXGroup;
 			children = (
 				CD24C475208548AD00380C9E /* predictions.json */,
+				CD39CFED24809F44000D9973 /* OpenWeather_forecast.json */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -735,6 +761,7 @@
 				CD6B88A2208587570064F31A /* MBTA */,
 				CD31A7A120853A8500C26A7E /* Meta */,
 				CDB539D62087E5E3006EE89E /* Weather */,
+				CD39CFEA24809E3A000D9973 /* OpenWeather */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -744,6 +771,7 @@
 			children = (
 				CD6B88A02085872B0064F31A /* MBTAEndpoint.swift */,
 				CDB61E9E2087E75E00E0E99C /* WeatherEndpoint.swift */,
+				CD39CFF22480A088000D9973 /* OpenWeatherEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -791,6 +819,29 @@
 			path = UtilitiesTests;
 			sourceTree = "<group>";
 		};
+		CD39CFEA24809E3A000D9973 /* OpenWeather */ = {
+			isa = PBXGroup;
+			children = (
+				CD39D0072480A39C000D9973 /* Current.swift */,
+				CD39D00A2480A39C000D9973 /* Description.swift */,
+				CD39D0062480A39B000D9973 /* OpenWeatherHourly.swift */,
+				CD39D0092480A39C000D9973 /* Main.swift */,
+				CD39D00C2480A39C000D9973 /* OneCall.swift */,
+				CD39D00E2480A39C000D9973 /* Rain.swift */,
+				CD39D00B2480A39C000D9973 /* Weather.swift */,
+				CD39D0182480A3E9000D9973 /* OpenWeatherAPI.swift */,
+			);
+			path = OpenWeather;
+			sourceTree = "<group>";
+		};
+		CD39CFEF24809FA3000D9973 /* OpenWeather */ = {
+			isa = PBXGroup;
+			children = (
+				CD39CFF024809FC1000D9973 /* OpenWeatherTests.swift */,
+			);
+			path = OpenWeather;
+			sourceTree = "<group>";
+		};
 		CD6B88A2208587570064F31A /* MBTA */ = {
 			isa = PBXGroup;
 			children = (
@@ -819,6 +870,7 @@
 				CDB539D32087E171006EE89E /* LogService.swift */,
 				CD6B88B520863C380064F31A /* MBTAService.swift */,
 				CDB539D72087E5FC006EE89E /* WeatherService.swift */,
+				CD39CFEB24809E5E000D9973 /* OpenWeatherService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1133,6 +1185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD24C47820854D7B00380C9E /* predictions.json in Resources */,
+				CD39CFEE24809F44000D9973 /* OpenWeather_forecast.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1400,11 +1453,13 @@
 			files = (
 				CDB61EAB2087EA8D00E0E99C /* WeatherProtocols.swift in Sources */,
 				CD31A79A208538FE00C26A7E /* APIEndpoint+Codable.swift in Sources */,
+				CD39CFEC24809E5E000D9973 /* OpenWeatherService.swift in Sources */,
 				CDB61E9F2087E75E00E0E99C /* WeatherEndpoint.swift in Sources */,
 				CD31A7AC20853B0900C26A7E /* AnyIdentifier.swift in Sources */,
 				CDB61EBE2087ECFE00E0E99C /* NearestStorm.swift in Sources */,
 				CDB61EC02087ED3000E0E99C /* Almanac.swift in Sources */,
 				86A65B0C1FA0EB0600705C14 /* APIEndpoint+Logging.swift in Sources */,
+				CD39D0142480A39C000D9973 /* Weather.swift in Sources */,
 				86A65B191FA0F22B00705C14 /* Formatters.swift in Sources */,
 				CDB61EBC2087ECD800E0E99C /* Temperature.swift in Sources */,
 				CD31A7A820853AD100C26A7E /* Identifier.swift in Sources */,
@@ -1415,15 +1470,20 @@
 				CDB539D42087E171006EE89E /* LogService.swift in Sources */,
 				86A65B0B1FA0EB0600705C14 /* APIConstants.swift in Sources */,
 				CD6B88A8208589F30064F31A /* Trip.swift in Sources */,
+				CD39D0152480A39C000D9973 /* OneCall.swift in Sources */,
 				86A65B091FA0EB0600705C14 /* APIClient+GudTay.swift in Sources */,
 				CDB61EA92087EA4B00E0E99C /* Minutely.swift in Sources */,
+				CD39D0122480A39C000D9973 /* Main.swift in Sources */,
 				CDB539D82087E5FC006EE89E /* WeatherService.swift in Sources */,
 				CD31A794208536EE00C26A7E /* JSONAPIPayload.swift in Sources */,
 				CDB61EA12087E7F200E0E99C /* WeatherForecast.swift in Sources */,
 				86A65B081FA0EB0600705C14 /* URLSession+GudTay.swift in Sources */,
 				CD31A7982085384200C26A7E /* JSONEncodable.swift in Sources */,
+				CD39D0172480A39C000D9973 /* Rain.swift in Sources */,
 				CD6B88AA208631F70064F31A /* Prediction.swift in Sources */,
 				CD31A792208536D700C26A7E /* JSONAPI.swift in Sources */,
+				CD39D0102480A39C000D9973 /* Current.swift in Sources */,
+				CD39CFF32480A088000D9973 /* OpenWeatherEndpoint.swift in Sources */,
 				CD6B88A6208588BE0064F31A /* Route.swift in Sources */,
 				86A65B1D1FA0F2C900705C14 /* BuildType.swift in Sources */,
 				CD31A7A320853A8C00C26A7E /* Entity.swift in Sources */,
@@ -1432,15 +1492,18 @@
 				CDB61EBA2087EC8C00E0E99C /* BinaryFloatingPoint+Utilities.swift in Sources */,
 				CD31A7A620853AB700C26A7E /* FlatCache.swift in Sources */,
 				CDB61EA72087E86F00E0E99C /* Precipitation.swift in Sources */,
+				CD39D0192480A3E9000D9973 /* OpenWeatherAPI.swift in Sources */,
 				CD6B88A4208587680064F31A /* Stop.swift in Sources */,
 				CD6B88A12085872B0064F31A /* MBTAEndpoint.swift in Sources */,
 				86A65B0A1FA0EB0600705C14 /* APIClient.swift in Sources */,
+				CD39D0132480A39C000D9973 /* Description.swift in Sources */,
 				CDB61EC42087EDBB00E0E99C /* Daily.swift in Sources */,
 				CD31A796208536FF00C26A7E /* JSONAPIResourceType+ImportIncluded.swift in Sources */,
 				CDB61EB62087EBDC00E0E99C /* Asset.swift in Sources */,
 				CDB61EAF2087EAC900E0E99C /* Icon.swift in Sources */,
 				CDB61EB82087EC4700E0E99C /* Meteorology.swift in Sources */,
 				CDB61EC22087EDA400E0E99C /* Hourly.swift in Sources */,
+				CD39D00F2480A39C000D9973 /* OpenWeatherHourly.swift in Sources */,
 				CD6B88B620863C380064F31A /* MBTAService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1516,6 +1579,7 @@
 				006EFEF61F264204004A95DE /* TestClient.swift in Sources */,
 				5B3325AE21DBEC5D00FEA6E3 /* ArrayOfPointsTests.swift in Sources */,
 				5B85E5B421DA7537009A2202 /* DrawingTests.swift in Sources */,
+				CD39CFF124809FC1000D9973 /* OpenWeatherTests.swift in Sources */,
 				ABF84FA41DCBCD89002DB24D /* MBTATests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

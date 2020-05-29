@@ -22,4 +22,8 @@ enum Payloads {
         static let predictions = testingJSON(named: "predictions")
     }
 
+    enum OpenWeather {
+        static let forecast = testingJSON(named: "OpenWeather_forecast")
+    }
+
 }
