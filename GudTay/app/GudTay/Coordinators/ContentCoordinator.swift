@@ -15,6 +15,7 @@ class ContentCoordinator: NSObject, Coordinator {
 
     let mbtaService: MBTAService
     let weatherService: WeatherServiceProtocol
+    let openWeatherService: OpenWeatherService
 
     let baseController: UIViewController
     var childCoordinator: Coordinator?
@@ -26,10 +27,11 @@ class ContentCoordinator: NSObject, Coordinator {
 
     private let reachability = try! Reachability() // swiftlint:disable:this force_try
 
-    init(_ baseController: UIViewController, mbtaService: MBTAService, weatherService: WeatherServiceProtocol) {
+    init(_ baseController: UIViewController, mbtaService: MBTAService, weatherService: WeatherServiceProtocol, openWeatherService: OpenWeatherService) {
         self.baseController = baseController
         self.mbtaService = mbtaService
         self.weatherService = weatherService
+        self.openWeatherService = openWeatherService
     }
 
     func start(completion: (() -> Void)?) {
