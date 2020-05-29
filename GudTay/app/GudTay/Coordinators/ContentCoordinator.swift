@@ -61,7 +61,7 @@ class ContentCoordinator: NSObject, Coordinator {
             gudTayView.edgeAnchors == contentViewController.calvinContainer.edgeAnchors
             gudTayView.borderedEdges = [.bottom]
 
-            self.weatherCoordinator = WeatherCoordinator(service: self.weatherService)
+            self.weatherCoordinator = WeatherCoordinator(service: self.weatherService, openWeatherService: self.openWeatherService)
             self.weatherCoordinator?.start(in: contentViewController, subview: contentViewController.weatherContainer)
 
             self.reachability.whenUnreachable = { [weak self] _ in

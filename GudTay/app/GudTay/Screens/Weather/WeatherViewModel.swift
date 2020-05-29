@@ -25,9 +25,11 @@ final class WeatherViewModel {
     private(set) var forecastBackgroundViewModel: ForecastBackgroundViewModel?
 
     private let service: WeatherServiceProtocol
+    private let openWeatherService: OpenWeatherService
 
-    init(service: WeatherServiceProtocol) {
+    init(service: WeatherServiceProtocol, openWeatherService: OpenWeatherService) {
         self.service = service
+        self.openWeatherService = openWeatherService
     }
 
     func refresh(referenceDate: Date, calendar: Calendar, completion: @escaping (Result<(fields: [WeatherField], background: ForecastBackgroundViewModel?), Error>) -> Void) {
