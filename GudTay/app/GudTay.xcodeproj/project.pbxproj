@@ -580,6 +580,7 @@
 		ABC7786C1DC90B7A00815FB9 = {
 			isa = PBXGroup;
 			children = (
+				2C09B718496254957E27F461 /* Frameworks */,
 				ABC778771DC90B7A00815FB9 /* GudTay */,
 				ABC7788C1DC90B7A00815FB9 /* GudTayTests */,
 				A9BC3048697D574484460C7A /* Pods */,
@@ -587,7 +588,6 @@
 				86A65AEF1FA0EA2400705C14 /* Services */,
 				CD31A7B520853BA900C26A7E /* Utilities */,
 				CD31A7C220853BA900C26A7E /* UtilitiesTests */,
-				2C09B718496254957E27F461 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
