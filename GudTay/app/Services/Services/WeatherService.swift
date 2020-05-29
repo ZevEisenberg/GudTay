@@ -42,7 +42,6 @@ private extension WeatherService {
     enum Constants {
 
         static let apiKey = "4e5a1cefda62d393b23921b31d2c69dc"
-        static let host = "https://api.darksky.net/"
 
     }
 

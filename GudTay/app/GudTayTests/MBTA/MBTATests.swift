@@ -18,10 +18,6 @@ class MBTATests: XCTestCase {
         return service
     }()
 
-    override class func setUp() {
-        super.setUp()
-    }
-
     override func tearDown() {
         super.tearDown()
         HTTPStubs.removeAllStubs()
