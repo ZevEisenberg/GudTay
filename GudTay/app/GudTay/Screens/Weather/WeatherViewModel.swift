@@ -190,8 +190,8 @@ private extension WeatherViewModel {
 
         var backgroundViewModel: ForecastBackgroundViewModel?
         let daysToExpand = 1
-        if let firstTime = hourlyPrecipitations.first?.timestamp,
-            let lastTime = hourlyPrecipitations[checked: (hoursUntilSameTimeNextDay - 1)]?.timestamp {
+        if let firstTime = forecast.hourly.first?.date,
+            let lastTime = forecast.hourly[checked: (hoursUntilSameTimeNextDay - 1)]?.date {
 
             // Expand the interval by ±1 day in order to be able to draw the edges of the sun interval.
             // Unfortunately, the API does not return data in the past when asking for predictions (and
