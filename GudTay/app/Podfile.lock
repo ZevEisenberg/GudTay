@@ -23,7 +23,7 @@ PODS:
     - Swiftilities/Math
   - Swiftilities/Logging (0.25.1)
   - Swiftilities/Math (0.25.1)
-  - SwiftLint (0.39.1)
+  - SwiftLint (0.39.2)
   - Then (2.6.0)
 
 DEPENDENCIES:
@@ -59,7 +59,7 @@ SPEC CHECKSUMS:
   Sourcery: e0e8658a1ce6d9f475156ad3ffce4c68f1261b3e
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   Swiftilities: 6a4beb748c9301b02c7ab6820d4e3a3c07b5c531
-  SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
+  SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
 
 PODFILE CHECKSUM: 27f33a8cee42ad8644f2f7c252a34abeca766217
