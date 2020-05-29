@@ -24,26 +24,10 @@ final class WeatherViewModel {
     private(set) var fields: [WeatherField] = []
     private(set) var forecastBackgroundViewModel: ForecastBackgroundViewModel?
 
-    private let service: WeatherServiceProtocol
     private let openWeatherService: OpenWeatherService
 
-    init(service: WeatherServiceProtocol, openWeatherService: OpenWeatherService) {
-        self.service = service
+    init(openWeatherService: OpenWeatherService) {
         self.openWeatherService = openWeatherService
-    }
-
-    func refresh(referenceDate: Date, calendar: Calendar, completion: @escaping (Result<(fields: [WeatherField], background: ForecastBackgroundViewModel?), Error>) -> Void) {
-        service.predictions() { (apiResult: Swift.Result<WeatherForecast, Error>) in
-            switch apiResult {
-            case .success(let forecast):
-                let (fields, forecastBackgroundViewModel) = WeatherViewModel.processForecast(forecast: forecast, referenceDate: referenceDate, calendar: calendar)
-                self.fields = fields
-                self.forecastBackgroundViewModel = forecastBackgroundViewModel
-                completion(.success((fields: self.fields, background: self.forecastBackgroundViewModel)))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
     }
 
     func openWeatherRefresh(referenceDate: Date, calendar: Calendar, completion: @escaping (Result<(fields: [WeatherField], background: ForecastBackgroundViewModel?), Error>) -> Void) {
@@ -63,87 +47,6 @@ final class WeatherViewModel {
 }
 
 private extension WeatherViewModel {
-
-    static func processForecast(forecast: WeatherForecast, referenceDate: Date, calendar: Calendar) -> ([WeatherField], ForecastBackgroundViewModel?) {
-        var fields = [WeatherField]()
-
-        let current = forecast.currently
-
-        // Temperatures
-
-        if let today = forecast.daily.almanac.data.first {
-            fields.append(.temperatures(
-                current: current.temperature.current,
-                high: today.temperatureRange.max,
-                low: today.temperatureRange.min))
-        }
-
-        // Current Icon
-
-        if let icon = current.meteorology.icon {
-            fields.append(.currentIcon(icon.image))
-        }
-
-        // Clothing/umbrella
-        let hourlyPrecipitations = forecast.hourly.precipitation
-        fields.append(WeatherViewModel.clothingField(forForecast: forecast, currently: current, hourlyPrecipitations: hourlyPrecipitations, referenceDate: referenceDate, calendar: calendar))
-
-        // Hourly Forecast
-
-        let hourlyMeteorologies = forecast.hourly.meteorology
-        let hourlyTemperatures = forecast.hourly.temperature
-
-        let hoursUntilSameTimeNextDay = (hourlyPrecipitations.data[checked: 0]?.timestamp ?? referenceDate).hoursUntilSameTimeNextDay()
-
-        for index in 0..<hoursUntilSameTimeNextDay {
-            guard
-                let precipitation = hourlyPrecipitations.data[checked: index],
-                let temperature = hourlyTemperatures.data[checked: index],
-                let meteorology = hourlyMeteorologies.data[checked: index] else {
-                    break
-            }
-
-            fields.append(.hour(time: precipitation.timestamp, icon: meteorology.icon?.image, temp: temperature.current, precipProbability: precipitation.probability))
-        }
-
-        var backgroundViewModel: ForecastBackgroundViewModel?
-        let daysToExpand = 1
-        if let firstTime = hourlyPrecipitations.data[checked: 0]?.timestamp,
-            let lastTime = hourlyPrecipitations.data[checked: (hoursUntilSameTimeNextDay - 1)]?.timestamp {
-
-            // Expand the interval by ±1 day in order to be able to draw the edges of the sun interval.
-            // Unfortunately, the API does not return data in the past when asking for predictions (and
-            // really, who can blame them). Instead of making a relatively costly second request for
-            // historical data, when we really just need a value that's close enough, the
-            // ForecastBackgroundViewModel will artifically expand the range. The point of this comment is
-            // just to say that this code should not be surprised if the first solar event is after today's
-            // midnight, becuase ForecastBackgroundViewModel will work around it.
-            guard let adjustedFirstTime = calendar.date(byAdding: .day, value: -daysToExpand, to: firstTime),
-                let adjustedLastTime = calendar.date(byAdding: .day, value: daysToExpand, to: lastTime) else {
-                    preconditionFailure("Should always be able to add and subtract a day from a date. Failed with dates \(firstTime) and \(lastTime), shifting by \(daysToExpand) day(s)")
-            }
-
-            let interval = DateInterval(start: firstTime, end: lastTime)
-            let expandedInterval = DateInterval(start: adjustedFirstTime, end: adjustedLastTime)
-
-            let almanacs = forecast.daily.almanac.data
-
-            let events = almanacs.flatMap { almanac -> [SolarEvent] in
-                let sunrise = SolarEvent(kind: .sunrise, date: almanac.sunriseTime)
-                let sunset = SolarEvent(kind: .sunset, date: almanac.sunsetTime)
-                return [sunrise, sunset]
-                }.compactMap { event in
-                    expandedInterval.contains(event.date) ? event : nil
-                }.sorted { $0.date < $1.date }
-
-            backgroundViewModel = ForecastBackgroundViewModel(
-                interval: interval, // original interval, for purposes of scaling in the UI
-                solarEvents: events
-            )
-        }
-
-        return (fields, backgroundViewModel)
-    }
 
     static func processOpenWeatherForecast(forecast: OpenWeatherAPI.OneCall, referenceDate: Date, calendar: Calendar) -> ([WeatherField], ForecastBackgroundViewModel?) {
         var fields = [WeatherField]()
@@ -270,51 +173,6 @@ extension WeatherViewModel {
 
         let adjustedInterval = DateInterval(start: date, end: endDate)
         return adjustedInterval
-    }
-
-    private static func clothingField(
-        forForecast forecast: WeatherForecast,
-        currently current: Currently,
-        hourlyPrecipitations: WeatherBucket<Precipitation>,
-        referenceDate: Date,
-        calendar: Calendar) -> WeatherField {
-        let hoursWeCareAbout = WeatherViewModel.interestingHourlyInterval(for: current.precipitation.timestamp, calendar: calendar)
-
-        let tempForClothing: Double
-        let needUmbrella: Bool
-
-        let precipitationWantsUmbrella = { (precip: Precipitation) in
-            precip.probability > 0.15 || precip.intensity >= 0.1
-        }
-
-        if let range = hoursWeCareAbout {
-            let timesAndTemps = zip(forecast.hourly.precipitation.data, forecast.hourly.temperature.data)
-                .map { (time: $0.0.timestamp, temp: $0.1.current) }
-            let relevantTimesAndTemps = timesAndTemps
-                .filter { range.contains($0.time) }
-            assert(!relevantTimesAndTemps.isEmpty)
-            if let minimumTempForRange = relevantTimesAndTemps.map({ $0.temp }).min() {
-                tempForClothing = minimumTempForRange
-            }
-            else {
-                assertionFailure("There has to be a minimum temp")
-                tempForClothing = 0
-            }
-
-            let precipitationsWeCareAbout = hourlyPrecipitations.data.filter { precipitation in
-                range.contains(precipitation.timestamp)
-            }
-            needUmbrella = precipitationsWeCareAbout.contains(where: precipitationWantsUmbrella)
-        }
-        else {
-            tempForClothing = current.temperature.current
-            needUmbrella = precipitationWantsUmbrella(current.precipitation)
-        }
-
-        return .clothing(
-            temp: tempForClothing,
-            needUmbrella: needUmbrella
-        )
     }
 
     private static func openWeatherClothingField(
