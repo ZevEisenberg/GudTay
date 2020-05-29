@@ -41,7 +41,7 @@ extension Observer.Key {
 
     var typeName: String {
         switch self {
-        case .entity(let entity): return entity.typeName
+        case .entity(let typeName, _): return typeName
         case .type(let typeName): return typeName
         }
     }
@@ -107,7 +107,7 @@ extension FlatCache {
                 guard let row = valueStorage[observer.key.typeName] as? AnyRow else {
                     return nil
                 }
-                if case .entity(let entity) = observer.key, let value = row.untypedStorage[entity.id] {
+                if case .entity(_, let entityId) = observer.key, let value = row.untypedStorage[entityId] {
                     return (observer, value)
                 }
                 else if case .type = observer.key {
