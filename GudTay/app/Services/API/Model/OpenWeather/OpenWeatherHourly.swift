@@ -9,7 +9,7 @@ import Foundation
 
 public extension OpenWeatherAPI {
 
-    struct Hourly: Codable {
+    struct Hourly: Decodable {
         public let date: Date
         public let temp: Double
         public let feelsLike: Double

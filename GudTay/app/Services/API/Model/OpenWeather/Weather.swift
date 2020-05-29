@@ -1,6 +1,6 @@
 public extension OpenWeatherAPI {
 
-    struct Weather: Codable {
+    struct Weather: Decodable {
         public let id: Tagged<Weather, Int>
         public let main: Main
         public let weatherDescription: Description

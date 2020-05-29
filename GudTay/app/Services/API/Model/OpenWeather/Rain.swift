@@ -7,7 +7,7 @@
 
 public extension OpenWeatherAPI {
 
-    struct Rain: Codable {
+    struct Rain: Decodable {
         public let oneHour: Double
 
         enum CodingKeys: String, CodingKey {

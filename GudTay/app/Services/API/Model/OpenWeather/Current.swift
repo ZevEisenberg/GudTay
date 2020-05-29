@@ -9,7 +9,7 @@ import Foundation
 
 public extension OpenWeatherAPI {
 
-    struct Current: Codable {
+    struct Current: Decodable {
         public let date: Date
         public let sunrise: Int
         public let sunset: Int

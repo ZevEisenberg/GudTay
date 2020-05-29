@@ -7,7 +7,7 @@
 
 public extension OpenWeatherAPI {
 
-    struct OneCall: Codable {
+    struct OneCall: Decodable {
         public let lat: Double
         public let lon: Double
         public let timezone: String

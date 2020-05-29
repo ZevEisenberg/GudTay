@@ -7,7 +7,7 @@
 
 public extension OpenWeatherAPI {
 
-    enum Main: String, Codable {
+    enum Main: String, Decodable {
         case clouds = "Clouds"
         case rain = "Rain"
     }
