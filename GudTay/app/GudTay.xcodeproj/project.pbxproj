@@ -94,6 +94,7 @@
 		CD39D0152480A39C000D9973 /* OneCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D00C2480A39C000D9973 /* OneCall.swift */; };
 		CD39D0172480A39C000D9973 /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D00E2480A39C000D9973 /* Rain.swift */; };
 		CD39D0192480A3E9000D9973 /* OpenWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D0182480A3E9000D9973 /* OpenWeatherAPI.swift */; };
+		CD39D01B2480A871000D9973 /* Tagged.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D01A2480A871000D9973 /* Tagged.swift */; };
 		CD6B88A12085872B0064F31A /* MBTAEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88A02085872B0064F31A /* MBTAEndpoint.swift */; };
 		CD6B88A4208587680064F31A /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88A3208587680064F31A /* Stop.swift */; };
 		CD6B88A6208588BE0064F31A /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88A5208588BE0064F31A /* Route.swift */; };
@@ -306,6 +307,7 @@
 		CD39D00C2480A39C000D9973 /* OneCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneCall.swift; sourceTree = "<group>"; };
 		CD39D00E2480A39C000D9973 /* Rain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rain.swift; sourceTree = "<group>"; };
 		CD39D0182480A3E9000D9973 /* OpenWeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherAPI.swift; sourceTree = "<group>"; };
+		CD39D01A2480A871000D9973 /* Tagged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tagged.swift; path = OpenWeather/Tagged.swift; sourceTree = "<group>"; };
 		CD6B88A02085872B0064F31A /* MBTAEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTAEndpoint.swift; sourceTree = "<group>"; };
 		CD6B88A3208587680064F31A /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		CD6B88A5208588BE0064F31A /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -758,6 +760,7 @@
 		CD31A79B20853A3600C26A7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD39D01A2480A871000D9973 /* Tagged.swift */,
 				CD6B88A2208587570064F31A /* MBTA */,
 				CD31A7A120853A8500C26A7E /* Meta */,
 				CDB539D62087E5E3006EE89E /* Weather */,
@@ -1463,6 +1466,7 @@
 				86A65B191FA0F22B00705C14 /* Formatters.swift in Sources */,
 				CDB61EBC2087ECD800E0E99C /* Temperature.swift in Sources */,
 				CD31A7A820853AD100C26A7E /* Identifier.swift in Sources */,
+				CD39D01B2480A871000D9973 /* Tagged.swift in Sources */,
 				CD31A7AA20853AEA00C26A7E /* FlatCache+Observer.swift in Sources */,
 				86A65B0D1FA0EB0600705C14 /* APIEndpoint.swift in Sources */,
 				86A65B0E1FA0EB0600705C14 /* APIEnvironment.swift in Sources */,
