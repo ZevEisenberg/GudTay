@@ -20,7 +20,7 @@ public extension OpenWeatherAPI {
         public let dewPoint: Double
         public let uvi: Double
         public let clouds: Int
-        public let visibility: Int
+        public let visibility: Int?
         public let windSpeed: Double
         public let windDeg: Int
         public let windGust: Double
