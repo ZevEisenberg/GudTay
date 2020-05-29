@@ -81,7 +81,7 @@ final class WeatherViewController: UIViewController {
 
     func refresh() {
         updateBackgroundForScrollPosition()
-        viewModel.refresh(referenceDate: Date(), calendar: .autoupdatingCurrent) { result in
+        viewModel.openWeatherRefresh(referenceDate: Date(), calendar: .autoupdatingCurrent) { result in
             self.restartScrollBackTimer()
             switch result {
             case let .success(tuple):
@@ -121,7 +121,7 @@ extension WeatherViewController: UICollectionViewDataSource {
             return cell
         case .currentIcon(let icon):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AspectImageCell.gudReuseID, for: indexPath) as! AspectImageCell
-            cell.images = [icon.image]
+            cell.images = [icon]
             cell.pinnedHeight = view.frame.height
             return cell
         case .clothing(let temp, let needsUmbrella):

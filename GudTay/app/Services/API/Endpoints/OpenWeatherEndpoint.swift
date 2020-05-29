@@ -23,7 +23,8 @@ enum OpenWeatherEndpoint {
             [
                 URLQueryItem(name: "lat", value: String(latitude)),
                 URLQueryItem(name: "lon", value: String(longitude)),
-                URLQueryItem(name: "exclude", value: "minutely,daily"),
+                URLQueryItem(name: "exclude", value: "minutely"),
+                URLQueryItem(name: "units", value: "imperial"),
                 URLQueryItem(name: "appid", value: apiKey),
             ]
         }

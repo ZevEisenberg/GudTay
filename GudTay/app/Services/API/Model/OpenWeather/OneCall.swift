@@ -14,11 +14,16 @@ public extension OpenWeatherAPI {
         public let timezoneOffset: Int
         public let current: Current
         public let hourly: [Hourly]
+        public let daily: [Daily]
 
         enum CodingKeys: String, CodingKey {
-            case lat, lon, timezone
+            case lat
+            case lon
+            case timezone
             case timezoneOffset
-            case current, hourly
+            case current
+            case hourly
+            case daily
         }
     }
 

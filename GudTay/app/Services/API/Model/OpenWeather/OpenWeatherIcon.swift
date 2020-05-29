@@ -5,6 +5,8 @@
 //  Created by Zev Eisenberg on 5/29/20.
 //
 
+import UIKit.UIImage
+
 public extension OpenWeatherAPI {
 
     enum Icon: String, Decodable {
@@ -29,6 +31,18 @@ public extension OpenWeatherAPI {
         case thunderstormNight = "11n"
         case snowNight = "13n"
         case mistNight = "50n"
+    }
+
+}
+
+public extension OpenWeatherAPI.Icon {
+
+    var image: UIImage {
+        asset.image
+    }
+
+    var smallImage: UIImage {
+        smallAsset.image
     }
 
 }
