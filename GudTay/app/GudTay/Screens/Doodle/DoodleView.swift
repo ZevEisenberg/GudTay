@@ -10,7 +10,15 @@
 
 import Anchorage
 
-extension DoodleView: Actionable {
+protocol DoodleViewDelegate: AnyObject {
+
+    func doodleView(_ doodleView: DoodleView, did action: DoodleView.Action)
+}
+
+extension DoodleView {
+
+    typealias Delegate = DoodleViewDelegate
+
     enum Action {
         case showClearPrompt(sourceButton: UIButton, completion: (_ clear: Bool) -> Void)
 
@@ -23,7 +31,7 @@ final class DoodleView: GridView {
 
     // Public Properties
 
-    weak var delegate: DoodleViewDelegate?
+    weak var delegate: Delegate?
     let viewModel: DoodleViewModel
 
     // Private Properties
@@ -38,12 +46,13 @@ final class DoodleView: GridView {
         contentView.layer.addSublayer(imageLayer)
 
         viewModel.newImageCallback = { [weak self] cgImage, updateKind in
+            guard let self = self else { return }
             DispatchQueue.main.async {
                 CATransaction.performWithoutAnimation {
-                    self?.imageLayer.contents = cgImage
+                    self.imageLayer.contents = cgImage
                 }
                 if updateKind == .committedLocally {
-                    self?.notify(.imageUpdateCommitted(UIImage(cgImage: cgImage)))
+                    self.delegate?.doodleView(self, did: .imageUpdateCommitted(UIImage(cgImage: cgImage)))
                 }
             }
         }

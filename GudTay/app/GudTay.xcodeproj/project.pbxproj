@@ -10,8 +10,6 @@
 		00551422206144E300E4CF68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00551421206144E200E4CF68 /* InfoPlist.strings */; };
 		006EFEF61F264204004A95DE /* TestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006EFEF51F264204004A95DE /* TestClient.swift */; };
 		209BE2512051C768004CF0FF /* Actionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BE2502051C768004CF0FF /* Actionable.swift */; };
-		209BE2562051C90C004CF0FF /* actionable.swifttemplate in Resources */ = {isa = PBXBuildFile; fileRef = 209BE2552051C90C004CF0FF /* actionable.swifttemplate */; };
-		209BE2592051CB4B004CF0FF /* Actionable+AutoConformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BE2582051CB4B004CF0FF /* Actionable+AutoConformance.swift */; };
 		2D4FA8F51E8574F9006C38ED /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA8F41E8574F9006C38ED /* AppCoordinator.swift */; };
 		2D4FA8F71E85752B006C38ED /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA8F61E85752B006C38ED /* Coordinator.swift */; };
 		2DFF1CF11E8950F000B1AD70 /* ContentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF1CF01E8950F000B1AD70 /* ContentCoordinator.swift */; };
@@ -200,8 +198,6 @@
 		0E4A1FFC60EF67EB335CFA1C /* Pods_GudTay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GudTay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		102C82DF0D5FA4AF5462BB51 /* Pods-UtilitiesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilitiesTests.release.xcconfig"; path = "Target Support Files/Pods-UtilitiesTests/Pods-UtilitiesTests.release.xcconfig"; sourceTree = "<group>"; };
 		209BE2502051C768004CF0FF /* Actionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actionable.swift; sourceTree = "<group>"; };
-		209BE2552051C90C004CF0FF /* actionable.swifttemplate */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = actionable.swifttemplate; sourceTree = "<group>"; };
-		209BE2582051CB4B004CF0FF /* Actionable+AutoConformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Actionable+AutoConformance.swift"; sourceTree = "<group>"; };
 		2D4FA8F41E8574F9006C38ED /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		2D4FA8F61E85752B006C38ED /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		2DFF1CF01E8950F000B1AD70 /* ContentCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCoordinator.swift; sourceTree = "<group>"; };
@@ -401,14 +397,6 @@
 				209BE2502051C768004CF0FF /* Actionable.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		209BE2522051C7BB004CF0FF /* Sourcery */ = {
-			isa = PBXGroup;
-			children = (
-				209BE2552051C90C004CF0FF /* actionable.swifttemplate */,
-			);
-			path = Sourcery;
 			sourceTree = "<group>";
 		};
 		2C09B718496254957E27F461 /* Frameworks */ = {
@@ -645,7 +633,6 @@
 			isa = PBXGroup;
 			children = (
 				ABF84F8E1DC99D33002DB24D /* Generated */,
-				209BE2522051C7BB004CF0FF /* Sourcery */,
 				ABC778CD1DC92BC200815FB9 /* xcconfig */,
 				ABC7787F1DC90B7A00815FB9 /* Assets.xcassets */,
 				CDB539B32086AF86006EE89E /* Fonts.swift */,
@@ -685,7 +672,6 @@
 		ABF84F8E1DC99D33002DB24D /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				209BE2582051CB4B004CF0FF /* Actionable+AutoConformance.swift */,
 				ABF84F901DC99D33002DB24D /* Asset.swift */,
 				ABF84F8F1DC99D33002DB24D /* Localized.swift */,
 			);
@@ -966,7 +952,6 @@
 				DB15C181E71294E21F18053C /* [CP] Check Pods Manifest.lock */,
 				2DFF1D1F1E8C56C700B1AD70 /* SwiftGen */,
 				ABC778DB1DC9405700815FB9 /* SwiftLint */,
-				209BE2572051C936004CF0FF /* Sourcery */,
 				0052FE8220605B3A0058A4BC /* Generate xcconfig warnings */,
 				ABC778711DC90B7A00815FB9 /* Sources */,
 				ABC778721DC90B7A00815FB9 /* Frameworks */,
@@ -1129,7 +1114,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				00551422206144E300E4CF68 /* InfoPlist.strings in Resources */,
-				209BE2562051C90C004CF0FF /* actionable.swifttemplate in Resources */,
 				ABF84F811DC97653002DB24D /* Localizable.strings in Resources */,
 				ABC778831DC90B7A00815FB9 /* LaunchScreen.storyboard in Resources */,
 				ABC778801DC90B7A00815FB9 /* Assets.xcassets in Resources */,
@@ -1174,23 +1158,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "TAGS=\"TODO:|FIXME:\"\nfind \"${SRCROOT}/\" \\( -name \"*.xcconfig\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
-		};
-		209BE2572051C936004CF0FF /* Sourcery */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/GudTay/Resources/Sourcery/actionable.swifttemplate",
-			);
-			name = Sourcery;
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/GudTay/Resources/Generated/Actionable+AutoConformance.swift",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/Sourcery/bin/sourcery\" --sources \"GudTay\" --templates \"GudTay/Resources/Sourcery/actionable.swifttemplate\" --output \"GudTay/Resources/Generated/Actionable+AutoConformance.swift\"\n";
+			shellScript = "TAGS=\"TODO:|FIXME:\"\nfind \"${SRCROOT}/\" \\( -name \"*.xcconfig\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"\n";
 		};
 		2DFF1D1F1E8C56C700B1AD70 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1476,7 +1444,6 @@
 				CDB61EDC208833D700E0E99C /* AspectImageCell.swift in Sources */,
 				ABF84F921DC99D33002DB24D /* Asset.swift in Sources */,
 				CDB61ED9208833D700E0E99C /* ForecastCell.swift in Sources */,
-				209BE2592051CB4B004CF0FF /* Actionable+AutoConformance.swift in Sources */,
 				CDB539C3208794A5006EE89E /* DoodleView.swift in Sources */,
 				CDB539C5208794F8006EE89E /* ImageIO.swift in Sources */,
 				CDB61EC62087F3FF00E0E99C /* WeatherCoordinator.swift in Sources */,

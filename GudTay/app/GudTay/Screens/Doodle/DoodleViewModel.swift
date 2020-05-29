@@ -8,7 +8,14 @@
 import UIKit
 import Utilities
 
-extension DoodleViewModel: Actionable {
+protocol DoodleViewModelDelegate: AnyObject {
+
+    func doodleViewModel(_ doodleViewModel: DoodleViewModel, did action: DoodleViewModel.Action)
+}
+
+extension DoodleViewModel {
+
+    typealias Delegate = DoodleViewModelDelegate
 
     enum Action {
         case changedMode(Mode)
@@ -52,7 +59,7 @@ final class DoodleViewModel {
     var currentMode: Mode = .drawing {
         didSet {
             if currentMode != oldValue {
-                notify(.changedMode(currentMode))
+                delegate?.doodleViewModel(self, did: .changedMode(currentMode))
             }
             if currentMode == .erasing {
                 restartErasingTimer()

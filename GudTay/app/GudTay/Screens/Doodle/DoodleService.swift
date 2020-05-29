@@ -9,7 +9,15 @@
 import MultipeerConnectivity
 import Swiftilities
 
-extension DoodleService: Actionable {
+protocol DoodleServiceDelegate: AnyObject {
+
+    func doodleService(_ doodleService: DoodleService, did action: DoodleService.Action)
+
+}
+
+extension DoodleService {
+
+    typealias Delegate = DoodleServiceDelegate
 
     enum Action {
         case connectedDevicesChanged(deviceNames: [String])
@@ -152,13 +160,13 @@ extension DoodleService: MCSessionDelegate {
 
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         Log.info("\(#function), \(peerID), \(state)")
-        notify(.connectedDevicesChanged(deviceNames: session.connectedPeers.map { $0.displayName }))
+        delegate?.doodleService(self, did: .connectedDevicesChanged(deviceNames: session.connectedPeers.map { $0.displayName }))
     }
 
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         Log.info("\(#function), \(String(data: data, encoding: .utf8) ?? "<non-UTF-8 data with bytes: \(data.count)>"), \(peerID)")
         guard let image = UIImage(data: data) else { return }
-        notify(.receivedImage(image))
+        delegate?.doodleService(self, did: .receivedImage(image))
     }
 
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {

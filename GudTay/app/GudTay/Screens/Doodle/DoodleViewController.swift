@@ -99,7 +99,7 @@ private extension DoodleViewController {
 
 extension DoodleViewController: DoodleViewModel.Delegate {
 
-    func doodleViewModel(_ component: DoodleViewModel, didNotify action: DoodleViewModel.Action) {
+    func doodleViewModel(_ veiwModel: DoodleViewModel, did action: DoodleViewModel.Action) {
         switch action {
         case .changedMode(let mode):
             modeToggle.setMode(mode == .drawing ? .primary : .secondary, animated: true)
@@ -110,7 +110,7 @@ extension DoodleViewController: DoodleViewModel.Delegate {
 
 extension DoodleViewController: DoodleView.Delegate {
 
-    func doodleView(_ view: DoodleView, didNotify action: DoodleView.Action) {
+    func doodleView(_ doodleView: DoodleView, did action: DoodleView.Action) {
         switch action {
         case .imageUpdateCommitted(let image):
             service.sendImage(image)
@@ -140,7 +140,7 @@ extension DoodleViewController: DoodleView.Delegate {
 
 extension DoodleViewController: DoodleService.Delegate {
 
-    func doodleService(_ component: DoodleService, didNotify action: DoodleService.Action) {
+    func doodleService(_ doodleService: DoodleService, did action: DoodleService.Action) {
         DispatchQueue.main.async {
             switch action {
             case .connectedDevicesChanged(let deviceNames):
