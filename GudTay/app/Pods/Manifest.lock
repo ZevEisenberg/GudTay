@@ -1,6 +1,6 @@
 PODS:
   - Anchorage (4.4.0)
-  - BonMot (5.5)
+  - BonMot (5.5.1)
   - OHHTTPStubs/Core (9.0.0)
   - OHHTTPStubs/Default (9.0.0):
     - OHHTTPStubs/Core
@@ -53,7 +53,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Anchorage: d7f02c4f9425b537053237aab11ae97e59b55f36
-  BonMot: 58a86daf442518ff78e00cf54430fd03de37945a
+  BonMot: 0d179476725af81f622a6d9f660f43048070016a
   OHHTTPStubs: cb29d2a9d09a828ecb93349a2b0c64f99e0db89f
   SnapshotTesting: 8caa6661fea7c8019d5b46de77c16bab99c36c5c
   Sourcery: e0e8658a1ce6d9f475156ad3ffce4c68f1261b3e
