@@ -36,9 +36,9 @@ extension ResourceStub: JSONAPIEncodable {
 
 }
 
-extension Entity {
+public extension Entity {
 
-    public var jsonEncoded: JSONObject {
+    var jsonEncoded: JSONObject {
         [
             "type": Self.apiType,
             "id": id.value,
