@@ -63,6 +63,7 @@
 		ABF84FA41DCBCD89002DB24D /* MBTATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84FA31DCBCD89002DB24D /* MBTATests.swift */; };
 		ABF84FA61DCBCEA1002DB24D /* Payloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84FA51DCBCEA1002DB24D /* Payloads.swift */; };
 		BE2809301E8038BE006E50D5 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28092F1E8038BE006E50D5 /* ContentViewController.swift */; };
+		CD2239972481CFBF00CA11E3 /* JSONAPI in Frameworks */ = {isa = PBXBuildFile; productRef = CD2239962481CFBF00CA11E3 /* JSONAPI */; };
 		CD24C47820854D7B00380C9E /* predictions.json in Resources */ = {isa = PBXBuildFile; fileRef = CD24C475208548AD00380C9E /* predictions.json */; };
 		CD24C47A20855A9800380C9E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24C47920855A9800380C9E /* UIView+Extensions.swift */; };
 		CD31A792208536D700C26A7E /* JSONAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A791208536D700C26A7E /* JSONAPI.swift */; };
@@ -347,6 +348,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD2239972481CFBF00CA11E3 /* JSONAPI in Frameworks */,
 				CD31A7D720853C3B00C26A7E /* Utilities.framework in Frameworks */,
 				F0D93533DB572F8999D57C48 /* Pods_Services.framework in Frameworks */,
 			);
@@ -941,6 +943,9 @@
 			dependencies = (
 			);
 			name = Services;
+			packageProductDependencies = (
+				CD2239962481CFBF00CA11E3 /* JSONAPI */,
+			);
 			productName = Services;
 			productReference = 86A65AEE1FA0EA2400705C14 /* Services.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1086,6 +1091,7 @@
 			mainGroup = ABC7786C1DC90B7A00815FB9;
 			packageReferences = (
 				7A432B58241D750B001D7F1F /* XCRemoteSwiftPackageReference "Reachability.swift" */,
+				CD2239952481CFBF00CA11E3 /* XCRemoteSwiftPackageReference "JSONAPI" */,
 			);
 			productRefGroup = ABC778761DC90B7A00815FB9 /* Products */;
 			projectDirPath = "";
@@ -1997,6 +2003,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		CD2239952481CFBF00CA11E3 /* XCRemoteSwiftPackageReference "JSONAPI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:mattpolzin/JSONAPI.git";
+			requirement = {
+				kind = exactVersion;
+				version = "4.0.0-rc.3.1";
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2004,6 +2018,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7A432B58241D750B001D7F1F /* XCRemoteSwiftPackageReference "Reachability.swift" */;
 			productName = Reachability;
+		};
+		CD2239962481CFBF00CA11E3 /* JSONAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD2239952481CFBF00CA11E3 /* XCRemoteSwiftPackageReference "JSONAPI" */;
+			productName = JSONAPI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

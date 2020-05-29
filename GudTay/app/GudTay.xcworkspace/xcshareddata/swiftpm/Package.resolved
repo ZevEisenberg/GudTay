@@ -2,6 +2,24 @@
   "object": {
     "pins": [
       {
+        "package": "JSONAPI",
+        "repositoryURL": "git@github.com:mattpolzin/JSONAPI.git",
+        "state": {
+          "branch": null,
+          "revision": "0c48ddfbc665a5768ed872b7236f3d7bad2063aa",
+          "version": "4.0.0-rc.3.1"
+        }
+      },
+      {
+        "package": "Poly",
+        "repositoryURL": "https://github.com/mattpolzin/Poly",
+        "state": {
+          "branch": null,
+          "revision": "36ba3f624bffa34f5f9b9c7648eab3cfdcab4748",
+          "version": "2.5.0"
+        }
+      },
+      {
         "package": "Reachability",
         "repositoryURL": "git@github.com:ashleymills/Reachability.swift.git",
         "state": {
