@@ -18,14 +18,16 @@ class MBTAViewController: UIViewController {
 
     var data: (predictions: [Prediction], date: Date) = ([], Date()) {
         didSet {
+            // Using type annotations to speed up compilation
+            typealias PredictionAndDate = (prediction: Prediction, departureTime: Date)
             let predictionsOfInterest = data.predictions
-                .filter { $0.route?.id == APIConstants.routeOfInterest }
-                .filter { $0.directionId == $0.route?.directionNames.firstIndex(of: "Inbound")! }
-                .compactMap { prediction in prediction.departureTime.map { time in (prediction: prediction, departureTime: time) } }
-                .filter { $0.departureTime > data.date }
-                .sorted { $0.departureTime < $1.departureTime }
+                .filter { (p: Prediction) -> Bool in p.route?.id == APIConstants.routeOfInterest }
+                .filter { (p: Prediction) -> Bool in p.directionId == p.route?.directionNames.firstIndex(of: "Inbound") }
+                .compactMap { (p: Prediction) -> PredictionAndDate? in p.departureTime.map { time in (prediction: p, departureTime: time) } }
+                .filter { (tuple: PredictionAndDate) -> Bool in tuple.departureTime > data.date }
+                .sorted { (tuple0: PredictionAndDate, tuple1: PredictionAndDate) -> Bool in tuple0.departureTime < tuple1.departureTime }
                 .prefix(3)
-                .map { $0.prediction }
+                .map { (tuple: PredictionAndDate) in tuple.prediction }
             busHeader.setUpcomingTrips(upcomingTrips: MBTARouteView.UpcomingTrips(predictions: Array(predictionsOfInterest)), relativeToDate: data.date)
         }
     }
