@@ -48,7 +48,6 @@ public struct Prediction {
     public let stop: Stop?
     public let trip: Trip?
 
-    #warning("no idea whether this is the right way to get relationships from a document")
     static func from(document: PredictionDocument) -> Result<[Self], Error> {
         switch document.body {
         case .errors(let errors, _, _):

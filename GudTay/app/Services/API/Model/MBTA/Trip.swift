@@ -13,7 +13,6 @@ enum TripDescription: ResourceObjectDescription {
     static var jsonType: String { "trip" }
 
     struct Attributes: JSONAPI.Attributes {
-        let id: Attribute<Tagged<Trip, String>>
         let directionId: Attribute<Int>
         let headsign: Attribute<String>
         let name: Attribute<String>

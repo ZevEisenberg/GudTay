@@ -14,7 +14,6 @@ enum StopDescription: ResourceObjectDescription {
     static var jsonType: String { "stop" }
 
     struct Attributes: JSONAPI.Attributes {
-        let id: Attribute<Tagged<Stop, String>>
         let latitude: Attribute<Double>
         let longitude: Attribute<Double>
         let name: Attribute<String>
