@@ -70,6 +70,7 @@
 		CD223AB82482A22B00CA11E3 /* BonMot in Frameworks */ = {isa = PBXBuildFile; productRef = CD223AB72482A22B00CA11E3 /* BonMot */; };
 		CD223AC02482AC0900CA11E3 /* OHHTTPStubsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CD223ABF2482AC0900CA11E3 /* OHHTTPStubsSwift */; };
 		CD223AC22482AC2B00CA11E3 /* OHHTTPStubs in Frameworks */ = {isa = PBXBuildFile; productRef = CD223AC12482AC2B00CA11E3 /* OHHTTPStubs */; };
+		CD223AC52482ACE000CA11E3 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = CD223AC42482ACE000CA11E3 /* SnapshotTesting */; };
 		CD24C47820854D7B00380C9E /* predictions.json in Resources */ = {isa = PBXBuildFile; fileRef = CD24C475208548AD00380C9E /* predictions.json */; };
 		CD24C47A20855A9800380C9E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24C47920855A9800380C9E /* UIView+Extensions.swift */; };
 		CD31A79A208538FE00C26A7E /* APIEndpoint+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A799208538FE00C26A7E /* APIEndpoint+Codable.swift */; };
@@ -361,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				768F01D42363E39ECBDA320D /* Pods_GudTayTests.framework in Frameworks */,
+				CD223AC52482ACE000CA11E3 /* SnapshotTesting in Frameworks */,
 				CD223AC22482AC2B00CA11E3 /* OHHTTPStubs in Frameworks */,
 				CD223AC02482AC0900CA11E3 /* OHHTTPStubsSwift in Frameworks */,
 			);
@@ -967,6 +969,7 @@
 			packageProductDependencies = (
 				CD223ABF2482AC0900CA11E3 /* OHHTTPStubsSwift */,
 				CD223AC12482AC2B00CA11E3 /* OHHTTPStubs */,
+				CD223AC42482ACE000CA11E3 /* SnapshotTesting */,
 			);
 			productName = GudTayTests;
 			productReference = ABC778891DC90B7A00815FB9 /* GudTayTests.xctest */;
@@ -1069,6 +1072,7 @@
 				CD223AB32482A20400CA11E3 /* XCRemoteSwiftPackageReference "Anchorage" */,
 				CD223AB62482A22B00CA11E3 /* XCRemoteSwiftPackageReference "BonMot" */,
 				CD223ABE2482AC0900CA11E3 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */,
+				CD223AC32482ACE000CA11E3 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = ABC778761DC90B7A00815FB9 /* Products */;
 			projectDirPath = "";
@@ -1989,6 +1993,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		CD223AC32482ACE000CA11E3 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:pointfreeco/swift-snapshot-testing.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2021,6 +2033,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CD223ABE2482AC0900CA11E3 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */;
 			productName = OHHTTPStubs;
+		};
+		CD223AC42482ACE000CA11E3 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD223AC32482ACE000CA11E3 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

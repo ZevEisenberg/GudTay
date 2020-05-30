@@ -16,7 +16,6 @@ end
 
 target 'GudTayTests' do
   shared()
-  pod 'SnapshotTesting'
 end
 
 target 'Services' do
