@@ -23,7 +23,7 @@ public extension OpenWeatherAPI {
         public let visibility: Int?
         public let windSpeed: Double
         public let windDeg: Int
-        public let windGust: Double
+        public let windGust: Double?
 
         /// It's possible to get more than one Weather, such as mist + light intensity drizzle.
         /// The first one is considered "primary". See also: [Documentation](https://openweathermap.org/weather-conditions)
