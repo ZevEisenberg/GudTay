@@ -15,7 +15,6 @@ PODS:
   - OHHTTPStubs/Swift (9.0.0):
     - OHHTTPStubs/Default
   - SnapshotTesting (1.7.2)
-  - Sourcery (0.18.0)
   - SwiftGen (6.1.0)
   - Swiftilities/HairlineView (0.25.1)
   - Swiftilities/Lifecycle (0.25.1):
@@ -31,7 +30,6 @@ DEPENDENCIES:
   - BonMot
   - OHHTTPStubs/Swift
   - SnapshotTesting
-  - Sourcery
   - SwiftGen
   - Swiftilities/HairlineView
   - Swiftilities/Lifecycle
@@ -45,7 +43,6 @@ SPEC REPOS:
     - BonMot
     - OHHTTPStubs
     - SnapshotTesting
-    - Sourcery
     - SwiftGen
     - Swiftilities
     - SwiftLint
@@ -56,12 +53,11 @@ SPEC CHECKSUMS:
   BonMot: 0d179476725af81f622a6d9f660f43048070016a
   OHHTTPStubs: cb29d2a9d09a828ecb93349a2b0c64f99e0db89f
   SnapshotTesting: 8caa6661fea7c8019d5b46de77c16bab99c36c5c
-  Sourcery: e0e8658a1ce6d9f475156ad3ffce4c68f1261b3e
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   Swiftilities: 6a4beb748c9301b02c7ab6820d4e3a3c07b5c531
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
 
-PODFILE CHECKSUM: 27f33a8cee42ad8644f2f7c252a34abeca766217
+PODFILE CHECKSUM: 09d5535b10fb7725911684ec7f8c59856577eef1
 
 COCOAPODS: 1.9.2

@@ -5,48 +5,40 @@
 //  Created by Zev Eisenberg on 4/16/18.
 //
 
+import JSONAPI
+
+typealias APITrip = ResourceObject<TripDescription, NoMetadata, NoLinks, String>
+
+enum TripDescription: ResourceObjectDescription {
+    static var jsonType: String { "trip" }
+
+    struct Attributes: JSONAPI.Attributes {
+        let id: Attribute<Tagged<Trip, String>>
+        let directionId: Attribute<Int>
+        let headsign: Attribute<String>
+        let name: Attribute<String>
+    }
+
+    struct Relationships: JSONAPI.Relationships {
+        let route: ToOneRelationship<APIRoute, NoMetadata, NoLinks>
+    }
+}
+
 public struct Trip {
 
-    public var cache: FlatCache?
-    public let id: Identifier<Trip>
+    public let id: Tagged<Trip, String>
 
     public let directionId: Int
     public let headsign: String
     public let name: String
 
-    let routeId: Identifier<Route>
-
-}
-
-public extension Trip {
-
-    var route: Route {
-        cache!.get(id: routeId)!
+    static func from(_ trip: APITrip) -> Self {
+        let attributes = trip.attributes
+        return Self(
+            id: .init(trip.id.rawValue),
+            directionId: attributes.directionId.value,
+            headsign: attributes.headsign.value,
+            name: attributes.name.value
+        )
     }
-
-}
-
-extension Trip: Entity {
-
-    public enum AttributeKeys: String, CodingKey {
-        case directionId
-        case headsign
-        case name
-    }
-
-    public enum RelationshipKeys: String, CodingKey {
-        case route
-    }
-
-    public init(helper: JSONAPI.DecodingHelper<Trip, AttributeKeys, RelationshipKeys>) throws {
-        self.cache = helper.decoder.cache
-        self.id = helper.id
-
-        self.directionId = try helper.attribute(forKey: .directionId)
-        self.headsign = try helper.attribute(forKey: .headsign)
-        self.name = try helper.attribute(forKey: .name)
-
-        self.routeId = try helper.relationship(for: .route)
-    }
-
 }

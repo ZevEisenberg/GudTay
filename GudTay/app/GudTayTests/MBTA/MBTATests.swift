@@ -31,6 +31,9 @@ class MBTATests: XCTestCase {
         let expectation = self.expectation(description: "Test Endpoint")
         _ = service.getPredictions(forStop: "6480") { result in
             XCTAssert(result.isSuccess)
+            if !result.isSuccess {
+                XCTFail("Unexpected error: \(result.error!)")
+            }
             XCTAssertEqual(result.success?.count, 4)
             expectation.fulfill()
         }

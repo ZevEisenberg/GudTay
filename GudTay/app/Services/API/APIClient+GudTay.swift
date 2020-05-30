@@ -10,6 +10,6 @@ import Foundation
 
 public extension APIClient {
 
-    static var mbta = APIClient(baseURL: APIEnvironment.active.mbtaUrl, cache: FlatCache())
+    static var mbta = APIClient(baseURL: APIEnvironment.active.mbtaUrl)
 
 }

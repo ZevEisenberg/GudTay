@@ -16,6 +16,6 @@ public enum APIConstants {
     // Values
     static let applicationJSON = "application/json"
 
-    public static let routeOfInterest: Identifier<Route> = "32"
+    public static let routeOfInterest: Tagged<Route, String> = "32"
 
 }

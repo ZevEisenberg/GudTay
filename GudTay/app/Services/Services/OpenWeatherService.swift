@@ -17,7 +17,7 @@ public final class OpenWeatherService {
             $0.dateDecodingStrategy = .secondsSince1970
         }
 
-        client = APIClient(baseURL: APIEnvironment.active.openWeatherUrl, configuration: configuration, cache: nil, decoder: decoder)
+        client = APIClient(baseURL: APIEnvironment.active.openWeatherUrl, configuration: configuration, decoder: decoder)
     }
 
     public func forecast(_ completion: @escaping (Result<OpenWeatherAPI.OneCall, Error>) -> Void) {

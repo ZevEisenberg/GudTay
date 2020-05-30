@@ -19,8 +19,8 @@ class MBTAViewController: UIViewController {
     var data: (predictions: [Prediction], date: Date) = ([], Date()) {
         didSet {
             let predictionsOfInterest = data.predictions
-                .filter { $0.route.id == APIConstants.routeOfInterest }
-                .filter { $0.directionId == $0.route.directionNames.firstIndex(of: "Inbound")! }
+                .filter { $0.route?.id == APIConstants.routeOfInterest }
+                .filter { $0.directionId == $0.route?.directionNames.firstIndex(of: "Inbound")! }
                 .filter { $0.departureTime > data.date }
                 .sorted { $0.departureTime < $1.departureTime }
                 .prefix(3)

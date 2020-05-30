@@ -34,5 +34,4 @@ target 'UtilitiesTests' do
 end
 
 pod 'SwiftGen'
-pod 'Sourcery'
 pod 'SwiftLint'

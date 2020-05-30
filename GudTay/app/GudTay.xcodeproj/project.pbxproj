@@ -64,18 +64,10 @@
 		ABF84FA61DCBCEA1002DB24D /* Payloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84FA51DCBCEA1002DB24D /* Payloads.swift */; };
 		BE2809301E8038BE006E50D5 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28092F1E8038BE006E50D5 /* ContentViewController.swift */; };
 		CD2239972481CFBF00CA11E3 /* JSONAPI in Frameworks */ = {isa = PBXBuildFile; productRef = CD2239962481CFBF00CA11E3 /* JSONAPI */; };
+		CD223A192481F0DD00CA11E3 /* JSONAPI+GudTay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD223A182481F0DD00CA11E3 /* JSONAPI+GudTay.swift */; };
 		CD24C47820854D7B00380C9E /* predictions.json in Resources */ = {isa = PBXBuildFile; fileRef = CD24C475208548AD00380C9E /* predictions.json */; };
 		CD24C47A20855A9800380C9E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24C47920855A9800380C9E /* UIView+Extensions.swift */; };
-		CD31A792208536D700C26A7E /* JSONAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A791208536D700C26A7E /* JSONAPI.swift */; };
-		CD31A794208536EE00C26A7E /* JSONAPIPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A793208536EE00C26A7E /* JSONAPIPayload.swift */; };
-		CD31A796208536FF00C26A7E /* JSONAPIResourceType+ImportIncluded.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A795208536FF00C26A7E /* JSONAPIResourceType+ImportIncluded.swift */; };
-		CD31A7982085384200C26A7E /* JSONEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A7972085384200C26A7E /* JSONEncodable.swift */; };
 		CD31A79A208538FE00C26A7E /* APIEndpoint+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A799208538FE00C26A7E /* APIEndpoint+Codable.swift */; };
-		CD31A7A320853A8C00C26A7E /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A7A220853A8C00C26A7E /* Entity.swift */; };
-		CD31A7A620853AB700C26A7E /* FlatCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A7A520853AB700C26A7E /* FlatCache.swift */; };
-		CD31A7A820853AD100C26A7E /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A7A720853AD100C26A7E /* Identifier.swift */; };
-		CD31A7AA20853AEA00C26A7E /* FlatCache+Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A7A920853AEA00C26A7E /* FlatCache+Observer.swift */; };
-		CD31A7AC20853B0900C26A7E /* AnyIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A7AB20853B0900C26A7E /* AnyIdentifier.swift */; };
 		CD31A7BD20853BA900C26A7E /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD31A7B420853BA900C26A7E /* Utilities.framework */; };
 		CD31A7C920853BA900C26A7E /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD31A7B420853BA900C26A7E /* Utilities.framework */; };
 		CD31A7CA20853BA900C26A7E /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD31A7B420853BA900C26A7E /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -261,24 +253,15 @@
 		ABF84FA51DCBCEA1002DB24D /* Payloads.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payloads.swift; sourceTree = "<group>"; };
 		AE1CBBB7DA06E0C0D4306E55 /* Pods-Services.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Services.debug.xcconfig"; path = "Target Support Files/Pods-Services/Pods-Services.debug.xcconfig"; sourceTree = "<group>"; };
 		BE28092F1E8038BE006E50D5 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		CD223A182481F0DD00CA11E3 /* JSONAPI+GudTay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONAPI+GudTay.swift"; sourceTree = "<group>"; };
 		CD24C475208548AD00380C9E /* predictions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = predictions.json; sourceTree = "<group>"; };
 		CD24C47920855A9800380C9E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		CD31A791208536D700C26A7E /* JSONAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAPI.swift; sourceTree = "<group>"; };
-		CD31A793208536EE00C26A7E /* JSONAPIPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAPIPayload.swift; sourceTree = "<group>"; };
-		CD31A795208536FF00C26A7E /* JSONAPIResourceType+ImportIncluded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONAPIResourceType+ImportIncluded.swift"; sourceTree = "<group>"; };
-		CD31A7972085384200C26A7E /* JSONEncodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONEncodable.swift; sourceTree = "<group>"; };
 		CD31A799208538FE00C26A7E /* APIEndpoint+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIEndpoint+Codable.swift"; sourceTree = "<group>"; };
-		CD31A7A220853A8C00C26A7E /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
-		CD31A7A520853AB700C26A7E /* FlatCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatCache.swift; sourceTree = "<group>"; };
-		CD31A7A720853AD100C26A7E /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
-		CD31A7A920853AEA00C26A7E /* FlatCache+Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlatCache+Observer.swift"; sourceTree = "<group>"; };
-		CD31A7AB20853B0900C26A7E /* AnyIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyIdentifier.swift; sourceTree = "<group>"; };
 		CD31A7B420853BA900C26A7E /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD31A7B720853BA900C26A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD31A7BC20853BA900C26A7E /* UtilitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD31A7C520853BA900C26A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD31A7D520853BBE00C26A7E /* Collection+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Utilities.swift"; sourceTree = "<group>"; };
-		CD31A7D820853CD200C26A7E /* Sourcery */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sourcery; sourceTree = "<group>"; };
 		CD39CFEB24809E5E000D9973 /* OpenWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherService.swift; sourceTree = "<group>"; };
 		CD39CFED24809F44000D9973 /* OpenWeather_forecast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OpenWeather_forecast.json; sourceTree = "<group>"; };
 		CD39CFF024809FC1000D9973 /* OpenWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherTests.swift; sourceTree = "<group>"; };
@@ -488,7 +471,6 @@
 				CD6B88B420863C2F0064F31A /* Services */,
 				86A65B131FA0F22B00705C14 /* Utilities */,
 				86A65B1C1FA0F2C900705C14 /* BuildType.swift */,
-				CD31A7D820853CD200C26A7E /* Sourcery */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -498,7 +480,6 @@
 			children = (
 				CD31A7A420853AAC00C26A7E /* Cache */,
 				CD31A79E20853A6000C26A7E /* Endpoints */,
-				CD31A790208536CB00C26A7E /* JSONAPI */,
 				CD31A79B20853A3600C26A7E /* Model */,
 				86A65AFE1FA0EB0600705C14 /* APIClient+GudTay.swift */,
 				86A65AFF1FA0EB0600705C14 /* APIClient.swift */,
@@ -708,23 +689,12 @@
 			path = Stubs;
 			sourceTree = "<group>";
 		};
-		CD31A790208536CB00C26A7E /* JSONAPI */ = {
-			isa = PBXGroup;
-			children = (
-				CD31A791208536D700C26A7E /* JSONAPI.swift */,
-				CD31A793208536EE00C26A7E /* JSONAPIPayload.swift */,
-				CD31A795208536FF00C26A7E /* JSONAPIResourceType+ImportIncluded.swift */,
-				CD31A7972085384200C26A7E /* JSONEncodable.swift */,
-			);
-			path = JSONAPI;
-			sourceTree = "<group>";
-		};
 		CD31A79B20853A3600C26A7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				CD39D01A2480A871000D9973 /* Tagged.swift */,
+				CD223A182481F0DD00CA11E3 /* JSONAPI+GudTay.swift */,
 				CD6B88A2208587570064F31A /* MBTA */,
-				CD31A7A120853A8500C26A7E /* Meta */,
 				CD39CFEA24809E3A000D9973 /* OpenWeather */,
 			);
 			path = Model;
@@ -739,21 +709,9 @@
 			path = Endpoints;
 			sourceTree = "<group>";
 		};
-		CD31A7A120853A8500C26A7E /* Meta */ = {
-			isa = PBXGroup;
-			children = (
-				CD31A7A220853A8C00C26A7E /* Entity.swift */,
-			);
-			path = Meta;
-			sourceTree = "<group>";
-		};
 		CD31A7A420853AAC00C26A7E /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				CD31A7AB20853B0900C26A7E /* AnyIdentifier.swift */,
-				CD31A7A920853AEA00C26A7E /* FlatCache+Observer.swift */,
-				CD31A7A520853AB700C26A7E /* FlatCache.swift */,
-				CD31A7A720853AD100C26A7E /* Identifier.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -931,7 +889,6 @@
 			buildConfigurationList = 86A65AFB1FA0EA2400705C14 /* Build configuration list for PBXNativeTarget "Services" */;
 			buildPhases = (
 				984F31A794D1669B49673C98 /* [CP] Check Pods Manifest.lock */,
-				CD31A7DB2085463300C26A7E /* Sourcery */,
 				CDB61EB42087EBAF00E0E99C /* SwiftGen */,
 				86A65AE91FA0EA2400705C14 /* Sources */,
 				86A65AEA1FA0EA2400705C14 /* Frameworks */,
@@ -1281,22 +1238,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CD31A7DB2085463300C26A7E /* Sourcery */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Services/Sourcery/JSONAPIResourceType+ImportIncluded.swifttemplate",
-			);
-			name = Sourcery;
-			outputPaths = (
-				"$(SRCROOT)/Services/API/JSONAPI/JSONAPIResourceType+ImportIncluded.swift",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Sourcery/bin/sourcery\" --sources \"Services\" --templates \"Services/Sourcery/JSONAPIResourceType+ImportIncluded.swifttemplate\" --output \"Services/API/JSONAPI/JSONAPIResourceType+ImportIncluded.swift\"\n";
-		};
 		CDB61EB42087EBAF00E0E99C /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1381,17 +1322,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD223A192481F0DD00CA11E3 /* JSONAPI+GudTay.swift in Sources */,
 				CD39D0212481A6D7000D9973 /* Temp.swift in Sources */,
 				CD31A79A208538FE00C26A7E /* APIEndpoint+Codable.swift in Sources */,
 				CD39CFEC24809E5E000D9973 /* OpenWeatherService.swift in Sources */,
-				CD31A7AC20853B0900C26A7E /* AnyIdentifier.swift in Sources */,
 				86A65B0C1FA0EB0600705C14 /* APIEndpoint+Logging.swift in Sources */,
 				CD39D0142480A39C000D9973 /* Weather.swift in Sources */,
 				86A65B191FA0F22B00705C14 /* Formatters.swift in Sources */,
 				CD39D01D24818CEA000D9973 /* OpenWeatherIcon.swift in Sources */,
-				CD31A7A820853AD100C26A7E /* Identifier.swift in Sources */,
 				CD39D01B2480A871000D9973 /* Tagged.swift in Sources */,
-				CD31A7AA20853AEA00C26A7E /* FlatCache+Observer.swift in Sources */,
 				86A65B0D1FA0EB0600705C14 /* APIEndpoint.swift in Sources */,
 				86A65B0E1FA0EB0600705C14 /* APIEnvironment.swift in Sources */,
 				CDB539D42087E171006EE89E /* LogService.swift in Sources */,
@@ -1401,25 +1340,19 @@
 				86A65B091FA0EB0600705C14 /* APIClient+GudTay.swift in Sources */,
 				CD39D0232481A71A000D9973 /* FeelsLike.swift in Sources */,
 				CD39D0122480A39C000D9973 /* Main.swift in Sources */,
-				CD31A794208536EE00C26A7E /* JSONAPIPayload.swift in Sources */,
 				CD39D01F2481A603000D9973 /* OpenWeatherDaily.swift in Sources */,
 				86A65B081FA0EB0600705C14 /* URLSession+GudTay.swift in Sources */,
-				CD31A7982085384200C26A7E /* JSONEncodable.swift in Sources */,
 				CD39D0172480A39C000D9973 /* Rain.swift in Sources */,
 				CD6B88AA208631F70064F31A /* Prediction.swift in Sources */,
-				CD31A792208536D700C26A7E /* JSONAPI.swift in Sources */,
 				CD39D0102480A39C000D9973 /* Current.swift in Sources */,
 				CD39CFF32480A088000D9973 /* OpenWeatherEndpoint.swift in Sources */,
 				CD6B88A6208588BE0064F31A /* Route.swift in Sources */,
 				86A65B1D1FA0F2C900705C14 /* BuildType.swift in Sources */,
-				CD31A7A320853A8C00C26A7E /* Entity.swift in Sources */,
 				CDB61EBA2087EC8C00E0E99C /* BinaryFloatingPoint+Utilities.swift in Sources */,
-				CD31A7A620853AB700C26A7E /* FlatCache.swift in Sources */,
 				CD39D0192480A3E9000D9973 /* OpenWeatherAPI.swift in Sources */,
 				CD6B88A4208587680064F31A /* Stop.swift in Sources */,
 				CD6B88A12085872B0064F31A /* MBTAEndpoint.swift in Sources */,
 				86A65B0A1FA0EB0600705C14 /* APIClient.swift in Sources */,
-				CD31A796208536FF00C26A7E /* JSONAPIResourceType+ImportIncluded.swift in Sources */,
 				CDB61EB62087EBDC00E0E99C /* Asset.swift in Sources */,
 				CD39D00F2480A39C000D9973 /* OpenWeatherHourly.swift in Sources */,
 				CD6B88B620863C380064F31A /* MBTAService.swift in Sources */,

@@ -9,25 +9,3 @@ import Then
 
 extension JSONDecoder: Then {}
 extension JSONEncoder: Then {}
-
-extension JSONDecoder {
-
-    var cache: FlatCache? {
-        get {
-            userInfo[cacheKey] as? FlatCache
-        }
-        set {
-            userInfo[cacheKey] = newValue
-        }
-    }
-}
-
-extension Decoder {
-
-    var cache: FlatCache? {
-        userInfo[cacheKey] as? FlatCache
-    }
-}
-
-// This can not go in the `Decoder` type because it is generic.
-private let cacheKey: CodingUserInfoKey = CodingUserInfoKey(rawValue: "com.zeveisenberg.flatCache.cacheKey")!

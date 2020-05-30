@@ -21,16 +21,7 @@ extension URLSession {
         let task = dataTask(with: request) { (data, response, error) in
             switch (data, error) {
             case (.some(let data), _):
-                if let cache = decoder.cache {
-                    completion(Result {
-                        try cache.deferObserverNotifications(during: {
-                            try decoder.decode(Endpoint.ResponseType.self, from: data)
-                        })
-                    })
-                }
-                else {
-                    completion(Result { try decoder.decode(Endpoint.ResponseType.self, from: data) })
-                }
+                completion(Result { try decoder.decode(Endpoint.ResponseType.self, from: data) })
             case (_, .some(let error)):
                 completion(.failure(error))
             case (.none, .none):

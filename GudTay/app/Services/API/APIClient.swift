@@ -11,14 +11,11 @@ import Foundation
 public class APIClient {
     let session: URLSession
     let baseURL: URL
-    let cache: FlatCache?
     let decoder: JSONDecoder
 
-    public init(baseURL: URL, configuration: URLSessionConfiguration = .default, cache: FlatCache?, decoder: JSONDecoder = JSONDecoder()) {
+    public init(baseURL: URL, configuration: URLSessionConfiguration = .default, decoder: JSONDecoder = JSONDecoder()) {
         self.baseURL = baseURL
-        self.cache = cache
         self.decoder = decoder
-        decoder.cache = cache
         configuration.httpAdditionalHeaders?[APIConstants.accept] = APIConstants.applicationJSON
         session = URLSession(configuration: configuration)
     }

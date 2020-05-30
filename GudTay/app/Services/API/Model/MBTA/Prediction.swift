@@ -6,11 +6,35 @@
 //
 
 import Foundation.NSDate
+import JSONAPI
+
+typealias APIPrediction = ResourceObject<PredictionDescription, NoMetadata, NoLinks, String>
+
+/// top-level API response for predictions
+typealias PredictionDocument = JSONAPI.Document<ManyResourceBody<APIPrediction>, NoMetadata, NoLinks, Include3<APIStop, APIRoute, APITrip>, NoAPIDescription, UnknownJSONAPIError>
+
+enum PredictionDescription: ResourceObjectDescription {
+    static var jsonType: String { "prediction" }
+
+    struct Attributes: JSONAPI.Attributes {
+        let arrivalTime: Attribute<Date>
+        let departureTime: Attribute<Date>
+        let directionId: Attribute<Int>
+        let status: Attribute<String?>
+        let stopSequence: Attribute<Int>
+        let track: Attribute<String?>?
+    }
+
+    struct Relationships: JSONAPI.Relationships {
+        let route: ToOneRelationship<APIRoute, NoMetadata, NoLinks>
+        let stop: ToOneRelationship<APIStop, NoMetadata, NoLinks>
+        let trip: ToOneRelationship<APITrip, NoMetadata, NoLinks>
+    }
+}
 
 public struct Prediction {
 
-    public var cache: FlatCache?
-    public let id: Identifier<Prediction>
+    public let id: Tagged<Prediction, String>
 
     public let arrivalTime: Date
     public let departureTime: Date
@@ -19,59 +43,40 @@ public struct Prediction {
     public let stopSequence: Int
     public let track: String?
 
-    let routeId: Identifier<Route>
-    let stopId: Identifier<Stop>
-    let tripId: Identifier<Trip>
+    // Relationships
+    public let route: Route?
+    public let stop: Stop?
+    public let trip: Trip?
 
-}
+    #warning("no idea whether this is the right way to get relationships from a document")
+    static func from(document: PredictionDocument) -> Result<[Self], Error> {
+        switch document.body {
+        case .errors(let errors, _, _):
+            return .failure(JSONAPIErrors(errors: errors))
+        case .data(let data):
+            let apiPredictions = data.primary.values
+            let stops = data.includes[APIStop.self].map(Stop.from(_:))
+            let routes = data.includes[APIRoute.self].map(Route.from(_:))
+            let trips = data.includes[APITrip.self].map(Trip.from(_:))
 
-public extension Prediction {
-
-    var route: Route {
-        cache!.get(id: routeId)!
-    }
-
-    var stop: Stop {
-        cache!.get(id: stopId)!
-    }
-
-    var trip: Trip {
-        cache!.get(id: tripId)!
-    }
-
-}
-
-extension Prediction: Entity {
-
-    public enum AttributeKeys: CodingKey {
-        case arrivalTime
-        case departureTime
-        case directionId
-        case status
-        case stopSequence
-        case track
-    }
-
-    public enum RelationshipKeys: CodingKey {
-        case route
-        case stop
-        case trip
-    }
-
-    public init(helper: JSONAPI.DecodingHelper<Prediction, AttributeKeys, RelationshipKeys>) throws {
-        self.cache = helper.decoder.cache
-        self.id = helper.id
-
-        self.arrivalTime = try helper.attribute(forKey: .arrivalTime)
-        self.departureTime = try helper.attribute(forKey: .departureTime)
-        self.directionId = try helper.attribute(forKey: .directionId)
-        self.status = try helper.attribute(forKey: .status)
-        self.stopSequence = try helper.attribute(forKey: .stopSequence)
-        self.track = try helper.attributeIfPresent(forKey: .track)
-
-        self.routeId = try helper.relationship(for: .route)
-        self.stopId = try helper.relationship(for: .stop)
-        self.tripId = try helper.relationship(for: .trip)
+            let predictions: [Self] = apiPredictions.map { prediction in
+                let attributes = prediction.attributes
+                let relationships = prediction.relationships
+                return Self(
+                    id: .init(prediction.id.rawValue),
+                    arrivalTime: attributes.arrivalTime.value,
+                    departureTime: attributes.departureTime.value,
+                    directionId: attributes.directionId.value,
+                    status: attributes.status.value,
+                    stopSequence: attributes.stopSequence.value,
+                    track: attributes.track?.value,
+                    route: routes.first { $0.id.rawValue == relationships.route.id.rawValue },
+                    stop: stops.first { $0.id.rawValue == relationships.stop.id.rawValue },
+                    trip: trips.first { $0.id.rawValue == relationships.trip.id.rawValue }
+                )
+            }
+            return .success(predictions)
+        }
     }
 
 }

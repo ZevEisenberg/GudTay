@@ -5,35 +5,41 @@
 //  Created by Zev Eisenberg on 4/16/18.
 //
 
+import JSONAPI
+
+typealias APIStop = ResourceObject<StopDescription, NoMetadata, NoLinks, String>
+
+enum StopDescription: ResourceObjectDescription {
+
+    static var jsonType: String { "stop" }
+
+    struct Attributes: JSONAPI.Attributes {
+        let id: Attribute<Tagged<Stop, String>>
+        let latitude: Attribute<Double>
+        let longitude: Attribute<Double>
+        let name: Attribute<String>
+    }
+
+    typealias Relationships = NoRelationships
+
+}
+
 public struct Stop {
 
-    public var cache: FlatCache?
-    public let id: Identifier<Stop>
+    public let id: Tagged<Stop, String>
 
     public let latitude: Double
     public let longitude: Double
     public let name: String
 
-}
-
-extension Stop: Entity {
-
-    public enum AttributeKeys: String, CodingKey {
-        case latitude
-        case longitude
-        case name
-    }
-
-    public enum RelationshipKeys: CodingKey {
-    }
-
-    public init(helper: JSONAPI.DecodingHelper<Stop, AttributeKeys, RelationshipKeys>) throws {
-        self.cache = helper.decoder.cache
-        self.id = helper.id
-
-        self.latitude = try helper.attribute(forKey: .latitude)
-        self.longitude = try helper.attribute(forKey: .longitude)
-        self.name = try helper.attribute(forKey: .name)
+    static func from(_ stop: APIStop) -> Self {
+        let attributes = stop.attributes
+        return Self(
+            id: .init(stop.id.rawValue),
+            latitude: attributes.latitude.value,
+            longitude: attributes.longitude.value,
+            name: attributes.name.value
+        )
     }
 
 }

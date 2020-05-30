@@ -10,7 +10,7 @@ import Services
 import Swiftilities
 
 private let refreshInterval: TimeInterval = 30 // should be 30
-private let stop: Identifier<Stop> = "6480" // Hyde Park Ave @ Mt Hope St
+private let stop: Tagged<Stop, String> = "6480" // Hyde Park Ave @ Mt Hope St
 
 final class MBTACoordinator: NSObject, Coordinator {
 
