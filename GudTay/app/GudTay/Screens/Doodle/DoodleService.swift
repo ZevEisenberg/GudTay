@@ -160,7 +160,7 @@ extension DoodleService: MCSessionDelegate {
 
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         Log.info("\(#function), \(peerID), \(state)")
-        delegate?.doodleService(self, did: .connectedDevicesChanged(deviceNames: session.connectedPeers.map { $0.displayName }))
+        delegate?.doodleService(self, did: .connectedDevicesChanged(deviceNames: session.connectedPeers.map(\.displayName)))
     }
 
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {

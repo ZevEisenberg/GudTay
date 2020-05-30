@@ -159,7 +159,7 @@ extension WeatherViewController: UICollectionViewDataSource {
                 default: fatalError("boooooo Swift")
                 }
             }
-            cell.images = images.map { $0.image }
+            cell.images = images.map(\.image)
             cell.pinnedHeight = view.frame.height
             return cell
         case .hour(let time, let icon, let temp, let precipProbability):
