@@ -100,7 +100,7 @@ final class ForecastCell: WeatherCell {
 
         // Don't use Anchorage so we avoid affecting translatesAutoresizingMaskIntoConstraints
         let constraint = contentView.widthAnchor.constraint(equalToConstant: ForecastCell.preferredWidth)
-        constraint.priority = UILayoutPriority(UILayoutPriority.required.rawValue - 1)
+        constraint.priority = .required - 1
         constraint.isActive = true
     }
 
