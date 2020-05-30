@@ -7,6 +7,7 @@
 //
 
 import Anchorage
+import UIKit
 
 final class AspectImageCell: WeatherCell {
 

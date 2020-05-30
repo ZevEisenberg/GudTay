@@ -1,6 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-GudTayTests/Pods-GudTayTests-frameworks.sh
-${BUILT_PRODUCTS_DIR}/Anchorage/Anchorage.framework
-${BUILT_PRODUCTS_DIR}/BonMot/BonMot.framework
 ${BUILT_PRODUCTS_DIR}/Swiftilities/Swiftilities.framework
 ${BUILT_PRODUCTS_DIR}/Then/Then.framework
 ${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework

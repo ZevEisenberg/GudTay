@@ -9,6 +9,7 @@
 // Code modified from https://techblog.badoo.com/blog/2015/06/15/lets-build-freehand-drawing-in-ios-part-1/
 
 import Anchorage
+import UIKit
 
 protocol DoodleViewDelegate: AnyObject {
 

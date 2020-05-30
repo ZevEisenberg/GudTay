@@ -3,9 +3,6 @@ use_frameworks!
 inhibit_all_warnings!
 
 def shared
-  pod 'Anchorage'
-  pod 'BonMot'
-
   pod 'Then'
 
   pod 'Swiftilities/HairlineView'

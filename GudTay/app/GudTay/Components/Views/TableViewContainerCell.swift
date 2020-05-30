@@ -7,6 +7,7 @@
 //
 
 import Anchorage
+import UIKit
 
 public protocol Reusable {
     func prepareForReuse()

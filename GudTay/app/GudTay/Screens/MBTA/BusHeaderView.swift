@@ -8,6 +8,7 @@
 
 import Anchorage
 import BonMot
+import UIKit
 
 final class BusHeaderView: MBTAHeaderView {
 

@@ -1,6 +1,4 @@
 PODS:
-  - Anchorage (4.4.0)
-  - BonMot (5.5.1)
   - OHHTTPStubs/Core (9.0.0)
   - OHHTTPStubs/Default (9.0.0):
     - OHHTTPStubs/Core
@@ -26,8 +24,6 @@ PODS:
   - Then (2.6.0)
 
 DEPENDENCIES:
-  - Anchorage
-  - BonMot
   - OHHTTPStubs/Swift
   - SnapshotTesting
   - SwiftGen
@@ -39,8 +35,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - Anchorage
-    - BonMot
     - OHHTTPStubs
     - SnapshotTesting
     - SwiftGen
@@ -49,8 +43,6 @@ SPEC REPOS:
     - Then
 
 SPEC CHECKSUMS:
-  Anchorage: d7f02c4f9425b537053237aab11ae97e59b55f36
-  BonMot: 0d179476725af81f622a6d9f660f43048070016a
   OHHTTPStubs: cb29d2a9d09a828ecb93349a2b0c64f99e0db89f
   SnapshotTesting: 8caa6661fea7c8019d5b46de77c16bab99c36c5c
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
@@ -58,6 +50,6 @@ SPEC CHECKSUMS:
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
 
-PODFILE CHECKSUM: 09d5535b10fb7725911684ec7f8c59856577eef1
+PODFILE CHECKSUM: f542d6c082d23f9176041523c4d3f077895ec25c
 
 COCOAPODS: 1.9.2

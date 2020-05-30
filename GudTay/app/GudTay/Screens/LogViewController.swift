@@ -8,6 +8,7 @@
 
 import Anchorage
 import Services
+import UIKit
 
 final class LogViewController: UIViewController {
 
