@@ -115,20 +115,10 @@ extension MBTARouteView {
                 return
             }
 
-            let first = predictions[0]
-            let second = predictions[checked: 1]
-            let third = predictions[checked: 2]
-
-            if let third = third, let second = second {
-                self = .three(next: first.departureTime, later: second.departureTime, afterThat: third.departureTime)
-            }
-            else if let second = second {
-                self = .two(next: first.departureTime, later: second.departureTime)
-            }
-            else {
-                self = .one(next: first.departureTime)
-            }
-
+            guard let first = predictions.first?.departureTime else { self = .none; return }
+            guard let second = predictions[checked: 1]?.departureTime else { self = .one(next: first); return }
+            guard let third = predictions[checked: 2]?.departureTime else { self = .two(next: first, later: second); return }
+            self = .three(next: first, later: second, afterThat: third)
         }
 
         func strings(forDate now: Date) -> (next: String, later: String, afterThat: String) {

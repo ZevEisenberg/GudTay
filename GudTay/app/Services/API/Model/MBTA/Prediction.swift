@@ -17,12 +17,12 @@ enum PredictionDescription: ResourceObjectDescription {
     static var jsonType: String { "prediction" }
 
     struct Attributes: JSONAPI.Attributes {
-        let arrivalTime: Attribute<Date>
-        let departureTime: Attribute<Date>
+        let arrivalTime: Attribute<Date?>
+        let departureTime: Attribute<Date?>
         let directionId: Attribute<Int>
         let status: Attribute<String?>
-        let stopSequence: Attribute<Int>
-        let track: Attribute<String?>?
+        let stopSequence: Attribute<Int?>
+        let scheduleRelationship: Attribute<ScheduleRelationship?>
     }
 
     struct Relationships: JSONAPI.Relationships {
@@ -36,12 +36,12 @@ public struct Prediction {
 
     public let id: Tagged<Prediction, String>
 
-    public let arrivalTime: Date
-    public let departureTime: Date
+    public let arrivalTime: Date?
+    public let departureTime: Date?
     public let directionId: Int
     public let status: String? // "2 stops away"
-    public let stopSequence: Int
-    public let track: String?
+    public let stopSequence: Int?
+    public let scheduleRelationship: ScheduleRelationship?
 
     // Relationships
     public let route: Route?
@@ -58,8 +58,9 @@ public struct Prediction {
             let routes = data.includes[APIRoute.self].map(Route.from(_:))
             let trips = data.includes[APITrip.self].map(Trip.from(_:))
 
-            let predictions: [Self] = apiPredictions.map { prediction in
+            let predictions: [Self] = apiPredictions.compactMap { prediction in
                 let attributes = prediction.attributes
+                guard attributes.scheduleRelationship.value != .skipped else { return nil }
                 let relationships = prediction.relationships
                 return Self(
                     id: .init(prediction.id.rawValue),
@@ -68,7 +69,7 @@ public struct Prediction {
                     directionId: attributes.directionId.value,
                     status: attributes.status.value,
                     stopSequence: attributes.stopSequence.value,
-                    track: attributes.track?.value,
+                    scheduleRelationship: attributes.scheduleRelationship.value,
                     route: routes.first { $0.id.rawValue == relationships.route.id.rawValue },
                     stop: stops.first { $0.id.rawValue == relationships.stop.id.rawValue },
                     trip: trips.first { $0.id.rawValue == relationships.trip.id.rawValue }

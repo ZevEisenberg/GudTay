@@ -65,6 +65,7 @@
 		BE2809301E8038BE006E50D5 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28092F1E8038BE006E50D5 /* ContentViewController.swift */; };
 		CD2239972481CFBF00CA11E3 /* JSONAPI in Frameworks */ = {isa = PBXBuildFile; productRef = CD2239962481CFBF00CA11E3 /* JSONAPI */; };
 		CD223A192481F0DD00CA11E3 /* JSONAPI+GudTay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD223A182481F0DD00CA11E3 /* JSONAPI+GudTay.swift */; };
+		CD223AB224829BDF00CA11E3 /* ScheduleRelationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD223AB124829BDF00CA11E3 /* ScheduleRelationship.swift */; };
 		CD24C47820854D7B00380C9E /* predictions.json in Resources */ = {isa = PBXBuildFile; fileRef = CD24C475208548AD00380C9E /* predictions.json */; };
 		CD24C47A20855A9800380C9E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24C47920855A9800380C9E /* UIView+Extensions.swift */; };
 		CD31A79A208538FE00C26A7E /* APIEndpoint+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A799208538FE00C26A7E /* APIEndpoint+Codable.swift */; };
@@ -254,6 +255,7 @@
 		AE1CBBB7DA06E0C0D4306E55 /* Pods-Services.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Services.debug.xcconfig"; path = "Target Support Files/Pods-Services/Pods-Services.debug.xcconfig"; sourceTree = "<group>"; };
 		BE28092F1E8038BE006E50D5 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		CD223A182481F0DD00CA11E3 /* JSONAPI+GudTay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONAPI+GudTay.swift"; sourceTree = "<group>"; };
+		CD223AB124829BDF00CA11E3 /* ScheduleRelationship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRelationship.swift; sourceTree = "<group>"; };
 		CD24C475208548AD00380C9E /* predictions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = predictions.json; sourceTree = "<group>"; };
 		CD24C47920855A9800380C9E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		CD31A799208538FE00C26A7E /* APIEndpoint+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIEndpoint+Codable.swift"; sourceTree = "<group>"; };
@@ -772,6 +774,7 @@
 				CD6B88A9208631F70064F31A /* Prediction.swift */,
 				CD6B88A5208588BE0064F31A /* Route.swift */,
 				CD6B88A3208587680064F31A /* Stop.swift */,
+				CD223AB124829BDF00CA11E3 /* ScheduleRelationship.swift */,
 				CD6B88A7208589F30064F31A /* Trip.swift */,
 			);
 			path = MBTA;
@@ -1349,6 +1352,7 @@
 				CD6B88A6208588BE0064F31A /* Route.swift in Sources */,
 				86A65B1D1FA0F2C900705C14 /* BuildType.swift in Sources */,
 				CDB61EBA2087EC8C00E0E99C /* BinaryFloatingPoint+Utilities.swift in Sources */,
+				CD223AB224829BDF00CA11E3 /* ScheduleRelationship.swift in Sources */,
 				CD39D0192480A3E9000D9973 /* OpenWeatherAPI.swift in Sources */,
 				CD6B88A4208587680064F31A /* Stop.swift in Sources */,
 				CD6B88A12085872B0064F31A /* MBTAEndpoint.swift in Sources */,

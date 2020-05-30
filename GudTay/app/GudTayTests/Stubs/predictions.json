@@ -2,14 +2,14 @@
   "data": [
     {
       "attributes": {
-        "arrival_time": "2018-11-05T20:59:49-05:00",
-        "departure_time": "2018-11-05T20:59:49-05:00",
+        "arrival_time": null,
+        "departure_time": null,
         "direction_id": 1,
-        "schedule_relationship": null,
+        "schedule_relationship": "SKIPPED",
         "status": null,
-        "stop_sequence": 20
+        "stop_sequence": null
       },
-      "id": "prediction-38486951-6480-20",
+      "id": "prediction-43726639-6480-",
       "relationships": {
         "route": {
           "data": {
@@ -25,8 +25,189 @@
         },
         "trip": {
           "data": {
-            "id": "38486951",
+            "id": "43726639",
             "type": "trip"
+          }
+        },
+        "vehicle": {
+          "data": null
+        }
+      },
+      "type": "prediction"
+    },
+    {
+      "attributes": {
+        "arrival_time": null,
+        "departure_time": null,
+        "direction_id": 1,
+        "schedule_relationship": "SKIPPED",
+        "status": null,
+        "stop_sequence": null
+      },
+      "id": "prediction-43726646-6480-",
+      "relationships": {
+        "route": {
+          "data": {
+            "id": "32",
+            "type": "route"
+          }
+        },
+        "stop": {
+          "data": {
+            "id": "6480",
+            "type": "stop"
+          }
+        },
+        "trip": {
+          "data": {
+            "id": "43726646",
+            "type": "trip"
+          }
+        },
+        "vehicle": {
+          "data": null
+        }
+      },
+      "type": "prediction"
+    },
+    {
+      "attributes": {
+        "arrival_time": null,
+        "departure_time": null,
+        "direction_id": 1,
+        "schedule_relationship": "SKIPPED",
+        "status": null,
+        "stop_sequence": null
+      },
+      "id": "prediction-43726648-6480-",
+      "relationships": {
+        "route": {
+          "data": {
+            "id": "32",
+            "type": "route"
+          }
+        },
+        "stop": {
+          "data": {
+            "id": "6480",
+            "type": "stop"
+          }
+        },
+        "trip": {
+          "data": {
+            "id": "43726648",
+            "type": "trip"
+          }
+        },
+        "vehicle": {
+          "data": null
+        }
+      },
+      "type": "prediction"
+    },
+    {
+      "attributes": {
+        "arrival_time": null,
+        "departure_time": null,
+        "direction_id": 1,
+        "schedule_relationship": "SKIPPED",
+        "status": null,
+        "stop_sequence": null
+      },
+      "id": "prediction-43726663-6480-",
+      "relationships": {
+        "route": {
+          "data": {
+            "id": "32",
+            "type": "route"
+          }
+        },
+        "stop": {
+          "data": {
+            "id": "6480",
+            "type": "stop"
+          }
+        },
+        "trip": {
+          "data": {
+            "id": "43726663",
+            "type": "trip"
+          }
+        },
+        "vehicle": {
+          "data": null
+        }
+      },
+      "type": "prediction"
+    },
+    {
+      "attributes": {
+        "arrival_time": null,
+        "departure_time": null,
+        "direction_id": 1,
+        "schedule_relationship": "SKIPPED",
+        "status": null,
+        "stop_sequence": null
+      },
+      "id": "prediction-43726665-6480-",
+      "relationships": {
+        "route": {
+          "data": {
+            "id": "32",
+            "type": "route"
+          }
+        },
+        "stop": {
+          "data": {
+            "id": "6480",
+            "type": "stop"
+          }
+        },
+        "trip": {
+          "data": {
+            "id": "43726665",
+            "type": "trip"
+          }
+        },
+        "vehicle": {
+          "data": null
+        }
+      },
+      "type": "prediction"
+    },
+    {
+      "attributes": {
+        "arrival_time": "2020-05-30T10:12:50-04:00",
+        "departure_time": "2020-05-30T10:12:50-04:00",
+        "direction_id": 1,
+        "schedule_relationship": null,
+        "status": null,
+        "stop_sequence": 20
+      },
+      "id": "prediction-43726527-6480-20",
+      "relationships": {
+        "route": {
+          "data": {
+            "id": "32",
+            "type": "route"
+          }
+        },
+        "stop": {
+          "data": {
+            "id": "6480",
+            "type": "stop"
+          }
+        },
+        "trip": {
+          "data": {
+            "id": "43726527",
+            "type": "trip"
+          }
+        },
+        "vehicle": {
+          "data": {
+            "id": "y1710",
+            "type": "vehicle"
           }
         }
       },
@@ -34,14 +215,14 @@
     },
     {
       "attributes": {
-        "arrival_time": "2018-11-05T21:14:49-05:00",
-        "departure_time": "2018-11-05T21:14:49-05:00",
+        "arrival_time": "2020-05-30T10:23:56-04:00",
+        "departure_time": "2020-05-30T10:23:56-04:00",
         "direction_id": 1,
         "schedule_relationship": null,
         "status": null,
         "stop_sequence": 20
       },
-      "id": "prediction-38486749-6480-20",
+      "id": "prediction-43726605-6480-20",
       "relationships": {
         "route": {
           "data": {
@@ -57,8 +238,14 @@
         },
         "trip": {
           "data": {
-            "id": "38486749",
+            "id": "43726605",
             "type": "trip"
+          }
+        },
+        "vehicle": {
+          "data": {
+            "id": "y1664",
+            "type": "vehicle"
           }
         }
       },
@@ -66,14 +253,14 @@
     },
     {
       "attributes": {
-        "arrival_time": "2018-11-05T21:29:49-05:00",
-        "departure_time": "2018-11-05T21:29:49-05:00",
+        "arrival_time": "2020-05-30T10:51:30-04:00",
+        "departure_time": "2020-05-30T10:51:30-04:00",
         "direction_id": 1,
         "schedule_relationship": null,
         "status": null,
         "stop_sequence": 20
       },
-      "id": "prediction-38486350-6480-20",
+      "id": "prediction-43726548-6480-20",
       "relationships": {
         "route": {
           "data": {
@@ -89,8 +276,14 @@
         },
         "trip": {
           "data": {
-            "id": "38486350",
+            "id": "43726548",
             "type": "trip"
+          }
+        },
+        "vehicle": {
+          "data": {
+            "id": "y1712",
+            "type": "vehicle"
           }
         }
       },
@@ -98,14 +291,14 @@
     },
     {
       "attributes": {
-        "arrival_time": "2018-11-05T21:44:49-05:00",
-        "departure_time": "2018-11-05T21:44:49-05:00",
+        "arrival_time": "2020-05-30T11:04:11-04:00",
+        "departure_time": "2020-05-30T11:04:11-04:00",
         "direction_id": 1,
         "schedule_relationship": null,
         "status": null,
         "stop_sequence": 20
       },
-      "id": "prediction-38486943-6480-20",
+      "id": "prediction-43726511-6480-20",
       "relationships": {
         "route": {
           "data": {
@@ -121,8 +314,14 @@
         },
         "trip": {
           "data": {
-            "id": "38486943",
+            "id": "43726511",
             "type": "trip"
+          }
+        },
+        "vehicle": {
+          "data": {
+            "id": "y1710",
+            "type": "vehicle"
           }
         }
       },
@@ -133,14 +332,19 @@
     {
       "attributes": {
         "color": "FFC72C",
-        "description": "Key Bus Route (Frequent Service)",
+        "description": "Key Bus",
+        "direction_destinations": [
+          "Wolcott or Cleary Square",
+          "Forest Hills Station"
+        ],
         "direction_names": [
           "Outbound",
           "Inbound"
         ],
-        "long_name": "Wolcott Square - Forest Hills",
+        "fare_class": "Local Bus",
+        "long_name": "Wolcott or Cleary Square - Forest Hills Station",
         "short_name": "32",
-        "sort_order": 3200,
+        "sort_order": 50320,
         "text_color": "000000",
         "type": 3
       },
@@ -148,20 +352,30 @@
       "links": {
         "self": "/routes/32"
       },
+      "relationships": {
+        "line": {
+          "data": {
+            "id": "line-32",
+            "type": "line"
+          }
+        },
+        "route_patterns": {
+        }
+      },
       "type": "route"
     },
     {
       "attributes": {
-        "bikes_allowed": 0,
-        "block_id": "B30-61",
+        "bikes_allowed": 1,
+        "block_id": "B32-52",
         "direction_id": 1,
         "headsign": "Forest Hills",
         "name": "",
         "wheelchair_accessible": 1
       },
-      "id": "38486350",
+      "id": "43726511",
       "links": {
-        "self": "/trips/38486350"
+        "self": "/trips/43726511"
       },
       "relationships": {
         "route": {
@@ -170,15 +384,21 @@
             "type": "route"
           }
         },
+        "route_pattern": {
+          "data": {
+            "id": "32-1-1",
+            "type": "route_pattern"
+          }
+        },
         "service": {
           "data": {
-            "id": "BUS42018-hbb48011-Weekday-02",
+            "id": "SpringSaturday",
             "type": "service"
           }
         },
         "shape": {
           "data": {
-            "id": "320121",
+            "id": "320155",
             "type": "shape"
           }
         }
@@ -187,16 +407,16 @@
     },
     {
       "attributes": {
-        "bikes_allowed": 0,
-        "block_id": "B32-124",
+        "bikes_allowed": 1,
+        "block_id": "B32-52",
         "direction_id": 1,
         "headsign": "Forest Hills",
         "name": "",
         "wheelchair_accessible": 1
       },
-      "id": "38486749",
+      "id": "43726527",
       "links": {
-        "self": "/trips/38486749"
+        "self": "/trips/43726527"
       },
       "relationships": {
         "route": {
@@ -205,15 +425,21 @@
             "type": "route"
           }
         },
+        "route_pattern": {
+          "data": {
+            "id": "32-1-1",
+            "type": "route_pattern"
+          }
+        },
         "service": {
           "data": {
-            "id": "BUS42018-hbb48011-Weekday-02",
+            "id": "SpringSaturday",
             "type": "service"
           }
         },
         "shape": {
           "data": {
-            "id": "320121",
+            "id": "320155",
             "type": "shape"
           }
         }
@@ -222,16 +448,16 @@
     },
     {
       "attributes": {
-        "bikes_allowed": 0,
-        "block_id": "B32-123",
+        "bikes_allowed": 1,
+        "block_id": "B32-54",
         "direction_id": 1,
         "headsign": "Forest Hills",
         "name": "",
         "wheelchair_accessible": 1
       },
-      "id": "38486943",
+      "id": "43726548",
       "links": {
-        "self": "/trips/38486943"
+        "self": "/trips/43726548"
       },
       "relationships": {
         "route": {
@@ -240,15 +466,21 @@
             "type": "route"
           }
         },
+        "route_pattern": {
+          "data": {
+            "id": "32-1-1",
+            "type": "route_pattern"
+          }
+        },
         "service": {
           "data": {
-            "id": "BUS42018-hbb48011-Weekday-02",
+            "id": "SpringSaturday",
             "type": "service"
           }
         },
         "shape": {
           "data": {
-            "id": "320121",
+            "id": "320155",
             "type": "shape"
           }
         }
@@ -257,16 +489,16 @@
     },
     {
       "attributes": {
-        "bikes_allowed": 0,
-        "block_id": "B32-123",
+        "bikes_allowed": 1,
+        "block_id": "B32-53",
         "direction_id": 1,
         "headsign": "Forest Hills",
         "name": "",
         "wheelchair_accessible": 1
       },
-      "id": "38486951",
+      "id": "43726605",
       "links": {
-        "self": "/trips/38486951"
+        "self": "/trips/43726605"
       },
       "relationships": {
         "route": {
@@ -275,15 +507,226 @@
             "type": "route"
           }
         },
+        "route_pattern": {
+          "data": {
+            "id": "32-1-1",
+            "type": "route_pattern"
+          }
+        },
         "service": {
           "data": {
-            "id": "BUS42018-hbb48011-Weekday-02",
+            "id": "SpringSaturday",
             "type": "service"
           }
         },
         "shape": {
           "data": {
-            "id": "320121",
+            "id": "320155",
+            "type": "shape"
+          }
+        }
+      },
+      "type": "trip"
+    },
+    {
+      "attributes": {
+        "bikes_allowed": 1,
+        "block_id": "B32-55",
+        "direction_id": 1,
+        "headsign": "Forest Hills",
+        "name": "",
+        "wheelchair_accessible": 1
+      },
+      "id": "43726639",
+      "links": {
+        "self": "/trips/43726639"
+      },
+      "relationships": {
+        "route": {
+          "data": {
+            "id": "32",
+            "type": "route"
+          }
+        },
+        "route_pattern": {
+          "data": {
+            "id": "32-1-1",
+            "type": "route_pattern"
+          }
+        },
+        "service": {
+          "data": {
+            "id": "SpringSaturday",
+            "type": "service"
+          }
+        },
+        "shape": {
+          "data": {
+            "id": "320155",
+            "type": "shape"
+          }
+        }
+      },
+      "type": "trip"
+    },
+    {
+      "attributes": {
+        "bikes_allowed": 1,
+        "block_id": "B32-55",
+        "direction_id": 1,
+        "headsign": "Forest Hills",
+        "name": "",
+        "wheelchair_accessible": 1
+      },
+      "id": "43726646",
+      "links": {
+        "self": "/trips/43726646"
+      },
+      "relationships": {
+        "route": {
+          "data": {
+            "id": "32",
+            "type": "route"
+          }
+        },
+        "route_pattern": {
+          "data": {
+            "id": "32-1-1",
+            "type": "route_pattern"
+          }
+        },
+        "service": {
+          "data": {
+            "id": "SpringSaturday",
+            "type": "service"
+          }
+        },
+        "shape": {
+          "data": {
+            "id": "320155",
+            "type": "shape"
+          }
+        }
+      },
+      "type": "trip"
+    },
+    {
+      "attributes": {
+        "bikes_allowed": 1,
+        "block_id": "B32-55",
+        "direction_id": 1,
+        "headsign": "Forest Hills",
+        "name": "",
+        "wheelchair_accessible": 1
+      },
+      "id": "43726648",
+      "links": {
+        "self": "/trips/43726648"
+      },
+      "relationships": {
+        "route": {
+          "data": {
+            "id": "32",
+            "type": "route"
+          }
+        },
+        "route_pattern": {
+          "data": {
+            "id": "32-1-1",
+            "type": "route_pattern"
+          }
+        },
+        "service": {
+          "data": {
+            "id": "SpringSaturday",
+            "type": "service"
+          }
+        },
+        "shape": {
+          "data": {
+            "id": "320155",
+            "type": "shape"
+          }
+        }
+      },
+      "type": "trip"
+    },
+    {
+      "attributes": {
+        "bikes_allowed": 1,
+        "block_id": "B32-55",
+        "direction_id": 1,
+        "headsign": "Forest Hills",
+        "name": "",
+        "wheelchair_accessible": 1
+      },
+      "id": "43726663",
+      "links": {
+        "self": "/trips/43726663"
+      },
+      "relationships": {
+        "route": {
+          "data": {
+            "id": "32",
+            "type": "route"
+          }
+        },
+        "route_pattern": {
+          "data": {
+            "id": "32-1-1",
+            "type": "route_pattern"
+          }
+        },
+        "service": {
+          "data": {
+            "id": "SpringSaturday",
+            "type": "service"
+          }
+        },
+        "shape": {
+          "data": {
+            "id": "320155",
+            "type": "shape"
+          }
+        }
+      },
+      "type": "trip"
+    },
+    {
+      "attributes": {
+        "bikes_allowed": 1,
+        "block_id": "B32-55",
+        "direction_id": 1,
+        "headsign": "Forest Hills",
+        "name": "",
+        "wheelchair_accessible": 1
+      },
+      "id": "43726665",
+      "links": {
+        "self": "/trips/43726665"
+      },
+      "relationships": {
+        "route": {
+          "data": {
+            "id": "32",
+            "type": "route"
+          }
+        },
+        "route_pattern": {
+          "data": {
+            "id": "32-1-1",
+            "type": "route_pattern"
+          }
+        },
+        "service": {
+          "data": {
+            "id": "SpringSaturday",
+            "type": "service"
+          }
+        },
+        "shape": {
+          "data": {
+            "id": "320155",
             "type": "shape"
           }
         }
@@ -293,13 +736,17 @@
     {
       "attributes": {
         "address": null,
+        "at_street": "Mount Hope Street",
         "description": null,
         "latitude": 42.285066,
         "location_type": 0,
         "longitude": -71.118763,
+        "municipality": "Boston",
         "name": "Hyde Park Ave @ Mt Hope St",
+        "on_street": "Hyde Park Avenue",
         "platform_code": null,
         "platform_name": null,
+        "vehicle_type": 3,
         "wheelchair_boarding": 1
       },
       "id": "6480",
@@ -316,6 +763,14 @@
         },
         "parent_station": {
           "data": null
+        },
+        "recommended_transfers": {
+        },
+        "zone": {
+          "data": {
+            "id": "LocalBus",
+            "type": "zone"
+          }
         }
       },
       "type": "stop"
