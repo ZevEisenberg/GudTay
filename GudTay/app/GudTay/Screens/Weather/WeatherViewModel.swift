@@ -115,9 +115,9 @@ private extension WeatherViewModel {
                 let sunrise = SolarEvent(kind: .sunrise, date: daily.sunrise)
                 let sunset = SolarEvent(kind: .sunset, date: daily.sunset)
                 return [sunrise, sunset]
-                }.compactMap { event in
-                    expandedInterval.contains(event.date) ? event : nil
-                }.sorted { $0.date < $1.date }
+            }.compactMap { event in
+                expandedInterval.contains(event.date) ? event : nil
+            }.sorted(by: \.date)
 
             backgroundViewModel = ForecastBackgroundViewModel(
                 interval: interval, // original interval, for purposes of scaling in the UI

@@ -25,7 +25,7 @@ class MBTAViewController: UIViewController {
                 .filter { (p: Prediction) -> Bool in p.directionId == p.route?.directionNames.firstIndex(of: "Inbound") }
                 .compactMap { (p: Prediction) -> PredictionAndDate? in p.departureTime.map { time in (prediction: p, departureTime: time) } }
                 .filter { (tuple: PredictionAndDate) -> Bool in tuple.departureTime > data.date }
-                .sorted { (tuple0: PredictionAndDate, tuple1: PredictionAndDate) -> Bool in tuple0.departureTime < tuple1.departureTime }
+                .sorted(by: \.departureTime)
                 .prefix(3)
                 .map { (tuple: PredictionAndDate) in tuple.prediction }
             busHeader.setUpcomingTrips(upcomingTrips: MBTARouteView.UpcomingTrips(predictions: Array(predictionsOfInterest)), relativeToDate: data.date)

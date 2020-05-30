@@ -11,4 +11,8 @@ public extension Collection {
         try !contains(where: predicate)
     }
 
+    func sorted<Property: Comparable>(by keyPath: KeyPath<Element, Property>) -> [Element] {
+        sorted(by: { $0[keyPath: keyPath] < $1[keyPath: keyPath] })
+    }
+
 }
