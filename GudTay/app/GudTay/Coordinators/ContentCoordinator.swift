@@ -37,51 +37,57 @@ class ContentCoordinator: NSObject, Coordinator {
         self.contentViewController = contentViewController
         contentViewController.modalTransitionStyle = .crossDissolve
         baseController.present(contentViewController, animated: false, completion: {
-            self.mbtaCoordinator = MBTACoordinator(service: self.mbtaService)
-            self.mbtaCoordinator?.start(in: contentViewController, subview: contentViewController.mbtaContainer)
-
-            let doodleViewController = DoodleViewController()
-            self.doodleViewController = doodleViewController
-
-            contentViewController.addChild(doodleViewController)
-            contentViewController.doodleContainer.addSubview(doodleViewController.view)
-            doodleViewController.didMove(toParent: contentViewController)
-            doodleViewController.doodleView.edgeAnchors == contentViewController.doodleContainer.edgeAnchors
-            doodleViewController.doodleView.borderedEdges = [.bottom]
-
-            let gudTayView = GudTayView(tapHandler: { [weak self] in
-                let logVC = LogViewController()
-                let navCon = UINavigationController(rootViewController: logVC)
-                navCon.modalPresentationStyle = .formSheet
-                self?.contentViewController?.show(navCon, sender: self)
-            })
-            contentViewController.calvinContainer.addSubview(gudTayView)
-            gudTayView.edgeAnchors == contentViewController.calvinContainer.edgeAnchors
-            gudTayView.borderedEdges = [.bottom]
-
-            self.weatherCoordinator = WeatherCoordinator(openWeatherService: self.openWeatherService)
-            self.weatherCoordinator?.start(in: contentViewController, subview: contentViewController.weatherContainer)
-
-            self.reachability.whenUnreachable = { [weak self] _ in
-                self?.contentViewController?.setOfflineViewVisible(true)
-            }
-
-            self.reachability.whenReachable = { [weak self] _ in
-                self?.contentViewController?.setOfflineViewVisible(false)
-                self?.mbtaCoordinator?.refresh()
-                self?.weatherCoordinator?.refresh()
-            }
-
-            do {
-                try self.reachability.startNotifier()
-            }
-            catch {
-                LogService.add(message: "Error starting Reachability: \(error)")
-                assertionFailure("Error starting Reachability: \(error)")
-            }
-
-            completion?()
+            self.secondPartOfStart(contentViewController: contentViewController, completion: completion)
         })
+    }
+
+    // Separate function to improve compile times
+    private func secondPartOfStart(contentViewController: ContentViewController, completion: (() -> Void)?) {
+        mbtaCoordinator = MBTACoordinator(service: mbtaService)
+        mbtaCoordinator?.start(in: contentViewController, subview: contentViewController.mbtaContainer)
+
+        let doodleViewController = DoodleViewController()
+        self.doodleViewController = doodleViewController
+
+        contentViewController.addChild(doodleViewController)
+        contentViewController.doodleContainer.addSubview(doodleViewController.view)
+        doodleViewController.didMove(toParent: contentViewController)
+        doodleViewController.doodleView.edgeAnchors == contentViewController.doodleContainer.edgeAnchors
+        doodleViewController.doodleView.borderedEdges = [.bottom]
+
+        let gudTayView = GudTayView(tapHandler: { [weak self] in
+            let logVC = LogViewController()
+            let navCon = UINavigationController(rootViewController: logVC)
+            navCon.modalPresentationStyle = .formSheet
+            self?.contentViewController?.show(navCon, sender: self)
+        })
+        contentViewController.calvinContainer.addSubview(gudTayView)
+        gudTayView.edgeAnchors == contentViewController.calvinContainer.edgeAnchors
+        gudTayView.borderedEdges = [.bottom]
+
+        weatherCoordinator = WeatherCoordinator(openWeatherService: openWeatherService)
+        weatherCoordinator?.start(in: contentViewController, subview: contentViewController.weatherContainer)
+
+        reachability.whenUnreachable = { [weak self] _ in
+            self?.contentViewController?.setOfflineViewVisible(true)
+        }
+
+        reachability.whenReachable = { [weak self] _ in
+            guard let self = self else { return }
+            self.contentViewController?.setOfflineViewVisible(false)
+            self.mbtaCoordinator?.refresh()
+            self.weatherCoordinator?.refresh()
+        }
+
+        do {
+            try reachability.startNotifier()
+        }
+        catch {
+            LogService.add(message: "Error starting Reachability: \(error)")
+            assertionFailure("Error starting Reachability: \(error)")
+        }
+
+        completion?()
     }
 
     func cleanup(animated: Bool, completion: (() -> Void)?) {
