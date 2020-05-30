@@ -86,7 +86,7 @@ struct ForecastBackgroundViewModel {
             events.append(newEvent)
         }
 
-        let endpoints = zip(events, events.dropFirst()).map { first, second -> EventEndpoints in
+        let endpoints = zip(events, events.dropFirst()).map { (first: SolarEvent, second: SolarEvent) -> EventEndpoints in
             assert(second.date > first.date, "events should be ordered ascending by date")
             assert(first.kind != second.kind, "events should alternate between sunrise and sunset")
 
