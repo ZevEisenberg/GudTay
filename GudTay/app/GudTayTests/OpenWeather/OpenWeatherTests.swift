@@ -6,6 +6,7 @@
 //
 
 import OHHTTPStubs
+import OHHTTPStubsSwift
 @testable import Services
 import XCTest
 

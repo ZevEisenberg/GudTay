@@ -1,17 +1,4 @@
 PODS:
-  - OHHTTPStubs/Core (9.0.0)
-  - OHHTTPStubs/Default (9.0.0):
-    - OHHTTPStubs/Core
-    - OHHTTPStubs/JSON
-    - OHHTTPStubs/NSURLSession
-    - OHHTTPStubs/OHPathHelpers
-  - OHHTTPStubs/JSON (9.0.0):
-    - OHHTTPStubs/Core
-  - OHHTTPStubs/NSURLSession (9.0.0):
-    - OHHTTPStubs/Core
-  - OHHTTPStubs/OHPathHelpers (9.0.0)
-  - OHHTTPStubs/Swift (9.0.0):
-    - OHHTTPStubs/Default
   - SnapshotTesting (1.7.2)
   - SwiftGen (6.1.0)
   - Swiftilities/HairlineView (0.25.1)
@@ -24,7 +11,6 @@ PODS:
   - Then (2.6.0)
 
 DEPENDENCIES:
-  - OHHTTPStubs/Swift
   - SnapshotTesting
   - SwiftGen
   - Swiftilities/HairlineView
@@ -35,7 +21,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - OHHTTPStubs
     - SnapshotTesting
     - SwiftGen
     - Swiftilities
@@ -43,13 +28,12 @@ SPEC REPOS:
     - Then
 
 SPEC CHECKSUMS:
-  OHHTTPStubs: cb29d2a9d09a828ecb93349a2b0c64f99e0db89f
   SnapshotTesting: 8caa6661fea7c8019d5b46de77c16bab99c36c5c
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   Swiftilities: 6a4beb748c9301b02c7ab6820d4e3a3c07b5c531
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
 
-PODFILE CHECKSUM: f542d6c082d23f9176041523c4d3f077895ec25c
+PODFILE CHECKSUM: ce4b96605eabc215d1a5ad9bdc01158339270e7d
 
 COCOAPODS: 1.9.2
