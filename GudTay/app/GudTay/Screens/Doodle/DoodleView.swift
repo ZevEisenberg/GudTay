@@ -47,14 +47,8 @@ final class DoodleView: GridView {
         contentView.layer.addSublayer(imageLayer)
 
         viewModel.newImageCallback = { [weak self] cgImage, updateKind in
-            guard let self = self else { return }
             DispatchQueue.main.async {
-                CATransaction.performWithoutAnimation {
-                    self.imageLayer.contents = cgImage
-                }
-                if updateKind == .committedLocally {
-                    self.delegate?.doodleView(self, did: .imageUpdateCommitted(UIImage(cgImage: cgImage)))
-                }
+                self?.handleUpdate(withImage: cgImage, kind: updateKind)
             }
         }
     }
@@ -104,6 +98,22 @@ extension DoodleView {
 
     func setDrawing(enabled: Bool) {
         viewModel.currentMode = enabled ? .drawing : .erasing
+    }
+
+}
+
+// MARK: - Private Methods
+
+private extension DoodleView {
+
+    func handleUpdate(withImage cgImage: CGImage, kind updateKind: DoodleViewModel.ImageUpdateKind) {
+        dispatchPrecondition(condition: .onQueue(.main))
+        CATransaction.performWithoutAnimation {
+            self.imageLayer.contents = cgImage
+        }
+        if updateKind == .committedLocally {
+            self.delegate?.doodleView(self, did: .imageUpdateCommitted(UIImage(cgImage: cgImage)))
+        }
     }
 
 }
