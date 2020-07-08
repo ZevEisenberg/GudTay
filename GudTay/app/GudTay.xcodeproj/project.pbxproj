@@ -1163,7 +1163,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -x \"$PODS_ROOT/SwiftGen/bin/swiftgen\" ]; then\n  $PODS_ROOT/SwiftGen/bin/swiftgen xcassets --template swift4 --output GudTay/Resources/Generated/Asset.swift GudTay/Resources/Assets.xcassets\n  $PODS_ROOT/SwiftGen/bin/swiftgen strings --template structured-swift4 --output GudTay/Resources/Generated/Localized.swift GudTay/Resources/Localizable.strings\nfi\n";
+			shellScript = "if [ -x \"$PODS_ROOT/SwiftGen/bin/swiftgen\" ]; then\n  $PODS_ROOT/SwiftGen/bin/swiftgen run xcassets --template swift4 --output GudTay/Resources/Generated/Asset.swift GudTay/Resources/Assets.xcassets\n  $PODS_ROOT/SwiftGen/bin/swiftgen run strings --template structured-swift4 --output GudTay/Resources/Generated/Localized.swift GudTay/Resources/Localizable.strings\nfi\n";
 		};
 		8861E6E40BAEA30652F88B2A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1276,7 +1276,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen xcassets --template swift4 --output Services/Resources/Generated/Asset.swift Services/Resources/Assets.xcassets\n";
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen run xcassets --template swift4 --output Services/Resources/Generated/Asset.swift Services/Resources/Assets.xcassets\n";
 		};
 		DB15C181E71294E21F18053C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

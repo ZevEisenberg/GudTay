@@ -1,25 +1,27 @@
 // swiftlint:disable all
 // Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
 
-#if os(OSX)
-  import AppKit.NSImage
-  internal typealias AssetColorTypeAlias = NSColor
-  internal typealias AssetImageTypeAlias = NSImage
-#elseif os(iOS) || os(tvOS) || os(watchOS)
-  import UIKit.UIImage
-  internal typealias AssetColorTypeAlias = UIColor
-  internal typealias AssetImageTypeAlias = UIImage
+#if os(macOS)
+  import AppKit
+#elseif os(iOS)
+  import UIKit
+#elseif os(tvOS) || os(watchOS)
+  import UIKit
 #endif
 
-// swiftlint:disable superfluous_disable_command
-// swiftlint:disable file_length
+// Deprecated typealiases
+@available(*, deprecated, renamed: "ColorAsset.Color", message: "This typealias will be removed in SwiftGen 7.0")
+internal typealias AssetColorTypeAlias = ColorAsset.Color
+@available(*, deprecated, renamed: "ImageAsset.Image", message: "This typealias will be removed in SwiftGen 7.0")
+internal typealias AssetImageTypeAlias = ImageAsset.Image
+
+// swiftlint:disable superfluous_disable_command file_length implicit_return
 
 // MARK: - Asset Catalogs
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
   internal enum Clock {
-
     internal static let face = ImageAsset(name: "Clock/Face")
     internal static let hourHand = ImageAsset(name: "Clock/Hour Hand")
     internal static let minuteHand = ImageAsset(name: "Clock/Minute Hand")
@@ -27,7 +29,6 @@ internal enum Asset {
     internal static let secondHand = ImageAsset(name: "Clock/Second Hand")
   }
   internal enum Clothing {
-
     internal static let _19andBelow = ImageAsset(name: "Clothing/19andBelow")
     internal static let _20to24 = ImageAsset(name: "Clothing/20to24")
     internal static let _25to29 = ImageAsset(name: "Clothing/25to29")
@@ -62,7 +63,6 @@ internal enum Asset {
   internal static let white = ColorAsset(name: "White")
   internal static let yellow = ColorAsset(name: "Yellow")
   internal enum Doodle {
-
     internal static let eraser = ImageAsset(name: "Doodle/Eraser")
     internal static let marker = ImageAsset(name: "Doodle/Marker")
     internal static let gun = ImageAsset(name: "Doodle/gun")
@@ -74,22 +74,30 @@ internal enum Asset {
 
 // MARK: - Implementation Details
 
-internal struct ColorAsset {
+internal final class ColorAsset {
   internal fileprivate(set) var name: String
 
-  @available(iOS 11.0, tvOS 11.0, watchOS 4.0, OSX 10.13, *)
-  internal var color: AssetColorTypeAlias {
-    return AssetColorTypeAlias(asset: self)
+  #if os(macOS)
+  internal typealias Color = NSColor
+  #elseif os(iOS) || os(tvOS) || os(watchOS)
+  internal typealias Color = UIColor
+  #endif
+
+  @available(iOS 11.0, tvOS 11.0, watchOS 4.0, macOS 10.13, *)
+  internal private(set) lazy var color: Color = Color(asset: self)
+
+  fileprivate init(name: String) {
+    self.name = name
   }
 }
 
-internal extension AssetColorTypeAlias {
-  @available(iOS 11.0, tvOS 11.0, watchOS 4.0, OSX 10.13, *)
+internal extension ColorAsset.Color {
+  @available(iOS 11.0, tvOS 11.0, watchOS 4.0, macOS 10.13, *)
   convenience init!(asset: ColorAsset) {
-    let bundle = Bundle(for: BundleToken.self)
+    let bundle = BundleToken.bundle
     #if os(iOS) || os(tvOS)
     self.init(named: asset.name, in: bundle, compatibleWith: nil)
-    #elseif os(OSX)
+    #elseif os(macOS)
     self.init(named: NSColor.Name(asset.name), bundle: bundle)
     #elseif os(watchOS)
     self.init(named: asset.name)
@@ -97,57 +105,39 @@ internal extension AssetColorTypeAlias {
   }
 }
 
-internal struct DataAsset {
-  internal fileprivate(set) var name: String
-
-  #if os(iOS) || os(tvOS) || os(OSX)
-  @available(iOS 9.0, tvOS 9.0, OSX 10.11, *)
-  internal var data: NSDataAsset {
-    return NSDataAsset(asset: self)
-  }
-  #endif
-}
-
-#if os(iOS) || os(tvOS) || os(OSX)
-@available(iOS 9.0, tvOS 9.0, OSX 10.11, *)
-internal extension NSDataAsset {
-  convenience init!(asset: DataAsset) {
-    let bundle = Bundle(for: BundleToken.self)
-    #if os(iOS) || os(tvOS)
-    self.init(name: asset.name, bundle: bundle)
-    #elseif os(OSX)
-    self.init(name: NSDataAsset.Name(asset.name), bundle: bundle)
-    #endif
-  }
-}
-#endif
-
 internal struct ImageAsset {
   internal fileprivate(set) var name: String
 
-  internal var image: AssetImageTypeAlias {
-    let bundle = Bundle(for: BundleToken.self)
+  #if os(macOS)
+  internal typealias Image = NSImage
+  #elseif os(iOS) || os(tvOS) || os(watchOS)
+  internal typealias Image = UIImage
+  #endif
+
+  internal var image: Image {
+    let bundle = BundleToken.bundle
     #if os(iOS) || os(tvOS)
-    let image = AssetImageTypeAlias(named: name, in: bundle, compatibleWith: nil)
-    #elseif os(OSX)
+    let image = Image(named: name, in: bundle, compatibleWith: nil)
+    #elseif os(macOS)
     let image = bundle.image(forResource: NSImage.Name(name))
     #elseif os(watchOS)
-    let image = AssetImageTypeAlias(named: name)
+    let image = Image(named: name)
     #endif
-    guard let result = image else { fatalError("Unable to load image named \(name).") }
+    guard let result = image else {
+      fatalError("Unable to load image named \(name).")
+    }
     return result
   }
 }
 
-internal extension AssetImageTypeAlias {
-  @available(iOS 1.0, tvOS 1.0, watchOS 1.0, *)
-  @available(OSX, deprecated,
+internal extension ImageAsset.Image {
+  @available(macOS, deprecated,
     message: "This initializer is unsafe on macOS, please use the ImageAsset.image property")
   convenience init!(asset: ImageAsset) {
     #if os(iOS) || os(tvOS)
-    let bundle = Bundle(for: BundleToken.self)
+    let bundle = BundleToken.bundle
     self.init(named: asset.name, in: bundle, compatibleWith: nil)
-    #elseif os(OSX)
+    #elseif os(macOS)
     self.init(named: NSImage.Name(asset.name))
     #elseif os(watchOS)
     self.init(named: asset.name)
@@ -155,4 +145,10 @@ internal extension AssetImageTypeAlias {
   }
 }
 
-private final class BundleToken {}
+// swiftlint:disable convenience_type
+private final class BundleToken {
+  static let bundle: Bundle = {
+    Bundle(for: BundleToken.self)
+  }()
+}
+// swiftlint:enable convenience_type
