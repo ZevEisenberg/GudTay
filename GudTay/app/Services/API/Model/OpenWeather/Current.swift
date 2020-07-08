@@ -18,7 +18,7 @@ public extension OpenWeatherAPI {
         public let pressure: Int
         public let humidity: Int
         public let dewPoint: Double
-        public let uvi: Double
+        public let uvi: Double?
         public let clouds: Int
         public let visibility: Int?
         public let windSpeed: Double

@@ -20,7 +20,7 @@ public extension OpenWeatherAPI {
         public let windDeg: Int
         public let weather: [Weather]
         public let clouds: Int
-        public let uvi: Double
+        public let uvi: Double?
         public let rain: Double?
 
         enum CodingKeys: String, CodingKey {
