@@ -42,27 +42,30 @@ enum Fonts {
 
         static let currentTempStyle = StringStyle(
             .numberSpacing(.proportional),
-            .font(UIFont(name: "HelveticaNeue-Bold", size: 120.0)!),
-            .color(.white))
+            .font(.systemFont(ofSize: 120, weight: .heavy)),
+            .color(.white),
+            .stylisticAlternates(.six(on: true)))
 
         static let tempRangeStyle = StringStyle(
             .numberSpacing(.proportional),
-            .font(UIFont(name: "HelveticaNeue-Bold", size: 48.0)!),
-            .color(.white))
+            .font(.systemFont(ofSize: 48, weight: .heavy)),
+            .color(.white),
+            .stylisticAlternates(.six(on: true)))
 
         private static let baseForecastStyle = StringStyle(
             .numberSpacing(.proportional),
             .alignment(.center),
-            .color(Asset.white.color))
+            .color(Asset.white.color),
+            .stylisticAlternates(.six(on: true)))
 
         static let timeStyle = baseForecastStyle.byAdding(
-            .font(UIFont(name: "HelveticaNeue-Medium", size: 20.0)!))
+            .font(.systemFont(ofSize: 20, weight: .semibold)))
 
         static let precipProbabilityStyle = baseForecastStyle.byAdding(
-            .font(UIFont(name: "HelveticaNeue-Medium", size: 16.0)!))
+            .font(.systemFont(ofSize: 16, weight: .semibold)))
 
         static let tempForecastStyle = baseForecastStyle.byAdding(
-            .font(UIFont(name: "HelveticaNeue-Medium", size: 32.0)!))
+            .font(.systemFont(ofSize: 32, weight: .semibold)))
 
     }
 
