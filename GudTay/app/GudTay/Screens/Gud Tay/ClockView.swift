@@ -8,12 +8,12 @@
 
 import Anchorage
 import Swiftilities
-import Then
 import UIKit
+import Utilities
 
 final class ClockView: UIView {
 
-    let faceView = UIImageView(image: Asset.Clock.face.image).then {
+    let faceView = with(UIImageView(image: Asset.Clock.face.image)) {
         $0.accessibilityIdentifier = "clock face"
         $0.setContentHuggingPriority(.required, for: .horizontal)
         $0.setContentHuggingPriority(.required, for: .vertical)
@@ -55,7 +55,7 @@ final class ClockView: UIView {
         return secondWrapper
     }()
 
-    let pivot = UIImageView(image: Asset.Clock.pivot.image).then {
+    let pivot = with(UIImageView(image: Asset.Clock.pivot.image)) {
         $0.accessibilityIdentifier = "pivot"
     }
 

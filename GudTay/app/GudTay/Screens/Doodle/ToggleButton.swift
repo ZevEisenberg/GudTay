@@ -5,7 +5,6 @@
 //  Created by Zev Eisenberg on 1/7/19.
 //
 
-import Then
 import UIKit
 
 final class ToggleButton: UIControl {

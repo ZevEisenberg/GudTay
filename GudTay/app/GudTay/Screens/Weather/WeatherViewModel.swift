@@ -8,7 +8,8 @@
 
 import Foundation
 import Services
-import Then
+import UIKit.UIImage
+import Utilities
 
 final class WeatherViewModel {
 
@@ -151,12 +152,12 @@ extension WeatherViewModel {
             ]
         let currentComponents = calendar.dateComponents(components, from: date)
 
-        let startComponents = currentComponents.with {
+        let startComponents = with(currentComponents) {
             $0.hour = 7
             $0.minute = 0
         }
 
-        let endComponents = currentComponents.with {
+        let endComponents = with(currentComponents) {
             $0.hour = 23
             $0.minute = 0
         }
@@ -221,5 +222,3 @@ extension WeatherViewModel {
     }
 
 }
-
-extension DateComponents: Then {}

@@ -7,10 +7,11 @@
 
 import Anchorage
 import UIKit
+import Utilities
 
 final class OfflineView: UIView {
 
-    private let imageView = UIImageView(image: Asset.wifi.image).then {
+    private let imageView = with(UIImageView(image: Asset.wifi.image)) {
         $0.setContentHuggingPriority(.required, for: .vertical)
         $0.setContentHuggingPriority(.required, for: .horizontal)
         $0.clipsToBounds = false

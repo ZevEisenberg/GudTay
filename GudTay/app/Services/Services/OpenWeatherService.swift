@@ -5,14 +5,15 @@
 //  Created by Zev Eisenberg on 5/28/20.
 //
 
-import Then
+import Foundation
+import Utilities
 
 public final class OpenWeatherService {
 
     private let client: APIClient
 
     public init(configuration: URLSessionConfiguration = .default) {
-        let decoder = JSONDecoder().then {
+        let decoder = with(JSONDecoder()) {
             $0.keyDecodingStrategy = .convertFromSnakeCase
             $0.dateDecodingStrategy = .secondsSince1970
         }

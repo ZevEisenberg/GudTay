@@ -7,12 +7,12 @@
 
 import Anchorage
 import Services
-import Then
 import UIKit
+import Utilities
 
 class MBTAViewController: UIViewController {
 
-    let busHeader = MBTARouteView(headerView: BusHeaderView(route: "32", destination: "Forest Hills")).then {
+    let busHeader = with(MBTARouteView(headerView: BusHeaderView(route: "32", destination: "Forest Hills"))) {
         $0.borderedEdges = [.bottom]
     }
 

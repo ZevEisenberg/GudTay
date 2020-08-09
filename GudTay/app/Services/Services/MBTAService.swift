@@ -5,14 +5,15 @@
 //  Created by Zev Eisenberg on 4/17/18.
 //
 
-import Then
+import Foundation
+import Utilities
 
 public class MBTAService {
 
     private let client: APIClient
 
     public init(configuration: URLSessionConfiguration = .default, decoder: JSONDecoder = JSONDecoder()) {
-        client = APIClient(baseURL: APIEnvironment.active.mbtaUrl, configuration: configuration, decoder: JSONDecoder().then {
+        client = APIClient(baseURL: APIEnvironment.active.mbtaUrl, configuration: configuration, decoder: with(JSONDecoder()) {
             $0.keyDecodingStrategy = .convertFromSnakeCase
             $0.dateDecodingStrategy = .iso8601
         })

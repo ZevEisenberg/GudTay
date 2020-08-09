@@ -7,7 +7,6 @@ PODS:
   - Swiftilities/Logging (0.25.1)
   - Swiftilities/Math (0.25.1)
   - SwiftLint (0.39.2)
-  - Then (2.7.0)
 
 DEPENDENCIES:
   - SwiftGen
@@ -15,21 +14,18 @@ DEPENDENCIES:
   - Swiftilities/Lifecycle
   - Swiftilities/Logging
   - SwiftLint
-  - Then
 
 SPEC REPOS:
   trunk:
     - SwiftGen
     - Swiftilities
     - SwiftLint
-    - Then
 
 SPEC CHECKSUMS:
   SwiftGen: 3d5024a47ea79e408cded20763d7a17d18a4548c
   Swiftilities: 6a4beb748c9301b02c7ab6820d4e3a3c07b5c531
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
-  Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: 25c25fe2e7bfa20dbf63bf4dc3b7327b11cd2878
+PODFILE CHECKSUM: 2129cb52ea1979f2d5e0a43b187bc53b4a775e94
 
 COCOAPODS: 1.9.3

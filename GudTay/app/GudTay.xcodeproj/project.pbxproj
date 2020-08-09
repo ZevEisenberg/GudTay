@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -71,9 +71,9 @@
 		CD223AC02482AC0900CA11E3 /* OHHTTPStubsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CD223ABF2482AC0900CA11E3 /* OHHTTPStubsSwift */; };
 		CD223AC22482AC2B00CA11E3 /* OHHTTPStubs in Frameworks */ = {isa = PBXBuildFile; productRef = CD223AC12482AC2B00CA11E3 /* OHHTTPStubs */; };
 		CD223AC52482ACE000CA11E3 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = CD223AC42482ACE000CA11E3 /* SnapshotTesting */; };
+		CD24BD6124E07BDC00613131 /* WIth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24BD6024E07BDC00613131 /* WIth.swift */; };
 		CD24C47820854D7B00380C9E /* predictions.json in Resources */ = {isa = PBXBuildFile; fileRef = CD24C475208548AD00380C9E /* predictions.json */; };
 		CD24C47A20855A9800380C9E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24C47920855A9800380C9E /* UIView+Extensions.swift */; };
-		CD31A79A208538FE00C26A7E /* APIEndpoint+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A799208538FE00C26A7E /* APIEndpoint+Codable.swift */; };
 		CD31A7BD20853BA900C26A7E /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD31A7B420853BA900C26A7E /* Utilities.framework */; };
 		CD31A7C920853BA900C26A7E /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD31A7B420853BA900C26A7E /* Utilities.framework */; };
 		CD31A7CA20853BA900C26A7E /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD31A7B420853BA900C26A7E /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -261,9 +261,9 @@
 		BE28092F1E8038BE006E50D5 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		CD223A182481F0DD00CA11E3 /* JSONAPI+GudTay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONAPI+GudTay.swift"; sourceTree = "<group>"; };
 		CD223AB124829BDF00CA11E3 /* ScheduleRelationship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRelationship.swift; sourceTree = "<group>"; };
+		CD24BD6024E07BDC00613131 /* WIth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIth.swift; sourceTree = "<group>"; };
 		CD24C475208548AD00380C9E /* predictions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = predictions.json; sourceTree = "<group>"; };
 		CD24C47920855A9800380C9E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		CD31A799208538FE00C26A7E /* APIEndpoint+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIEndpoint+Codable.swift"; sourceTree = "<group>"; };
 		CD31A7B420853BA900C26A7E /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD31A7B720853BA900C26A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD31A7BC20853BA900C26A7E /* UtilitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -490,13 +490,11 @@
 		86A65AFC1FA0EB0600705C14 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				CD31A7A420853AAC00C26A7E /* Cache */,
 				CD31A79E20853A6000C26A7E /* Endpoints */,
 				CD31A79B20853A3600C26A7E /* Model */,
 				86A65AFE1FA0EB0600705C14 /* APIClient+GudTay.swift */,
 				86A65AFF1FA0EB0600705C14 /* APIClient.swift */,
 				86A65B001FA0EB0600705C14 /* APIConstants.swift */,
-				CD31A799208538FE00C26A7E /* APIEndpoint+Codable.swift */,
 				86A65B011FA0EB0600705C14 /* APIEndpoint+Logging.swift */,
 				86A65B021FA0EB0600705C14 /* APIEndpoint.swift */,
 				86A65B031FA0EB0600705C14 /* APIEnvironment.swift */,
@@ -721,13 +719,6 @@
 			path = Endpoints;
 			sourceTree = "<group>";
 		};
-		CD31A7A420853AAC00C26A7E /* Cache */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cache;
-			sourceTree = "<group>";
-		};
 		CD31A7B520853BA900C26A7E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -737,6 +728,7 @@
 				CD31A7B720853BA900C26A7E /* Info.plist */,
 				CDB539B92086B2DA006EE89E /* RandomAccessCollection+Utilities.swift */,
 				5B85E5B721DA7DA6009A2202 /* Result+Utilities.swift */,
+				CD24BD6024E07BDC00613131 /* WIth.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1058,7 +1050,7 @@
 				ZevEisenbergNAME = ZevEisenberg;
 			};
 			buildConfigurationList = ABC778701DC90B7A00815FB9 /* Build configuration list for PBXProject "GudTay" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 11.4";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1348,7 +1340,6 @@
 			files = (
 				CD223A192481F0DD00CA11E3 /* JSONAPI+GudTay.swift in Sources */,
 				CD39D0212481A6D7000D9973 /* Temp.swift in Sources */,
-				CD31A79A208538FE00C26A7E /* APIEndpoint+Codable.swift in Sources */,
 				CD39CFEC24809E5E000D9973 /* OpenWeatherService.swift in Sources */,
 				86A65B0C1FA0EB0600705C14 /* APIEndpoint+Logging.swift in Sources */,
 				CD39D0142480A39C000D9973 /* Weather.swift in Sources */,
@@ -1466,6 +1457,7 @@
 				5B357A9921E4187B003DBFC4 /* CGRect+Utilities.swift in Sources */,
 				5B357A9521E416E5003DBFC4 /* BinaryFloatingPoint+Utilities.swift in Sources */,
 				5B85E5B821DA7DA6009A2202 /* Result+Utilities.swift in Sources */,
+				CD24BD6124E07BDC00613131 /* WIth.swift in Sources */,
 				CD31A7D620853BBE00C26A7E /* Collection+Utilities.swift in Sources */,
 				CDB539BA2086B2DA006EE89E /* RandomAccessCollection+Utilities.swift in Sources */,
 			);
@@ -1644,7 +1636,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.raizlabs.GudTay.Services;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1678,7 +1672,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay.utilities.Utilities;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1734,7 +1730,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.raizlabs.GudTay.Services;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1864,7 +1862,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.gudtay.utilities.Utilities;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

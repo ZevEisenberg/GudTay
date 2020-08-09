@@ -7,8 +7,8 @@
 //
 
 import Anchorage
-import Then
 import UIKit
+import Utilities
 
 class ContentViewController: UIViewController {
 
@@ -23,7 +23,7 @@ class ContentViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
 
-        let mainStackView = UIStackView(axId: "mainStackView").then {
+        let mainStackView = with(UIStackView(axId: "mainStackView")) {
             $0.axis = .vertical
             $0.alignment = .fill
         }

@@ -6,12 +6,12 @@
 //
 
 @testable import GudTay
-import Then
+import Utilities
 import XCTest
 
 class WeatherTests: XCTestCase {
 
-    let calendar = Calendar(identifier: .gregorian).with {
+    let calendar = with(Calendar(identifier: .gregorian)) {
         $0.timeZone = TimeZone(secondsFromGMT: 0)!
     }
 
@@ -30,8 +30,6 @@ class WeatherTests: XCTestCase {
     }
 
 }
-
-extension Calendar: Then {}
 
 private extension WeatherTests {
 
