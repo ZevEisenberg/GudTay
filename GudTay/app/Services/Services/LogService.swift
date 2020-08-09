@@ -8,6 +8,8 @@
 
 import Foundation.NSDate
 
+private let snapshotsToKeep = 10
+
 public enum LogService {
 
     // Public Properites
@@ -16,9 +18,14 @@ public enum LogService {
         queue.sync { _messages }
     }
 
+    public static var apiSnapshots: [String: [Data]] {
+        queue.sync { _apiSnapshots }
+    }
+
     // Private Properties
 
-    private static var _messages = [String]()
+    private static var _messages: [String] = []
+    private static var _apiSnapshots: [String: [Data]] = [:]
 
     private static let queue = DispatchQueue(label: "LogService", qos: .background, attributes: [], autoreleaseFrequency: .workItem, target: nil)
 
@@ -41,6 +48,15 @@ public extension LogService {
             if LogService._messages.count > 200 {
                 LogService._messages.removeFirst()
             }
+        }
+    }
+
+    static func add(apiSnapshot: Data, forSubsystem subsystemKey: String) {
+        queue.async {
+            var array = _apiSnapshots[subsystemKey, default: []]
+                .suffix(snapshotsToKeep)
+            array.append(apiSnapshot)
+            _apiSnapshots[subsystemKey] = Array(array)
         }
     }
 

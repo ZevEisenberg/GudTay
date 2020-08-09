@@ -16,11 +16,12 @@ struct UnknownError: Error {
 extension URLSession {
 
     @discardableResult
-    func dataTask<Endpoint: APIEndpoint>(_ baseURL: URL, endpoint: Endpoint, decoder: JSONDecoder, completion: @escaping (Result<Endpoint.ResponseType, Error>) -> Void) -> URLSessionTask where Endpoint.ResponseType: Decodable {
+    func dataTask<Endpoint: APIEndpoint>(_ baseURL: URL, endpoint: Endpoint, subsystem: String, decoder: JSONDecoder, completion: @escaping (Result<Endpoint.ResponseType, Error>) -> Void) -> URLSessionTask where Endpoint.ResponseType: Decodable {
         let request = self.request(baseURL, endpoint: endpoint)
         let task = dataTask(with: request) { (data, response, error) in
             switch (data, error) {
             case (.some(let data), _):
+                LogService.add(apiSnapshot: data, forSubsystem: subsystem)
                 completion(Result { try decoder.decode(Endpoint.ResponseType.self, from: data) })
             case (_, .some(let error)):
                 completion(.failure(error))

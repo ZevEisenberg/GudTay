@@ -25,7 +25,7 @@ public extension MBTAService {
 
     func getPredictions(forStop stop: Tagged<Stop, String>, completion: @escaping(Result<[Prediction], Error>) -> Void) -> URLSessionTask {
         let endpoint = MBTAEndpoint.PredictionsByStop(stop: stop)
-        return client.dataTask(endpoint) { result in
+        return client.dataTask(endpoint, subsystem: "transit") { result in
             completion(result.flatMap(Prediction.from(document:)))
         }
     }

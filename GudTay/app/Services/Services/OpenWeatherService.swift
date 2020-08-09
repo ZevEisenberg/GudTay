@@ -23,7 +23,7 @@ public final class OpenWeatherService {
 
     public func forecast(_ completion: @escaping (Result<OpenWeatherAPI.OneCall, Error>) -> Void) {
         let endpoint = OpenWeatherEndpoint.Forecast(apiKey: Constants.apiKey, latitude: 42.3601, longitude: -71.0589)
-        _ = client.dataTask(endpoint, completion: completion)
+        _ = client.dataTask(endpoint, subsystem: "weather", completion: completion)
     }
 }
 

@@ -24,8 +24,8 @@ public class APIClient {
 extension APIClient {
 
     @discardableResult
-    func dataTask<Endpoint: APIEndpoint>(_ endpoint: Endpoint, completion: @escaping (Result<Endpoint.ResponseType, Error>) -> Void) -> URLSessionTask where Endpoint.ResponseType: Decodable {
-        session.dataTask(baseURL, endpoint: endpoint, decoder: decoder) { result in
+    func dataTask<Endpoint: APIEndpoint>(_ endpoint: Endpoint, subsystem: String, completion: @escaping (Result<Endpoint.ResponseType, Error>) -> Void) -> URLSessionTask where Endpoint.ResponseType: Decodable {
+        session.dataTask(baseURL, endpoint: endpoint, subsystem: subsystem, decoder: decoder) { result in
             DispatchQueue.main.async {
                 completion(result)
             }
