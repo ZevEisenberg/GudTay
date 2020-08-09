@@ -1967,8 +1967,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:mattpolzin/JSONAPI.git";
 			requirement = {
-				kind = exactVersion;
-				version = "4.0.0-rc.3.1";
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
 			};
 		};
 		CD223AB32482A20400CA11E3 /* XCRemoteSwiftPackageReference "Anchorage" */ = {

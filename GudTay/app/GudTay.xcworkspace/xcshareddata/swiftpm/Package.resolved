@@ -24,8 +24,8 @@
         "repositoryURL": "git@github.com:mattpolzin/JSONAPI.git",
         "state": {
           "branch": null,
-          "revision": "0c48ddfbc665a5768ed872b7236f3d7bad2063aa",
-          "version": "4.0.0-rc.3.1"
+          "revision": "51cb140ebf27949d1185227e3eaef5a54d9a3bee",
+          "version": "4.0.0"
         }
       },
       {
@@ -60,8 +60,8 @@
         "repositoryURL": "git@github.com:pointfreeco/swift-snapshot-testing.git",
         "state": {
           "branch": null,
-          "revision": "114882386a815f4a2e6d8f2f7ee4857acd372438",
-          "version": "1.7.2"
+          "revision": "2fd91357e90efe82bfa6845d1e7d5bc2f5025d35",
+          "version": "1.8.1"
         }
       }
     ]
