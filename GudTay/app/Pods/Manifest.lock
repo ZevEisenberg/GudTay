@@ -1,5 +1,5 @@
 PODS:
-  - SwiftGen (6.2.1)
+  - SwiftGen (6.3.0)
   - Swiftilities/HairlineView (0.25.1)
   - Swiftilities/Lifecycle (0.25.1):
     - Swiftilities/HairlineView
@@ -25,7 +25,7 @@ SPEC REPOS:
     - Then
 
 SPEC CHECKSUMS:
-  SwiftGen: 62e69d127507be1538d4263e137b2290cd6ab272
+  SwiftGen: 3d5024a47ea79e408cded20763d7a17d18a4548c
   Swiftilities: 6a4beb748c9301b02c7ab6820d4e3a3c07b5c531
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
