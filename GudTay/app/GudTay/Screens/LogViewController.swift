@@ -58,7 +58,12 @@ private extension LogViewController {
 
     @objc func shareTapped(sender: UIBarButtonItem) {
         guard let errorText = errorTextView.text else { return }
-        let shareSheet = UIActivityViewController(activityItems: [errorText], applicationActivities: nil)
+        let apiSnapshots = LogService.apiSnapshots.mapValues {
+            $0
+                .map { String(data: $0, encoding: .utf8) ?? "unable to convert data to JSON" }
+                .joined(separator: "\n")
+        }
+        let shareSheet = UIActivityViewController(activityItems: [errorText, apiSnapshots], applicationActivities: nil)
         present(shareSheet, animated: true, completion: nil)
         shareSheet.modalPresentationStyle = .popover
         shareSheet.popoverPresentationController?.barButtonItem = sender
