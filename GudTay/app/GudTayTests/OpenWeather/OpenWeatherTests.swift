@@ -30,7 +30,7 @@ final class OpenWeatherTests: XCTestCase {
         }
 
         let expectation = self.expectation(description: "Test Endpoint")
-        _ = service.forecast { result in
+        service.forecast { result in
             XCTAssert(result.isSuccess)
             if !result.isSuccess {
                 XCTFail("Unexpected error: \(result.error!)")
