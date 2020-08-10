@@ -74,12 +74,9 @@ private extension WeatherViewModel {
 
         // Hourly Forecast
 
-        let hourlyPrecipitations = forecast
-            .hourly
-            .compactMap { hourly in
-                hourly.rain.map { rain in (timestamp: hourly.date, rain: rain) }}
+        let hourlyPrecipitationTimestamps = forecast.hourly.map(\.date)
 
-        let hoursUntilSameTimeNextDay = (hourlyPrecipitations.first?.timestamp ?? referenceDate).hoursUntilSameTimeNextDay()
+        let hoursUntilSameTimeNextDay = (hourlyPrecipitationTimestamps.first ?? referenceDate).hoursUntilSameTimeNextDay()
 
         for index in 0..<hoursUntilSameTimeNextDay {
             guard let hourly = forecast.hourly[checked: index] else { break }
@@ -88,7 +85,7 @@ private extension WeatherViewModel {
                 time: hourly.date,
                 icon: hourly.weather.first?.icon.smallImage,
                 temp: hourly.temp,
-                precipProbability: hourly.rain?.oneHour ?? 0)
+                precipProbability: hourly.probabilityOfPrecipitation)
             )
         }
 
@@ -185,8 +182,8 @@ extension WeatherViewModel {
         let tempForClothing: Double
         let needUmbrella: Bool
 
-        let precipitationWantsUmbrella = { (precip: OpenWeatherAPI.Rain) in
-            precip.oneHour > 0.15 || precip.oneHour >= 0.1
+        let precipitationWantsUmbrella = { (precip: Double) in
+            precip > 0.15 || precip >= 0.1
         }
 
         if let hoursWeCareAbout = hoursWeCareAbout {
@@ -204,10 +201,10 @@ extension WeatherViewModel {
 
             let precipitationsWeCareAbout = forecast
                 .hourly
-                .map { (rain: $0.rain, timestamp: $0.date) }
+                .map { (rain: $0.probabilityOfPrecipitation, timestamp: $0.date) }
                 .filter { hoursWeCareAbout.contains($0.timestamp) }
             needUmbrella = precipitationsWeCareAbout
-                .compactMap(\.rain)
+                .map(\.rain)
                 .contains(where: precipitationWantsUmbrella)
         }
         else {

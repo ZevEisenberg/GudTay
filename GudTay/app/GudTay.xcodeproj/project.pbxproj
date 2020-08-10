@@ -88,7 +88,6 @@
 		CD39D0122480A39C000D9973 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D0092480A39C000D9973 /* Main.swift */; };
 		CD39D0142480A39C000D9973 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D00B2480A39C000D9973 /* Weather.swift */; };
 		CD39D0152480A39C000D9973 /* OneCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D00C2480A39C000D9973 /* OneCall.swift */; };
-		CD39D0172480A39C000D9973 /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D00E2480A39C000D9973 /* Rain.swift */; };
 		CD39D0192480A3E9000D9973 /* OpenWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D0182480A3E9000D9973 /* OpenWeatherAPI.swift */; };
 		CD39D01B2480A871000D9973 /* Tagged.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D01A2480A871000D9973 /* Tagged.swift */; };
 		CD39D01D24818CEA000D9973 /* OpenWeatherIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D01C24818CEA000D9973 /* OpenWeatherIcon.swift */; };
@@ -278,7 +277,6 @@
 		CD39D0092480A39C000D9973 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		CD39D00B2480A39C000D9973 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		CD39D00C2480A39C000D9973 /* OneCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneCall.swift; sourceTree = "<group>"; };
-		CD39D00E2480A39C000D9973 /* Rain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rain.swift; sourceTree = "<group>"; };
 		CD39D0182480A3E9000D9973 /* OpenWeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherAPI.swift; sourceTree = "<group>"; };
 		CD39D01A2480A871000D9973 /* Tagged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tagged.swift; path = OpenWeather/Tagged.swift; sourceTree = "<group>"; };
 		CD39D01C24818CEA000D9973 /* OpenWeatherIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherIcon.swift; sourceTree = "<group>"; };
@@ -754,7 +752,6 @@
 				CD39D00C2480A39C000D9973 /* OneCall.swift */,
 				CD39D0202481A6D7000D9973 /* Temp.swift */,
 				CD39D0222481A71A000D9973 /* FeelsLike.swift */,
-				CD39D00E2480A39C000D9973 /* Rain.swift */,
 				CD39D00B2480A39C000D9973 /* Weather.swift */,
 				CD39D01C24818CEA000D9973 /* OpenWeatherIcon.swift */,
 				CD39D0182480A3E9000D9973 /* OpenWeatherAPI.swift */,
@@ -1357,7 +1354,6 @@
 				CD39D0122480A39C000D9973 /* Main.swift in Sources */,
 				CD39D01F2481A603000D9973 /* OpenWeatherDaily.swift in Sources */,
 				86A65B081FA0EB0600705C14 /* URLSession+GudTay.swift in Sources */,
-				CD39D0172480A39C000D9973 /* Rain.swift in Sources */,
 				CD6B88AA208631F70064F31A /* Prediction.swift in Sources */,
 				CD39D0102480A39C000D9973 /* Current.swift in Sources */,
 				CD39CFF32480A088000D9973 /* OpenWeatherEndpoint.swift in Sources */,

@@ -20,7 +20,7 @@ public extension OpenWeatherAPI {
         public let windSpeed: Double
         public let windDeg: Int
         public let weather: [Weather]
-        public let rain: Rain?
+        private let pop: Double // Probability of Precipitation
 
         enum CodingKeys: String, CodingKey {
             case date = "dt"
@@ -33,7 +33,11 @@ public extension OpenWeatherAPI {
             case windSpeed
             case windDeg
             case weather
-            case rain
+            case pop
+        }
+
+        public var probabilityOfPrecipitation: Double {
+            pop
         }
     }
 
