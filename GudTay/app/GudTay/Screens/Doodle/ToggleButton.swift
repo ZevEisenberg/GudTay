@@ -165,9 +165,9 @@ final class ToggleButton: UIControl {
         self.bringSubviewToFront(mode.isPrimary ? primaryImageView : secondaryImageView)
         UIView.animate(
             withDuration: animated ? 0.3 : 0.0,
-            animations: ({
+            animations: {
                 self.layoutIfNeeded()
-            }),
+            },
             completion: { _ in })
     }
 
