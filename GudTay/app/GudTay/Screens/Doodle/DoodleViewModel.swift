@@ -189,6 +189,8 @@ final class DoodleViewModel {
         if persistence == .onDisk {
             ImageIO.persistImage(UIImage(cgImage: cgImage), named: Constants.imageName)
         }
+        // If we just cleared, there's no reason to be erasing, so make sure we're drawing
+        currentMode = .drawing
     }
 
 }
