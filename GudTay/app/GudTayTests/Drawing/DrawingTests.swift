@@ -22,7 +22,7 @@ class DrawingTests: XCTestCase {
     let sut = DoodleViewModel(size: size, persistence: .inMemory)
 
     override func setUp() {
-        sut.newImageCallback = { (image, kind) in result = image }
+        sut.newImageCallback = { (image, _) in result = image }
         sut.loadPersistedImage()
     }
 

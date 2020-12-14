@@ -20,7 +20,7 @@ struct LoggingConfiguration: AppLifecycle {
             Log.logLevel = .error
             NetworkLog.logLevel = .error
         #endif
-        Log.handler = { (level, message) in
+        Log.handler = { (_, message) in
             LogService.add(message: message)
         }
     }
