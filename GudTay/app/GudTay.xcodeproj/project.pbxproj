@@ -32,7 +32,7 @@
 		5BC144C721ED7F1A0015ACBC /* CGContext+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC144C621ED7F1A0015ACBC /* CGContext+Utilities.swift */; };
 		5BF393D0221E4C2300E93348 /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF393CF221E4C2300E93348 /* WeatherTests.swift */; };
 		768F01D42363E39ECBDA320D /* Pods_GudTayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10690B914E1BCAB65173975 /* Pods_GudTayTests.framework */; };
-		7A432B5A241D750B001D7F1F /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 7A432B59241D750B001D7F1F /* Reachability */; };
+		7A432B5A241D750B001D7F1F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 7A432B59241D750B001D7F1F /* SwiftPackageProductDependency */; };
 		7A432B5C241D7556001D7F1F /* OfflineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A432B5B241D7556001D7F1F /* OfflineView.swift */; };
 		861732D51FA28DB600C14354 /* ModalDismissBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861732D31FA28DB600C14354 /* ModalDismissBehavior.swift */; };
 		861732D81FA290F400C14354 /* ControlContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861732D71FA290F400C14354 /* ControlContainable.swift */; };
@@ -63,14 +63,14 @@
 		ABF84FA41DCBCD89002DB24D /* MBTATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84FA31DCBCD89002DB24D /* MBTATests.swift */; };
 		ABF84FA61DCBCEA1002DB24D /* Payloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84FA51DCBCEA1002DB24D /* Payloads.swift */; };
 		BE2809301E8038BE006E50D5 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28092F1E8038BE006E50D5 /* ContentViewController.swift */; };
-		CD2239972481CFBF00CA11E3 /* JSONAPI in Frameworks */ = {isa = PBXBuildFile; productRef = CD2239962481CFBF00CA11E3 /* JSONAPI */; };
+		CD2239972481CFBF00CA11E3 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = CD2239962481CFBF00CA11E3 /* SwiftPackageProductDependency */; };
 		CD223A192481F0DD00CA11E3 /* JSONAPI+GudTay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD223A182481F0DD00CA11E3 /* JSONAPI+GudTay.swift */; };
 		CD223AB224829BDF00CA11E3 /* ScheduleRelationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD223AB124829BDF00CA11E3 /* ScheduleRelationship.swift */; };
-		CD223AB52482A20400CA11E3 /* Anchorage in Frameworks */ = {isa = PBXBuildFile; productRef = CD223AB42482A20400CA11E3 /* Anchorage */; };
-		CD223AB82482A22B00CA11E3 /* BonMot in Frameworks */ = {isa = PBXBuildFile; productRef = CD223AB72482A22B00CA11E3 /* BonMot */; };
-		CD223AC02482AC0900CA11E3 /* OHHTTPStubsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CD223ABF2482AC0900CA11E3 /* OHHTTPStubsSwift */; };
-		CD223AC22482AC2B00CA11E3 /* OHHTTPStubs in Frameworks */ = {isa = PBXBuildFile; productRef = CD223AC12482AC2B00CA11E3 /* OHHTTPStubs */; };
-		CD223AC52482ACE000CA11E3 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = CD223AC42482ACE000CA11E3 /* SnapshotTesting */; };
+		CD223AB52482A20400CA11E3 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = CD223AB42482A20400CA11E3 /* SwiftPackageProductDependency */; };
+		CD223AB82482A22B00CA11E3 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = CD223AB72482A22B00CA11E3 /* SwiftPackageProductDependency */; };
+		CD223AC02482AC0900CA11E3 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = CD223ABF2482AC0900CA11E3 /* SwiftPackageProductDependency */; };
+		CD223AC22482AC2B00CA11E3 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = CD223AC12482AC2B00CA11E3 /* SwiftPackageProductDependency */; };
+		CD223AC52482ACE000CA11E3 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = CD223AC42482ACE000CA11E3 /* SwiftPackageProductDependency */; };
 		CD24BD6124E07BDC00613131 /* WIth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24BD6024E07BDC00613131 /* WIth.swift */; };
 		CD24C47820854D7B00380C9E /* predictions.json in Resources */ = {isa = PBXBuildFile; fileRef = CD24C475208548AD00380C9E /* predictions.json */; };
 		CD24C47A20855A9800380C9E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24C47920855A9800380C9E /* UIView+Extensions.swift */; };
@@ -278,7 +278,7 @@
 		CD39D00B2480A39C000D9973 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		CD39D00C2480A39C000D9973 /* OneCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneCall.swift; sourceTree = "<group>"; };
 		CD39D0182480A3E9000D9973 /* OpenWeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherAPI.swift; sourceTree = "<group>"; };
-		CD39D01A2480A871000D9973 /* Tagged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tagged.swift; path = OpenWeather/Tagged.swift; sourceTree = "<group>"; };
+		CD39D01A2480A871000D9973 /* Tagged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tagged.swift; path = Tagged.swift; sourceTree = "<group>"; };
 		CD39D01C24818CEA000D9973 /* OpenWeatherIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherIcon.swift; sourceTree = "<group>"; };
 		CD39D01E2481A603000D9973 /* OpenWeatherDaily.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherDaily.swift; sourceTree = "<group>"; };
 		CD39D0202481A6D7000D9973 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
@@ -336,7 +336,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD2239972481CFBF00CA11E3 /* JSONAPI in Frameworks */,
+				CD2239972481CFBF00CA11E3 /* BuildFile in Frameworks */,
 				CD31A7D720853C3B00C26A7E /* Utilities.framework in Frameworks */,
 				F0D93533DB572F8999D57C48 /* Pods_Services.framework in Frameworks */,
 			);
@@ -347,9 +347,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				86A65AF51FA0EA2400705C14 /* Services.framework in Frameworks */,
-				CD223AB82482A22B00CA11E3 /* BonMot in Frameworks */,
-				CD223AB52482A20400CA11E3 /* Anchorage in Frameworks */,
-				7A432B5A241D750B001D7F1F /* Reachability in Frameworks */,
+				CD223AB82482A22B00CA11E3 /* BuildFile in Frameworks */,
+				CD223AB52482A20400CA11E3 /* BuildFile in Frameworks */,
+				7A432B5A241D750B001D7F1F /* BuildFile in Frameworks */,
 				CD31A7C920853BA900C26A7E /* Utilities.framework in Frameworks */,
 				DEC486AC77CA71862094786E /* Pods_GudTay.framework in Frameworks */,
 			);
@@ -360,9 +360,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				768F01D42363E39ECBDA320D /* Pods_GudTayTests.framework in Frameworks */,
-				CD223AC52482ACE000CA11E3 /* SnapshotTesting in Frameworks */,
-				CD223AC22482AC2B00CA11E3 /* OHHTTPStubs in Frameworks */,
-				CD223AC02482AC0900CA11E3 /* OHHTTPStubsSwift in Frameworks */,
+				CD223AC52482ACE000CA11E3 /* BuildFile in Frameworks */,
+				CD223AC22482AC2B00CA11E3 /* BuildFile in Frameworks */,
+				CD223AC02482AC0900CA11E3 /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,8 +691,8 @@
 		CD24C4742085488D00380C9E /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
-				CD24C475208548AD00380C9E /* predictions.json */,
 				CD39CFED24809F44000D9973 /* OpenWeather_forecast.json */,
+				CD24C475208548AD00380C9E /* predictions.json */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -700,10 +700,10 @@
 		CD31A79B20853A3600C26A7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CD39D01A2480A871000D9973 /* Tagged.swift */,
-				CD223A182481F0DD00CA11E3 /* JSONAPI+GudTay.swift */,
 				CD6B88A2208587570064F31A /* MBTA */,
 				CD39CFEA24809E3A000D9973 /* OpenWeather */,
+				CD223A182481F0DD00CA11E3 /* JSONAPI+GudTay.swift */,
+				CD39D01A2480A871000D9973 /* Tagged.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -746,15 +746,15 @@
 			isa = PBXGroup;
 			children = (
 				CD39D0072480A39C000D9973 /* Current.swift */,
-				CD39D0062480A39B000D9973 /* OpenWeatherHourly.swift */,
-				CD39D01E2481A603000D9973 /* OpenWeatherDaily.swift */,
+				CD39D0222481A71A000D9973 /* FeelsLike.swift */,
 				CD39D0092480A39C000D9973 /* Main.swift */,
 				CD39D00C2480A39C000D9973 /* OneCall.swift */,
-				CD39D0202481A6D7000D9973 /* Temp.swift */,
-				CD39D0222481A71A000D9973 /* FeelsLike.swift */,
-				CD39D00B2480A39C000D9973 /* Weather.swift */,
-				CD39D01C24818CEA000D9973 /* OpenWeatherIcon.swift */,
 				CD39D0182480A3E9000D9973 /* OpenWeatherAPI.swift */,
+				CD39D01E2481A603000D9973 /* OpenWeatherDaily.swift */,
+				CD39D0062480A39B000D9973 /* OpenWeatherHourly.swift */,
+				CD39D01C24818CEA000D9973 /* OpenWeatherIcon.swift */,
+				CD39D0202481A6D7000D9973 /* Temp.swift */,
+				CD39D00B2480A39C000D9973 /* Weather.swift */,
 			);
 			path = OpenWeather;
 			sourceTree = "<group>";
@@ -772,8 +772,8 @@
 			children = (
 				CD6B88A9208631F70064F31A /* Prediction.swift */,
 				CD6B88A5208588BE0064F31A /* Route.swift */,
-				CD6B88A3208587680064F31A /* Stop.swift */,
 				CD223AB124829BDF00CA11E3 /* ScheduleRelationship.swift */,
+				CD6B88A3208587680064F31A /* Stop.swift */,
 				CD6B88A7208589F30064F31A /* Trip.swift */,
 			);
 			path = MBTA;
@@ -903,7 +903,7 @@
 			);
 			name = Services;
 			packageProductDependencies = (
-				CD2239962481CFBF00CA11E3 /* JSONAPI */,
+				CD2239962481CFBF00CA11E3 /* SwiftPackageProductDependency */,
 			);
 			productName = Services;
 			productReference = 86A65AEE1FA0EA2400705C14 /* Services.framework */;
@@ -931,9 +931,9 @@
 			);
 			name = GudTay;
 			packageProductDependencies = (
-				7A432B59241D750B001D7F1F /* Reachability */,
-				CD223AB42482A20400CA11E3 /* Anchorage */,
-				CD223AB72482A22B00CA11E3 /* BonMot */,
+				7A432B59241D750B001D7F1F /* SwiftPackageProductDependency */,
+				CD223AB42482A20400CA11E3 /* SwiftPackageProductDependency */,
+				CD223AB72482A22B00CA11E3 /* SwiftPackageProductDependency */,
 			);
 			productName = GudTay;
 			productReference = ABC778751DC90B7A00815FB9 /* GudTay.app */;
@@ -956,9 +956,9 @@
 			);
 			name = GudTayTests;
 			packageProductDependencies = (
-				CD223ABF2482AC0900CA11E3 /* OHHTTPStubsSwift */,
-				CD223AC12482AC2B00CA11E3 /* OHHTTPStubs */,
-				CD223AC42482ACE000CA11E3 /* SnapshotTesting */,
+				CD223ABF2482AC0900CA11E3 /* SwiftPackageProductDependency */,
+				CD223AC12482AC2B00CA11E3 /* SwiftPackageProductDependency */,
+				CD223AC42482ACE000CA11E3 /* SwiftPackageProductDependency */,
 			);
 			productName = GudTayTests;
 			productReference = ABC778891DC90B7A00815FB9 /* GudTayTests.xctest */;
@@ -1056,12 +1056,12 @@
 			);
 			mainGroup = ABC7786C1DC90B7A00815FB9;
 			packageReferences = (
-				7A432B58241D750B001D7F1F /* XCRemoteSwiftPackageReference "Reachability.swift" */,
-				CD2239952481CFBF00CA11E3 /* XCRemoteSwiftPackageReference "JSONAPI" */,
-				CD223AB32482A20400CA11E3 /* XCRemoteSwiftPackageReference "Anchorage" */,
-				CD223AB62482A22B00CA11E3 /* XCRemoteSwiftPackageReference "BonMot" */,
-				CD223ABE2482AC0900CA11E3 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */,
-				CD223AC32482ACE000CA11E3 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				7A432B58241D750B001D7F1F /* RemoteSwiftPackageReference */,
+				CD2239952481CFBF00CA11E3 /* RemoteSwiftPackageReference */,
+				CD223AB32482A20400CA11E3 /* RemoteSwiftPackageReference */,
+				CD223AB62482A22B00CA11E3 /* RemoteSwiftPackageReference */,
+				CD223ABE2482AC0900CA11E3 /* RemoteSwiftPackageReference */,
+				CD223AC32482ACE000CA11E3 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = ABC778761DC90B7A00815FB9 /* Products */;
 			projectDirPath = "";
@@ -1951,7 +1951,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7A432B58241D750B001D7F1F /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
+		7A432B58241D750B001D7F1F /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:ashleymills/Reachability.swift.git";
 			requirement = {
@@ -1959,7 +1959,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		CD2239952481CFBF00CA11E3 /* XCRemoteSwiftPackageReference "JSONAPI" */ = {
+		CD2239952481CFBF00CA11E3 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:mattpolzin/JSONAPI.git";
 			requirement = {
@@ -1967,7 +1967,7 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		CD223AB32482A20400CA11E3 /* XCRemoteSwiftPackageReference "Anchorage" */ = {
+		CD223AB32482A20400CA11E3 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:Rightpoint/Anchorage.git";
 			requirement = {
@@ -1975,7 +1975,7 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		CD223AB62482A22B00CA11E3 /* XCRemoteSwiftPackageReference "BonMot" */ = {
+		CD223AB62482A22B00CA11E3 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:Rightpoint/BonMot.git";
 			requirement = {
@@ -1983,7 +1983,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		CD223ABE2482AC0900CA11E3 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */ = {
+		CD223ABE2482AC0900CA11E3 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:AliSoftware/OHHTTPStubs.git";
 			requirement = {
@@ -1991,7 +1991,7 @@
 				minimumVersion = 9.0.0;
 			};
 		};
-		CD223AC32482ACE000CA11E3 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+		CD223AC32482ACE000CA11E3 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:pointfreeco/swift-snapshot-testing.git";
 			requirement = {
@@ -2002,39 +2002,39 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7A432B59241D750B001D7F1F /* Reachability */ = {
+		7A432B59241D750B001D7F1F /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7A432B58241D750B001D7F1F /* XCRemoteSwiftPackageReference "Reachability.swift" */;
+			package = 7A432B58241D750B001D7F1F /* RemoteSwiftPackageReference */;
 			productName = Reachability;
 		};
-		CD2239962481CFBF00CA11E3 /* JSONAPI */ = {
+		CD2239962481CFBF00CA11E3 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CD2239952481CFBF00CA11E3 /* XCRemoteSwiftPackageReference "JSONAPI" */;
+			package = CD2239952481CFBF00CA11E3 /* RemoteSwiftPackageReference */;
 			productName = JSONAPI;
 		};
-		CD223AB42482A20400CA11E3 /* Anchorage */ = {
+		CD223AB42482A20400CA11E3 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CD223AB32482A20400CA11E3 /* XCRemoteSwiftPackageReference "Anchorage" */;
+			package = CD223AB32482A20400CA11E3 /* RemoteSwiftPackageReference */;
 			productName = Anchorage;
 		};
-		CD223AB72482A22B00CA11E3 /* BonMot */ = {
+		CD223AB72482A22B00CA11E3 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CD223AB62482A22B00CA11E3 /* XCRemoteSwiftPackageReference "BonMot" */;
+			package = CD223AB62482A22B00CA11E3 /* RemoteSwiftPackageReference */;
 			productName = BonMot;
 		};
-		CD223ABF2482AC0900CA11E3 /* OHHTTPStubsSwift */ = {
+		CD223ABF2482AC0900CA11E3 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CD223ABE2482AC0900CA11E3 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */;
+			package = CD223ABE2482AC0900CA11E3 /* RemoteSwiftPackageReference */;
 			productName = OHHTTPStubsSwift;
 		};
-		CD223AC12482AC2B00CA11E3 /* OHHTTPStubs */ = {
+		CD223AC12482AC2B00CA11E3 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CD223ABE2482AC0900CA11E3 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */;
+			package = CD223ABE2482AC0900CA11E3 /* RemoteSwiftPackageReference */;
 			productName = OHHTTPStubs;
 		};
-		CD223AC42482ACE000CA11E3 /* SnapshotTesting */ = {
+		CD223AC42482ACE000CA11E3 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CD223AC32482ACE000CA11E3 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			package = CD223AC32482ACE000CA11E3 /* RemoteSwiftPackageReference */;
 			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
