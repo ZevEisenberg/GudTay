@@ -13,10 +13,13 @@ public class MBTAService {
     private let client: APIClient
 
     public init(configuration: URLSessionConfiguration = .default, decoder: JSONDecoder = JSONDecoder()) {
-        client = APIClient(baseURL: APIEnvironment.active.mbtaUrl, configuration: configuration, decoder: with(JSONDecoder()) {
-            $0.keyDecodingStrategy = .convertFromSnakeCase
-            $0.dateDecodingStrategy = .iso8601
-        })
+        client = APIClient(
+            baseURL: APIEnvironment.active.mbtaUrl,
+            configuration: configuration,
+            decoder: with(JSONDecoder()) {
+                $0.keyDecodingStrategy = .convertFromSnakeCase
+                $0.dateDecodingStrategy = .iso8601
+            })
     }
 
 }
