@@ -18,27 +18,6 @@
 	<string>2.0</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
-	<key>Fabric</key>
-	<dict>
-		<key>APIKey</key>
-		<string>$(FABRIC_API_KEY)</string>
-		<key>Kits</key>
-		<array>
-			<dict>
-				<key>KitInfo</key>
-				<dict/>
-				<key>KitName</key>
-				<string>Crashlytics</string>
-			</dict>
-		</array>
-	</dict>
-	<key>GoogleAnalytics</key>
-	<dict>
-		<key>Environment</key>
-		<string>$(GA_ENVIRONMENT)</string>
-		<key>TrackingID</key>
-		<string>$(GA_TRACKING_ID)</string>
-	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
