@@ -40,7 +40,6 @@
 		86A65AF51FA0EA2400705C14 /* Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A65AEE1FA0EA2400705C14 /* Services.framework */; };
 		86A65AF61FA0EA2400705C14 /* Services.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 86A65AEE1FA0EA2400705C14 /* Services.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		86A65B081FA0EB0600705C14 /* URLSession+GudTay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A65AFD1FA0EB0600705C14 /* URLSession+GudTay.swift */; };
-		86A65B091FA0EB0600705C14 /* APIClient+GudTay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A65AFE1FA0EB0600705C14 /* APIClient+GudTay.swift */; };
 		86A65B0A1FA0EB0600705C14 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A65AFF1FA0EB0600705C14 /* APIClient.swift */; };
 		86A65B0B1FA0EB0600705C14 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A65B001FA0EB0600705C14 /* APIConstants.swift */; };
 		86A65B0C1FA0EB0600705C14 /* APIEndpoint+Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A65B011FA0EB0600705C14 /* APIEndpoint+Logging.swift */; };
@@ -229,7 +228,6 @@
 		86A65AEE1FA0EA2400705C14 /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A65AF11FA0EA2400705C14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A65AFD1FA0EB0600705C14 /* URLSession+GudTay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+GudTay.swift"; sourceTree = "<group>"; };
-		86A65AFE1FA0EB0600705C14 /* APIClient+GudTay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIClient+GudTay.swift"; sourceTree = "<group>"; };
 		86A65AFF1FA0EB0600705C14 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		86A65B001FA0EB0600705C14 /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		86A65B011FA0EB0600705C14 /* APIEndpoint+Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIEndpoint+Logging.swift"; sourceTree = "<group>"; };
@@ -490,7 +488,6 @@
 			children = (
 				CD31A79E20853A6000C26A7E /* Endpoints */,
 				CD31A79B20853A3600C26A7E /* Model */,
-				86A65AFE1FA0EB0600705C14 /* APIClient+GudTay.swift */,
 				86A65AFF1FA0EB0600705C14 /* APIClient.swift */,
 				86A65B001FA0EB0600705C14 /* APIConstants.swift */,
 				86A65B011FA0EB0600705C14 /* APIEndpoint+Logging.swift */,
@@ -1349,7 +1346,6 @@
 				86A65B0B1FA0EB0600705C14 /* APIConstants.swift in Sources */,
 				CD6B88A8208589F30064F31A /* Trip.swift in Sources */,
 				CD39D0152480A39C000D9973 /* OneCall.swift in Sources */,
-				86A65B091FA0EB0600705C14 /* APIClient+GudTay.swift in Sources */,
 				CD39D0232481A71A000D9973 /* FeelsLike.swift in Sources */,
 				CD39D0122480A39C000D9973 /* Main.swift in Sources */,
 				CD39D01F2481A603000D9973 /* OpenWeatherDaily.swift in Sources */,
