@@ -112,7 +112,7 @@ extension WeatherViewController: UICollectionViewDataSource {
 
         let field = viewModel.fields[indexPath.item]
 
-        //swiftlint:disable force_cast
+        // swiftlint:disable force_cast
         switch field {
         case .temperatures(let current, let high, let low):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TemperatureCell.gudReuseID, for: indexPath) as! TemperatureCell
@@ -168,7 +168,7 @@ extension WeatherViewController: UICollectionViewDataSource {
             cell.pinnedHeight = view.frame.height
             return cell
         }
-        //swiftlint:enable force_cast
+        // swiftlint:enable force_cast
     }
 
 }
