@@ -15,6 +15,7 @@ public class MBTAService {
     public init(configuration: URLSessionConfiguration = .default, decoder: JSONDecoder = JSONDecoder()) {
         client = APIClient(
             baseURL: APIEnvironment.active.mbtaUrl,
+            additionalHeaders: ["x-api-key": "ac6fc063babe4f6ba970c23b95afd62e"],
             configuration: configuration,
             decoder: with(JSONDecoder()) {
                 $0.keyDecodingStrategy = .convertFromSnakeCase

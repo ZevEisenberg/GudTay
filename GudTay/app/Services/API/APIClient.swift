@@ -13,11 +13,12 @@ public class APIClient {
     let baseURL: URL
     let decoder: JSONDecoder
 
-    public init(baseURL: URL, configuration: URLSessionConfiguration = .default, decoder: JSONDecoder = JSONDecoder()) {
+    public init(baseURL: URL, additionalHeaders: [AnyHashable: Any] = [:], configuration: URLSessionConfiguration = .default, decoder: JSONDecoder = JSONDecoder()) {
         self.baseURL = baseURL
         self.decoder = decoder
         configuration.httpAdditionalHeaders = configuration.httpAdditionalHeaders ?? [:]
         configuration.httpAdditionalHeaders?[APIConstants.accept] = APIConstants.applicationJSON
+        configuration.httpAdditionalHeaders?.merge(additionalHeaders, uniquingKeysWith: { lhs, _ in lhs })
         session = URLSession(configuration: configuration)
     }
 }
