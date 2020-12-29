@@ -16,6 +16,7 @@ public class APIClient {
     public init(baseURL: URL, configuration: URLSessionConfiguration = .default, decoder: JSONDecoder = JSONDecoder()) {
         self.baseURL = baseURL
         self.decoder = decoder
+        configuration.httpAdditionalHeaders = configuration.httpAdditionalHeaders ?? [:]
         configuration.httpAdditionalHeaders?[APIConstants.accept] = APIConstants.applicationJSON
         session = URLSession(configuration: configuration)
     }
