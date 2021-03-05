@@ -10,11 +10,11 @@ import Foundation
 @testable import GudTay
 import Services
 
-private final class Dummy {}
+private final class BundleClass {}
 
 private func testingJSON(named name: String) -> Data {
     // swiftlint:disable:next force_try
-    return try! Data(contentsOf: Bundle(for: Dummy.self).url(forResource: name, withExtension: "json")!)
+    return try! Data(contentsOf: Bundle(for: BundleClass.self).url(forResource: name, withExtension: "json")!)
 }
 
 enum Payloads {
