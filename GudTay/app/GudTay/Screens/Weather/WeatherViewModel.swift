@@ -173,7 +173,7 @@ extension WeatherViewModel {
         return adjustedInterval
     }
 
-    private static func openWeatherClothingField(
+    static func openWeatherClothingField(
         forForecast forecast: OpenWeatherAPI.OneCall,
         referenceDate: Date,
         calendar: Calendar) -> WeatherField {
