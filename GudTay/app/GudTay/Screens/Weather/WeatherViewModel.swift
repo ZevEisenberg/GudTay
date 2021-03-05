@@ -183,7 +183,7 @@ extension WeatherViewModel {
         let needUmbrella: Bool
 
         let precipitationWantsUmbrella = { (precip: Double) in
-            precip > 0.15 || precip >= 0.1
+            precip >= 0.1
         }
 
         if let hoursWeCareAbout = hoursWeCareAbout {
