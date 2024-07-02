@@ -55,6 +55,10 @@ It includes:
 
 Apparently, I spent New Year’s Eve building image syncing. We had ended up with another old iPad at some point, and decided to wall-mount it near the dining room table so we could see when buses were leaving while eating breakfast. I used [Multipeer Connectivity](https://developer.apple.com/documentation/multipeerconnectivity) to allow the iPads to connect to each other, and I wrote a super crude mechanism for them to sync images back and forth. I originally had aspirations for building it using fancy [CRDTs like in Pixelboard](https://medium.com/bpxl-craft/building-a-peer-to-peer-whiteboarding-app-for-ipad-2a4c7728863e), but it turned out to be way more fiddly than I was interested in taking on for a side project, so I just sent the whole image over the network every time it changed, and the most recent timestamp always wins. It works fine as long as two people aren't drawing at exactly the same time.
 
+### Jauary 12, 2019
+
+Thanks to some help from [@jaredsinclair](https://github.com/jaredsinclair), I was able to make the whiteboard drawing much faster and more efficient. The trick is to set a layer’s `contents` directly to a `CGImage` made from a `CGBitmapContext`. As long as you don’t modify the context before the frame renders, you get to avoid a copy of the buffer.
+
 ### January 29, 2019
 
 ![Screenshot of an iPad app. There is a section showing departure times for a single bus line; a whiteboard showing a sketch of my wife giving me a kiss while I’m napping. The whiteboard includes pen and eraser tools, as well as a blaster icon to erase the whole image; Calvin saying his catch phrase, along with a hand-drawn analog clock that shows the current time; a more refined weather section.](Graphics/readme/2019-01-29_Screenshot.png)
@@ -79,7 +83,7 @@ Adopted OpenWeatherMap API due to the deprecation of the DarkSky API I had been 
 
 ### July 2, 2024
 
-We stopped using GudTay a few years back when it stopped being fun updating this old app for iPads that didn’t run past iOS 11 or 12, and when we started working from home. But when @armcknight asked if I had ever open-sourced this code, I got [nerd-sniped](https://xkcd.com/356/) hard and nearly pulled an all-nighter getting this into shape for publication. This included:
+We stopped using GudTay a few years back when it stopped being fun updating this old app for iPads that didn’t run past iOS 11 or 12, and when we started working from home. But when [@armcknight](https://github.com/armcknight) asked if I had ever open-sourced this code, I got [nerd-sniped](https://xkcd.com/356/) hard and nearly pulled an all-nighter getting this into shape for publication. This included:
 
 - Project cleanup for the first time since March of 2021.
 - OpenWeatherMap doesn’t allow completely free accounts any more, so I migrated to Apple’s WeatherKit. It was surprisingly not that hard; the APIs have a very similar shape, at least for what I’m doing with them.
