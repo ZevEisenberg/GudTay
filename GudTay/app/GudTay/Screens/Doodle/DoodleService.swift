@@ -164,7 +164,7 @@ extension DoodleService: MCSessionDelegate {
     }
 
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        Log.info("\(#function), \(String(data: data, encoding: .utf8) ?? "<non-UTF-8 data with bytes: \(data.count)>"), \(peerID)")
+        Log.info("\(#function), \(String(decoding: data, as: UTF8.self)), \(peerID)")
         guard let image = UIImage(data: data) else { return }
         delegate?.doodleService(self, did: .receivedImage(image))
     }

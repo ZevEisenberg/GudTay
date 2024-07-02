@@ -60,7 +60,7 @@ private extension LogViewController {
         guard let errorText = errorTextView.text else { return }
         let apiSnapshots = LogService.apiSnapshots.mapValues {
             $0
-                .map { String(data: $0, encoding: .utf8) ?? "unable to convert data to JSON" }
+                .map { String(decoding: $0, as: UTF8.self) }
                 .joined(separator: "\n")
         }
         let shareSheet = UIActivityViewController(activityItems: [errorText, apiSnapshots], applicationActivities: nil)

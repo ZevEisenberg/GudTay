@@ -9,7 +9,7 @@ import UIKit
 
 extension UICollectionReusableView {
 
-    @nonobjc final class var gudReuseID: String {
+    @nonobjc static var gudReuseID: String {
         "\(self)"
     }
 

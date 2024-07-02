@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         // Don't load the main UI if we're unit testing.
-        if let _: AnyClass = NSClassFromString("XCTest") {
+        if NSClassFromString("XCTest") != nil {
             return true
         }
 

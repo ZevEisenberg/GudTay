@@ -34,15 +34,13 @@ extension APIEndpoint {
         guard logLevel.rawValue <= Log.Level.verbose.rawValue else { return }
 
         if let jsonObject = try? JSONSerialization.jsonObject(with: apiData, options: []),
-            let reserialized = try? JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted, .sortedKeys]),
-            let string = String(data: reserialized, encoding: .utf8) {
-            log(string)
-        }
-        else if let string = String(data: apiData, encoding: .utf8) {
+            let reserialized = try? JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted, .sortedKeys]) {
+            let string = String(decoding: reserialized, as: UTF8.self)
             log(string)
         }
         else {
-            log("Failed to decode data: \(apiData)")
+            let string = String(decoding: apiData, as: UTF8.self)
+            log(string)
         }
     }
 

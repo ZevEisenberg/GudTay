@@ -11,7 +11,6 @@ disabled_rules:
 - identifier_name
 
 opt_in_rules:
-  - anyobject_protocol
   - array_init
   - closure_spacing
   - contains_over_filter_count
@@ -38,15 +37,10 @@ opt_in_rules:
   - static_operator
   - toggle_bool
   - unused_control_flow_label
-  - unused_import
   - vertical_whitespace
 
 type_name:
   min_length: 2
-
-identifier_name:
-    excluded:
-        - URL
 
 trailing_comma:
   mandatory_comma: true

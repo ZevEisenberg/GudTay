@@ -27,7 +27,7 @@ final class SunIntervalView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override class var layerClass: AnyClass {
+    override static var layerClass: AnyClass {
         CAGradientLayer.self
     }
 

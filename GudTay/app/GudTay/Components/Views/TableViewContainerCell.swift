@@ -94,7 +94,6 @@ public class TableViewContainerCell<View: UIView>: UITableViewCell {
         }
     }
 
-    // swiftlint:disable large_tuple
     public var shadowConfiguration: (opacity: Float, offset: CGSize, color: UIColor?, blur: CGFloat)? {
         didSet {
             let config = shadowConfiguration ?? (0, .zero, nil, 0)

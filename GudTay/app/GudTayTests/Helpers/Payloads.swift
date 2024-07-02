@@ -14,7 +14,7 @@ private final class BundleClass {}
 
 private func testingJSON(named name: String) -> Data {
     // swiftlint:disable:next force_try
-    return try! Data(contentsOf: Bundle(for: BundleClass.self).url(forResource: name, withExtension: "json")!)
+    try! Data(contentsOf: Bundle(for: BundleClass.self).url(forResource: name, withExtension: "json")!)
 }
 
 enum Payloads {
