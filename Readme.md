@@ -87,4 +87,11 @@ We stopped using GudTay a few years back when it stopped being fun updating this
 
 <hr />
 
+Just for fun, here’s a video demo, which shows off two fun little animations that make me happy:
+
+1. The clock hands ticking.
+2. The tool switching on the whiteboard.
+
+https://github.com/ZevEisenberg/GudTay/assets/464574/42403099-fe89-4115-a439-db051fd4e867
+
 If you made it this far, hoffa gud tay askool!
