@@ -77,7 +77,7 @@ private extension GridView {
 
     private enum Constants {
 
-        static let hairlineColor = UIColor.black
+        static let hairlineColor = UIColor.GudTay.black
         static let hairlineWidth: CGFloat = 1
 
     }

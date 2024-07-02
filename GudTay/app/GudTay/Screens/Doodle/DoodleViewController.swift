@@ -32,7 +32,7 @@ final class DoodleViewController: UIViewController {
         service.delegate = self
 
         let clearButton = UIButton()
-        clearButton.setImage(UIImage(resource: .Doodle.gun), for: .normal)
+        clearButton.setImage(.Doodle.gun, for: .normal)
 
         // View Hierarchy
         doodleView.contentView.addSubview(modeToggle)
@@ -49,8 +49,8 @@ final class DoodleViewController: UIViewController {
 
         // Setup
 
-        modeToggle.primaryImage = UIImage(resource: .Doodle.marker)
-        modeToggle.secondaryImage = UIImage(resource: .Doodle.eraser)
+        modeToggle.primaryImage = .Doodle.marker
+        modeToggle.secondaryImage = .Doodle.eraser
 
         clearButton.addTarget(self, action: #selector(clearTapped(sender:)), for: .touchUpInside)
         modeToggle.addTarget(self, action: #selector(modeToggled(sender:)), for: .valueChanged)

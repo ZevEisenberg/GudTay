@@ -38,52 +38,40 @@ public extension OpenWeatherAPI {
 public extension OpenWeatherAPI.Icon {
 
     var image: UIImage {
-        UIImage(resource: resource)
-    }
-
-    var smallImage: UIImage {
-        UIImage(resource: smallResource)
-    }
-
-}
-
-extension OpenWeatherAPI.Icon {
-
-    var resource: ImageResource {
         switch self {
         // Clear
-        case .clearSkyDay: return .clearDay
-        case .clearSkyNight: return .clearNight
+        case .clearSkyDay: .clearDay
+        case .clearSkyNight: .clearNight
 
         // Partly Cloudy
-        case .fewCloudsDay: return .partlyCloudyDay
-        case .fewCloudsNight: return .partlyCloudyNight
-        case .scatteredCloudsDay: return .partlyCloudyDay
-        case .scatteredCloudsNight: return .partlyCloudyNight
-        case .brokenCloudsDay: return .partlyCloudyDay
-        case .brokenCloudsNight: return .partlyCloudyNight
+        case .fewCloudsDay: .partlyCloudyDay
+        case .fewCloudsNight: .partlyCloudyNight
+        case .scatteredCloudsDay: .partlyCloudyDay
+        case .scatteredCloudsNight: .partlyCloudyNight
+        case .brokenCloudsDay: .partlyCloudyDay
+        case .brokenCloudsNight: .partlyCloudyNight
 
         // Rain
-        case .showerRainDay, .showerRainNight: return .rain
-        case .rainDay, .rainNight: return .rain
-        case .thunderstormDay, .thunderstormNight: return .rain
+        case .showerRainDay, .showerRainNight: .rain
+        case .rainDay, .rainNight: .rain
+        case .thunderstormDay, .thunderstormNight: .rain
 
         // Snow
-        case .snowDay, .snowNight: return .snow
+        case .snowDay, .snowNight: .snow
 
         // Fog
-        case .mistDay, .mistNight: return .fog
+        case .mistDay, .mistNight: .fog
         }
     }
 
-    var smallResource: ImageResource {
+    var smallImage: UIImage {
         switch self {
         // Clear
-        case .clearSkyDay: return .Small.clearDay
-        case .clearSkyNight: return .Small.clearNight
+        case .clearSkyDay: .Small.clearDay
+        case .clearSkyNight: .Small.clearNight
 
         // Other: no small images available
-        default: return resource
+        default: image
         }
     }
 

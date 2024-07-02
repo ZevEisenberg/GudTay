@@ -13,7 +13,7 @@ import Utilities
 
 final class ClockView: UIView {
 
-    let faceView = with(UIImageView(image: UIImage(resource: .Clock.face))) {
+    let faceView = with(UIImageView(image: .Clock.face)) {
         $0.accessibilityIdentifier = "clock face"
         $0.setContentHuggingPriority(.required, for: .horizontal)
         $0.setContentHuggingPriority(.required, for: .vertical)
@@ -23,7 +23,7 @@ final class ClockView: UIView {
     // to adjust their .anchorPoint, which throws off Auto layout.
 
     let hourWrapper: UIView = {
-        let hourHand = UIImageView(image: UIImage(resource: .Clock.hourHand))
+        let hourHand = UIImageView(image: .Clock.hourHand)
         hourHand.accessibilityIdentifier = "hourHand"
         let hourWrapper = UIView(axId: "hourWrapper")
         hourWrapper.addSubview(hourHand)
@@ -34,7 +34,7 @@ final class ClockView: UIView {
     }()
 
     let minuteWrapper: UIView = {
-        let minuteHand = UIImageView(image: UIImage(resource: .Clock.minuteHand))
+        let minuteHand = UIImageView(image: .Clock.minuteHand)
         minuteHand.accessibilityIdentifier = "minuteHand"
         let minuteWrapper = UIView(axId: "minuteWrapper")
         minuteWrapper.addSubview(minuteHand)
@@ -45,7 +45,7 @@ final class ClockView: UIView {
     }()
 
     let secondWrapper: UIView = {
-        let secondHand = UIImageView(image: UIImage(resource: .Clock.secondHand))
+        let secondHand = UIImageView(image: .Clock.secondHand)
         secondHand.accessibilityIdentifier = "secondHand"
         let secondWrapper = UIView(axId: "secondWrapper")
         secondWrapper.addSubview(secondHand)
@@ -55,7 +55,7 @@ final class ClockView: UIView {
         return secondWrapper
     }()
 
-    let pivot = with(UIImageView(image: UIImage(resource: .Clock.pivot))) {
+    let pivot = with(UIImageView(image: .Clock.pivot)) {
         $0.accessibilityIdentifier = "pivot"
     }
 

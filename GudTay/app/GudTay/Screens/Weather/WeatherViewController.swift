@@ -25,7 +25,7 @@ final class WeatherViewController: UIViewController {
         layout.minimumLineSpacing = 0.0
 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor(resource: .white)
+        collectionView.backgroundColor = .GudTay.white
         collectionView.register(TemperatureCell.self, forCellWithReuseIdentifier: TemperatureCell.gudReuseID)
         collectionView.register(AspectImageCell.self, forCellWithReuseIdentifier: AspectImageCell.gudReuseID)
         collectionView.register(ForecastCell.self, forCellWithReuseIdentifier: ForecastCell.gudReuseID)
@@ -126,7 +126,7 @@ extension WeatherViewController: UICollectionViewDataSource {
             return cell
         case .clothing(let temp, let needsUmbrella):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AspectImageCell.gudReuseID, for: indexPath) as! AspectImageCell
-            var images: [ImageResource] = [
+            var images: [UIImage] = [
                 .Clothing.frameBackground,
                 .Clothing.frameEdges,
             ]
@@ -159,7 +159,7 @@ extension WeatherViewController: UICollectionViewDataSource {
                 default: fatalError("boooooo Swift")
                 }
             }
-            cell.images = images.map(UIImage.init(resource:))
+            cell.images = images
             cell.pinnedHeight = view.frame.height
             return cell
         case .hour(let time, let icon, let temp, let precipProbability):

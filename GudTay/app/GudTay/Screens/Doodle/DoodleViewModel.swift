@@ -73,7 +73,7 @@ final class DoodleViewModel {
     // Private Properties
 
     private let pen = Brush(
-        lineColor: .black,
+        lineColor: .GudTay.black,
         lineWidth: 5
     )
     private let eraser = Brush(
