@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -117,7 +117,6 @@
 		CDB539D22087E132006EE89E /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539D12087E132006EE89E /* LogViewController.swift */; };
 		CDB539D42087E171006EE89E /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB539D32087E171006EE89E /* LogService.swift */; };
 		CDB61EB22087EB3400E0E99C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB61EB12087EB3400E0E99C /* Assets.xcassets */; };
-		CDB61EB62087EBDC00E0E99C /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB61EB52087EBDC00E0E99C /* Asset.swift */; };
 		CDB61EBA2087EC8C00E0E99C /* BinaryFloatingPoint+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB61EB92087EC8C00E0E99C /* BinaryFloatingPoint+Utilities.swift */; };
 		CDB61EC62087F3FF00E0E99C /* WeatherCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB61EC52087F3FF00E0E99C /* WeatherCoordinator.swift */; };
 		CDB61EC82088319200E0E99C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB61EC72088319200E0E99C /* WeatherViewController.swift */; };
@@ -304,7 +303,6 @@
 		CDB539D12087E132006EE89E /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		CDB539D32087E171006EE89E /* LogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 		CDB61EB12087EB3400E0E99C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CDB61EB52087EBDC00E0E99C /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		CDB61EB92087EC8C00E0E99C /* BinaryFloatingPoint+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryFloatingPoint+Utilities.swift"; sourceTree = "<group>"; };
 		CDB61EC52087F3FF00E0E99C /* WeatherCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCoordinator.swift; sourceTree = "<group>"; };
 		CDB61EC72088319200E0E99C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -832,19 +830,10 @@
 		CDB61EB02087EAFB00E0E99C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CDB61EB32087EB8A00E0E99C /* Generated */,
 				CDB61EB12087EB3400E0E99C /* Assets.xcassets */,
 				86A65AF11FA0EA2400705C14 /* Info.plist */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		CDB61EB32087EB8A00E0E99C /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				CDB61EB52087EBDC00E0E99C /* Asset.swift */,
-			);
-			path = Generated;
 			sourceTree = "<group>";
 		};
 		CDB61ED0208833D600E0E99C /* Cells */ = {
@@ -885,7 +874,6 @@
 			buildConfigurationList = 86A65AFB1FA0EA2400705C14 /* Build configuration list for PBXNativeTarget "Services" */;
 			buildPhases = (
 				984F31A794D1669B49673C98 /* [CP] Check Pods Manifest.lock */,
-				CDB61EB42087EBAF00E0E99C /* SwiftGen */,
 				86A65AE91FA0EA2400705C14 /* Sources */,
 				86A65AEA1FA0EA2400705C14 /* Frameworks */,
 				86A65AEB1FA0EA2400705C14 /* Headers */,
@@ -1209,6 +1197,7 @@
 		};
 		ABC778DB1DC9405700815FB9 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -1242,22 +1231,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		CDB61EB42087EBAF00E0E99C /* SwiftGen */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = SwiftGen;
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Services/Resources/Generated/Asset.swift",
-				"$(DERIVED_FILE_DIR)/Services/Resources/Assets.xcassets",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen run xcassets --template swift5 --output Services/Resources/Generated/Asset.swift Services/Resources/Assets.xcassets\n";
 		};
 		DB15C181E71294E21F18053C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1356,7 +1329,6 @@
 				CD6B88A4208587680064F31A /* Stop.swift in Sources */,
 				CD6B88A12085872B0064F31A /* MBTAEndpoint.swift in Sources */,
 				86A65B0A1FA0EB0600705C14 /* APIClient.swift in Sources */,
-				CDB61EB62087EBDC00E0E99C /* Asset.swift in Sources */,
 				CD39D00F2480A39C000D9973 /* OpenWeatherHourly.swift in Sources */,
 				CD6B88B620863C380064F31A /* MBTAService.swift in Sources */,
 			);

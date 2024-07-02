@@ -38,52 +38,52 @@ public extension OpenWeatherAPI {
 public extension OpenWeatherAPI.Icon {
 
     var image: UIImage {
-        asset.image
+        UIImage(resource: resource)
     }
 
     var smallImage: UIImage {
-        smallAsset.image
+        UIImage(resource: smallResource)
     }
 
 }
 
 extension OpenWeatherAPI.Icon {
 
-    var asset: ImageAsset {
+    var resource: ImageResource {
         switch self {
         // Clear
-        case .clearSkyDay: return Asset.clearDay
-        case .clearSkyNight: return Asset.clearNight
+        case .clearSkyDay: return .clearDay
+        case .clearSkyNight: return .clearNight
 
         // Partly Cloudy
-        case .fewCloudsDay: return Asset.partlyCloudyDay
-        case .fewCloudsNight: return Asset.partlyCloudyNight
-        case .scatteredCloudsDay: return Asset.partlyCloudyDay
-        case .scatteredCloudsNight: return Asset.partlyCloudyNight
-        case .brokenCloudsDay: return Asset.partlyCloudyDay
-        case .brokenCloudsNight: return Asset.partlyCloudyNight
+        case .fewCloudsDay: return .partlyCloudyDay
+        case .fewCloudsNight: return .partlyCloudyNight
+        case .scatteredCloudsDay: return .partlyCloudyDay
+        case .scatteredCloudsNight: return .partlyCloudyNight
+        case .brokenCloudsDay: return .partlyCloudyDay
+        case .brokenCloudsNight: return .partlyCloudyNight
 
         // Rain
-        case .showerRainDay, .showerRainNight: return Asset.rain
-        case .rainDay, .rainNight: return Asset.rain
-        case .thunderstormDay, .thunderstormNight: return Asset.rain
+        case .showerRainDay, .showerRainNight: return .rain
+        case .rainDay, .rainNight: return .rain
+        case .thunderstormDay, .thunderstormNight: return .rain
 
         // Snow
-        case .snowDay, .snowNight: return Asset.snow
+        case .snowDay, .snowNight: return .snow
 
         // Fog
-        case .mistDay, .mistNight: return Asset.fog
+        case .mistDay, .mistNight: return .fog
         }
     }
 
-    var smallAsset: ImageAsset {
+    var smallResource: ImageResource {
         switch self {
         // Clear
-        case .clearSkyDay: return Asset.Small.clearDay
-        case .clearSkyNight: return Asset.Small.clearNight
+        case .clearSkyDay: return .Small.clearDay
+        case .clearSkyNight: return .Small.clearNight
 
         // Other: no small images available
-        default: return asset
+        default: return resource
         }
     }
 
