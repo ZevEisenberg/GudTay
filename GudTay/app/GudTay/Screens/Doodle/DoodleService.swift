@@ -144,6 +144,9 @@ extension DoodleService: MCNearbyServiceBrowserDelegate {
         // to prevent crossing the streams.
         // Assumes the peer IDs aren't the same.
         // via https://stackoverflow.com/a/19529933/255489
+        if myPeerId.displayName == peerID.displayName {
+            Log.error("\(#function) - found peer with same peer ID as me: \(myPeerId.displayName). Peer IDs must be different to avoid crossing the streams. Peer IDs are derived from the device name, which as of iOS 15 is the generic device model name, not the user-entered device name. If running in the simulator, use two different simulator types. If running on two devices of the same type, you will probably need to modify the definition of 'myPeerId' to generate different IDs on different devices.")
+        }
         let shouldInvite = myPeerId.displayName < peerID.displayName
         if shouldInvite {
             browser.invitePeer(peerID, to: session, withContext: nil, timeout: 10)
