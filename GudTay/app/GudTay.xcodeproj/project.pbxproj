@@ -563,7 +563,6 @@
 		ABC778771DC90B7A00815FB9 /* GudTay */ = {
 			isa = PBXGroup;
 			children = (
-				7AE170862C33BB4400752173 /* GudTay.entitlements */,
 				ABC778981DC91DFB00815FB9 /* Application */,
 				861732D01FA28DB600C14354 /* Components */,
 				2D4FA8F31E8574D2006C38ED /* Coordinators */,
@@ -572,6 +571,7 @@
 				ABC778991DC91E0D00815FB9 /* Resources */,
 				AB955DCB1DE3BDD300D0347E /* Screens */,
 				86A65B1E1FA0F6C700705C14 /* Utilities */,
+				7AE170862C33BB4400752173 /* GudTay.entitlements */,
 			);
 			path = GudTay;
 			sourceTree = "<group>";
@@ -743,9 +743,9 @@
 		CD6B88B420863C2F0064F31A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CD39CFEB24809E5E000D9973 /* GudTayWeatherService.swift */,
 				CDB539D32087E171006EE89E /* LogService.swift */,
 				CD6B88B520863C380064F31A /* MBTAService.swift */,
-				CD39CFEB24809E5E000D9973 /* GudTayWeatherService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
