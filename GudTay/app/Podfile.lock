@@ -1,12 +1,12 @@
 PODS:
-  - SwiftGen (6.4.0)
+  - SwiftGen (6.6.3)
   - Swiftilities/HairlineView (0.26.0)
   - Swiftilities/Lifecycle (0.26.0):
     - Swiftilities/HairlineView
     - Swiftilities/Math
   - Swiftilities/Logging (0.26.0)
   - Swiftilities/Math (0.26.0)
-  - SwiftLint (0.42.0)
+  - SwiftLint (0.55.1)
 
 DEPENDENCIES:
   - SwiftGen
@@ -22,9 +22,9 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
-  SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
+  SwiftGen: 4993cbf71cbc4886f775e26f8d5c3a1188ec9f99
   Swiftilities: 72d78ee06363524760119f5d810de3ccc462ec87
-  SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
+  SwiftLint: 3fe909719babe5537c552ee8181c0031392be933
 
 PODFILE CHECKSUM: 6cb9f759ba13201b4867c6138a06af32eea00535
 

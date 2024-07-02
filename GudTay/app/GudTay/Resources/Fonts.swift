@@ -55,7 +55,7 @@ enum Fonts {
         private static let baseForecastStyle = StringStyle(
             .numberSpacing(.proportional),
             .alignment(.center),
-            .color(Asset.white.color),
+            .color(UIColor(resource: .white)),
             .stylisticAlternates(.six(on: true)))
 
         static let timeStyle = baseForecastStyle.byAdding(

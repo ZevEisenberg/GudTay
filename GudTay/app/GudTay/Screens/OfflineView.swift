@@ -11,11 +11,11 @@ import Utilities
 
 final class OfflineView: UIView {
 
-    private let imageView = with(UIImageView(image: Asset.wifi.image)) {
+    private let imageView = with(UIImageView(image: UIImage(resource: .wifi))) {
         $0.setContentHuggingPriority(.required, for: .vertical)
         $0.setContentHuggingPriority(.required, for: .horizontal)
         $0.clipsToBounds = false
-        $0.layer.shadowColor = Asset.black.color.cgColor
+        $0.layer.shadowColor = UIColor(resource: .black).cgColor
         $0.layer.shadowOpacity = 0.7
         $0.layer.shadowRadius = 30
     }
@@ -26,7 +26,7 @@ final class OfflineView: UIView {
         // Allow tap-throughs to elements behind
         isUserInteractionEnabled = false
 
-        backgroundColor = Asset.black.color.withAlphaComponent(0.4)
+        backgroundColor = UIColor(resource: .black).withAlphaComponent(0.4)
 
         addSubview(imageView)
 

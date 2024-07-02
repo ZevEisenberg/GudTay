@@ -57,7 +57,6 @@
 		ABC778EA1DC951B900815FB9 /* LoggingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC778E91DC951B900815FB9 /* LoggingConfiguration.swift */; };
 		ABF84F811DC97653002DB24D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABF84F801DC97653002DB24D /* Localizable.strings */; };
 		ABF84F911DC99D33002DB24D /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84F8F1DC99D33002DB24D /* Localized.swift */; };
-		ABF84F921DC99D33002DB24D /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84F901DC99D33002DB24D /* Asset.swift */; };
 		ABF84FA01DCBAB1B002DB24D /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84F9F1DCBAB1B002DB24D /* TestConstants.swift */; };
 		ABF84FA41DCBCD89002DB24D /* MBTATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84FA31DCBCD89002DB24D /* MBTATests.swift */; };
 		ABF84FA61DCBCEA1002DB24D /* Payloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF84FA51DCBCEA1002DB24D /* Payloads.swift */; };
@@ -250,7 +249,6 @@
 		ABC778E91DC951B900815FB9 /* LoggingConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingConfiguration.swift; sourceTree = "<group>"; };
 		ABF84F801DC97653002DB24D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		ABF84F8F1DC99D33002DB24D /* Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
-		ABF84F901DC99D33002DB24D /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		ABF84F9F1DCBAB1B002DB24D /* TestConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
 		ABF84FA31DCBCD89002DB24D /* MBTATests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTATests.swift; sourceTree = "<group>"; };
 		ABF84FA51DCBCEA1002DB24D /* Payloads.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payloads.swift; sourceTree = "<group>"; };
@@ -660,7 +658,6 @@
 		ABF84F8E1DC99D33002DB24D /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				ABF84F901DC99D33002DB24D /* Asset.swift */,
 				ABF84F8F1DC99D33002DB24D /* Localized.swift */,
 			);
 			path = Generated;
@@ -1142,14 +1139,12 @@
 			);
 			name = SwiftGen;
 			outputPaths = (
-				"$(SRCROOT)/GudTay/Resources/Generated/Asset.swift",
-				"$(SRCROOT)/GudTay/Resources/Assets.xcassets",
 				"$(SRCROOT)/GudTay/Resources/Generated/Localized.swift",
 				"$(SRCROOT)/GudTay/Resources/Localizable.strings",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen run xcassets --template swift5 --output GudTay/Resources/Generated/Asset.swift GudTay/Resources/Assets.xcassets\n$PODS_ROOT/SwiftGen/bin/swiftgen run strings --template structured-swift5 --output GudTay/Resources/Generated/Localized.swift GudTay/Resources/Localizable.strings\n";
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen run strings --template structured-swift5 --output GudTay/Resources/Generated/Localized.swift GudTay/Resources/Localizable.strings\n";
 		};
 		8861E6E40BAEA30652F88B2A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1389,7 +1384,6 @@
 				CDB539BE2087932D006EE89E /* GridView.swift in Sources */,
 				CDB61ED8208833D700E0E99C /* ForecastBackgroundView.swift in Sources */,
 				CDB61EDC208833D700E0E99C /* AspectImageCell.swift in Sources */,
-				ABF84F921DC99D33002DB24D /* Asset.swift in Sources */,
 				CDB61ED9208833D700E0E99C /* ForecastCell.swift in Sources */,
 				CDB539C3208794A5006EE89E /* DoodleView.swift in Sources */,
 				CDB539C5208794F8006EE89E /* ImageIO.swift in Sources */,

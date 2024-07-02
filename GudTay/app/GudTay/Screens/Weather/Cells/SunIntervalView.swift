@@ -44,7 +44,7 @@ private extension SunIntervalView {
                 #colorLiteral(red: 0.5491601825, green: 0.6749857068, blue: 0.6756953597, alpha: 1),
                 #colorLiteral(red: 0.3601651634, green: 0.7316058592, blue: 0.8252332109, alpha: 1),
                 ]
-            let middle = Array(repeating: Asset.day.color.cgColor, count: 15)
+            let middle = Array(repeating: UIColor(resource: .day).cgColor, count: 15)
             let suffix: [CGColor] = [
                 #colorLiteral(red: 0.5896936129, green: 0.6227431178, blue: 0.855897367, alpha: 1),
                 #colorLiteral(red: 0.7165202457, green: 0.5087971813, blue: 0.855897367, alpha: 1),
@@ -61,7 +61,7 @@ private extension SunIntervalView {
                 #colorLiteral(red: 0.4228220406, green: 0.248025836, blue: 0.5151475234, alpha: 1),
                 #colorLiteral(red: 0.3309226036, green: 0.2110719979, blue: 0.4729041457, alpha: 1),
                 ]
-            let middle = Array(repeating: Asset.night.color.cgColor, count: 15)
+            let middle = Array(repeating: UIColor(resource: .night).cgColor, count: 15)
             let suffix: [CGColor] = [
                 #colorLiteral(red: 0.3506155312, green: 0.2267658114, blue: 0.4926431775, alpha: 1),
                 #colorLiteral(red: 0.5382626653, green: 0.1942460537, blue: 0.5112031102, alpha: 1),

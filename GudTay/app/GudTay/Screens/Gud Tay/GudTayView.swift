@@ -22,7 +22,7 @@ final class GudTayView: GridView {
         let tap = UITapGestureRecognizer(target: self, action: #selector(GudTayView.tapped(sender:)))
         addGestureRecognizer(tap)
 
-        let gudTayImageView = UIImageView(image: Asset.gudTay.image)
+        let gudTayImageView = UIImageView(image: UIImage(resource: .gudTay))
         gudTayImageView.contentMode = .scaleAspectFit
         contentView.addSubview(gudTayImageView)
         gudTayImageView.verticalAnchors == verticalAnchors + 5
