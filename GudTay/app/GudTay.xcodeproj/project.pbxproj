@@ -898,7 +898,6 @@
 				DB15C181E71294E21F18053C /* [CP] Check Pods Manifest.lock */,
 				2DFF1D1F1E8C56C700B1AD70 /* SwiftGen */,
 				ABC778DB1DC9405700815FB9 /* SwiftLint */,
-				0052FE8220605B3A0058A4BC /* Generate xcconfig warnings */,
 				ABC778711DC90B7A00815FB9 /* Sources */,
 				ABC778721DC90B7A00815FB9 /* Frameworks */,
 				ABC778731DC90B7A00815FB9 /* Resources */,
@@ -1104,20 +1103,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0052FE8220605B3A0058A4BC /* Generate xcconfig warnings */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Generate xcconfig warnings";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "TAGS=\"TODO:|FIXME:\"\nfind \"${SRCROOT}/\" \\( -name \"*.xcconfig\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"\n";
-		};
 		2DFF1D1F1E8C56C700B1AD70 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
