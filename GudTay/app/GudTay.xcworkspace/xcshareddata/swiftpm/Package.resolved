@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Rightpoint/BonMot.git",
       "state" : {
-        "revision" : "f9f38fd8bb7919f6a9262eae2811e40d4a890251",
-        "version" : "5.6.0"
+        "revision" : "001139aad601ed8009b49a0e868e21df3dea979c",
+        "version" : "6.1.3"
       }
     },
     {
