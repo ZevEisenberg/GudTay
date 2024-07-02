@@ -56,7 +56,7 @@ private extension MBTARouteView {
 
         private let minutesLabel = UILabel()
 
-        init(color: UIColor, subtitle: String, minutesStyle: StringStyle) {
+        init(color: UIColor, subtitle: String, minutesStyle: BonMot.StringStyle) {
             super.init(frame: .zero)
             minutesLabel.accessibilityIdentifier = "minutesLabel - \(subtitle)"
             minutesLabel.bonMotStyle = minutesStyle.byAdding(.color(color))

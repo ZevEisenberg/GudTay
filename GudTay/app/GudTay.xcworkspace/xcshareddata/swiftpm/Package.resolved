@@ -1,70 +1,78 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Anchorage",
-        "repositoryURL": "git@github.com:Rightpoint/Anchorage.git",
-        "state": {
-          "branch": null,
-          "revision": "18fed38e95db3200aecbd5b7101b981f91656084",
-          "version": "4.4.0"
-        }
-      },
-      {
-        "package": "BonMot",
-        "repositoryURL": "git@github.com:Rightpoint/BonMot.git",
-        "state": {
-          "branch": null,
-          "revision": "76fbef6e8d2095c7dace1912aa3b79ba86ad1150",
-          "version": "5.5.1"
-        }
-      },
-      {
-        "package": "JSONAPI",
-        "repositoryURL": "git@github.com:mattpolzin/JSONAPI.git",
-        "state": {
-          "branch": null,
-          "revision": "51cb140ebf27949d1185227e3eaef5a54d9a3bee",
-          "version": "4.0.0"
-        }
-      },
-      {
-        "package": "OHHTTPStubs",
-        "repositoryURL": "git@github.com:AliSoftware/OHHTTPStubs.git",
-        "state": {
-          "branch": null,
-          "revision": "e92b5a5746ef16add2a1424f1fc19529d9a75cde",
-          "version": "9.0.0"
-        }
-      },
-      {
-        "package": "Poly",
-        "repositoryURL": "https://github.com/mattpolzin/Poly",
-        "state": {
-          "branch": null,
-          "revision": "36ba3f624bffa34f5f9b9c7648eab3cfdcab4748",
-          "version": "2.5.0"
-        }
-      },
-      {
-        "package": "Reachability",
-        "repositoryURL": "git@github.com:ashleymills/Reachability.swift.git",
-        "state": {
-          "branch": null,
-          "revision": "98e968e7b6c1318fb61df23e347bc319761e8acb",
-          "version": "5.0.0"
-        }
-      },
-      {
-        "package": "SnapshotTesting",
-        "repositoryURL": "git@github.com:pointfreeco/swift-snapshot-testing.git",
-        "state": {
-          "branch": null,
-          "revision": "2fd91357e90efe82bfa6845d1e7d5bc2f5025d35",
-          "version": "1.8.1"
-        }
+  "originHash" : "deea442c42bc48e0f17d9767b7ec3c531728d71d4918408f0893ce1f1d04d861",
+  "pins" : [
+    {
+      "identity" : "anchorage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Rightpoint/Anchorage.git",
+      "state" : {
+        "revision" : "23a6dd0ccf9529d2750d8679a2e74a161cff2f16",
+        "version" : "4.5.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "bonmot",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Rightpoint/BonMot.git",
+      "state" : {
+        "revision" : "f9f38fd8bb7919f6a9262eae2811e40d4a890251",
+        "version" : "5.6.0"
+      }
+    },
+    {
+      "identity" : "jsonapi",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mattpolzin/JSONAPI.git",
+      "state" : {
+        "revision" : "58ebdc9b104383288cde3028ce0efd552e08c47a",
+        "version" : "5.3.1"
+      }
+    },
+    {
+      "identity" : "ohhttpstubs",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AliSoftware/OHHTTPStubs.git",
+      "state" : {
+        "revision" : "12f19662426d0434d6c330c6974d53e2eb10ecd9",
+        "version" : "9.1.0"
+      }
+    },
+    {
+      "identity" : "poly",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mattpolzin/Poly",
+      "state" : {
+        "revision" : "99e2e8b575620369be52fe348c0dd72028e3674c",
+        "version" : "2.8.0"
+      }
+    },
+    {
+      "identity" : "reachability.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ashleymills/Reachability.swift.git",
+      "state" : {
+        "revision" : "7cbd73f46a7dfaeca079e18df7324c6de6d1834a",
+        "version" : "5.2.3"
+      }
+    },
+    {
+      "identity" : "swift-snapshot-testing",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-snapshot-testing.git",
+      "state" : {
+        "revision" : "8ddd519780452729c6634ad6bd0d2595938e9ea3",
+        "version" : "1.16.1"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-syntax",
+      "state" : {
+        "revision" : "303e5c5c36d6a558407d364878df131c3546fad8",
+        "version" : "510.0.2"
+      }
+    }
+  ],
+  "version" : 3
 }

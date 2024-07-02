@@ -19,7 +19,7 @@ enum TripDescription: ResourceObjectDescription {
     }
 
     struct Relationships: JSONAPI.Relationships {
-        let route: ToOneRelationship<APIRoute, NoMetadata, NoLinks>
+        let route: ToOneRelationship<APIRoute, NoMetadata, NoMetadata, NoLinks>
     }
 }
 

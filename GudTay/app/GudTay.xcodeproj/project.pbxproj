@@ -1949,7 +1949,7 @@
 /* Begin XCRemoteSwiftPackageReference section */
 		7A432B58241D750B001D7F1F /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:ashleymills/Reachability.swift.git";
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.0.0;
@@ -1957,15 +1957,15 @@
 		};
 		CD2239952481CFBF00CA11E3 /* XCRemoteSwiftPackageReference "JSONAPI" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:mattpolzin/JSONAPI.git";
+			repositoryURL = "https://github.com/mattpolzin/JSONAPI.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
+				minimumVersion = 5.0.0;
 			};
 		};
 		CD223AB32482A20400CA11E3 /* XCRemoteSwiftPackageReference "Anchorage" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:Rightpoint/Anchorage.git";
+			repositoryURL = "https://github.com/Rightpoint/Anchorage.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 4.0.0;
@@ -1973,7 +1973,7 @@
 		};
 		CD223AB62482A22B00CA11E3 /* XCRemoteSwiftPackageReference "BonMot" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:Rightpoint/BonMot.git";
+			repositoryURL = "https://github.com/Rightpoint/BonMot.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.0.0;
@@ -1981,7 +1981,7 @@
 		};
 		CD223ABE2482AC0900CA11E3 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:AliSoftware/OHHTTPStubs.git";
+			repositoryURL = "https://github.com/AliSoftware/OHHTTPStubs.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 9.0.0;
@@ -1989,7 +1989,7 @@
 		};
 		CD223AC32482ACE000CA11E3 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:pointfreeco/swift-snapshot-testing.git";
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;

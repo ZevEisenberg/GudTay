@@ -26,9 +26,9 @@ enum PredictionDescription: ResourceObjectDescription {
     }
 
     struct Relationships: JSONAPI.Relationships {
-        let route: ToOneRelationship<APIRoute, NoMetadata, NoLinks>
-        let stop: ToOneRelationship<APIStop, NoMetadata, NoLinks>
-        let trip: ToOneRelationship<APITrip, NoMetadata, NoLinks>
+        let route: ToOneRelationship<APIRoute, NoMetadata, NoMetadata, NoLinks>
+        let stop: ToOneRelationship<APIStop, NoMetadata, NoMetadata, NoLinks>
+        let trip: ToOneRelationship<APITrip, NoMetadata, NoMetadata, NoLinks>
     }
 }
 
