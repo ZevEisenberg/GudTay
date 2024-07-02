@@ -33,6 +33,7 @@ class ContentCoordinator: NSObject, Coordinator {
     func start(completion: (() -> Void)?) {
         let contentViewController = ContentViewController()
         self.contentViewController = contentViewController
+        contentViewController.modalPresentationStyle = .fullScreen
         contentViewController.modalTransitionStyle = .crossDissolve
         baseController.present(contentViewController, animated: false, completion: {
             self.secondPartOfStart(contentViewController: contentViewController, completion: completion)
