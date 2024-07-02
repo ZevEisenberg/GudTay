@@ -77,21 +77,9 @@
 		CD31A7CA20853BA900C26A7E /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD31A7B420853BA900C26A7E /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD31A7D620853BBE00C26A7E /* Collection+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31A7D520853BBE00C26A7E /* Collection+Utilities.swift */; };
 		CD31A7D720853C3B00C26A7E /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD31A7B420853BA900C26A7E /* Utilities.framework */; };
-		CD39CFEC24809E5E000D9973 /* OpenWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39CFEB24809E5E000D9973 /* OpenWeatherService.swift */; };
-		CD39CFEE24809F44000D9973 /* OpenWeather_forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = CD39CFED24809F44000D9973 /* OpenWeather_forecast.json */; };
-		CD39CFF124809FC1000D9973 /* OpenWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39CFF024809FC1000D9973 /* OpenWeatherTests.swift */; };
-		CD39CFF32480A088000D9973 /* OpenWeatherEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39CFF22480A088000D9973 /* OpenWeatherEndpoint.swift */; };
-		CD39D00F2480A39C000D9973 /* OpenWeatherHourly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D0062480A39B000D9973 /* OpenWeatherHourly.swift */; };
-		CD39D0102480A39C000D9973 /* Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D0072480A39C000D9973 /* Current.swift */; };
-		CD39D0122480A39C000D9973 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D0092480A39C000D9973 /* Main.swift */; };
-		CD39D0142480A39C000D9973 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D00B2480A39C000D9973 /* Weather.swift */; };
-		CD39D0152480A39C000D9973 /* OneCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D00C2480A39C000D9973 /* OneCall.swift */; };
-		CD39D0192480A3E9000D9973 /* OpenWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D0182480A3E9000D9973 /* OpenWeatherAPI.swift */; };
+		CD39CFEC24809E5E000D9973 /* GudTayWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39CFEB24809E5E000D9973 /* GudTayWeatherService.swift */; };
 		CD39D01B2480A871000D9973 /* Tagged.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D01A2480A871000D9973 /* Tagged.swift */; };
-		CD39D01D24818CEA000D9973 /* OpenWeatherIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D01C24818CEA000D9973 /* OpenWeatherIcon.swift */; };
-		CD39D01F2481A603000D9973 /* OpenWeatherDaily.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D01E2481A603000D9973 /* OpenWeatherDaily.swift */; };
-		CD39D0212481A6D7000D9973 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D0202481A6D7000D9973 /* Temp.swift */; };
-		CD39D0232481A71A000D9973 /* FeelsLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D0222481A71A000D9973 /* FeelsLike.swift */; };
+		CD39D01D24818CEA000D9973 /* WeatherCondition+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D01C24818CEA000D9973 /* WeatherCondition+Icons.swift */; };
 		CD6B88A12085872B0064F31A /* MBTAEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88A02085872B0064F31A /* MBTAEndpoint.swift */; };
 		CD6B88A4208587680064F31A /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88A3208587680064F31A /* Stop.swift */; };
 		CD6B88A6208588BE0064F31A /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B88A5208588BE0064F31A /* Route.swift */; };
@@ -219,6 +207,7 @@
 		5BC144C621ED7F1A0015ACBC /* CGContext+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGContext+Utilities.swift"; sourceTree = "<group>"; };
 		5BF393CF221E4C2300E93348 /* WeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTests.swift; sourceTree = "<group>"; };
 		7A432B5B241D7556001D7F1F /* OfflineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineView.swift; sourceTree = "<group>"; };
+		7AE170862C33BB4400752173 /* GudTay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GudTay.entitlements; sourceTree = "<group>"; };
 		7C96DE7ECEC5B53926A3587F /* Pods-GudTay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GudTay.release.xcconfig"; path = "Target Support Files/Pods-GudTay/Pods-GudTay.release.xcconfig"; sourceTree = "<group>"; };
 		861732D31FA28DB600C14354 /* ModalDismissBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalDismissBehavior.swift; sourceTree = "<group>"; };
 		861732D71FA290F400C14354 /* ControlContainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlContainable.swift; sourceTree = "<group>"; };
@@ -263,21 +252,9 @@
 		CD31A7BC20853BA900C26A7E /* UtilitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD31A7C520853BA900C26A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD31A7D520853BBE00C26A7E /* Collection+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Utilities.swift"; sourceTree = "<group>"; };
-		CD39CFEB24809E5E000D9973 /* OpenWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherService.swift; sourceTree = "<group>"; };
-		CD39CFED24809F44000D9973 /* OpenWeather_forecast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OpenWeather_forecast.json; sourceTree = "<group>"; };
-		CD39CFF024809FC1000D9973 /* OpenWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherTests.swift; sourceTree = "<group>"; };
-		CD39CFF22480A088000D9973 /* OpenWeatherEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherEndpoint.swift; sourceTree = "<group>"; };
-		CD39D0062480A39B000D9973 /* OpenWeatherHourly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherHourly.swift; sourceTree = "<group>"; };
-		CD39D0072480A39C000D9973 /* Current.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Current.swift; sourceTree = "<group>"; };
-		CD39D0092480A39C000D9973 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
-		CD39D00B2480A39C000D9973 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
-		CD39D00C2480A39C000D9973 /* OneCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneCall.swift; sourceTree = "<group>"; };
-		CD39D0182480A3E9000D9973 /* OpenWeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherAPI.swift; sourceTree = "<group>"; };
+		CD39CFEB24809E5E000D9973 /* GudTayWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GudTayWeatherService.swift; sourceTree = "<group>"; };
 		CD39D01A2480A871000D9973 /* Tagged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tagged.swift; sourceTree = "<group>"; };
-		CD39D01C24818CEA000D9973 /* OpenWeatherIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherIcon.swift; sourceTree = "<group>"; };
-		CD39D01E2481A603000D9973 /* OpenWeatherDaily.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherDaily.swift; sourceTree = "<group>"; };
-		CD39D0202481A6D7000D9973 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
-		CD39D0222481A71A000D9973 /* FeelsLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeelsLike.swift; sourceTree = "<group>"; };
+		CD39D01C24818CEA000D9973 /* WeatherCondition+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherCondition+Icons.swift"; sourceTree = "<group>"; };
 		CD6B88A02085872B0064F31A /* MBTAEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTAEndpoint.swift; sourceTree = "<group>"; };
 		CD6B88A3208587680064F31A /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		CD6B88A5208588BE0064F31A /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -439,6 +416,14 @@
 			path = Weather;
 			sourceTree = "<group>";
 		};
+		7AE170852C33B51700752173 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				CD39D01C24818CEA000D9973 /* WeatherCondition+Icons.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
 		861732D01FA28DB600C14354 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -578,6 +563,7 @@
 		ABC778771DC90B7A00815FB9 /* GudTay */ = {
 			isa = PBXGroup;
 			children = (
+				7AE170862C33BB4400752173 /* GudTay.entitlements */,
 				ABC778981DC91DFB00815FB9 /* Application */,
 				861732D01FA28DB600C14354 /* Components */,
 				2D4FA8F31E8574D2006C38ED /* Coordinators */,
@@ -596,7 +582,6 @@
 				5B85E5B221DA7523009A2202 /* Drawing */,
 				ABF84F9E1DCBAB0A002DB24D /* Helpers */,
 				ABF84F9B1DCBA329002DB24D /* MBTA */,
-				CD39CFEF24809FA3000D9973 /* OpenWeather */,
 				CD24C4742085488D00380C9E /* Stubs */,
 				5BF393CE221E4C1000E93348 /* Weather */,
 				ABC7788F1DC90B7A00815FB9 /* Info.plist */,
@@ -683,7 +668,6 @@
 		CD24C4742085488D00380C9E /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
-				CD39CFED24809F44000D9973 /* OpenWeather_forecast.json */,
 				CD24C475208548AD00380C9E /* predictions.json */,
 			);
 			path = Stubs;
@@ -693,7 +677,7 @@
 			isa = PBXGroup;
 			children = (
 				CD6B88A2208587570064F31A /* MBTA */,
-				CD39CFEA24809E3A000D9973 /* OpenWeather */,
+				7AE170852C33B51700752173 /* Weather */,
 				CD223A182481F0DD00CA11E3 /* JSONAPI+GudTay.swift */,
 				CD39D01A2480A871000D9973 /* Tagged.swift */,
 			);
@@ -704,7 +688,6 @@
 			isa = PBXGroup;
 			children = (
 				CD6B88A02085872B0064F31A /* MBTAEndpoint.swift */,
-				CD39CFF22480A088000D9973 /* OpenWeatherEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -732,31 +715,6 @@
 				5B357A9A21E41AD7003DBFC4 /* RectTests.swift */,
 			);
 			path = UtilitiesTests;
-			sourceTree = "<group>";
-		};
-		CD39CFEA24809E3A000D9973 /* OpenWeather */ = {
-			isa = PBXGroup;
-			children = (
-				CD39D0072480A39C000D9973 /* Current.swift */,
-				CD39D0222481A71A000D9973 /* FeelsLike.swift */,
-				CD39D0092480A39C000D9973 /* Main.swift */,
-				CD39D00C2480A39C000D9973 /* OneCall.swift */,
-				CD39D0182480A3E9000D9973 /* OpenWeatherAPI.swift */,
-				CD39D01E2481A603000D9973 /* OpenWeatherDaily.swift */,
-				CD39D0062480A39B000D9973 /* OpenWeatherHourly.swift */,
-				CD39D01C24818CEA000D9973 /* OpenWeatherIcon.swift */,
-				CD39D0202481A6D7000D9973 /* Temp.swift */,
-				CD39D00B2480A39C000D9973 /* Weather.swift */,
-			);
-			path = OpenWeather;
-			sourceTree = "<group>";
-		};
-		CD39CFEF24809FA3000D9973 /* OpenWeather */ = {
-			isa = PBXGroup;
-			children = (
-				CD39CFF024809FC1000D9973 /* OpenWeatherTests.swift */,
-			);
-			path = OpenWeather;
 			sourceTree = "<group>";
 		};
 		CD6B88A2208587570064F31A /* MBTA */ = {
@@ -787,7 +745,7 @@
 			children = (
 				CDB539D32087E171006EE89E /* LogService.swift */,
 				CD6B88B520863C380064F31A /* MBTAService.swift */,
-				CD39CFEB24809E5E000D9973 /* OpenWeatherService.swift */,
+				CD39CFEB24809E5E000D9973 /* GudTayWeatherService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1083,7 +1041,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD24C47820854D7B00380C9E /* predictions.json in Resources */,
-				CD39CFEE24809F44000D9973 /* OpenWeather_forecast.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1287,35 +1244,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD223A192481F0DD00CA11E3 /* JSONAPI+GudTay.swift in Sources */,
-				CD39D0212481A6D7000D9973 /* Temp.swift in Sources */,
-				CD39CFEC24809E5E000D9973 /* OpenWeatherService.swift in Sources */,
+				CD39CFEC24809E5E000D9973 /* GudTayWeatherService.swift in Sources */,
 				86A65B0C1FA0EB0600705C14 /* APIEndpoint+Logging.swift in Sources */,
-				CD39D0142480A39C000D9973 /* Weather.swift in Sources */,
 				86A65B191FA0F22B00705C14 /* Formatters.swift in Sources */,
-				CD39D01D24818CEA000D9973 /* OpenWeatherIcon.swift in Sources */,
+				CD39D01D24818CEA000D9973 /* WeatherCondition+Icons.swift in Sources */,
 				CD39D01B2480A871000D9973 /* Tagged.swift in Sources */,
 				86A65B0D1FA0EB0600705C14 /* APIEndpoint.swift in Sources */,
 				86A65B0E1FA0EB0600705C14 /* APIEnvironment.swift in Sources */,
 				CDB539D42087E171006EE89E /* LogService.swift in Sources */,
 				86A65B0B1FA0EB0600705C14 /* APIConstants.swift in Sources */,
 				CD6B88A8208589F30064F31A /* Trip.swift in Sources */,
-				CD39D0152480A39C000D9973 /* OneCall.swift in Sources */,
-				CD39D0232481A71A000D9973 /* FeelsLike.swift in Sources */,
-				CD39D0122480A39C000D9973 /* Main.swift in Sources */,
-				CD39D01F2481A603000D9973 /* OpenWeatherDaily.swift in Sources */,
 				86A65B081FA0EB0600705C14 /* URLSession+GudTay.swift in Sources */,
 				CD6B88AA208631F70064F31A /* Prediction.swift in Sources */,
-				CD39D0102480A39C000D9973 /* Current.swift in Sources */,
-				CD39CFF32480A088000D9973 /* OpenWeatherEndpoint.swift in Sources */,
 				CD6B88A6208588BE0064F31A /* Route.swift in Sources */,
 				86A65B1D1FA0F2C900705C14 /* BuildType.swift in Sources */,
 				CDB61EBA2087EC8C00E0E99C /* BinaryFloatingPoint+Utilities.swift in Sources */,
 				CD223AB224829BDF00CA11E3 /* ScheduleRelationship.swift in Sources */,
-				CD39D0192480A3E9000D9973 /* OpenWeatherAPI.swift in Sources */,
 				CD6B88A4208587680064F31A /* Stop.swift in Sources */,
 				CD6B88A12085872B0064F31A /* MBTAEndpoint.swift in Sources */,
 				86A65B0A1FA0EB0600705C14 /* APIClient.swift in Sources */,
-				CD39D00F2480A39C000D9973 /* OpenWeatherHourly.swift in Sources */,
 				CD6B88B620863C380064F31A /* MBTAService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1389,7 +1336,6 @@
 				006EFEF61F264204004A95DE /* TestClient.swift in Sources */,
 				5B3325AE21DBEC5D00FEA6E3 /* ArrayOfPointsTests.swift in Sources */,
 				5B85E5B421DA7537009A2202 /* DrawingTests.swift in Sources */,
-				CD39CFF124809FC1000D9973 /* OpenWeatherTests.swift in Sources */,
 				ABF84FA41DCBCD89002DB24D /* MBTATests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1507,7 +1453,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-expression-type-checking=100";
@@ -1522,6 +1468,7 @@
 			baseConfigurationReference = 7C96DE7ECEC5B53926A3587F /* Pods-GudTay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GudTay/GudTay.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
@@ -1738,7 +1685,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-expression-type-checking=100";
@@ -1754,6 +1701,7 @@
 			baseConfigurationReference = D69266FAFA168DDA54288EAD /* Pods-GudTay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GudTay/GudTay.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;

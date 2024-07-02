@@ -14,7 +14,6 @@ import UIKit
 class ContentCoordinator: NSObject, Coordinator {
 
     let mbtaService: MBTAService
-    let openWeatherService: OpenWeatherService
 
     let baseController: UIViewController
     var childCoordinator: Coordinator?
@@ -26,10 +25,9 @@ class ContentCoordinator: NSObject, Coordinator {
 
     private let reachability = try! Reachability() // swiftlint:disable:this force_try
 
-    init(_ baseController: UIViewController, mbtaService: MBTAService, openWeatherService: OpenWeatherService) {
+    init(_ baseController: UIViewController, mbtaService: MBTAService) {
         self.baseController = baseController
         self.mbtaService = mbtaService
-        self.openWeatherService = openWeatherService
     }
 
     func start(completion: (() -> Void)?) {
@@ -65,7 +63,7 @@ class ContentCoordinator: NSObject, Coordinator {
         gudTayView.edgeAnchors == contentViewController.calvinContainer.edgeAnchors
         gudTayView.borderedEdges = [.bottom]
 
-        weatherCoordinator = WeatherCoordinator(openWeatherService: openWeatherService)
+        weatherCoordinator = WeatherCoordinator()
         weatherCoordinator?.start(in: contentViewController, subview: contentViewController.weatherContainer)
 
         reachability.whenUnreachable = { [weak self] _ in

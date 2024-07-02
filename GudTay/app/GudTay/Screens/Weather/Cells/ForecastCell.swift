@@ -14,7 +14,7 @@ final class ForecastCell: WeatherCell {
 
     // Public Properties
 
-    var model: (time: Date, icon: UIImage?, temp: Double, precipProbability: Double?)? {
+    var model: (time: Date, icon: UIImage?, temp: Measurement<UnitTemperature>, precipProbability: Double?)? {
         didSet {
             if let model = model {
                 let dateString = ForecastCell.dateFormatter.string(from: model.time)
@@ -31,7 +31,7 @@ final class ForecastCell: WeatherCell {
 
                 iconImageView.image = model.icon
 
-                tempLabel.attributedText = String(format: "%.0f°", model.temp).styled(with: Fonts.Weather.tempForecastStyle)
+                tempLabel.attributedText = String(format: "%.0f°", model.temp.converted(to: .fahrenheit).value).styled(with: Fonts.Weather.tempForecastStyle)
             }
             else {
                 timeLabel.text = nil

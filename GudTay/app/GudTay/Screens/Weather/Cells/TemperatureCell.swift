@@ -13,13 +13,13 @@ final class TemperatureCell: WeatherCell {
 
     // Public Properties
 
-    var temps: (current: Double, high: Double, low: Double)? {
+    var temps: (current: Measurement<UnitTemperature>, high: Measurement<UnitTemperature>, low: Measurement<UnitTemperature>)? {
         didSet {
-            currentLabel.attributedText = String(format: "%.0f°", temps?.current ?? "--").styled(with: Fonts.Weather.currentTempStyle)
+            currentLabel.attributedText = String(format: "%.0f°", temps?.current.converted(to: .fahrenheit).value ?? "--").styled(with: Fonts.Weather.currentTempStyle)
 
-            lowLabel.attributedText = String(format: "%.0f°", temps?.low ?? "--").styled(with: Fonts.Weather.tempRangeStyle)
+            lowLabel.attributedText = String(format: "%.0f°", temps?.low.converted(to: .fahrenheit).value ?? "--").styled(with: Fonts.Weather.tempRangeStyle)
 
-            highLabel.attributedText = String(format: "%.0f°", temps?.high ?? "--").styled(with: Fonts.Weather.tempRangeStyle)
+            highLabel.attributedText = String(format: "%.0f°", temps?.high.converted(to: .fahrenheit).value ?? "--").styled(with: Fonts.Weather.tempRangeStyle)
         }
     }
 

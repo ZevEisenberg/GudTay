@@ -81,20 +81,20 @@ final class WeatherViewController: UIViewController {
 
     func refresh() {
         updateBackgroundForScrollPosition()
-        viewModel.openWeatherRefresh(referenceDate: Date(), calendar: .autoupdatingCurrent) { result in
-            self.restartScrollBackTimer()
-            switch result {
-            case let .success(tuple):
+        Task { @MainActor in
+            do {
+                let tuple = try await viewModel.weatherRefresh(referenceDate: Date(), calendar: .autoupdatingCurrent)
                 let (_, forecastBackgroundViewModel) = tuple
                 self.collectionView.reloadData()
                 self.collectionView.collectionViewLayout.invalidateLayout()
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0 / 60.0) {
-                    self.updateBackgroundForScrollPosition()
-                }
                 self.forecastBackground.viewModel = forecastBackgroundViewModel
                 let color = self.forecastBackground.colorOfUpperLeadingPixel
                 self.view.backgroundColor = color
-            case .failure(let error):
+
+                try? await Task.sleep(for: .seconds(1.0 / 60.0))
+                self.updateBackgroundForScrollPosition()
+            }
+            catch {
                 Log.error("Error refreshing weather: \(error)")
             }
         }
@@ -130,7 +130,7 @@ extension WeatherViewController: UICollectionViewDataSource {
                 .Clothing.frameBackground,
                 .Clothing.frameEdges,
             ]
-            switch temp {
+            switch temp.converted(to: .fahrenheit).value {
             case ...19: images.append(.Clothing._19AndBelow)
             case ...24: images.append(.Clothing._20To24)
             case ...29: images.append(.Clothing._25To29)
@@ -149,7 +149,7 @@ extension WeatherViewController: UICollectionViewDataSource {
             }
 
             if needsUmbrella {
-                switch temp {
+                switch temp.converted(to: .fahrenheit).value {
                 case ...19: images.append(.Clothing.umbrella19AndBelow)
                 case ...47: images.append(.Clothing.umbrella20To47)
                 case ...53: images.append(.Clothing.umbrella48To53)
