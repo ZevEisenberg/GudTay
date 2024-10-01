@@ -66,7 +66,7 @@ Thanks to some help from [@jaredsinclair](https://github.com/jaredsinclair), I w
 
 ![Screenshot of an iPad app. There is a section showing departure times for a single bus line; a whiteboard showing a sketch of my wife giving me a kiss while I’m napping. The whiteboard includes pen and eraser tools, as well as a blaster icon to erase the whole image; Calvin saying his catch phrase, along with a hand-drawn analog clock that shows the current time; a more refined weather section.](Graphics/readme/2019-01-29_Screenshot.png)
 
-We’ve moved to a new house. Now we only care about one bus line, so we just show that. The whiteboard is larger. Calvin is walking
+We’ve moved to a new house. Now we only care about one bus line, so we just show that. The whiteboard is larger. Between the weather conditions and the hourly forecast, Calvin carries an umbrella to indicate that it is going to rain during hours that we are likely to be out of the house.
 
 ### February 20, 2019
 
