@@ -43,9 +43,9 @@ More custom icons from Cheryl.
 
 ### September 2, 2017
 
-![Screenshot of an iPad app. There is a grid showing: departure times for 4 Boston buses and subways; a whiteboard section with a crude drawing of a bird; a crop of the comic where Calvin says, “GRITTINGS. MA NAM 1S KAHLFIN. HEERYOR LUNBOKS. HOFFA GUD TAY ASKOOL,” along with a hand-drawn analog clock that keeps time; current weather conditions and an hourly forecast.](Graphics/readme/Grid.png)
-
 Screenshot of the real app:
+
+![Screenshot of an iPad app. There is a grid showing: departure times for 4 Boston buses and subways; a whiteboard section with a crude drawing of a bird; a crop of the comic where Calvin says, “GRITTINGS. MA NAM 1S KAHLFIN. HEERYOR LUNBOKS. HOFFA GUD TAY ASKOOL,” along with a hand-drawn analog clock that keeps time; current weather conditions and an hourly forecast.](Graphics/readme/Grid.png)
 
 It includes:
 
