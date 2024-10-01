@@ -21,7 +21,7 @@ Initial commit.
 
 ![Screenshot of an iPad app. There is a grid showing: departure times for 5 Boston buses and subways; a blank square; a crude weather display showing current, high, and low temp, as well as whether to bring an umbrella.](Graphics/readme/2016-07-25_Design.png)
 
-First mockup in Sketch. Referenced the[MBTA style guide](https://www.mbta.com/engineering/design-standards-and-guidelines) from 1977 (the newest available at the time), which included information on how to obtain a physical specimen of Helvetica.
+First mockup in Sketch. Referenced the [MBTA style guide](https://www.mbta.com/engineering/design-standards-and-guidelines) from 1977 (the newest available at the time), which included information on how to obtain a physical specimen of Helvetica.
 
 ### August 7, 2016
 
